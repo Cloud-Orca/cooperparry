@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <errorUrl>https://innovation-energy-5387.my.salesforce.com?login=1</errorUrl>
+    <identityLocation>SubjectNameId</identityLocation>
+    <identityMapping>UserId</identityMapping>
+    <issuer>https://cloudorca.my.salesforce.com</issuer>
+    <loginUrl>https://cloudorca.my.salesforce.com/idp/endpoint/HttpPost</loginUrl>
+    <name>cloudorca SAML SSO Setting</name>
+    <oauthTokenEndpoint>https://innovation-energy-5387.my.salesforce.com/services/oauth2/token</oauthTokenEndpoint>
+    <redirectBinding>false</redirectBinding>
+    <requestSigningCertId>0P12o000002EyCO</requestSigningCertId>
+    <salesforceLoginUrl>https://innovation-energy-5387.my.salesforce.com</salesforceLoginUrl>
+    <samlEntityId>https://saml.salesforce.com/00D2o000001WuxaEAC</samlEntityId>
+    <samlVersion>SAML2_0</samlVersion>
+    <useConfigRequestMethod>false</useConfigRequestMethod>
+    <useSameDigestAlgoForSigning>false</useSameDigestAlgoForSigning>
+    <userProvisioning>false</userProvisioning>
+    <validationCert>MIIErDCCA5SgAwIBAgIOAWePrdZ8AAAAAE2RcyswDQYJKoZIhvcNAQELBQAwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzA4RGVjMjAxOF8yMTE2MzMxGDAWBgNVBAsMDzAwRGY0MDAwMDA0bFhvbDEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0EwHhcNMTgxMjA4MjExNjMzWhcNMTkxMjA4MTIwMDAwWjCBkDEoMCYGA1UEAwwfU2VsZlNpZ25lZENlcnRfMDhEZWMyMDE4XzIxMTYzMzEYMBYGA1UECwwPMDBEZjQwMDAwMDRsWG9sMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMFru8dq9u6fpb1uGGUQcauXq8+uReNKlfdo46CIGtkNcpPiSktFWZVp6lOQCD3Vji2Xj2D6YGP+3uBvXnxiHqTN42vSERy5z6jKCmaNwEgX8FfwwWU5gCkvZivrrdv6i7/Ie3735VoOdgw7xoRnMUSqAEelipcMPWj/foMBVIBgXoqu9Q7S8N+w91BtAilJxbQt5oDDVNZbGdFTzWjlsALg6m47ovbW2Jc89RIbfUjuXiBdoL0872wV+LdEALfU+lyUaQcj3fMElWPWJXuB18Lff1maYC458rHg030k/jei/J5GFN9I3O6anNkqeDU5egsQ2/HJJME2u/e2a54l/hECAwEAAaOCAQAwgf0wHQYDVR0OBBYEFP/wJcyeOz3r5dHilpsp4zMThRsZMA8GA1UdEwEB/wQFMAMBAf8wgcoGA1UdIwSBwjCBv4AU//AlzJ47Pevl0eKWmynjMxOFGxmhgZakgZMwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzA4RGVjMjAxOF8yMTE2MzMxGDAWBgNVBAsMDzAwRGY0MDAwMDA0bFhvbDEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0GCDgFnj63WfAAAAABNkXMrMA0GCSqGSIb3DQEBCwUAA4IBAQBrcHL/0oc99EuPkQ4B1HltcEgbhQEhK0HuPhCPTic4ud+F8/oH8HtsY98QV/83adhwxIwAf6zt2EOc/05mboe0rwiKkv61jJarLu/i0NuKhqQQTJlA2x0Mv33il4R+W6USpQwh1SnTItaodcz6fTdaLOzljy2vDi9Qi/TfCRNNsAaRuwVc48XLJaAZmc/97oa+/aI0Z+E2MVP5nQeK7bEQF8oMZWy9fycG0ppAPImICpv7lKJ2d4fMOi05Nxe7o4ObwsbAvHpqMpRXKz5eZ2vnaMsZOPN6k6NSflbOChSfXMIM0tcbYfY6QCE+qqH7kHXgTAZ6H0tEJRdmF8S9P/gr</validationCert>
+</SamlSsoConfig>
