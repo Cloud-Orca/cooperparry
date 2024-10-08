@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FFX_Complete</fullName>
+    <columns>NAME</columns>
+    <columns>c2g__Type__c</columns>
+    <columns>c2g__Date__c</columns>
+    <columns>c2g__BankAccount__c</columns>
+    <columns>c2g__Account__c</columns>
+    <columns>c2g__Reference__c</columns>
+    <columns>c2g__CashEntryCurrency__c</columns>
+    <columns>c2g__Value__c</columns>
+    <columns>c2g__NetBanked__c</columns>
+    <columns>c2g__Period__c</columns>
+    <columns>c2g__Status__c</columns>
+    <columns>c2g__OwnerCompany__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>c2g__Status__c</field>
+        <operation>equals</operation>
+        <value>Complete</value>
+    </filters>
+    <label>Complete</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffrr__RevenueRecognizedDiscarded</fullName>
+    <columns>NAME</columns>
+    <columns>ffrr__RecognizedDate__c</columns>
+    <columns>ffrr__Period__c</columns>
+    <columns>ffrr__Description__c</columns>
+    <columns>ffrr__Status__c</columns>
+    <columns>ffrr__TotalBalanceSheet__c</columns>
+    <columns>ffrr__TotalIncomeStatement__c</columns>
+    <columns>ffrr__Currency__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffrr__Status__c</field>
+        <operation>equals</operation>
+        <value>Discarded</value>
+    </filters>
+    <label>Recognition Transactions - Discarded</label>
+    <language>en_US</language>
+</ListView>

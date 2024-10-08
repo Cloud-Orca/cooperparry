@@ -58,12 +58,11 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>Edit</actionName>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Standard</type>
+        <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -87,7 +86,8 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Standard</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
@@ -129,16 +129,16 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>Resource_Request_Lightning_Page1</content>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>cer_CashEntryLightningPage1</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>Resource_Request_Lightning_Page1</content>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>cer_CashEntryLightningPage1</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -148,50 +148,47 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>pse__Resource_Request_Compact_Layout</compactLayoutAssignment>
-    <customHelpPage>pse__ResourceRequestHelp</customHelpPage>
+    <compactLayoutAssignment>c2g__CashEntryCompactLayout</compactLayoutAssignment>
+    <customHelpPage>c2g__codahelpcashentry</customHelpPage>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Operating as a means of asking for resources to staff an existing or planned project, resource requests collect information to help users responsible for staffing and assignment creation to choose the right resource. The user requesting the resource (e.g., project manager or sales professional) may create a resource request from an opportunity or project, or generate them based on project tasks and project task assignments. Held resource requests, or “soft bookings”, occur when a named resource has been reserved for a project or opportunity, but not yet assigned to the project.</description>
-    <enableActivities>true</enableActivities>
+    <description>Stores the master details of cash and checks received from, or refunds given to, customer.</description>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Resource Request</label>
+    <label>Cash Entry</label>
     <nameField>
-        <displayFormat>RR-{0000000}</displayFormat>
-        <label>Resource Request Id</label>
+        <displayFormat>CSH{00000000}</displayFormat>
+        <label>Cash Entry Number</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Resource Requests</pluralLabel>
+    <pluralLabel>Cash Entries</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>pse__Resource_Role__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>pse__Opportunity__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>pse__Project__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>pse__Resource__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>pse__Status__c</customTabListAdditionalFields>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
-        <listViewButtons>pse__Load_in_Planners</listViewButtons>
-        <lookupDialogsAdditionalFields>pse__Resource_Role__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>pse__Resource__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>pse__Opportunity__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>pse__Status__c</lookupDialogsAdditionalFields>
-        <searchResultsAdditionalFields>pse__Resource_Role__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>pse__Resource__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>pse__Opportunity__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>pse__Status__c</searchResultsAdditionalFields>
+        <customTabListAdditionalFields>c2g__Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Period__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Reference__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__BankAccount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__BankAccountCurrency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__NetBanked__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__OwnerCompany__c</customTabListAdditionalFields>
+        <listViewButtons>c2g__LightningMassPost</listViewButtons>
+        <listViewButtons>c2g__LightningMassDuplicate</listViewButtons>
+        <listViewButtons>c2g__LightningMassDiscard</listViewButtons>
+        <listViewButtons>c2g__LightningMassAmend</listViewButtons>
+        <listViewButtons>c2g__LightningBackgroundPost</listViewButtons>
+        <listViewButtons>c2g__LightningMassCancel</listViewButtons>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
