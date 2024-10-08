@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffrr__All</fullName>
+    <columns>NAME</columns>
+    <columns>ffrr__StartDate__c</columns>
+    <columns>ffrr__EndDate__c</columns>
+    <columns>ffrr__PeriodCalculationBasis__c</columns>
+    <columns>ffrr__NumberOfMonths__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>
