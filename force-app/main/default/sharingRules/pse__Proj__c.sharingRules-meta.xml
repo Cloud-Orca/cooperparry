@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingCriteriaRules>
-        <fullName>Share_Account_with_all_internal</fullName>
+        <fullName>Share_with_all_internal_staff</fullName>
         <accessLevel>Edit</accessLevel>
-        <accountSettings>
-            <caseAccessLevel>None</caseAccessLevel>
-            <contactAccessLevel>Edit</contactAccessLevel>
-            <opportunityAccessLevel>Edit</opportunityAccessLevel>
-        </accountSettings>
-        <label>Share Account with all internal</label>
+        <label>Share with all internal staff</label>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
         <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
-            <field>CT_Account_access__c</field>
+            <field>Project_Access__c</field>
             <operation>equals</operation>
             <value>Public access</value>
         </criteriaItems>
         <criteriaItems>
-            <field>CT_Account_access__c</field>
+            <field>Project_Access__c</field>
             <operation>equals</operation>
             <value></value>
         </criteriaItems>
@@ -28,17 +23,12 @@
     <sharingCriteriaRules>
         <fullName>VIP_Account_Access</fullName>
         <accessLevel>Edit</accessLevel>
-        <accountSettings>
-            <caseAccessLevel>None</caseAccessLevel>
-            <contactAccessLevel>Edit</contactAccessLevel>
-            <opportunityAccessLevel>Edit</opportunityAccessLevel>
-        </accountSettings>
         <label>VIP Account Access</label>
         <sharedTo>
             <group>VIP_Access</group>
         </sharedTo>
         <criteriaItems>
-            <field>CT_Account_access__c</field>
+            <field>Project_Access__c</field>
             <operation>equals</operation>
             <value>VIP Account</value>
         </criteriaItems>
