@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Accelerate Revenue Management for FFA - Spring 2024 Permission Set</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Product2.FFX_RevenueRecognitionAccount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaCreditNoteLineItem__c.FFX_ProductGLACode__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaJournalLineItem__c.FFX_Revenue_Recognition_Transaction_Line__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>fferpcore__BillingDocumentLineItem__c.FFX_Income_Statement_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>fferpcore__BillingDocument__c.FFX_ffrrtemplate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffrr__RevenueRecognitionTransaction__c.FFX_Accounting_Company__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffrr__RevenueRecognitionTransaction__c.FFX_FFA_Accounting_Currency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffrr__RevenueRecognitionTransaction__c.msg_link_RRTJNL_errors__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffrr__RevenueRecognitionTransaction__c.msg_link_RRTJNL_state__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.FFX_FFA_Company_from_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FFX C-FFA-RM</label>
+</PermissionSet>

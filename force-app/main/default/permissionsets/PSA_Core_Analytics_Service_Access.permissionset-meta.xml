@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>fferpcore__can_AdditionalFieldsService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>fferpcore__can_CoreAnalyticsAppService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Grant access to the Admin analytics users for the below classes:
+fferpcore.can_CoreAnalyticsAppService .
+fferpcore.can_AdditionalFieldsService.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PSA Core Analytics Service Access</label>
+</PermissionSet>

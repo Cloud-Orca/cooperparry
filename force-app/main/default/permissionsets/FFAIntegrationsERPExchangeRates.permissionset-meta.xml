@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Add ER permissions for field c2g_codaCompany_c.c2gExchangeRateGroup__c</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaCompany__c.c2g__ExchangeRateGroup__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.FFX_FFA_Company_from_Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Sales User</label>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CampaignInfluence2</name>
-    </userPermissions>
+    <label>Accounting Integrations - FDN Exchange Rates</label>
 </PermissionSet>
