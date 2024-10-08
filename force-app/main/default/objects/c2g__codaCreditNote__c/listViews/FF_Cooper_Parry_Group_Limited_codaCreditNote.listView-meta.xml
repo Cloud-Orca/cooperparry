@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Cooper_Parry_Group_Limited_codaCreditNote</fullName>
+    <filterScope>Queue</filterScope>
+    <label>FF Cooper Parry Group Limited</label>
+    <queue>FF_Cooper_Parry_Group_Limited</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

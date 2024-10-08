@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Print_Sales_Credit_Note</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://innovation-energy-5387--certdev.sandbox.my.salesforce.com/aF8KO000000Gmbx0AC
+08-Oct-2024 01:11:25 PM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Print Sales Credit Note</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!c2g__codaCreditNote__c.Id}
+
+&amp;QueryId=[SCSTC]0Q_0082AK074810,
+[SCND]0Q_0092AK074810,
+[SCLIG]0Q_0102AK074810,
+[SCNA]0Q_0112AK074810,
+[SCLI]0Q_0122AK074810,
+[SCNPT4]0Q_0132AK074810,
+[SCNDST4]0Q_0142AK074810,
+[SCNPT]0Q_0152AK074810,
+[SCNPT3]0Q_0162AK074810,
+[SCNCF]0Q_0172AK074810,
+[SCNDST]0Q_0182AK074811,
+[SCNDST2]0Q_0192AK074811,
+[SCNDST3]0Q_0202AK074811,
+[SCNDSV]0Q_0212AK074811,
+[SCNPT5]0Q_0222AK074811,
+[SCNPT2]0Q_0232AK074811,
+[SCNCTC1]0Q_0242AK074811,
+[SCNCTC2]0Q_0252AK074811,
+[SCNLIC]0Q_0262AK074811,
+[SCNWTDTL]0Q_0272AK074811
+
+&amp;UF0=1
+&amp;MFTS0=ffaci__CongaPrintStatus__c
+&amp;MFTSValue0=Printed
+&amp;DS7=3
+&amp;TemplateId={!c2g__codaCreditNote__c.ffaci__CongaTemplate__c}
+&amp;OFN={!c2g__codaCreditNote__c.Name}
+&amp;DV0={!IF ( ISPICKVAL(c2g__codaCreditNote__c.c2g__CreditNoteStatus__c, &quot;Complete&quot;), &quot;&quot;, &quot;Draft&quot;)}
+&amp;CurrencyCulture={!c2g__codaCreditNote__c.ffaci__CurrencyCulture__c}</url>
+    <width>900</width>
+</WebLink>
