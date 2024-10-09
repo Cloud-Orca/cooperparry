@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffrr__TransferredInProgress</fullName>
+    <columns>NAME</columns>
+    <columns>ffrr__RecognizedDate__c</columns>
+    <columns>ffrr__RecognitionPeriod__c</columns>
+    <columns>ffrr__Description__c</columns>
+    <columns>ffrr__Status__c</columns>
+    <columns>ffrr__TotalBalanceSheet__c</columns>
+    <columns>ffrr__TotalIncomeStatement__c</columns>
+    <columns>ffrr__Currency__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffrr__Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <filters>
+        <field>ffrr__OriginatingProcess__c</field>
+        <operation>equals</operation>
+        <value>Transfer Previously Recognized</value>
+    </filters>
+    <label>Transferred - In Progress</label>
+</ListView>

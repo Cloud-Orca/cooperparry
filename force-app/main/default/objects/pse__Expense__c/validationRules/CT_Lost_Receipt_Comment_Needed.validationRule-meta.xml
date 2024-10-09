@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Lost_Receipt_Comment_Needed</fullName>
+    <active>true</active>
+    <description>If the &apos;Lost Receipt&apos;button is checked then the comment must be entered</description>
+    <errorConditionFormula>AND( pse__Lost_Receipt__c  == TRUE,LEN( CT_Lost_Receipt_Comment__c) &lt; 2)</errorConditionFormula>
+    <errorDisplayField>CT_Lost_Receipt_Comment__c</errorDisplayField>
+    <errorMessage>Please enter a comment as to why there is no receipt available</errorMessage>
+</ValidationRule>

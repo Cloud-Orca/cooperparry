@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Resource_Role__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Resource Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Student - Placement</fullName>
+                <default>false</default>
+                <label>Student - Placement</label>
+            </value>
+            <value>
+                <fullName>Student - Interns</fullName>
+                <default>false</default>
+                <label>Student - Interns</label>
+            </value>
+            <value>
+                <fullName>Y1 Trainee - SL</fullName>
+                <default>false</default>
+                <label>Y1 Trainee - SL</label>
+            </value>
+            <value>
+                <fullName>Y2 Trainne - SL</fullName>
+                <default>false</default>
+                <label>Y2 Trainne - SL</label>
+            </value>
+            <value>
+                <fullName>Y3 Trainee - SL</fullName>
+                <default>false</default>
+                <label>Y3 Trainee - SL</label>
+            </value>
+            <value>
+                <fullName>Y4 Trainee - SL</fullName>
+                <default>false</default>
+                <label>Y4 Trainee - SL</label>
+            </value>
+            <value>
+                <fullName>Y1 Trainee - Grad</fullName>
+                <default>false</default>
+                <label>Y1 Trainee - Grad</label>
+            </value>
+            <value>
+                <fullName>Y2 Trainee - Grad</fullName>
+                <default>false</default>
+                <label>Y2 Trainee - Grad</label>
+            </value>
+            <value>
+                <fullName>Y3 Trainee - Grad</fullName>
+                <default>false</default>
+                <label>Y3 Trainee - Grad</label>
+            </value>
+            <value>
+                <fullName>AM1</fullName>
+                <default>false</default>
+                <label>AM1</label>
+            </value>
+            <value>
+                <fullName>AM2</fullName>
+                <default>false</default>
+                <label>AM2</label>
+            </value>
+            <value>
+                <fullName>M1</fullName>
+                <default>false</default>
+                <label>M1</label>
+            </value>
+            <value>
+                <fullName>M2</fullName>
+                <default>false</default>
+                <label>M2</label>
+            </value>
+            <value>
+                <fullName>Senior Manager</fullName>
+                <default>false</default>
+                <label>Senior Manager</label>
+            </value>
+            <value>
+                <fullName>Assistant Director</fullName>
+                <default>false</default>
+                <label>Assistant Director</label>
+            </value>
+            <value>
+                <fullName>Director</fullName>
+                <default>false</default>
+                <label>Director</label>
+            </value>
+            <value>
+                <fullName>Associate partner</fullName>
+                <default>false</default>
+                <label>Associate partner</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

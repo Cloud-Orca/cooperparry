@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Private_Client__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(pse__Practice__r.CT_Allow_Time_Without_Assignment__c == TRUE, TRUE,FALSE)</formula>
+    <label>Private Client</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

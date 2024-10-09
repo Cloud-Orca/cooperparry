@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Cannot_lock_estimate_template</fullName>
+    <active>true</active>
+    <description>Error message when trying to lock an estimate template.</description>
+    <errorConditionFormula>AND( ffscpq__Is_Template__c = TRUE,  ffscpq__Is_Locked__c )</errorConditionFormula>
+    <errorDisplayField>ffscpq__Is_Locked__c</errorDisplayField>
+    <errorMessage>Estimate templates cannot be locked.</errorMessage>
+</ValidationRule>
