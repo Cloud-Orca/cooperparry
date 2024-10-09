@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Only_allow_active_service_products</fullName>
+    <active>true</active>
+    <description>Message when selected product is not an active services product.</description>
+    <errorConditionFormula>ffscpq__Product__r.IsActive = false || ffscpq__Product__r.pse__IsServicesProduct__c = false</errorConditionFormula>
+    <errorDisplayField>ffscpq__Product__c</errorDisplayField>
+    <errorMessage>The selected product must be an active services product.</errorMessage>
+</ValidationRule>
