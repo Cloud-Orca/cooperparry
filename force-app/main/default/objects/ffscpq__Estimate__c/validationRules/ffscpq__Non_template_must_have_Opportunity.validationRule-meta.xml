@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Non_template_must_have_Opportunity</fullName>
+    <active>true</active>
+    <description>Error message when a non-template estimate does not have an opportunity.</description>
+    <errorConditionFormula>(ffscpq__Is_Template__c == false &amp;&amp; ffscpq__Opportunity__c == null)</errorConditionFormula>
+    <errorDisplayField>ffscpq__Opportunity__c</errorDisplayField>
+    <errorMessage>Estimates that are not marked as a template must be associated with an opportunity.</errorMessage>
+</ValidationRule>

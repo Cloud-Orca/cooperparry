@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Cannot_change_Account_once_set</fullName>
+    <active>true</active>
+    <description>Error message displayed when editing the Account field on an estimate.</description>
+    <errorConditionFormula>(  ffscpq__Is_Template__c  = false &amp;&amp; ( ISCHANGED( ffscpq__Account__c ) &amp;&amp;  ffscpq__Opportunity__r.AccountId !=  ffscpq__Account__c ) )</errorConditionFormula>
+    <errorMessage>You cannot edit the Account field on an estimate.</errorMessage>
+</ValidationRule>
