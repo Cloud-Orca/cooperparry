@@ -216,6 +216,17 @@
         <relatedList>ffscpq__Estimate_Vendor_Line_Item__c.ffscpq__Estimate__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>ffscpq__Actual_Cost_Rate__c</fields>
+        <fields>ffscpq__Amount__c</fields>
+        <fields>ffscpq__Estimate_Line_Set__c</fields>
+        <fields>ffscpq__Start_Date__c</fields>
+        <fields>ffscpq__End_Date__c</fields>
+        <fields>ffscpq__Net_Amount__c</fields>
+        <fields>ffscpq__Margin__c</fields>
+        <relatedList>ffscpq__Estimate_Role_Request__c.ffscpq__Estimate__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -224,7 +235,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Q000000luvY</masterLabel>
+        <masterLabel>00h2o00000n5wPs</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
