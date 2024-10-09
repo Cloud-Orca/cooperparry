@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Uplift_percentage_minimum_value_exceeded</fullName>
+    <active>true</active>
+    <description>Message when role request uplift is less than -100%.</description>
+    <errorConditionFormula>ffscpq__Role_Request_Uplift_Percentage__c &lt; -1</errorConditionFormula>
+    <errorDisplayField>ffscpq__Role_Request_Uplift_Percentage__c</errorDisplayField>
+    <errorMessage>Role request uplift must be greater than or equal to -100%.</errorMessage>
+</ValidationRule>

@@ -202,12 +202,12 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Actuals_Last_Updated_By__r.Alias</field>
+        <field>pse__Backlog_Last_Updated_By__r.Alias</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Backlog_Last_Updated_By__r.Alias</field>
+        <field>pse__Actuals_Last_Updated_By__r.Alias</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
