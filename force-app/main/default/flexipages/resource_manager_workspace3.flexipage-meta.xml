@@ -80,11 +80,15 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>allowMilestones</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>allowProjectTasks</name>
                     <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>editableFieldSetApiName</name>
+                    <value>CT_Out_Of_Scope</value>
                 </componentInstanceProperties>
                 <componentName>pse:tm_timeEntry</componentName>
                 <identifier>pse_tm_timeEntry</identifier>
@@ -94,7 +98,10 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>editableFieldSetApiName</name>
-                    <value>pse__ExpenseHeaderRowEditableColumns</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>editableNotesFieldSetApiName</name>
+                    <value>CT_Expense_Info</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>isAssignmentAllowed</name>
@@ -109,12 +116,15 @@
                     <value>pse__ExpenseHeaderRowReadOnlyColumns</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>readOnlyNotesFieldSetApiName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>showBillableInformation</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showReimbursementInformation</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentName>pse:em_expenseEntry</componentName>
                 <identifier>pse_em_expenseEntry</identifier>

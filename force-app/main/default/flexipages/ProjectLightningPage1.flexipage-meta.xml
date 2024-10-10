@@ -1050,6 +1050,10 @@
                     <name>allowProjectTasks</name>
                     <value>false</value>
                 </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>editableFieldSetApiName</name>
+                    <value>CT_Out_Of_Scope</value>
+                </componentInstanceProperties>
                 <componentName>pse:tm_timeEntry</componentName>
                 <identifier>tm_timeEntry</identifier>
             </componentInstance>
