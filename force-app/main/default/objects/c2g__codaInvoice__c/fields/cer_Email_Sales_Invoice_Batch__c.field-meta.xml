@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cer_Email_Sales_Invoice_Batch__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;solmgr=1&quot; + 
+&quot;&amp;id=&quot; + Id +
+&quot;&amp;queryid=[SIPT1]0Q_1172AK074839,[SIIG]0Q_1182AK074839,[SILIG]0Q_1192AK074840,[SID]0Q_1202AK074840,[SIVTC]0Q_1212AK074840,[SIDST]0Q_1222AK074840,[SIPT4]0Q_1232AK074840,[SIILI]0Q_1242AK074840,[SIDST3]0Q_1252AK074840,[SICF]0Q_1262AK074840,[SIPT5]0Q_1272AK074840,[SIPT3]0Q_1282AK074840,[SIA]0Q_1292AK074840,[SIDST4]0Q_1302AK074840,[SILI]0Q_1312AK074840,[SIPT2]0Q_1322AK074841,[SIDST2]0Q_1332AK074841,[SIDSV]0Q_1342AK074841,[SIDTL]0Q_1352AK074841,[SILIC]0Q_1362AK074841,[SICTC1]0Q_1372AK074841,[SICTC2]0Q_1382AK074841,[SIWTDTL]0Q_1392AK074841,[SIQR]0Q_1402AK074841&quot; + 
+&quot;&amp;emailadditionalto=&quot; + ffaci__InvoiceEmail__c +
+&quot;&amp;dv0=&quot; + IF ( ISPICKVAL(c2g__InvoiceStatus__c, &quot;Complete&quot;), &quot;&quot;, &quot;Draft&quot;) +
+&quot;&amp;ofn=&quot; + Name +
+&quot;&amp;templateid=&quot; + ffaci__CongaTemplate__c +
+&quot;&amp;congaemailtemplateid={QVar0}&quot; + 
+&quot;&amp;emailsubject=&quot; +  c2g__OwnerCompany__r.Name  + &quot; Invoice: &quot; + Name +
+&quot;&amp;qmode=SendEmail&quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;MFTS0=cer_Email_Sent__c&quot; +
+&quot;&amp;MFTSValue0=TRUE&quot; +
+&quot;&amp;MFTS1=cer_Email_Sent_Date__c&quot; +
+&quot;&amp;MFTSValue1=TODAY&quot; +
+&quot;&amp;currencyculture=&quot; + ffaci__CurrencyCulture__c +
+&quot;&amp;uf0=1&quot; + 
+&quot;&amp;dv1=&quot; + ffaci__CurrencyCulture__c +
+&quot;&amp;qvar0id=aF2KO000000GmcV&quot; +
+&quot;&amp;SC0=1&quot; +
+&quot;&amp;SC1=SalesforceFile&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Email Sales Invoice Batch</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
