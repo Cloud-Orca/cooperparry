@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>GLOBAL</label>
+    <protected>false</protected>
+    <values>
+        <field>ffps_psffae__AutoDiscardForSalesInvoice__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ffps_psffae__AutoPostForCashEntry__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ffps_psffae__AutoPostForJournal__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ffps_psffae__AutoPostForPayableCreditNote__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ffps_psffae__AutoPostForPayableInvoice__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>ffps_psffae__AutoPostForSalesCreditNote__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>ffps_psffae__AutoPostForSalesInvoice__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>ffps_psffae__CashEntryCheckboxAPIName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ffps_psffae__DiscardSalesInvoiceCheckboxAPIName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ffps_psffae__JournalCheckboxAPIName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ffps_psffae__PayableCreditNoteCheckboxAPIName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ffps_psffae__PayableInvoiceCheckboxAPIName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ffps_psffae__SalesCreditNoteCheckboxAPIName__c</field>
+        <value xsi:type="xsd:string">cer_Auto_Post__c</value>
+    </values>
+    <values>
+        <field>ffps_psffae__SalesInvoiceCheckboxAPIName__c</field>
+        <value xsi:type="xsd:string">cer_Auto_Post__c</value>
+    </values>
+</CustomMetadata>

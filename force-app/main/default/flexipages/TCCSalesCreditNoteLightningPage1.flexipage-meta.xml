@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Default Sales Invoice Lightning Record Page</description>
+    <description>Default Sales Credit Note Lightning Record Page</description>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -11,99 +11,38 @@
                             <value>Edit</value>
                             <visibilityRule>
                                 <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
+                                    <leftValue>{!Record.c2g__CreditNoteStatus__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>In Progress</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>c2g__codaInvoice__c.c2g__Discard</value>
+                            <value>c2g__codaCreditNote__c.c2g__Discard</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.c2g__CreditNoteStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>In Progress</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>c2g__codaCreditNote__c.c2g__Amend</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.c2g__CreditNoteStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Complete</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>c2g__codaCreditNote__c.c2g__Match</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceType__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Consolidated</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>In Progress</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>c2g__codaInvoice__c.c2g__Amend</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Complete</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>c2g__codaInvoice__c.c2g__Post</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>In Progress</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>c2g__codaInvoice__c.c2g__ConvertToCreditNote</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Complete</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>c2g__codaInvoice__c.c2g__Duplicate</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceType__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Consolidated</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>c2g__codaInvoice__c.c2g__GenerateQRCode</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Complete</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__OwnerCompany__r.c2g__ECCountryCode__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>CH</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__OwnerCompany__r.RecordType.Name}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>VAT</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>c2g__codaInvoice__c.c2g__PlaceOnHold</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__HoldStatus__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
+                                    <leftValue>{!Record.c2g__CreditNoteStatus__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>Complete</rightValue>
                                 </criteria>
@@ -115,33 +54,47 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>c2g__codaInvoice__c.c2g__ReleaseForCollection</value>
+                            <value>c2g__codaCreditNote__c.c2g__Post</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
                                 <criteria>
-                                    <leftValue>{!Record.c2g__HoldStatus__c}</leftValue>
-                                    <operator>NE</operator>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
+                                    <leftValue>{!Record.c2g__CreditNoteStatus__c}</leftValue>
                                     <operator>EQUAL</operator>
-                                    <rightValue>Complete</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.c2g__Transaction__r.c2g__DocumentOutstandingTotal__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>0</rightValue>
+                                    <rightValue>In Progress</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.c2g__codaInvoice__c.Conga_Composer_Print_Sales_Invoice_PDF</value>
+                            <value>c2g__codaCreditNote__c.c2g__Duplicate</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.c2g__codaInvoice__c.Conga_Composer_Email_Sales_Invoice</value>
+                            <value>c2g__codaCreditNote__c.c2g__PostAndMatch</value>
+                            <visibilityRule>
+                                <booleanFilter>1 AND 2 AND 3</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.c2g__CreditNoteStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>In Progress</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.c2g__Invoice__r.c2g__Transaction__r.c2g__DocumentOutstandingTotal__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>0</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.c2g__Invoice__r.c2g__InvoiceStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Complete</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.c2g__codaCreditNote__c.Conga_Composer_Print_Sales_Credit_Note_PDF</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.c2g__codaCreditNote__c.Conga_Composer_Email_Sales_Credit_Note</value>
                             <visibilityRule>
                                 <criteria>
-                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
+                                    <leftValue>{!Record.c2g__CreditNoteStatus__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>Complete</rightValue>
                                 </criteria>
@@ -189,8 +142,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>c2g:sinLinesPanel</componentName>
-                <identifier>sinLinesPanel</identifier>
+                <componentName>c2g:scnLinesPanel</componentName>
+                <identifier>scnLinesPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>LineItems-Facet</name>
@@ -201,7 +154,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>c2g__codaInvoice__c.Id</value>
+                    <value>c2g__codaCreditNote__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -229,36 +182,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>c2g__codaInvoice__c.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>ffasp__Payments__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-849c29ea-a2dd-464a-83ff-694b84e8fa46</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
                 <componentName>c2g:matchedPayments</componentName>
                 <identifier>matchedPayments</identifier>
             </componentInstance>
@@ -271,7 +194,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>c2g__codaInvoice__c.Id</value>
+                    <value>c2g__codaCreditNote__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -315,16 +238,12 @@
                 <identifier>force_relatedListContainer</identifier>
             </componentInstance>
         </itemInstances>
-        <name>RelatedLits-Facet</name>
+        <name>Facet-Related</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>active</name>
-                    <value>true</value>
-                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Detail-Facet</value>
@@ -341,7 +260,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -367,20 +286,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-849c29ea-a2dd-464a-83ff-694b84e8fa46</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Asperato Payment</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -419,7 +324,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>RelatedLits-Facet</value>
+                    <value>Facet-Related</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
@@ -452,8 +357,8 @@
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Certinia Sales Invoice Lightning Page</masterLabel>
-    <sobjectType>c2g__codaInvoice__c</sobjectType>
+    <masterLabel>TCC Sales Credit Note Lightning Page</masterLabel>
+    <sobjectType>c2g__codaCreditNote__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColTemplateDesktop</name>
     </template>
