@@ -86,12 +86,6 @@
                 <identifier>runtime_communities_nba_builderNbaWidget</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>pse:rm_manageUpcomingWork</componentName>
-                <identifier>pse_rm_manageUpcomingWork</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>region1</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -295,11 +289,15 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>allowMilestones</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>allowProjectTasks</name>
                     <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>editableFieldSetApiName</name>
+                    <value>CT_Out_Of_Scope</value>
                 </componentInstanceProperties>
                 <componentName>pse:tm_timeEntry</componentName>
                 <identifier>pse_tm_timeEntry</identifier>
