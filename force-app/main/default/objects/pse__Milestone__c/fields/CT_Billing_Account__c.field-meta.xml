@@ -4,6 +4,17 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Billing Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Only onboarded accounts can be selected.</errorMessage>
+        <filterItems>
+            <field>Account.Is_Onboarded__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <infoMessage>Only onboarded accounts can be selected.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Milestones (Billing Account)</relationshipLabel>
     <relationshipName>Milestones1</relationshipName>
