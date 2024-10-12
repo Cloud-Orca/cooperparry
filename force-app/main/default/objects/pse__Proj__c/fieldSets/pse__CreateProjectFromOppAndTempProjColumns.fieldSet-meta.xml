@@ -503,6 +503,11 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
+        <field>CT_Year_End_Date__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
         <field>pse__Planned_Hours__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
