@@ -5,7 +5,7 @@
         <name>Is_Project_BIllable</name>
         <label>Is Project BIllable</label>
         <locationX>182</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <defaultConnector>
             <targetReference>Is_Project_Work_at_Risk</targetReference>
         </defaultConnector>
@@ -55,7 +55,7 @@
         <name>Is_Project_Not_WAR_Anymore</name>
         <label>Is Project Billable &amp; Changed from Working at Risk?</label>
         <locationX>336</locationX>
-        <locationY>1223</locationY>
+        <locationY>1331</locationY>
         <defaultConnector>
             <targetReference>Stage_Changed</targetReference>
         </defaultConnector>
@@ -94,7 +94,7 @@
         <name>Is_Project_Work_at_Risk</name>
         <label>Is Project Billable &amp; Work at Risk</label>
         <locationX>336</locationX>
-        <locationY>923</locationY>
+        <locationY>1031</locationY>
         <defaultConnector>
             <targetReference>Is_Project_Not_WAR_Anymore</targetReference>
         </defaultConnector>
@@ -126,7 +126,7 @@
         <name>Stage_Changed</name>
         <label>Stage Changed?</label>
         <locationX>336</locationX>
-        <locationY>1523</locationY>
+        <locationY>1631</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Completed_or_Canceled</name>
@@ -158,6 +158,11 @@
         <dataType>Boolean</dataType>
         <expression>ISNEW()</expression>
     </formulas>
+    <formulas>
+        <name>ProjectName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.pse__Account__r.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c}))</expression>
+    </formulas>
     <interviewLabel>FFX PSA Project {!$Flow.CurrentDateTime}</interviewLabel>
     <label>FFX PSA Project</label>
     <processMetadataValues>
@@ -180,13 +185,43 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <name>CT_Update_Billable</name>
+        <label>Update Billable</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Is_Project_BIllable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Project_Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Internal</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>pse__Is_Billable__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Set_Project_to_Active</name>
         <label>Set Project to Active</label>
         <locationX>182</locationX>
         <locationY>431</locationY>
         <connector>
-            <targetReference>Is_Project_BIllable</targetReference>
+            <targetReference>CT_Update_Billable</targetReference>
         </connector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ProjectName</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>pse__Action_Update_Current_Time_Period__c</field>
             <value>
@@ -211,7 +246,7 @@
         <name>Update_Exclude_from_Billing_to_FALSE</name>
         <label>Update Exclude from Billing to FALSE</label>
         <locationX>204</locationX>
-        <locationY>1331</locationY>
+        <locationY>1439</locationY>
         <connector>
             <targetReference>Stage_Changed</targetReference>
         </connector>
@@ -227,7 +262,7 @@
         <name>Update_Exclude_from_Billing_to_TRUE</name>
         <label>Update Exclude from Billing to TRUE</label>
         <locationX>204</locationX>
-        <locationY>1031</locationY>
+        <locationY>1139</locationY>
         <connector>
             <targetReference>Is_Project_Not_WAR_Anymore</targetReference>
         </connector>
@@ -243,7 +278,7 @@
         <name>Update_Project_Daily_Notes_Required_to_TRUE</name>
         <label>Update Project Daily Notes Required to TRUE</label>
         <locationX>50</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <connector>
             <targetReference>Is_Project_Work_at_Risk</targetReference>
         </connector>
@@ -272,7 +307,7 @@
         <name>Update_Project_fields_to_Close</name>
         <label>Update Project fields to Close</label>
         <locationX>204</locationX>
-        <locationY>1631</locationY>
+        <locationY>1739</locationY>
         <inputAssignments>
             <field>pse__Closed_for_Expense_Entry__c</field>
             <value>

@@ -6,6 +6,11 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>CP_PSAAdmin</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>FFX_Accounts_Receivable</application>
         <default>false</default>
         <visible>true</visible>
@@ -27,6 +32,10 @@
         <apexClass>dlrs_pse_Resource_RequestTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>dlrs_pse_Timecard_HeaderTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -36,6 +45,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.CT_Finance_Hold__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Is_Onboarded__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -486,6 +500,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaCashEntry__c.ffcash__DerivePeriod__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaCompany__c.ffps_psffae__AutoPostFFADocument__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -951,6 +970,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaCreditNote__c.cer_Auto_Post__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNote__c.cer_Email_Sent_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNote__c.cer_Email_Sent__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1585,13 +1614,18 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>c2g__codaInvoice__c.cer_Email_Sent_Date__c</field>
+        <field>c2g__codaInvoice__c.cer_Email_Sales_Invoice_Batch__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
+        <field>c2g__codaInvoice__c.cer_Email_Sent_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sent__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -6455,6 +6489,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Skill_Certification_Rating__c.pse__Approval_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Skill__c.pse__Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -6990,6 +7029,9 @@
         <layout>c2g__codaCashEntry__c-c2g__Cash Entry Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>c2g__codaInvoiceLineItem__c-FFX Sales Invoice Line Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>c2g__codaInvoice__c-FFX Sales Invoice Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -7104,6 +7146,14 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>CP_Services_Delivery_Workspace</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>CP_Work_Planner</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Work_Planner1</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

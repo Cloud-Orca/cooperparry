@@ -10,18 +10,15 @@
         <connector>
             <targetReference>Errors</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Copy_1_of_Project_was_template</targetReference>
+        </faultConnector>
         <flowTransactionModel>Automatic</flowTransactionModel>
         <inputParameters>
             <name>AccountId</name>
             <value>
                 <elementReference>get_source_project_details.pse__Account__c</elementReference>
             </value>
-        </inputParameters>
-        <inputParameters>
-            <name>CreateBudget</name>
-        </inputParameters>
-        <inputParameters>
-            <name>IsActive</name>
         </inputParameters>
         <inputParameters>
             <name>StartDate</name>
@@ -40,6 +37,22 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Copy_1_of_Set_Template_false</name>
+        <label>Copy 1 of Set Template = false</label>
+        <locationX>974</locationX>
+        <locationY>974</locationY>
+        <assignmentItems>
+            <assignToReference>get_source_project_details.pse__Is_Template__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Copy_1_of_Save_Project</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Set_Template_false</name>
         <label>Set Template = false</label>
@@ -125,6 +138,31 @@
                 <targetReference>Delete_assignments</targetReference>
             </connector>
             <label>yes, assignments found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Project_was_template</name>
+        <label>Copy 1 of Project was template?</label>
+        <locationX>886</locationX>
+        <locationY>866</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Set_Template_false</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>no</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ProjectWasTemplate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ErrorMessage1</targetReference>
+            </connector>
+            <label>Copy 1 of yes</label>
         </rules>
     </decisions>
     <decisions>
@@ -362,6 +400,16 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Copy_1_of_Copy_1_of_Save_Project</name>
+        <label>Copy 1 of Copy 1 of Save Project</label>
+        <locationX>974</locationX>
+        <locationY>1082</locationY>
+        <connector>
+            <targetReference>ErrorMessage1</targetReference>
+        </connector>
+        <inputReference>get_source_project_details</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Copy_1_of_Save_Project</name>
         <label>Copy 1 of Save Project</label>
         <locationX>534</locationX>
@@ -448,6 +496,22 @@
         <fields>
             <name>ErrorMessage</name>
             <fieldText>&lt;p&gt;&lt;strong&gt;An error occurred: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Creat_New_project.ErrorString}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>ErrorMessage1</name>
+        <label>ErrorMessage1</label>
+        <locationX>886</locationX>
+        <locationY>1274</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>aa</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(253, 0, 0); font-size: 16px;&quot;&gt;An error occurred&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact your system administrator to check if you have the &quot;FF-PSA Full User (Modify All)&quot; permissionset.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Error details:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
