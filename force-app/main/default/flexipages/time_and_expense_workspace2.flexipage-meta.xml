@@ -86,6 +86,12 @@
                 <identifier>runtime_communities_nba_builderNbaWidget</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>pse:ws_weeklySummary</componentName>
+                <identifier>pse_ws_weeklySummary</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>region1</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -342,8 +348,8 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>pse:ws_weeklySummary</componentName>
-                <identifier>pse_ws_weeklySummary</identifier>
+                <componentName>pse:rm_manageUpcomingWork</componentName>
+                <identifier>pse_rm_manageUpcomingWork</identifier>
             </componentInstance>
         </itemInstances>
         <name>region8</name>

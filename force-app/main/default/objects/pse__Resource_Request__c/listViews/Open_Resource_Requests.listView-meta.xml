@@ -9,6 +9,8 @@
     <columns>pse__End_Date__c</columns>
     <columns>pse__SOW_Hours__c</columns>
     <columns>pse__Resource__c</columns>
+    <columns>pse__Allow_Candidates_to_Self_Nominate__c</columns>
+    <columns>pse__Self_Nomination_Deadline__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>pse__Status__c</field>
