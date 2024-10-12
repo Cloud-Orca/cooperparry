@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -58,6 +59,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>pse__Allow_Candidates_to_Self_Nominate__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>pse__Self_Nomination_Deadline__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

@@ -6,6 +6,11 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>CP_PSAAdmin</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>FFX_Accounts_Receivable</application>
         <default>false</default>
         <visible>true</visible>
@@ -15,6 +20,22 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>dlrs_ffscpq_Estimate_Role_RequestTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dlrs_pse_AssignmentTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dlrs_pse_Resource_RequestTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dlrs_pse_Timecard_HeaderTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -24,6 +45,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.CT_Finance_Hold__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Is_Onboarded__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -474,6 +500,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaCashEntry__c.ffcash__DerivePeriod__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaCompany__c.ffps_psffae__AutoPostFFADocument__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -942,6 +973,16 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNote__c.cer_Email_Sent_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNote__c.cer_Email_Sent__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaCreditNote__c.ffaci__CongaPrintStatus__c</field>
         <readable>true</readable>
@@ -1009,6 +1050,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaCreditNote__c.ffrrtemplate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaInvoice__c.attachSalesInvoicePdf__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1568,13 +1614,18 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>c2g__codaInvoice__c.cer_Email_Sent_Date__c</field>
+        <field>c2g__codaInvoice__c.cer_Email_Sales_Invoice_Batch__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
+        <field>c2g__codaInvoice__c.cer_Email_Sent_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sent__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1959,6 +2010,331 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ffpsai__ExpenseTypeGLAMapping__c.ffpsai__ExpenseType__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrExpense__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrMilestone__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrMiscellaneousAdjustment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrProject__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrSalesCreditNoteLineItem__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrSalesCreditNote__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrSalesInvoiceLineItem__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrSalesInvoice__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrTimecard__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__Account__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__ActualVsForecastRelationship__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmortizedOpeningBalanceDual__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmortizedOpeningBalanceHome__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmortizedOpeningBalance__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmortizedToDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmountAmortizedDual__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmountAmortizedHome__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmountAmortized__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmountRecognizedDual__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AmountRecognizedHome__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AnalysisItem1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AnalysisItem2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AnalysisItem3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__AnalysisItem4__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__Company__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__CostAccount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__CostAmended__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__CostCenter__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__CostCostCenter__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__Currency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__DocumentCurrencyRate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__DualCurrencyRate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__DualCurrency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__HomeCurrency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__InternalAmortizedAmount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__InternalAmount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__JournalAmortizedAmount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__JournalAmortizedDualAmount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__JournalAmortizedHomeAmount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__JournalAmountDual__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__JournalAmountHome__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__JournalAmount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__Level3ObjectRecordName__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__Level4ObjectRecordName__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__PerformanceObligation__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__Period__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__PrimaryObjectRecordName__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__Product__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__RecognizedDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__RecognizedOpeningBalanceDual__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__RecognizedOpeningBalanceHome__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__RecognizedOpeningBalance__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__RecognizedToDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__RevenueAmended__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__RevenueContract__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__RevenueScheduleLine__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__SalesforceAccount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__SecondaryObjectRecordName__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.ffrr__Template__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.link_CostJournal_errors__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.link_CostJournal_id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.link_CostJournal_state__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.link_FFA_errors__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.link_FFA_id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffrr__RevenueRecognitionTransactionLine__c.link_FFA_state__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6113,6 +6489,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Skill_Certification_Rating__c.pse__Approval_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Skill__c.pse__Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -6652,6 +7033,9 @@
         <layout>c2g__codaCashEntry__c-c2g__Cash Entry Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>c2g__codaInvoiceLineItem__c-FFX Sales Invoice Line Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>c2g__codaInvoice__c-FFX Sales Invoice Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -6764,6 +7148,14 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>CP_Services_Delivery_Workspace</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>CP_Work_Planner</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Work_Planner1</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
