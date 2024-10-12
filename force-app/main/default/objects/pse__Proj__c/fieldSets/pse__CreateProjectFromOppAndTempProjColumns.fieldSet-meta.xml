@@ -167,6 +167,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>pse__Exclude_From_Billing__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>pse__Exclude_from_Backlog__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -233,6 +238,11 @@
     </availableFields>
     <availableFields>
         <field>pse__Invoiced__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>pse__Is_Billable__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -490,7 +500,7 @@
     <displayedFields>
         <field>pse__Project_Manager__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>pse__Planned_Hours__c</field>
@@ -508,22 +518,12 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>pse__Is_Billable__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>pse__Practice__c</field>
         <isFieldManaged>true</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>pse__Group__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>pse__Exclude_From_Billing__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
