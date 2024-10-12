@@ -147,11 +147,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Milestone__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>Name</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -399,6 +394,11 @@
     </displayedFields>
     <displayedFields>
         <field>pse__Is_Billable__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>pse__Milestone__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
