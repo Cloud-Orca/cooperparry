@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V3_Address_Needed_for_Client</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ISCHANGED(Type),
+TEXT(PRIORVALUE(Type)) = &quot;Target&quot;,
+TEXT(Type) = &quot;Client&quot;,
+AND( ISBLANK( BillingStreet ) ,
+ISBLANK( BillingCity  ) ,
+ISBLANK( BillingState  ) ,
+ISBLANK( BillingCountry ) ,
+ISBLANK( BillingPostalCode) 
+
+
+)
+
+)</errorConditionFormula>
+    <errorMessage>Please enter the Billing Address when the Account Type is changed from Target to Client</errorMessage>
+</ValidationRule>

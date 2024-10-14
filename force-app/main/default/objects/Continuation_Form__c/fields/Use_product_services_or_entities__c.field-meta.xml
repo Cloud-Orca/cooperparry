@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_product_services_or_entities__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Does the client use products, services or entities which provide anonymity?</inlineHelpText>
+    <label>Use product, services or entities</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
