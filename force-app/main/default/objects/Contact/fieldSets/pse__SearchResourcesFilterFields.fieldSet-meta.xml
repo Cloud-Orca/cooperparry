@@ -3907,15 +3907,5 @@
         <isRequired>false</isRequired>
     </availableFields>
     <description>Defines the extra fields that can be selected as filter criteria when searching for resources on the Search Resources page.</description>
-    <displayedFields>
-        <field>CT_Remote__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>CT_Has_Own_Transport__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
     <label>SearchResourcesFilterFields</label>
 </FieldSet>

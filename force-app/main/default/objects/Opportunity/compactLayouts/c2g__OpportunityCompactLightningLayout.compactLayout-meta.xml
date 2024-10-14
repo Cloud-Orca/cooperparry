@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>c2g__OpportunityCompactLightningLayout</fullName>
+    <fields>Name</fields>
+    <fields>AccountId</fields>
+    <fields>Type</fields>
+    <fields>Probability</fields>
+    <fields>OwnerId</fields>
+    <label>Opportunity Compact Lightning Layout (Accounting)</label>
+</CompactLayout>
