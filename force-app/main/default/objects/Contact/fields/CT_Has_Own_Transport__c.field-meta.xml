@@ -5,5 +5,6 @@
     <externalId>false</externalId>
     <label>Has Own Transport</label>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>
