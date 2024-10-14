@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Creat_New_project</name>
         <label>Create New project</label>
-        <locationX>248</locationX>
+        <locationX>270</locationX>
         <locationY>758</locationY>
         <actionName>pse__ActionCPFTAccounts</actionName>
         <actionType>apex</actionType>
@@ -38,9 +38,25 @@
     </actionCalls>
     <apiVersion>61.0</apiVersion>
     <assignments>
+        <name>Copy_1_of_Copy_1_of_Set_Template_false</name>
+        <label>Copy 1 of Copy 1 of Set Template = false</label>
+        <locationX>50</locationX>
+        <locationY>974</locationY>
+        <assignmentItems>
+            <assignToReference>get_source_project_details.pse__Is_Template__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Copy_1_of_Copy_1_of_Save_Project</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Copy_1_of_Set_Template_false</name>
         <label>Copy 1 of Set Template = false</label>
-        <locationX>974</locationX>
+        <locationX>1194</locationX>
         <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>get_source_project_details.pse__Is_Template__c</assignToReference>
@@ -56,7 +72,7 @@
     <assignments>
         <name>Set_Template_false</name>
         <label>Set Template = false</label>
-        <locationX>534</locationX>
+        <locationX>578</locationX>
         <locationY>1082</locationY>
         <assignmentItems>
             <assignToReference>get_source_project_details.pse__Is_Template__c</assignToReference>
@@ -72,7 +88,7 @@
     <assignments>
         <name>Set_Template_true</name>
         <label>Set Template = true</label>
-        <locationX>116</locationX>
+        <locationX>138</locationX>
         <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>get_source_project_details.pse__Is_Template__c</assignToReference>
@@ -95,7 +111,7 @@
     <assignments>
         <name>Update_new_Year_End_Date</name>
         <label>Update new Year End Date</label>
-        <locationX>446</locationX>
+        <locationX>490</locationX>
         <locationY>1490</locationY>
         <assignmentItems>
             <assignToReference>Get_New_Project.CT_Year_End_Date__c</assignToReference>
@@ -118,10 +134,10 @@
     <decisions>
         <name>Assignments_found</name>
         <label>Assignments found?</label>
-        <locationX>446</locationX>
-        <locationY>1814</locationY>
+        <locationX>490</locationX>
+        <locationY>1922</locationY>
         <defaultConnector>
-            <targetReference>Get_Resource_Requests</targetReference>
+            <targetReference>Did_the_original_project_have_Assignments</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -143,7 +159,7 @@
     <decisions>
         <name>Copy_1_of_Project_was_template</name>
         <label>Copy 1 of Project was template?</label>
-        <locationX>886</locationX>
+        <locationX>1106</locationX>
         <locationY>866</locationY>
         <defaultConnector>
             <targetReference>Copy_1_of_Set_Template_false</targetReference>
@@ -166,9 +182,34 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Did_the_original_project_have_Assignments</name>
+        <label>Did the original project have Assignments?</label>
+        <locationX>666</locationX>
+        <locationY>2030</locationY>
+        <defaultConnector>
+            <targetReference>No_Assignments_found</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No_so_all_is_ok</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Assignments_of_old_project</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Resource_Requests</targetReference>
+            </connector>
+            <label>No, so all is ok</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Errors</name>
         <label>Errors?</label>
-        <locationX>248</locationX>
+        <locationX>270</locationX>
         <locationY>866</locationY>
         <defaultConnector>
             <targetReference>Project_was_template</targetReference>
@@ -185,7 +226,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Copy_1_of_result</targetReference>
+                <targetReference>Copy_1_of_Copy_1_of_Set_Template_false</targetReference>
             </connector>
             <label>yes</label>
         </rules>
@@ -193,7 +234,7 @@
     <decisions>
         <name>Is_current_project_a_template</name>
         <label>Is current project a template?</label>
-        <locationX>248</locationX>
+        <locationX>270</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Creat_New_project</targetReference>
@@ -218,7 +259,7 @@
     <decisions>
         <name>Project_was_template</name>
         <label>Project was template?</label>
-        <locationX>446</locationX>
+        <locationX>490</locationX>
         <locationY>974</locationY>
         <defaultConnector>
             <targetReference>Set_Template_false</targetReference>
@@ -243,8 +284,8 @@
     <decisions>
         <name>Resource_Requests_Found</name>
         <label>Resource Requests Found?</label>
-        <locationX>446</locationX>
-        <locationY>2222</locationY>
+        <locationX>490</locationX>
+        <locationY>2588</locationY>
         <defaultConnector>
             <targetReference>Confirmation</targetReference>
         </defaultConnector>
@@ -301,7 +342,7 @@
         <name>Delete_assignments</name>
         <label>Delete assignments</label>
         <locationX>314</locationX>
-        <locationY>1922</locationY>
+        <locationY>2030</locationY>
         <connector>
             <targetReference>Get_Resource_Requests</targetReference>
         </connector>
@@ -318,8 +359,8 @@
     <recordLookups>
         <name>Get_Assignments</name>
         <label>Get Assignments</label>
-        <locationX>446</locationX>
-        <locationY>1706</locationY>
+        <locationX>490</locationX>
+        <locationY>1814</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assignments_found</targetReference>
@@ -337,9 +378,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Assignments_of_old_project</name>
+        <label>Get Assignments of old project</label>
+        <locationX>490</locationX>
+        <locationY>1706</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Assignments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Assignment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_New_Project</name>
         <label>Get New Project</label>
-        <locationX>446</locationX>
+        <locationX>490</locationX>
         <locationY>1382</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -360,8 +422,8 @@
     <recordLookups>
         <name>Get_Resource_Requests</name>
         <label>Get Resource Requests</label>
-        <locationX>446</locationX>
-        <locationY>2114</locationY>
+        <locationX>490</locationX>
+        <locationY>2480</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Resource_Requests_Found</targetReference>
@@ -381,7 +443,7 @@
     <recordLookups>
         <name>get_source_project_details</name>
         <label>get source project details</label>
-        <locationX>248</locationX>
+        <locationX>270</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -400,9 +462,19 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Copy_1_of_Copy_1_of_Copy_1_of_Save_Project</name>
+        <label>Copy 1 of Copy 1 of Copy 1 of Save Project</label>
+        <locationX>50</locationX>
+        <locationY>1082</locationY>
+        <connector>
+            <targetReference>Copy_1_of_result</targetReference>
+        </connector>
+        <inputReference>get_source_project_details</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Copy_1_of_Copy_1_of_Save_Project</name>
         <label>Copy 1 of Copy 1 of Save Project</label>
-        <locationX>974</locationX>
+        <locationX>1194</locationX>
         <locationY>1082</locationY>
         <connector>
             <targetReference>ErrorMessage1</targetReference>
@@ -412,7 +484,7 @@
     <recordUpdates>
         <name>Copy_1_of_Save_Project</name>
         <label>Copy 1 of Save Project</label>
-        <locationX>534</locationX>
+        <locationX>578</locationX>
         <locationY>1190</locationY>
         <connector>
             <targetReference>Get_New_Project</targetReference>
@@ -422,7 +494,7 @@
     <recordUpdates>
         <name>Save_Project</name>
         <label>Save Project</label>
-        <locationX>116</locationX>
+        <locationX>138</locationX>
         <locationY>566</locationY>
         <connector>
             <targetReference>Creat_New_project</targetReference>
@@ -432,18 +504,18 @@
     <recordUpdates>
         <name>Update_new_project</name>
         <label>Update new project</label>
-        <locationX>446</locationX>
+        <locationX>490</locationX>
         <locationY>1598</locationY>
         <connector>
-            <targetReference>Get_Assignments</targetReference>
+            <targetReference>Get_Assignments_of_old_project</targetReference>
         </connector>
         <inputReference>Get_New_Project</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Resource_Requests</name>
         <label>Update Resource Requests</label>
-        <locationX>314</locationX>
-        <locationY>2330</locationY>
+        <locationX>358</locationX>
+        <locationY>2696</locationY>
         <connector>
             <targetReference>Confirmation</targetReference>
         </connector>
@@ -472,8 +544,8 @@
     <screens>
         <name>Confirmation</name>
         <label>Confirmation</label>
-        <locationX>446</locationX>
-        <locationY>2522</locationY>
+        <locationX>490</locationX>
+        <locationY>2888</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -489,7 +561,7 @@
         <name>Copy_1_of_result</name>
         <label>ErrorMessage</label>
         <locationX>50</locationX>
-        <locationY>974</locationY>
+        <locationY>1190</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -504,7 +576,7 @@
     <screens>
         <name>ErrorMessage1</name>
         <label>ErrorMessage1</label>
-        <locationX>886</locationX>
+        <locationX>1106</locationX>
         <locationY>1274</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -518,9 +590,30 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>No_Assignments_found</name>
+        <label>No Assignments found</label>
+        <locationX>754</locationX>
+        <locationY>2138</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Get_Assignments</targetReference>
+        </connector>
+        <fields>
+            <name>no_assignments_found_message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;The project is being created but not all information is available yet.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Please wait a few seconds and then click &quot;&lt;strong&gt;Retry&lt;/strong&gt;&quot;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Retry</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>ProjectNameAndDate</name>
         <label>ProjectNameAndDate</label>
-        <locationX>248</locationX>
+        <locationX>270</locationX>
         <locationY>242</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -543,7 +636,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>122</locationX>
+        <locationX>144</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>get_source_project_details</targetReference>
