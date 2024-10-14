@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>CT_Account_access__c</fullName>
+    <fullName>Source_Type__c</fullName>
     <externalId>false</externalId>
-    <label>Account access</label>
+    <label>Source Type</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
@@ -12,19 +12,24 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Public access</fullName>
-                <default>true</default>
-                <label>Public access</label>
+                <fullName>Call / Email</fullName>
+                <default>false</default>
+                <label>Call / Email</label>
             </value>
             <value>
-                <fullName>Public access with restrictions</fullName>
+                <fullName>Social Media</fullName>
                 <default>false</default>
-                <label>Public access with restrictions</label>
+                <label>Social Media</label>
             </value>
             <value>
-                <fullName>VIP Account</fullName>
+                <fullName>Website</fullName>
                 <default>false</default>
-                <label>VIP Account</label>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>cer_Invoice_Email__c</fullName>
-    <description>Used to be populated by onboarding team</description>
+    <fullName>CAF_Form_Completed__c</fullName>
+    <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Invoice Email</label>
-    <required>false</required>
+    <label>CAF Form Completed</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
-    <type>Email</type>
-    <unique>false</unique>
+    <type>Checkbox</type>
 </CustomField>
