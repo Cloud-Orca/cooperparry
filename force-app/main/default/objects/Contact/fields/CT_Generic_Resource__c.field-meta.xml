@@ -6,5 +6,6 @@
     <inlineHelpText>Indicates if this is a Generic resource</inlineHelpText>
     <label>Generic Resource</label>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>
