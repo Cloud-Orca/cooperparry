@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summarise_the_key_aspects_of_what_we_are__c</fullName>
+    <description>Summarise the key aspects of what we are being asked to do</description>
+    <externalId>false</externalId>
+    <label>Summarise the key aspects</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>
