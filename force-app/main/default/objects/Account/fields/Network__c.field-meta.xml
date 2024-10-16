@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Network__c</fullName>
+    <externalId>false</externalId>
+    <label>Network</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>AccountSource</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Network</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>International</controllingFieldValue>
+            <valueName>Atlast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>International</controllingFieldValue>
+            <valueName>International Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
