@@ -2,44 +2,58 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Qualification</fullName>
+        <fullName>Flirt</fullName>
         <default>false</default>
-        <description>You&apos;ve contacted the prospect and they&apos;re interested.</description>
-        <label>Qualification</label>
+        <label>Flirt</label>
         <closed>false</closed>
         <forecastCategory>Pipeline</forecastCategory>
         <probability>10</probability>
         <won>false</won>
     </standardValue>
     <standardValue>
-        <fullName>Needs Analysis</fullName>
+        <fullName>Date</fullName>
         <default>false</default>
-        <description>You&apos;re defining the prospect&apos;s needs.</description>
-        <label>Needs Analysis</label>
+        <label>Date</label>
         <closed>false</closed>
         <forecastCategory>Pipeline</forecastCategory>
-        <probability>35</probability>
+        <probability>20</probability>
         <won>false</won>
     </standardValue>
     <standardValue>
-        <fullName>Proposal</fullName>
+        <fullName>Proposing</fullName>
         <default>false</default>
-        <description>You&apos;re developing a sales proposal for the prospect.</description>
-        <label>Proposal</label>
+        <label>Proposing</label>
         <closed>false</closed>
-        <forecastCategory>BestCase</forecastCategory>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>50</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Proposed</fullName>
+        <default>false</default>
+        <label>Proposed</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
         <probability>75</probability>
         <won>false</won>
     </standardValue>
     <standardValue>
-        <fullName>Negotiation</fullName>
+        <fullName>Married (Closed Won)</fullName>
         <default>false</default>
-        <description>You&apos;re working with the prospect on the proposal you delivered.</description>
-        <label>Negotiation</label>
-        <closed>false</closed>
-        <forecastCategory>Forecast</forecastCategory>
-        <probability>90</probability>
-        <won>false</won>
+        <label>Married (Closed Won)</label>
+        <closed>true</closed>
+        <forecastCategory>Closed</forecastCategory>
+        <probability>100</probability>
+        <won>true</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Live Enquiry</fullName>
+        <default>false</default>
+        <label>Live Enquiry</label>
+        <closed>true</closed>
+        <forecastCategory>Closed</forecastCategory>
+        <probability>100</probability>
+        <won>true</won>
     </standardValue>
     <standardValue>
         <fullName>Closed Won</fullName>
