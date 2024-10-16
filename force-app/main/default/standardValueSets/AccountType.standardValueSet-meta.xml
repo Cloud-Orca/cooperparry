@@ -2,53 +2,33 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Analyst</fullName>
+        <fullName>New</fullName>
         <default>false</default>
-        <label>Analyst</label>
+        <label>New</label>
     </standardValue>
     <standardValue>
-        <fullName>Competitor</fullName>
+        <fullName>Target</fullName>
         <default>false</default>
-        <label>Competitor</label>
+        <label>Target</label>
     </standardValue>
     <standardValue>
-        <fullName>Customer</fullName>
+        <fullName>Onboarding</fullName>
         <default>false</default>
-        <label>Customer</label>
+        <label>Onboarding</label>
     </standardValue>
     <standardValue>
-        <fullName>Integrator</fullName>
+        <fullName>Client</fullName>
         <default>false</default>
-        <label>Integrator</label>
+        <label>Client</label>
     </standardValue>
     <standardValue>
-        <fullName>Investor</fullName>
+        <fullName>Client - Dormant</fullName>
         <default>false</default>
-        <label>Investor</label>
+        <label>Client - Dormant</label>
     </standardValue>
     <standardValue>
-        <fullName>Partner</fullName>
+        <fullName>Lost Client</fullName>
         <default>false</default>
-        <label>Partner</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Press</fullName>
-        <default>false</default>
-        <label>Press</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Prospect</fullName>
-        <default>false</default>
-        <label>Prospect</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Reseller</fullName>
-        <default>false</default>
-        <label>Reseller</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Other</fullName>
-        <default>false</default>
-        <label>Other</label>
+        <label>Lost Client</label>
     </standardValue>
 </StandardValueSet>
