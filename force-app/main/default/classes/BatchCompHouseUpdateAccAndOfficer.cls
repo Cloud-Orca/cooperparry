@@ -1,7 +1,7 @@
 global with sharing class BatchCompHouseUpdateAccAndOfficer implements Database.Batchable<sObject>, Database.AllowsCallouts, Database.Stateful {
     public List<String> ids {get; set;}
     global BatchCompHouseUpdateAccAndOfficer(List<String> ids) {
-        this.ids = ids;
+        this.ids = ids; 
     }
 
     global Database.QueryLocator start(Database.BatchableContext BC){
