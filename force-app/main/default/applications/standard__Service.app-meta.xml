@@ -13,4 +13,6 @@
     <tabs>standard-Chatter</tabs>
     <tabs>standard-File</tabs>
     <tabs>Officer__c</tabs>
+    <tabs>Person_with_Significant_Control__c</tabs>
+    <tabs>Company_Collection__c</tabs>
 </CustomApplication>
