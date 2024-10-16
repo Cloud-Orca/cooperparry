@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corporate Opportunity Process</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Closed Lost</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed Won</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Date</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Flirt</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Live Enquiry</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Married %28Closed Won%29</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Proposed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Proposing</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>
