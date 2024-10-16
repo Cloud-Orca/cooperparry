@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Legal Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Limited Company</fullName>
+                <default>false</default>
+                <label>Limited Company</label>
+            </value>
+            <value>
+                <fullName>Partnership</fullName>
+                <default>false</default>
+                <label>Partnership</label>
+            </value>
+            <value>
+                <fullName>Sole Trader</fullName>
+                <default>false</default>
+                <label>Sole Trader</label>
+            </value>
+            <value>
+                <fullName>Public Limited Company</fullName>
+                <default>false</default>
+                <label>Public Limited Company</label>
+            </value>
+            <value>
+                <fullName>Limited Liability Partnership Inc</fullName>
+                <default>false</default>
+                <label>Limited Liability Partnership Inc</label>
+            </value>
+            <value>
+                <fullName>Private Unlimited Company</fullName>
+                <default>false</default>
+                <label>Private Unlimited Company</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
