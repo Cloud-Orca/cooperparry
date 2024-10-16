@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Date_of_Birth_Year__c</fullName>
+    <fullName>Fee_Email__c</fullName>
     <externalId>false</externalId>
-    <label>Date of Birth Year</label>
-    <length>255</length>
+    <label>Fee Email</label>
     <required>false</required>
-    <trackTrending>false</trackTrending>
-    <type>Text</type>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Email</type>
     <unique>false</unique>
 </CustomField>
