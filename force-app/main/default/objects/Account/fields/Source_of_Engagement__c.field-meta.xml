@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_of_Engagement__c</fullName>
+    <externalId>false</externalId>
+    <label>Source of Engagement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BD Prospect</fullName>
+                <default>false</default>
+                <label>BD Prospect</label>
+            </value>
+            <value>
+                <fullName>Client Referral</fullName>
+                <default>false</default>
+                <label>Client Referral</label>
+            </value>
+            <value>
+                <fullName>Colleague Referral</fullName>
+                <default>false</default>
+                <label>Colleague Referral</label>
+            </value>
+            <value>
+                <fullName>Cotent Piece, Event</fullName>
+                <default>false</default>
+                <label>Cotent Piece, Event</label>
+            </value>
+            <value>
+                <fullName>HUBCP CEvent</fullName>
+                <default>false</default>
+                <label>HUBCP CEvent</label>
+            </value>
+            <value>
+                <fullName>Incoming Call</fullName>
+                <default>false</default>
+                <label>Incoming Call</label>
+            </value>
+            <value>
+                <fullName>Intermediary</fullName>
+                <default>false</default>
+                <label>Intermediary</label>
+            </value>
+            <value>
+                <fullName>International</fullName>
+                <default>false</default>
+                <label>International</label>
+            </value>
+            <value>
+                <fullName>Networking</fullName>
+                <default>false</default>
+                <label>Networking</label>
+            </value>
+            <value>
+                <fullName>Partnership</fullName>
+                <default>false</default>
+                <label>Partnership</label>
+            </value>
+            <value>
+                <fullName>Self Generated</fullName>
+                <default>false</default>
+                <label>Self Generated</label>
+            </value>
+            <value>
+                <fullName>Service Line Referral</fullName>
+                <default>false</default>
+                <label>Service Line Referral</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
