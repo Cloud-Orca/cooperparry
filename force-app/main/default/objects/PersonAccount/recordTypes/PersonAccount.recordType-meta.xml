@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>cer_Customer</fullName>
+    <fullName>PersonAccount</fullName>
     <active>true</active>
-    <label>Customer</label>
+    <label>Person Account</label>
     <picklistValues>
         <picklist>AccountSource</picklist>
         <values>
@@ -525,10 +525,6 @@
         <picklist>Industry</picklist>
         <values>
             <fullName>Business Support Services</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Construction</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1652,6 +1648,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>c2g__CollectionsCommunicationPreference__pc</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>c2g__CollectionsOnHoldReason__c</picklist>
         <values>
             <fullName>Account in dispute</fullName>
@@ -1725,31 +1732,11 @@
     <picklistValues>
         <picklist>fferpcore__TaxCountryCode__c</picklist>
         <values>
-            <fullName>AE</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>AT</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>AU</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>BE</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>BG</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>CA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>CH</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1789,23 +1776,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>GB</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GR</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HK</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>HR</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HU</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1817,35 +1788,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>LU</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>LV</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MT</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MY</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NL</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NO</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NZ</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>PL</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1861,10 +1804,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>SG</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>SI</fullName>
             <default>false</default>
         </values>
@@ -1874,14 +1813,6 @@
         </values>
         <values>
             <fullName>UK</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>US</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>ZA</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1901,6 +1832,17 @@
         </values>
         <values>
             <fullName>Home</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>pse__Employment_Status__pc</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated</fullName>
             <default>false</default>
         </values>
     </picklistValues>
