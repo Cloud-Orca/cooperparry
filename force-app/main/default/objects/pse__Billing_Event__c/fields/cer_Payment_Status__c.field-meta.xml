@@ -2,8 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>cer_Payment_Status__c</fullName>
     <externalId>false</externalId>
+    <formula>cer_Sales_Invoice__r.c2g__PaymentStatus__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Payment Status</label>
-    <length>55</length>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>

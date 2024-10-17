@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_AccountIds</name>
         <label>Add to AccountIds</label>
-        <locationX>446</locationX>
-        <locationY>1166</locationY>
+        <locationX>490</locationX>
+        <locationY>1874</locationY>
         <assignmentItems>
             <assignToReference>AccountIds</assignToReference>
             <operator>Add</operator>
@@ -20,7 +20,7 @@
     <assignments>
         <name>Add_to_Milestone_Ids</name>
         <label>Add to Milestone Ids</label>
-        <locationX>270</locationX>
+        <locationX>314</locationX>
         <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>MileStoneIds</assignToReference>
@@ -36,8 +36,8 @@
     <assignments>
         <name>Multiple_Accounts_Detected</name>
         <label>Multiple Accounts Detected</label>
-        <locationX>710</locationX>
-        <locationY>1166</locationY>
+        <locationX>754</locationX>
+        <locationY>1874</locationY>
         <assignmentItems>
             <assignToReference>MultipleAccountsDetected</assignToReference>
             <operator>Assign</operator>
@@ -53,8 +53,8 @@
     <assignments>
         <name>Release_Billing_Event</name>
         <label>Release Billing Event</label>
-        <locationX>182</locationX>
-        <locationY>2024</locationY>
+        <locationX>226</locationX>
+        <locationY>2732</locationY>
         <assignmentItems>
             <assignToReference>Get.pse__Is_Released__c</assignToReference>
             <operator>Assign</operator>
@@ -69,8 +69,8 @@
     <assignments>
         <name>Save_Account_on_billing_event</name>
         <label>Save Account on billing event</label>
-        <locationX>50</locationX>
-        <locationY>1832</locationY>
+        <locationX>94</locationX>
+        <locationY>2540</locationY>
         <assignmentItems>
             <assignToReference>Get.ffpsai__Account__c</assignToReference>
             <operator>Assign</operator>
@@ -83,10 +83,35 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Are_all_billable_milestones_billed</name>
+        <label>Are all billable milestones billed?</label>
+        <locationX>50</locationX>
+        <locationY>1058</locationY>
+        <defaultConnector>
+            <targetReference>Approval_required_Message_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No milestones left</defaultConnectorLabel>
+        <rules>
+            <name>not_all_milestones_are_billed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_unbilled_Milestones</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Milestone_Details</targetReference>
+            </connector>
+            <label>not all milestones are billed</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Are_multiple_accounts_selected</name>
         <label>Are multiple accounts selected?</label>
-        <locationX>182</locationX>
-        <locationY>1508</locationY>
+        <locationX>226</locationX>
+        <locationY>2216</locationY>
         <defaultConnector>
             <targetReference>Select_Billing_Account</targetReference>
         </defaultConnector>
@@ -110,8 +135,8 @@
     <decisions>
         <name>Different_Account</name>
         <label>Different Account?</label>
-        <locationX>490</locationX>
-        <locationY>1058</locationY>
+        <locationX>534</locationX>
+        <locationY>1766</locationY>
         <defaultConnector>
             <targetReference>Multiple_Accounts_Detected</targetReference>
         </defaultConnector>
@@ -155,9 +180,41 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Is_Project_recovery_rate_below_70_and_not_approved_yest</name>
+        <label>Is Project recovery rate below 70% and not approved yes</label>
+        <locationX>226</locationX>
+        <locationY>842</locationY>
+        <defaultConnector>
+            <targetReference>Get_Milestone_Details</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_less_than_70</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get.pse__Project__r.CT_Recovery_Rate__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.7</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get.pse__Is_Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_unbilled_Milestones</targetReference>
+            </connector>
+            <label>Yes, less than 70%</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Related_To_Milestone</name>
         <label>Related To Milestone?</label>
-        <locationX>402</locationX>
+        <locationX>446</locationX>
         <locationY>458</locationY>
         <defaultConnector>
             <targetReference>For_All_Items</targetReference>
@@ -185,7 +242,7 @@
     <loops>
         <name>For_All_Items</name>
         <label>For All Items</label>
-        <locationX>182</locationX>
+        <locationX>226</locationX>
         <locationY>350</locationY>
         <collectionReference>Get_Billing_Event_Items</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -193,14 +250,14 @@
             <targetReference>Related_To_Milestone</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Get_Milestone_Details</targetReference>
+            <targetReference>Is_Project_recovery_rate_below_70_and_not_approved_yest</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
         <name>Loop_trough_Milestones</name>
         <label>Loop trough Milestones</label>
-        <locationX>182</locationX>
-        <locationY>950</locationY>
+        <locationX>226</locationX>
+        <locationY>1658</locationY>
         <collectionReference>Get_Milestone_Details</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -232,7 +289,7 @@
     <recordLookups>
         <name>Get</name>
         <label>Get Billing Event Details</label>
-        <locationX>182</locationX>
+        <locationX>226</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -253,8 +310,8 @@
     <recordLookups>
         <name>Get_Accounts</name>
         <label>Get Accounts</label>
-        <locationX>50</locationX>
-        <locationY>1616</locationY>
+        <locationX>94</locationX>
+        <locationY>2324</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Copy_1_of_Select_Billing_Account</targetReference>
@@ -274,7 +331,7 @@
     <recordLookups>
         <name>Get_Billing_Event_Items</name>
         <label>Get Billing Event Items</label>
-        <locationX>182</locationX>
+        <locationX>226</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -295,8 +352,8 @@
     <recordLookups>
         <name>Get_Milestone_Details</name>
         <label>Get Milestone Details</label>
-        <locationX>182</locationX>
-        <locationY>842</locationY>
+        <locationX>226</locationX>
+        <locationY>1550</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_trough_Milestones</targetReference>
@@ -313,18 +370,70 @@
         <object>pse__Milestone__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <description>Retrieves the remaining unbilled billable milestones</description>
+        <name>Get_unbilled_Milestones</name>
+        <label>Get unbilled Milestones</label>
+        <locationX>50</locationX>
+        <locationY>950</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Are_all_billable_milestones_billed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>NotIn</operator>
+            <value>
+                <elementReference>MileStoneIds</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get.pse__Project__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Billing_Event__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>pse__Milestone__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Billing_Event</name>
         <label>Update Billing Event</label>
-        <locationX>182</locationX>
-        <locationY>2132</locationY>
+        <locationX>226</locationX>
+        <locationY>2840</locationY>
         <inputReference>Get</inputReference>
     </recordUpdates>
     <screens>
+        <name>Approval_required_Message_Screen</name>
+        <label>Approval required Message Screen</label>
+        <locationX>138</locationX>
+        <locationY>1166</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Approvasl_Required_msg</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Approval required&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The current actual recovery rate for this project is {!Get.pse__Project__r.CT_Recovery_Rate__c}. It the recovery rate is below 70%, an additional approval is required from the responsible partner.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Please close this window and submit the billing event for approval.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Once the billing event is approved by the partner, the billing event can be released.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Copy_1_of_Select_Billing_Account</name>
         <label>Select Billing Account</label>
-        <locationX>50</locationX>
-        <locationY>1724</locationY>
+        <locationX>94</locationX>
+        <locationY>2432</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -391,8 +500,8 @@
     <screens>
         <name>Select_Billing_Account</name>
         <label>Confirm Release</label>
-        <locationX>314</locationX>
-        <locationY>1616</locationY>
+        <locationX>358</locationX>
+        <locationY>2324</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -409,7 +518,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>100</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get</targetReference>
