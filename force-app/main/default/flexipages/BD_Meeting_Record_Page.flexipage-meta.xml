@@ -72,6 +72,24 @@
                 <identifier>RecordMeeting_Declined_Reason_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Lead_Area__c</fieldItem>
+                <identifier>RecordLead_Area__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Service_Line__c</fieldItem>
+                <identifier>RecordService_Line__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.First_BD_Meeting__c</fieldItem>
+                <identifier>RecordFirst_BD_Meeting__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e3812b5a-b809-4d1d-827d-dac92a98fd9b</name>
         <type>Facet</type>
     </flexiPageRegions>

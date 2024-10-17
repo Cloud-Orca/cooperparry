@@ -19,9 +19,6 @@ export default class GetCompanies extends LightningElement {
     }
 
     onConfirmSync(){
-        this.collectionId = this.template.querySelector('lightning-input').value;
-        console.log('this.collectionId', this.collectionId);
-
         if( this.collectionId != '' && this.collectionId != null ){
             console.log('Call Apex Class');
             executeRequest({collectionId : this.collectionId})
@@ -35,17 +32,20 @@ export default class GetCompanies extends LightningElement {
     }
 
     onProceed(){
-        this.showSpinner = true;
-        this.showResults = true;
         this.collectionId = this.template.querySelector('lightning-input').value;
         console.log('this.collectionId', this.collectionId);
 
         if( this.collectionId != '' && this.collectionId != null ){
+            this.showSpinner = true;
+            this.showResults = true;
             getTotal({collectionId : this.collectionId})
             .then( result => { 
                 console.log('result', result); 
-                this.total          = result.total == null ?  0 : result.total;
-                this.showSpinner    = false;
+                this.total          = result.meta.total == null ?  0 : result.meta.total;
+                
+                // window.setTimeout(() => { 
+                    this.showSpinner    = false;
+                // }, 2000);
             }).catch(error => {
                 console.log('Error '+JSON.stringify(error));
             }); 
