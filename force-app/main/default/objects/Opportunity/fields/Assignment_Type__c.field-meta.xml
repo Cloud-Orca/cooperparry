@@ -208,6 +208,10 @@
             <valueName>THG - Early Stage</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>Law</controllingFieldValue>
+            <valueName>Law</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>THG Tax</controllingFieldValue>
             <valueName>THG - R&amp;D</valueName>
         </valueSettings>

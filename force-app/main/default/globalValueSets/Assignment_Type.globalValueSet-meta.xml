@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Big Business Audit</fullName>
+        <default>false</default>
+        <label>Big Business Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>Big Business - Audit Offshore</fullName>
+        <default>false</default>
+        <label>Big Business - Audit Offshore</label>
+    </customValue>
+    <customValue>
+        <fullName>Big Business Projects</fullName>
+        <default>false</default>
+        <label>Big Business Projects</label>
+    </customValue>
+    <customValue>
+        <fullName>Sustainability</fullName>
+        <default>false</default>
+        <label>Sustainability</label>
+    </customValue>
+    <customValue>
+        <fullName>BT HMRC Enquiries</fullName>
+        <default>false</default>
+        <label>BT HMRC Enquiries</label>
+    </customValue>
+    <customValue>
+        <fullName>BTA - Ad Hoc Advisory</fullName>
+        <default>false</default>
+        <label>BTA - Ad Hoc Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>Company structuring</fullName>
+        <default>false</default>
+        <label>Company structuring</label>
+    </customValue>
+    <customValue>
+        <fullName>EPC - BTA</fullName>
+        <default>false</default>
+        <label>EPC - BTA</label>
+    </customValue>
+    <customValue>
+        <fullName>EPC - PC</fullName>
+        <default>false</default>
+        <label>EPC - PC</label>
+    </customValue>
+    <customValue>
+        <fullName>General Tax Advice</fullName>
+        <default>false</default>
+        <label>General Tax Advice</label>
+    </customValue>
+    <customValue>
+        <fullName>International</fullName>
+        <default>false</default>
+        <label>International</label>
+    </customValue>
+    <customValue>
+        <fullName>P11Ds</fullName>
+        <default>false</default>
+        <label>P11Ds</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax Due diligence</fullName>
+        <default>false</default>
+        <label>Tax Due diligence</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax Products Aftercare</fullName>
+        <default>false</default>
+        <label>Tax Products Aftercare</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax Secondments</fullName>
+        <default>false</default>
+        <label>Tax Secondments</label>
+    </customValue>
+    <customValue>
+        <fullName>Transactions (excl DD)</fullName>
+        <default>false</default>
+        <label>Transactions (excl DD)</label>
+    </customValue>
+    <customValue>
+        <fullName>Business tax compliance</fullName>
+        <default>false</default>
+        <label>Business tax compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>iXBRL</fullName>
+        <default>false</default>
+        <label>iXBRL</label>
+    </customValue>
+    <customValue>
+        <fullName>Capital Allowance</fullName>
+        <default>false</default>
+        <label>Capital Allowance</label>
+    </customValue>
+    <customValue>
+        <fullName>Accounts Prep - East</fullName>
+        <default>false</default>
+        <label>Accounts Prep - East</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Business East</fullName>
+        <default>false</default>
+        <label>Private Business East</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Business - Offshore</fullName>
+        <default>false</default>
+        <label>Private Business East - Offshore</label>
+    </customValue>
+    <customValue>
+        <fullName>Accounts Prep - South</fullName>
+        <default>false</default>
+        <label>Accounts Prep - South</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Business South</fullName>
+        <default>false</default>
+        <label>Private Business South</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Business South - Offshore</fullName>
+        <default>false</default>
+        <label>Private Business South - Offshore</label>
+    </customValue>
+    <customValue>
+        <fullName>Accounts Prep - West</fullName>
+        <default>false</default>
+        <label>Accounts Prep - West</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Business West</fullName>
+        <default>false</default>
+        <label>Private Business West</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Business West - Offshore</fullName>
+        <default>false</default>
+        <label>Private Business West - Offshore</label>
+    </customValue>
+    <customValue>
+        <fullName>E / Tax Transactions</fullName>
+        <default>false</default>
+        <label>E / Tax Transactions</label>
+    </customValue>
+    <customValue>
+        <fullName>Employee Rewards</fullName>
+        <default>false</default>
+        <label>Employee Rewards</label>
+    </customValue>
+    <customValue>
+        <fullName>Employment Tax Advisory</fullName>
+        <default>false</default>
+        <label>Employment Tax Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>Employment Tax Compliance</fullName>
+        <default>false</default>
+        <label>Employment Tax Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>Employment Taxes</fullName>
+        <default>false</default>
+        <label>Employment Taxes</label>
+    </customValue>
+    <customValue>
+        <fullName>Fundraise</fullName>
+        <default>false</default>
+        <label>Fundraise</label>
+    </customValue>
+    <customValue>
+        <fullName>MBO</fullName>
+        <default>false</default>
+        <label>MBO</label>
+    </customValue>
+    <customValue>
+        <fullName>Not For Profit - Audit</fullName>
+        <default>false</default>
+        <label>Not For Profit - Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>Not For Profit - Internal Assurance</fullName>
+        <default>false</default>
+        <label>Not For Profit - Internal Assurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Not For Profit - Offshore</fullName>
+        <default>false</default>
+        <label>Not For Profit - Offshore</label>
+    </customValue>
+    <customValue>
+        <fullName>Not For Profit - Projects</fullName>
+        <default>false</default>
+        <label>Not For Profit - Projects</label>
+    </customValue>
+    <customValue>
+        <fullName>ES - Finance Team Support</fullName>
+        <default>false</default>
+        <label>ES - Finance Team Support</label>
+    </customValue>
+    <customValue>
+        <fullName>ES - Project Work</fullName>
+        <default>false</default>
+        <label>ES - Project Work</label>
+    </customValue>
+    <customValue>
+        <fullName>ES - Year End Compliance</fullName>
+        <default>false</default>
+        <label>ES - Year End Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>Fee Protection</fullName>
+        <default>false</default>
+        <label>Fee Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>MM - AFR External</fullName>
+        <default>false</default>
+        <label>MM - AFR External</label>
+    </customValue>
+    <customValue>
+        <fullName>MM - AFR for CP</fullName>
+        <default>false</default>
+        <label>MM - AFR for CP</label>
+    </customValue>
+    <customValue>
+        <fullName>MM - Finance Team Support</fullName>
+        <default>false</default>
+        <label>MM - Finance Team Support</label>
+    </customValue>
+    <customValue>
+        <fullName>MM - Project Work</fullName>
+        <default>false</default>
+        <label>MM - Project Work</label>
+    </customValue>
+    <customValue>
+        <fullName>Patent Box</fullName>
+        <default>false</default>
+        <label>Patent Box</label>
+    </customValue>
+    <customValue>
+        <fullName>EPC - PCA</fullName>
+        <default>false</default>
+        <label>EPC - PCA</label>
+    </customValue>
+    <customValue>
+        <fullName>PC HMRC Enquiries</fullName>
+        <default>false</default>
+        <label>PC HMRC Enquiries</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Client Advisory</fullName>
+        <default>false</default>
+        <label>Private Client Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>Trust Advisory</fullName>
+        <default>false</default>
+        <label>Trust Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>PC Compliance Add-ons</fullName>
+        <default>false</default>
+        <label>PC Compliance Add-ons</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Client Compliance</fullName>
+        <default>false</default>
+        <label>Private Client Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>Trust Compliance</fullName>
+        <default>false</default>
+        <label>Trust Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>Trustee</fullName>
+        <default>false</default>
+        <label>Trustee</label>
+    </customValue>
+    <customValue>
+        <fullName>PE Buy And Build</fullName>
+        <default>false</default>
+        <label>PE Buy And Build</label>
+    </customValue>
+    <customValue>
+        <fullName>PE Buy Side</fullName>
+        <default>false</default>
+        <label>PE Buy Side</label>
+    </customValue>
+    <customValue>
+        <fullName>PE Disposal</fullName>
+        <default>false</default>
+        <label>PE Disposal</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensions</fullName>
+        <default>false</default>
+        <label>Pensions</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensions - Offshore</fullName>
+        <default>false</default>
+        <label>Pensions - Offshore</label>
+    </customValue>
+    <customValue>
+        <fullName>Pre Sale Review</fullName>
+        <default>false</default>
+        <label>Pre Sale Review</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Company Disposal</fullName>
+        <default>false</default>
+        <label>Private Company Disposal</label>
+    </customValue>
+    <customValue>
+        <fullName>Research and development</fullName>
+        <default>false</default>
+        <label>Research and development</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Charge - Commercial</fullName>
+        <default>false</default>
+        <label>Service Charge - Commercial</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Charge - Residential</fullName>
+        <default>false</default>
+        <label>Service Charge - Residential</label>
+    </customValue>
+    <customValue>
+        <fullName>HMRC Enquiries</fullName>
+        <default>false</default>
+        <label>HMRC Enquiries</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Accounting Advisory</fullName>
+        <default>false</default>
+        <label>THG Accounting Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Accounts Preparation</fullName>
+        <default>false</default>
+        <label>THG Accounts Preparation</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Statutory Audit</fullName>
+        <default>false</default>
+        <label>THG Statutory Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Statutory Audit - Offshore</fullName>
+        <default>false</default>
+        <label>THG Statutory Audit - Offshore</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Sustainability Assurance</fullName>
+        <default>false</default>
+        <label>THG Sustainability Assurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Accounting MRR</fullName>
+        <default>false</default>
+        <label>Accounting MRR</label>
+    </customValue>
+    <customValue>
+        <fullName>Accounting One-Off</fullName>
+        <default>false</default>
+        <label>Accounting One-Off</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliance MRR</fullName>
+        <default>false</default>
+        <label>Compliance MRR</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliance One-Off</fullName>
+        <default>false</default>
+        <label>Compliance One-Off</label>
+    </customValue>
+    <customValue>
+        <fullName>Co-Sec One-Off</fullName>
+        <default>false</default>
+        <label>Co-Sec One-Off</label>
+    </customValue>
+    <customValue>
+        <fullName>Fundraising</fullName>
+        <default>false</default>
+        <label>Fundraising</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding MRR</fullName>
+        <default>false</default>
+        <label>Onboarding MRR</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding One-Off</fullName>
+        <default>false</default>
+        <label>Onboarding One-Off</label>
+    </customValue>
+    <customValue>
+        <fullName>Payroll One-Off</fullName>
+        <default>false</default>
+        <label>Payroll One-Off</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Assessment MRR</fullName>
+        <default>false</default>
+        <label>Self Assessment MRR</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Assessment One-Off</fullName>
+        <default>false</default>
+        <label>Self Assessment One-Off</label>
+    </customValue>
+    <customValue>
+        <fullName>Strategic Finance MRR</fullName>
+        <default>false</default>
+        <label>Strategic Finance MRR</label>
+    </customValue>
+    <customValue>
+        <fullName>Strategic One-Off</fullName>
+        <default>false</default>
+        <label>Strategic One-Off</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax MRR</fullName>
+        <default>false</default>
+        <label>Tax MRR</label>
+    </customValue>
+    <customValue>
+        <fullName>THG - Early Stage</fullName>
+        <default>false</default>
+        <label>THG - Early Stage</label>
+    </customValue>
+    <customValue>
+        <fullName>THG - R&amp;D</fullName>
+        <default>false</default>
+        <label>THG - R&amp;D</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Business Tax Advisory</fullName>
+        <default>false</default>
+        <label>THG Business Tax Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Business Tax Compliance</fullName>
+        <default>false</default>
+        <label>THG Business Tax Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Employee Rewards</fullName>
+        <default>false</default>
+        <label>THG Employee Rewards</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Employment Taxes</fullName>
+        <default>false</default>
+        <label>THG Employment Taxes</label>
+    </customValue>
+    <customValue>
+        <fullName>THG International</fullName>
+        <default>false</default>
+        <label>THG International</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Tax Due Diligence</fullName>
+        <default>false</default>
+        <label>THG Tax Due Diligence</label>
+    </customValue>
+    <customValue>
+        <fullName>Buy Side FDD</fullName>
+        <default>false</default>
+        <label>Buy Side FDD</label>
+    </customValue>
+    <customValue>
+        <fullName>Forecast FDD Work</fullName>
+        <default>false</default>
+        <label>Forecast FDD Work</label>
+    </customValue>
+    <customValue>
+        <fullName>Other FDD Advice</fullName>
+        <default>false</default>
+        <label>Other FDD Advice</label>
+    </customValue>
+    <customValue>
+        <fullName>Sell Side FDD</fullName>
+        <default>false</default>
+        <label>Sell Side FDD</label>
+    </customValue>
+    <customValue>
+        <fullName>Due Diligence</fullName>
+        <default>false</default>
+        <label>Due Diligence</label>
+    </customValue>
+    <customValue>
+        <fullName>Reorganisations</fullName>
+        <default>false</default>
+        <label>Reorganisations</label>
+    </customValue>
+    <customValue>
+        <fullName>Transactions</fullName>
+        <default>false</default>
+        <label>Transactions</label>
+    </customValue>
+    <customValue>
+        <fullName>IDT Advisory</fullName>
+        <default>false</default>
+        <label>IDT Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>IDT Advisory/THG</fullName>
+        <default>false</default>
+        <label>IDT Advisory/THG</label>
+    </customValue>
+    <customValue>
+        <fullName>IDT Transactions</fullName>
+        <default>false</default>
+        <label>IDT Transactions</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT Compliance</fullName>
+        <default>false</default>
+        <label>VAT Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT Contentious</fullName>
+        <default>false</default>
+        <label>VAT Contentious</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT MOT</fullName>
+        <default>false</default>
+        <label>VAT MOT</label>
+    </customValue>
+    <customValue>
+        <fullName>Law</fullName>
+        <default>false</default>
+        <label>Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Confidential</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Confidential</label>
+    </customValue>
+    <customValue>
+        <fullName>TBC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TBC</label>
+    </customValue>
+    <customValue>
+        <fullName>CP Law</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CP Law</label>
+    </customValue>
+    <masterLabel>Assignment Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
