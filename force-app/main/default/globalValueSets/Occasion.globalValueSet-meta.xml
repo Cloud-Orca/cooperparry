@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Award Win</fullName>
+        <default>false</default>
+        <label>Award Win</label>
+    </customValue>
+    <customValue>
+        <fullName>Baby</fullName>
+        <default>false</default>
+        <label>Baby</label>
+    </customValue>
+    <customValue>
+        <fullName>Birthday</fullName>
+        <default>false</default>
+        <label>Birthday</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Anniversary</fullName>
+        <default>false</default>
+        <label>Company Anniversary</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Anniversary</fullName>
+        <default>false</default>
+        <label>Personal Anniversary</label>
+    </customValue>
+    <customValue>
+        <fullName>Wedding</fullName>
+        <default>false</default>
+        <label>Wedding</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>TBC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TBC</label>
+    </customValue>
+    <masterLabel>Occasion</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

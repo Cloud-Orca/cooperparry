@@ -23,7 +23,7 @@ public with sharing class GetBeauhurstCompanies {
 
     public class Response {
         @AuraEnabled
-        public Integer total {get; set;}
+        public Meta meta {get; set;}
         @AuraEnabled
         public List<Result> results {get; set;}
     }
@@ -31,5 +31,10 @@ public with sharing class GetBeauhurstCompanies {
     public class Result {
         @AuraEnabled
         public String id {get; set;}
+    }
+
+    public class Meta {
+        @AuraEnabled
+        public Integer total {get; set;}
     }
 }
