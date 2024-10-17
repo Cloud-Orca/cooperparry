@@ -96,12 +96,6 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>pse:rm_manageUpcomingWork</componentName>
-                <identifier>pse_rm_manageUpcomingWork</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>editableFieldSetApiName</name>
                 </componentInstanceProperties>
@@ -310,6 +304,12 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
                 <identifier>flexipage_filterListCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>pse:rm_manageUpcomingWork</componentName>
+                <identifier>pse_rm_manageUpcomingWork</identifier>
             </componentInstance>
         </itemInstances>
         <name>region8</name>
