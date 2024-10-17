@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>New_or_Existing</name>
+        <label>New or Existing</label>
+        <locationX>776</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Proposal_Sent_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing</defaultConnectorLabel>
+        <rules>
+            <name>New</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Isnew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Proposal_Sent_Field</targetReference>
+            </connector>
+            <label>New</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Date_field_is_Blank</name>
+        <label>Proposal Date field is Blank</label>
+        <locationX>1018</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Proposal_Send_Date_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proposal_Date_field_is_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Send_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Update_Proposal_Send_Date_to_Today</targetReference>
+            </connector>
+            <label>Yes - Proposal Date field is Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_date_is_Blank</name>
+        <label>Proposal date is Blank</label>
+        <locationX>974</locationX>
+        <locationY>1523</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proposal_date_is_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Send_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_4_of_Update_Proposal_Send_Date_to_Today</targetReference>
+            </connector>
+            <label>Yes - Proposal date is Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Send_Date_Field</name>
+        <label>Proposal Send Date Field</label>
+        <locationX>380</locationX>
+        <locationY>923</locationY>
+        <defaultConnector>
+            <targetReference>Stage_Field</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Proposal_Send_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Send_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Proposal_Sent_Field_is_False</targetReference>
+            </connector>
+            <label>Proposal Send Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Send_Date_is_Blank</name>
+        <label>Proposal Send Date is Blank</label>
+        <locationX>182</locationX>
+        <locationY>1523</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proposal_Send_Date_is_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Send_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Proposal_Send_Date_to_Today</targetReference>
+            </connector>
+            <label>Yes- Proposal Send Date is Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Send_Date_Updated</name>
+        <label>Proposal Send Date Updated</label>
+        <locationX>1172</locationX>
+        <locationY>923</locationY>
+        <defaultConnector>
+            <targetReference>Stage_is_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proposal_Send_Date_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Send_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Send_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Proposal_Sent_is_False</targetReference>
+            </connector>
+            <label>Yes - Proposal Send Date Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Sent_Field</name>
+        <label>Proposal Sent Field</label>
+        <locationX>380</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Proposal_Send_Date_Field</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Proposal_Sent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Sent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Proposal_Sent_is_Blank</targetReference>
+            </connector>
+            <label>Proposal Sent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Sent_Field_is_False</name>
+        <label>Proposal Sent Field is False</label>
+        <locationX>226</locationX>
+        <locationY>1031</locationY>
+        <defaultConnector>
+            <targetReference>Stage_Field</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proposal_Sent_Field_is_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Sent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Proposal_Sent_to_True</targetReference>
+            </connector>
+            <label>Yes - Proposal Sent Field is False</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Sent_is_Blank</name>
+        <label>Proposal Sent Date is Blank</label>
+        <locationX>226</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Proposal_Send_Date_Field</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proposal_Sent_Date_is_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Send_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Proposal_Send_Date_to_Today</targetReference>
+            </connector>
+            <label>Yes - Proposal Sent Date is Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Sent_is_False</name>
+        <label>Proposal Sent is False</label>
+        <locationX>1018</locationX>
+        <locationY>1031</locationY>
+        <defaultConnector>
+            <targetReference>Stage_is_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proposal_Sent_is_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Sent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Update_Proposal_Sent_to_True</targetReference>
+            </connector>
+            <label>Yes - Proposal Sent is False</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Proposal_Sent_Updated</name>
+        <label>Proposal Sent Updated</label>
+        <locationX>1172</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Proposal_Send_Date_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Proposal_Sent_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Sent__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Proposal_Sent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Proposal_Date_field_is_Blank</targetReference>
+            </connector>
+            <label>Yes - Proposal Sent Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Stage_Field</name>
+        <label>Stage Field</label>
+        <locationX>380</locationX>
+        <locationY>1415</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Stage</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proposed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Proposal_Send_Date_is_Blank</targetReference>
+            </connector>
+            <label>Stage</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Stage_is_Updated</name>
+        <label>Stage is Updated</label>
+        <locationX>1172</locationX>
+        <locationY>1415</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Stage_is_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proposed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Proposal_date_is_Blank</targetReference>
+            </connector>
+            <label>Yes - Stage is Updated</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Isnew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Update Proposal Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Update Proposal Fields</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Proposal_Send_Date_to_Today</name>
+        <label>Update Proposal Send Date to Today</label>
+        <locationX>94</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Proposal_Send_Date_Field</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Proposal_Send_Date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Update_Proposal_Send_Date_to_Today</name>
+        <label>Update Proposal Send Date to Today</label>
+        <locationX>886</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Proposal_Send_Date_Updated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Proposal_Send_Date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Update_Proposal_Sent_to_True</name>
+        <label>Update Proposal Sent to True</label>
+        <locationX>886</locationX>
+        <locationY>1139</locationY>
+        <connector>
+            <targetReference>Stage_is_Updated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Proposal_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_4_of_Update_Proposal_Send_Date_to_Today</name>
+        <label>Update Proposal Send Date to Today</label>
+        <locationX>842</locationX>
+        <locationY>1631</locationY>
+        <inputAssignments>
+            <field>Proposal_Send_Date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Proposal_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Proposal_Send_Date_to_Today</name>
+        <label>Update Proposal Send Date to Today</label>
+        <locationX>50</locationX>
+        <locationY>1631</locationY>
+        <inputAssignments>
+            <field>Proposal_Send_Date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Proposal_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Proposal_Sent_to_True</name>
+        <label>Update Proposal Sent to True</label>
+        <locationX>94</locationX>
+        <locationY>1139</locationY>
+        <connector>
+            <targetReference>Stage_Field</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Proposal_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>650</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>New_or_Existing</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+OR(
+ISNEW(),
+ISCHANGED({!$Record.Proposal_Sent__c}),
+ISCHANGED({!$Record.Proposal_Send_Date__c}),
+ISCHANGED({!$Record.StageName})
+)
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

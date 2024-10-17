@@ -291,6 +291,88 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Opted_In__c</fieldItem>
+                <identifier>RecordOpted_In_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Unsubscribed__c</fieldItem>
+                <identifier>RecordUnsubscribed_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Preferences_Updated__c</fieldItem>
+                <identifier>RecordPreferences_Updated_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-024a36ee-9e88-467a-b433-6ada5fa849e3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Preferences_Updated_On__c</fieldItem>
+                <identifier>RecordPreferences_Updated_On_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Marketing_Description__c</fieldItem>
+                <identifier>RecordMarketing_Description_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b2b257e5-05ff-4239-bd02-204f2d3ff950</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-024a36ee-9e88-467a-b433-6ada5fa849e3</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column10</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b2b257e5-05ff-4239-bd02-204f2d3ff950</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-b2cd5ff1-05d5-46e7-8ff9-fc7c03c90063</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.MailingAddress</fieldItem>
                 <identifier>RecordMailingAddressField</identifier>
             </fieldInstance>
@@ -441,6 +523,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-b2cd5ff1-05d5-46e7-8ff9-fc7c03c90063</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Marketing Preferences</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection6</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -648,6 +748,9 @@
                     <name>actionNames</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>adminFilters</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>maxRecordsToDisplay</name>
                     <value>10</value>
                 </componentInstanceProperties>
@@ -670,13 +773,16 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Lead_Area__c</value>
+                            <value>Cost__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Date_Gift_Sent__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Occasion__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Date_Gift_Sent__c</value>
+                            <value>Lead_Area__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

@@ -4,7 +4,7 @@
         <name>Submit_For_Approval</name>
         <label>Submit For Approval</label>
         <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <connector>
@@ -47,7 +47,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Submit_For_Approval</targetReference>
+            <targetReference>Update_Audit_Partner_Name</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -146,6 +146,30 @@
         <object>Opportunity</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Audit_Partner_Name</name>
+        <label>Update Audit Partner Name</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Submit_For_Approval</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Audit_Partner__c</field>
+            <value>
+                <stringValue>{!get_audit_partner.User.FirstName} {!get_audit_partner.User.LastName}</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
     <screens>
         <name>error</name>
         <label>error</label>
@@ -166,7 +190,7 @@
         <name>success</name>
         <label>success</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
