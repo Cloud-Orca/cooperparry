@@ -238,7 +238,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showAddFromTemplateButton</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showAddLineSetButton</name>
@@ -270,7 +270,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showMarginPercentColumn</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showMassAdjustRatesButton</name>
@@ -282,7 +282,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showPracticeColumn</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showRefreshRatesButton</name>
@@ -530,7 +530,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>configApiName</name>
-                    <value>ffscpq__expHlPane_Estimate_Highlights</value>
+                    <value>expHlPane_Estimate_Highlights</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_highlightsPanel</componentName>
                 <identifier>fferpcore_exp_highlightsPanel</identifier>
