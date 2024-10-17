@@ -158,6 +158,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Proposal_Send_Date__c</fieldItem>
+                <identifier>RecordProposal_Send_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Days_since_the_proposal_was_sent__c</fieldItem>
                 <identifier>RecordDays_since_the_proposal_was_sent__cField</identifier>
             </fieldInstance>
