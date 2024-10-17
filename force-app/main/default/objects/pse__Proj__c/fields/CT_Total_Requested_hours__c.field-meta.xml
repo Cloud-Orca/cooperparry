@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Total_Requested_hours__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Total Requested Hours (Excluding the Assigned Hours)</inlineHelpText>
+    <label>Total Requested hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

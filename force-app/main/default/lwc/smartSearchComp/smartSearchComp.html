@@ -1,0 +1,59 @@
+<template>
+    <lightning-card>
+        <lightning-spinner style="height:100%; width:100%;" alternative-text="Loading" size="medium" if:true={isSpinner}></lightning-spinner>
+
+        <div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_small" style="padding-top:0px;">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+              <div class="slds-media__body">
+                <h2 class="slds-align_absolute-center slds-text-heading_medium">
+                    <img src={smartSearchLogo} width="400px;">
+                </h2>
+              </div>
+            </header>
+        </div>
+
+
+        <div class="slds-theme_default">
+            <div class="slds-p-around_medium">
+                <div class="slds-grid slds-wrap slds-p-horizontal_medium slds-scrollable_y" style="max-height:650px;">
+                    <template if:false={isResultScreen}>
+                        <div class="slds-col slds-size_1-of-1 slds-p-horizontal_x-large slds-p-top_x-small">
+                            <lightning-input type="text" label="First Name" variant="label-inline" placeholder="Enter First Name" name="firstName" value={firstName} onchange={handleChange} required="true"></lightning-input>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-1 slds-p-horizontal_x-large slds-p-top_x-small">
+                            <lightning-input type="text" label="Middle Name" variant="label-inline" placeholder="Enter Middle Name" name="middleName" value={middleName} onchange={handleChange}></lightning-input>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-1 slds-p-horizontal_x-large slds-p-top_x-small">
+                            <lightning-input type="text" label="Last Name" variant="label-inline" placeholder="Enter Last Name" name="lastName" value={lastName} onchange={handleChange} required="true"></lightning-input>
+                        </div>
+                    </template>
+                    <template if:true={isResultScreen}>
+                        <div class="slds-col slds-size_1-of-1 slds-p-horizontal_x-large slds-p-top_x-small slds-align_absolute-center slds-text-heading_medium">
+                            Name:&nbsp;<strong>{fullName}</strong>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-1 slds-p-horizontal_x-large slds-p-top_large slds-p-bottom_large slds-align_absolute-center slds-text-heading_medium">
+                            <template if:true={isPEPRCAIdentified}>
+                                Result:&nbsp;<strong class="slds-text-color_success">PEP / RCA Identified</strong>
+                            </template>
+                            <template if:false={isPEPRCAIdentified}>
+                                Result:&nbsp;<strong>PEP / RCA Not Identified</strong>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+                <footer class="slds-card__footer slds-text-align_right" style="width: 100%; position: fixed; margin: 14px -16px; background: #f2f2f3; border-radius: 0px 0px 4px 4px">
+                    <div class="slds-grid">
+                        <div class="slds-col_bump-left">
+                            <lightning-button variant="neutral" label="Close" onclick={cancelButton}></lightning-button>
+                            <lightning-button if:false={isResultScreen} variant="brand" class="slds-m-left_x-small" label="Search" onclick={searchButton}></lightning-button>
+                        </div>
+                    </div>
+                   
+                </footer>
+            </div>
+        </div>
+    </lightning-card>
+</template>

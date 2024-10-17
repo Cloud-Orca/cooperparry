@@ -5,35 +5,179 @@
     <label>Loss Reason</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>StageName</controllingField>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Lost to Competitor</fullName>
+                <fullName>Lost - Chemistry With Our People</fullName>
                 <default>false</default>
-                <label>Lost to Competitor</label>
+                <label>Lost - Chemistry With Our People</label>
             </value>
             <value>
-                <fullName>No Budget / Lost Funding</fullName>
+                <fullName>Lost - Overridden By Decision With 3rd Parties</fullName>
                 <default>false</default>
-                <label>No Budget / Lost Funding</label>
+                <label>Lost - Overridden By Decision With 3rd Parties</label>
             </value>
             <value>
-                <fullName>No Decision / Non-Responsive</fullName>
+                <fullName>Lost - International Network</fullName>
                 <default>false</default>
-                <label>No Decision / Non-Responsive</label>
+                <label>Lost - International Network</label>
             </value>
             <value>
-                <fullName>Price</fullName>
+                <fullName>Lost - IPO Expertise</fullName>
                 <default>false</default>
-                <label>Price</label>
+                <label>Lost - IPO Expertise</label>
             </value>
             <value>
-                <fullName>Other</fullName>
+                <fullName>Lost - Location</fullName>
                 <default>false</default>
-                <label>Other</label>
+                <label>Lost - Location</label>
+            </value>
+            <value>
+                <fullName>Lost - Other</fullName>
+                <default>false</default>
+                <label>Lost - Other</label>
+            </value>
+            <value>
+                <fullName>Lost - Price</fullName>
+                <default>false</default>
+                <label>Lost - Price</label>
+            </value>
+            <value>
+                <fullName>Lost - Sector Credentials</fullName>
+                <default>false</default>
+                <label>Lost - Sector Credentials</label>
+            </value>
+            <value>
+                <fullName>Lost - Staying with Incumbent</fullName>
+                <default>false</default>
+                <label>Lost - Staying with Incumbent</label>
+            </value>
+            <value>
+                <fullName>Lost - Technical Expertise</fullName>
+                <default>false</default>
+                <label>Lost - Technical Expertise</label>
+            </value>
+            <value>
+                <fullName>Lost - Want Big / Small Firm</fullName>
+                <default>false</default>
+                <label>Lost - Want Big / Small Firm</label>
+            </value>
+            <value>
+                <fullName>Declined - CP Business Conflict</fullName>
+                <default>false</default>
+                <label>Declined - CP Business Conflict</label>
+            </value>
+            <value>
+                <fullName>Declined - Other</fullName>
+                <default>false</default>
+                <label>Declined - Other</label>
+            </value>
+            <value>
+                <fullName>Declined - Poor Fit For CP</fullName>
+                <default>false</default>
+                <label>Declined - Poor Fit For CP</label>
+            </value>
+            <value>
+                <fullName>Declined - Timescale Delivery Unachievable</fullName>
+                <default>false</default>
+                <label>Declined - Timescale Delivery Unachievable</label>
+            </value>
+            <value>
+                <fullName>Went Away - Other</fullName>
+                <default>false</default>
+                <label>Went Away - Other</label>
+            </value>
+            <value>
+                <fullName>Went Away - Postponed</fullName>
+                <default>false</default>
+                <label>Went Away - Postponed</label>
+            </value>
+            <value>
+                <fullName>Went Away - Withdrawn</fullName>
+                <default>false</default>
+                <label>Went Away - Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Audit Rejection</fullName>
+                <default>false</default>
+                <label>Audit Rejection</label>
             </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Chemistry With Our People</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Overridden By Decision With 3rd Parties</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - International Network</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - IPO Expertise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Location</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Sector Credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Staying with Incumbent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Technical Expertise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost - Want Big / Small Firm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Declined - CP Business Conflict</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Declined - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Declined - Poor Fit For CP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Declined - Timescale Delivery Unachievable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Went Away - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Went Away - Postponed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Went Away - Withdrawn</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

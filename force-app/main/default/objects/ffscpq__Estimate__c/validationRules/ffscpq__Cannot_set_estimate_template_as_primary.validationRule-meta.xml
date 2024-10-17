@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Cannot_set_estimate_template_as_primary</fullName>
+    <active>true</active>
+    <description>Error message when setting an estimate template as primary.</description>
+    <errorConditionFormula>(ffscpq__Is_Template__c = true &amp;&amp; ffscpq__Is_Primary__c = true)</errorConditionFormula>
+    <errorDisplayField>ffscpq__Is_Primary__c</errorDisplayField>
+    <errorMessage>Estimate templates cannot be marked as primary.</errorMessage>
+</ValidationRule>

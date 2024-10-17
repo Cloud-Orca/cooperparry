@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffrrwksp__RevenueRecognizedLast2Months</fullName>
+    <booleanFilter>(1 OR 2) AND (3 OR 4)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>ffrr__RecognizedDate__c</columns>
+    <columns>ffrr__Period__c</columns>
+    <columns>ffrr__Description__c</columns>
+    <columns>ffrr__GroupedBy__c</columns>
+    <columns>ffrr__TotalIncomeStatement__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffrr__RecognizedDate__c</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <filters>
+        <field>ffrr__RecognizedDate__c</field>
+        <operation>equals</operation>
+        <value>LAST_MONTH</value>
+    </filters>
+    <filters>
+        <field>ffrr__Status__c</field>
+        <operation>equals</operation>
+        <value>Committed</value>
+    </filters>
+    <filters>
+        <field>ffrr__Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <label>Revenue Recognized - Last 2 Months</label>
+    <language>en_US</language>
+</ListView>

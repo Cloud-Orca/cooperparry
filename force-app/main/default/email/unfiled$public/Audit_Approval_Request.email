@@ -1,0 +1,15 @@
+Hi {!Opportunity.Audit_Partner__c},
+
+We have a new Opportunity that needs your Approval.  Please can you review the details below.
+Opportunity Name: {!Opportunity.Name}
+Account Name: {!Opportunity.Account}
+Opportunity Area: {!Opportunity.Opportunity_Area__c}
+Opportunity Type Area: {!Opportunity.Opportunity_Type_Area__c}
+Assignment Type: {!Opportunity.Assignment_Type__c}
+
+To view:  {!Opportunity.Link}
+To approve or reject this request, simply reply to this email with ‘Approve’ or ‘Reject’, or include these words in your response with any additional comments
+
+Kind regards,
+
+Salesforce
