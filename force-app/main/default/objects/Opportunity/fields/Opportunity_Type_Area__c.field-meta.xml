@@ -91,5 +91,9 @@
             <controllingFieldValue>BSO</controllingFieldValue>
             <valueName>THG Early Stage</valueName>
         </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Law</controllingFieldValue>
+            <valueName>Law</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

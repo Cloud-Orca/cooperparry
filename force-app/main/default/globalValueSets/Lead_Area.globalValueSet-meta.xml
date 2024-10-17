@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Audit</fullName>
+        <default>false</default>
+        <label>Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax</fullName>
+        <default>false</default>
+        <label>Tax</label>
+    </customValue>
+    <customValue>
+        <fullName>Deals</fullName>
+        <default>false</default>
+        <label>Deals</label>
+    </customValue>
+    <customValue>
+        <fullName>BSO</fullName>
+        <default>false</default>
+        <label>BSO</label>
+    </customValue>
+    <customValue>
+        <fullName>Law</fullName>
+        <default>false</default>
+        <label>Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Total Law</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Total Law</label>
+    </customValue>
+    <customValue>
+        <fullName>TBC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TBC</label>
+    </customValue>
+    <masterLabel>Lead Area</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

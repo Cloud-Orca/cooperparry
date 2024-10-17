@@ -157,6 +157,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Beauhurst_ID__c</fieldItem>
                 <identifier>RecordBeauhurst_ID__cField</identifier>
             </fieldInstance>

@@ -125,6 +125,78 @@
                 <identifier>RecordFinance_Department_Email_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Lifecycle_Coordinator__c</fieldItem>
+                <identifier>RecordLifecycle_Coordinator__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Has_the_current_adviser_been_advised_in__c</fieldItem>
+                <identifier>RecordHas_the_current_adviser_been_advised_in__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.If_No_please_confirm_action_to_be_taken__c</fieldItem>
+                <identifier>RecordIf_No_please_confirm_action_to_be_taken__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Has_the_source_of_introduction_been_esta__c</fieldItem>
+                <identifier>RecordHas_the_source_of_introduction_been_esta__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.regpick12__c</fieldItem>
+                <identifier>Recordregpick12__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.regpick13__c</fieldItem>
+                <identifier>Recordregpick13__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.regpick14__c</fieldItem>
+                <identifier>Recordregpick14__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.regpick15__c</fieldItem>
+                <identifier>Recordregpick15__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.auditpartnername__c</fieldItem>
+                <identifier>Recordauditpartnername__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.advisorypartnername__c</fieldItem>
+                <identifier>Recordadvisorypartnername__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.auditpartnerdate__c</fieldItem>
+                <identifier>Recordauditpartnerdate__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.advisorypartnerdate__c</fieldItem>
+                <identifier>Recordadvisorypartnerdate__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-16273c18-ef10-47b7-a78f-9261a67bb438</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -191,7 +263,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Group_Code__c</fieldItem>
+                <fieldItem>Record.Client_Group__c</fieldItem>
                 <identifier>RecordGroup_Code_cField</identifier>
             </fieldInstance>
         </itemInstances>
