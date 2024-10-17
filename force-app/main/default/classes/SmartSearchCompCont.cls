@@ -96,11 +96,9 @@ public class SmartSearchCompCont {
                         }
                     }
 
-                    if(isPEP || isRCA){
-                        Case caseToUpdate = new Case(Id = recordId);
-                        caseToUpdate.PEP_RCA_Identified__c = true;
-                        update caseToUpdate;
-                    }
+                    Case caseToUpdate = new Case(Id = recordId);
+                    caseToUpdate.PEP_RCA_Identified__c = (isPEP || isRCA) ? true: false;
+                    update caseToUpdate;
 
                     if(isUpdateAccessToken){
                         updateSmartSearchAccessToken(smartSearchAPIList.get(0).Id, accessToken);

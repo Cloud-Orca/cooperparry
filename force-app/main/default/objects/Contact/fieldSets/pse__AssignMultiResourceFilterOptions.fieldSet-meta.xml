@@ -512,15 +512,5 @@
         <isRequired>false</isRequired>
     </availableFields>
     <description>This field set is used to add custom fields to the Filter Options section on the Mass Assign Resources To Project page, the Assign Resource page, and to the Resource Filter Lightning component.</description>
-    <displayedFields>
-        <field>CT_Remote__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>CT_Has_Own_Transport__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
     <label>Assign Multiple Resources to Project Filter Options</label>
 </FieldSet>
