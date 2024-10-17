@@ -10,7 +10,6 @@
     <columns>pse__Region__c</columns>
     <columns>pse__Practice__c</columns>
     <columns>pse__Group__c</columns>
-    <columns>pse__Resource_Role__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CONTACT.RECORDTYPE</field>
