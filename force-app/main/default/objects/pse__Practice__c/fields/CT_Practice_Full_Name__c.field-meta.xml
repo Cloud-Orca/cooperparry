@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Practice_Full_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(pse__Hierarchy_Depth__c, 
+0,  Name , 
+1,   pse__Parent_Practice__r.Name + &quot; / &quot; + Name ,
+2,   pse__Global_Practice__r.Name + &quot; / &quot; + pse__Parent_Practice__r.Name + &quot; / &quot; + Name,
+3,   pse__Global_Practice__r.Name + &quot; / &quot; + pse__Parent_Practice__r.pse__Parent_Practice__r.Name + &quot; / &quot; + pse__Parent_Practice__r.Name + &quot; / &quot; + Name,
+     pse__Global_Practice__r.Name + &quot; / &quot; + pse__Parent_Practice__r.pse__Parent_Practice__r.pse__Parent_Practice__r.Name+ &quot; / &quot; + pse__Parent_Practice__r.pse__Parent_Practice__r.Name + &quot; / &quot; + pse__Parent_Practice__r.Name + &quot; / &quot; + Name)</formula>
+    <label>Practice Full Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

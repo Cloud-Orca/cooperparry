@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Distance_Threshold_Is_Positive</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISNULL(pse__Distance_Threshold__c)),pse__Distance_Threshold__c &lt; 0)</errorConditionFormula>
+    <errorMessage>The maximum distance must be a positive number or zero.</errorMessage>
+</ValidationRule>

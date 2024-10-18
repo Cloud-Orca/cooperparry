@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Update_Planned_Hours</name>
+        <label>Update Planned Hours</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Planned_Hours__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TotalHours</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>TotalHours</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.CT_Requested_Hours__c} + {!$Record.CT_Assigned_Hours__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Update Planned Hours {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CT Update Planned Hours</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Planned_Hours</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>CT_Assigned_Hours__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CT_Requested_Hours__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>pse__Milestone__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

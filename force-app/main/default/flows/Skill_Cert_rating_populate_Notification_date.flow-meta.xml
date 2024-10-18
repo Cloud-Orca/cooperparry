@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Populated_Notification_Date</name>
+        <label>Populated Notification Date</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Expiration_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Notification_date</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>Notification_date</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.CreatedDate} + 180</expression>
+    </formulas>
+    <interviewLabel>Skill/Cert rating - populate Notification date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Skill/Cert rating - populate Notification date</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Populated_Notification_Date</targetReference>
+        </connector>
+        <object>pse__Skill_Certification_Rating__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

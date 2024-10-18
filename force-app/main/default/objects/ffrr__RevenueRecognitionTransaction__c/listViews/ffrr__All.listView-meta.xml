@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffrr__All</fullName>
+    <columns>NAME</columns>
+    <columns>ffrr__RecognizedDate__c</columns>
+    <columns>ffrr__Period__c</columns>
+    <columns>ffrr__Description__c</columns>
+    <columns>ffrr__Status__c</columns>
+    <columns>ffrr__TotalBalanceSheet__c</columns>
+    <columns>ffrr__TotalLineAmortizedBalanceSheet__c</columns>
+    <columns>ffrr__Currency__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>link_FFA_id__c</columns>
+    <columns>link_FFA_state__c</columns>
+    <columns>link_FFA_errors__c</columns>
+    <columns>JournalDate__c</columns>
+    <columns>JournalStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

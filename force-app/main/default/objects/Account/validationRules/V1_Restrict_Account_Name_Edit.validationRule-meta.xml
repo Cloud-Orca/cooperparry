@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V1_Restrict_Account_Name_Edit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ISCHANGED(Name),
+TEXT(Type) = &apos;Client&apos;,
+AND(NOT($Permission.Client_Account_Edit),  $Profile.Name != &quot;System Administrator&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Client Name cannot be modified. Please contact your system administrator</errorMessage>
+</ValidationRule>

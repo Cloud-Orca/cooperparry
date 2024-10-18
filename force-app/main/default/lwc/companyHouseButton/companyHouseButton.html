@@ -1,0 +1,951 @@
+<template>
+    <article class="slds-card">
+        <div class="spinner">
+            <template if:true={isLoading}>
+                <div class="spinner-container-outer slds-m-vertical_x-small">
+                    <lightning-spinner variant="brand" size="medium"> </lightning-spinner>
+                  </div>
+            </template>
+        </div>
+
+        <div class="slds-card__header slds-grid">
+
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+              <div class="slds-media__body">
+                <h2 class="slds-align_absolute-center slds-text-heading_medium">
+                    <span style="font-weight: bold;">Companies House</span>
+                </h2>
+              </div>
+            </header>
+          </div>
+
+        <div class="slds-theme_default">
+            <div class="slds-p-around_medium">
+                <lightning-progress-indicator style="pointer-events:none;" class="custom-css" type="path" current-step={selectedStep} variant="base">
+                    <lightning-progress-step label="Search" value="Step1">
+                    </lightning-progress-step>
+                    <!-- onstepfocus={selectStep1}  -->
+                    <lightning-progress-step label="Company" value="Step2">
+                    </lightning-progress-step>
+                    <!-- onstepfocus={selectStep7}  -->
+                    <lightning-progress-step label="Files Selection" value="Step3">
+                    </lightning-progress-step>
+                    <!-- onstepfocus={selectStep2}  -->
+                    <lightning-progress-step label="People" value="Step4">
+                    </lightning-progress-step>
+                    <!-- onstepfocus={selectStep6}  -->
+                    <lightning-progress-step label="PSC" value="Step5">
+                    </lightning-progress-step>
+                    <!-- onstepfocus={selectStep3}  -->
+                    <lightning-progress-step label="Conflict" value="Step6">
+                    </lightning-progress-step>
+                    <!-- onstepfocus={selectStep4}  -->
+                    <lightning-progress-step label="Review" value="Step7">
+                    </lightning-progress-step>
+                    <!-- onstepfocus={selectStep5}  -->
+                </lightning-progress-indicator>
+                
+                <section class="card-section" style="max-height: 30rem;">
+                    <!-- STEP 1 : COMPANY SEARCH START -->
+                    <template if:true={stepSearchDetails}>
+                        <div class="slds-p-around_medium lgc-bg">
+                            <!-- pattern={inputPattern} message-when-pattern-mismatch={inputErrorMessage} -->
+                            <lightning-input class={showError} type="text" label={searchCompLabel} value={searchCompanyValue} onchange={handleCompanySearchChange} onkeydown={handleKeyDown}  placeholder={searchCompPlaceholder}></lightning-input>
+                            <template if:true={showErrorOnSearch}>
+                                <div class="slds-form-element__help" style="color:red;">{errorCompMessage}</div>
+                            </template>
+                        </div>
+                        <!-- Toggle Switch -->
+                        <div class="slds-p-around_medium lgc-bg">
+                            <div class="slds-form-element">
+                                <label class="slds-checkbox_toggle slds-grid">
+                                <span class="slds-form-element__label slds-m-bottom_none">Search with Company Number</span>
+                                <input type="checkbox" checked={checked} onchange={changeToggle} name="checkbox-toggle-16" value="checkbox-toggle-16" aria-describedby="checkbox-toggle-16" />
+                                <span id="checkbox-toggle-16" class="slds-checkbox_faux_container" aria-live="assertive">
+                                    <span class="slds-checkbox_faux"></span>
+                                    <span class="slds-checkbox_on">Enabled</span>
+                                    <span class="slds-checkbox_off">Disabled</span>
+                                </span>
+                                </label>
+                            </div>
+                        </div>
+                    </template>
+                    <!-- STEP 1 : COMPANY SEARCH END -->
+
+                    <!-- STEP 2 : COMPANY DISPLAY START -->
+                    <template if:true={stepCompanyDetails}>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_12-of-12 slds-m-vertical_medium" style="background-color: #f3f3f3; padding: 12px; border-radius: 12px;">
+                                <div class="slds-grid">
+                                    <!-- HEADERS -->
+                                    <div class="slds-col slds-size_1-of-12 slds-text-align_center">
+                                    </div>
+                                    <div class="slds-col slds-size_3-of-12 slds-text-align_center">
+                                        <strong>Company</strong>
+                                    </div>
+                                    <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                                        <strong>Status</strong>
+                                    </div>
+                                    <div class="slds-col slds-size_3-of-12 slds-text-align_center">
+                                        <strong>Number</strong>
+                                    </div>
+                                    <div class="slds-col slds-size_3-of-12 slds-text-align_center">
+                                        <strong>Address</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ROWS -->
+                            <div style="height: 250px;" class="slds-col slds-size_12-of-12 slds-m-vertical_medium">
+                                <template if:true={results}>
+                                    <template for:each={results} for:item="company">
+                                        <div key={company.company_number} class="slds-col slds-size_12-of-12 slds-m-vertical_medium">
+                                            <div class="slds-grid slds-grid_vertical-align-center slds-p-around_medium people-border">
+                                                <div class="slds-col slds-size_1-of-12 slds-text-align_center">
+                                                    <span class="slds-radio">
+                                                        <input type="radio" id={company.company_number} value={company.company_number} name="options" tabindex="-1" onchange={handleClickCompany} checked={company.isChecked}/>
+                                                        <label class="slds-radio__label" for={company.company_number}>
+                                                            <span class="slds-radio_faux"></span>
+                                                            <span class="slds-form-element__label slds-assistive-text">Select {company.title}</span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-12 slds-text-align_center">
+                                                    {company.title}
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-12 slds-text-align_center" style="text-transform:uppercase">
+                                                    {company.company_status}
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-12 slds-text-align_center">
+                                                    {company.company_number}
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-12 slds-text-align_left" style="padding-bottom: 12px;" title={company.address_snippet}>
+                                                    {company.address_snippet}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <!-- STEP 2 : COMPANY DISPLAY END -->
+
+                    <!-- STEP 3 : Files Selection Start-->
+                    <template if:true={stepFilesSelection}>
+                        <div style="height: 300px;">
+                            <lightning-datatable
+                                key-field="id"
+                                data={fileData}
+                                columns={fileColumns}
+                                onrowselection={handleRowSelection}>
+                            </lightning-datatable>
+                        </div>
+                    </template>
+                    <!-- STEP 3 : Files Selection END -->
+
+                    <!-- STEP 4 : People START -->
+                    <template if:true={stepPeopleDetails}>
+                        <div style="height: 250px;" class="slds-col slds-size_12-of-12 slds-m-vertical_medium">
+                            <lightning-record-edit-form object-api-name="Case">
+                                <div class="slds-grid slds-gutters slds-wrap slds-grid_align-center">
+                                    <template for:each={offImportState} for:item="officerState">
+                                        <div key={officerState.officerKey} class="slds-col slds-size_8-of-12 slds-p-around_medium people-border">
+                                            <div class="slds-grid">
+                                                <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                                                    <!-- <p class="slds-m-bottom_xx-small">{officerState.officerData.occupation}</p> -->
+                                                    <p class="slds-m-bottom_xx-small">Officer</p>
+                                                    <template lwc:if={officerState.exactMatch}>
+                                                        <template lwc:if={officerState.officerData.resigned_on}>
+                                                            <lightning-icon class="amber-icon" icon-name="action:user" size="small"></lightning-icon>
+                                                        </template>
+                                                        <template lwc:else>
+                                                            <lightning-icon icon-name="action:user" size="small"></lightning-icon>
+                                                        </template>
+                                                    </template>
+                                                    <template lwc:else>
+                                                        <template lwc:if={officerState.officerData.resigned_on}>
+                                                            <lightning-icon class="amber-icon" icon-name="action:user" size="small"></lightning-icon>
+                                                        </template>
+                                                        <template lwc:else>
+                                                            <lightning-icon class="grayed-icon" icon-name="action:user" size="small"></lightning-icon>
+                                                        </template>
+                                            
+                                                    </template>
+                                                </div>
+                                                <div class="slds-col slds-size_5-of-12">
+                                                    <div class="width-fit-content div-center">
+                                                        <p><strong>Full Name</strong></p>
+                                                        <p>{officerState.officerData.name}</p>
+                                                        <!-- <p>{officerState.officerData.occupation}</p> -->
+                                                        <!-- <p>Date Of Birth : {officerState.officerDateOfBirth}</p> -->
+                                                        <template lwc:if={officerState.exactMatch}>
+                                                            <!-- EMPTY -->
+                                                        </template>
+                                                        <template lwc:else>
+                                                            <div>
+                                                                <span class="slds-radio">
+                                                                    <input type="radio" id={officerState.importAction.ids.donotId} value="doNotImport" name={officerState.officerKey} tabindex="-1" onchange={handleImportOptClicked} aria-describedby="error-message-id-51" checked/>
+                                                                    <label class="slds-radio__label" for={officerState.importAction.ids.donotId}>
+                                                                    <span class="slds-radio_faux"></span>
+                                                                    <span class="slds-form-element__label">Do Not Import</span>
+                                                                    </label>
+                                                                </span>
+                                                                <!-- Do Not Import -->
+                                                            </div>
+                                                            <div>
+                                                                <span class="slds-radio slds-size_1-of-1">
+                                                                    <input type="radio" id={officerState.importAction.ids.searchanotherId} value="searchAnother" name={officerState.officerKey} tabindex="-1" onchange={handleImportOptClicked} aria-describedby="error-message-id-51"/>
+                                                                    <label class="slds-radio__label" for={officerState.importAction.ids.searchanotherId}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">Search Another Match</span>
+                                                                    </label>
+                                                                    <template lwc:if={officerState.importAction.values.searchAnother}>
+                                                                        <div class="slds-p-vertical_x-small">
+                                                                            <lightning-input-field variant="label-hidden" field-name="ContactId" data-officer-key={officerState.officerKey} onchange={handleRecordSelection}></lightning-input-field>
+                                                                        </div>
+                                                                    </template>
+                                                                </span>
+                                                                <!-- Search Another Match -->
+                                                            </div>
+                                                            <div>
+                                                                <span class="slds-radio">
+                                                                    <input type="radio" id={officerState.importAction.ids.createId} value="createNew" name={officerState.officerKey} tabindex="-1" onchange={handleImportOptClicked} aria-describedby="error-message-id-51" />
+                                                                    <label class="slds-radio__label" for={officerState.importAction.ids.createId}>
+                                                                    <span class="slds-radio_faux"></span>
+                                                                    <span class="slds-form-element__label">Create New Officer</span>
+                                                                    </label>
+                                                                </span>
+                                                                <!-- Create New Contact -->
+                                                            </div>
+                                                            <template if:true={officerState.closeMatches}>
+                                                                <div key={officerState.officerKey} class="slds-align_absolute-center slds-p-top_small">Match with</div>
+                                                                <div>
+                                                                    <template for:each={officerState.closeMatches} for:item="closeMatchData">
+                                                                        <div key={closeMatchData.id}>
+                                                                            <span class="slds-radio slds-p-top_x-small">
+                                                                                <div>
+                                                                                    <input type="radio" id={closeMatchData.id} value="matchContact" name={officerState.officerKey} tabindex="-1" onchange={handleImportOptClicked} aria-describedby="error-message-id-51"/>
+                                                                                    <label class="slds-radio__label" for={closeMatchData.id}>
+                                                                                        <span class="slds-radio_faux"></span>
+                                                                                        <span class="slds-form-element__label">{closeMatchData.name}</span>
+                                                                                        <lightning-button-icon 
+                                                                                            variant="bare" 
+                                                                                            icon-name="utility:info" 
+                                                                                            data-record-id={closeMatchData.id}
+                                                                                            data-officer-key={closeMatchData.officerKey}
+                                                                                            onmouseout={handleMouseout} 
+                                                                                            onmouseover={handleMouseover}
+                                                                                            class="slds-p-horizontal_xxx-small">
+                                                                                        </lightning-button-icon>
+                                                                                        <div style="display:none; position:absolute; opacity:0" class={closeMatchData.className}>
+                                                                                            <c-compact-layout-on-hover 
+                                                                                                record-id={closeMatchData.id} 
+                                                                                                contact-name={closeMatchData.name} 
+                                                                                                field-values={closeMatchData.fieldValues}
+                                                                                            ></c-compact-layout-on-hover>
+                                                                                        </div>
+                                                                                        <br>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </span>
+                                                                        </div>
+                                                                    </template>
+                                                                    <!-- Show Top 5 matches -->
+                                                                </div>
+                                                            </template>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-12 slds-text-align_center">
+                                                    <p><strong>Birthday</strong></p>
+                                                    <template lwc:if={officerState.officerDateOfBirth}>
+                                                        <p>{officerState.officerDateOfBirth}</p>
+                                                    </template>
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                                                    <p><strong>Status</strong></p>
+                                                    <template lwc:if={officerState.officerData.resigned_on}>
+                                                        <p>Resigned</p>
+                                                    </template>
+                                                    <template lwc:else>
+                                                        <p>Active</p>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </lightning-record-edit-form>
+                        </div>
+                    </template>
+                    <!-- STEP 4 : People END -->
+
+                    <!-- STEP 5 : PSC START -->
+                    <template if:true={stepPSC}>
+                        <div class="steppsc__wrapper slds-col slds-size_12-of-12 slds-m-vertical_medium">
+                            <lightning-record-edit-form object-api-name="Officer__c">
+                                <div class="slds-grid slds-gutters slds-wrap slds-grid_align-center">
+                                    <template for:each={pscData} for:item="item">
+                                        <div key={item.Id} class="slds-col slds-size_8-of-12 slds-p-around_medium people-border">
+                                            <div class="slds-grid">
+                                                <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                                                    <p class="slds-m-bottom_xx-small">Officer</p>
+                                                    <lightning-icon icon-name="action:user" size="small"></lightning-icon>
+                                                </div>
+                                                <div class="slds-col slds-size_5-of-12">
+                                                    <div>
+                                                        <p><strong>Full Name</strong></p>
+                                                        <p>{item.fullName}</p>
+                                                        <template if:true={item.isActive}>
+                                                            <div class="do-not__import">
+                                                                <lightning-input data-identifier={item.Id} value="doNotImport" type="radio" label="Do Not Import" name={item.Id} onchange={handleImportPSC} checked></lightning-input>
+                                                            </div>
+                                                            <div>
+                                                                <span class="slds-radio slds-size_1-of-1">
+                                                                    <lightning-input data-identifier={item.Id} value="searchExisting" type="radio" label="Search Another Match" name={item.Id} onchange={handleImportPSC}></lightning-input>
+                                                                    <template if:true={item.importData.isMatch}>
+                                                                        <div class="slds-p-vertical_x-small">
+                                                                            <lightning-input-field data-identifier={item.Id} variant="label-hidden" field-name="Person_with_Significant_Control__c" onchange={handleRecordSelect}></lightning-input-field>
+                                                                        </div>
+                                                                    </template>
+                                                                </span>
+                                                            </div>
+                                                            <div>
+                                                                <lightning-input data-identifier={item.Id} value="createNew" type="radio" label="Create New Officer" name={item.Id} onchange={handleImportPSC}></lightning-input>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-12">
+                                                    <p><strong>Birthday</strong></p>
+                                                    <p>{item.birthdate}</p>
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                                                    <p><strong>Status</strong></p>
+                                                    <p>{item.status}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </lightning-record-edit-form>
+                        </div>
+                    </template>
+                    <!-- STEP 5 : REVIEW END -->
+                    
+                    <!-- STEP 6 : REVIEW START -->
+                    <template if:true={stepConflictDetails}>
+                        <template if:true={matchHasNoConflict}>
+                            <div class="slds-var-p-vertical_medium slds-var-p-horizontal_xx-large slds-align_absolute-center slds-size_1-of-1">
+                                <!-- Account Information -->
+                                <div class="conflict-details-account">
+                                    <div class="slds-grid">
+                                        <div class="slds-size_1-of-1 text-right">
+                                            <div class="slds-show_inline-block slds-is-relative" style="top: -10px;"> 
+                                                <lightning-icon icon-name="standard:account" alternative-text="Account" title="Account"></lightning-icon>
+                                            </div>
+                                            <div class="slds-show_inline-block slds-m-left_medium">
+                                                <div>{accountName}</div>
+                                                <div>
+                                                    <p>All Companies fields can be mapped successfully on {accountName}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:false={matchHasNoConflict}>
+                            <template if:true={mismatchFields}>
+                                <template for:each={mismatchFields} for:item="row">
+                                    <div key={row.sfOfficerKey} class="slds-var-p-horizontal_xx-large slds-align_absolute-center slds-size_1-of-1">
+                                        <!-- Contact Information -->
+                                        <template lwc:if={row.hasConflict}>
+                                            <div class="slds-var-m-around_x-small conflict-details-account">
+                                                <div class="slds-grid slds-wrap">
+                                                    <div class="slds-size_1-of-1 text-right">
+                                                        <div class="slds-show_inline-block"> 
+                                                            <lightning-icon icon-name="standard:contact" alternative-text="Officer" title="Officer"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-show_inline-block slds-m-left_medium">{row.sfName}</div>
+                                                    </div>
+                                                        
+                                                    <template lwc:if={row.mismatchedFields}>
+                                                        <!-- MISMATCH HEADER START -->
+                                                        <!-- <div class="slds-col slds-size_2-of-12">
+
+                                                        </div>
+                                                        <div class="slds-col slds-size_5-of-12 slds-text-align_center">
+                                                            <p><b>Contact</b></p>
+                                                        </div>
+                                                        <div class="slds-col slds-size_5-of-12 slds-text-align_center">
+                                                            <p><b>Companies House</b></p>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-12">
+
+                                                        </div>
+                                                        <div class="slds-col slds-size_5-of-12 slds-text-align_center">
+                                                            <lightning-input type="radio" id={row.sfSelectedId} data-contact-id={row.sfId} name="selectAll" label="Select All" onchange={handleSelectAllChange} class="selectAllRadio"></lightning-input>
+                                                        </div>
+                                                        <div class="slds-col slds-size_5-of-12 slds-text-align_center">
+                                                            <lightning-input type="radio" id={row.chSelectedId} data-contact-id={row.sfId} name="selectAll" label="Select All" onchange={handleSelectAllChange} class="selectAllRadio"></lightning-input>
+                                                        </div> -->
+                                                        <!-- MISMATCH HEADER END -->
+                                                        
+                                                        <!-- <template for:each={row.mismatchedFields} for:item="mismatchedField">
+                                                            <div key={mismatchedField.mismatchId} class="slds-col slds-size_1-of-1 slds-m-vertical_x-small">
+                                                                <div class="slds-grid slds-grid_vertical-align-center radio-style">
+                                                                    <div class="slds-size_2-of-12">
+                                                                        <p class="slds-text-heading_small">{mismatchedField.fieldName}</p>
+                                                                    </div>
+                                                                    <div class="slds-size_5-of-12">
+                                                                        <div class="slds-text-align_left slds-var-m-around_x-small">
+                                                                            <span class="slds-radio">
+                                                                                <input class="contactFields" type="radio" id={mismatchedField.sfRbId} value={mismatchedField.sfValue} name={mismatchedField.mismatchId} data-api-name={mismatchedField.fieldApi} data-field-name={mismatchedField.fieldName} data-contact-id={row.sfId} onchange={conflictOnChangeContact} checked/>
+                                                                                <label class="slds-radio__label" for={mismatchedField.sfRbId}>
+                                                                                    <span class="slds-radio_faux"></span>
+                                                                                    <span class="slds-form-element__label">{mismatchedField.sfValue}</span>
+                                                                                </label>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="slds-size_5-of-12">
+                                                                        <div class="slds-text-align_left slds-m-around_x-small">
+                                                                            <span class="slds-radio">
+                                                                                <input class="companiesHouseFields" type="radio" id={mismatchedField.compRbId} value={mismatchedField.compHouseValue} name={mismatchedField.mismatchId} data-api-name={mismatchedField.fieldApi} data-field-name={mismatchedField.fieldName} data-contact-id={row.sfId} onchange={conflictOnChangeContact} />
+                                                                                <label class="slds-radio__label" for={mismatchedField.compRbId}>
+                                                                                    <span class="slds-radio_faux"></span>
+                                                                                    <span class="slds-form-element__label">{mismatchedField.compHouseValue}</span>
+                                                                                </label>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </template> -->
+                                                        <table style="table-layout: fixed;" class="slds-table slds-table_bordered slds-table_cell-buffer slds-m-top_small">
+                                                            <thead >
+                                                                <tr class="slds-text-title_caps" >
+                                                                    <th scope="col" ></th>
+
+                                                                    <th scope="col" >
+                                                                        <!-- <lightning-icon icon-name="standard:contact" class="slds-icon-standard-contact margin slds-icon_container" >
+                                                                            <span style="--sds-c-icon-color-background: var(--slds-c-icon-color-background, rgb(88, 103, 232))" part="boundary">
+                                                                                <div class="slds-show_inline-block">
+                                                                                    <lightning-icon icon-name="standard:contact" size="xx-small"></lightning-icon>
+                                                                                </div>
+                                                                            <span class="slds-assistive-text">Contact</span>
+                                                                            </span>
+                                                                        </lightning-icon> -->
+                                                                        <span class="slds-p-left_xx-small slds-p-top_xx-small">Officer</span>
+                                                                    </th>
+
+                                                                    <th scope="col" >
+                                                                        <!-- <lightning-icon icon-name="custom:custom16" class="slds-icon-custom-custom16 margin slds-icon_container" >
+                                                                            <span style="--sds-c-icon-color-background: var(--slds-c-icon-color-background, rgb(233, 175, 103))" part="boundary">
+                                                                                <div class="slds-show_inline-block">
+                                                                                    <lightning-icon icon-name="custom:custom16" size="xx-small"></lightning-icon>
+                                                                                </div>
+                                                                            <span class="slds-assistive-text">Companies House</span>
+                                                                            </span>
+                                                                        </lightning-icon> -->
+                                                                        <span class="slds-p-left_xx-small slds-p-top_xx-small">Companies House</span>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody >
+
+                                                                <tr>
+                                                                    <th scope="row">
+                                                                        <p class="slds-text-title_caps"></p>
+                                                                    </th>
+                                                                    <td>
+                                                                        <div style="display:flex">
+                                                                            <lightning-input type="radio" id={row.sfSelectedId} data-contact-id={row.sfId} name="selectAll" label="" onchange={handleSelectAllChange} class="selectAllRadio"></lightning-input>
+                                                                            <span style="margin-left: -4px;">Select All</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div style="display:flex">
+                                                                            <lightning-input type="radio" id={row.chSelectedId} data-contact-id={row.sfId} name="selectAll" label="" onchange={handleSelectAllChange} class="selectAllRadio"></lightning-input>
+                                                                            <span style="margin-left: -4px;">Select All</span>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>     
+
+
+                                                            <template for:each={row.mismatchedFields} for:item="mismatchedField">
+                                                                <tr key={mismatchedField.mismatchId} class="slds-col slds-size_1-of-1 slds-m-vertical_x-small">
+                                                                    <th scope="row" data-label="Account Name" >
+                                                                        <p class="slds-text-title_caps">{mismatchedField.fieldName}</p>
+                                                                    </th>
+                                                                    <td>
+                                                                        <span class="slds-line-clamp">
+                                                                            <input class="contactFields" type="radio" id={mismatchedField.sfRbId} value={mismatchedField.sfValue} name={mismatchedField.mismatchId} data-api-name={mismatchedField.fieldApi} data-field-name={mismatchedField.fieldName} data-contact-id={row.sfId} onchange={conflictOnChangeContact}/>
+                                                                            <span>
+                                                                                <lightning-formatted-text class="slds-p-left_xx-small" value={mismatchedField.sfValue}></lightning-formatted-text>
+                                                                            </span>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="slds-line-clamp">
+                                                                            <input class="companiesHouseFields" type="radio" id={mismatchedField.compRbId} value={mismatchedField.compHouseValue} name={mismatchedField.mismatchId} data-api-name={mismatchedField.fieldApi} data-field-name={mismatchedField.fieldName} data-contact-id={row.sfId} onchange={conflictOnChangeContact} />
+                                                                            <span>
+                                                                                <lightning-formatted-text class="slds-p-left_xx-small" value={mismatchedField.compHouseValue}></lightning-formatted-text>
+                                                                            </span>
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </template>
+                                                            </tbody>
+                                                        </table>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </template>                
+                                    </div>
+                                </template>
+                            </template>
+                        </template>
+                    </template>
+                    <!-- STEP 6 : REVIEW END -->
+                    
+                    <!-- STEP 7 : REVIEW START -->
+                    <template if:true={stepReviewDetails}>
+                        <div class="slds-p-vertical_medium slds-p-horizontal_xx-large slds-align_absolute-center slds-size_1-of-1"
+                            style="display: inline-grid; height: 100px;">
+                            <div class="slds-section slds-size_1-of-1" data-id="0">
+                                <!--section header-->
+                                <h3 class="slds-section__title">
+                                    <button type="button" aria-controls="0" class="slds-button slds-size_1-of-1" data-buttonid="0" onclick={toggleExplandableSection}>
+                                        <lightning-icon class="slds-section__title-action-icon slds-button__icon_left" icon-name="utility:switch" alternative-text="button icon" size="x-small" ></lightning-icon>
+                                        <span class="slds-truncate" title="Account">
+                                            {accountName}
+                                        </span>
+                                    </button>
+                                </h3>
+                                <!--section body-->
+                                <div class="slds-section__content">
+                                    <div class="slds-grid slds-wrap field-val-section">
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p><b>Field</b></p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p><b>Value</b></p>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Legal Name</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.company_name}</p>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Number</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.company_number}</p>
+                                        </div>
+                                        <!--<div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Status</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.company_status}</p>
+                                        </div> -->
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Type</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.type}</p>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Date of Creation</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.date_of_creation}</p>
+                                        </div>
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>SIC Codes</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.sic_codes}</p>
+                                        </div> -->
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Street</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.registered_office_address}>
+                                                <p>{compData.registered_office_address.address_line_1}</p>
+                                            </template>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>City</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.registered_office_address}>
+                                                <p>{compData.registered_office_address.locality}</p>
+                                            </template>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>State</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.registered_office_address}>
+                                                <p>{compData.registered_office_address.region}</p>
+                                            </template>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Postal Code</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.registered_office_address}>
+                                                <p>{compData.registered_office_address.postal_code}</p>
+                                            </template>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Country</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.registered_office_address}>
+                                                <p>{compData.registered_office_address.country}</p>
+                                            </template>
+                                        </div>
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Confirmation Statement Overdue</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.confirmation_statement}>
+                                                <p>{compData.confirmation_statement.overdue}</p>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Confirmation Statement Next Made Up To</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.confirmation_statement}>
+                                                <p>{compData.confirmation_statement.next_made_up_to}</p>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Confirmation Statement Next Due</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.confirmation_statement}>
+                                                <p>{compData.confirmation_statement.next_due}</p>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Confirmation Statement Last Made Up To</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.confirmation_statement}>
+                                                <p>{compData.confirmation_statement.last_made_up_to}</p>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Has Insolvency History</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.has_insolvency_history}</p>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Undeliverable Registered Office Address</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.undeliverable_registered_office_address}</p>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Registered Office Is In Dispute</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.registered_office_is_in_dispute}</p>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Jurisdiction</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.jurisdiction}</p>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Accounts Next Due</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <p>{compData.accounts.next_due}</p>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Accounts Period End On</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <template lwc:if={compData.accounts.next_accounts}>
+                                                    <p>{compData.accounts.next_accounts.period_end_on}</p>
+                                                </template>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Accounts Due On</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <template lwc:if={compData.accounts.next_accounts}>
+                                                    <p>{compData.accounts.next_accounts.due_on}</p>
+                                                </template>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Accounts Period Start On</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <template lwc:if={compData.accounts.next_accounts}>
+                                                    <p>{compData.accounts.next_accounts.period_start_on}</p>
+                                                </template>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Accounts Overdue</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <template lwc:if={compData.accounts.next_accounts}>
+                                                    <p>{compData.accounts.next_accounts.overdue}</p>
+                                                </template>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Last Accounts Type</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <template lwc:if={compData.accounts.last_accounts}>
+                                                    <p>{compData.accounts.last_accounts.type}</p>
+                                                </template>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Last Accounts Period Start On</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <template lwc:if={compData.accounts.last_accounts}>
+                                                    <p>{compData.accounts.last_accounts.period_start_on}</p>
+                                                </template>
+                                            </template>
+                                        </div> -->
+                                        <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Last Accounts Made Up To</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <template lwc:if={compData.accounts.last_accounts}>
+                                                    <p>{compData.accounts.last_accounts.made_up_to}</p>
+                                                </template>
+                                            </template>
+                                        </div>
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Last Accounts Period End On</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <template lwc:if={compData.accounts}>
+                                                <template lwc:if={compData.accounts.last_accounts}>
+                                                    <p>{compData.accounts.last_accounts.period_end_on}</p>
+                                                </template>
+                                            </template>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company Has Charges</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.has_charges}</p>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Etag</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.etag}</p>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small"> -->
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        <!-- </div> -->
+                                        <!-- <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Has Super Secure PSCS</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.has_super_secure_pscs}</p>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small"> -->
+                                            <!-- EMPTY DIV FOR INDENTION -->
+                                        <!-- </div> -->
+                                        <!-- <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Can file</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.can_file}</p>
+                                        </div> -->
+                                        <!-- <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                                                EMPTY DIV FOR INDENTION 
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>Company  Officer Link</p>
+                                        </div>
+                                        <div class="slds-col slds-size_5-of-12 slds-m-vertical_xx-small">
+                                            <p>{compData.links.officers}</p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <template for:each={allContactsForReview} for:item="review">
+                                <div key={review.Id} class="slds-section slds-is-open" data-id={review.Id}>
+                                    <!--section header-->
+                                    <h3 class="slds-section__title">
+                                        <button type="button" aria-controls="1" class="slds-button slds-size_1-of-1" data-buttonid={review.Id} onclick={toggleExplandableSection}>
+                                            <lightning-icon class="slds-section__title-action-icon slds-button__icon_left" icon-name="utility:switch" alternative-text="button icon" size="x-small" ></lightning-icon>
+                                            <span class="slds-truncate" title="Account">
+                                                <lightning-icon class="slds-m-horizontal_x-small" icon-name="standard:contact" alternative-text="Contact" title="Officer"></lightning-icon>
+                                                <div class="slds-show_inline-block slds-m-left_medium">{review.FullName}</div>
+                                            </span>
+                                        </button>
+                                    </h3>
+                                    <!--section body-->
+                                    <div class="slds-section__content slds-var-p-horizontal_x-large">
+                                        <div class="slds-grid slds-wrap field-val-section">
+                                            <!-- Column Headers -->
+                                            <div class="slds-col slds-size_6-of-12 slds-m-vertical_xx-small">
+                                                <p><b>Field</b></p>
+                                            </div>
+                                            <div class="slds-col slds-size_6-of-12 slds-m-vertical_xx-small">
+                                                <p><b>Value</b></p>
+                                            </div>
+                                            <template for:each={review.FieldsToReview} for:item="field">
+                                                <div key={field.ApiId} class="slds-grid slds-wrap slds-size_12-of-12">
+                                                    <!-- Contact Information -->
+                                                    <div class="slds-col slds-size_6-of-12 slds-m-vertical_xx-small">
+                                                        <p>{field.ApiLabel}</p>
+                                                    </div>
+                                                    <div class="slds-col slds-size_6-of-12 slds-m-vertical_xx-small">
+                                                        <p>{field.Value}</p>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+                    <!-- STEP 7 : REVIEW END -->
+                </section>
+
+                <!-- FOOTER START -->
+                <footer class="slds-card__footer slds-text-align_right" 
+                    style="width: 100%; position: fixed; margin: 14px -16px; background: white; border-radius: 0px 0px 4px 4px;">
+                    <template if:true={isShowPrevious}>
+                        <lightning-button variant="success" class="slds-var-m-left_x-small" label="Previous" onclick={handlePrev}></lightning-button>
+                    </template>
+                    <template if:false={stepReviewDetails}>
+                        <lightning-button variant="success" class="slds-var-m-left_x-small" label="Next" onclick={handleNext}></lightning-button>
+                    </template>
+                    <template if:true={stepReviewDetails}>
+                        <lightning-button variant="success" class="slds-var-m-left_x-small" label="Finish" disabled={disableFinishBtn} onclick={handleFinish}></lightning-button>
+                    </template>
+                </footer>
+                <!-- FOOTER END -->
+            </div>
+        </div>
+    </article>
+</template>

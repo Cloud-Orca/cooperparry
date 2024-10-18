@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expense_Internal_Projects</fullName>
+    <columns>pse__Project_Manager__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Region__c</columns>
+    <columns>pse__Account__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>ffpsai__ExpenseGLACode__c</columns>
+    <columns>pse__Is_Active__c</columns>
+    <columns>pse__Closed_for_Expense_Entry__c</columns>
+    <columns>pse__Closed_for_Time_Entry__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Project_Type__c</field>
+        <operation>equals</operation>
+        <value>Internal</value>
+    </filters>
+    <filters>
+        <field>pse__Closed_for_Expense_Entry__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Expense Internal Projects</label>
+</ListView>

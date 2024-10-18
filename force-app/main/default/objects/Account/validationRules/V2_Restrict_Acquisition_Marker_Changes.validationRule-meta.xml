@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Restrict_Acquisition_Marker_Changes</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ISCHANGED( Acquisition_Marker__c ),
+NOT(ISBLANK(PRIORVALUE(Acquisition_Marker__c) )))</errorConditionFormula>
+    <errorDisplayField>Acquisition_Marker__c</errorDisplayField>
+    <errorMessage>Please contact your Salesforce Administrator to amend the values in this field</errorMessage>
+</ValidationRule>

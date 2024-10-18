@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V4_Audit_Category_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+Audit_Client__c = TRUE,
+TEXT(Type ) = &quot;Client&quot;,
+ISBLANK( Audit_Categories__c ))</errorConditionFormula>
+    <errorDisplayField>Audit_Categories__c</errorDisplayField>
+    <errorMessage>Audit Category is required when account is an audit client.</errorMessage>
+</ValidationRule>
