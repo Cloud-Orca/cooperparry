@@ -516,28 +516,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Industry</fieldItem>
-                <identifier>RecordIndustryField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.AnnualRevenue</fieldItem>
                 <identifier>RecordAnnualRevenueField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.NumberOfEmployees</fieldItem>
-                <identifier>RecordNumberOfEmployeesField2</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3aa360be-94ac-4159-806b-0a03f30c05fb</name>
@@ -596,16 +576,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Assignment_Type__c</fieldItem>
                 <identifier>RecordAssignment_Type_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Service_Line__c</fieldItem>
-                <identifier>RecordService_Line_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e0725295-6d8b-454b-8e8b-e1c3b74fdb8c</name>
@@ -872,8 +842,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Fee__c</fieldItem>
-                <identifier>RecordFee_cField</identifier>
+                <fieldItem>Record.Estimated_Fees__c</fieldItem>
+                <identifier>RecordEstimated_Fees_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -1220,16 +1190,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.NumberOfEmployees</fieldItem>
-                <identifier>RecordNumberOfEmployeesField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Website</fieldItem>
                 <identifier>RecordWebsiteField</identifier>
             </fieldInstance>
@@ -1242,6 +1202,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Top_Level_Industry_Groups__c</fieldItem>
                 <identifier>RecordTop_Level_Industry_Groups_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Top_Level_Sector_Groups__c</fieldItem>
+                <identifier>RecordTop_Level_Sector_Groups_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -1294,8 +1264,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Top_Level_Sector_Groups__c</fieldItem>
-                <identifier>RecordTop_Level_Sector_Groups_cField</identifier>
+                <fieldItem>Record.Investor_Names__c</fieldItem>
+                <identifier>RecordInvestor_Names_cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -1304,8 +1274,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Investor_Names__c</fieldItem>
-                <identifier>RecordInvestor_Names_cField2</identifier>
+                <fieldItem>Record.NumberOfEmployees</fieldItem>
+                <identifier>RecordNumberOfEmployeesField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-1293b0f2-b482-4762-9c4d-025951bf9e43</name>
@@ -1402,16 +1372,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Stage_Of_Evolution_Transitions__c</fieldItem>
-                <identifier>RecordStage_Of_Evolution_Transitions_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-bef87ed4-bbfc-4fad-82ff-2f564e157ec1</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -2121,7 +2081,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>👥 Competitor / Incumbent</value>
+                    <value>👥 Incumbent</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
