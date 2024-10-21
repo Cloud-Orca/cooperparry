@@ -719,7 +719,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>projectAssignmentActions_showSelfAssignment</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentName>pse:projectAssignmentActions</componentName>
                 <identifier>projectAssignmentActions</identifier>

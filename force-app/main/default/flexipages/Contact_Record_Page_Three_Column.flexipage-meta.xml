@@ -311,6 +311,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.pse__Group__c</fieldItem>
+                <identifier>Recordpse_Group_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.pse__Work_Calendar__c</fieldItem>
                 <identifier>Recordpse_Work_Calendar_cField</identifier>
             </fieldInstance>
@@ -323,6 +333,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.pse__Salesforce_User__c</fieldItem>
                 <identifier>Recordpse_Salesforce_User_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Default_Cost_Rate__c</fieldItem>
+                <identifier>Recordpse_Default_Cost_Rate_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-46bcb2ff-0c31-4cf3-bed9-5e22becfe2f5</name>
