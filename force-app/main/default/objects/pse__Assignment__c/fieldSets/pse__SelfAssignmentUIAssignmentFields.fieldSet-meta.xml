@@ -390,7 +390,7 @@
     <displayedFields>
         <field>pse__Role__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>pse__Is_Billable__c</field>
@@ -400,7 +400,7 @@
     <displayedFields>
         <field>pse__Milestone__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <label>SelfAssignmentUIAssignmentFields</label>
 </FieldSet>
