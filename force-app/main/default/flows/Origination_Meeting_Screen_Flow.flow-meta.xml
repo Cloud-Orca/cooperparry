@@ -154,7 +154,7 @@
         <inputAssignments>
             <field>Lead_Area__c</field>
             <value>
-                <elementReference>Lead_Area</elementReference>
+                <elementReference>Service_Line_Picklist</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -203,12 +203,6 @@
             <field>Name</field>
             <value>
                 <elementReference>MeetingName</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Service_Line__c</field>
-            <value>
-                <elementReference>Service_Line_Picklist</elementReference>
             </value>
         </inputAssignments>
         <object>BD_Meeting__c</object>
@@ -333,9 +327,9 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Fee__c</field>
+            <field>Estimated_Fees__c</field>
             <value>
-                <elementReference>Fee</elementReference>
+                <elementReference>Estimated_Fee</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -353,7 +347,7 @@
         <inputAssignments>
             <field>Lead_Area__c</field>
             <value>
-                <elementReference>Lead_Area</elementReference>
+                <elementReference>Service_Line_Picklist</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -366,12 +360,6 @@
             <field>Region__c</field>
             <value>
                 <elementReference>Region</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Service_Line__c</field>
-            <value>
-                <elementReference>Service_Line_Picklist</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -456,20 +444,11 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>Lead_Area</name>
+                    <name>Service_Line_Picklist</name>
                     <choiceReferences>PCS_LeadArea</choiceReferences>
                     <dataType>String</dataType>
-                    <fieldText>Lead Area</fieldText>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                </fields>
-                <fields>
-                    <name>Service_Line_Picklist</name>
-                    <choiceReferences>PCS_ServicelIne</choiceReferences>
-                    <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>get_Lead.Service_Line__c</elementReference>
+                        <elementReference>get_Lead.Lead_Area__c</elementReference>
                     </defaultValue>
                     <fieldText>Service Line</fieldText>
                     <fieldType>DropdownBox</fieldType>
@@ -649,15 +628,16 @@
                     <isRequired>false</isRequired>
                 </fields>
                 <fields>
-                    <name>Fee</name>
-                    <dataType>String</dataType>
+                    <name>Estimated_Fee</name>
+                    <dataType>Currency</dataType>
                     <defaultValue>
-                        <elementReference>get_Lead.Fee__c</elementReference>
+                        <elementReference>get_Lead.Estimated_Fees__c</elementReference>
                     </defaultValue>
-                    <fieldText>Fee</fieldText>
+                    <fieldText>Estimated Fee</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                    <scale>2</scale>
                 </fields>
                 <fields>
                     <name>Incumbent</name>
@@ -717,7 +697,7 @@
     <textTemplates>
         <name>Body</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;strong&gt;Target Name: &lt;/strong&gt;{!Target_Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Source: &lt;/strong&gt;{!Source}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Fee:&lt;/strong&gt; {!Fee}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Incumbent:&lt;/strong&gt; {!Incumbent}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Region:&lt;/strong&gt; {!Region}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Notes: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Notes}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;strong&gt;Target Name: &lt;/strong&gt;{!Target_Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Source: &lt;/strong&gt;{!Source}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Estimated Fee:&lt;/strong&gt; {!Estimated_Fee}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Incumbent:&lt;/strong&gt; {!Incumbent}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Region:&lt;/strong&gt; {!Region}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Notes: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Notes}&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>recordId</name>
