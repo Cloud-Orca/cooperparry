@@ -90,6 +90,18 @@
                 <behavior>Edit</behavior>
                 <field>Manager_approval_required_for_billing__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CP_Complete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Fee_Amount__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CT_Planned_Recovery_Rate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -679,8 +691,8 @@
         <fields>NAME</fields>
         <fields>pse__Resource_Role__c</fields>
         <fields>pse__Start_Date__c</fields>
-        <fields>pse__Assignment__c</fields>
         <fields>pse__End_Date__c</fields>
+        <fields>pse__Assignment__c</fields>
         <fields>pse__SOW_Hours__c</fields>
         <fields>pse__Resource__c</fields>
         <fields>pse__Staffer_Resource__c</fields>

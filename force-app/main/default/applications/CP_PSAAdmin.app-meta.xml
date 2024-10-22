@@ -22,6 +22,7 @@
     <tabs>pse__Timecard_Header__c</tabs>
     <tabs>pse__Multiple_Expense_Entry_UI</tabs>
     <tabs>pse__Expense__c</tabs>
+    <tabs>pse__Approve_Multiple_Expense_Reports</tabs>
     <tabs>ffpsai__ExpenseTypeGLAMapping__c</tabs>
     <tabs>pse__Expense_Report__c</tabs>
     <uiType>Lightning</uiType>
