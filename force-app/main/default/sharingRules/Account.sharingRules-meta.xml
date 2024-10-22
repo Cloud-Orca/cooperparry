@@ -38,23 +38,4 @@
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
-    <sharingCriteriaRules>
-        <fullName>Ring_Fenced_Accounts</fullName>
-        <accessLevel>Read</accessLevel>
-        <accountSettings>
-            <caseAccessLevel>None</caseAccessLevel>
-            <contactAccessLevel>Read</contactAccessLevel>
-            <opportunityAccessLevel>None</opportunityAccessLevel>
-        </accountSettings>
-        <label>Ring Fenced Accounts</label>
-        <sharedTo>
-            <group>Ring_Fenced</group>
-        </sharedTo>
-        <criteriaItems>
-            <field>Confidential_Account_Area__c</field>
-            <operation>equals</operation>
-            <value>Ring Fenced</value>
-        </criteriaItems>
-        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
-    </sharingCriteriaRules>
 </SharingRules>
