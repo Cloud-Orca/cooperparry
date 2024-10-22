@@ -4,11 +4,8 @@
     <columns>NAME</columns>
     <columns>RECORDTYPE</columns>
     <columns>OWNER.ALIAS</columns>
-    <columns>c2g__IntercompanyAccount__c</columns>
-    <columns>c2g__EliminationCompany__c</columns>
-    <columns>c2g__CODABaseDate1__c</columns>
-    <columns>c2g__CODADaysOffset1__c</columns>
-    <columns>c2g__CODADescription1__c</columns>
+    <columns>ffaci__CongaTemplateSalesInvoice__c</columns>
+    <columns>ffaci__CongaTemplateSalesCreditNote__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>

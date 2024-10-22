@@ -58,7 +58,8 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>Edit</actionName>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Standard</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>Edit</actionName>
@@ -86,7 +87,8 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Standard</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
@@ -128,8 +130,13 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>FFX_Billing_Event_Record_Page1</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Standard</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>TCCJournalLightningPage1</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -137,55 +144,61 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>FFX_Billing_Event_Record_Page1</content>
+        <content>TCCJournalLightningPage1</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>pse__Billing_Event_Compact_Layout</compactLayoutAssignment>
-    <customHelpPage>pse__BillingEventHelp</customHelpPage>
+    <compactLayoutAssignment>c2g__JournalCompactLayout</compactLayoutAssignment>
+    <customHelpPage>c2g__codahelpjournal</customHelpPage>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Contains billing event items prior to invoicing. Billings events, once released, often correspond with invoices in your financials system, with billing event items serving as invoice line items. Invoicing always occurs at the billing event level.</description>
+    <description>Acts as a container for a number of journal lines and provides common information about the document.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Billing Event</label>
+    <label>Journal</label>
     <nameField>
-        <displayFormat>BE-{000000}</displayFormat>
-        <label>Name</label>
+        <displayFormat>JNL{000000}</displayFormat>
+        <label>Journal Number</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Billing Events</pluralLabel>
+    <pluralLabel>Journals</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>pse__Date__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>pse__Project__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>pse__Summary_Amount__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>pse__Status__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>pse__Is_Released__c</customTabListAdditionalFields>
-        <excludedStandardButtons>New</excludedStandardButtons>
+        <customTabListAdditionalFields>c2g__Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__JournalDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Period__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Reference__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__JournalCurrency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Credits__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Debits__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__JournalStatus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__OwnerCompany__c</customTabListAdditionalFields>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Import</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>PrintableListView</excludedStandardButtons>
-        <listViewButtons>pse__Recalc</listViewButtons>
-        <listViewButtons>pse__Release</listViewButtons>
-        <listViewButtons>pse__ClearBillingData</listViewButtons>
+        <excludedStandardButtons>MassAssignRecordLabel</excludedStandardButtons>
+        <listViewButtons>c2g__Cancel_Recurring_Journals</listViewButtons>
+        <listViewButtons>c2g__Clone</listViewButtons>
+        <listViewButtons>c2g__LightningMassDiscard</listViewButtons>
+        <listViewButtons>c2g__LightningMassCancel</listViewButtons>
+        <listViewButtons>c2g__LightningMassPost</listViewButtons>
+        <searchResultsCustomButtons>c2g__Clone</searchResultsCustomButtons>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
