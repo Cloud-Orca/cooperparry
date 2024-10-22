@@ -20,10 +20,19 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>Case.Business_CAF</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Case.Client_Acceptance_Form</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Smart_Search</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Case.Risk_Team</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Case.Submit_for_Approval</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.Case.DecaFuKD000000000Q0AQ</value>
@@ -342,6 +351,36 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Case.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>ProcessSteps</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer8</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e1e6794c-9f99-4f04-9265-b753fb38ddb6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
                 </componentInstanceProperties>
@@ -425,6 +464,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-e1e6794c-9f99-4f04-9265-b753fb38ddb6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Approval</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab5</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
