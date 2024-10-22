@@ -1,0 +1,31 @@
+<messaging:emailTemplate subject="{!$Label.ffxp__Statement}" recipientType="Contact" relatedToType="c2g__codaMassEmailAccount__c">
+    <messaging:htmlEmailBody >
+        <p align="center">
+            <img src="{!relatedTo.c2g__OwnerCompany__r.c2g__LogoURL__c}"/><br/>
+            <small><apex:outputField value="{!relatedTo.c2g__OwnerCompany__r.c2g__Street__c}"/><br/>
+            <apex:outputField value="{!relatedTo.c2g__OwnerCompany__r.c2g__City__c}"/><apex:outputText value=", "/><apex:outputField value="{!relatedTo.c2g__OwnerCompany__r.c2g__StateProvince__c}"/><br/>
+            <apex:outputField value="{!relatedTo.c2g__OwnerCompany__r.c2g__ZipPostCode__c}"/><br/>
+            <apex:outputField value="{!relatedTo.c2g__OwnerCompany__r.c2g__Country__c}"/><br/>
+            <apex:outputText value="Phone: "/><apex:outputField value="{!relatedTo.c2g__OwnerCompany__r.c2g__Phone__c}"/><br/><br/></small>
+        </p>
+        <p>
+            <c:CODAFormatterExt date="{!TODAY()}"/>
+            <br/><br/>
+            <apex:outputField value="{!relatedTo.c2g__Account__r.Name}"/>
+            <br/><br/>
+            {!$Label.ffxp__DearSir}
+            <br/><br/>
+            {!$Label.ffxp__StatementEmailBodyPart1}.
+        </p>
+        <br/><br/>
+        <c:CODAStatementsTable statementInfo="{!relatedTo}"/>        
+        <br/>
+        <p>
+            {!$Label.ffxp__RemittancesEmailBodyPart2}.     
+            <br/><br/>
+            {!$Label.ffxp__Regards}
+            <br/><br/>
+            <apex:outputField value="{!relatedTo.c2g__OwnerCompany__r.Name}"/>
+        </p>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

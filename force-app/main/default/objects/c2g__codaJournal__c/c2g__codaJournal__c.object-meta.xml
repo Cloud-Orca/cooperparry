@@ -130,32 +130,32 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>cer_SalesInvoiceLightningPage1</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Standard</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>cer_SalesInvoiceLightningPage1</content>
+        <content>TCCJournalLightningPage1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>TCCJournalLightningPage1</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <customHelpPage>c2g__codahelpinvoice</customHelpPage>
+    <compactLayoutAssignment>c2g__JournalCompactLayout</compactLayoutAssignment>
+    <customHelpPage>c2g__codahelpjournal</customHelpPage>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Holds information that applies to the whole invoice such as customer account and due date.</description>
-    <enableActivities>true</enableActivities>
+    <description>Acts as a container for a number of journal lines and provides common information about the document.</description>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
@@ -166,43 +166,38 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Sales Invoice</label>
+    <label>Journal</label>
     <nameField>
-        <displayFormat>SIN{000000}</displayFormat>
-        <label>Invoice Number</label>
+        <displayFormat>JNL{000000}</displayFormat>
+        <label>Journal Number</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Sales Invoices</pluralLabel>
+    <pluralLabel>Journals</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>c2g__Account__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__InvoiceDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__JournalDate__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>c2g__Period__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__DueDate__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__InvoiceCurrency__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__InvoiceTotal__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__PrintStatus__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__InvoiceStatus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Reference__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__JournalCurrency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Credits__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Debits__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__JournalStatus__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>c2g__OwnerCompany__c</customTabListAdditionalFields>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
-        <excludedStandardButtons>MassAssignRecordLabel</excludedStandardButtons>
-        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
-        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Import</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <listViewButtons>c2g__LightningMassAmend</listViewButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Import</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
+        <excludedStandardButtons>MassAssignRecordLabel</excludedStandardButtons>
+        <listViewButtons>c2g__Cancel_Recurring_Journals</listViewButtons>
+        <listViewButtons>c2g__Clone</listViewButtons>
         <listViewButtons>c2g__LightningMassDiscard</listViewButtons>
-        <listViewButtons>c2g__LightningMassDuplicate</listViewButtons>
-        <listViewButtons>c2g__LightningMassPlaceOnHold</listViewButtons>
+        <listViewButtons>c2g__LightningMassCancel</listViewButtons>
         <listViewButtons>c2g__LightningMassPost</listViewButtons>
-        <listViewButtons>c2g__LightningMassReleaseForCollection</listViewButtons>
-        <listViewButtons>ffbext__Post</listViewButtons>
-        <lookupDialogsAdditionalFields>c2g__Account__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>c2g__Account__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>c2g__Account__c</searchFilterFields>
-        <searchResultsAdditionalFields>c2g__Account__c</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>c2g__Clone</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customButtons>Conga_Composer_Print_Sales_Invoice_PDF</customButtons>
+    <customButtons>Conga_Composer_Email_Sales_Invoice</customButtons>
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
@@ -134,11 +136,11 @@
                 <field>c2g__OutstandingValue__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>cer_Email_Sent__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>cer_Email_Sent_Date__c</field>
             </layoutItems>
         </layoutColumns>
@@ -200,7 +202,7 @@
                 <field>c2g__Dimension2__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>c2g__Dimension4__c</field>
             </layoutItems>
         </layoutColumns>
@@ -347,6 +349,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>c2g__AmendDocument</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>c2g__Post</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>1</sortOrder>
@@ -365,11 +372,6 @@
             <actionName>Clone</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>4</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>c2g__AmendDocument</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>0</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
@@ -415,6 +417,9 @@
         <fields>c2g__CreditNoteStatus__c</fields>
         <fields>c2g__OwnerCompany__c</fields>
         <relatedList>c2g__codaCreditNote__c.c2g__Invoice__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
