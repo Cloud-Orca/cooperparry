@@ -392,6 +392,31 @@
         </value>
     </choices>
     <decisions>
+        <name>Already_Completed</name>
+        <label>Already Completed?</label>
+        <locationX>314</locationX>
+        <locationY>1814</locationY>
+        <defaultConnector>
+            <targetReference>Update_Completed_Form_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Already_Completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Form.Completed_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Form_to_Complete</targetReference>
+            </connector>
+            <label>Yes - Already Completed</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Case_has_continuation_form</name>
         <label>Case has continuation form?</label>
         <locationX>314</locationX>
@@ -501,6 +526,11 @@
         <picklistObject>Opportunity</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>fullName</name>
+        <dataType>String</dataType>
+        <expression>{!$User.FirstName}&amp;&quot; &quot;&amp;{!$User.LastName}</expression>
+    </formulas>
     <interviewLabel>Case - Continuation Form {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case - Continuation Form</label>
     <processMetadataValues>
@@ -617,6 +647,57 @@
             <targetReference>Guidance_Screen</targetReference>
         </connector>
         <inputReference>varForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Form_to_Complete</name>
+        <label>Set Form to Complete</label>
+        <locationX>314</locationX>
+        <locationY>2114</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Continuation_Form_Complete__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Completed_Form_Date</name>
+        <label>Update Completed Form Date</label>
+        <locationX>402</locationX>
+        <locationY>1922</locationY>
+        <connector>
+            <targetReference>Set_Form_to_Complete</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varForm.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Completed_By__c</field>
+            <value>
+                <elementReference>fullName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Completed_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Continuation_Form__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Form1</name>
@@ -2615,6 +2696,9 @@
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Already_Completed</targetReference>
+        </connector>
         <fields>
             <name>Guidance_Screen_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -2667,7 +2751,7 @@
             <fieldText>&lt;p&gt;&lt;strong&gt;Guidance&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1. Cooper Parry procedures require that all client relationships be periodically reviewed to determine whether continuation of the relationship is appropriate.&amp;nbsp;Cooper Parry require this review to be carried out at least annually.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;2. Examples of matters which should be considered when making continuation decisions are set out in section a of this checklist.&amp;nbsp;This is not an exhaustive list and there may be other matters which are relevant to the continuation decision.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;3. The Money Laundering Regulations 2017 require periodic reassessment of the level of money laundering risk attaching to each client.&amp;nbsp;Please answer the questions in section c (for Personal Tax clients) or d (for all other clients) to assess the level of risk as either High or Normal.&amp;nbsp;The risk level should then be entered into the client’s Dynamics record in the “Money Laundering Risk Level” field which will be found on the onboarding tab (the Risk Team will add this)&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;4. The Money Laundering Regulations also require periodic review and updating of our “know your client” information.&amp;nbsp;The processes detailed in points 1 to 5 above should largely result in this requirement being met but we should consider whether there are any other matters where we need to obtain information or confirmation.&amp;nbsp;In particular, if the assessed level of money laundering risk has changed then we need to satisfy ourselves that the client due diligence information which we hold is adequate.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;5. This completed checklist and all other documentation supporting the carrying out of the procedures set out herein should be saved against the client on Dynamics.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;6. Please contact Michelle McDonald if you have any queries.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
-        <nextOrFinishButtonLabel>End</nextOrFinishButtonLabel>
+        <nextOrFinishButtonLabel>Confirm</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
