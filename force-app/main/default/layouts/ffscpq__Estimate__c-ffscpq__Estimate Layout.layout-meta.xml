@@ -39,6 +39,10 @@
                 <behavior>Readonly</behavior>
                 <field>ffscpq__Scoping_Session__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Fee_Amount__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
