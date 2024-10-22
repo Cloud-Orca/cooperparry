@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>c2g__SalesInvoiceCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>c2g__OwnerCompany__c</fields>
+    <fields>c2g__Account__c</fields>
+    <fields>c2g__InvoiceDate__c</fields>
+    <fields>c2g__DueDate__c</fields>
+    <fields>c2g__Period__c</fields>
+    <fields>c2g__InvoiceType__c</fields>
+    <label>Sales Invoice Compact Layout</label>
+</CompactLayout>

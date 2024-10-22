@@ -6,16 +6,16 @@
     <columns>c2g__InvoiceDate__c</columns>
     <columns>c2g__Period__c</columns>
     <columns>c2g__DueDate__c</columns>
-    <columns>c2g__Opportunity__c</columns>
+    <columns>ffpsai__BillingEvent__c</columns>
     <columns>c2g__InvoiceCurrency__c</columns>
     <columns>c2g__InvoiceTotal__c</columns>
     <columns>c2g__PrintStatus__c</columns>
     <columns>c2g__InvoiceStatus__c</columns>
-    <columns>c2g__DiscardReason__c</columns>
     <columns>c2g__PaymentStatus__c</columns>
     <columns>c2g__OutstandingValue__c</columns>
     <columns>c2g__OwnerCompany__c</columns>
     <columns>c2g__MatchType__c</columns>
+    <columns>c2g__Dimension4__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

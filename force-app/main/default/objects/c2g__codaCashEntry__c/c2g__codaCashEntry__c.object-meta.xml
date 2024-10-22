@@ -58,8 +58,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>Edit</actionName>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Standard</type>
+        <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>Edit</actionName>
@@ -130,32 +129,31 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>cer_SalesInvoiceLightningPage1</content>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>cer_CashEntryLightningPage1</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Standard</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>cer_SalesInvoiceLightningPage1</content>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>cer_CashEntryLightningPage1</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <customHelpPage>c2g__codahelpinvoice</customHelpPage>
+    <compactLayoutAssignment>c2g__CashEntryCompactLayout</compactLayoutAssignment>
+    <customHelpPage>c2g__codahelpcashentry</customHelpPage>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Holds information that applies to the whole invoice such as customer account and due date.</description>
-    <enableActivities>true</enableActivities>
+    <description>Stores the master details of cash and checks received from, or refunds given to, customer.</description>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
@@ -166,43 +164,30 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Sales Invoice</label>
+    <label>Cash Entry</label>
     <nameField>
-        <displayFormat>SIN{000000}</displayFormat>
-        <label>Invoice Number</label>
+        <displayFormat>CSH{00000000}</displayFormat>
+        <label>Cash Entry Number</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Sales Invoices</pluralLabel>
+    <pluralLabel>Cash Entries</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>c2g__Account__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__InvoiceDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Date__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>c2g__Period__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__DueDate__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__InvoiceCurrency__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__InvoiceTotal__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__PrintStatus__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>c2g__InvoiceStatus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Reference__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__BankAccount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__BankAccountCurrency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__NetBanked__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>c2g__Status__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>c2g__OwnerCompany__c</customTabListAdditionalFields>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
-        <excludedStandardButtons>MassAssignRecordLabel</excludedStandardButtons>
-        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
-        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Import</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <listViewButtons>c2g__LightningMassAmend</listViewButtons>
-        <listViewButtons>c2g__LightningMassDiscard</listViewButtons>
-        <listViewButtons>c2g__LightningMassDuplicate</listViewButtons>
-        <listViewButtons>c2g__LightningMassPlaceOnHold</listViewButtons>
         <listViewButtons>c2g__LightningMassPost</listViewButtons>
-        <listViewButtons>c2g__LightningMassReleaseForCollection</listViewButtons>
-        <listViewButtons>ffbext__Post</listViewButtons>
-        <lookupDialogsAdditionalFields>c2g__Account__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>c2g__Account__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>c2g__Account__c</searchFilterFields>
-        <searchResultsAdditionalFields>c2g__Account__c</searchResultsAdditionalFields>
+        <listViewButtons>c2g__LightningMassDuplicate</listViewButtons>
+        <listViewButtons>c2g__LightningMassDiscard</listViewButtons>
+        <listViewButtons>c2g__LightningMassAmend</listViewButtons>
+        <listViewButtons>c2g__LightningBackgroundPost</listViewButtons>
+        <listViewButtons>c2g__LightningMassCancel</listViewButtons>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
