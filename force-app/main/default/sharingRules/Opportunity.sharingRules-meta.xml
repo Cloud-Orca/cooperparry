@@ -3,6 +3,7 @@
     <sharingCriteriaRules>
         <fullName>Corporate_Opportunity_Rule</fullName>
         <accessLevel>Edit</accessLevel>
+        <description>Corporate Opportunity Rule</description>
         <label>Corporate Opportunity Rule</label>
         <sharedTo>
             <group>Deals_Group</group>

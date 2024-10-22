@@ -8,6 +8,7 @@
             <contactAccessLevel>Read</contactAccessLevel>
             <opportunityAccessLevel>None</opportunityAccessLevel>
         </accountSettings>
+        <description>CP Law Accounts</description>
         <label>CP Law Accounts</label>
         <sharedTo>
             <group>CP_Law</group>
@@ -27,6 +28,7 @@
             <contactAccessLevel>Edit</contactAccessLevel>
             <opportunityAccessLevel>None</opportunityAccessLevel>
         </accountSettings>
+        <description>Not Confidential Account</description>
         <label>Not Confidential Account</label>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
