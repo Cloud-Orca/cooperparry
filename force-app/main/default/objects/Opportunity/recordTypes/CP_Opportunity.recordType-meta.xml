@@ -496,8 +496,27 @@
             <fullName>Slough</fullName>
             <default>false</default>
         </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confidential_Opportunity__c</picklist>
         <values>
-            <fullName>Worcester</fullName>
+            <fullName>CP Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pensions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ring Fenced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports and Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UHNWI</fullName>
             <default>false</default>
         </values>
     </picklistValues>

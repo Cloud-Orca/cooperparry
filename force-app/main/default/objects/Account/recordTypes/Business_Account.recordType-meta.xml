@@ -404,10 +404,6 @@
             <fullName>Slough</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Worcester</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>CT_Account_access__c</picklist>
@@ -443,6 +439,21 @@
         </values>
         <values>
             <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confidential_Account_Area__c</picklist>
+        <values>
+            <fullName>CP Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confidential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ring Fenced</fullName>
             <default>false</default>
         </values>
     </picklistValues>
