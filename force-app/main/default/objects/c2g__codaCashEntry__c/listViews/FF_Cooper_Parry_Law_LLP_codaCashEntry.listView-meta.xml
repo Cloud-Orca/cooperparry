@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FF_Cooper_Parry_Law_LLP_codaCashEntry</fullName>
+    <filterScope>Queue</filterScope>
+    <label>FF Cooper Parry Law LLP</label>
+    <queue>FF_Cooper_Parry_Law_LLP</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>
