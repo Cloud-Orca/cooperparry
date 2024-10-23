@@ -4,6 +4,7 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import smartSearchLogoURL from '@salesforce/resourceUrl/smartSearchLogo';
 import searchNameToSmartSearch from '@salesforce/apex/SmartSearchCompCont.searchNameToSmartSearch';
 import getWactchlistSummary from '@salesforce/apex/SmartSearchCompCont.getWactchlistSummary';
+import getLifeCycleRole from '@salesforce/apex/SmartSearchCompCont.getLifeCycleRole';
 
 export default class SmartSearchComp extends LightningElement {
     isSpinner;
@@ -12,6 +13,8 @@ export default class SmartSearchComp extends LightningElement {
     _recordId;
     @api set recordId(value) {
         this._recordId = value;
+        this.isSpinner = true;
+        this.checkLifecyleRole();
     }
     get recordId() {
         return this._recordId;
@@ -24,7 +27,16 @@ export default class SmartSearchComp extends LightningElement {
     isResultScreen = false;
     isPEPRCAIdentified = false;
     isErrorMessage = false;
+    isDisplayLifecyleError = false;
     fullName = '';
+
+    async checkLifecyleRole(){
+        const isLifeCycleRoleExist = await getLifeCycleRole({
+            recordId: this._recordId
+        });
+        this.isDisplayLifecyleError = (!isLifeCycleRoleExist) ? true : false;
+        this.isSpinner = false;
+    }
 
     cancelButton(){
         this.dispatchEvent(new CloseActionScreenEvent());
@@ -96,5 +108,16 @@ export default class SmartSearchComp extends LightningElement {
             return validSoFar && field.checkValidity();
         }, true);
         return allValid;
+    }
+
+    searchButtonAgain(){
+        this.isResultScreen = false;
+        this.isPEPRCAIdentified = false;
+        this.isErrorMessage = false;
+        this.fullName = '';
+
+        this.firstName = '';
+        this.middleName = '';
+        this.lastName = '';
     }
 }
