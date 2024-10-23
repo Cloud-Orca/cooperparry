@@ -59,6 +59,27 @@ public with sharing class CompaniesHouseController {
         }
 
         if (response.getStatusCode() == 200) {
+            // Upload files to sharepoint
+            List<Sharepoint_API__c> sharepointAPIlist = [SELECT Id, access_token__c FROM Sharepoint_API__c LIMIT 1];
+            String accessToken = sharepointAPIlist.get(0).access_token__c;
+
+            if(!sharepointAPIlist.isEmpty()){
+                String publicFolderId = [SELECT Id, Sharepoint_Public_Folder_ID__c FROM Account WHERE Id =: recordId].Sharepoint_Public_Folder_ID__c;
+                if(publicFolderId != null){
+                    Boolean isUpdateAccessToken = false;
+                    HttpResponse httpRes = SharepointAPIUtility.uploadFileToDriveItem(accessToken, publicFolderId, name + '.pdf', response.getBodyAsBlob());
+                    if(httpRes.getStatusCode() == 401){
+                        accessToken = SharepointCompCont.getNewAccessToken();
+                        httpRes = SharepointAPIUtility.uploadFileToDriveItem(accessToken, publicFolderId, name + '.pdf', response.getBodyAsBlob());
+                        isUpdateAccessToken = true;
+                    }
+    
+                    if(isUpdateAccessToken){
+                        SharepointCompCont.updateSharepointAccessToken(sharepointAPIlist.get(0).Id, accessToken);
+                    }
+                }
+            }
+
             // Create a ContentVersion to store the PDF
             ContentVersion contentVersion = new ContentVersion();
             contentVersion.Title = name;
@@ -409,7 +430,7 @@ public with sharing class CompaniesHouseController {
         }
 
         if( pcsData.size() > 0 ){
-            createPSC(pcsData);
+            createPSC(pcsData, accountId);
         }
 
         System.debug('accountToUpdate:: ' + accountToUpdate);
@@ -417,7 +438,7 @@ public with sharing class CompaniesHouseController {
         return officersToUpdate;
     }
 
-    public static void createPSC(List<PSCWrapper> pcsData){
+    public static void createPSC(List<PSCWrapper> pcsData, String accountId){
         if(pcsData.size() > 0){
             List<Person_with_Significant_Control__c> pcss = new List<Person_with_Significant_Control__c>();
             for(PSCWrapper singlePCS : pcsData ){
@@ -432,6 +453,7 @@ public with sharing class CompaniesHouseController {
                     pcs.ETag__c = singlePCS.Id;
                     pcs.Is_Ceased__c = singlePCS.item.ceased;
                     pcs.Nationality__c = singlePCS.item.nationality;
+                    pcs.Account__c = accountId;
                     pcss.add(pcs);
                 }
             }
