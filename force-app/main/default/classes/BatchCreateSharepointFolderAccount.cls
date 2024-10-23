@@ -30,9 +30,18 @@ global class BatchCreateSharepointFolderAccount implements Database.Batchable<sO
                     String folderId = (String) responseMap.get('id');
                     accRec.Sharepoint_Folder_ID__c = folderId;
 
-                    SharepointAPIUtility.createNewFolderFromDriveId(accessToken, folderId, 'Public Folder');
-                    SharepointAPIUtility.createNewFolderFromDriveId(accessToken, folderId, 'Secure Folder');
-                  
+                    HttpResponse httpRes2 = SharepointAPIUtility.createNewFolderFromDriveId(accessToken, folderId, 'Public Folder');
+                    if(httpRes2.getStatusCode() == 200 || httpRes2.getStatusCode() == 201){
+                        responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes2.getBody());
+                        accRec.Sharepoint_Public_Folder_ID__c = (String) responseMap.get('id');
+                    } 
+
+                    httpRes2 = SharepointAPIUtility.createNewFolderFromDriveId(accessToken, folderId, 'Secure Folder');
+                    if(httpRes2.getStatusCode() == 200 || httpRes2.getStatusCode() == 201){
+                        responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes2.getBody());
+                        accRec.Sharepoint_Secure_Folder_ID__c = (String) responseMap.get('id');
+                    } 
+                    
                     if(isUpdateAccessToken){
                         updateSharepointAccessToken(sharepointAPIlist.get(0).Id, accessToken);
                     }
