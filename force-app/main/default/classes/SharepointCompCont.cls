@@ -22,6 +22,16 @@ public class SharepointCompCont {
     }
 
     @AuraEnabled
+    public static Boolean getSecurePublicGroup(){
+        try {
+            List<GroupMember> secureGroupMember = [SELECT Id, GroupId, Group.Name, UserOrGroupId FROM GroupMember WHERE Group.Name = 'Secure Public Group' AND UserOrGroupId =: UserInfo.getUserId()];
+            return !secureGroupMember.isEmpty();
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+
+    @AuraEnabled
     public static List<DriveItemDetails> getPathDriveItems(Id recordId){
         try {
             String driveItemId = [SELECT Id, Sharepoint_Folder_ID__c FROM Account WHERE Id =: recordId].Sharepoint_Folder_ID__c;
@@ -192,8 +202,8 @@ public class SharepointCompCont {
         @AuraEnabled public String createdByName;
         @AuraEnabled public String currentDriveItemId;
 
-        @AuraEnabled public UserInfo createdBy;
-        @AuraEnabled public UserInfo lastModifiedBy;
+        @AuraEnabled public UserInfoDetail createdBy;
+        @AuraEnabled public UserInfoDetail lastModifiedBy;
         @AuraEnabled public ParentInfo parentReference;
     }
 
@@ -201,7 +211,7 @@ public class SharepointCompCont {
         @AuraEnabled public Decimal childCount;
     }
 
-    public class UserInfo{
+    public class UserInfoDetail{
         public UserDetails user;
     }
 

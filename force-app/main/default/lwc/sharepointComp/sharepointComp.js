@@ -4,6 +4,7 @@ import getPathDriveItems from '@salesforce/apex/SharepointCompCont.getPathDriveI
 import getDriveItemId from '@salesforce/apex/SharepointCompCont.getDriveItemId';
 import getChildrenFromDriveId from '@salesforce/apex/SharepointCompCont.getChildrenFromDriveId';
 import uploadDocument from '@salesforce/apex/SharepointCompCont.uploadDocument';
+import getSecurePublicGroup from '@salesforce/apex/SharepointCompCont.getSecurePublicGroup';
 
 export default class SharepointComp extends LightningElement {
     @api recordId;
@@ -18,9 +19,14 @@ export default class SharepointComp extends LightningElement {
     originalDriveItemId;
 
     showDriveItemBlank = false;
+    isUserInSecureGroup;
 
-    connectedCallback() {
+    async connectedCallback() {
         this.isSpinner = true;
+        const isUserInSecureGroup = await getSecurePublicGroup({});
+        console.log(isUserInSecureGroup);
+        this.isUserInSecureGroup = isUserInSecureGroup;
+
         this.getPathDriveItems();
         this.getDriveItemId();
     }
@@ -46,15 +52,22 @@ export default class SharepointComp extends LightningElement {
 
             let self = this;
             let driveItemId;
+            let finaldriveItemList = [];
+            let isUserInSecureGroup = this.isUserInSecureGroup;
             if(driveItemList){
                 driveItemList.forEach(function(driveItem){
                     driveItem.iconName = (driveItem.isFolder) ? 'doctype:folder' : self.getIconName(driveItem.name);
                     driveItemId =  driveItem.currentDriveItemId;
+
+                    if(driveItem.name == 'Secure Folder' && !isUserInSecureGroup) {
+                        return;
+                    }
+                    finaldriveItemList.push(driveItem);
                 });
             }
             
-            this.rootItems = driveItemList;
-            this.currentItems = driveItemList;
+            this.rootItems = finaldriveItemList;
+            this.currentItems = finaldriveItemList;
             this.driveItemId = driveItemId;
             this.originalDriveItemId = driveItemId;
             console.log('@@@ this.driveItemId: ' + this.driveItemId);

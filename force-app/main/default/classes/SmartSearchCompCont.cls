@@ -110,6 +110,20 @@ public class SmartSearchCompCont {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled
+    public static Boolean getLifeCycleRole(Id recordId){
+        try {
+            Id accountId = [SELECT Id, AccountId FROM Case WHERE Id =: recordId].AccountId;
+            if(accountId != null){
+                List<AccountTeamMember> accTeamMemberLifeCycle = [SELECT Id FROM AccountTeamMember WHERE AccountId =: accountId AND TeamMemberRole = 'Lifecycle Coordinator'];
+                return !accTeamMemberLifeCycle.isEmpty();
+            }
+            return false;
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
    
     public class AccessTokenResponse{
         public AccessTokenDetails meta;
