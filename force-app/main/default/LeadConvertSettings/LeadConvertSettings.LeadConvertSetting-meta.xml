@@ -84,16 +84,16 @@
             <outputField>Employee_Count_Range__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Estimated_Fees__c</inputField>
+            <outputField>Estimated_Fees__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Export__c</inputField>
             <outputField>Export__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Filing_Date__c</inputField>
             <outputField>Filing_Date__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Founder_Female_Percentage__c</inputField>
-            <outputField>Founder_Female_Percentage__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Fundraising_Id__c</inputField>
@@ -114,6 +114,10 @@
         <mappingFields>
             <inputField>Incorporated_To__c</inputField>
             <outputField>Incorporated_To__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Incumbent__c</inputField>
+            <outputField>Incumbent__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Industries__c</inputField>
@@ -156,6 +160,10 @@
             <outputField>Net_Assets__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Notes__c</inputField>
+            <outputField>Notes__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Officer_Name__c</inputField>
             <outputField>Officer_Name__c</outputField>
         </mappingFields>
@@ -180,6 +188,10 @@
             <outputField>Project_End_Date__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Founder_Female_Percentage__c</inputField>
+            <outputField>Founder_Female_Percentage__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Project_Grants_Total_Gbp__c</inputField>
             <outputField>Project_Grants_Total_GBP__c</outputField>
         </mappingFields>
@@ -194,6 +206,10 @@
         <mappingFields>
             <inputField>Purposes_Of_Funding__c</inputField>
             <outputField>Purposes_Of_Funding__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Region__c</inputField>
+            <outputField>Region__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Registered_Name__c</inputField>
@@ -260,6 +276,10 @@
             <outputField>Started_Tracking_At__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Target_Markets__c</inputField>
+            <outputField>Target_Markets__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Top_Level_Industry_Groups__c</inputField>
             <outputField>Top_Level_Industry_Groups__c</outputField>
         </mappingFields>
@@ -306,10 +326,6 @@
         <mappingFields>
             <inputField>Valuation_Gbp__c</inputField>
             <outputField>Valuation_GBP__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Target_Markets__c</inputField>
-            <outputField>Target_Markets__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Year_End_Date__c</inputField>
