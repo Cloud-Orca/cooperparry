@@ -339,12 +339,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LeadSource</field>
-            <value>
-                <elementReference>Source</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Lead_Area__c</field>
             <value>
                 <elementReference>Service_Line_Picklist</elementReference>
@@ -616,18 +610,6 @@
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
-                    <name>Source</name>
-                    <choiceReferences>PCS_LeadSource</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>get_Lead.LeadSource</elementReference>
-                    </defaultValue>
-                    <fieldText>Source</fieldText>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <fields>
                     <name>Estimated_Fee</name>
                     <dataType>Currency</dataType>
                     <defaultValue>
@@ -697,7 +679,7 @@
     <textTemplates>
         <name>Body</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;strong&gt;Target Name: &lt;/strong&gt;{!Target_Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Source: &lt;/strong&gt;{!Source}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Estimated Fee:&lt;/strong&gt; {!Estimated_Fee}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Incumbent:&lt;/strong&gt; {!Incumbent}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Region:&lt;/strong&gt; {!Region}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Notes: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Notes}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;strong&gt;Target Name: &lt;/strong&gt;{!Target_Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Estimated Fee:&lt;/strong&gt; {!Estimated_Fee}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Incumbent:&lt;/strong&gt; {!Incumbent}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Region:&lt;/strong&gt; {!Region}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Notes: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Notes}&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>recordId</name>
