@@ -10,22 +10,16 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>CP - PSA Admin</label>
+    <label>CP - PSA Finance</label>
     <navType>Standard</navType>
     <tabs>CP_Services_Delivery_Workspace</tabs>
     <tabs>CP_Project_Management_Workspace</tabs>
-    <tabs>CP_Work_Planner</tabs>
-    <tabs>Work_Planner1</tabs>
     <tabs>CP_Resource_Management_Workspace</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>pse__Proj__c</tabs>
-    <tabs>pse__Resource_Request__c</tabs>
-    <tabs>pse__Timecard_Header__c</tabs>
-    <tabs>pse__Multiple_Expense_Entry_UI</tabs>
-    <tabs>pse__Expense__c</tabs>
-    <tabs>pse__Approve_Multiple_Expense_Reports</tabs>
     <tabs>ffpsai__ExpenseTypeGLAMapping__c</tabs>
     <tabs>pse__Expense_Report__c</tabs>
+    <tabs>standard-ProcessInstanceWorkitem</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>CP_PSA_Admin_UtilityBar</utilityBar>
+    <utilityBar>CP_PSA_Finance_UtilityBar</utilityBar>
 </CustomApplication>
