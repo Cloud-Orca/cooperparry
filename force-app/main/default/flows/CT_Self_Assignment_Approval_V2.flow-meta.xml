@@ -4,7 +4,7 @@
         <name>Submit_for_Approval</name>
         <label>Submit for Approval</label>
         <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -23,7 +23,7 @@
         <name>Set_PM_on_Assignment</name>
         <label>Set PM on Assignment</label>
         <locationX>182</locationX>
-        <locationY>323</locationY>
+        <locationY>431</locationY>
         <assignmentItems>
             <assignToReference>PMID</assignToReference>
             <operator>Assign</operator>
@@ -46,7 +46,7 @@
         <name>No_PM_for_Project</name>
         <label>No PM</label>
         <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>{!No_PM_Error_Message}</errorMessage>
             <isFieldError>false</isFieldError>
@@ -56,7 +56,7 @@
         <name>PMID_is_Null</name>
         <label>PMID is Null</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>Needs_Approval</targetReference>
         </defaultConnector>
@@ -107,10 +107,32 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <name>Add_Role</name>
+        <label>Add Role</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Set_PM_on_Assignment</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>pse__Is_Billable__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Role__c</field>
+            <value>
+                <elementReference>$Record.pse__Resource__r.pse__Resource_Role__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Needs_Approval</name>
         <label>Needs Approval</label>
         <locationX>314</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Submit_for_Approval</targetReference>
         </connector>
@@ -138,7 +160,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Set_PM_on_Assignment</targetReference>
+            <targetReference>Add_Role</targetReference>
         </connector>
         <filterFormula>{!$Record.CreatedById}={!$Record.pse__Resource__r.pse__Salesforce_User__r.Id}</filterFormula>
         <object>pse__Assignment__c</object>
