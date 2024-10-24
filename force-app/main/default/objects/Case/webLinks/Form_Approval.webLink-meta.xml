@@ -16,5 +16,5 @@
     <protected>false</protected>
     <showsLocation>false</showsLocation>
     <showsStatus>false</showsStatus>
-    <url>/flow/submitCAFFormApproval?recordId={!Case.Id}&amp;retURL={!Case.Id}</url>
+    <url>/flow/Case_Submit_For_CAF_Form_Approval?recordId={!Case.Id}&amp;retURL={!Case.Id}</url>
 </WebLink>
