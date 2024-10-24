@@ -490,6 +490,7 @@
         </connector>
         <filterFormula>AND(NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
 ISCHANGED({!$Record.StageName}),
+{!$Record.Account.Do_Not_Create_Case__c} = false,
 TEXT({!$Record.StageName}) = &quot;Married (Closed Won)&quot;)</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
