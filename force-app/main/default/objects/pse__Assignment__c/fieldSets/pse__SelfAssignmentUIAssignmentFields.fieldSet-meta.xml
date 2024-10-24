@@ -142,6 +142,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>pse__Is_Billable__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>pse__Location__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -292,6 +297,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>pse__Role__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </availableFields>
+    <availableFields>
         <field>pse__Schedule_Updated__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -387,16 +397,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <description>Used on the Self Assignments page, which users see when they click the Self Assignment link on the sidebar. Use to define additional input columns on this page.</description>
-    <displayedFields>
-        <field>pse__Role__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>pse__Is_Billable__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
     <displayedFields>
         <field>pse__Milestone__c</field>
         <isFieldManaged>false</isFieldManaged>

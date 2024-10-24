@@ -6,7 +6,27 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>CP_PSAAdmin</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>CP_PSA_Finance</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>CP_Services_Forecasting</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>FFX_Accounts_Receivable</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>ffscpq__Services_CPQ_Lightning</application>
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
@@ -27,6 +47,10 @@
         <apexClass>dlrs_pse_Resource_RequestTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>dlrs_pse_Timecard_HeaderTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -36,6 +60,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.CT_Finance_Hold__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Is_Onboarded__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -75,6 +104,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Contact.cer_Finance_Contact__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.pse__Resource_Role__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -96,6 +130,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.CT_Expected_Start_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Fee_Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -486,6 +525,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaCashEntry__c.ffcash__DerivePeriod__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaCompany__c.ffps_psffae__AutoPostFFADocument__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -951,6 +995,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaCreditNote__c.cer_Auto_Post__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNote__c.cer_Email_Sent_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNote__c.cer_Email_Sent__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1585,13 +1639,18 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>c2g__codaInvoice__c.cer_Email_Sent_Date__c</field>
+        <field>c2g__codaInvoice__c.cer_Email_Sales_Invoice_Batch__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
+        <field>c2g__codaInvoice__c.cer_Email_Sent_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sent__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2520,6 +2579,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ffscpq__Estimate_Line_Set__c.CT_MS_Bill_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffscpq__Estimate__c.CT_Expected_Recovery_Rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ffscpq__Estimate__c.CT_Fee_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ffscpq__Estimate__c.ffscpq__Account__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2792,6 +2866,11 @@
         <editable>true</editable>
         <field>pse__Assignment__c.CT_PM_User_Record__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Assignment__c.CT_Self_Assignment_Milestone__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -3366,6 +3445,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Billing_Event__c.cer_Payment_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Billing_Event__c.cer_Sales_Invoice__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4205,6 +4289,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Milestone__c.CP_Complete__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Milestone__c.CT_Assigned_Hours__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -4261,6 +4350,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Milestone__c.FFX_Rev_Rec_Sales_RRGLA__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.Milestone_Fee_Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5015,6 +5109,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Missing_Timecard__c.pse__Date_Timecard_Entered__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Missing_Timecard__c.pse__Include_Sublevels__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Missing_Timecard__c.pse__Missing_Timecard_Calculation__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Missing_Timecard__c.pse__Resource__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Practice__c.CT_Allow_Time_Without_Assignment__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -5040,8 +5154,18 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CP_Complete__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.CT_Close_to_Cost_Budget__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Fee_Amount__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -5056,6 +5180,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Percent_Complete_Budget__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Planned_Recovery_Rate__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6455,7 +6584,82 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Skill_Certification_Rating__c.pse__Approval_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Certification_Source__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__External_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Group__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Hierarchy_Key_Path__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Hierarchy_Level__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Hierarchy_Path__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Parent_Category__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Parent_Hierarchy_Level__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Parent_Record_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Record_Type_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Resource_Roles__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Skill_Or_Certification__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Skill__c.pse__Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill__c.pse__Unique_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6964,6 +7168,10 @@
         <layout>Accounting_Information__c-Accounting Information Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Contact-Contact Layout</layout>
+        <recordType>Contact.CRM_Contact</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Contact-FFX PSA Resource Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -6984,10 +7192,23 @@
         <layout>asp04__Authorisation__c-asp04__Authorisation Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>asp04__Payment__c-asp04__Payment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>asp04__Payment__c-asp04__Payment Layout</layout>
+        <recordType>asp04__Payment__c.asp04__Inbound</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>asp04__Refund__c-asp04__Refund Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>c2g__codaBankAccount__c-c2g__Bank Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>c2g__codaCashEntry__c-c2g__Cash Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>c2g__codaInvoiceLineItem__c-FFX Sales Invoice Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>c2g__codaInvoice__c-FFX Sales Invoice Layout</layout>
@@ -7003,6 +7224,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>fferpcore__MessagingPublication__c-fferpcore__Messaging System Publication Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ffscpq__Estimate_Line_Set__c-ffscpq__Estimate Line Set Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ffscpq__Estimate_Role_Request__c-ffscpq__Estimate Role Request Layout</layout>
@@ -7044,7 +7268,14 @@
         <layout>pse__Skill_Certification_Rating__c-pse__Skill %2F Certification Rating Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>pse__Skill__c-FFX PSA Skill Layout</layout>
+        <recordType>pse__Skill__c.pse__Skill</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>pse__Timecard_Header__c-FFX PSA Timecard Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>pse__Timer_Session__c-pse__Timer Session Layout</layout>
     </layoutAssignments>
     <recordTypeVisibilities>
         <default>true</default>
@@ -7084,6 +7315,11 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>c2g__codaPayment__c.Inbound</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>false</default>
         <recordType>pse__Skill__c.pse__Category</recordType>
         <visible>false</visible>
@@ -7099,6 +7335,10 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
+        <tab>CP_Project_Management_Workspace</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>CP_Resource_Management_Workspace</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -7107,11 +7347,31 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>CP_Work_Planner</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Project_Management_Workspace</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Services_Revenue_Forecasting_Workspace1</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Work_Planner1</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Work_Planner_v2</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>c2g__codaCashEntry__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>c2g__codaCashMatchingHistory__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -7163,11 +7423,19 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>pse__Missing_Timecard__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>pse__Proj__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>pse__Resource_Request__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>pse__Skill__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
