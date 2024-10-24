@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>fferpcore__Enabled__c</columns>
+    <columns>fferpcore__Status__c</columns>
+    <columns>fferpcore__Memento__c</columns>
+    <columns>fferpcore__ActivationNumber__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>fferpcore__Status__c</field>
+        <operation>equals</operation>
+        <value>Error</value>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>If a user marks &quot;Out of Scope&quot; field as true, trigger a flow to automatically notify the project manager</description>
+        <name>Notify_PM_Out_of_Scope_Timecards</name>
+        <label>Notify PM - Out of Scope Timecards</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Custom_Notification_type_record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>RecipientId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Out of Scope Timecard</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Add_Recipient_id_into_collection</name>
+        <label>Add Recipient id into collection</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientId</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.pse__Project__r.pse__Project_Manager__r.pse__Salesforce_User__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Notify_PM_Out_of_Scope_Timecards</targetReference>
+        </connector>
+    </assignments>
+    <description>If a user marks Out of Scope field as true on Timecards, this will automatically notify the project manager</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NotificationBody</name>
+        <dataType>String</dataType>
+        <expression>&apos;Timecard &apos; + {!$Record.Name} + &apos; has been marked as Out of Scope by &apos; + {!$Record.pse__Resource__r.FirstName} + &apos; &apos; + {!$Record.pse__Resource__r.LastName}</expression>
+    </formulas>
+    <interviewLabel>Notify PM for Out of Scope Timecards {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Notify PM for Out of Scope Timecards</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Custom_Notification_type_record</name>
+        <label>Get Custom Notification type record</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_Recipient_id_into_collection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Out_of_Scope_Timecards_Notify_PM</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Custom_Notification_type_record</targetReference>
+        </connector>
+        <filterFormula>( ISNEW() || {!$Record.Out_of_Scope__c} ) || ( NOT(ISNEW()) &amp;&amp; ISCHANGED({!$Record.Out_of_Scope__c}) &amp;&amp; {!$Record.Out_of_Scope__c})</filterFormula>
+        <object>pse__Timecard_Header__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>RecipientId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

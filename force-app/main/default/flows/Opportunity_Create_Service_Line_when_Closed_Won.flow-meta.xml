@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>ServicelineName</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Opportunity_Area__c})</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Create Service Line for Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Create Service Line when Closed Won</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Service_Line_record</name>
+        <label>Create Service Line record</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assignment_Type__c</field>
+            <value>
+                <elementReference>$Record.Assignment_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ServicelineName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type_Area__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Type_Area__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Area__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Service_Line__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Service_Line_record</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+ISCHANGED({!$Record.StageName}),
+OR(
+TEXT({!$Record.StageName}) = &quot;Married (Closed Won)&quot;,
+TEXT({!$Record.StageName}) = &quot;Live Enquiry&quot;,
+TEXT({!$Record.StageName}) = &quot;Closed Won&quot;
+)
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

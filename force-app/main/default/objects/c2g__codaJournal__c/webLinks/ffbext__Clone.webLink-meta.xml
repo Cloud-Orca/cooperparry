@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffbext__Clone</fullName>
+    <availability>online</availability>
+    <description>Clone the selected journals and creates new ones in their image.</description>
+    <displayType>massActionButton</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Clone Many</masterLabel>
+    <openType>sidebar</openType>
+    <page>ffbext__codabejournalcopy</page>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+</WebLink>

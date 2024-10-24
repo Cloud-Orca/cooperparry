@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Self Assignment Approval</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>FFX_Letterhead</letterhead>
+    <name>Self Assignment Approval</name>
+    <style>freeForm</style>
+    <subject>Self Assignment Approval</subject>
+    <textOnly>Your self assignment has been approved - you can now book time on project - {!pse__Assignment__c.pse__Project__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

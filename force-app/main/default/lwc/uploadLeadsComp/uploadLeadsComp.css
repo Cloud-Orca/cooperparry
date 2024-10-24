@@ -1,0 +1,15 @@
+.outer-cover{
+    display: flex;
+    flex-direction: column;
+    height: 65vh; /* Full height for the container */
+}
+
+.custom-header-elmt{
+    margin-bottom: 25px;
+    font-weight: 100;
+}
+
+.btn-contaner{
+    text-align: center;
+    font-size: 15px;
+}

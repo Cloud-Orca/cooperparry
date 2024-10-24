@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Email_Sales_Invoice</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://innovation-energy-5387--certdev.sandbox.my.salesforce.com/aF8KO000000Gmc20AC
+09-Oct-2024 11:51:25 AM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Email Sales Invoice</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!c2g__codaInvoice__c.Id}
+
+&amp;QueryId=[SIPT1]0Q_1172AK074839,
+[SIIG]0Q_1182AK074839,
+[SILIG]0Q_1192AK074840,
+[SID]0Q_1202AK074840,
+[SIVTC]0Q_1212AK074840,
+[SIDST]0Q_1222AK074840,
+[SIPT4]0Q_1232AK074840,
+[SIILI]0Q_1242AK074840,
+[SIDST3]0Q_1252AK074840,
+[SICF]0Q_1262AK074840,
+[SIPT5]0Q_1272AK074840,
+[SIPT3]0Q_1282AK074840,
+[SIA]0Q_1292AK074840,
+[SIDST4]0Q_1302AK074840,
+[SILI]0Q_1312AK074840,
+[SIPT2]0Q_1322AK074841,
+[SIDST2]0Q_1332AK074841,
+[SIDSV]0Q_1342AK074841,
+[SIDTL]0Q_1352AK074841,
+[SILIC]0Q_1362AK074841,
+[SICTC1]0Q_1372AK074841,
+[SICTC2]0Q_1382AK074841,
+[SIWTDTL]0Q_1392AK074841,
+[SIQR]0Q_1402AK074841,
+[Email]0Q_2242AK875715%3Fpv0%3D{!c2g__codaInvoice__c.c2g__AccountId__c }
+
+&amp;EmailAdditionalTo={!c2g__codaInvoice__c.ffaci__InvoiceEmail__c}
+&amp;EmailCC={QVar0}
+&amp;QVar0Format=10000
+&amp;DV0={!IF ( ISPICKVAL(c2g__codaInvoice__c.c2g__InvoiceStatus__c, &quot;Complete&quot;), &quot;&quot;, &quot;Draft&quot;)}
+&amp;OFN={!c2g__codaInvoice__c.Name}
+&amp;TemplateId={!c2g__codaInvoice__c.ffaci__CongaTemplate__c}
+&amp;CongaEmailTemplateId={QVar1}
+&amp;EmailSubject={!c2g__codaInvoice__c.c2g__OwnerCompany__c}+Invoice:+{!c2g__codaInvoice__c.Name}
+&amp;DS7=2
+&amp;DefaultPDF=1
+&amp;MFTS0=cer_Email_Sent__c
+&amp;MFTSValue0=TRUE
+&amp;MFTS1=cer_Email_Sent_Date__c
+&amp;MFTSValue1=TODAY
+&amp;CurrencyCulture={!c2g__codaInvoice__c.ffaci__CurrencyCulture__c}
+&amp;DV1={!c2g__codaInvoice__c.ffaci__CurrencyCulture__c}
+&amp;QVAR0Id=aF2KO000000Gmdy?pv0={!c2g__codaInvoice__c.c2g__AccountId__c}
+&amp;QVAR1Id=aF2KO000000GmcV
+&amp;UF0=1
+&amp;SC0=1
+&amp;SC1=SalesforceFile</url>
+    <width>900</width>
+</WebLink>

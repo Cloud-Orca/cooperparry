@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Clone_Estimate_Excluded_Fields</fullName>
+    <description>Defines the fields of the estimate that are excluded from cloning.</description>
+    <displayedFields>
+        <field>ffscpq__Approval_Status__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>ffscpq__Stage_Name__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>ffscpq__Opportunity_Line_Item__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Estimate Fields Excluded from Cloning</label>
+</FieldSet>

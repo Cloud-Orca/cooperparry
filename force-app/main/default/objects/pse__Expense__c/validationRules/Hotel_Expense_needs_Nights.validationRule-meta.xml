@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel_Expense_needs_Nights</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL( pse__Type__c  , &apos;Hotel&apos;) , ( CT_Number_of_Nights__c == 0 || ISNULL(CT_Number_of_Nights__c )))</errorConditionFormula>
+    <errorMessage>Please enter Number of Nights for Expense Type Hotel</errorMessage>
+</ValidationRule>

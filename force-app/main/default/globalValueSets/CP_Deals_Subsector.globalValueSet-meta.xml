@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Engineering</fullName>
+        <default>false</default>
+        <label>Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Waste Management</fullName>
+        <default>false</default>
+        <label>Waste Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Marketing</fullName>
+        <default>false</default>
+        <label>Digital Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Energy</fullName>
+        <default>false</default>
+        <label>Energy</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensions</fullName>
+        <default>false</default>
+        <label>Pensions</label>
+    </customValue>
+    <customValue>
+        <fullName>Manufacturing</fullName>
+        <default>false</default>
+        <label>Manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliance</fullName>
+        <default>false</default>
+        <label>Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>Architecture</fullName>
+        <default>false</default>
+        <label>Architecture</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Legal</fullName>
+        <default>false</default>
+        <label>Legal</label>
+    </customValue>
+    <customValue>
+        <fullName>Technology</fullName>
+        <default>false</default>
+        <label>Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive</fullName>
+        <default>false</default>
+        <label>Automotive</label>
+    </customValue>
+    <customValue>
+        <fullName>Children&apos;s Care</fullName>
+        <default>false</default>
+        <label>Children&apos;s Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare &amp; Technology</fullName>
+        <default>false</default>
+        <label>Healthcare &amp; Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Care</fullName>
+        <default>false</default>
+        <label>Home Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialist Care</fullName>
+        <default>false</default>
+        <label>Specialist Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare Services</fullName>
+        <default>false</default>
+        <label>Healthcare Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Construction</fullName>
+        <default>false</default>
+        <label>Construction</label>
+    </customValue>
+    <customValue>
+        <fullName>Real Estate</fullName>
+        <default>false</default>
+        <label>Real Estate</label>
+    </customValue>
+    <customValue>
+        <fullName>Publishing</fullName>
+        <default>false</default>
+        <label>Publishing</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Transformation</fullName>
+        <default>false</default>
+        <label>Digital Transformation</label>
+    </customValue>
+    <customValue>
+        <fullName>Cyber Security</fullName>
+        <default>false</default>
+        <label>Cyber Security</label>
+    </customValue>
+    <customValue>
+        <fullName>Data Analytics</fullName>
+        <default>false</default>
+        <label>Data Analytics</label>
+    </customValue>
+    <customValue>
+        <fullName>Data Centres</fullName>
+        <default>false</default>
+        <label>Data Centres</label>
+    </customValue>
+    <customValue>
+        <fullName>Ed Tech</fullName>
+        <default>false</default>
+        <label>Ed Tech</label>
+    </customValue>
+    <customValue>
+        <fullName>Fin Tech</fullName>
+        <default>false</default>
+        <label>Fin Tech</label>
+    </customValue>
+    <customValue>
+        <fullName>HCM/HR Software</fullName>
+        <default>false</default>
+        <label>HCM/HR Software</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Tech</fullName>
+        <default>false</default>
+        <label>Insurance Tech</label>
+    </customValue>
+    <customValue>
+        <fullName>IT Services</fullName>
+        <default>false</default>
+        <label>IT Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Property Tech</fullName>
+        <default>false</default>
+        <label>Property Tech</label>
+    </customValue>
+    <customValue>
+        <fullName>Health &amp; Safety Tech</fullName>
+        <default>false</default>
+        <label>Health &amp; Safety Tech</label>
+    </customValue>
+    <customValue>
+        <fullName>Health Technology</fullName>
+        <default>false</default>
+        <label>Health Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>RegTech</fullName>
+        <default>false</default>
+        <label>RegTech</label>
+    </customValue>
+    <customValue>
+        <fullName>SaaS</fullName>
+        <default>false</default>
+        <label>SaaS</label>
+    </customValue>
+    <customValue>
+        <fullName>Waste</fullName>
+        <default>false</default>
+        <label>Waste</label>
+    </customValue>
+    <masterLabel>CP Deals Subsector</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

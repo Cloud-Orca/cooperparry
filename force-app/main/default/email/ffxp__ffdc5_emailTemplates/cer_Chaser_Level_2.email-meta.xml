@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Cooper Parry custom Chaser Level 2</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>FFX_Letterhead</letterhead>
+    <name>Chaser Level 2</name>
+    <style>freeForm</style>
+    <subject>Chaser Level 1 - 30 days overdue</subject>
+    <textOnly>Good morning/afternoon
+
+
+The attached invoices are still overdue, please could you advise of an alternative contact if you are not the correct person so we can resolve any issues?
+
+
+Otherwise, we will look forward to receiving your prompt payment.
+
+
+Kind regards</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

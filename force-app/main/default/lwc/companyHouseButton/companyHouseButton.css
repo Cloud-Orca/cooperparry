@@ -1,0 +1,113 @@
+:host {
+    --sds-c-checkbox-toggle-color-background-checked: #00703c;
+    --sds-c-checkbox-toggle-color-background-checked-focus: #00703c;
+    --lwc-colorBackgroundPathActive: gray;
+}
+.text-center{
+    justify-content: center;
+}
+
+.slds-theme_default .card-section{
+    margin-top: 12px;
+}
+
+/* .slds-input{
+    width: 160px;
+}
+
+.slds-icon{
+    right: 140px;
+} */
+
+.people-class{
+    width: 60%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+table thead tr .th-head {
+    padding: 0 25px;
+}
+
+table thead tr th .icon-title{
+    position: absolute;
+    margin-top: -16px;
+    text-align: center;
+}
+
+table thead tr th .title{
+    font-weight: 400;
+}
+
+table thead tr th .icon-title1{
+    position: absolute;
+    margin-top: -28px;
+    text-align: center;
+}
+
+table thead tr th .title1{
+    font-weight: 400;
+}
+
+table tbody tr td .contact-search {
+   padding: 6px;
+   width: 90%;
+}
+
+table .margin-left{
+    margin-left: 24px;
+}
+
+.conflict-details-account{
+    width: 90%;
+}
+
+.conflict-details-account tbody tr .text-right{ 
+    text-align: right;
+    padding-right: 8px;
+}
+
+.conflict-details-account p{
+    font-size: 11px;
+}
+
+.conflict-table{
+    width: 100%;
+}
+.conflict-table .conflict-contact{
+    display: flex;
+    text-align: center;
+}
+.conflict-table .conflict-contact .radio-style{
+    display: contents;
+}
+
+.conflict-table .conflict-billing{
+    display: flex;
+}
+.conflict-table .conflict-billing .radio-style{
+    display: contents;
+}
+
+.grayed-icon {
+    --sds-c-icon-color-background: #d1cbcb;
+}
+
+.amber-icon {
+    --sds-c-icon-color-background: #ffbf00;
+}
+
+.blue-icon {
+    --sds-c-icon-color-background: #005ea5;
+}
+
+.field-val-section{
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.people-border{
+    border-bottom: 1px solid #e4e4e4;
+}

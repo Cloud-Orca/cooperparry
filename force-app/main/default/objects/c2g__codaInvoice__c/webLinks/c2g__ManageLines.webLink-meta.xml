@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>c2g__ManageLines</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Manage Lines</masterLabel>
+    <openType>sidebar</openType>
+    <page>c2g__salesinvoicemanagelines</page>
+    <protected>false</protected>
+</WebLink>

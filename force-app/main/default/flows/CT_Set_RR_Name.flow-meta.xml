@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <decisions>
+        <name>Related_to_an_opportunity</name>
+        <label>Related to an opportunity?</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Set_Name_on_related_RR2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_related_to_an_Opp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ffscpq__Estimate__r.ffscpq__Opportunity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Name_on_related_RR</targetReference>
+            </connector>
+            <label>Yes, related to an Opp</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>RRNameFromOpp</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.ffscpq__Estimate__r.ffscpq__Opportunity__r.Name} + &apos; - &apos;+ {!$Record.ffscpq__Estimate_Line_Set__r.Name} +  &apos; - &apos; + TEXT({!$Record.ffscpq__Resource_Role__c})</expression>
+    </formulas>
+    <formulas>
+        <name>RRNameNoOpportunity</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.ffscpq__Estimate__r.Name} + &apos; - &apos;+ {!$Record.ffscpq__Estimate_Line_Set__r.Name} +  &apos; - &apos; + TEXT({!$Record.ffscpq__Resource_Role__c})</expression>
+    </formulas>
+    <interviewLabel>CT Set RR Name {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CT Set RR Name</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Name_on_related_RR</name>
+        <label>Set Name on related RR</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>pse__Resource_Request_Name__c</field>
+            <value>
+                <elementReference>RRNameFromOpp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.ffscpq__Resource_Request__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Name_on_related_RR2</name>
+        <label>Set Name on related RR2</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>pse__Resource_Request_Name__c</field>
+            <value>
+                <elementReference>RRNameNoOpportunity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.ffscpq__Resource_Request__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Related_to_an_opportunity</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ffscpq__Resource_Request__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>ffscpq__Estimate_Role_Request__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>New_or_Existing</name>
+        <label>New or Existing</label>
+        <locationX>1106</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Opted_In_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing</defaultConnectorLabel>
+        <rules>
+            <name>New</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NewFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opted_In_Populated</targetReference>
+            </connector>
+            <label>New</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opted_In_Populated</name>
+        <label>Opted In Populated</label>
+        <locationX>578</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Unsubscribed_Populated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opted_In__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opted_In_Yes_No</targetReference>
+            </connector>
+            <label>Populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opted_In_Updated</name>
+        <label>Opted In Updated</label>
+        <locationX>1634</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Unsubscribed_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Opted_In_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opted_In__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>OPted_In_Value</targetReference>
+            </connector>
+            <label>Yes - Opted In Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>OPted_In_Value</name>
+        <label>Opted In Value</label>
+        <locationX>1414</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Unsubscribed_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opted_In_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opted_In__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Unsubscribed_to_No</targetReference>
+            </connector>
+            <label>Opted In - Yes</label>
+        </rules>
+        <rules>
+            <name>Opted_In_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opted_In__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Unsubscribed_to_Yes</targetReference>
+            </connector>
+            <label>Opted In - No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opted_In_Yes_No</name>
+        <label>Opted In Yes/No</label>
+        <locationX>358</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Unsubscribed_Populated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opted_In_Yes1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opted_In__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Unsubscribed_to_No</targetReference>
+            </connector>
+            <label>Opted In Yes</label>
+        </rules>
+        <rules>
+            <name>OPted_In_No1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opted_In__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Unsubscribed_to_Yes</targetReference>
+            </connector>
+            <label>OPted In No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Unsubscribed_Populated</name>
+        <label>Unsubscribed Populated</label>
+        <locationX>578</locationX>
+        <locationY>923</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Unsubscribed__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unsubscribed_Yes_No</targetReference>
+            </connector>
+            <label>Yes Populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Unsubscribed_Updated</name>
+        <label>Unsubscribed Updated</label>
+        <locationX>1634</locationX>
+        <locationY>923</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Unsubscribed_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Unsubscribed__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unsubscribed_Updated1</targetReference>
+            </connector>
+            <label>Yes - Unsubscribed Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Unsubscribed_Updated1</name>
+        <label>Unsubscribed Updated</label>
+        <locationX>1370</locationX>
+        <locationY>1031</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Unsubscribed_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Unsubscribed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opted_In_to_No</targetReference>
+            </connector>
+            <label>Unsubscribed Yes</label>
+        </rules>
+        <rules>
+            <name>Unsubscribed_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Unsubscribed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opted_In_to_Yes</targetReference>
+            </connector>
+            <label>Unsubscribed No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Unsubscribed_Yes_No</name>
+        <label>Unsubscribed Yes/No</label>
+        <locationX>314</locationX>
+        <locationY>1031</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Unsubscribed_Yes1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Unsubscribed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Update_Opted_In_to_No</targetReference>
+            </connector>
+            <label>Unsubscribed Yes</label>
+        </rules>
+        <rules>
+            <name>Unsubscribed_No1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Unsubscribed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Opted_In_to_Yes</targetReference>
+            </connector>
+            <label>Unsubscribed No</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>NewFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Contact -  - Marketing Preferences {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact - Marketing Preferences</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Opted_In_to_Yes</name>
+        <label>Copy 1 of Update Opted In to Yes</label>
+        <locationX>314</locationX>
+        <locationY>1139</locationY>
+        <inputAssignments>
+            <field>Opted_In__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Unsubscribed_to_No</name>
+        <label>Copy 1 of Update Unsubscribed to No</label>
+        <locationX>94</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Unsubscribed_Populated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Unsubscribed__c</field>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Unsubscribed_to_Yes</name>
+        <label>Copy 1 of Update Unsubscribed to Yes</label>
+        <locationX>358</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Unsubscribed_Populated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Unsubscribed__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Update_Opted_In_to_No</name>
+        <label>Copy 2 of Update Opted In to No</label>
+        <locationX>50</locationX>
+        <locationY>1139</locationY>
+        <inputAssignments>
+            <field>Opted_In__c</field>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opted_In_to_No</name>
+        <label>Update Opted In to No</label>
+        <locationX>1106</locationX>
+        <locationY>1139</locationY>
+        <inputAssignments>
+            <field>Opted_In__c</field>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opted_In_to_Yes</name>
+        <label>Update Opted In to Yes</label>
+        <locationX>1370</locationX>
+        <locationY>1139</locationY>
+        <inputAssignments>
+            <field>Opted_In__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Unsubscribed_to_No</name>
+        <label>Update Unsubscribed to No</label>
+        <locationX>1150</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Unsubscribed_Updated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Unsubscribed__c</field>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Unsubscribed_to_Yes</name>
+        <label>Update Unsubscribed to Yes</label>
+        <locationX>1414</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Unsubscribed_Updated</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Unsubscribed__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>980</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>New_or_Existing</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+OR(ISNEW(),
+ISCHANGED({!$Record.Opted_In__c}),
+ISCHANGED({!$Record.Unsubscribed__c})))</filterFormula>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

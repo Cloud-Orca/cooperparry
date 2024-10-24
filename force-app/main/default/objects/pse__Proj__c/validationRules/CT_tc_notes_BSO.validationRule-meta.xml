@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_tc_notes_BSO</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  pse__Practice__r.CT_Mandatory_Timesheet_Notes__c  == TRUE, pse__Daily_Timecard_Notes_Required__c == FALSE)</errorConditionFormula>
+    <errorDisplayField>pse__Daily_Timecard_Notes_Required__c</errorDisplayField>
+    <errorMessage>For this Practice daily timecard notes are mandatory</errorMessage>
+</ValidationRule>

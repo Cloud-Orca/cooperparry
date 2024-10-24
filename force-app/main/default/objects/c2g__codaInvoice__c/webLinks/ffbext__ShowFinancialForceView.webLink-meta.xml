@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffbext__ShowFinancialForceView</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Show Certinia View</masterLabel>
+    <openType>sidebar</openType>
+    <page>c2g__codainvoiceview</page>
+    <protected>false</protected>
+</WebLink>

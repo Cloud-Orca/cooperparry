@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Not_applicable</fullName>
+    <active>true</active>
+    <description>Discount Not applicable</description>
+    <errorConditionFormula>ffscpq__Discount__c != 0</errorConditionFormula>
+    <errorMessage>Discount not applicable! Please remove discount and save again.</errorMessage>
+</ValidationRule>

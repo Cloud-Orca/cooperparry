@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurture__c</fullName>
+    <externalId>false</externalId>
+    <label>Nurture</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core - Hot</fullName>
+                <default>false</default>
+                <label>Core - Hot</label>
+            </value>
+            <value>
+                <fullName>Core - Warm</fullName>
+                <default>false</default>
+                <label>Core - Warm</label>
+            </value>
+            <value>
+                <fullName>Core - Cold</fullName>
+                <default>false</default>
+                <label>Core - Cold</label>
+            </value>
+            <value>
+                <fullName>THG - Hot</fullName>
+                <default>false</default>
+                <label>THG - Hot</label>
+            </value>
+            <value>
+                <fullName>THG - Warm</fullName>
+                <default>false</default>
+                <label>THG - Warm</label>
+            </value>
+            <value>
+                <fullName>THG - Cold</fullName>
+                <default>false</default>
+                <label>THG - Cold</label>
+            </value>
+            <value>
+                <fullName>THG ES - Hot</fullName>
+                <default>false</default>
+                <label>THG ES - Hot</label>
+            </value>
+            <value>
+                <fullName>THG ES - Warm</fullName>
+                <default>false</default>
+                <label>THG ES - Warm</label>
+            </value>
+            <value>
+                <fullName>THG ES - Cold</fullName>
+                <default>false</default>
+                <label>THG ES - Cold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

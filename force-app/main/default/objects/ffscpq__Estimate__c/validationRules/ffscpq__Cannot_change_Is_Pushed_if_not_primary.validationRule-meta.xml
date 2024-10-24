@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Cannot_change_Is_Pushed_if_not_primary</fullName>
+    <active>true</active>
+    <description>Message when editing Pushed to Opportunity field on estimate that&apos;s not primary.</description>
+    <errorConditionFormula>AND(ffscpq__Is_Pushed_To_Opportunity__c == true, ffscpq__Is_Primary__c == false)</errorConditionFormula>
+    <errorDisplayField>ffscpq__Is_Pushed_To_Opportunity__c</errorDisplayField>
+    <errorMessage>You cannot edit the Pushed to Opportunity field on an estimate that is not primary.</errorMessage>
+</ValidationRule>
