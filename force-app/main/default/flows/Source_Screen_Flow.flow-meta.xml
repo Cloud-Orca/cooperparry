@@ -26,6 +26,14 @@
         </value>
     </choices>
     <choices>
+        <name>Content</name>
+        <choiceText>Content</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Content</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>CPer</name>
         <choiceText>CPer</choiceText>
         <dataType>String</dataType>
@@ -34,11 +42,27 @@
         </value>
     </choices>
     <choices>
+        <name>Credentials</name>
+        <choiceText>Credentials</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Credentials</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>Event</name>
         <choiceText>Event</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>Event</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Event_value</name>
+        <choiceText>Event</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Event </stringValue>
         </value>
     </choices>
     <choices>
@@ -74,6 +98,14 @@
         </value>
     </choices>
     <choices>
+        <name>Networking</name>
+        <choiceText>Networking</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Networking</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>No</name>
         <choiceText>No</choiceText>
         <dataType>String</dataType>
@@ -87,6 +119,14 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Outbound</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Outreach</name>
+        <choiceText>Outreach</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Outreach</stringValue>
         </value>
     </choices>
     <choices>
@@ -122,6 +162,14 @@
         </value>
     </choices>
     <choices>
+        <name>Specialist_Team_Messaging</name>
+        <choiceText>Specialist Team Messaging</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Specialist Team Messaging</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>Website</name>
         <choiceText>Website</choiceText>
         <dataType>String</dataType>
@@ -137,6 +185,116 @@
             <stringValue>Yes</stringValue>
         </value>
     </choices>
+    <decisions>
+        <name>Copy_1_of_Object_Chosen</name>
+        <label>Object Chosen</label>
+        <locationX>2822</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Object</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Lead_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Create_Campaign_Member</targetReference>
+            </connector>
+            <label>Lead Chosen</label>
+        </rules>
+        <rules>
+            <name>Copy_1_of_Account_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>001</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_create_campaign_member_account</targetReference>
+            </connector>
+            <label>Account Chosen</label>
+        </rules>
+        <rules>
+            <name>Copy_1_of_Opportunity_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>006</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Opportunity_Campaign</targetReference>
+            </connector>
+            <label>Opportunity Chosen</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_2_of_Object_Chosen</name>
+        <label>Object Chosen</label>
+        <locationX>3790</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Object</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Lead_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Create_Campaign_Member</targetReference>
+            </connector>
+            <label>Lead Chosen</label>
+        </rules>
+        <rules>
+            <name>Copy_2_of_Account_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>001</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_create_campaign_member_account</targetReference>
+            </connector>
+            <label>Account Chosen</label>
+        </rules>
+        <rules>
+            <name>Copy_2_of_Opportunity_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>006</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Update_Opportunity_Campaign</targetReference>
+            </connector>
+            <label>Opportunity Chosen</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>create_an_opportunity</name>
         <label>create an opportunity</label>
@@ -190,7 +348,7 @@
     <decisions>
         <name>Object</name>
         <label>Object</label>
-        <locationX>1150</locationX>
+        <locationX>2118</locationX>
         <locationY>1250</locationY>
         <defaultConnector>
             <targetReference>Screen3</targetReference>
@@ -356,7 +514,7 @@
     <decisions>
         <name>Source_Chosen</name>
         <label>Source</label>
-        <locationX>1150</locationX>
+        <locationX>2118</locationX>
         <locationY>242</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -403,6 +561,36 @@
                 <targetReference>Object_Picked</targetReference>
             </connector>
             <label>Referral Chosen</label>
+        </rules>
+        <rules>
+            <name>Outreach_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Source</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Outreach</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Object_Chosen</targetReference>
+            </connector>
+            <label>Outreach Chosen</label>
+        </rules>
+        <rules>
+            <name>Event_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Source</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Event_value</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Object_Chosen</targetReference>
+            </connector>
+            <label>Event Chosen</label>
         </rules>
     </decisions>
     <dynamicChoiceSets>
@@ -573,6 +761,64 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
+        <name>Copy_1_of_Create_Campaign_Member</name>
+        <label>Create Campaign Member</label>
+        <locationX>2426</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_1_of_create_campaign_member_account</name>
+        <label>create campaign member account</label>
+        <locationX>2690</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>Copy_1_of_Create_Opportunity</name>
         <label>Copy 1 of Create Opportunity</label>
         <locationX>1810</locationX>
@@ -733,6 +979,64 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </value>
         </inputAssignments>
         <object>Referral__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_2_of_Create_Campaign_Member</name>
+        <label>Create Campaign Member</label>
+        <locationX>3394</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_2_of_create_campaign_member_account</name>
+        <label>Create campaign member account</label>
+        <locationX>3658</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
@@ -968,9 +1272,57 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Copy_1_of_Update_Opportunity_Campaign</name>
+        <label>Update Opportunity Campaign</label>
+        <locationX>2954</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Update_Opportunity_Campaign</name>
+        <label>Update Opportunity Campaign</label>
+        <locationX>3922</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
-        <locationX>1018</locationX>
+        <locationX>1986</locationX>
         <locationY>1358</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
@@ -1000,7 +1352,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Update_Lead</name>
         <label>Update Lead</label>
-        <locationX>754</locationX>
+        <locationX>1722</locationX>
         <locationY>1358</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
@@ -1030,7 +1382,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Update_Opportunity</name>
         <label>Update Opportunity</label>
-        <locationX>1282</locationX>
+        <locationX>2250</locationX>
         <locationY>1358</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
@@ -1197,7 +1549,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <screens>
         <name>Screen1</name>
         <label>Screen1</label>
-        <locationX>1150</locationX>
+        <locationX>2118</locationX>
         <locationY>134</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1208,8 +1560,9 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <fields>
             <name>Source</name>
             <choiceReferences>Inbound</choiceReferences>
-            <choiceReferences>Outbound</choiceReferences>
+            <choiceReferences>Event_value</choiceReferences>
             <choiceReferences>Referral</choiceReferences>
+            <choiceReferences>Outreach</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Source</fieldText>
             <fieldType>DropdownBox</fieldType>
@@ -1282,12 +1635,26 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
             <visibilityRule>
-                <conditionLogic>and</conditionLogic>
+                <conditionLogic>or</conditionLogic>
                 <conditions>
                     <leftValueReference>Source_Type_Outbound</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Event</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Source</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Event_value</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Outreach</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Content</elementReference>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -1299,6 +1666,8 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <choiceReferences>Intermediary</choiceReferences>
             <choiceReferences>International</choiceReferences>
             <choiceReferences>Partnership</choiceReferences>
+            <choiceReferences>Service_Line</choiceReferences>
+            <choiceReferences>Networking</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Referral Type</fieldText>
             <fieldType>DropdownBox</fieldType>
@@ -1380,6 +1749,27 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </visibilityRule>
         </fields>
         <fields>
+            <name>Referral_Type_Outreach</name>
+            <choiceReferences>Content</choiceReferences>
+            <choiceReferences>Specialist_Team_Messaging</choiceReferences>
+            <choiceReferences>Credentials</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Referral Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Source</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Outreach</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
             <name>Account</name>
             <extensionName>flowruntime:lookup</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -1446,6 +1836,13 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Partnership</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Lead</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Service_Line</elementReference>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -1773,7 +2170,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <screens>
         <name>Screen3</name>
         <label>Screen3</label>
-        <locationX>1150</locationX>
+        <locationX>2118</locationX>
         <locationY>1550</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1787,7 +2184,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>1024</locationX>
+        <locationX>1992</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Screen1</targetReference>
