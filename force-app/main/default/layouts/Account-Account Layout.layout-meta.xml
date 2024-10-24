@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -42,6 +44,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Beauhurst_ID__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Connector__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -254,6 +260,10 @@
         <relatedList>RelatedContactList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Beneficial_Owner__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>MEMBER_NAME</fields>
         <fields>TEAM_MEMBER_ROLE</fields>
         <relatedList>RelatedAccountSalesTeam</relatedList>
@@ -280,6 +290,14 @@
         <fields>pse__Is_Active__c</fields>
         <fields>pse__Is_Billable__c</fields>
         <relatedList>pse__Proj__c.pse__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>First_Name__c</fields>
+        <fields>Last_Name__c</fields>
+        <fields>Birthdate__c</fields>
+        <fields>Nationality__c</fields>
+        <relatedList>Officer__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>CONTRACT.CONTRACT_NUMBER</fields>
