@@ -9,10 +9,16 @@
             <axisBinding>y</axisBinding>
             <column>ffscpq__Estimate__c.ffscpq__Estimate_Role_Requests__r$ffscpq__Net_Amount__c</column>
         </chartSummaries>
-        <chartType>VerticalColumn</chartType>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y2</axisBinding>
+            <column>ffscpq__Estimate__c.ffscpq__Estimate_Role_Requests__r$ffscpq__Hours__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumnLine</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>ffscpq__Estimate__c.ffscpq__Estimate_Role_Requests__r$ffscpq__Resource_Role__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -28,6 +34,10 @@
     </chart>
     <columns>
         <field>ffscpq__Estimate__c$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ffscpq__Estimate__c.ffscpq__Estimate_Role_Requests__r$ffscpq__Hours__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -54,7 +64,7 @@
         <value>0</value>
     </params>
     <reportType>Role_Request_Summary_by_Estimate__c</reportType>
-    <scope>user</scope>
+    <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>

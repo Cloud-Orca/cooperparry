@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
@@ -49,6 +49,12 @@
     <entryCriteria>
         <formula>CreatedBy.Id  =  pse__Resource__r.pse__Salesforce_User__r.Id</formula>
     </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Self_Assignment_Approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <label>Self Assignment PM Approval</label>
