@@ -5,7 +5,7 @@
         <name>Area</name>
         <label>Area</label>
         <locationX>336</locationX>
-        <locationY>323</locationY>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>get_CP_Opp_Rec_Type</targetReference>
         </defaultConnector>
@@ -44,7 +44,7 @@
         <name>User_Found</name>
         <label>User Found</label>
         <locationX>182</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Update_Converted_Opp</targetReference>
         </defaultConnector>
@@ -91,7 +91,7 @@
         <name>Get_Corporate_Opp_Rec_Type</name>
         <label>Get Corporate Opp Rec Type</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>get_Laura_Clarke</targetReference>
@@ -121,7 +121,7 @@
         <name>get_CP_Opp_Rec_Type</name>
         <label>get CP Opp Rec Type</label>
         <locationX>490</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Converted_Opp</targetReference>
@@ -151,7 +151,7 @@
         <name>get_Laura_Clarke</name>
         <label>get Laura Clarke</label>
         <locationX>182</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>User_Found</targetReference>
@@ -169,10 +169,34 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Stamp_Originator_to_Acc</name>
+        <label>Stamp Originator to Acc</label>
+        <locationX>336</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Area</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ConvertedAccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Originator__c</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Converted_Opp</name>
         <label>Update Converted Opp</label>
         <locationX>336</locationX>
-        <locationY>1031</locationY>
+        <locationY>1139</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -193,7 +217,7 @@
         <name>Update_Owner</name>
         <label>Update Owner</label>
         <locationX>50</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <connector>
             <targetReference>Update_Converted_Opp</targetReference>
         </connector>
@@ -217,7 +241,7 @@
         <locationX>210</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Area</targetReference>
+            <targetReference>Stamp_Originator_to_Acc</targetReference>
         </connector>
         <filterFormula>AND(
 NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
