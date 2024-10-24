@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates whether the shipping address has been validated against the addresses in the external tax calculation service. --></help>
+    <label><!-- Shipping Address Validated --></label>
+    <name>fferpcore__IsShippingAddressValidated__c</name>
+</CustomFieldTranslation>

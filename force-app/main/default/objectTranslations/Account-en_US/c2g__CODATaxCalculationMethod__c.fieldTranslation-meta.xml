@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Tax Calculation Method --></label>
+    <name>c2g__CODATaxCalculationMethod__c</name>
+    <picklistValues>
+        <masterLabel>Gross</masterLabel>
+        <translation><!-- Gross --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Net of Discount</masterLabel>
+        <translation><!-- Net of Discount --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

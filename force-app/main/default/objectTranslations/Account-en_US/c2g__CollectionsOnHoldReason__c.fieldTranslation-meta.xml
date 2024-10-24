@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Collections On Hold Reason --></label>
+    <name>c2g__CollectionsOnHoldReason__c</name>
+    <picklistValues>
+        <masterLabel>Account in dispute</masterLabel>
+        <translation><!-- Account in dispute --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice in dispute</masterLabel>
+        <translation><!-- Invoice in dispute --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

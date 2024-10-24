@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Account access --></label>
+    <name>CT_Account_access__c</name>
+    <picklistValues>
+        <masterLabel>Public access</masterLabel>
+        <translation><!-- Public access --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public access with restrictions</masterLabel>
+        <translation><!-- Public access with restrictions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VIP Account</masterLabel>
+        <translation><!-- VIP Account --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

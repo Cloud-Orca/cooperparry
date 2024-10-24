@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Legal Type --></label>
+    <name>Legal_Type__c</name>
+    <picklistValues>
+        <masterLabel>Limited Company</masterLabel>
+        <translation><!-- Limited Company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Limited Liability Partnership Inc</masterLabel>
+        <translation><!-- Limited Liability Partnership Inc --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partnership</masterLabel>
+        <translation><!-- Partnership --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private Unlimited Company</masterLabel>
+        <translation><!-- Private Unlimited Company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public Limited Company</masterLabel>
+        <translation><!-- Public Limited Company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sole Trader</masterLabel>
+        <translation><!-- Sole Trader --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

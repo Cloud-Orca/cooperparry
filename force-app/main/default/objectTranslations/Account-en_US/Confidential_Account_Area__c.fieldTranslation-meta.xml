@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Confidential Account Area --></label>
+    <name>Confidential_Account_Area__c</name>
+    <picklistValues>
+        <masterLabel>CP Law</masterLabel>
+        <translation><!-- CP Law --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Confidential</masterLabel>
+        <translation><!-- Confidential --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ring Fenced</masterLabel>
+        <translation><!-- Ring Fenced --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

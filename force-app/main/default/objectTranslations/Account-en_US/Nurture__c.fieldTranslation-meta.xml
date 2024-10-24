@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Nurture --></label>
+    <name>Nurture__c</name>
+    <picklistValues>
+        <masterLabel>Core - Cold</masterLabel>
+        <translation><!-- Core - Cold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Core - Hot</masterLabel>
+        <translation><!-- Core - Hot --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Core - Warm</masterLabel>
+        <translation><!-- Core - Warm --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THG - Cold</masterLabel>
+        <translation><!-- THG - Cold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THG - Hot</masterLabel>
+        <translation><!-- THG - Hot --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THG - Warm</masterLabel>
+        <translation><!-- THG - Warm --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THG ES - Cold</masterLabel>
+        <translation><!-- THG ES - Cold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THG ES - Hot</masterLabel>
+        <translation><!-- THG ES - Hot --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THG ES - Warm</masterLabel>
+        <translation><!-- THG ES - Warm --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Funding Stage --></label>
+    <name>Funding_Stage__c</name>
+    <picklistValues>
+        <masterLabel>Seed</masterLabel>
+        <translation><!-- Seed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Series A</masterLabel>
+        <translation><!-- Series A --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Series B</masterLabel>
+        <translation><!-- Series B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Series C</masterLabel>
+        <translation><!-- Series C --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Series D</masterLabel>
+        <translation><!-- Series D --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

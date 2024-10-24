@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Method --></label>
+    <name>c2g__CODAPaymentMethod__c</name>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic</masterLabel>
+        <translation><!-- Asperato - Domestic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - ACH</masterLabel>
+        <translation><!-- Asperato - Domestic - ACH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - BANK_TRANSFER</masterLabel>
+        <translation><!-- Asperato - Domestic - BANK_TRANSFER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - BPAY</masterLabel>
+        <translation><!-- Asperato - Domestic - BPAY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - FAST</masterLabel>
+        <translation><!-- Asperato - Domestic - FAST --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - FASTER_PAYMENTS</masterLabel>
+        <translation><!-- Asperato - Domestic - FASTER_PAYMENTS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - FEDWIRE</masterLabel>
+        <translation><!-- Asperato - Domestic - FEDWIRE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - FPS</masterLabel>
+        <translation><!-- Asperato - Domestic - FPS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - GIRO</masterLabel>
+        <translation><!-- Asperato - Domestic - GIRO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - Domestic - RTGS</masterLabel>
+        <translation><!-- Asperato - Domestic - RTGS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Asperato - International</masterLabel>
+        <translation><!-- Asperato - International --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cash</masterLabel>
+        <translation><!-- Cash --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Check</masterLabel>
+        <translation><!-- Check --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Electronic</masterLabel>
+        <translation><!-- Electronic --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
