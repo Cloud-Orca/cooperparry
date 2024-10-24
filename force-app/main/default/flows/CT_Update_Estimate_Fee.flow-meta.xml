@@ -2,52 +2,36 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <assignments>
-        <name>Copy_2_of_Update_Total</name>
-        <label>Copy 2 of Update Total</label>
+        <name>Add_to_Total</name>
+        <label>Add to Total</label>
         <locationX>264</locationX>
-        <locationY>647</locationY>
+        <locationY>539</locationY>
         <assignmentItems>
-            <assignToReference>ProjectTotal</assignToReference>
+            <assignToReference>ProjectFee</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Loop_1.CT_MS_Bill_Amount__c</elementReference>
+                <elementReference>Get_Billing_Amounts.CT_MS_Bill_Amount__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_1</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Set_to_Zero</name>
-        <label>Set to Zero</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
-        <assignmentItems>
-            <assignToReference>ProjectTotal</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_LineSets</targetReference>
+            <targetReference>Get_Billing_Amounts</targetReference>
         </connector>
     </assignments>
     <environments>Default</environments>
-    <interviewLabel>CT Update Fee Total {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>CT Update Fee Total</label>
+    <interviewLabel>CT_Update_Estimate_Fee {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CT_Update_Estimate_Fee</label>
     <loops>
-        <name>Loop_1</name>
-        <label>Loop 1</label>
+        <name>Get_Billing_Amounts</name>
+        <label>Get Billing Amounts</label>
         <locationX>176</locationX>
-        <locationY>539</locationY>
-        <collectionReference>Get_LineSets</collectionReference>
+        <locationY>431</locationY>
+        <collectionReference>Get_Line_Sets</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Copy_2_of_Update_Total</targetReference>
+            <targetReference>Add_to_Total</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_Total2</targetReference>
+            <targetReference>Update_Total</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -70,63 +54,58 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_LineSets</name>
-        <label>Get LineSets</label>
+        <name>Get_Line_Sets</name>
+        <label>Get Line Sets</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Loop_1</targetReference>
+            <targetReference>Get_Billing_Amounts</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ffscpq__Estimate__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.ffscpq__Estimate__r.Id</elementReference>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>ffscpq__Estimate_Line_Set__c</object>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_Total2</name>
+        <name>Update_Total</name>
         <label>Update Total</label>
         <locationX>176</locationX>
-        <locationY>839</locationY>
+        <locationY>731</locationY>
         <inputAssignments>
             <field>CT_Fee_Amount__c</field>
             <value>
-                <elementReference>ProjectTotal</elementReference>
+                <elementReference>ProjectFee</elementReference>
             </value>
         </inputAssignments>
-        <inputReference>$Record.ffscpq__Estimate__r</inputReference>
+        <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Set_to_Zero</targetReference>
+            <targetReference>Get_Line_Sets</targetReference>
         </connector>
-        <object>ffscpq__Estimate_Line_Set__c</object>
+        <object>ffscpq__Estimate__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
-        <name>ProjectTotal</name>
-        <dataType>Number</dataType>
+        <name>ProjectFee</name>
+        <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <scale>2</scale>
-    </variables>
-    <variables>
-        <name>recordId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>true</isOutput>
     </variables>
 </Flow>
