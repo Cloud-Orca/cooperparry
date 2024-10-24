@@ -51,6 +51,17 @@
         <label>Reading</label>
     </customValue>
     <customValue>
+        <fullName>Remote Working</fullName>
+        <default>false</default>
+        <label>Remote Working</label>
+    </customValue>
+    <customValue>
+        <fullName>Storey - London</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Storey - London</label>
+    </customValue>
+    <customValue>
         <fullName>New Derwent House - London</fullName>
         <default>false</default>
         <isActive>false</isActive>
@@ -73,12 +84,6 @@
         <default>false</default>
         <isActive>false</isActive>
         <label>Worcester</label>
-    </customValue>
-    <customValue>
-        <fullName>Storey - London</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Storey - London</label>
     </customValue>
     <masterLabel>CP Office</masterLabel>
     <sorted>false</sorted>
