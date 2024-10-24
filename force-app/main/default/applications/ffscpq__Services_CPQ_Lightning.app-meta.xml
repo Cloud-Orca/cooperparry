@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Estimate_Record_Page12</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>ffscpq__Estimate__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Estimate_Record_Page12</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>ffscpq__Estimate__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#00A7CE</headerColor>
+        <logoVersion>2</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Estimate the time and cost of services.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Services CPQ</label>
+    <navType>Standard</navType>
+    <tabs>ffscpq__Services_CPQ_Workspace</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>ffscpq__Estimate__c</tabs>
+    <tabs>standard-Feed</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>
