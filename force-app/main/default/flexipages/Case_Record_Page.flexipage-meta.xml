@@ -20,7 +20,23 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>Case.Business_CAF</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Case.Client_Acceptance_Form</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Case.Individual_Client_Acceptance_Form</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Case.Form_Approval</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>CAF Form Completion</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Smart_Search</value>
@@ -30,6 +46,9 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Submit</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -84,6 +103,82 @@
         </itemInstances>
         <mode>Replace</mode>
         <name>feedTabContent</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Case.AccountId</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Beneficial_Owners__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Title__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>First_Name__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Last_Name__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Residential_Address__Street__s</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Residential_Address__City__s</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Beneficial Owners</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-66ac5811-179b-4df6-8f54-06bb33ef191c</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -257,6 +352,9 @@
                         <valueListItems>
                             <value>NAME</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>RECORDTYPE</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -355,6 +453,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>collaborateTab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-66ac5811-179b-4df6-8f54-06bb33ef191c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Beneficial Owner</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab5</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
