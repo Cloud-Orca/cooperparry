@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Date_Became_Client__c</fullName>
-    <description>1</description>
+    <fullName>Do_Not_Create_Case__c</fullName>
+    <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Date Became Client</label>
-    <required>false</required>
+    <label>Do Not Create Case</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
-    <type>Date</type>
+    <type>Checkbox</type>
 </CustomField>
