@@ -4,10 +4,6 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
-            <inputField>Actively_Hiring__c</inputField>
-            <outputField>Actively_Hiring__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>Amount_Raised_GBP__c</inputField>
             <outputField>Amount_Raised_GBP__c</outputField>
         </mappingFields>
@@ -96,6 +92,10 @@
             <outputField>Filing_Date__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Founder_Female_Percentage__c</inputField>
+            <outputField>Founder_Female_Percentage__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Fundraising_Id__c</inputField>
             <outputField>Fundraising_Id__c</outputField>
         </mappingFields>
@@ -144,6 +144,10 @@
             <outputField>Item_Index__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Actively_Hiring__c</inputField>
+            <outputField>Actively_Hiring__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Latest_Stage_Of_Evolution__c</inputField>
             <outputField>Latest_Stage_Of_Evolution__c</outputField>
         </mappingFields>
@@ -180,16 +184,8 @@
             <outputField>Parent_Company_Companies_House_Id__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>Primary_Sector__c</inputField>
-            <outputField>Primary_Sector__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>Project_End_Date__c</inputField>
             <outputField>Project_End_Date__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Founder_Female_Percentage__c</inputField>
-            <outputField>Founder_Female_Percentage__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Project_Grants_Total_Gbp__c</inputField>
@@ -328,6 +324,10 @@
             <outputField>Valuation_GBP__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Primary_Sector__c</inputField>
+            <outputField>Primary_Sector__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Year_End_Date__c</inputField>
             <outputField>Year_End_Date__c</outputField>
         </mappingFields>
@@ -364,12 +364,28 @@
             <outputField>Assignment_Type__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Estimated_Fees__c</inputField>
+            <outputField>Estimated_Fees__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Incumbent__c</inputField>
+            <outputField>Incumbent__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Lead_Area__c</inputField>
             <outputField>Opportunity_Area__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Lead_Type_Area__c</inputField>
             <outputField>Opportunity_Type_Area__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Notes__c</inputField>
+            <outputField>Notes__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Region__c</inputField>
+            <outputField>Region__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Service_Line__c</inputField>
