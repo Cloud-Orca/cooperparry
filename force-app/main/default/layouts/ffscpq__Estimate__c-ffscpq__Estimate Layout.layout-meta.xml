@@ -43,6 +43,10 @@
                 <behavior>Edit</behavior>
                 <field>CT_Fee_Amount__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CT_Expected_Recovery_Rate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
