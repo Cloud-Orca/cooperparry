@@ -3,8 +3,8 @@
     <actionCalls>
         <name>submitForApproval</name>
         <label>submitForApproval</label>
-        <locationX>314</locationX>
-        <locationY>758</locationY>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -21,15 +21,9 @@
             </value>
         </inputParameters>
         <inputParameters>
-            <name>nextApproverIds</name>
-            <value>
-                <elementReference>variableApproverIds</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
             <name>processDefinitionNameOrId</name>
             <value>
-                <elementReference>variableApprovalProcess</elementReference>
+                <stringValue>Risk_Compliance_Approval</stringValue>
             </value>
         </inputParameters>
         <nameSegment>submit</nameSegment>
@@ -40,15 +34,8 @@
     <assignments>
         <name>assignApproverId</name>
         <label>assignApproverId</label>
-        <locationX>314</locationX>
+        <locationX>176</locationX>
         <locationY>350</locationY>
-        <assignmentItems>
-            <assignToReference>variableApproverIds</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Approver.recordId</elementReference>
-            </value>
-        </assignmentItems>
         <assignmentItems>
             <assignToReference>variableComments</assignToReference>
             <operator>Assign</operator>
@@ -57,84 +44,12 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Case_Status</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>assignFormApproval</name>
-        <label>assignFormApproval</label>
-        <locationX>50</locationX>
-        <locationY>566</locationY>
-        <assignmentItems>
-            <assignToReference>variableApprovalProcess</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>CAF_Form_Approval</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
             <targetReference>submitForApproval</targetReference>
         </connector>
     </assignments>
-    <assignments>
-        <name>assignPEP_SIP_RCAApproval</name>
-        <label>assignPEP/SIP/RCAApproval</label>
-        <locationX>314</locationX>
-        <locationY>566</locationY>
-        <assignmentItems>
-            <assignToReference>variableApprovalProcess</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>PEP_SIP_RCA_Approval</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>submitForApproval</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <name>Case_Status</name>
-        <label>Case Status</label>
-        <locationX>314</locationX>
-        <locationY>458</locationY>
-        <defaultConnector>
-            <targetReference>submitForApproval</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>CAF_Form_Completion</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>getCaseRecord.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>CAF Form Completion</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>assignFormApproval</targetReference>
-            </connector>
-            <label>CAF Form Completion</label>
-        </rules>
-        <rules>
-            <name>Compliance_Check</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>getCaseRecord.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Compliance Check</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>assignPEP_SIP_RCAApproval</targetReference>
-            </connector>
-            <label>Compliance Check</label>
-        </rules>
-    </decisions>
     <environments>Default</environments>
-    <interviewLabel>Case: Submit For CAF Form Approval {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Case: Submit For CAF Form Approval</label>
+    <interviewLabel>Case: Submit Risk/Compliance Approval {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case: Submit Risk/Compliance Approval</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -157,7 +72,7 @@
     <recordLookups>
         <name>getCaseRecord</name>
         <label>getCaseRecord</label>
-        <locationX>314</locationX>
+        <locationX>176</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -167,9 +82,6 @@
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Case</object>
@@ -178,17 +90,17 @@
     <screens>
         <name>ApproverSelection</name>
         <label>ApproverSelection</label>
-        <locationX>314</locationX>
+        <locationX>176</locationX>
         <locationY>242</locationY>
-        <allowBack>false</allowBack>
+        <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <connector>
             <targetReference>assignApproverId</targetReference>
         </connector>
         <fields>
             <name>SelectApprover</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Please select your approver:&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 18px;&quot;&gt;Please add your comments:&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -197,32 +109,6 @@
             <fields>
                 <name>ApproverSelection_Section1_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Approver</name>
-                    <extensionName>flowruntime:lookup</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>fieldApiName</name>
-                        <value>
-                            <stringValue>CreatedById</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Approver</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>objectApiName</name>
-                        <value>
-                            <stringValue>User</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
                 <fields>
                     <name>Comments</name>
                     <fieldText>Comments</fieldText>
@@ -256,7 +142,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>188</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>getCaseRecord</targetReference>
@@ -264,24 +150,10 @@
     </start>
     <status>Active</status>
     <variables>
-        <name>approverId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
         <name>recordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>variableApprovalProcess</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
     <variables>
