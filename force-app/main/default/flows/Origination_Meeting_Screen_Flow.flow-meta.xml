@@ -27,6 +27,14 @@
         </rules>
     </decisions>
     <dynamicChoiceSets>
+        <name>PCS_CP_Office</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>CP_Office__c</picklistField>
+        <picklistObject>Lead</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
         <name>PCS_DeclinedReason</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
@@ -327,6 +335,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>CP_Office__c</field>
+            <value>
+                <elementReference>CP_Office</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Estimated_Fees__c</field>
             <value>
                 <elementReference>Estimated_Fee</elementReference>
@@ -348,12 +362,6 @@
             <field>Notes__c</field>
             <value>
                 <elementReference>Notes</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Region__c</field>
-            <value>
-                <elementReference>Region</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -633,13 +641,13 @@
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
-                    <name>Region</name>
-                    <choiceReferences>PCS_Region</choiceReferences>
+                    <name>CP_Office</name>
+                    <choiceReferences>PCS_CP_Office</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>get_Lead.Region__c</elementReference>
+                        <elementReference>get_Lead.CP_Office__c</elementReference>
                     </defaultValue>
-                    <fieldText>Region</fieldText>
+                    <fieldText>CP Office</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
@@ -679,7 +687,7 @@
     <textTemplates>
         <name>Body</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;strong&gt;Target Name: &lt;/strong&gt;{!Target_Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Estimated Fee:&lt;/strong&gt; {!Estimated_Fee}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Incumbent:&lt;/strong&gt; {!Incumbent}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Region:&lt;/strong&gt; {!Region}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Notes: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Notes}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;strong&gt;Target Name: &lt;/strong&gt;{!Target_Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Estimated Fee:&lt;/strong&gt; {!Estimated_Fee}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Incumbent:&lt;/strong&gt; {!Incumbent}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CP Office:&lt;/strong&gt; {!CP_Office}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Notes: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Notes}&lt;/p&gt;</text>
     </textTemplates>
     <variables>
         <name>recordId</name>
