@@ -23,6 +23,9 @@
                             <value>Case.Business_CAF</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Case.CF_CAF</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Case.Client_Acceptance_Form</value>
                         </valueListItems>
                         <valueListItems>
@@ -39,6 +42,36 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>CustomButton.Case.PEP_SIP_RCA_Approval</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Compliance Check</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Case.Partner_Approval</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Compliance Check</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Case.Risk_Compliance_Approval</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Compliance Check</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Case.Smart_Search</value>
                         </valueListItems>
                         <valueListItems>
@@ -46,9 +79,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Submit</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -149,12 +179,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Last_Name__c</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Residential_Address__Street__s</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Residential_Address__City__s</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -560,6 +584,44 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Smart_Search__c</fieldItem>
+                <identifier>RecordSmart_Search_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Companies_House__c</fieldItem>
+                <identifier>RecordCompanies_House_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-588ccfa8-845a-4b03-9346-1519d348f518</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-588ccfa8-845a-4b03-9346-1519d348f518</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-0704fe92-8fb0-4a76-8872-bdfd4b8392c7</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentName>forceChatter:recordFeedContainer</componentName>
                 <identifier>forceChatter_recordFeedContainer</identifier>
@@ -593,6 +655,24 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-0704fe92-8fb0-4a76-8872-bdfd4b8392c7</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>External Links</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
