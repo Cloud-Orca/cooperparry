@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Opportunity_Closed_Won_Audit_Notification</fullName>
+        <ccEmails>projects.lazypanda@gmail.com</ccEmails>
+        <description>Opportunity Closed Won Audit Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Audit_Notification</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Closed_Won_BSO_Notification</fullName>
+        <description>Opportunity Closed Won BSO Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>BSO_Notification</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Closed_Won_Deals_Notification</fullName>
+        <description>Opportunity Closed Won Deals Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Deals_Notification</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Closed_Won_Law_Notification</fullName>
+        <description>Opportunity Closed Won Law Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Law_Notification</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Closed_Won_Tax_Notification</fullName>
+        <description>Opportunity Closed Won Tax Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Tax_Notification</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approve</fullName>
+        <field>Audit_Partner_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Close_Lost_Reason_Audit_Rejection</fullName>
+        <field>Close_Lost_Reason__c</field>
+        <formula>&quot;Audit Rejection&quot;</formula>
+        <name>Close Lost Reason Audit Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Closed_Lost</fullName>
+        <field>StageName</field>
+        <literalValue>Closed Lost</literalValue>
+        <name>Closed Lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Loss_Reason</fullName>
+        <field>Loss_Reason__c</field>
+        <literalValue>Audit Rejection</literalValue>
+        <name>Loss Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reject</fullName>
+        <field>Audit_Partner_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_THG_Status_to_Approved</fullName>
+        <field>THG_Audit_Partner_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set THG Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_THG_Status_to_Submitted</fullName>
+        <field>THG_Audit_Partner_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Set THG Status to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submit_for_Approval</fullName>
+        <field>Audit_Partner_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Submit for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>
