@@ -127,16 +127,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.CP_Office__c</fieldItem>
-                <identifier>RecordCP_Office_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Company_Activity__c</fieldItem>
                 <identifier>RecordCompany_Activity__cField</identifier>
             </fieldInstance>
@@ -852,8 +842,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Incumbent__c</fieldItem>
-                <identifier>RecordIncumbent_cField</identifier>
+                <fieldItem>Record.CP_Office__c</fieldItem>
+                <identifier>RecordCP_Office_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -862,8 +852,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Region__c</fieldItem>
-                <identifier>RecordRegion_cField</identifier>
+                <fieldItem>Record.Incumbent__c</fieldItem>
+                <identifier>RecordIncumbent_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -1767,7 +1757,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Competitor / Incumbents</value>
+                    <value>Incumbents</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
