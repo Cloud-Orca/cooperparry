@@ -58,6 +58,10 @@
                 <behavior>Edit</behavior>
                 <field>Out_of_Scope__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Suggested_Bill_Rate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
