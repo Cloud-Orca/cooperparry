@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Self_Assignment_Milestone__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Milestone</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>This milestone doesn&apos;t exist on this project</errorMessage>
+        <filterItems>
+            <field>pse__Milestone__c.pse__Project__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.pse__Project__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>pse__Milestone__c</referenceTo>
+    <relationshipLabel>Assignments (Milestone)</relationshipLabel>
+    <relationshipName>Assignments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
