@@ -2,12 +2,34 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <decisions>
+        <name>Onboarded</name>
+        <label>Onboarded?</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Onboarded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Closed_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Onboarded</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account</targetReference>
+            </connector>
+            <label>Yes Onboarded</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>service_line_found</name>
         <label>service line found</label>
         <locationX>182</locationX>
         <locationY>431</locationY>
         <defaultConnector>
-            <targetReference>Update_Account</targetReference>
+            <targetReference>Onboarded</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -77,10 +99,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_Account</name>
-        <label>Update Account</label>
-        <locationX>182</locationX>
-        <locationY>731</locationY>
+        <name>Disable_Bypass</name>
+        <label>Disable Bypass</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -89,6 +111,36 @@
                 <elementReference>$Record.AccountId</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Bypass_Validation__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>50</locationX>
+        <locationY>839</locationY>
+        <connector>
+            <targetReference>Disable_Bypass</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Bypass_Validation__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Type</field>
             <value>
@@ -103,7 +155,7 @@
         <locationX>50</locationX>
         <locationY>539</locationY>
         <connector>
-            <targetReference>Update_Account</targetReference>
+            <targetReference>Onboarded</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
