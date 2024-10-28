@@ -19,7 +19,7 @@
                             <value>Opportunity.Log_Competitor_Incumbent</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Opportunity.Referral</value>
+                            <value>Opportunity.Connector</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Opportunity.Source</value>
@@ -106,16 +106,6 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Probability</fieldItem>
-                <identifier>RecordProbabilityField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.StageName</fieldItem>
@@ -128,8 +118,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Winning_Competitor__c</fieldItem>
-                <identifier>RecordWinning_Competitor__cField</identifier>
+                <fieldItem>Record.Type</fieldItem>
+                <identifier>RecordTypeField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -138,38 +128,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Close_Lost_Reason__c</fieldItem>
-                <identifier>RecordClose_Lost_Reason__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Proposal_Sent__c</fieldItem>
-                <identifier>RecordProposal_Sent__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Proposal_Send_Date__c</fieldItem>
-                <identifier>RecordProposal_Send_Date_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Days_since_the_proposal_was_sent__c</fieldItem>
-                <identifier>RecordDays_since_the_proposal_was_sent__cField</identifier>
+                <fieldItem>Record.Probability</fieldItem>
+                <identifier>RecordProbabilityField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
@@ -216,26 +176,6 @@
                 <identifier>RecordTotal_Sales_Turnover_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Type</fieldItem>
-                <identifier>RecordTypeField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CampaignId</fieldItem>
-                <identifier>RecordCampaignIdField2</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-f31cfb4a-cff9-4183-ab78-8e77ec6894f0</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -270,8 +210,52 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.LeadSource</fieldItem>
-                <identifier>RecordLeadSourceField</identifier>
+                <fieldItem>Record.Source__c</fieldItem>
+                <identifier>RecordSource_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Opportunity_Type__c</fieldItem>
+                <identifier>RecordOpportunity_Type_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Proposal_Sent__c</fieldItem>
+                <identifier>RecordProposal_Sent__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Close_Lost_Reason__c</fieldItem>
+                <identifier>RecordClose_Lost_Reason_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-dac64c49-7ca4-4dd8-9dde-aca45489bcc5</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Source_Type__c</fieldItem>
+                <identifier>RecordSource_Type_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -290,22 +274,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Source__c</fieldItem>
-                <identifier>RecordSource_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-dac64c49-7ca4-4dd8-9dde-aca45489bcc5</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Opportunity_Type__c</fieldItem>
-                <identifier>RecordOpportunity_Type_cField</identifier>
+                <fieldItem>Record.Proposal_Send_Date__c</fieldItem>
+                <identifier>RecordProposal_Send_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -314,18 +284,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Close_Lost_Reason__c</fieldItem>
-                <identifier>RecordClose_Lost_Reason_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Source_Type__c</fieldItem>
-                <identifier>RecordSource_Type_cField</identifier>
+                <fieldItem>Record.Days_since_the_proposal_was_sent__c</fieldItem>
+                <identifier>RecordDays_since_the_proposal_was_sent__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-47986c8a-b34b-4c9b-be5e-d1fd2883fa4b</name>
