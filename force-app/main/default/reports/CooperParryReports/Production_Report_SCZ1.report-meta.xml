@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>FK_$pse__Proj__c.pse__Practice__c</field>
+        <field>pse__Timecard_Header__c.pse__Resource__c</field>
     </columns>
     <columns>
-        <field>CUST_NAME</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Timecard_Header__c.CT_Hours_x_Bill_Rate__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>pse__Timecard_Header__c.pse__Total_Hours__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>FK_$pse__Proj__c.psaws__Actual_Hours__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>FK_$pse__Proj__c.pse__Expense_Budget__c</field>
-    </columns>
     <currency>GBP</currency>
     <description>Timesheet data report, including utilisation and comparison to department level budgets</description>
+    <filter>
+        <criteriaItems>
+            <column>pse__Timecard_Header__c.pse__Billable__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
     <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$pse__Proj__c.pse__Region__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>FK_NAME</field>
@@ -28,14 +35,10 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>pse__Timecard_Header__c.pse__Resource__c</field>
+        <field>FK_$pse__Proj__c.pse__Practice__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <groupingsDown>
-        <field>pse__Timecard_Header__c.pse__End_Date__c</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <name>Production Report</name>
+    <name>Production Report - Billable Project</name>
     <params>
         <name>co</name>
         <value>0</value>
