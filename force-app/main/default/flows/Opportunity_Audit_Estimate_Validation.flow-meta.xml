@@ -4,7 +4,7 @@
     <customErrors>
         <name>Copy_1_of_Display_Error</name>
         <label>Display Error</label>
-        <locationX>138</locationX>
+        <locationX>182</locationX>
         <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>Please ensure you have gained Partner Approval before continuing with this Opportunity.</errorMessage>
@@ -14,7 +14,7 @@
     <customErrors>
         <name>Display_Error</name>
         <label>Display Error</label>
-        <locationX>402</locationX>
+        <locationX>446</locationX>
         <locationY>539</locationY>
         <customErrorMessages>
             <errorMessage>Please ensure you link an Estimate to the Opportunity before continuing with this Opportunity.</errorMessage>
@@ -40,13 +40,20 @@
                     <stringValue>Approved</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.THG_Audit_Resourcing_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
             <label>Yes Approved</label>
         </rules>
     </decisions>
     <decisions>
         <name>Found_Estimate</name>
         <label>Found Estimate?</label>
-        <locationX>226</locationX>
+        <locationX>248</locationX>
         <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Display_Error</targetReference>
@@ -93,7 +100,7 @@
     <recordLookups>
         <name>Get_Estimate</name>
         <label>Get Estimate</label>
-        <locationX>226</locationX>
+        <locationX>248</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -112,7 +119,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>100</locationX>
+        <locationX>122</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Estimate</targetReference>
