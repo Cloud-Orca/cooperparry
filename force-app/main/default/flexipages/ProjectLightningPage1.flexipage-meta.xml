@@ -196,60 +196,6 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>height</name>
-                    <value>300</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>pageName</name>
-                    <value>pse__ProjectCostAndRevenueSummary</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLabel</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:visualforcePage</componentName>
-                <identifier>flexipage_visualforcePage</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-1f526953-21e1-44d1-a81e-21993f499842</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-1f526953-21e1-44d1-a81e-21993f499842</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Cost and Revenue Summary</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>name</name>
-                    <value>accordionSection2</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:accordionSection</componentName>
-                <identifier>flexipage_accordionSection2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-e74d90aa-459a-4fd3-9d76-b0c3571a1f50</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>accordionSections</name>
-                    <value>Facet-e74d90aa-459a-4fd3-9d76-b0c3571a1f50</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:accordion</componentName>
-                <identifier>flexipage_accordion2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>pse__Proj__c.Id</value>
                 </componentInstanceProperties>
@@ -271,32 +217,6 @@
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer5</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>pse__Proj__c.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>pse__Budget_Allocations__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>ADVGRID</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer14</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
