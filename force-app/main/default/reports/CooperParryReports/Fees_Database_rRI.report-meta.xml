@@ -43,10 +43,6 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Proj__c.pse__Other_Costs__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>pse__Project_Actuals__c.pse__Expense_Costs__c</field>
     </columns>
     <columns>
@@ -60,6 +56,10 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>pse__Project_Actuals__c.pse__Invoiced__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Proj__c.CT_Fee_Amount__c</field>
     </columns>
     <currency>GBP</currency>
     <description>Report showing Project Billings and Total Costs by Region by month</description>
