@@ -16,7 +16,7 @@
                             <value>Clone</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Opportunity.Referral</value>
+                            <value>Opportunity.Connector</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Submit</value>
@@ -25,6 +25,22 @@
                                     <leftValue>{!Record.Audit_Partner_Approval_Status__c}</leftValue>
                                     <operator>NE</operator>
                                     <rightValue>Submitted</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.THG_Audit_Partner_Approval</value>
+                            <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Audit</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>THG Audit</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -134,6 +150,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.PE_Backed__c</fieldItem>
                 <identifier>RecordPE_Backed_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.THG_Partner_Approved__c</fieldItem>
+                <identifier>RecordTHG_Partner_Approved__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
@@ -614,9 +640,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Referral_Type__c</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Service_Line__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CF_Notes__c</value>
