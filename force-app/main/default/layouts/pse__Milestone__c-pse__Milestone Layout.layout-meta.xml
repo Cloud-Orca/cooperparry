@@ -63,6 +63,18 @@
                 <behavior>Edit</behavior>
                 <field>Milestone_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Milestone_Fee_Amount__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CP_Complete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CT_Recognisable_Value__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -575,6 +587,17 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>pse__Project__c</fields>
+        <fields>pse__Resource__c</fields>
+        <fields>pse__Start_Date__c</fields>
+        <fields>pse__End_Date__c</fields>
+        <fields>pse__Bill_Rate__c</fields>
+        <fields>pse__Cost_Rate__c</fields>
+        <fields>pse__Status__c</fields>
+        <relatedList>pse__Assignment__c.CT_Self_Assignment_Milestone__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

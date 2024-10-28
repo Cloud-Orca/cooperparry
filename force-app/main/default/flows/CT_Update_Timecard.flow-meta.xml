@@ -44,7 +44,7 @@
             <field>pse__Practice__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.pse__Resource__r.pse__Practice__c</elementReference>
+                <elementReference>$Record.pse__Resource__r.pse__Practice__r.CT_Rate_Practice__r.CT_Rate_Practice__c</elementReference>
             </value>
         </filters>
         <filters>
