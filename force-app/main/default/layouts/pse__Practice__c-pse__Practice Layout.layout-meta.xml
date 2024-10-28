@@ -42,6 +42,14 @@
                 <behavior>Edit</behavior>
                 <field>CT_Mandatory_Timesheet_Notes__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Group__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Rate_Practice__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -640,6 +648,19 @@
         <fields>pse__Variance__c</fields>
         <fields>pse__Total_Hours__c</fields>
         <relatedList>pse__Time_Variance_Detail__c.pse__Practice__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>pse__Practice_Head__c</fields>
+        <fields>pse__Parent_Practice__c</fields>
+        <fields>pse__Global_Practice__c</fields>
+        <fields>pse__Include_In_Forecasting__c</fields>
+        <fields>pse__Bookings__c</fields>
+        <fields>pse__Billings__c</fields>
+        <fields>pse__Billable_Internal_Hours__c</fields>
+        <fields>pse__Total_Costs__c</fields>
+        <fields>pse__Margin__c</fields>
+        <relatedList>pse__Practice__c.CT_Rate_Practice__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
