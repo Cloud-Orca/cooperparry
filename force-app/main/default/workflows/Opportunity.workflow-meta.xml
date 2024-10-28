@@ -136,4 +136,34 @@
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>THG_Audit_Resourcing_to_Approved</fullName>
+        <field>THG_Audit_Resourcing_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>THG Audit Resourcing to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>THG_Audit_Resourcing_to_Rejected</fullName>
+        <field>THG_Audit_Resourcing_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>THG Audit Resourcing to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>THG_Audit_Resourcing_to_Submitted</fullName>
+        <field>THG_Audit_Resourcing_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>THG Audit Resourcing to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
 </Workflow>
