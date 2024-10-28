@@ -3,19 +3,16 @@
     <fullName>Projects_at_80_of_Planned_Costs</fullName>
     <columns>pse__Project_Manager__c</columns>
     <columns>NAME</columns>
-    <columns>pse__Region__c</columns>
-    <columns>pse__Account__c</columns>
-    <columns>pse__Practice__c</columns>
-    <columns>pse__Group__c</columns>
-    <columns>pse__Is_Billable__c</columns>
-    <columns>pse__Start_Date__c</columns>
-    <columns>pse__End_Date__c</columns>
     <columns>pse__Project_Status__c</columns>
-    <columns>pse__Is_Active__c</columns>
-    <columns>pse__Unscheduled_Backlog__c</columns>
-    <columns>CREATED_DATE</columns>
-    <columns>pse__Is_Template__c</columns>
+    <columns>pse__Total_Submitted_Hours__c</columns>
+    <columns>pse__Planned_Hours__c</columns>
+    <columns>pse__Bookings__c</columns>
+    <columns>CT_Total_Submitted_Hours_Bill_Rate__c</columns>
+    <columns>CT_Fee_Amount__c</columns>
     <columns>pse__Billed__c</columns>
+    <columns>CP_Complete__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>CT_Recovery_Rate__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CT_Close_to_Cost_Budget__c</field>
