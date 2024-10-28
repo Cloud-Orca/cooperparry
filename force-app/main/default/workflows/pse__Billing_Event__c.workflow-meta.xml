@@ -30,4 +30,34 @@
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CTUpdate_Approval_Status_Project_Partner</fullName>
+        <field>CT_Approval_Status_Project_Partner__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Update Approval Status (Project Partner)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_Field</fullName>
+        <field>CT_Approval_Status_Project_Partner__c</field>
+        <literalValue>Approved by Project Partner</literalValue>
+        <name>Update Approval Status Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approved_by_Project_Partner</fullName>
+        <field>CP_Approved_by_Project_Partner__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Approved by Project Partner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
 </Workflow>
