@@ -5,17 +5,13 @@
     <columns>CT_Practice_Full_Name__c</columns>
     <columns>pse__Parent_Practice__c</columns>
     <columns>pse__Current_Time_Period__c</columns>
+    <columns>CT_Rate_Practice__c</columns>
     <columns>pse__Current_Time_Period_End_Date__c</columns>
     <columns>pse__Planned_Bookings__c</columns>
     <columns>pse__Planned_Billings__c</columns>
-    <columns>pse__Planned_Margin__c</columns>
-    <columns>pse__Bookings__c</columns>
-    <columns>pse__Billings__c</columns>
-    <columns>pse__Total_Costs__c</columns>
-    <columns>pse__Margin__c</columns>
-    <columns>pse__Include_In_Forecasting__c</columns>
     <columns>pse__Hierarchy_Depth__c</columns>
     <columns>ffpsai__OwnerCompany__c</columns>
+    <columns>Group__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

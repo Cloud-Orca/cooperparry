@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Out_Of_Scope_Timecards</fullName>
-    <columns>NAME</columns>
-    <columns>pse__Resource__c</columns>
+    <columns>Project_Manager__c</columns>
     <columns>pse__Project__c</columns>
-    <columns>pse__Assignment__c</columns>
-    <columns>pse__Start_Date__c</columns>
-    <columns>pse__End_Date__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Monday_Notes__c</columns>
+    <columns>pse__Tuesday_Notes__c</columns>
+    <columns>pse__Wednesday_Notes__c</columns>
+    <columns>pse__Thursday_Notes__c</columns>
+    <columns>pse__Friday_Notes__c</columns>
+    <columns>pse__Saturday_Notes__c</columns>
+    <columns>pse__Sunday_Notes__c</columns>
+    <columns>pse__Timecard_Notes__c</columns>
     <columns>pse__Total_Hours__c</columns>
+    <columns>CT_Hours_x_Bill_Rate__c</columns>
     <columns>pse__Milestone__c</columns>
-    <columns>pse__Billable__c</columns>
-    <columns>pse__Status__c</columns>
+    <columns>pse__Start_Date__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Out_of_Scope__c</field>
@@ -21,6 +26,11 @@
         <field>CREATED_DATE</field>
         <operation>equals</operation>
         <value>THIS_MONTH</value>
+    </filters>
+    <filters>
+        <field>Project_Manager__c</field>
+        <operation>contains</operation>
+        <value>Kim,xander,mandy,alex</value>
     </filters>
     <label>Out Of Scope Timecards</label>
 </ListView>

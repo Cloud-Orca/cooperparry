@@ -62,6 +62,10 @@
                 <behavior>Edit</behavior>
                 <field>CT_Suggested_Bill_Rate__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Project_Manager__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

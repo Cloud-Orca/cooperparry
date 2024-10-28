@@ -4,7 +4,11 @@
         <field>FK_$pse__Proj__c.pse__Practice__c</field>
     </columns>
     <columns>
-        <field>CUST_NAME</field>
+        <field>pse__Timecard_Header__c.pse__Resource__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Timecard_Header__c.CT_Hours_x_Bill_Rate__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -14,25 +18,12 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>FK_$pse__Proj__c.psaws__Actual_Hours__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>FK_$pse__Proj__c.pse__Expense_Budget__c</field>
-    </columns>
     <currency>GBP</currency>
     <description>Timesheet data report, including utilisation and comparison to department level budgets</description>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>FK_NAME</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>pse__Timecard_Header__c.pse__Resource__c</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <groupingsDown>
-        <field>pse__Timecard_Header__c.pse__End_Date__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Production Report</name>
@@ -44,7 +35,7 @@
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>pse__Timecard_Header__c.pse__End_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
