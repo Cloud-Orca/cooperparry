@@ -31,4 +31,9 @@
         <default>false</default>
         <label>Lost Client</label>
     </standardValue>
+    <standardValue>
+        <fullName>Inactive</fullName>
+        <default>false</default>
+        <label>Inactive</label>
+    </standardValue>
 </StandardValueSet>
