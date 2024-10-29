@@ -82,6 +82,10 @@
                 <behavior>Readonly</behavior>
                 <field>pse__Planned_Revenue__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Estimated_Revenue__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -11,11 +11,12 @@
 
 
 
-You do not have any Timecards submitted for the Week Ending {!pse__Missing_Timecard__c.pse__End_Date__c}.
+You do not have any Timecards submitted for the Week Ending
+{!pse__Missing_Timecard__c.pse__End_Date__c}.
 
 
 
-Please log into PSA ASAP and submit a timecard.
+Please log into PSA ASAP and submit your timecard.
 
 
 *** Make sure the Week Ending Date on the Timecard page is {!pse__Missing_Timecard__c.pse__End_Date__c} ***</textOnly>
