@@ -77,7 +77,7 @@
     </decisions>
     <environments>Default</environments>
     <interviewLabel>Opportunity:  Audit Estimate Validation {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Opportunity:  Audit Estimate Validation</label>
+    <label>Opportunity: THG Audit &amp; Audit Estimate Validation Rule</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -126,6 +126,8 @@
         </connector>
         <filterFormula>AND({!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
 CASE({!$Record.StageName}, 
+&quot;Proposing&quot;,1,
+&quot;Proposed&quot;,1,
 &quot;Married (Closed Won)&quot;,1,
 &quot;Live Enquiry&quot;,1,
 &quot;Closed Won&quot;,1,0) = 1,
