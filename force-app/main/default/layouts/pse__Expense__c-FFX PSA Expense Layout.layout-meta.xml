@@ -4,7 +4,6 @@
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
     <excludeButtons>Clone</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -86,7 +85,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>pse__Tax_Type__c</field>
+                <field>CT_Expense_VAT_Rate__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
