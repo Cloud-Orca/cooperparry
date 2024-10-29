@@ -5,7 +5,7 @@
         <name>Project_GLA</name>
         <label>Project GLA</label>
         <locationX>182</locationX>
-        <locationY>323</locationY>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>ProjectGLA</assignToReference>
             <operator>Assign</operator>
@@ -17,11 +17,27 @@
             <targetReference>Mileage_Expanse_Line</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Vat_Rate</name>
+        <label>Vat Rate</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>VatRate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Vat_Rates.Vat_Rate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Incurred_Tax</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Mileage_Expanse_Line</name>
         <label>Mileage Expanse Line</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Project_has_GLA</targetReference>
         </defaultConnector>
@@ -53,7 +69,7 @@
         <name>Project_has_GLA</name>
         <label>Project has GLA</label>
         <locationX>182</locationX>
-        <locationY>731</locationY>
+        <locationY>1055</locationY>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>CT_Project_GLA</name>
@@ -79,6 +95,18 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>Calculated_VAT</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.pse__Amount__c}*{!Vat_Rates.Vat_Rate__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>VAT</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.pse__Amount__c}*({!VatRate}/100)</expression>
+        <scale>2</scale>
+    </formulas>
     <interviewLabel>CT Update Expense for Mileage Receipt {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CT Update Expense for Mileage Receipt and GLA</label>
     <processMetadataValues>
@@ -100,11 +128,32 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Vat_Rates</name>
+        <label>Vat Rates</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Vat_Rate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CT_Expense_VAT_Rate__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CT_Expense_VAT_Types__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Expense_GLA</name>
         <label>Update Expense GLA</label>
         <locationX>50</locationX>
-        <locationY>839</locationY>
+        <locationY>1163</locationY>
         <inputAssignments>
             <field>ffpsai__ExpenseGLACode__c</field>
             <value>
@@ -114,10 +163,34 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Incurred_Tax</name>
+        <label>Update Incurred Tax</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Project_GLA</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CT_Expense_VAT_Rate__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>pse__Incurred_Tax__c</field>
+            <value>
+                <elementReference>VAT</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_lost_receipt_for_Mileage</name>
         <label>Update lost receipt for Mileage</label>
         <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationY>863</locationY>
         <connector>
             <targetReference>Project_has_GLA</targetReference>
         </connector>
@@ -139,7 +212,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Project_GLA</targetReference>
+            <targetReference>Vat_Rates</targetReference>
         </connector>
         <object>pse__Expense__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
@@ -152,5 +225,13 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>VatRate</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
     </variables>
 </Flow>
