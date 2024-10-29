@@ -55,6 +55,10 @@
                 <behavior>Edit</behavior>
                 <field>CT_Number_of_Nights__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Expense_VAT_Rate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
