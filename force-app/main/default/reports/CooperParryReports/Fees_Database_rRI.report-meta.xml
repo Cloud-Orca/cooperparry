@@ -7,7 +7,7 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>pse__Project_Actuals__c.pse__Bookings__c</column>
+            <column>pse__Project_Actuals__c.pse__Billed__c</column>
         </chartSummaries>
         <chartType>VerticalColumn</chartType>
         <enableHoverLabels>false</enableHoverLabels>
@@ -27,30 +27,6 @@
     </chart>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Project_Actuals__c.pse__Bookings__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Project_Actuals__c.pse__Billings__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Project_Actuals__c.pse__Internal_Costs__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Project_Actuals__c.pse__External_Costs__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Project_Actuals__c.pse__Expense_Costs__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>pse__Project_Actuals__c.pse__Total_Costs__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>pse__Project_Actuals__c.pse__Billed__c</field>
     </columns>
     <columns>
@@ -60,6 +36,14 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>pse__Proj__c.CT_Fee_Amount__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Project_Actuals__c.pse__Scheduled_Milestone__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>pse__Proj__c.pse__Billing_Eligible_Milestones__c</field>
     </columns>
     <currency>GBP</currency>
     <description>Report showing Project Billings and Total Costs by Region by month</description>
@@ -100,6 +84,6 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>FK_$pse__Time_Period__c.pse__End_Date__c</dateColumn>
-        <interval>INTERVAL_CURY</interval>
+        <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>
