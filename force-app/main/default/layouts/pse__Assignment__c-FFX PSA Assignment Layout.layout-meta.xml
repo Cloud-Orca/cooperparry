@@ -53,6 +53,10 @@
                 <behavior>Edit</behavior>
                 <field>pse__Planned_Hours__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Estimated_Revenue__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -7,9 +7,6 @@
         <locationY>576</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
-        <connector>
-            <targetReference>Update_Notification_date</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>customNotifTypeId</name>
@@ -71,28 +68,7 @@
             <name>Notification_date_is_Today</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Notification_Date__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>$Flow.CurrentDate</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.pse__Resource__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.pse__Resource__r.pse__Is_Resource_Active__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.pse__Resource__r.pse__Is_Resource__c</leftValueReference>
+                <leftValueReference>May_Nov_month</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -105,6 +81,11 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>May_Nov_month</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(OR( AND(MONTH({!$Flow.CurrentDate}) == 5, DAY({!$Flow.CurrentDate}) == 1) , AND(MONTH({!$Flow.CurrentDate}) == 11, DAY({!$Flow.CurrentDate}) == 1) ), true,false)</expression>
+    </formulas>
     <formulas>
         <name>NextnotificationDate</name>
         <dataType>Date</dataType>
@@ -152,19 +133,6 @@
         <object>CustomNotificationType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>Update_Notification_date</name>
-        <label>Update Notification date</label>
-        <locationX>50</locationX>
-        <locationY>684</locationY>
-        <inputAssignments>
-            <field>Notification_Date__c</field>
-            <value>
-                <elementReference>NextnotificationDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
         <locationX>56</locationX>
         <locationY>0</locationY>
@@ -174,12 +142,12 @@
         <object>pse__Skill_Certification_Rating__c</object>
         <schedule>
             <frequency>Daily</frequency>
-            <startDate>2024-10-03</startDate>
-            <startTime>01:00:00.000Z</startTime>
+            <startDate>2024-10-29</startDate>
+            <startTime>10:00:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>RecipientId</name>
         <dataType>String</dataType>

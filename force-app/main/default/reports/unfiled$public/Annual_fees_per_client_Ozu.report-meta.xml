@@ -29,6 +29,11 @@
         <field>ffscpq__Estimate__c$ffscpq__Account__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ffscpq__Estimate__c$ffscpq__Practice__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Annual fees per client</name>
     <params>
         <name>co</name>
