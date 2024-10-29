@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Id_to_var</name>
+        <label>Assign Id to var</label>
+        <locationX>1370</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>varCreateOppId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_Opportunity_Deals</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varOppNotes</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Notes_Deals</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_3_of_Copy_1_of_Create_Referral</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Assign_Id_to_var</name>
+        <label>Copy 1 of Assign Id to var</label>
+        <locationX>1634</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>varCreateOppId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_Opportunity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varOppNotes</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Notes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Create_Referral</targetReference>
+        </connector>
+    </assignments>
     <choices>
         <name>Atlast</name>
         <choiceText>Atlast</choiceText>
@@ -47,6 +93,14 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Credentials</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Deals</name>
+        <choiceText>Deals</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Deals</stringValue>
         </value>
     </choices>
     <choices>
@@ -188,7 +242,7 @@
     <decisions>
         <name>Copy_1_of_Object_Chosen</name>
         <label>Object Chosen</label>
-        <locationX>2822</locationX>
+        <locationX>3086</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Object</targetReference>
@@ -243,7 +297,7 @@
     <decisions>
         <name>Copy_2_of_Object_Chosen</name>
         <label>Object Chosen</label>
-        <locationX>3790</locationX>
+        <locationX>4054</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Object</targetReference>
@@ -298,8 +352,8 @@
     <decisions>
         <name>create_an_opportunity</name>
         <label>create an opportunity</label>
-        <locationX>1502</locationX>
-        <locationY>458</locationY>
+        <locationX>1766</locationX>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Copy_1_of_Create_Referral</targetReference>
         </defaultConnector>
@@ -323,7 +377,7 @@
     <decisions>
         <name>create_opp_for_service_line</name>
         <label>create opp for service line</label>
-        <locationX>1942</locationX>
+        <locationX>2206</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Copy_1_of_Copy_1_of_Create_Referral</targetReference>
@@ -346,10 +400,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Deals_is_Selected</name>
+        <label>Deals is Selected?</label>
+        <locationX>1568</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>create_an_opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Deals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Referral_Type_Account</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Deals</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deals_Screen</targetReference>
+            </connector>
+            <label>Yes Deals</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Object</name>
         <label>Object</label>
-        <locationX>2118</locationX>
-        <locationY>1250</locationY>
+        <locationX>2250</locationX>
+        <locationY>1442</locationY>
         <defaultConnector>
             <targetReference>Screen3</targetReference>
         </defaultConnector>
@@ -459,7 +538,7 @@
     <decisions>
         <name>Object_Picked</name>
         <label>Object</label>
-        <locationX>1678</locationX>
+        <locationX>1810</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Object</targetReference>
@@ -491,7 +570,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>create_an_opportunity</targetReference>
+                <targetReference>Deals_is_Selected</targetReference>
             </connector>
             <label>Account</label>
         </rules>
@@ -514,7 +593,7 @@
     <decisions>
         <name>Source_Chosen</name>
         <label>Source</label>
-        <locationX>2118</locationX>
+        <locationX>2250</locationX>
         <locationY>242</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -610,6 +689,14 @@
         <picklistObject>Lead</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
+        <name>oppStage_Values</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>StageName</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
         <name>PCS_CP_Office</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
@@ -623,6 +710,14 @@
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
         <picklistField>Win_Probability__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>transactionIn_values</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Transaction_in_next_2_years__c</picklistField>
         <picklistObject>Opportunity</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
@@ -677,7 +772,7 @@ IF( {!Referral_Type_Lead} = &quot;CPer&quot;  || {!Referral_Type_Lead} = &quot;S
         <name>Referral_Type_Formula_Account</name>
         <dataType>String</dataType>
         <expression>IF(
-{!Referral_Type_Account}= &quot;Client&quot; ||{!Referral_Type_Account} = &quot;Intermediary&quot; || {!Referral_Type_Account} = &quot;Partnership&quot;|| {!Referral_Type_Account} = &quot;International&quot;, &quot;External&quot;,
+{!Referral_Type_Account}= &quot;Client&quot; ||{!Referral_Type_Account} = &quot;Intermediary&quot; || {!Referral_Type_Account} = &quot;Partnership&quot;|| {!Referral_Type_Account} = &quot;International&quot;|| {!Referral_Type_Account} = &quot;Deals&quot;, &quot;External&quot;,
 IF( {!Referral_Type_Account} = &quot;CPer&quot;  || {!Referral_Type_Account} = &quot;Service Line&quot;, &quot;Internal&quot;, &quot; &quot; ))</expression>
     </formulas>
     <formulas>
@@ -716,7 +811,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Copy_1_of_Copy_1_of_Create_Referral</name>
         <label>Copy 1 of Copy 1 of Create Referral</label>
-        <locationX>1942</locationX>
+        <locationX>2206</locationX>
         <locationY>974</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -763,7 +858,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Copy_1_of_Create_Campaign_Member</name>
         <label>Create Campaign Member</label>
-        <locationX>2426</locationX>
+        <locationX>2690</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -792,7 +887,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Copy_1_of_create_campaign_member_account</name>
         <label>create campaign member account</label>
-        <locationX>2690</locationX>
+        <locationX>2954</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -821,7 +916,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Copy_1_of_Create_Opportunity</name>
         <label>Copy 1 of Create Opportunity</label>
-        <locationX>1810</locationX>
+        <locationX>2074</locationX>
         <locationY>782</locationY>
         <connector>
             <targetReference>Copy_1_of_Copy_1_of_Create_Referral</targetReference>
@@ -901,8 +996,8 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Copy_1_of_Create_Referral</name>
         <label>Copy 1 of Create Referral</label>
-        <locationX>1502</locationX>
-        <locationY>866</locationY>
+        <locationX>1766</locationX>
+        <locationY>1082</locationY>
         <connector>
             <targetReference>Object</targetReference>
         </connector>
@@ -939,13 +1034,13 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>Notes__c</field>
             <value>
-                <elementReference>Notes</elementReference>
+                <elementReference>varOppNotes</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Opportunity__c</field>
             <value>
-                <elementReference>Create_Opportunity</elementReference>
+                <elementReference>varCreateOppId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -984,7 +1079,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Copy_2_of_Create_Campaign_Member</name>
         <label>Create Campaign Member</label>
-        <locationX>3394</locationX>
+        <locationX>3658</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -1013,7 +1108,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Copy_2_of_create_campaign_member_account</name>
         <label>Create campaign member account</label>
-        <locationX>3658</locationX>
+        <locationX>3922</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -1037,6 +1132,83 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </value>
         </inputAssignments>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_3_of_Copy_1_of_Create_Referral</name>
+        <label>Copy 3 of Copy 1 of Create Referral</label>
+        <locationX>1370</locationX>
+        <locationY>890</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>International_Firm_Name__c</field>
+            <value>
+                <elementReference>International_Firm_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Lead_Area__c</field>
+            <value>
+                <elementReference>Lead_Area</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Referral_name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Network__c</field>
+            <value>
+                <elementReference>Network</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>varOppNotes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>varCreateOppId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Contact__c</field>
+            <value>
+                <elementReference>Contact.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Sub_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Account</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Formula_Account</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_User__c</field>
+            <value>
+                <elementReference>User.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Referral__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
@@ -1102,10 +1274,10 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Create_Opportunity</name>
         <label>Create Opportunity</label>
-        <locationX>1370</locationX>
-        <locationY>674</locationY>
+        <locationX>1634</locationX>
+        <locationY>782</locationY>
         <connector>
-            <targetReference>Copy_1_of_Create_Referral</targetReference>
+            <targetReference>Copy_1_of_Assign_Id_to_var</targetReference>
         </connector>
         <inputAssignments>
             <field>AccountId</field>
@@ -1174,6 +1346,65 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <field>Win_Probability__c</field>
             <value>
                 <elementReference>Percent_Winning</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Opportunity_Deals</name>
+        <label>Create Opportunity</label>
+        <locationX>1370</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Assign_Id_to_var</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Amount</field>
+            <value>
+                <elementReference>Amount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>CloseDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Name</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>Notes_Deals</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PE_Backed__c</field>
+            <value>
+                <elementReference>PE_Backed</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <elementReference>Stage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Transaction_in_next_2_years__c</field>
+            <value>
+                <elementReference>Transaction_in_next_2_years</elementReference>
             </value>
         </inputAssignments>
         <object>Opportunity</object>
@@ -1253,7 +1484,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordLookups>
         <name>get_opportunity</name>
         <label>get opportunity</label>
-        <locationX>1942</locationX>
+        <locationX>2206</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1274,7 +1505,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Copy_1_of_Update_Opportunity_Campaign</name>
         <label>Update Opportunity Campaign</label>
-        <locationX>2954</locationX>
+        <locationX>3218</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -1298,7 +1529,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Copy_2_of_Update_Opportunity_Campaign</name>
         <label>Update Opportunity Campaign</label>
-        <locationX>3922</locationX>
+        <locationX>4186</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -1322,8 +1553,8 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
-        <locationX>1986</locationX>
-        <locationY>1358</locationY>
+        <locationX>2118</locationX>
+        <locationY>1550</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
         </connector>
@@ -1352,8 +1583,8 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Update_Lead</name>
         <label>Update Lead</label>
-        <locationX>1722</locationX>
-        <locationY>1358</locationY>
+        <locationX>1854</locationX>
+        <locationY>1550</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
         </connector>
@@ -1382,8 +1613,8 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Update_Opportunity</name>
         <label>Update Opportunity</label>
-        <locationX>2250</locationX>
-        <locationY>1358</locationY>
+        <locationX>2382</locationX>
+        <locationY>1550</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
         </connector>
@@ -1437,7 +1668,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <screens>
         <name>Copy_1_of_Screen2</name>
         <label>Copy 1 of Screen2</label>
-        <locationX>1810</locationX>
+        <locationX>2074</locationX>
         <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1547,9 +1778,114 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Deals_Screen</name>
+        <label>Deals Screen</label>
+        <locationX>1370</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Create_Opportunity_Deals</targetReference>
+        </connector>
+        <fields>
+            <name>Account_Deals</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>AccountId</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Account</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>disabled</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Stage</name>
+            <choiceReferences>oppStage_Values</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>Flirt</stringValue>
+            </defaultValue>
+            <fieldText>Stage</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>CloseDate</name>
+            <dataType>Date</dataType>
+            <fieldText>CloseDate</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Amount</name>
+            <dataType>Currency</dataType>
+            <fieldText>Amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>Transaction_in_next_2_years</name>
+            <choiceReferences>transactionIn_values</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Transaction in next 2 years</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>PE_Backed</name>
+            <dataType>Boolean</dataType>
+            <fieldText>PE Backed</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Notes_Deals</name>
+            <fieldText>Notes</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Screen1</name>
         <label>Screen1</label>
-        <locationX>2118</locationX>
+        <locationX>2250</locationX>
         <locationY>134</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1610,56 +1946,6 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </visibilityRule>
         </fields>
         <fields>
-            <name>Campaign</name>
-            <extensionName>flowruntime:lookup</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Campaign</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>fieldApiName</name>
-                <value>
-                    <stringValue>CampaignId</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>objectApiName</name>
-                <value>
-                    <stringValue>Opportunity</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-            <visibilityRule>
-                <conditionLogic>or</conditionLogic>
-                <conditions>
-                    <leftValueReference>Source_Type_Outbound</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <elementReference>Event</elementReference>
-                    </rightValue>
-                </conditions>
-                <conditions>
-                    <leftValueReference>Source</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <elementReference>Event_value</elementReference>
-                    </rightValue>
-                </conditions>
-                <conditions>
-                    <leftValueReference>Referral_Type_Outreach</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <elementReference>Content</elementReference>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
             <name>Referral_Type_Lead</name>
             <choiceReferences>Client</choiceReferences>
             <choiceReferences>CPer</choiceReferences>
@@ -1699,6 +1985,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <choiceReferences>International</choiceReferences>
             <choiceReferences>Partnership</choiceReferences>
             <choiceReferences>Service_Line</choiceReferences>
+            <choiceReferences>Deals</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Referral Type</fieldText>
             <fieldType>DropdownBox</fieldType>
@@ -1760,6 +2047,62 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <isRequired>false</isRequired>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Source</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Outreach</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Campaign</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Campaign</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>CampaignId</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>required</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>Source_Type_Outbound</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Event</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Source</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Event_value</elementReference>
+                    </rightValue>
+                </conditions>
                 <conditions>
                     <leftValueReference>Source</leftValueReference>
                     <operator>EqualTo</operator>
@@ -2058,8 +2401,8 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <screens>
         <name>Screen2</name>
         <label>Screen2</label>
-        <locationX>1370</locationX>
-        <locationY>566</locationY>
+        <locationX>1634</locationX>
+        <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2170,8 +2513,8 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <screens>
         <name>Screen3</name>
         <label>Screen3</label>
-        <locationX>2118</locationX>
-        <locationY>1550</locationY>
+        <locationX>2250</locationX>
+        <locationY>1742</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2184,7 +2527,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>1992</locationX>
+        <locationX>2124</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Screen1</targetReference>
@@ -2196,6 +2539,20 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varCreateOppId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varOppNotes</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
 </Flow>
