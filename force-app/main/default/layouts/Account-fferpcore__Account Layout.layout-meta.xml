@@ -44,6 +44,10 @@
                 <behavior>Edit</behavior>
                 <field>CT_Account_access__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Is_Onboarded__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

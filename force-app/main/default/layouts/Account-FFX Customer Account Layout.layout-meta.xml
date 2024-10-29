@@ -384,6 +384,21 @@
             <actionType>QuickAction</actionType>
             <sortOrder>5</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>c2g__LogACall</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>6</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentNote</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>7</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>c2g__NewEvent</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>8</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <relatedLists>
         <fields>FULL_NAME</fields>
@@ -402,23 +417,34 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>ffasp__PaymentIntegrationMethod__c.ffasp__Account__c</relatedList>
+        <fields>c2g__Statement__c</fields>
+        <fields>c2g__LogType__c</fields>
+        <fields>c2g__StatementSentDate__c</fields>
+        <fields>c2g__Message__c</fields>
+        <relatedList>c2g__StatementLog__c.c2g__Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>fferpcore__AccountCreditTerms__c.fferpcore__Account__c</relatedList>
+        <fields>c2g__Reminder__c</fields>
+        <fields>c2g__SalesInvoice__c</fields>
+        <fields>c2g__Status__c</fields>
+        <fields>c2g__LogType__c</fields>
+        <fields>c2g__Message__c</fields>
+        <fields>c2g__ReasonForExclusion__c</fields>
+        <relatedList>c2g__ReminderLog__c.c2g__Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>c2g__codaCashMatchingHistory__c.c2g__Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>c2g__codaJournalLineItem__c.c2g__Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>c2g__codaTransactionLineItem__c.c2g__Account__c</relatedList>
+        <fields>c2g__InvoiceDate__c</fields>
+        <fields>c2g__DueDate__c</fields>
+        <fields>c2g__InvoiceCurrency__c</fields>
+        <fields>c2g__InvoiceTotal__c</fields>
+        <fields>c2g__InvoiceStatus__c</fields>
+        <fields>c2g__PaymentStatus__c</fields>
+        <fields>c2g__OutstandingValue__c</fields>
+        <fields>c2g__Opportunity__c</fields>
+        <fields>c2g__OwnerCompany__c</fields>
+        <relatedList>c2g__codaInvoice__c.c2g__Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -435,16 +461,23 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>c2g__InvoiceDate__c</fields>
-        <fields>c2g__DueDate__c</fields>
-        <fields>c2g__InvoiceCurrency__c</fields>
-        <fields>c2g__InvoiceTotal__c</fields>
-        <fields>c2g__InvoiceStatus__c</fields>
-        <fields>c2g__PaymentStatus__c</fields>
-        <fields>c2g__OutstandingValue__c</fields>
-        <fields>c2g__Opportunity__c</fields>
-        <fields>c2g__OwnerCompany__c</fields>
-        <relatedList>c2g__codaInvoice__c.c2g__Account__c</relatedList>
+        <relatedList>fferpcore__AccountCreditTerms__c.fferpcore__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>ffasp__PaymentIntegrationMethod__c.ffasp__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>c2g__codaCashMatchingHistory__c.c2g__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>c2g__codaJournalLineItem__c.c2g__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>c2g__codaTransactionLineItem__c.c2g__Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
