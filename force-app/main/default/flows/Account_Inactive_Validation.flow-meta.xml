@@ -139,7 +139,7 @@
             <targetReference>Get_Risk_and_Compliance</targetReference>
         </connector>
         <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false &amp;&amp;
-TEXT({!$Record.Type}) = &apos;Client - Dormant&apos; &amp;&amp;
+TEXT({!$Record.Type}) = &apos;Inactive&apos; &amp;&amp;
 {!$Record.Bypass_Validation__c} = false &amp;&amp;
 ISCHANGED({!$Record.Bypass_Validation__c} ) = false &amp;&amp;
 {!$Profile.Name} &lt;&gt; &apos;System Administrator&apos;</filterFormula>
