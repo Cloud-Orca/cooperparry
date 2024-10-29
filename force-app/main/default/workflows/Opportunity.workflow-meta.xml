@@ -67,6 +67,26 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>BTC_THG_PCC_Estimate_to_Approved</fullName>
+        <field>BTC_THG_PCC_Estimate_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>BTC, THG, PCC Estimate to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BTC_THG_PCC_Estimate_to_Submitted</fullName>
+        <field>BTC_THG_PCC_Estimate_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>BTC, THG, PCC Estimate to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Close_Lost_Reason_Audit_Rejection</fullName>
         <field>Close_Lost_Reason__c</field>
         <formula>&quot;Audit Rejection&quot;</formula>
