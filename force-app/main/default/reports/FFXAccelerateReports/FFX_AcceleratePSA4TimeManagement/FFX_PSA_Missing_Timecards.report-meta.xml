@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_$Contact.FFX_Resource_Name__c</field>
+    </columns>
+    <columns>
+        <field>pse__Missing_Timecard__c.pse__Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>pse__Missing_Timecard__c.pse__End_Date__c</field>
+    </columns>
+    <columns>
+        <field>pse__Missing_Timecard__c.pse__Date_Timecard_Entered__c</field>
+    </columns>
+    <columns>
+        <field>pse__Missing_Timecard__c.Line_Manager_ID__c</field>
+    </columns>
+    <currency>GBP</currency>
+    <description>Report showing all MIssing timecard Records
+Resource, Region, Practice, Group, Week Start Date, Week End Date, Date Timecard Entered</description>
+    <filter>
+        <criteriaItems>
+            <column>pse__Missing_Timecard__c.Line_Manager_ID__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>$USER</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Contact.pse__Region__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Contact.pse__Practice__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>PSA Missing Timecards</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$pse__Missing_Timecard__c@pse__Missing_Timecard__c.pse__Resource__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>pse__Missing_Timecard__c.pse__End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

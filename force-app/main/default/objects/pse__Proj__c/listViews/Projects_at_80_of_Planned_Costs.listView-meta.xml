@@ -10,9 +10,9 @@
     <columns>CT_Total_Submitted_Hours_Bill_Rate__c</columns>
     <columns>CT_Fee_Amount__c</columns>
     <columns>pse__Billed__c</columns>
+    <columns>CT_Recovery_Rate__c</columns>
     <columns>CP_Complete__c</columns>
     <columns>pse__Start_Date__c</columns>
-    <columns>CT_Recovery_Rate__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CT_Close_to_Cost_Budget__c</field>
