@@ -9895,6 +9895,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>CT_Expense_VAT_Types__c.Vat_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.AccountId</field>
         <readable>true</readable>
@@ -10536,6 +10541,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Assignment__c.Estimated_Revenue__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Assignment__c.FFX_Planner_Color__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -11101,6 +11111,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Billing_Event__c.CP_Approved_by_Project_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Billing_Event__c.CT_Approval_Status_Project_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Billing_Event__c.CT_Project_Partner_approval_required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Budget_Allocation__c.pse__Customer_Purchase_Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -11475,8 +11500,23 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Milestone__c.CT_Manual_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.CT_Original_Budget_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Milestone__c.CT_Percent_Complete_Budget__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.CT_Recognisable_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -11532,6 +11572,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Milestone__c.Milestone_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Milestone__c.Original_Budget__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Milestone__c.Original_Planned_Fee__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12300,8 +12350,23 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Practice__c.CT_Rate_Practice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Practice__c.Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.BS_O_Project__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Budget_Recovery_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12312,6 +12377,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Close_to_Cost_Budget__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Current_Esimate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12342,6 +12412,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Private_Client__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_Project_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Recognisable_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12502,6 +12582,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.Manager_approval_required_for_billing__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.Original_Fee_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13932,6 +14017,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Resource_Request_Set__c.pse__Staffed_Resource_Request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Resource_Request__c.CT_Estimated_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

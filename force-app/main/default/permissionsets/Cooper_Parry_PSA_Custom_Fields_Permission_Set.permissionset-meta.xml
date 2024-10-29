@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Accelerate PSA &amp; Accounting (SRP) - Spring 2024 Permission Set</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>CT_Expense_VAT_Types__c.Vat_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaDimension1__c.ffpsai__Region__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaDimension2__c.ffpsai__Practice__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaDimension3__c.ffpsai__Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaDimension4__c.ffpsai__Project__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -32,33 +11,23 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Billing_Event_Item__c.FFX_PSA_Dimension_1_Region__c</field>
+        <editable>true</editable>
+        <field>pse__Billing_Event__c.CP_Approved_by_Project_Partner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Billing_Event_Item__c.FFX_PSA_Dimension_2_Practice__c</field>
+        <editable>true</editable>
+        <field>pse__Billing_Event__c.CT_Approval_Status_Project_Partner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Billing_Event_Item__c.FFX_PSA_Dimension_3_Group__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Billing_Event_Item__c.FFX_PSA_Dimension_4_Project__c</field>
+        <editable>true</editable>
+        <field>pse__Billing_Event__c.CT_Project_Partner_approval_required__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Milestone__c.CT_Recognisable_Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Milestone__c.FFX_FFA_Company_from_Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -77,6 +46,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_Project_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Recognisable_Value__c</field>
         <readable>true</readable>
@@ -84,11 +58,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Recovery_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Proj__c.FFX_FFA_Company_from_Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -101,11 +70,6 @@
         <field>pse__Resource_Request__c.CT_Estimated_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Timecard__c.FFX_Service_Product_Record_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>FFX C-PSA-SRP</label>
+    <label>Cooper Parry PSA Custom Fields Permission Set</label>
 </PermissionSet>

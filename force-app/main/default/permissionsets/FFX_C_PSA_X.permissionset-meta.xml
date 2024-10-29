@@ -70,6 +70,11 @@
     </classAccesses>
     <description>Accelerate PSA - Spring &apos;2024 Permission Set</description>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>CT_Expense_VAT_Types__c.Vat_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.FFX_Is_Resource_Current_User__c</field>
         <readable>true</readable>
@@ -82,6 +87,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ob1__Output_History__c.FFX_Project__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Assignment__c.Estimated_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -116,6 +126,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Milestone__c.CT_Recognisable_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Milestone__c.FFX_Complete_Hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -127,6 +142,31 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Milestone__c.FFX_PSR_Sort__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Practice__c.CT_Rate_Practice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Budget_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Current_Esimate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Recognisable_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Recovery_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -270,6 +310,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.Original_Fee_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Project_Task_Assignment__c.FFX_Is_Running_User_s_Record__c</field>
         <readable>true</readable>
@@ -282,6 +327,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Project_Task__c.pse__Estimated_Time_To_Completion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Resource_Request__c.CT_Estimated_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
