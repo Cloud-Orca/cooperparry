@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>regpick14__c</fullName>
-    <description>Have we obtained sufficient CS01 statements to confirm the identity of ALL owners?</description>
+    <fullName>Type__c</fullName>
     <externalId>false</externalId>
-    <label>Have we obtained sufficient CS01 stateme</label>
+    <label>Type</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
@@ -12,19 +11,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Yes</fullName>
+                <fullName>CF CAF</fullName>
                 <default>false</default>
-                <label>Yes</label>
+                <label>CF CAF</label>
             </value>
             <value>
-                <fullName>No</fullName>
+                <fullName>Business CAF</fullName>
                 <default>false</default>
-                <label>No</label>
-            </value>
-            <value>
-                <fullName>N/A</fullName>
-                <default>false</default>
-                <label>N/A</label>
+                <label>Business CAF</label>
             </value>
         </valueSetDefinition>
     </valueSet>
