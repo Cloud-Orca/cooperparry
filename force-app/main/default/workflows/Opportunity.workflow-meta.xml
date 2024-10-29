@@ -87,6 +87,26 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Law_Estimate_to_Approved</fullName>
+        <field>Law_Estimate_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Law Estimate to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Law_Estimate_to_Submitted</fullName>
+        <field>Law_Estimate_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Law Estimate to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Loss_Reason</fullName>
         <field>Loss_Reason__c</field>
         <literalValue>Audit Rejection</literalValue>
