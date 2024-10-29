@@ -91,7 +91,8 @@ ISCHANGED({!$Record.StageName}),
 CASE({!$Record.Opportunity_Type_Area__c},
 &quot;THG Tax&quot;,1, 0) = 1,
 CASE({!$Record.Opportunity_Area__c},
-&quot;Tax&quot;,1, 0) = 1
+&quot;Tax&quot;,1, 0) = 1,
+TEXT({!$Record.Assignment_Type__c}) != &apos;THG Tax Due Diligence&apos;
 )</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
