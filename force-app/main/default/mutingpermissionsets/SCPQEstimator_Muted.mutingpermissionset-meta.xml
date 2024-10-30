@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MutingPermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffscpq__Estimate_Role_Request__c.ffscpq__Percent_Discount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <label>Certinia - SCPQ - Estimator Muted</label>
+</MutingPermissionSet>
