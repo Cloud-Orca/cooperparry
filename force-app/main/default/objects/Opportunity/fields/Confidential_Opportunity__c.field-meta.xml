@@ -36,6 +36,16 @@
                 <default>false</default>
                 <label>CP Law</label>
             </value>
+            <value>
+                <fullName>TS</fullName>
+                <default>false</default>
+                <label>TS</label>
+            </value>
+            <value>
+                <fullName>TT</fullName>
+                <default>false</default>
+                <label>TT</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
