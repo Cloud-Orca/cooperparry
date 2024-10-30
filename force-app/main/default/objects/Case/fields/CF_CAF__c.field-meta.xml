@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Partner_Approved_formula__c</fullName>
+    <fullName>CF_CAF__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(Partner_Approved_checkbox__c, &apos;✅&apos;,&apos;&apos;)</formula>
-    <label>Partner Approved</label>
+    <formula>IF(CF_CAF_checkbox__c, &apos;✅&apos;,&apos;&apos;)</formula>
+    <label>CF CAF</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

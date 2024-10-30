@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Partner_Approved_formula__c</fullName>
+    <fullName>Individual_Ongoing_Monitoring_formula__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(Partner_Approved_checkbox__c, &apos;✅&apos;,&apos;&apos;)</formula>
-    <label>Partner Approved</label>
+    <formula>IF(Individual_Ongoing_Monitoring_checkbox__c, &apos;✅&apos;,&apos;&apos;)</formula>
+    <label>Individual Ongoing Monitoring</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

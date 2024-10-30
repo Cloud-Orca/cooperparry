@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Form_Approved__c</fullName>
+    <fullName>Business_Risk_Assessment_Form_checkbox__c</fullName>
+    <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <formula>IF(Approved__c,  &apos;✅&apos;,&apos;&apos;)</formula>
-    <label>Form Approved</label>
-    <required>false</required>
+    <label>Business Risk Assessment Form</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Checkbox</type>
 </CustomField>
