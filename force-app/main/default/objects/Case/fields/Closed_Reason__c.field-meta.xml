@@ -19,8 +19,34 @@
                 <label>Onboarded</label>
             </value>
             <value>
+                <fullName>Declined - Missing AML documents</fullName>
+                <default>false</default>
+                <label>Declined - Missing AML documents</label>
+            </value>
+            <value>
+                <fullName>Declined - CAF incomplete</fullName>
+                <default>false</default>
+                <label>Declined - CAF incomplete</label>
+            </value>
+            <value>
+                <fullName>Declined - Professional Clearance response incomplete</fullName>
+                <default>false</default>
+                <label>Declined - Professional Clearance response incomplete</label>
+            </value>
+            <value>
+                <fullName>Declined - Missing subsidiary info</fullName>
+                <default>false</default>
+                <label>Declined - Missing subsidiary info</label>
+            </value>
+            <value>
+                <fullName>Yearly Check Complete</fullName>
+                <default>false</default>
+                <label>Yearly Check Complete</label>
+            </value>
+            <value>
                 <fullName>Failed Smart Search</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Failed Smart Search</label>
             </value>
         </valueSetDefinition>
@@ -30,7 +56,23 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Closed</controllingFieldValue>
-            <valueName>Failed Smart Search</valueName>
+            <valueName>Declined - Missing AML documents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Declined - CAF incomplete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Declined - Professional Clearance response incomplete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Declined - Missing subsidiary info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Yearly Check Complete</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
