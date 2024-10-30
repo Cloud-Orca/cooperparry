@@ -194,7 +194,7 @@
         <connector>
             <targetReference>Loop_Milestone_Resource_Requests</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>1 AND (2 OR 3) AND 4</filterLogic>
         <filters>
             <field>pse__Project__c</field>
             <operator>EqualTo</operator>
@@ -261,7 +261,7 @@
         <connector>
             <targetReference>Loop_Resource_Requests</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
         <filters>
             <field>pse__Project__c</field>
             <operator>EqualTo</operator>
