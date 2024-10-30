@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Includes permission sets for job functions related to the estimator role. For a full list of the included permission sets, go to Permission Sets on this permission set group&apos;s detail page and click Permission Sets in Group.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Certinia - SCPQ - Estimator</label>
+    <mutingPermissionSets>SCPQEstimator_Muted</mutingPermissionSets>
+    <permissionSets>Cooper_Parry_PSA_Custom_Fields_Permission_Set</permissionSets>
+    <permissionSets>Cooper_Parry_User_Fields</permissionSets>
+    <permissionSets>ffscpq__AddFromTemplate</permissionSets>
+    <permissionSets>ffscpq__CreateEstimates</permissionSets>
+    <permissionSets>ffscpq__CreateMilestonesFromLineSets</permissionSets>
+    <permissionSets>ffscpq__CreateProjectsFromEstimates</permissionSets>
+    <permissionSets>ffscpq__EditEstimates</permissionSets>
+    <permissionSets>ffscpq__EditPriceAndCost</permissionSets>
+    <permissionSets>ffscpq__ManageEstimateRoleSkills</permissionSets>
+    <permissionSets>ffscpq__ManageEstimateVendorLineItems</permissionSets>
+    <permissionSets>ffscpq__ManageEstimatedExpenses</permissionSets>
+    <permissionSets>ffscpq__PushToOpportunity</permissionSets>
+    <permissionSets>ffscpq__SubmitEstimates</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
