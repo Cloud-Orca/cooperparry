@@ -12,19 +12,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Internal</fullName>
+                <fullName>Inbound</fullName>
                 <default>false</default>
-                <label>Internal</label>
+                <label>Inbound</label>
             </value>
             <value>
-                <fullName>External</fullName>
+                <fullName>Event</fullName>
                 <default>false</default>
-                <label>External</label>
+                <label>Event</label>
             </value>
             <value>
-                <fullName>Outbound</fullName>
+                <fullName>Outreach</fullName>
                 <default>false</default>
-                <label>Outbound</label>
+                <label>Outreach</label>
             </value>
             <value>
                 <fullName>Referral</fullName>
