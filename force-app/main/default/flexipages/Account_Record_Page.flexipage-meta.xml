@@ -162,6 +162,16 @@
                 <identifier>RecordData_Origination_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
+                <identifier>RecordConfidential_Account_Area_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -398,7 +408,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Source__c</fieldItem>
                 <identifier>RecordSource_cField</identifier>
@@ -459,7 +469,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Source_Type__c</fieldItem>
                 <identifier>RecordSource_Type_cField</identifier>
@@ -1965,10 +1975,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>Facet-ed61cef4-444a-473b-bbe4-2061c17d7a7f</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -2406,20 +2412,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab6</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-ed61cef4-444a-473b-bbe4-2061c17d7a7f</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>👥Competitor / Incumbent</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
