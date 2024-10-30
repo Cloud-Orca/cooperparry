@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Partner_Approved_formula__c</fullName>
+    <fullName>Met_Client_face_to_face__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(Partner_Approved_checkbox__c, &apos;✅&apos;,&apos;&apos;)</formula>
-    <label>Partner Approved</label>
+    <label>Met Client face to face</label>
+    <length>255</length>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

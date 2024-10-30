@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Type__c</fullName>
+    <fullName>iompick1__c</fullName>
     <externalId>false</externalId>
-    <label>Type</label>
+    <label>Have you considered changes that may alt</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -11,24 +12,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>CF CAF</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
-                <label>CF CAF</label>
+                <label>Yes</label>
             </value>
             <value>
-                <fullName>Business CAF</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
-                <label>Business CAF</label>
+                <label>No</label>
             </value>
             <value>
-                <fullName>Business Risk Assessment</fullName>
+                <fullName>N/A</fullName>
                 <default>false</default>
-                <label>Business Risk Assessment</label>
-            </value>
-            <value>
-                <fullName>Individual Risk</fullName>
-                <default>false</default>
-                <label>Individual Risk</label>
+                <label>N/A</label>
             </value>
         </valueSetDefinition>
     </valueSet>
