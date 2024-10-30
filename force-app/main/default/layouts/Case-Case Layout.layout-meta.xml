@@ -26,7 +26,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>PEP_RCA_Identified__c</field>
+                <field>Case_Referred__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -167,6 +167,24 @@
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Form Completion</label>
+        <layoutColumns/>
+        <layoutColumns/>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Approvals</label>
+        <layoutColumns/>
+        <layoutColumns/>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
@@ -198,6 +216,16 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>LogACall</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewTask</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>6</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>DecaFuKD000000000Q0AQ</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>0</sortOrder>
@@ -221,16 +249,6 @@
             <actionName>CloseCase</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>4</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>LogACall</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>5</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>NewTask</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>NewEvent</actionName>
@@ -350,6 +368,11 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Is_Current_Stage__c</fields>
+        <fields>Stage_Name__c</fields>
+        <fields>Start_Time__c</fields>
+        <fields>End_Time__c</fields>
+        <fields>Duration_Hours__c</fields>
         <relatedList>Stage_History__c.Related_Case__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -358,6 +381,8 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Completed_By__c</fields>
+        <fields>Completed_Date__c</fields>
         <relatedList>Continuation_Form__c.Case__c</relatedList>
     </relatedLists>
     <relatedLists>
