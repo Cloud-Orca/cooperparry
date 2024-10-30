@@ -5,7 +5,7 @@
         <name>Is_Project_BIllable</name>
         <label>Is Project BIllable</label>
         <locationX>182</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Is_Project_Work_at_Risk</targetReference>
         </defaultConnector>
@@ -55,7 +55,7 @@
         <name>Is_Project_Not_WAR_Anymore</name>
         <label>Is Project Billable &amp; Changed from Working at Risk?</label>
         <locationX>336</locationX>
-        <locationY>1439</locationY>
+        <locationY>1547</locationY>
         <defaultConnector>
             <targetReference>Stage_Changed</targetReference>
         </defaultConnector>
@@ -94,7 +94,7 @@
         <name>Is_Project_Work_at_Risk</name>
         <label>Is Project Billable &amp; Work at Risk</label>
         <locationX>336</locationX>
-        <locationY>1139</locationY>
+        <locationY>1247</locationY>
         <defaultConnector>
             <targetReference>Is_Project_Not_WAR_Anymore</targetReference>
         </defaultConnector>
@@ -126,7 +126,7 @@
         <name>Stage_Changed</name>
         <label>Stage Changed?</label>
         <locationX>336</locationX>
-        <locationY>1739</locationY>
+        <locationY>1847</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Completed_or_Canceled</name>
@@ -184,13 +184,43 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Services_Product</name>
+        <label>Services Product from Estimate</label>
+        <locationX>182</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Project_BIllable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ffscpq__Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.pse__Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ffscpq__Is_Primary__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ffscpq__Estimate__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>ffscpq__Product__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>CT_Update_Billable</name>
         <label>Update Billable</label>
         <locationX>182</locationX>
         <locationY>539</locationY>
         <connector>
-            <targetReference>Is_Project_BIllable</targetReference>
+            <targetReference>Services_Product</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -243,10 +273,11 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <description>Update Bookings and Services Product</description>
         <name>Update_Bookings</name>
         <label>Update Bookings</label>
         <locationX>50</locationX>
-        <locationY>863</locationY>
+        <locationY>971</locationY>
         <connector>
             <targetReference>Is_Project_Work_at_Risk</targetReference>
         </connector>
@@ -259,6 +290,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>ffpsai__ServicesProduct__c</field>
+            <value>
+                <elementReference>Services_Product.ffscpq__Product__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>pse__Bookings__c</field>
             <value>
                 <elementReference>$Record.pse__Opportunity__r.Amount</elementReference>
@@ -270,7 +307,7 @@
         <name>Update_Exclude_from_Billing_to_FALSE</name>
         <label>Update Exclude from Billing to FALSE</label>
         <locationX>204</locationX>
-        <locationY>1547</locationY>
+        <locationY>1655</locationY>
         <connector>
             <targetReference>Stage_Changed</targetReference>
         </connector>
@@ -286,7 +323,7 @@
         <name>Update_Exclude_from_Billing_to_TRUE</name>
         <label>Update Exclude from Billing to TRUE</label>
         <locationX>204</locationX>
-        <locationY>1247</locationY>
+        <locationY>1355</locationY>
         <connector>
             <targetReference>Is_Project_Not_WAR_Anymore</targetReference>
         </connector>
@@ -302,7 +339,7 @@
         <name>Update_Project_Daily_Notes_Required_to_TRUE</name>
         <label>Update Project Daily Notes Required to TRUE</label>
         <locationX>50</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <connector>
             <targetReference>Update_Bookings</targetReference>
         </connector>
@@ -331,7 +368,7 @@
         <name>Update_Project_fields_to_Close</name>
         <label>Update Project fields to Close</label>
         <locationX>204</locationX>
-        <locationY>1847</locationY>
+        <locationY>1955</locationY>
         <inputAssignments>
             <field>pse__Closed_for_Expense_Entry__c</field>
             <value>
