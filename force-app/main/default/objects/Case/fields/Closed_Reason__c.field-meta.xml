@@ -10,7 +10,6 @@
     <type>Picklist</type>
     <valueSet>
         <controllingField>Status</controllingField>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -42,12 +41,6 @@
                 <fullName>Yearly Check Complete</fullName>
                 <default>false</default>
                 <label>Yearly Check Complete</label>
-            </value>
-            <value>
-                <fullName>Failed Smart Search</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Failed Smart Search</label>
             </value>
         </valueSetDefinition>
         <valueSettings>
