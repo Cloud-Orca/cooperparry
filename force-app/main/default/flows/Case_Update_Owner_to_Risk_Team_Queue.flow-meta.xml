@@ -4,7 +4,7 @@
         <name>Send_Alert_to_Risk_Team_Queue</name>
         <label>Send Alert to Risk Team Queue</label>
         <locationX>182</locationX>
-        <locationY>647</locationY>
+        <locationY>1163</locationY>
         <actionName>Case.PEP_Notification_for_Case_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -23,10 +23,13 @@
     <actionCalls>
         <name>Send_Email_to_Lifecycle_Coordinator</name>
         <label>Send Email to Lifecycle Coordinator</label>
-        <locationX>182</locationX>
-        <locationY>1271</locationY>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Case_Owner</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>emailAddressesArray</name>
@@ -72,7 +75,7 @@
         <name>assign_recipient</name>
         <label>assign recipient</label>
         <locationX>50</locationX>
-        <locationY>1079</locationY>
+        <locationY>755</locationY>
         <assignmentItems>
             <assignToReference>recipients</assignToReference>
             <operator>Add</operator>
@@ -85,9 +88,22 @@
         </connector>
     </assignments>
     <customErrors>
+        <name>No_Lifecycle_Coordinator</name>
+        <label>No Lifecycle Coordinator</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Update_Case_Owner</targetReference>
+        </connector>
+        <customErrorMessages>
+            <errorMessage>Please ensure that there is a lifecycle coordinator before checking the Case Referred checkbox</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
         <name>noriskteam</name>
         <label>noriskteam</label>
-        <locationX>490</locationX>
+        <locationX>578</locationX>
         <locationY>539</locationY>
         <customErrorMessages>
             <errorMessage>No Risk Team Queue is Found</errorMessage>
@@ -98,9 +114,9 @@
         <name>lifecycle_coordinator_found</name>
         <label>lifecycle coordinator found</label>
         <locationX>182</locationX>
-        <locationY>971</locationY>
+        <locationY>647</locationY>
         <defaultConnector>
-            <targetReference>Send_Email_to_Lifecycle_Coordinator</targetReference>
+            <targetReference>No_Lifecycle_Coordinator</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -122,7 +138,7 @@
     <decisions>
         <name>Queue_Found</name>
         <label>Queue Found</label>
-        <locationX>336</locationX>
+        <locationX>380</locationX>
         <locationY>431</locationY>
         <defaultConnector>
             <targetReference>noriskteam</targetReference>
@@ -139,7 +155,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Case_Owner</targetReference>
+                <targetReference>get_Lifecycle_Coordinator</targetReference>
             </connector>
             <label>Yes - Queue Found</label>
         </rules>
@@ -170,11 +186,8 @@
         <name>get_email_template</name>
         <label>get email template</label>
         <locationX>182</locationX>
-        <locationY>755</locationY>
+        <locationY>1271</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>get_Lifecycle_Coordinator</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>DeveloperName</field>
@@ -191,7 +204,7 @@
         <name>get_Lifecycle_Coordinator</name>
         <label>get Lifecycle Coordinator</label>
         <locationX>182</locationX>
-        <locationY>863</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>lifecycle_coordinator_found</targetReference>
@@ -218,7 +231,7 @@
     <recordLookups>
         <name>get_Risk_Team_Queue</name>
         <label>get Risk Team Queue</label>
-        <locationX>336</locationX>
+        <locationX>380</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -247,7 +260,7 @@
         <name>Update_Case_Owner</name>
         <label>Update Case Owner</label>
         <locationX>182</locationX>
-        <locationY>539</locationY>
+        <locationY>1055</locationY>
         <connector>
             <targetReference>Send_Alert_to_Risk_Team_Queue</targetReference>
         </connector>
@@ -257,10 +270,16 @@
                 <elementReference>get_Risk_Team_Queue.Id</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Compliance Check</stringValue>
+            </value>
+        </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>210</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>get_Risk_Team_Queue</targetReference>
@@ -271,18 +290,18 @@ NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
 OR(
 AND(
 ISNEW(),
-{!$Record.PEP_RCA_Identified__c} = TRUE
+{!$Record.Case_Referred__c} = TRUE
 ),
 AND(
-ISCHANGED({!$Record.PEP_RCA_Identified__c}),
-{!$Record.PEP_RCA_Identified__c} = TRUE
+ISCHANGED({!$Record.Case_Referred__c}),
+{!$Record.Case_Referred__c} = TRUE
 )
 ))</filterFormula>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <textTemplates>
         <name>body</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
