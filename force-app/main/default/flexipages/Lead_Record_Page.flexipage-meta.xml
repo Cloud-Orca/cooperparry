@@ -117,8 +117,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Beauhurst_Updated_Date__c</fieldItem>
-                <identifier>RecordBeauhurst_Updated_Date__cField</identifier>
+                <fieldItem>Record.Company_Activity__c</fieldItem>
+                <identifier>RecordCompany_Activity__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -127,8 +127,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Company_Activity__c</fieldItem>
-                <identifier>RecordCompany_Activity__cField</identifier>
+                <fieldItem>Record.Beauhurst_ID__c</fieldItem>
+                <identifier>RecordBeauhurst_ID_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-2c10ab0d-e38d-408d-9dbc-9d87c8ce8b2d</name>
@@ -171,8 +171,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Registered_Number__c</fieldItem>
-                <identifier>RecordRegistered_Number__cField</identifier>
+                <fieldItem>Record.Beauhurst_Updated_Date__c</fieldItem>
+                <identifier>RecordBeauhurst_Updated_Date__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-8607cb96-0bbe-4079-bf30-83870f48f9d1</name>
@@ -207,7 +207,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Source__c</fieldItem>
                 <identifier>RecordSource_cField</identifier>
@@ -231,7 +231,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Source_Type__c</fieldItem>
                 <identifier>RecordSource_Type_cField</identifier>
@@ -778,10 +778,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>Facet-4856462b-54f7-488e-b374-a669258b3b84</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -790,16 +786,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-4856462b-54f7-488e-b374-a669258b3b84</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-c759e0f4-3b38-4e7d-9216-97327d6307d0</name>
