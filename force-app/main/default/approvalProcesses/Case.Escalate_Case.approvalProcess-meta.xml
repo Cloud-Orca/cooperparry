@@ -19,8 +19,8 @@
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <label>Step 1</label>
-        <name>Step_1</name>
+        <label>Escalation</label>
+        <name>Escalation</name>
     </approvalStep>
     <emailTemplate>unfiled$public/Escalated_Case_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
