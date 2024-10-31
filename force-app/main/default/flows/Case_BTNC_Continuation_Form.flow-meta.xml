@@ -304,8 +304,22 @@
                 <elementReference>SupportingDocumentsLTA</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varForm.Client_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Name1</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varForm.Form_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ongoing Monitoring</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
-            <targetReference>Guidance_Screen</targetReference>
+            <targetReference>Update_Business_CAF</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -328,7 +342,7 @@
         <name>Check_Completion_Form</name>
         <label>Check Completion Form</label>
         <locationX>182</locationX>
-        <locationY>1298</locationY>
+        <locationY>1190</locationY>
         <defaultConnector>
             <targetReference>Update_Completion_Fields_in_Form</targetReference>
         </defaultConnector>
@@ -505,7 +519,7 @@
         <name>Update_Business_CAF</name>
         <label>Update Business CAF</label>
         <locationX>182</locationX>
-        <locationY>1190</locationY>
+        <locationY>1082</locationY>
         <connector>
             <targetReference>Check_Completion_Form</targetReference>
         </connector>
@@ -515,7 +529,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>1598</locationY>
+        <locationY>1490</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -536,7 +550,7 @@
         <name>Update_Completion_Fields_in_Form</name>
         <label>Update Completion Fields in Form</label>
         <locationX>270</locationX>
-        <locationY>1406</locationY>
+        <locationY>1298</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -797,11 +811,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section5_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>header_txt3</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 16pt;&quot;&gt;GENERAL CONTINUATION PROCEDURES&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 11pt;&quot;&gt;(Please refer to guidance at the end of this document)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1894,7 +1903,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>f_txt1</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Ensure that the “know your client” information held on our files for anti-money laundering purposes is updated for any changes identified above and in any other relevant respects.&amp;nbsp;Ensure any changes to Beneficial Ownership are recorded and any additional ID verification undertaken.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima; background-color: yellow;&quot;&gt;Record the Current Beneficial Owners and the basis of beneficial ownership below:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima; background-color: yellow;&quot;&gt;&amp;gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima; background-color: yellow;&quot;&gt;&amp;gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima; background-color: yellow;&quot;&gt;&amp;gt;&lt;/strong&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;For Non-Audit services added to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;The type of non-audit service giving as much detail as possible, including the fee level? &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;The services are to be carried out by a separate team with a separate partner not involved in the audit which are?&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Any other safeguards that are deemed necessary by the Audit partner?&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Full details of the ethical considerations should be detailed on the Audit file by the Audit partner (this must be confirmed on the CF)?&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Ensure that the “know your client” information held on our files for anti-money laundering purposes is updated for any changes identified above and in any other relevant respects.&amp;nbsp;Ensure any changes to Beneficial Ownership are recorded and any additional ID verification undertaken.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;&amp;nbsp;For Non-Audit services added to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;The type of non-audit service giving as much detail as possible, including the fee level? &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;The services are to be carried out by a separate team with a separate partner not involved in the audit which are?&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Any other safeguards that are deemed necessary by the Audit partner?&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Full details of the ethical considerations should be detailed on the Audit file by the Audit partner (this must be confirmed on the CF)?&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
@@ -2450,27 +2459,6 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <screens>
-        <name>Guidance_Screen</name>
-        <label>Guidance Screen</label>
-        <locationX>182</locationX>
-        <locationY>1082</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <backButtonLabel>Back</backButtonLabel>
-        <connector>
-            <targetReference>Update_Business_CAF</targetReference>
-        </connector>
-        <fields>
-            <name>guidance_txt1</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima;&quot;&gt;Guidance&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;1.&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Cooper Parry procedures require that all client relationships be periodically reviewed to determine whether continuation of the relationship is appropriate.&amp;nbsp;Cooper Parry require this review to be carried out at least annually.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;2.&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Examples of matters which should be considered when making continuation decisions are set out in section a of this checklist.&amp;nbsp;This is not an exhaustive list and there may be other matters which are relevant to the continuation decision.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;3.&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;The Money Laundering Regulations 2017 require periodic reassessment of the level of money laundering risk attaching to each client.&amp;nbsp;Please answer the questions to assess the level of risk as either High or Normal.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;4.&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;The Money Laundering Regulations also require periodic review and updating of our “know your client” information.&amp;nbsp;The processes detailed in points above should largely result in this requirement being met but you should consider whether there are any other matters where we need to obtain information or confirmation.&amp;nbsp;If the assessed level of money laundering risk has changed then we need to satisfy ourselves that the client due diligence information which we hold is adequate.&amp;nbsp;If necessary, reference should be made to the Guidance on Client Acceptance and Ongoing Monitoring document which is available on the intranet.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;5.&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Please contact Michelle McDonald or Mike Joy if you have any queries.&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <nextOrFinishButtonLabel>Done</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
     <start>
         <locationX>56</locationX>
         <locationY>0</locationY>
@@ -2478,7 +2466,7 @@
             <targetReference>Get_Case</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
