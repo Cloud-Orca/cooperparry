@@ -47,6 +47,16 @@
                 <default>false</default>
                 <label>Another advisor appointed</label>
             </value>
+            <value>
+                <fullName>Ethics</fullName>
+                <default>false</default>
+                <label>Ethics</label>
+            </value>
+            <value>
+                <fullName>Regulatory Issue</fullName>
+                <default>false</default>
+                <label>Regulatory Issue</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Disqualified</controllingFieldValue>
