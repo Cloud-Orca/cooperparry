@@ -17,8 +17,8 @@
                 <type>adhoc</type>
             </approver>
         </assignedApprover>
-        <label>Step 1</label>
-        <name>Step_1</name>
+        <label>Partner Approval</label>
+        <name>Partner_Approval</name>
     </approvalStep>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
