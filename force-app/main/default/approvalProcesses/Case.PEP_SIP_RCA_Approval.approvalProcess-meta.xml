@@ -17,8 +17,8 @@
                 <type>adhoc</type>
             </approver>
         </assignedApprover>
-        <label>Step 1</label>
-        <name>Step_1</name>
+        <label>PEP/SIP/RCA Approval</label>
+        <name>PEP_SIP_RCA_Approval</name>
     </approvalStep>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
