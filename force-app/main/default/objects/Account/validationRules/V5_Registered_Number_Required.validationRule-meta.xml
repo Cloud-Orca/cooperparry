@@ -4,6 +4,7 @@
     <active>true</active>
     <errorConditionFormula>AND(
 NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ IsPersonAccount = false,
 
 ISBLANK (  Beauhurst_ID__c ),
 
