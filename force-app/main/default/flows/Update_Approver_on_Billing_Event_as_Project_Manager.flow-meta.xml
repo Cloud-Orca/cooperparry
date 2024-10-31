@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Update_Approve_as_PM_on_Billing_Event</name>
+        <label>Update Approve as PM on Billing Event</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Approver__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.pse__Project__r.pse__Project_Manager__r.pse__Salesforce_User__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <interviewLabel>Update Approver on Billing Event as Project Manager {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Approver on Billing Event as Project Manager</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Approve_as_PM_on_Billing_Event</targetReference>
+        </connector>
+        <filterFormula>NOT(ISNULL({!$Record.pse__Project__c})) &amp;&amp; NOT(ISNULL({!$Record.pse__Project__r.pse__Project_Manager__c})) &amp;&amp; NOT(ISNULL({!$Record.pse__Project__r.pse__Project_Manager__r.pse__Salesforce_User__c}))</filterFormula>
+        <object>pse__Billing_Event__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

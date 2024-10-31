@@ -31,10 +31,40 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approved_Checkbox_as_True</fullName>
+        <field>pse__Is_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Approved Checkbox as True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_Checkbox_to_True</fullName>
+        <field>pse__Is_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Approved Checkbox to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>CTUpdate_Approval_Status_Project_Partner</fullName>
         <field>CT_Approval_Status_Project_Partner__c</field>
         <literalValue>Pending</literalValue>
         <name>Update Approval Status (Project Partner)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_Checkbox_as_True</fullName>
+        <field>pse__Is_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Set Approved Checkbox as True</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
