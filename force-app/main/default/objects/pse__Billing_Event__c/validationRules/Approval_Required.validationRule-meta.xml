@@ -2,6 +2,6 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Approval_Required</fullName>
     <active>true</active>
-    <errorConditionFormula>IF(ISCHANGED(pse__Is_Released__c) &amp;&amp; pse__Is_Released__c &amp;&amp;  pse__Project__r.Manager_approval_required_for_billing__c , true,false)</errorConditionFormula>
+    <errorConditionFormula>IF(ISCHANGED(pse__Is_Released__c) &amp;&amp; pse__Is_Released__c &amp;&amp;  pse__Project__r.Manager_approval_required_for_billing__c &amp;&amp; NOT(pse__Is_Approved__c), true,false)</errorConditionFormula>
     <errorMessage>Approval Required : This Billing event has not been approved yet.</errorMessage>
 </ValidationRule>
