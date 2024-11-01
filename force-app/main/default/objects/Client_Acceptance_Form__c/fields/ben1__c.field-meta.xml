@@ -4,7 +4,7 @@
     <description>Identification comments (including summary of why individuals have been chosen for identity verification):</description>
     <externalId>false</externalId>
     <label>Identification comments (including summa</label>
-    <length>32768</length>
+    <length>10000</length>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

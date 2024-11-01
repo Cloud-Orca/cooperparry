@@ -4,7 +4,7 @@
     <description>Summarise the key aspects of what we are being asked to do</description>
     <externalId>false</externalId>
     <label>Summarise the key aspects</label>
-    <length>32768</length>
+    <length>10000</length>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

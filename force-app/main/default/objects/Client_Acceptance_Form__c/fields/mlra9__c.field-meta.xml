@@ -4,7 +4,7 @@
     <description>If the client has been met please state which team member met them:</description>
     <externalId>false</externalId>
     <label>If the client has been met please state</label>
-    <length>32768</length>
+    <length>10000</length>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>
