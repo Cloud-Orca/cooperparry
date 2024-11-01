@@ -114,6 +114,10 @@
                 <behavior>Edit</behavior>
                 <field>Original_Fee_Amount__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Original_Estimate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
