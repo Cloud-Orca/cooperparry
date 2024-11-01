@@ -4,10 +4,26 @@
     <assignments>
         <name>Estimated_Assignment_Project_Revenue</name>
         <label>Estimated Assignment Project Revenue</label>
-        <locationX>264</locationX>
-        <locationY>1355</locationY>
+        <locationX>396</locationX>
+        <locationY>1247</locationY>
         <assignmentItems>
             <assignToReference>ProjectAssignmentValue</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Assignments.Estimated_Revenue__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Milestone</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Milestone_Assignment_Revenue</name>
+        <label>Milestone Assignment Revenue</label>
+        <locationX>264</locationX>
+        <locationY>1463</locationY>
+        <assignmentItems>
+            <assignToReference>MilestoneAssignmentRevenue</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>Loop_Assignments.Estimated_Revenue__c</elementReference>
@@ -18,44 +34,12 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Milestone_Assignment_Revenue</name>
-        <label>Milestone Assignment Revenue</label>
+        <name>Milestone_Resource_Requests_Values_2</name>
+        <label>Milestone Resource Requests Values 2</label>
         <locationX>264</locationX>
-        <locationY>1763</locationY>
+        <locationY>755</locationY>
         <assignmentItems>
-            <assignToReference>MilestoneAssignmentRevenue</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>oop_Milestone_Assignments.Estimated_Revenue__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>oop_Milestone_Assignments</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Milestone_Resource_Requests_Values</name>
-        <label>Milestone Resource Requests Values</label>
-        <locationX>264</locationX>
-        <locationY>947</locationY>
-        <assignmentItems>
-            <assignToReference>Milestone_estimated_recenue</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Loop_Resource_Requests.CT_Estimated_Revenue__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Milestone_Resource_Requests</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Resource_Requests_Values</name>
-        <label>Resource Requests Values</label>
-        <locationX>264</locationX>
-        <locationY>539</locationY>
-        <assignmentItems>
-            <assignToReference>Project_RR_Amount</assignToReference>
+            <assignToReference>Milestone_estimated_revenue</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>Loop_Resource_Requests.CT_Estimated_Revenue__c</elementReference>
@@ -65,11 +49,77 @@
             <targetReference>Loop_Resource_Requests</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Resource_Requests_Values</name>
+        <label>Resource Requests Values</label>
+        <locationX>396</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>Project_RR_Amount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Resource_Requests.CT_Estimated_Revenue__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Milestone</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Copy_1_of_Milestone</name>
+        <label>Copy 1 of Milestone</label>
+        <locationX>396</locationX>
+        <locationY>1355</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Assignments</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Correct_Milestone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Assignments.pse__Milestone__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.pse__Milestone__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Milestone_Assignment_Revenue</targetReference>
+            </connector>
+            <label>Copy 1 of Correct Milestone</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Milestone</name>
+        <label>Milestone</label>
+        <locationX>396</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Resource_Requests</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Correct_Milestone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Resource_Requests.pse__Milestone__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.pse__Milestone__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Milestone_Resource_Requests_Values_2</targetReference>
+            </connector>
+            <label>Correct Milestone</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <formulas>
         <name>MilestoneValue</name>
         <dataType>Number</dataType>
-        <expression>{!Milestone_estimated_recenue}+{!MilestoneAssignmentRevenue}</expression>
+        <expression>{!Milestone_estimated_revenue}+{!MilestoneAssignmentRevenue}</expression>
         <scale>2</scale>
     </formulas>
     <formulas>
@@ -84,28 +134,14 @@
         <name>Loop_Assignments</name>
         <label>Loop Assignments</label>
         <locationX>176</locationX>
-        <locationY>1247</locationY>
+        <locationY>1139</locationY>
         <collectionReference>Project_Assignments</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Estimated_Assignment_Project_Revenue</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Milestone_Assignments</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
-        <name>Loop_Milestone_Resource_Requests</name>
-        <label>Loop Milestone Resource Requests</label>
-        <locationX>176</locationX>
-        <locationY>839</locationY>
-        <collectionReference>Milestone_Resource_Requests</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Milestone_Resource_Requests_Values</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Project_Assignments</targetReference>
+            <targetReference>Update_Project</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
@@ -119,21 +155,7 @@
             <targetReference>Resource_Requests_Values</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Milestone_Resource_Requests</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
-        <name>oop_Milestone_Assignments</name>
-        <label>Loop Milestone Assignments</label>
-        <locationX>176</locationX>
-        <locationY>1655</locationY>
-        <collectionReference>Milestone_Assignments</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Milestone_Assignment_Revenue</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Update_Project</targetReference>
+            <targetReference>Project_Assignments</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -156,84 +178,10 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Milestone_Assignments</name>
-        <label>Milestone Assignments</label>
-        <locationX>176</locationX>
-        <locationY>1547</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>oop_Milestone_Assignments</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>pse__Project__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.pse__Project__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Milestone__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.pse__Milestone__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>pse__Assignment__c</object>
-        <sortField>Id</sortField>
-        <sortOrder>Asc</sortOrder>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Milestone_Resource_Requests</name>
-        <label>Milestone Resource Requests</label>
-        <locationX>176</locationX>
-        <locationY>731</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Loop_Milestone_Resource_Requests</targetReference>
-        </connector>
-        <filterLogic>1 AND (2 OR 3) AND 4</filterLogic>
-        <filters>
-            <field>pse__Project__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.pse__Project__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Status__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Assigned</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Status__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Cancelled</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Milestone__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.pse__Milestone__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>pse__Resource_Request__c</object>
-        <sortField>Id</sortField>
-        <sortOrder>Asc</sortOrder>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Project_Assignments</name>
         <label>Project Assignments</label>
         <locationX>176</locationX>
-        <locationY>1139</locationY>
+        <locationY>1031</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Assignments</targetReference>
@@ -261,7 +209,7 @@
         <connector>
             <targetReference>Loop_Resource_Requests</targetReference>
         </connector>
-        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>pse__Project__c</field>
             <operator>EqualTo</operator>
@@ -285,6 +233,11 @@
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>pse__Resource_Request__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CT_Estimated_Revenue__c</queriedFields>
+        <queriedFields>pse__Milestone__c</queriedFields>
+        <queriedFields>pse__Project__c</queriedFields>
+        <queriedFields>pse__Status__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -293,7 +246,7 @@
         <name>Update_Project</name>
         <label>Update Project</label>
         <locationX>176</locationX>
-        <locationY>1955</locationY>
+        <locationY>1739</locationY>
         <connector>
             <targetReference>Update_Records_2</targetReference>
         </connector>
@@ -309,7 +262,7 @@
         <name>Update_Records_2</name>
         <label>Update Records 2</label>
         <locationX>176</locationX>
-        <locationY>2063</locationY>
+        <locationY>1847</locationY>
         <inputAssignments>
             <field>Milestone_Fee_Amount__c</field>
             <value>
@@ -330,7 +283,7 @@
     </start>
     <status>Active</status>
     <variables>
-        <name>Milestone_estimated_recenue</name>
+        <name>Milestone_estimated_revenue</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
