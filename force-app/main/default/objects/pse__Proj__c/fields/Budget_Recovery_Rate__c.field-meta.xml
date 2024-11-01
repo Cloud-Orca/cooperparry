@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Budget_Recovery_Rate__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(pse__Bookings__c = 0,0,CT_Fee_Amount__c / pse__Bookings__c )</formula>
+    <formula>IF( Original_Estimate__c  = 0,0, Original_Fee_Amount__c  / Original_Estimate__c )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Budget Recovery Rate</label>
     <precision>18</precision>
