@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>59.0</apiVersion>
+    <apiVersion>62.0</apiVersion>
     <assignments>
         <name>Assign_Case_and_Account_Id</name>
         <label>Assign Case and Account Id</label>
@@ -27,8 +27,44 @@
                 <elementReference>Get_Business_CAF_Record_Type.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Business Risk Assessment</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Page_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Beneficiaries_Assignment</name>
+        <label>Beneficiaries Assignment</label>
+        <locationX>264</locationX>
+        <locationY>2510</locationY>
+        <assignmentItems>
+            <assignToReference>beneficiary.Name</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>beneficiary.Basis_of_beneficial_ownership__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>beneficiary.ID_verified_by__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>beneficiary.Client_Acceptance_Form__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>beneficiaries</assignToReference>
+            <operator>Add</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Beneficiaries_Loop</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -102,9 +138,6 @@
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Client_Group__c</assignToReference>
             <operator>Assign</operator>
-            <value>
-                <elementReference>Client_Group</elementReference>
-            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.List_related_businesses_and_individuals__c</assignToReference>
@@ -705,6 +738,47 @@
             <targetReference>Create_Client_Acceptance_Form</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Subsidiaries_Assignment</name>
+        <label>Subsidiaries Assignment</label>
+        <locationX>264</locationX>
+        <locationY>2918</locationY>
+        <assignmentItems>
+            <assignToReference>subsidiaryRecord.Name</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>subsidiaryRecord.Accounts__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>subsidiaryRecord.Confirmation_Statements_Annual_Return__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>subsidiaryRecord.Incorporation_Document_Memorandum_and__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>subsidiaryRecord.Client_Acceptance_Form__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>subsidiaries</assignToReference>
+            <operator>Add</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Subsidiaries_Loop</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>NA</name>
+        <choiceText>N/A</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>N/A</stringValue>
+        </value>
+    </choices>
     <choices>
         <name>No</name>
         <choiceText>No</choiceText>
@@ -745,6 +819,32 @@
     <environments>Default</environments>
     <interviewLabel>Case - Client Acceptance Form {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case - Client Acceptance Form</label>
+    <loops>
+        <name>Beneficiaries_Loop</name>
+        <label>Beneficiaries Loop</label>
+        <locationX>176</locationX>
+        <locationY>2402</locationY>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Beneficiaries_Assignment</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Beneficiaries</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Subsidiaries_Loop</name>
+        <label>Subsidiaries Loop</label>
+        <locationX>176</locationX>
+        <locationY>2810</locationY>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Subsidiaries_Assignment</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Subsidiaries</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -765,14 +865,34 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <name>Create_Beneficiaries</name>
+        <label>Create Beneficiaries</label>
+        <locationX>176</locationX>
+        <locationY>2702</locationY>
+        <connector>
+            <targetReference>Subsidiaries_Loop</targetReference>
+        </connector>
+        <inputReference>beneficiaries</inputReference>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Client_Acceptance_Form</name>
         <label>Create Client Acceptance Form</label>
         <locationX>176</locationX>
         <locationY>2294</locationY>
         <connector>
-            <targetReference>Update_Case</targetReference>
+            <targetReference>Beneficiaries_Loop</targetReference>
         </connector>
         <inputReference>clientAcceptanceForm</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Subsidiaries</name>
+        <label>Create Subsidiaries</label>
+        <locationX>176</locationX>
+        <locationY>3110</locationY>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <inputReference>subsidiaries</inputReference>
     </recordCreates>
     <recordLookups>
         <name>Get_Business_CAF_Record_Type</name>
@@ -827,7 +947,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>176</locationX>
-        <locationY>2402</locationY>
+        <locationY>3218</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -883,7 +1003,7 @@
                 </fields>
                 <fields>
                     <name>headerTxt1</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -896,11 +1016,6 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>notes</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(255, 0, 0);&quot;&gt;(For Internal Use Only)&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;(NOT Personal Tax or Corporate Finance)&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;* Remember to get client set up on CRM *&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Please refer to the Client Acceptance Guidance Notes (available on the intranet) for help completing this form&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>Page_1_Section2</name>
@@ -966,6 +1081,9 @@
                 <fields>
                     <name>Client_Name</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Case.Account.Name</elementReference>
+                    </defaultValue>
                     <fieldText>Client Name</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -985,6 +1103,9 @@
                 <fields>
                     <name>Co_Reg_No</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Case.Account.Company_registration_number__c</elementReference>
+                    </defaultValue>
                     <fieldText>Co. Reg. No.</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1238,7 +1359,7 @@
                 </fields>
                 <fields>
                     <name>Copy_1_of_headerTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1485,6 +1606,7 @@
                     <name>coapick1</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1606,6 +1728,7 @@
                     <name>coapick2</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1675,7 +1798,7 @@
                 </fields>
                 <fields>
                     <name>Copy_1_of_Copy_1_of_headerTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-family: Arial, sans-serif;&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1724,7 +1847,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1786,6 +1909,7 @@
                     <name>regpick12</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1850,6 +1974,7 @@
                     <name>regpick13</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1914,6 +2039,7 @@
                     <name>regpick2</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1996,6 +2122,7 @@
                     <name>regpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2060,6 +2187,7 @@
                     <name>regpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2124,6 +2252,7 @@
                     <name>regpick5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2188,6 +2317,7 @@
                     <name>regpick14</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2252,6 +2382,7 @@
                     <name>regpick8</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2316,6 +2447,7 @@
                     <name>regpick15</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2380,6 +2512,7 @@
                     <name>regpick11</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2506,7 +2639,7 @@
                 </fields>
                 <fields>
                     <name>Copy_1_of_Copy_1_of_Copy_1_of_headerTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-family: Arial, sans-serif;&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2555,7 +2688,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2617,6 +2750,7 @@
                     <name>pickint1</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2738,6 +2872,7 @@
                     <name>pickint2</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2857,7 +2992,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>yesno2</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES / NO&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2919,6 +3054,7 @@
                     <name>pickfin1</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3061,6 +3197,7 @@
                     <name>pickfin3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3125,6 +3262,7 @@
                     <name>pickfin4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3246,6 +3384,7 @@
                     <name>pickfin5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3372,7 +3511,7 @@
                 </fields>
                 <fields>
                     <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_headerTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3421,7 +3560,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Copy_1_of_yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3483,6 +3622,7 @@
                     <name>mlrapick1</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3547,6 +3687,7 @@
                     <name>mlrapick2</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3611,6 +3752,7 @@
                     <name>mlrapick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3675,6 +3817,7 @@
                     <name>mlrapick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3739,6 +3882,7 @@
                     <name>mlrapick5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3803,6 +3947,7 @@
                     <name>mlrapick6</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3867,6 +4012,7 @@
                     <name>mlrapick7</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3975,6 +4121,7 @@
                     <name>mlrapick8</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4177,6 +4324,7 @@
                     <name>mlrapick12</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4241,6 +4389,7 @@
                     <name>mlrapick13</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4467,7 +4616,7 @@
                 </fields>
                 <fields>
                     <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_headerTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4657,7 +4806,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>YESNO3</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4719,6 +4868,7 @@
                     <name>orpick1</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4839,6 +4989,7 @@
                     <name>orpick2</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4960,6 +5111,7 @@
                     <name>orpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5024,6 +5176,7 @@
                     <name>orpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5093,7 +5246,7 @@
                 </fields>
                 <fields>
                     <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_headerTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5142,7 +5295,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_YESNO3</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5204,6 +5357,7 @@
                     <name>objpick1</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5325,6 +5479,7 @@
                     <name>objpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5389,6 +5544,7 @@
                     <name>objpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5453,6 +5609,7 @@
                     <name>objpick5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5517,6 +5674,7 @@
                     <name>objpick6</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5581,6 +5739,7 @@
                     <name>objpick7</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5701,6 +5860,7 @@
                     <name>objpick8</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5870,7 +6030,7 @@
                 </fields>
                 <fields>
                     <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_headerTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -6240,7 +6400,7 @@
                 </fields>
                 <fields>
                     <name>clientacceptanceformheader</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif;&quot;&gt;Client Acceptance Form – IRIS Version&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -6287,7 +6447,7 @@
             <targetReference>Get_Case</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>InvalidDraft</status>
     <variables>
         <name>beneficiaries</name>
         <dataType>SObject</dataType>
