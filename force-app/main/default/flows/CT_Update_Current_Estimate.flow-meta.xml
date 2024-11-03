@@ -14,7 +14,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Copy_1_of_Milestone</targetReference>
+            <targetReference>Correct_Milestone_on_Assignment</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -34,8 +34,8 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Milestone_Resource_Requests_Values_2</name>
-        <label>Milestone Resource Requests Values 2</label>
+        <name>Milestone_Resource_Requests_Values</name>
+        <label>Milestone Resource Requests Values</label>
         <locationX>264</locationX>
         <locationY>755</locationY>
         <assignmentItems>
@@ -62,12 +62,12 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Milestone</targetReference>
+            <targetReference>Correct_Milestone_on_Resource_Request</targetReference>
         </connector>
     </assignments>
     <decisions>
-        <name>Copy_1_of_Milestone</name>
-        <label>Copy 1 of Milestone</label>
+        <name>Correct_Milestone_on_Assignment</name>
+        <label>Correct Milestone on Assignment</label>
         <locationX>396</locationX>
         <locationY>1355</locationY>
         <defaultConnector>
@@ -91,8 +91,8 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Milestone</name>
-        <label>Milestone</label>
+        <name>Correct_Milestone_on_Resource_Request</name>
+        <label>Correct Milestone on Resource Request</label>
         <locationX>396</locationX>
         <locationY>647</locationY>
         <defaultConnector>
@@ -110,7 +110,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Milestone_Resource_Requests_Values_2</targetReference>
+                <targetReference>Milestone_Resource_Requests_Values</targetReference>
             </connector>
             <label>Correct Milestone</label>
         </rules>
