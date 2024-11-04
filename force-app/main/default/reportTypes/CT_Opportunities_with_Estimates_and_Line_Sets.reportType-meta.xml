@@ -627,6 +627,11 @@
             <field>CT_Expected_Recovery_Rate__c</field>
             <table>Opportunity.ffscpq__Estimates__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Cost_Amount__c</field>
+            <table>Opportunity.ffscpq__Estimates__r</table>
+        </columns>
         <masterLabel>Estimates</masterLabel>
     </sections>
     <sections>

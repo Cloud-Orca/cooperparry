@@ -4,6 +4,7 @@
     <columns>NAME</columns>
     <columns>pse__Billing_Event_Batch__c</columns>
     <columns>pse__Project__c</columns>
+    <columns>ffpsai__Account__c</columns>
     <columns>pse__Date__c</columns>
     <columns>pse__Summary_Amount__c</columns>
     <columns>pse__Status__c</columns>

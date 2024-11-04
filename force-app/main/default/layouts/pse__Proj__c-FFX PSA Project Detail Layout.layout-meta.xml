@@ -9,7 +9,6 @@
     <customButtons>pse__Create_Change_Request</customButtons>
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -94,6 +93,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>CT_Year_End_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>pse__Bookings__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -245,8 +248,8 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>pse__Bookings__c</field>
+                <behavior>Edit</behavior>
+                <field>Original_Estimate__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
