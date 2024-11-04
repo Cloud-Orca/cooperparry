@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>objpick2__c</fullName>
-    <description>Has any CP team member a family relationship or other close involvement with any party?</description>
+    <description>Has any CP team member a family relationship or other close involvement with any party ?</description>
     <externalId>false</externalId>
     <label>Has any CP team member a family relation</label>
     <required>false</required>

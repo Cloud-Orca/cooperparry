@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpickyes19__c</fullName>
-    <description>If not, please make additional notes below:</description>
+    <description>If not, please make additional notes below :</description>
     <externalId>false</externalId>
     <label>If not, please make additional notes bel</label>
     <length>255</length>

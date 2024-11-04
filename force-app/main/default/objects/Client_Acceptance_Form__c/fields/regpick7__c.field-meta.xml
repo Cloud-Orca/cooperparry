@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpick7__c</fullName>
-    <description>Have we obtained annual returns/confirmation statements sufficient to find out the identity of ALL owners?</description>
+    <description>Have we obtained annual returns/confirmation statements sufficient to find out the identity of ALL owners ?</description>
     <externalId>false</externalId>
     <label>Have we obtained annual returns</label>
     <required>false</required>

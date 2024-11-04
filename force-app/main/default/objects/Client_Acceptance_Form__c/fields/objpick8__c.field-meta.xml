@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>objpick8__c</fullName>
-    <description>Can safeguards be implemented which will reduce the threat(s) to an acceptable level?</description>
+    <description>Can safeguards be implemented which will reduce the threat(s) to an acceptable level ?</description>
     <externalId>false</externalId>
     <label>Can safeguards be implemented which will</label>
     <required>false</required>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>pickint2__c</fullName>
-    <description>Have we any reason to suspect a lack of integrity?</description>
+    <description>Have we any reason to suspect a lack of integrity ?</description>
     <externalId>false</externalId>
     <label>Have we any reason to suspect a lack of</label>
     <required>false</required>

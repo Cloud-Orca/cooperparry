@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpick10__c</fullName>
-    <description>Have we obtained relevant documents for subsidiaries included in this onboarding?</description>
+    <description>Have we obtained relevant documents for subsidiaries included in this onboarding ?</description>
     <externalId>false</externalId>
     <label>Have we obtained relevant documents for</label>
     <required>false</required>

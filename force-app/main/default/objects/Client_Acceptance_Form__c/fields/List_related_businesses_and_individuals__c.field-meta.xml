@@ -3,7 +3,7 @@
     <fullName>List_related_businesses_and_individuals__c</fullName>
     <externalId>false</externalId>
     <label>List related businesses and individuals</label>
-    <length>32768</length>
+    <length>10000</length>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

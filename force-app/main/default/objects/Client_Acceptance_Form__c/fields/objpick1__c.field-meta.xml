@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>objpick1__c</fullName>
-    <description>Do we already act for any parties involved or have we acted in the past?</description>
+    <description>Do we already act for any parties involved or have we acted in the past ?</description>
     <externalId>false</externalId>
     <label>Do we already act for any parties involv</label>
     <required>false</required>
