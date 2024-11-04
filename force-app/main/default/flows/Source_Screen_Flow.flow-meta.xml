@@ -689,6 +689,28 @@
         <picklistObject>Lead</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
+        <name>oppRecordType_values</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Opportunity</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
         <name>oppStage_Values</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
@@ -1070,7 +1092,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>Referred_Account__c</field>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>Account_Client.recordId</elementReference>
             </value>
         </inputAssignments>
         <object>Referral__c</object>
@@ -1208,6 +1230,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                 <elementReference>User.recordId</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Referred_Account__c</field>
+            <value>
+                <elementReference>Account_Deals.recordId</elementReference>
+            </value>
+        </inputAssignments>
         <object>Referral__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
@@ -1282,7 +1310,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>AccountId</field>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>Account_Client.recordId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1328,6 +1356,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Record_Type</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Source_Type__c</field>
         </inputAssignments>
         <inputAssignments>
@@ -1362,7 +1396,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>AccountId</field>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>Account_Deals.recordId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1813,7 +1847,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <inputParameters>
                 <name>disabled</name>
                 <value>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -2410,6 +2444,41 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <targetReference>Create_Opportunity</targetReference>
         </connector>
         <fields>
+            <name>Record_Type</name>
+            <choiceReferences>oppRecordType_values</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Record Type</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Account_Client</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>AccountId</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Account</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
             <name>Area_Picklist</name>
             <extensionName>flowruntime:dependentPicklists</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -2508,14 +2577,14 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Screen3</name>
         <label>Screen3</label>
         <locationX>2250</locationX>
         <locationY>1742</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
@@ -2524,7 +2593,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <start>
         <locationX>2124</locationX>
