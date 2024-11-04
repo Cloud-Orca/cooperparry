@@ -1,0 +1,10 @@
+.opportunityCheckbox {
+    position: relative;
+    top: 25rem;
+    padding-left: 40px;
+    text-indent: -15px;
+}
+
+/* .force-visible{
+    visibility: visible !important;
+} */

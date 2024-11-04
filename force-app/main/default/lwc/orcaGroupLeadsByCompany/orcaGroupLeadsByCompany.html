@@ -1,0 +1,48 @@
+<template>
+    <div class="slds-card slds-card-wrapper">
+        <template if:true={leadListWrapper}>
+            <div class="slds-grid">
+                <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container">
+                            <lightning-icon icon-name="standard:lead" class="slds-icon slds-icon slds-icon_small" size="small" alternative-text="add"></lightning-icon>
+                        </span>
+                    </div>
+                    <div class="slds-media__body slds-truncate">
+                        <h2>
+                            <span class="slds-text-heading_small">
+                                Company Leads
+                            </span>
+                        </h2>
+                    </div>
+                </header>
+            </div>
+
+            <div class="slds-card__body">
+                <template for:each={leadListWrapper} for:item="leadRecord">
+                    <div key={leadRecord.leadId} class="slds-media slds-p-vertical_xx-small">
+                        <div class="slds-media__figure">
+                            <div class="slds-icon_container" title="task">
+                                <lightning-icon icon-name="standard:lead" class="slds-icon slds-icon slds-icon_small" size="small"></lightning-icon>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-media__body">
+                            <p>
+                                Name: <a lead-id={leadRecord.leadId} onclick={navigateToLeadRecordPage}>{leadRecord.leadName}</a>
+                            </p>
+                            <template for:each={leadRecord.leadDetailsVal} for:item="details">
+                                <p key={details.valueToDisplay} class="slds-p-vertical_xx-small">{details.valueToDisplay}</p>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:false={leadListWrapper}>
+            <div class="slds-notify slds-notify_alert" role="alert">
+                <h2>No Existing Leads Found within the same company.</h2>
+            </div>
+        </template>
+    </div>
+</template>

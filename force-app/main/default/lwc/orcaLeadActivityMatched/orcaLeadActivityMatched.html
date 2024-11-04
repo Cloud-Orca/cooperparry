@@ -1,0 +1,57 @@
+<template>
+    <div class="slds-card slds-card-wrapper">
+        <template if:true={activityWrapperList}>
+            <div class="slds-grid">
+                <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container">
+                            <lightning-icon icon-name="standard:lead" class="slds-icon slds-icon slds-icon_small" size="small" alternative-text="add"></lightning-icon>
+                        </span>
+                    </div>
+                    <div class="slds-media__body slds-truncate">
+                        <h2>
+                            <span class="slds-text-heading--small">
+                                Lead Activity
+                            </span>
+                        </h2>
+                    </div>
+                </header>
+            </div>
+
+            <div class="slds-card__body">
+                <lightning-accordion onsectiontoggle={handleSectionToggle} allow-multiple-sections-open class="slds-text-title">
+                    <template for:each={activityWrapperList} for:item="activity">
+                        <lightning-accordion-section key={activity.headerValue} name={activity.headerValue} label={activity.headerValue} class="slds-text-title">
+                            <div class="slds-text-body_regular">
+                                <template for:each={activity.actDetails} for:item="actDetails">
+                                    <div key={actDetails.dateValue} class="slds-media slds-p-vertical_xx-small">
+                                        <div class="slds-media__figure">
+                                            <div class="slds-icon_container" title="task">
+                                                <lightning-icon icon-name={actDetails.icon} size="small"></lightning-icon>
+                                            </div>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="slds-p-vertical_xx-small">
+                                                <a user-id={actDetails.userId} onclick={handleUserClick}>{actDetails.userName}</a>
+                                                &nbsp;{actDetails.middleText}&nbsp;
+                                                <a lead-id={actDetails.leadId} label={actDetails.leadName} onclick={handleLeadClick}>{actDetails.leadName}</a>
+                                            </p>
+                                        </div>
+                                        <div class="slds-no-flex">
+                                            <p class="slds-p-vertical_xx-small">{actDetails.dateDisplay}</p>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>
+            </div>
+        </template>
+        <template if:false={activityWrapperList}>
+            <div class="slds-notify slds-notify_alert" role="alert">
+                <h2>No Existing Lead Activity Found within the same company.</h2>
+            </div>
+        </template>
+    </div>
+</template>

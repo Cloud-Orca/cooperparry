@@ -1,0 +1,130 @@
+<template>
+    <lightning-quick-action-panel header="Mass Convert Leads">  
+        <div class="spinner">
+            <template if:true={isLoading}>
+                 <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+                 </lightning-spinner>
+            </template>
+        </div> 
+        <div class="slds-scrollable_y slds-p-around_medium">
+            <!-- COLUMN HEADERS -->
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_2-of-12 slds-m-vertical_xx-small">
+                    <p class="slds-text-title_caps">Convert?</p>
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-m-vertical_xx-small">
+                    <p class="slds-text-title_caps">Primary</p>
+                </div>
+                <div class="slds-col slds-size_3-of-12 slds-m-vertical_xx-small slds-text-align_center">
+                    <p class="slds-text-title_caps">Lead</p>
+                </div>
+                <div class="slds-col slds-size_3-of-12 slds-m-vertical_xx-small slds-text-align_center">
+                    <p class="slds-text-title_caps">Account</p>
+                </div>
+                <div class="slds-col slds-size_3-of-12 slds-m-vertical_xx-small slds-text-align_center">
+                    <p class="slds-text-title_caps">Opportunity</p>
+                </div>
+            </div>
+                
+            <!-- COLUMN CONTENTS -->
+            <lightning-record-edit-form object-api-name="Contact">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_6-of-12">
+                        <template for:each={leadListWrapper} for:item="leadRecord">
+                            <div key={leadRecord.LeadId} class="slds-grid slds-size_12-of-12">
+                                <div class="slds-col slds-size_2-of-12">
+                                    <div class="slds-align_absolute-center slds-p-vertical_small">
+                                        <input type="checkbox" name="convertLead" id={leadRecord.importId.ids.convertId} value={leadRecord.LeadId} onchange={onChangeConvert}/>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_4-of-12">
+                                    <div class="slds-align_absolute-center slds-p-vertical_small" style="margin-left: 20px;">
+                                        <input type="radio" name="primaryLead" id="leadId" value={leadRecord.LeadId} onchange={onChangePrimary}/>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_7-of-12">
+                                    <div class="slds-grid slds-wrap slds-p-vertical_small">
+                                        <div class="slds-size_1-of-8">
+                                            <lightning-icon icon-name="standard:lead" class="slds-icon slds-icon slds-icon_small" size="small"></lightning-icon>
+                                        </div>
+                                        <div class="slds-size_6-of-8 slds-text-align_left">
+                                            <p>
+                                                Name: <a data-lead-id={leadRecord.leadId} onclick={navigateToLeadRecordPage}>{leadRecord.LeadName}</a>
+                                            </p>
+                                            <p>
+                                                Company: {leadRecord.LeadCompany}
+                                            </p>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="slds-col slds-size_3-of-12">
+                        <lightning-radio-group 
+                                type="radio"
+                                name="accountRadioGrp"
+                                value={accValue}
+                                options={accOptions}
+                                onchange={handleSelectedAccOption}>
+                        </lightning-radio-group>
+                        <template if:true={isSearchAccount}>
+                            <div class="slds-p-vertical_x-small">
+                                <lightning-input-field field-name="AccountId" onchange={handleAccountSelection} variant="label-hidden"></lightning-input-field>
+                            </div>
+                        </template>
+                        <template if:false={isSearchAccount}>
+                            <template if:true={accHasRecordTypes}>
+                                <div class="slds-p-vertical_x-small">
+                                    <lightning-combobox
+                                        name="accRecordType"
+                                        label="Record Type"
+                                        value={accSelectedRecordType}
+                                        options={accRecordTypeOptions}
+                                        onchange={handleAccRecordTypeChange}>
+                                    </lightning-combobox>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="slds-col slds-size_3-of-12">
+                        <lightning-radio-group 
+                            type="radio"
+                            name="opportunityRadioGrp"
+                            value={oppValue}
+                            options={oppOptions}
+                            onchange={handleSelectedOppOption}>
+                        </lightning-radio-group>
+                        <template if:true={isSearchOpportunity}>
+                            <div class="slds-col slds-p-vertical_x-small">
+                                <lightning-input-field field-name="CompanyLeads__OpportunityId__c" onchange={handleOppSelection} variant="label-hidden"></lightning-input-field>
+                            </div>
+                        </template>
+                        <template if:true={createNewOpportunity}>
+                            <template if:false={isSearchOpportunity}>
+                                <template if:true={oppHasRecordTypes}>
+                                    <div class="slds-p-vertical_x-small">
+                                        <lightning-combobox
+                                            name="oppRecordType"
+                                            label="Record Type"
+                                            value={oppSelectedRecordType}
+                                            options={oppRecordTypeOptions}
+                                            onchange={handleOppRecordTypeChange}>
+                                        </lightning-combobox>
+                                    </div>
+                                </template>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-quick-action-panel>
+    
+    <!-- FOOTER START -->
+    <div  class="slds-modal__footer">
+        <lightning-button class="slds-p-right_x-small" variant="neutral" label="Cancel" onclick={handleCancelButton} aria-label="Cancel and close"></lightning-button>
+        <lightning-button variant="brand" label="Convert" onclick={handleConvertButton} disabled={disableButton}></lightning-button>
+    </div>
+    <!-- FOOTER END -->
+</template>
