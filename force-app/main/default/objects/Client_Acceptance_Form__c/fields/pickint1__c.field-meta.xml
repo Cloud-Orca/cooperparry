@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>pickint1__c</fullName>
-    <description>Is there anything unusual or suspicious about the client or transaction?</description>
+    <description>Is there anything unusual or suspicious about the client or transaction ?</description>
     <externalId>false</externalId>
     <label>Is there anything unusual or suspicious</label>
     <required>false</required>

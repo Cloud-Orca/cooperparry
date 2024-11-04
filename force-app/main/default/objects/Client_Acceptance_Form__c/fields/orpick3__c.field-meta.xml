@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>orpick3__c</fullName>
-    <description>Can we demonstrate our competence to perform the proposed work?</description>
+    <description>Can we demonstrate our competence to perform the proposed work ?</description>
     <externalId>false</externalId>
     <label>Can we demonstrate our competence to per</label>
     <required>false</required>

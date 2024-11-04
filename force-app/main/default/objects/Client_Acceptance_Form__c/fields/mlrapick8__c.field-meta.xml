@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>mlrapick8__c</fullName>
-    <description>Have we met the client face to face?</description>
+    <description>Have we met the client face to face ?</description>
     <externalId>false</externalId>
     <label>Have we met the client face to face?</label>
     <required>false</required>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpick17__c</fullName>
-    <description>Do the trust or trustees have any US connection or involvement?</description>
+    <description>Do the trust or trustees have any US connection or involvement ?</description>
     <externalId>false</externalId>
     <label>Do the trust or trustees have any US con</label>
     <required>false</required>

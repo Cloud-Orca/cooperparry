@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>objpick3__c</fullName>
-    <description>Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?</description>
+    <description>Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so ?</description>
     <externalId>false</externalId>
     <label>Are there any other relationships or oth</label>
     <required>false</required>

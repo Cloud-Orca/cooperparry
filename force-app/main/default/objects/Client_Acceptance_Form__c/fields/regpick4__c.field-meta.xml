@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpick4__c</fullName>
-    <description>Have we obtained a copy of the accounts?</description>
+    <description>Have we obtained a copy of the accounts ?</description>
     <externalId>false</externalId>
     <label>Have we obtained a copy of the accounts?</label>
     <required>false</required>
