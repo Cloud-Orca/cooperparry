@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>pickfin4__c</fullName>
-    <description>Is any part of the fee contingent?</description>
+    <description>Is any part of the fee contingent ?</description>
     <externalId>false</externalId>
     <label>Is any part of the fee contingent?</label>
     <required>false</required>

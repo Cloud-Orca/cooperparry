@@ -3,10 +3,10 @@
     <fullName>mlra14__c</fullName>
     <description>A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied. 
 
-Record EDD procedures undertaken below:</description>
+Record EDD procedures undertaken below :</description>
     <externalId>false</externalId>
     <label>Record EDD procedures undertaken below:</label>
-    <length>32768</length>
+    <length>10000</length>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

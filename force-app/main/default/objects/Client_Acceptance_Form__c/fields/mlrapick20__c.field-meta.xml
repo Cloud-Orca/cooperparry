@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>mlrapick20__c</fullName>
-    <description>Do we have any concerns over the source of the client’s wealth?</description>
+    <description>Do we have any concerns over the source of the client’s wealth ?</description>
     <externalId>false</externalId>
     <label>Do we have any concerns over the source</label>
     <required>false</required>

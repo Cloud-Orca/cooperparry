@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>pickfinyes4__c</fullName>
-    <description>If yes, summarise the contingent arrangement below:</description>
+    <description>If yes, summarise the contingent arrangement below :</description>
     <externalId>false</externalId>
     <label>If yes, summarise the contingent arrange</label>
     <length>255</length>

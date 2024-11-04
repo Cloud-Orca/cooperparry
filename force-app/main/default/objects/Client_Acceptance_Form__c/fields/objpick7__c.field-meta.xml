@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>objpick7__c</fullName>
-    <description>Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?</description>
+    <description>Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so ?</description>
     <externalId>false</externalId>
     <label>Considering all the above, have we ident</label>
     <required>false</required>

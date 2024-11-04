@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpick2__c</fullName>
-    <description>Are there any additional reporting requirements? (State requirements if so.) - Charity or Pensions</description>
+    <description>Are there any additional reporting requirements? (State requirements if so.) -  Charity or Pensions</description>
     <externalId>false</externalId>
     <label>Are there any additional reporting</label>
     <required>false</required>

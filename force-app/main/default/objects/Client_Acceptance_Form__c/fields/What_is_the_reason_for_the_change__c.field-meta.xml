@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>What_is_the_reason_for_the_change__c</fullName>
-    <description>What is the reason for the change? Why us?</description>
+    <description>What is the reason for the change? Why us ?</description>
     <externalId>false</externalId>
     <label>What is the reason for the change?</label>
     <length>255</length>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>mlrapick7__c</fullName>
-    <description>Do we anticipate holding monies for the client?</description>
+    <description>Do we anticipate holding monies for the client ?</description>
     <externalId>false</externalId>
     <label>Do we anticipate holding monies for the</label>
     <required>false</required>
