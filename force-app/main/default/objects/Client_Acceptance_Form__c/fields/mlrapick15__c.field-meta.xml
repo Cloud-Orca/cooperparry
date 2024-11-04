@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>mlrapick15__c</fullName>
-    <description>Considering the above factors, the risk of money laundering is:</description>
+    <description>Considering the above factors, the risk of money laundering is :</description>
     <externalId>false</externalId>
     <label>Considering the above factors, the risk</label>
     <required>false</required>

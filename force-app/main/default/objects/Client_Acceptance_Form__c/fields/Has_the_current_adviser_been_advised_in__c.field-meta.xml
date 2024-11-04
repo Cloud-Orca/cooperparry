@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Has_the_current_adviser_been_advised_in__c</fullName>
-    <description>Has the current adviser been advised in writing by the client that they may disclose information to us? (Yes / No)</description>
+    <description>Has  the current adviser been advised in writing by the client that they may disclose information to us? (Yes / No)</description>
     <externalId>false</externalId>
     <label>Has the current adviser been advised in</label>
     <required>false</required>

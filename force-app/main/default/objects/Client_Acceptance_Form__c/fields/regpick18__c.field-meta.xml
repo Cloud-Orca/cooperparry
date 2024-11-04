@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpick18__c</fullName>
-    <description>Confirm that all information gathered about the trust has been assessed in the context of the FATCA requirements and any necessary action has been taken (or will be taken).</description>
+    <description>Confirm that all information gathered about the trust has been assessed in the context of the FATCA requirements and any necessary action has been taken (or will be taken) .</description>
     <externalId>false</externalId>
     <label>Confirm that all information gathered ab</label>
     <required>false</required>

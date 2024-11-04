@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpick19__c</fullName>
-    <description>If yes, has a report been made to the MLRO?</description>
+    <description>If yes, has a report been made to the MLRO ?</description>
     <externalId>false</externalId>
     <label>If yes, has a report been made to the ML</label>
     <required>false</required>

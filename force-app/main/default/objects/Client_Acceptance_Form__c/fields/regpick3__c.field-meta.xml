@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>regpick3__c</fullName>
-    <description>Has a copy of the latest regulatory report been obtained and found satisfactory?</description>
+    <description>Has a copy of the latest regulatory report been obtained and found satisfactory ?</description>
     <externalId>false</externalId>
     <label>Has a copy of the latest regulatory</label>
     <required>false</required>

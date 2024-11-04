@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>objpick4__c</fullName>
-    <description>Are we involved in any dispute with any party?</description>
+    <description>Are we involved in any dispute with any party ?</description>
     <externalId>false</externalId>
     <label>Are we involved in any dispute with any</label>
     <required>false</required>
