@@ -290,6 +290,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>CT_Current_Esimate__c</field>
+            <value>
+                <elementReference>$Record.pse__Opportunity__r.Amount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>ffpsai__ServicesProduct__c</field>
             <value>
                 <elementReference>Services_Product.ffscpq__Product__c</elementReference>
