@@ -2604,6 +2604,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ffscpq__Estimate__c.Total_Cost_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ffscpq__Estimate__c.ffscpq__Account__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -5920,6 +5925,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.Manager_approval_required_for_billing__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Original_Estimate__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
