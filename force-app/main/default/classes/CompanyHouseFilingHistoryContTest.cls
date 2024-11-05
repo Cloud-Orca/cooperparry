@@ -39,12 +39,13 @@ public with sharing class CompanyHouseFilingHistoryContTest {
         acc.Name = 'CLOUD ORCA LIMITED';
         acc.Company_Legal_Name__c = 'CLOUD ORCA LIMITED';
         acc.Company_registration_number__c = '11354151';
+        acc.Companies_House_Id__c = '11354151';
         insert acc;
     }
 
     @IsTest
     static void testGetCompanyByName() {
-        String recordId = [SELECT Id, Name, Company_registration_number__c FROM Account WHERE Name = 'CLOUD ORCA LIMITED' Limit 1].Id;
+        String recordId = [SELECT Id, Name, Company_registration_number__c, Companies_House_Id__c FROM Account WHERE Name = 'CLOUD ORCA LIMITED' Limit 1].Id;
 
         Test.startTest();
             String companyName = CompanyHouseFilingHistoryCont.getCompanyName(recordId);
@@ -54,7 +55,7 @@ public with sharing class CompanyHouseFilingHistoryContTest {
 
     @IsTest
     static void testGetCompanyByNumber() {
-        String recordId = [SELECT Id, Name, Company_registration_number__c FROM Account WHERE Company_registration_number__c = '11354151' Limit 1].Id;
+        String recordId = [SELECT Id, Name, Company_registration_number__c, Companies_House_Id__c FROM Account WHERE Companies_House_Id__c = '11354151' Limit 1].Id;
 
         Test.startTest();
             String companyNumber = CompanyHouseFilingHistoryCont.getCompanyNumber(recordId);
@@ -65,7 +66,7 @@ public with sharing class CompanyHouseFilingHistoryContTest {
     @IsTest
     static void testGetFilingHistory_positive() {
         Test.setMock(HttpCalloutMock.class, new API_ResponseMock());
-        String companyHouseName = [SELECT Id, Name, Company_registration_number__c FROM Account WHERE Name = 'CLOUD ORCA LIMITED' Limit 1].Name;
+        String companyHouseName = [SELECT Id, Name, Company_registration_number__c, Companies_House_Id__c FROM Account WHERE Name = 'CLOUD ORCA LIMITED' Limit 1].Name;
         try {
             Test.startTest();
                 CompanyHouseFilingHistoryCont.FilingHistoryLWCWrapper result = CompanyHouseFilingHistoryCont.getFilingHistory(companyHouseName);

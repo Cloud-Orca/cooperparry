@@ -4,13 +4,13 @@ public with sharing class CompanyHouseFilingHistoryOfficer {
 
     @AuraEnabled
     public static String getCompanyName(String recordId){
-        String compName = [SELECT Name, Company_registration_number__c FROM Account WHERE Id =: recordId].Name;
+        String compName = [SELECT Name, Company_registration_number__c, Companies_House_Id__c FROM Account WHERE Id =: recordId].Name;
         return compName;
     }
 
     @AuraEnabled
     public static String getCompanyNumber(String recordId){
-        String compNumber = [SELECT Company_registration_number__c FROM Account WHERE Company_registration_number__c != NULL AND Id =: recordId].Company_registration_number__c;
+        String compNumber = [SELECT Company_registration_number__c, Companies_House_Id__c FROM Account WHERE Companies_House_Id__c != NULL AND Id =: recordId].Companies_House_Id__c;
         return compNumber;
     }
     
