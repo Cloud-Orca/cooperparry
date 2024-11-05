@@ -65,8 +65,8 @@ public class SmartSearchCompCont {
                     benOwnerToSearch.Smart_Search_Link__c = smartSearchSetting.smart_search_url__c + '/subjects/' + searchSubjectId + '/' + searchId;
                     update benOwnerToSearch;
 
-                    Case caseToUpdate = new Case();
-                    caseToUpdate.Case_Referred__c = (benOwnerToSearch.Smart_Search_Status__c == 'Pass') ? true: false;
+                    Case caseToUpdate = new Case(Id = recordId);
+                    caseToUpdate.Case_Referred__c = (benOwnerToSearch.Smart_Search_Status__c == 'Pass') ? false: true;
                     update caseToUpdate;
                     
                     if(isUpdateAccessToken){
