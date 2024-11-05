@@ -5,7 +5,7 @@
         <name>First_BD_Meeting_on_Lead</name>
         <label>First BD Meeting on Lead?</label>
         <locationX>182</locationX>
-        <locationY>674</locationY>
+        <locationY>866</locationY>
         <defaultConnector>
             <targetReference>Screen3</targetReference>
         </defaultConnector>
@@ -24,6 +24,56 @@
                 <targetReference>Update_Origination_Meeting_checkbox</targetReference>
             </connector>
             <label>Yes - First BD Meeting on Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>sObject</name>
+        <label>sObject</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>get_Lead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>001</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_Account</targetReference>
+            </connector>
+            <label>Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_sObject</name>
+        <label>Update sObject</label>
+        <locationX>182</locationX>
+        <locationY>1274</locationY>
+        <defaultConnector>
+            <targetReference>Update_Account_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_Fields</targetReference>
+            </connector>
+            <label>Update Lead</label>
         </rules>
     </decisions>
     <dynamicChoiceSets>
@@ -92,14 +142,35 @@
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
+        <name>cpOffice_formula</name>
+        <dataType>String</dataType>
+        <expression>IF(LEFT({!recordId},3) = &apos;001&apos;, TEXT({!get_Account.CP_Office__c}), TEXT({!get_Lead.CP_Office__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>estimatedFees_formula</name>
+        <dataType>Currency</dataType>
+        <expression>IF(LEFT({!recordId},3) = &apos;001&apos;, {!get_Account.Estimated_Fees__c}, {!get_Lead.Estimated_Fees__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
         <name>MeetingName</name>
         <dataType>String</dataType>
         <expression>TEXT(DATEVALUE({!Meeting_Date})) + &quot; meeting with &quot; + {!get_Lead.Company}</expression>
     </formulas>
     <formulas>
+        <name>notes_formula</name>
+        <dataType>String</dataType>
+        <expression>IF(LEFT({!recordId},3) = &apos;001&apos;, {!get_Account.Notes__c},{!get_Lead.Notes__c})</expression>
+    </formulas>
+    <formulas>
         <name>NoteTitle</name>
         <dataType>String</dataType>
         <expression>{!get_Lead.Company} + &quot; - &quot; + TEXT(TODAY()) + &quot; - Handover Notes&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>targetName_formula</name>
+        <dataType>String</dataType>
+        <expression>IF(LEFT({!recordId},3)= &apos;001&apos;, {!get_Account.Name},{!get_Lead.Company})</expression>
     </formulas>
     <interviewLabel>Origination Meeting Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Origination Meeting Screen Flow</label>
@@ -126,7 +197,7 @@
         <name>Create_Notes</name>
         <label>Create Notes</label>
         <locationX>182</locationX>
-        <locationY>1190</locationY>
+        <locationY>1574</locationY>
         <connector>
             <targetReference>Link_To_Lead</targetReference>
         </connector>
@@ -149,10 +220,16 @@
         <name>Create_Origination_Meeting</name>
         <label>Create Origination Meeting</label>
         <locationX>182</locationX>
-        <locationY>458</locationY>
+        <locationY>650</locationY>
         <connector>
             <targetReference>get_origination_meetings</targetReference>
         </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Account_Lookup.recordId</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Estimated_Potential_Opportunity_Fee__c</field>
             <value>
@@ -220,7 +297,7 @@
         <name>Link_To_Lead</name>
         <label>Link To Lead</label>
         <locationX>182</locationX>
-        <locationY>1298</locationY>
+        <locationY>1682</locationY>
         <connector>
             <targetReference>Screen2</targetReference>
         </connector>
@@ -240,15 +317,43 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>get_Account</name>
+        <label>get Account</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>get_Incumbent</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>get_Incumbent</name>
         <label>get Incumbent</label>
         <locationX>182</locationX>
-        <locationY>242</locationY>
+        <locationY>434</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Screen1</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>1 AND ((2 AND 3) OR (4 AND 5))</filterLogic>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Incumbent</stringValue>
+            </value>
+        </filters>
         <filters>
             <field>Lead__c</field>
             <operator>EqualTo</operator>
@@ -257,10 +362,24 @@
             </value>
         </filters>
         <filters>
-            <field>Type__c</field>
+            <field>Lead__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Account__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Incumbent</stringValue>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Account__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -272,8 +391,8 @@
     <recordLookups>
         <name>get_Lead</name>
         <label>get Lead</label>
-        <locationX>182</locationX>
-        <locationY>134</locationY>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>get_Incumbent</targetReference>
@@ -294,12 +413,12 @@
         <name>get_origination_meetings</name>
         <label>get origination meetings</label>
         <locationX>182</locationX>
-        <locationY>566</locationY>
+        <locationY>758</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>First_BD_Meeting_on_Lead</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>2 AND ((1 AND 4) OR (3 AND 5))</filterLogic>
         <filters>
             <field>Lead__c</field>
             <operator>EqualTo</operator>
@@ -314,15 +433,75 @@
                 <elementReference>Create_Origination_Meeting</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>get_Account.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Account__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>BD_Meeting__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Update_Account_Fields</name>
+        <label>Update Account Fields</label>
+        <locationX>314</locationX>
+        <locationY>1382</locationY>
+        <connector>
+            <targetReference>Create_Notes</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+        </filters>
+        <inputAssignments>
+            <field>CP_Office__c</field>
+            <value>
+                <elementReference>CP_Office</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Estimated_Fees__c</field>
+            <value>
+                <elementReference>Estimated_Fee</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Incumbent__c</field>
+            <value>
+                <elementReference>Incumbent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>Notes</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Lead_Fields</name>
         <label>Update Lead Fields</label>
-        <locationX>182</locationX>
-        <locationY>1082</locationY>
+        <locationX>50</locationX>
+        <locationY>1382</locationY>
         <connector>
             <targetReference>Create_Notes</targetReference>
         </connector>
@@ -370,7 +549,7 @@
         <name>Update_Origination_Meeting_checkbox</name>
         <label>Update Origination Meeting checkbox</label>
         <locationX>50</locationX>
-        <locationY>782</locationY>
+        <locationY>974</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
         </connector>
@@ -394,7 +573,7 @@
         <name>Screen1</name>
         <label>Screen1</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>542</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -407,6 +586,54 @@
             <fields>
                 <name>Screen1_Section1_Column1</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>Account_Lookup</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>Account__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Account</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>BD_Meeting__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>disabled</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>recordId</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>recordId</leftValueReference>
+                            <operator>StartsWith</operator>
+                            <rightValue>
+                                <stringValue>001</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
                 <fields>
                     <name>Lead</name>
                     <extensionName>flowruntime:lookup</extensionName>
@@ -444,6 +671,16 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>recordId</leftValueReference>
+                            <operator>StartsWith</operator>
+                            <rightValue>
+                                <stringValue>00Q</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <fields>
                     <name>Service_Line_Picklist</name>
@@ -576,7 +813,7 @@
         <name>Screen2</name>
         <label>Screen2</label>
         <locationX>182</locationX>
-        <locationY>1406</locationY>
+        <locationY>1790</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -592,12 +829,12 @@
         <name>Screen3</name>
         <label>Screen3</label>
         <locationX>182</locationX>
-        <locationY>974</locationY>
+        <locationY>1166</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Update_Lead_Fields</targetReference>
+            <targetReference>Update_sObject</targetReference>
         </connector>
         <fields>
             <name>Handover_Notes</name>
@@ -610,7 +847,7 @@
                     <name>Target_Name</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>get_Lead.Company</elementReference>
+                        <elementReference>targetName_formula</elementReference>
                     </defaultValue>
                     <fieldText>Target Name</fieldText>
                     <fieldType>InputField</fieldType>
@@ -621,7 +858,7 @@
                     <name>Estimated_Fee</name>
                     <dataType>Currency</dataType>
                     <defaultValue>
-                        <elementReference>get_Lead.Estimated_Fees__c</elementReference>
+                        <elementReference>estimatedFees_formula</elementReference>
                     </defaultValue>
                     <fieldText>Estimated Fee</fieldText>
                     <fieldType>InputField</fieldType>
@@ -645,7 +882,7 @@
                     <choiceReferences>PCS_CP_Office</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>get_Lead.CP_Office__c</elementReference>
+                        <elementReference>cpOffice_formula</elementReference>
                     </defaultValue>
                     <fieldText>CP Office</fieldText>
                     <fieldType>DropdownBox</fieldType>
@@ -680,7 +917,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>get_Lead</targetReference>
+            <targetReference>sObject</targetReference>
         </connector>
     </start>
     <status>Active</status>
