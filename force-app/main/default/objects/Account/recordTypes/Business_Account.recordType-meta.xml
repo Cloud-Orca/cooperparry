@@ -404,10 +404,6 @@
             <fullName>Slough</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Worcester</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>CT_Account_access__c</picklist>
@@ -421,6 +417,45 @@
         </values>
         <values>
             <fullName>VIP Account</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Lost_Reason__c</picklist>
+        <values>
+            <fullName>Another advisor appointed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cannot Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ethics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Longer Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not the right time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Fit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regulatory Issue</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -447,25 +482,17 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Corporate_Status__c</picklist>
+        <picklist>Confidential_Account_Area__c</picklist>
         <values>
-            <fullName>Independent Company</fullName>
+            <fullName>CP Law</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Intermediate Parent</fullName>
+            <fullName>Confidential</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Private Client</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Subsidiary</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Ultimate Parent</fullName>
+            <fullName>Ring Fenced</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -754,6 +781,25 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Secondary_Sector__c</picklist>
         <values>
             <fullName>Accountancy</fullName>
@@ -922,7 +968,11 @@
     <picklistValues>
         <picklist>Source__c</picklist>
         <values>
-            <fullName>Inbound</fullName>
+            <fullName>External</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1085,6 +1135,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Lost Client</fullName>
             <default>false</default>
         </values>
@@ -1121,6 +1175,10 @@
         </values>
         <values>
             <fullName>PE Backed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE House</fullName>
             <default>false</default>
         </values>
         <values>
