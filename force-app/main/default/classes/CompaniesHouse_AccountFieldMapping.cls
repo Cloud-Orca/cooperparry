@@ -106,7 +106,8 @@ public with sharing class CompaniesHouse_AccountFieldMapping {
                 currentRecord.CH_Name__c = reqData.company_name;
                 currentRecord.Legal_Name__c = reqData.company_name;
                 currentRecord.Company_Legal_Name__c = reqData.company_name;
-                currentRecord.Company_registration_number__c = reqData.company_number; 
+                // currentRecord.Company_registration_number__c = reqData.company_number; 
+                currentRecord.Companies_House_Id__c = reqData.company_number; 
                 /*currentRecord.Company_status__c = reqData.company_status; 
                 currentRecord.CH_Company_Type__c = reqData.type; 
                 currentRecord.Company_Profile__c = reqData.links.self;
