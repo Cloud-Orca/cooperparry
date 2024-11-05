@@ -18,7 +18,13 @@ public class SharepointCompCont {
 
     @AuraEnabled
     public static String getDriveItemId(Id recordId){
-        return  [SELECT Id, Sharepoint_Folder_ID__c FROM Account WHERE Id =: recordId].Sharepoint_Folder_ID__c;
+        if(recordId.getsobjecttype() == Schema.Account.getSObjectType()){
+            return  [SELECT Id, Sharepoint_Folder_ID__c FROM Account WHERE Id =: recordId].Sharepoint_Folder_ID__c;
+        }
+        else if(recordId.getsobjecttype() == Schema.Case.getSObjectType()){
+            return  [SELECT Id, Sharepoint_Folder_ID__c FROM Case WHERE Id =: recordId].Sharepoint_Folder_ID__c;
+        }
+        return '';
     }
 
     @AuraEnabled
@@ -34,7 +40,13 @@ public class SharepointCompCont {
     @AuraEnabled
     public static List<DriveItemDetails> getPathDriveItems(Id recordId){
         try {
-            String driveItemId = [SELECT Id, Sharepoint_Folder_ID__c FROM Account WHERE Id =: recordId].Sharepoint_Folder_ID__c;
+            String driveItemId = '';
+            if(recordId.getsobjecttype() == Schema.Account.getSObjectType()){
+                driveItemId = [SELECT Id, Sharepoint_Folder_ID__c FROM Account WHERE Id =: recordId].Sharepoint_Folder_ID__c;
+            }
+            else if(recordId.getsobjecttype() == Schema.Case.getSObjectType()){
+                driveItemId = [SELECT Id, Sharepoint_Folder_ID__c FROM Case WHERE Id =: recordId].Sharepoint_Folder_ID__c;
+            }
             if(driveItemId != '' && driveItemId != null){
                 List<Sharepoint_API__c> sharepointAPIlist = [SELECT Id, access_token__c FROM Sharepoint_API__c LIMIT 1];
                 String accessToken = sharepointAPIlist.get(0).access_token__c;
@@ -157,6 +169,7 @@ public class SharepointCompCont {
                 }
     
                 if(httpRes.getStatusCode() == 200 || httpRes.getStatusCode() == 201){
+                    return true;
                     // Map<String, Object> responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes.getBody());
                     // String webUrl = (String) responseMap.get('webUrl');
                     // webUrl = EncodingUtil.urlDecode(webUrl, 'UTF-8');

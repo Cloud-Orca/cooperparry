@@ -135,7 +135,7 @@ export default class SmartSearchComp extends LightningElement {
                 });
                 
                 console.log(resp);
-                if(resp.isPass){
+                // if(resp.isPass){
                     await this.delay(3000);
     
                     console.log('getDocument');
@@ -153,7 +153,7 @@ export default class SmartSearchComp extends LightningElement {
                         mode: 'dismissable'
                     });
                     dispatchEvent(event);
-                }
+                // }
 
                 this.isResultScreen = true;
                 this.isPassed = resp.isPass;
