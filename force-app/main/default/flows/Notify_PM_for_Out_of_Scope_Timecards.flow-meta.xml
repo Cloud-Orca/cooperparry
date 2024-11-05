@@ -114,7 +114,7 @@
         <connector>
             <targetReference>Get_Custom_Notification_type_record</targetReference>
         </connector>
-        <filterFormula>( ISNEW() || {!$Record.Out_of_Scope__c} ) || ( NOT(ISNEW()) &amp;&amp; ISCHANGED({!$Record.Out_of_Scope__c}) &amp;&amp; {!$Record.Out_of_Scope__c})</filterFormula>
+        <filterFormula>( ISNEW() &amp;&amp; {!$Record.Out_of_Scope__c} ) || ( NOT(ISNEW()) &amp;&amp; ISCHANGED({!$Record.Out_of_Scope__c}) &amp;&amp; {!$Record.Out_of_Scope__c})</filterFormula>
         <object>pse__Timecard_Header__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
