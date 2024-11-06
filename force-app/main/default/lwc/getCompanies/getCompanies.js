@@ -1,14 +1,15 @@
 import { LightningElement } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
-import executeRequest from '@salesforce/apex/GetBeauhurstCompanies.callBatch';
-import getTotal from '@salesforce/apex/GetBeauhurstCompanies.getTotal';
+import syncRecord from '@salesforce/apex/GetBeauhurstCompanies.syncRecord';
+import getCollectionDetail from '@salesforce/apex/GetBeauhurstCompanies.getCollectionDetail';
 
 export default class GetCompanies extends LightningElement {
     collectionId;
     showResults = false;
     total       = 0;
     showSpinner = false;
+    detail = {};
 
     onCancel(){
         this.dispatchEvent(new CloseActionScreenEvent());
@@ -21,10 +22,19 @@ export default class GetCompanies extends LightningElement {
     onConfirmSync(){
         if( this.collectionId != '' && this.collectionId != null ){
             console.log('Call Apex Class');
-            executeRequest({collectionId : this.collectionId})
-            .then( result => {  
-                this.showToast('Info', 'Record is currently syncing.', 'info', 'dismissable');
-                this.onCancel();
+            this.showSpinner = true;
+            syncRecord({params : this.detail})
+            .then( result => { 
+                console.log('result result ' + result); 
+                if( result.isSuccess ){
+                    this.showToast('Success', result.message, 'success', 'dismissable');
+                    this.collectionId = '';
+                } else {
+                    this.showToast('Error', result.message, 'error', 'dismissable');
+                }
+
+                this.showSpinner = false;
+                this.showResults = false;
             }).catch(error => {
                 console.log('Error '+JSON.stringify(error));
             }); 
@@ -38,14 +48,21 @@ export default class GetCompanies extends LightningElement {
         if( this.collectionId != '' && this.collectionId != null ){
             this.showSpinner = true;
             this.showResults = true;
-            getTotal({collectionId : this.collectionId})
+            getCollectionDetail({collectionId : this.collectionId})
             .then( result => { 
                 console.log('result', result); 
-                this.total          = result.meta.total == null ?  0 : result.meta.total;
-                
-                // window.setTimeout(() => { 
-                    this.showSpinner    = false;
-                // }, 2000);
+                if( result.isExist ){ 
+                    this.showToast('Error', 'Collection Id has already existing Company Collection record.', 'error', 'dismissable');
+                    this.showResults = false;
+                } else {
+                    if( result.resDetails.length > 0 ){
+                        this.detail = result.resDetails[0];
+                    } else {
+                        this.showResults = false;
+                        this.showToast('Error', 'Can\'t find any record for this collection Id : ' + this.collectionId, 'error', 'dismissable');
+                    }
+                }
+                this.showSpinner    = false;
             }).catch(error => {
                 console.log('Error '+JSON.stringify(error));
             }); 
