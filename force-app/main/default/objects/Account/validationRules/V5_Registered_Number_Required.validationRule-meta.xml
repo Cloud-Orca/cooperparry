@@ -3,14 +3,14 @@
     <fullName>V5_Registered_Number_Required</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
  IsPersonAccount = false,
-
-ISBLANK (  Beauhurst_ID__c ),
-
-AND ( TEXT(Type_of_Business__c) != &quot;Not For Profit&quot;,
-     TEXT(Type_of_Business__c) != &quot;Pension Scheme&quot;)
-
+ ISBLANK(Beauhurst_ID__c ),
+  AND( 
+   TEXT(Type_of_Business__c) &lt;&gt; &quot;Not For Profit&quot;,
+   TEXT(Type_of_Business__c) &lt;&gt; &quot;Pension Scheme&quot;,
+   ISBLANK(TEXT(Type_of_Business__c))
+ )
 )</errorConditionFormula>
     <errorDisplayField>Beauhurst_ID__c</errorDisplayField>
     <errorMessage>Please enter a value on Registered Number unless Type of Business is Not For Profit or Pension Scheme</errorMessage>

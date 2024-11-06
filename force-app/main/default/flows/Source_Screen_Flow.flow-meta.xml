@@ -124,7 +124,7 @@
         <choiceText>Inbound</choiceText>
         <dataType>String</dataType>
         <value>
-            <stringValue>Inbound</stringValue>
+            <stringValue>Internal</stringValue>
         </value>
     </choices>
     <choices>
