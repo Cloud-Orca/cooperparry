@@ -2,10 +2,35 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <decisions>
+        <name>Area</name>
+        <label>Area</label>
+        <locationX>402</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Create_Service_Line</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Deals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deals</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Onboarded</targetReference>
+            </connector>
+            <label>Deals</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Onboarded</name>
         <label>Onboarded?</label>
-        <locationX>182</locationX>
-        <locationY>731</locationY>
+        <locationX>226</locationX>
+        <locationY>923</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Onboarded</name>
@@ -26,10 +51,10 @@
     <decisions>
         <name>service_line_found</name>
         <label>service line found</label>
-        <locationX>182</locationX>
+        <locationX>226</locationX>
         <locationY>431</locationY>
         <defaultConnector>
-            <targetReference>Onboarded</targetReference>
+            <targetReference>Area</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -70,10 +95,51 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Service_Line</name>
+        <label>Create Service Line</label>
+        <locationX>490</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Onboarded</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Assignment_Type__c</field>
+            <value>
+                <elementReference>$Record.Assignment_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Opportunity_Area__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type_Area__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Type_Area__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Area__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Service_Line__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>get_Service_Line_Linked_to_Account</name>
         <label>get Service Line Linked to Account</label>
-        <locationX>182</locationX>
+        <locationX>226</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -101,8 +167,8 @@
     <recordUpdates>
         <name>Disable_Bypass</name>
         <label>Disable Bypass</label>
-        <locationX>50</locationX>
-        <locationY>947</locationY>
+        <locationX>94</locationX>
+        <locationY>1139</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -122,8 +188,8 @@
     <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
-        <locationX>50</locationX>
-        <locationY>839</locationY>
+        <locationX>94</locationX>
+        <locationY>1031</locationY>
         <connector>
             <targetReference>Disable_Bypass</targetReference>
         </connector>
@@ -180,7 +246,7 @@
         <object>Service_Line__c</object>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>100</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>get_Service_Line_Linked_to_Account</targetReference>
@@ -188,7 +254,8 @@
         <filterFormula>AND(
 NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
 ISCHANGED({!$Record.Status}),
-TEXT({!$Record.Status}) = &quot;Closed&quot;
+TEXT({!$Record.Status}) = &quot;Closed&quot;,
+TEXT({!$Record.Closed_Reason__c}) = &quot;Onboarded&quot;
 )</filterFormula>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
