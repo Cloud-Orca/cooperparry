@@ -4,7 +4,7 @@
     <customErrors>
         <name>error</name>
         <label>error</label>
-        <locationX>440</locationX>
+        <locationX>506</locationX>
         <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>Please ensure that there is a Lifecycle Coordinator on Account before moving the Status to Initial Review or beyond.</errorMessage>
@@ -14,7 +14,7 @@
     <decisions>
         <name>Area</name>
         <label>Area</label>
-        <locationX>352</locationX>
+        <locationX>374</locationX>
         <locationY>539</locationY>
         <defaultConnector>
             <targetReference>error</targetReference>
@@ -24,7 +24,7 @@
             <name>Law</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Area__c</leftValueReference>
+                <leftValueReference>$Record.Case_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Law</stringValue>
