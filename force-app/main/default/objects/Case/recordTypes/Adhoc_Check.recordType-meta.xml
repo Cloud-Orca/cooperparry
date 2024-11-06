@@ -28,6 +28,37 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Confidential_Opportunity__c</picklist>
+        <values>
+            <fullName>CP Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pensions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ring Fenced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports and Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UHNWI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Origin</picklist>
         <values>
             <fullName>Email</fullName>
