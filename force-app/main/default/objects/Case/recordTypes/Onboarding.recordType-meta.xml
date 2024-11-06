@@ -7,11 +7,38 @@
     <picklistValues>
         <picklist>Closed_Reason__c</picklist>
         <values>
-            <fullName>Failed Smart Search</fullName>
+            <fullName>Onboarded</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confidential_Opportunity__c</picklist>
+        <values>
+            <fullName>CP Law</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Onboarded</fullName>
+            <fullName>Pensions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ring Fenced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports and Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UHNWI</fullName>
             <default>false</default>
         </values>
     </picklistValues>

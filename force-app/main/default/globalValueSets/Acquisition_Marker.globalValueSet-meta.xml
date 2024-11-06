@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>HWSE</fullName>
+        <default>false</default>
+        <label>HWSE</label>
+    </customValue>
+    <customValue>
+        <fullName>Mazars</fullName>
+        <default>false</default>
+        <label>Mazars</label>
+    </customValue>
+    <customValue>
+        <fullName>Cloud Orca</fullName>
+        <default>false</default>
+        <label>Cloud Orca</label>
+    </customValue>
+    <customValue>
+        <fullName>Chamberlyns</fullName>
+        <default>false</default>
+        <label>Chamberlyns</label>
+    </customValue>
+    <customValue>
+        <fullName>HW Reading</fullName>
+        <default>false</default>
+        <label>HW Reading</label>
+    </customValue>
+    <customValue>
+        <fullName>Project Madrid</fullName>
+        <default>false</default>
+        <label>Project Madrid</label>
+    </customValue>
+    <customValue>
+        <fullName>UHY - Manchester</fullName>
+        <default>false</default>
+        <label>UHY - Manchester</label>
+    </customValue>
+    <customValue>
+        <fullName>Haines Watts</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Haines Watts</label>
+    </customValue>
+    <customValue>
+        <fullName>Cinnamon</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Cinnamon</label>
+    </customValue>
+    <customValue>
+        <fullName>Madrid</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Madrid</label>
+    </customValue>
+    <customValue>
+        <fullName>Hexagon</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Hexagon</label>
+    </customValue>
+    <masterLabel>Acquisition Marker</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

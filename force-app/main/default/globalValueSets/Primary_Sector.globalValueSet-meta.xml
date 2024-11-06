@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Tech</fullName>
+        <default>false</default>
+        <label>Tech</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail &amp; Consumer</fullName>
+        <default>false</default>
+        <label>Retail &amp; Consumer</label>
+    </customValue>
+    <customValue>
+        <fullName>Financial Services</fullName>
+        <default>false</default>
+        <label>Financial Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Health &amp; Social Care</fullName>
+        <default>false</default>
+        <label>Health &amp; Social Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Manufacturing &amp; Industrials</fullName>
+        <default>false</default>
+        <label>Manufacturing &amp; Industrials</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative, Media &amp; Entertainment</fullName>
+        <default>false</default>
+        <label>Creative, Media &amp; Entertainment</label>
+    </customValue>
+    <customValue>
+        <fullName>Construction</fullName>
+        <default>false</default>
+        <label>Construction</label>
+    </customValue>
+    <customValue>
+        <fullName>Property / Real Estate</fullName>
+        <default>false</default>
+        <label>Property / Real Estate</label>
+    </customValue>
+    <customValue>
+        <fullName>Not-For-Profit</fullName>
+        <default>false</default>
+        <label>Not-For-Profit</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Support Services</fullName>
+        <default>false</default>
+        <label>Business Support Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Primary Sector</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
