@@ -5,7 +5,8 @@
     <errorConditionFormula>AND(
 NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
  ISBLANK(Company),
- TEXT(Type_of_Business__c) &lt;&gt; &apos;Private Client&apos;
+ TEXT(Type_of_Business__c) &lt;&gt; &apos;Private Client&apos;,
+ TEXT(Type_of_Business__c) &lt;&gt; &apos;Pension Scheme&apos;
 )</errorConditionFormula>
     <errorDisplayField>Company</errorDisplayField>
     <errorMessage>Please enter a value on Company.</errorMessage>
