@@ -4,20 +4,42 @@
     <customErrors>
         <name>error</name>
         <label>error</label>
-        <locationX>264</locationX>
-        <locationY>539</locationY>
+        <locationX>440</locationX>
+        <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>Please ensure that there is a Lifecycle Coordinator on Account before moving the Status to Initial Review or beyond.</errorMessage>
             <isFieldError>false</isFieldError>
         </customErrorMessages>
     </customErrors>
     <decisions>
+        <name>Area</name>
+        <label>Area</label>
+        <locationX>352</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Law</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Law</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Law</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>lifecycle_coordinator_found</name>
         <label>lifecycle coordinator found</label>
         <locationX>176</locationX>
         <locationY>431</locationY>
         <defaultConnector>
-            <targetReference>error</targetReference>
+            <targetReference>Area</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
