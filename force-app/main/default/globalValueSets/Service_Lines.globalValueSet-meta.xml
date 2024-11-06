@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Advisory</fullName>
+        <default>false</default>
+        <label>Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit</fullName>
+        <default>false</default>
+        <label>Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Services and Outsourcing</fullName>
+        <default>false</default>
+        <label>Business Services and Outsourcing</label>
+    </customValue>
+    <customValue>
+        <fullName>Deals</fullName>
+        <default>false</default>
+        <label>Deals</label>
+    </customValue>
+    <customValue>
+        <fullName>Legal</fullName>
+        <default>false</default>
+        <label>Legal</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax</fullName>
+        <default>false</default>
+        <label>Tax</label>
+    </customValue>
+    <description>Cooper Parry Service Lines</description>
+    <masterLabel>Service Lines</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

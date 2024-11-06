@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>PIEs</fullName>
+        <default>false</default>
+        <label>PIEs</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Audits Retained by FRC</fullName>
+        <default>false</default>
+        <label>Other Audits Retained by FRC</label>
+    </customValue>
+    <customValue>
+        <fullName>AIM</fullName>
+        <default>false</default>
+        <label>AIM</label>
+    </customValue>
+    <customValue>
+        <fullName>NEX</fullName>
+        <default>false</default>
+        <label>NEX</label>
+    </customValue>
+    <customValue>
+        <fullName>Any other recognised investment exchanges</fullName>
+        <default>false</default>
+        <label>Any other recognised investment exchanges</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Unions</fullName>
+        <default>false</default>
+        <label>Credit Unions</label>
+    </customValue>
+    <customValue>
+        <fullName>Entities authorised under legislation for investment, insurance or mortgage business</fullName>
+        <default>false</default>
+        <label>Entities authorised under legislation for investment, insurance or mortgage business</label>
+    </customValue>
+    <customValue>
+        <fullName>Registered Charities</fullName>
+        <default>false</default>
+        <label>Registered Charities</label>
+    </customValue>
+    <customValue>
+        <fullName>Friendly Societies</fullName>
+        <default>false</default>
+        <label>Friendly Societies</label>
+    </customValue>
+    <customValue>
+        <fullName>Co-operative and community benefit societies (CIC) &amp; I&amp;Ps reg before 1.08.14</fullName>
+        <default>false</default>
+        <label>Co-operative and community benefit societies (CIC) &amp; I&amp;Ps reg before 1.08.14</label>
+    </customValue>
+    <customValue>
+        <fullName>Open-ended investment companies</fullName>
+        <default>false</default>
+        <label>Open-ended investment companies</label>
+    </customValue>
+    <customValue>
+        <fullName>Unit trusts</fullName>
+        <default>false</default>
+        <label>Unit trusts</label>
+    </customValue>
+    <customValue>
+        <fullName>Pension Schemes</fullName>
+        <default>false</default>
+        <label>Pension Schemes</label>
+    </customValue>
+    <customValue>
+        <fullName>LLPs</fullName>
+        <default>false</default>
+        <label>LLPs</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnerships &amp; LPs</fullName>
+        <default>false</default>
+        <label>Partnerships &amp; LPs</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Regulated Audits</fullName>
+        <default>false</default>
+        <label>Other Regulated Audits</label>
+    </customValue>
+    <masterLabel>Audit Categories</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
