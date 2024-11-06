@@ -555,6 +555,10 @@
                 <behavior>Edit</behavior>
                 <field>Connector__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>BH_Collection_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
