@@ -5,7 +5,7 @@
     <formulas>
         <name>F_OppName</name>
         <dataType>String</dataType>
-        <expression>{!$Record.Account.Name} + &quot; - &quot; + TEXT({!$Record.Opportunity_Type__c})</expression>
+        <expression>{!$Record.Account.Name} + &quot; - Opportunity&quot;</expression>
     </formulas>
     <interviewLabel>Opportunity - Update Naming Convention {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity - Update Naming Convention</label>
@@ -47,7 +47,9 @@
         <connector>
             <targetReference>Update_Opp_Name</targetReference>
         </connector>
-        <filterFormula>NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c})</filterFormula>
+        <filterFormula>AND(NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+TEXT({!$Record.Opportunity_Area__c}) != &quot;Deals&quot;,
+{!$Record.RecordType.DeveloperName} != &quot;Corporate_Opportunity&quot; )</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
