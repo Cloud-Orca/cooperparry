@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Meeting Booked</fullName>
+        <default>false</default>
+        <label>Meeting Booked</label>
+    </customValue>
+    <customValue>
+        <fullName>Meeting Complete</fullName>
+        <default>false</default>
+        <label>Meeting Complete</label>
+    </customValue>
+    <customValue>
+        <fullName>Declined</fullName>
+        <default>false</default>
+        <label>Declined</label>
+    </customValue>
+    <customValue>
+        <fullName>Hold</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Hold</label>
+    </customValue>
+    <customValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>In Progress</label>
+    </customValue>
+    <customValue>
+        <fullName>Planning</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Planning</label>
+    </customValue>
+    <customValue>
+        <fullName>Targeted</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Targeted</label>
+    </customValue>
+    <masterLabel>Meeting Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
