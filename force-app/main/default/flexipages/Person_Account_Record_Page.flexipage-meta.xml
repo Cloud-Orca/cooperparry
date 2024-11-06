@@ -79,8 +79,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Description</fieldItem>
-                <identifier>RecordDescriptionField</identifier>
+                <fieldItem>Record.PersonBirthdate</fieldItem>
+                <identifier>RecordPersonBirthdateField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -89,8 +89,28 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Connector__c</fieldItem>
-                <identifier>RecordConnector__cField</identifier>
+                <fieldItem>Record.CCH_Client_Code__c</fieldItem>
+                <identifier>RecordCCH_Client_Code_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Ongoing_Monitoring_Today__c</fieldItem>
+                <identifier>RecordOngoing_Monitoring_Today_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Ongoing_Monitoring_Date__c</fieldItem>
+                <identifier>RecordOngoing_Monitoring_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
@@ -115,6 +135,36 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Linked_Account__c</fieldItem>
                 <identifier>RecordLinked_Account__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
+                <identifier>RecordConfidential_Account_Area_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Date_Became_Client__c</fieldItem>
+                <identifier>RecordDate_Became_Client_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Previously_Onboarded__c</fieldItem>
+                <identifier>RecordPreviously_Onboarded_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
@@ -264,6 +314,34 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Description</fieldItem>
+                <identifier>RecordDescriptionField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-8b32ae68-32fe-4019-a639-b9a1d8fcb93f</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-8b32ae68-32fe-4019-a639-b9a1d8fcb93f</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-c3473b67-71ec-47fb-a96f-e6607d1ac4a6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Opted_In__c</fieldItem>
                 <identifier>RecordOpted_In__cField</identifier>
             </fieldInstance>
@@ -344,17 +422,7 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.ShippingAddress</fieldItem>
-                <identifier>RecordShippingAddressField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-c189be70-e7d5-455d-852c-d65137f5576e</name>
+        <name>Facet-92757ce1-26c3-4024-ab0e-24d2ca3a3f40</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -372,7 +440,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-c189be70-e7d5-455d-852c-d65137f5576e</value>
+                    <value>Facet-92757ce1-26c3-4024-ab0e-24d2ca3a3f40</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column5</identifier>
@@ -494,6 +562,24 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
+                    <value>Facet-c3473b67-71ec-47fb-a96f-e6607d1ac4a6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Description</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
                     <value>Facet-713984a4-af37-43a8-a52d-96be467e1d7b</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -581,6 +667,175 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-6961f4ad-913c-4aaf-b4dd-db5625bb99e8</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NewCase</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>CASES.RECORDTYPE|EQUALS|[&quot;Onboarding&quot;]</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Cases</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>CASES.CASE_NUMBER</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CASES.SUBJECT</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CASES.STATUS</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CASES.PRIORITY</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CASES.CREATED_DATE_DATE_ONLY</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>OWNER_NAME</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Cases</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-0f7bb723-d8b4-42fa-82bb-0f6d4eca652c</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Beneficial_Owners__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-04bca444-970a-44fb-93a8-5b4e2aec7d65</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Stage_Histories__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>cacheAge</name>
+                    <value>1440</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reportFilter</name>
+                    <value>FK_ACC_ID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reportName</name>
+                    <value>Account_Stage_Tracking_mjS</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showRefreshButton</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:reportChart</componentName>
+                <identifier>flexipage_reportChart</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-70567553-e014-4fb4-a6c9-16cbada2b3ed</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -700,6 +955,48 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-0f7bb723-d8b4-42fa-82bb-0f6d4eca652c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Onboarding</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-04bca444-970a-44fb-93a8-5b4e2aec7d65</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Beneficial Owner</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab8</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-70567553-e014-4fb4-a6c9-16cbada2b3ed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Account Stage History</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab9</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -837,6 +1134,32 @@
                 </componentInstanceProperties>
                 <componentName>runtime_sales_merge:mergeCandidatesPreviewCard</componentName>
                 <identifier>runtime_sales_merge_mergeCandidatesPreviewCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>AccountTeamMembers</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
