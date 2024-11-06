@@ -454,21 +454,21 @@
             <name>PC_Compliance_or_PC_Advisory</name>
             <conditionLogic>3 AND (1 OR 2)</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Opportunity_Type_Area__c</leftValueReference>
+                <leftValueReference>Get_Case.Case_Type_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PC Advisory</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Case.Opportunity_Type_Area__c</leftValueReference>
+                <leftValueReference>Get_Case.Case_Type_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PC Compliance</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Case.Opportunity_Area__c</leftValueReference>
+                <leftValueReference>Get_Case.Case_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Tax</stringValue>
@@ -483,24 +483,24 @@
             <name>NOT_PC_Compliance_or_PC_Advisory</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Opportunity_Type_Area__c</leftValueReference>
+                <leftValueReference>Get_Case.Case_Type_Area__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>PC Advisory</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Case.Opportunity_Type_Area__c</leftValueReference>
+                <leftValueReference>Get_Case.Case_Type_Area__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>PC Compliance</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Case.Opportunity_Area__c</leftValueReference>
+                <leftValueReference>Get_Case.Case_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Tax</stringValue>
+                    <stringValue>tax</stringValue>
                 </rightValue>
             </conditions>
             <connector>
