@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <description>Send Email to Resource and Line Manager for Missing Timecards</description>
-        <name>Send_Email_to_Resource_and_Line_Manager</name>
-        <label>Send Email to Resource and Line Manager</label>
+        <description>Send Email to Resource for Missing Timecards</description>
+        <name>Send_Email_to_Resource</name>
+        <label>Send Email to Resource</label>
         <locationX>176</locationX>
         <locationY>360</locationY>
         <actionName>emailSimple</actionName>
@@ -36,7 +36,7 @@
         <inputParameters>
             <name>emailBody</name>
             <value>
-                <stringValue>There are some missing Timecards.</stringValue>
+                <stringValue>You have a missing Timecard. Please fill as soon as possible.</stringValue>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
@@ -55,15 +55,8 @@
                 <elementReference>$Record.pse__Resource__r.Email</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Email_recipient_collection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>$Record.pse__Resource__r.ReportsTo.Email</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
-            <targetReference>Send_Email_to_Resource_and_Line_Manager</targetReference>
+            <targetReference>Send_Email_to_Resource</targetReference>
         </connector>
     </assignments>
     <environments>Default</environments>
@@ -96,13 +89,13 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>pse__Date_Timecard_Entered__c</field>
-            <operator>IsNull</operator>
+            <field>pse__Variance__c</field>
+            <operator>LessThan</operator>
             <value>
-                <booleanValue>true</booleanValue>
+                <numberValue>0.0</numberValue>
             </value>
         </filters>
-        <object>pse__Missing_Timecard__c</object>
+        <object>pse__Time_Variance_Detail__c</object>
         <schedule>
             <frequency>Weekly</frequency>
             <startDate>2024-10-28</startDate>
@@ -110,7 +103,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>Email_recipient_collection</name>
         <dataType>String</dataType>
