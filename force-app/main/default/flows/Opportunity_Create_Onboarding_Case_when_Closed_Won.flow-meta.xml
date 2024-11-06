@@ -292,6 +292,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Confidential_Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Confidential_Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Opportunity__c</field>
             <value>
                 <elementReference>$Record.Id</elementReference>
