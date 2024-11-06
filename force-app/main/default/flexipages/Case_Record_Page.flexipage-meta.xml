@@ -28,6 +28,9 @@
                             <value>Case.Escalation</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Case.CF_CAF</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.Case.Form_Approval</value>
                             <visibilityRule>
                                 <criteria>
@@ -158,6 +161,26 @@
                 <identifier>RecordPreviously_Onboarded_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sharepoint_Folder_ID__c</fieldItem>
+                <identifier>RecordSharepoint_Folder_ID__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sharepoint_Public_Folder_ID__c</fieldItem>
+                <identifier>RecordSharepoint_Public_Folder_ID__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-9c53363a-0b94-4d4d-b723-fdd92d472b60</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -284,26 +307,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Type</fieldItem>
-                <identifier>RecordTypeField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Reason</fieldItem>
-                <identifier>RecordReasonField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -558,6 +561,16 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Business_Risk_Assessment_Form_formula__c</fieldItem>
+                <identifier>RecordBusiness_Risk_Assessment_Form_formula_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Ongoing_Monitoring_formula2__c</fieldItem>
@@ -568,10 +581,10 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.CF_CAF_checkbox__c</fieldItem>
-                <identifier>RecordCF_CAF_checkbox_cField</identifier>
+                <fieldItem>Record.CF_CAF__c</fieldItem>
+                <identifier>RecordCF_CAF_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-72b1ecac-5376-4c7f-ae3f-ba577a612c92</name>
@@ -909,14 +922,6 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>New</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>adminFilters</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>maxRecordsToDisplay</name>
@@ -924,11 +929,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>Case.AccountId</value>
+                    <value>Case.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>Beneficial_Owners__r</value>
+                    <value>Beneficial_Owner_Cases__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -938,16 +943,16 @@
                     <name>relatedListFieldAliases</name>
                     <valueList>
                         <valueListItems>
-                            <value>NAME</value>
+                            <value>Beneficial_Owner__c.NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Title__c</value>
+                            <value>Beneficial_Owner__c.Title__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>First_Name__c</value>
+                            <value>Beneficial_Owner__c.First_Name__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Last_Name__c</value>
+                            <value>Beneficial_Owner__c.Last_Name__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -957,7 +962,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldAlias</name>
@@ -968,7 +973,7 @@
                     <value>Default</value>
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
-                <identifier>lst_dynamicRelatedList2</identifier>
+                <identifier>lst_dynamicRelatedList</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-66ac5811-179b-4df6-8f54-06bb33ef191c</name>
@@ -1225,6 +1230,12 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>sharepointComp</componentName>
+                <identifier>c_sharepointComp</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
