@@ -484,15 +484,19 @@
     <picklistValues>
         <picklist>Confidential_Account_Area__c</picklist>
         <values>
-            <fullName>CP Law</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Confidential</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Ring Fenced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports and Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UHNWI</fullName>
             <default>false</default>
         </values>
     </picklistValues>
