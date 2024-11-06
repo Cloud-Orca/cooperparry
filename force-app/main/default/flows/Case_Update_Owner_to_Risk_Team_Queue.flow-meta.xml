@@ -301,7 +301,7 @@ ISCHANGED({!$Record.Case_Referred__c}),
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <textTemplates>
         <name>body</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
