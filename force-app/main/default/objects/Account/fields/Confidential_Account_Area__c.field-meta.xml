@@ -17,6 +17,16 @@
                 <label>CP Law</label>
             </value>
             <value>
+                <fullName>UHNWI</fullName>
+                <default>false</default>
+                <label>UHNWI</label>
+            </value>
+            <value>
+                <fullName>Sports and Media</fullName>
+                <default>false</default>
+                <label>Sports and Media</label>
+            </value>
+            <value>
                 <fullName>Ring Fenced</fullName>
                 <default>false</default>
                 <label>Ring Fenced</label>
