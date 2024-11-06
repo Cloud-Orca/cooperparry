@@ -208,14 +208,19 @@ public class SmartSearchCompCont {
     public static List<Beneficial_Owner__c> getAllBeneficialOwners(Id recordId){
         try {
             List<Beneficial_Owner__c> beneficialOwnerList = new List<Beneficial_Owner__c>();
-            Case caseRec = [SELECT Id, AccountId FROM Case WHERE Id =: recordId];
-            if(caseRec.AccountId != null){
+
+            Set<Id> benOwnerIds = new Set<Id>();
+            for(Beneficial_Owner_Cases__c benOwnerCase: [SELECT Id, Beneficial_Owner__c FROM Beneficial_Owner_Cases__c where Case__c =: recordId]){
+                benOwnerIds.add(benOwnerCase.Beneficial_Owner__c);
+            }
+
+            if(!benOwnerIds.isEmpty()){
                 beneficialOwnerList = [SELECT Id, Account__c, Address_Line_1__c, Address_Line_2__c, Building_Name_Number__c, Case__c, County__c, 
                                             Date_of_Birth__c, First_Name__c, Flat__c, Last_Name__c, Middle_Name__c, Months_at_this_address__c, Postcode__c,
                                             Search_ID__c, Search_Reference__c, Smart_Search_Link__c, Smart_Search_Status__c, Subject_ID__c, Title__c, Town__c, 
                                             Years_at_this_address__c
                                             FROM Beneficial_Owner__c 
-                                            WHERE Account__c =: caseRec.AccountId AND Case__c =: recordId ORDER BY CreatedDate ASC];
+                                            WHERE Id IN: benOwnerIds ORDER BY CreatedDate ASC];
             }
             return beneficialOwnerList;
         } catch (Exception e) {
