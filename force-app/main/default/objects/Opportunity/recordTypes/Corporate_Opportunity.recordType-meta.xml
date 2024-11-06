@@ -455,6 +455,21 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>BTC_THG_PCC_Estimate_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>CP_Office__c</picklist>
         <values>
             <fullName>Birmingham</fullName>
@@ -496,8 +511,27 @@
             <fullName>Slough</fullName>
             <default>false</default>
         </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confidential_Opportunity__c</picklist>
         <values>
-            <fullName>Worcester</fullName>
+            <fullName>CP Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pensions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ring Fenced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports and Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UHNWI</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -521,6 +555,21 @@
         </values>
         <values>
             <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Law_Estimate_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -651,6 +700,17 @@
         </values>
         <values>
             <fullName>Went Away - Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Meeting_Subtype__c</picklist>
+        <values>
+            <fullName>Follow up Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial Meeting</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -788,6 +848,25 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Revenue__c</picklist>
         <values>
             <fullName>System Calculated</fullName>
@@ -847,15 +926,37 @@
     <picklistValues>
         <picklist>Source__c</picklist>
         <values>
-            <fullName>Inbound</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Outbound</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THG_Audit_Partner_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THG_Audit_Resourcing_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
             <default>false</default>
         </values>
     </picklistValues>
