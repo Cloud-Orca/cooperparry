@@ -547,16 +547,16 @@
         <label>Confidential</label>
     </customValue>
     <customValue>
-        <fullName>TBC</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>TBC</label>
-    </customValue>
-    <customValue>
         <fullName>CP Law</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>CP Law</label>
+    </customValue>
+    <customValue>
+        <fullName>TBC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TBC</label>
     </customValue>
     <masterLabel>Assignment Type</masterLabel>
     <sorted>false</sorted>
