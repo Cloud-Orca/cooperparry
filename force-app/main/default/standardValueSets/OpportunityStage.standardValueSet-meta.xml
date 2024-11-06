@@ -66,6 +66,24 @@
         <won>true</won>
     </standardValue>
     <standardValue>
+        <fullName>Live Mandate</fullName>
+        <default>false</default>
+        <label>Live Mandate</label>
+        <closed>true</closed>
+        <forecastCategory>Closed</forecastCategory>
+        <probability>100</probability>
+        <won>true</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Completed Deal</fullName>
+        <default>false</default>
+        <label>Completed Deal</label>
+        <closed>true</closed>
+        <forecastCategory>Closed</forecastCategory>
+        <probability>100</probability>
+        <won>true</won>
+    </standardValue>
+    <standardValue>
         <fullName>Closed Lost</fullName>
         <default>false</default>
         <description>No sale.</description>
