@@ -158,8 +158,8 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Business Risk Assessment Form</label>
     <nameField>
-        <displayFormat>CAF-{0000}</displayFormat>
-        <label>Client Acceptance Form Name</label>
+        <displayFormat>BRA-{0000}</displayFormat>
+        <label>Business Risk Assessment Form Name</label>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Business Risk Assessment Forms</pluralLabel>

@@ -155,13 +155,14 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Ongoing Monitoring Form</label>
     <nameField>
-        <displayFormat>CF - {0000}</displayFormat>
-        <label>Continuation Form Number</label>
+        <displayFormat>OM - {0000}</displayFormat>
+        <label>Ongoing Monitoring Form Number</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Ongoing Monitoring Forms</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
 </CustomObject>
