@@ -20,28 +20,34 @@ global class CreateLeadsFromBHBatch implements Database.Batchable<sObject>, Data
     }
 
     global void execute(Database.BatchableContext BC, List<Company_ID__c> scope){
-        String companyIds = '';
-        for(Company_ID__c ci : scope){
-            companyIds += 'company_ids=' + ci.beauhurst_id__c + '&';
-        }
+        
+        // String companyIds = '';
+        // for(Company_ID__c ci : scope){
+        //     companyIds += 'company_ids=' + ci.beauhurst_id__c + '&';
+        // }
 
-        String append = '/companies?' + companyIds + 'includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
+        // String append = '/companies?' + companyIds + 'includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
 
-        Http http = new Http();
-        HttpResponse res = http.send(BeauhurstAPIUtility.constructReq(append));
-        if(res.getStatusCode() == 200){
-            BeauhurstAPIUtility.Response getData = (BeauhurstAPIUtility.Response) JSON.deserialize(res.getBody(), BeauhurstAPIUtility.Response.class);
-            if(!getData.results.isEmpty()){
-                List<Lead> leadsToInsert = new List<Lead>();
-                for(BeauhurstAPIUtility.Result result : getData.results){
-                    leadsToInsert.add(BeauhurstAPIUtility.collectLead(null, result));
-                }
-
-                if(!leadsToInsert.isEmpty()){
-                    insert leadsToInsert;
-                }
-            }
-        }
+        // Http http = new Http();
+        // HttpResponse res = http.send(BeauhurstAPIUtility.constructReq(append));
+        // if(res.getStatusCode() == 200){
+        //     BeauhurstAPIUtility.Response getData = (BeauhurstAPIUtility.Response) JSON.deserialize(res.getBody(), BeauhurstAPIUtility.Response.class);
+        //     if(!getData.results.isEmpty()){
+        //         List<Group> originationQueue = [SELECT Id from Group WHERE Name = 'Origination Queue' AND Type = 'Queue' LIMIT 1];
+        //         if(!originationQueue.isEmpty()){
+        //             List<Lead> leadsToInsert = new List<Lead>();
+        //             for(BeauhurstAPIUtility.Result result : getData.results){
+        //                 Lead ld = BeauhurstAPIUtility.collectLead(null, result);
+        //                 ld.OwnerId = originationQueue[0].Id;
+        //                 leadsToInsert.add(ld);
+        //             }
+    
+        //             if(!leadsToInsert.isEmpty()){
+        //                 Database.SaveResult[] results = Database.insert(leadsToInsert, false);
+        //             }
+        //         }
+        //     }
+        // }
     }
 
     global void finish(Database.BatchableContext BC){
