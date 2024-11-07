@@ -305,6 +305,26 @@
                 <identifier>RecordCP_Client_ID_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Legacy_Account_ID__c</fieldItem>
+                <identifier>RecordLegacy_Account_ID_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Do_Not_Create_Case__c</fieldItem>
+                <identifier>RecordDo_Not_Create_Case_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
         <type>Facet</type>
     </flexiPageRegions>
