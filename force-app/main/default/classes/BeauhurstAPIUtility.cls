@@ -247,6 +247,7 @@ public class BeauhurstAPIUtility {
         public String latest_stage_of_evolution;
         public String legal_form;
     }
+    
 
     public class ContactInfo{
         public List<String> emails;
