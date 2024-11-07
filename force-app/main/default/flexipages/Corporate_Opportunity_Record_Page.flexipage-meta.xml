@@ -316,12 +316,6 @@
                 <fieldItem>Record.Type_of_Project__c</fieldItem>
                 <identifier>RecordType_of_Project__cField</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Opportunity_Area__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Total Deals</rightValue>
-                    </criteria>
                     <criteria>
                         <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
                         <operator>EQUAL</operator>
