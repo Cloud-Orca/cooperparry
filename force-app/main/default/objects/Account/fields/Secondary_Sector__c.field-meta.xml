@@ -6,9 +6,10 @@
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
-    <type>Picklist</type>
+    <type>MultiselectPicklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetName>Secondary_Sector</valueSetName>
     </valueSet>
+    <visibleLines>5</visibleLines>
 </CustomField>
