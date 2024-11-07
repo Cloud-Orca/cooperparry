@@ -18,7 +18,7 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
     }
     
     global Database.QueryLocator start(Database.BatchableContext BC) {
-        String query = 'SELECT Id, Name, beauhurst_id__c';
+        String query = 'SELECT Id, Name, beauhurst_id__c, collection_name__c';
         query += ' FROM Company_Collection__c';
         query += ' WHERE beauhurst_id__c != null';
         query += ' AND sync__c = true';
@@ -56,19 +56,14 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
 
         if(!retrievedCompanyIds.isEmpty()){
             List<Company_ID__c> companyIdsToUpsert = new List<Company_ID__c>();
-            Map<String, Lead> bhIdToLeadMap = new Map<String, Lead>();
             Map<String, Account> bhIdToAccountMap = new Map<String, Account>();
-
-            for(Lead ld : [SELECT Id, Beauhurst_ID__c FROM Lead WHERE Beauhurst_ID__c IN: retrievedCompanyIds]){
-                bhIdToLeadMap.put(ld.Beauhurst_ID__c, ld);
-            }
 
             for(Account acc : [SELECT Id, Beauhurst_ID__c FROM Account WHERE Beauhurst_ID__c IN: retrievedCompanyIds]){
                 bhIdToAccountMap.put(acc.Beauhurst_ID__c, acc);
             }
 
             for(String compId : retrievedCompanyIds){
-                if(!bhIdToLeadMap.containsKey(compId) && !bhIdToAccountMap.containsKey(compId)){
+                if(!bhIdToAccountMap.containsKey(compId)){
                     Company_ID__c comId = new Company_ID__c();
                     comId.beauhurst_id__c = compId;
                     companyIdsToUpsert.add(comId);
@@ -102,7 +97,7 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
 
     global void finish(Database.BatchableContext BC){
         System.debug('@@@validCompanyIds: ' + validCompanyIds);
-        Database.executeBatch(new CreateLeadsFromBHBatch(validCompanyIds), 10);
+        Database.executeBatch(new CreateAccountsFromBHBatch(validCompanyIds), 10);
     }
 
     public class Response{

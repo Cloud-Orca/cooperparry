@@ -1,5 +1,4 @@
 global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, Schedulable, Database.Stateful, Database.AllowsCallouts {
-    global Boolean isInitialRun;
     global Set<Id> ids;
 
     global void execute(SchedulableContext SC) {
@@ -7,19 +6,11 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
     }
     
     global UpdateAccountsFromBHBatch(){
-        this.isInitialRun = false;
         this.ids = new Set<Id>();
     }
 
     global UpdateAccountsFromBHBatch(Set<Id> ids){
-        this.isInitialRun = false;
         this.ids = ids;
-    }
-
-    //Database.executeBatch(new UpdateAccountsFromBHBatch(true), 10);
-    global UpdateAccountsFromBHBatch(Boolean isInitialRun){
-        this.isInitialRun = isInitialRun;
-        this.ids = new Set<Id>();
     }
     
     global Database.QueryLocator start(Database.BatchableContext BC) {
@@ -75,8 +66,6 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
     }
 
     global void finish(Database.BatchableContext BC){
-        if(!isInitialRun){
-            Database.executeBatch(new UpdateLeadsFromBHBatch(), 10);
-        }
+        
     }
 }
