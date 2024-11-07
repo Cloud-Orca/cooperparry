@@ -13,7 +13,6 @@
     </alerts>
     <alerts>
         <fullName>Opportunity_Closed_Won_BSO_Notification</fullName>
-        <ccEmails>Roy.dennis@cloudorca.com</ccEmails>
         <description>Opportunity Closed Won BSO Notification</description>
         <protected>false</protected>
         <recipients>
@@ -36,7 +35,6 @@
     </alerts>
     <alerts>
         <fullName>Opportunity_Closed_Won_Law_Notification</fullName>
-        <ccEmails>Roy.dennis@cloudorca.com</ccEmails>
         <description>Opportunity Closed Won Law Notification</description>
         <protected>false</protected>
         <recipients>
@@ -48,7 +46,6 @@
     </alerts>
     <alerts>
         <fullName>Opportunity_Closed_Won_Tax_Notification</fullName>
-        <ccEmails>Roy.dennis@cloudorca.com</ccEmails>
         <description>Opportunity Closed Won Tax Notification</description>
         <protected>false</protected>
         <recipients>
