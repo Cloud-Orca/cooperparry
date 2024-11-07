@@ -282,6 +282,16 @@
                 <identifier>RecordPreviously_Onboarded_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CP_Client_ID__c</fieldItem>
+                <identifier>RecordCP_Client_ID_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
         <type>Facet</type>
     </flexiPageRegions>
