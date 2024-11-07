@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActions>
+        <label><!-- BD Meeting --></label>
+        <name>BD_Meeting</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Gifts --></label>
+        <name>Gifts</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Handover Notes --></label>
+        <name>Handover_Notes</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log Competitor / Incumbent --></label>
+        <name>Log_Competitor_Incumbent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log Incumbent --></label>
+        <name>Log_Incumbent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Mass Convert --></label>
+        <name>Mass_Convert</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Referral --></label>
+        <name>Referral</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Source --></label>
+        <name>Source</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- VC Backed --></label>
+        <name>VC_Backed</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Please leave the Company blank when Ownership is &quot;Private Client&quot; --></errorMessage>
+        <name>V1_Blank_Company_when_Private_Client</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a value on Company. --></errorMessage>
+        <name>V2_Require_Company</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Gifts --></label>
+        <name>Gifts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>
