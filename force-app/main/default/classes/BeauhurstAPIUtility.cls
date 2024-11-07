@@ -3,7 +3,7 @@ public class BeauhurstAPIUtility {
         HttpRequest req = new HttpRequest();
         req.setEndpoint('callout:BeauhurstAPI' + append);
         //req.setEndpoint('https://platform.beauhurst.com/_api/v1' + append);
-        req.setHeader('Authorization', 'apikey OxbSnsga7gM-qhvNDgBbQ3AtNg1ptj8c');
+        //req.setHeader('Authorization', 'apikey OxbSnsga7gM-qhvNDgBbQ3AtNg1ptj8c');
         req.setMethod('GET');
         req.setTimeOut(120000);
         return req;
@@ -49,6 +49,7 @@ public class BeauhurstAPIUtility {
         acc.Beauhurst_Updated_Date__c = System.now();
         if(res.basic != null){
             Basic basic = res.basic;
+            acc.Name = basic.name;
             if(basic.registered_name != null){
                 acc.Registered_Name__c = basic.registered_name;
             }
@@ -113,7 +114,7 @@ public class BeauhurstAPIUtility {
         return acc;
     }
 
-    /*public static Lead collectLead(Id ldId, Result res){
+    public static Lead collectLead(Id ldId, Result res){
         Lead ld = new Lead();
         ld.Beauhurst_Updated_Date__c = System.now();
         if(ldId != null){
@@ -203,7 +204,7 @@ public class BeauhurstAPIUtility {
             ld.Directors__c = activeDirectors.removeEnd(',');
         }
         return ld;
-    }*/
+    }
 
     public static String listToString(List<String> strList){
         String strVal = String.join(strList, ',');
@@ -229,6 +230,7 @@ public class BeauhurstAPIUtility {
     }
 
     public class Basic{
+        public String name;
         public String registered_name;
         public List<String> other_trading_names;
         public String website;
@@ -247,7 +249,6 @@ public class BeauhurstAPIUtility {
         public String latest_stage_of_evolution;
         public String legal_form;
     }
-    
 
     public class ContactInfo{
         public List<String> emails;
