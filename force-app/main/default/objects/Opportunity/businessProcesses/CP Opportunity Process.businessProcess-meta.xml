@@ -23,10 +23,6 @@
         <default>false</default>
     </values>
     <values>
-        <fullName>Negotiation</fullName>
-        <default>false</default>
-    </values>
-    <values>
         <fullName>Proposal</fullName>
         <default>false</default>
     </values>
