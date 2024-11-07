@@ -1,0 +1,17 @@
+Hi {!User.FirstName} {!User.LastName},
+
+Great news! A deal has been closed!
+
+Details:
+Company: {!Opportunity.Account}
+Type: {!Opportunity.Type}
+Owner: {!Opportunity.OwnerFullName}
+Estimated Fee: {!Opportunity.Amount}
+
+For more information - check out the link:
+{!Opportunity.Link}
+
+
+Thanks!
+
+Salesforce
