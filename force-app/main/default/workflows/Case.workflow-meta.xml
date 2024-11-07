@@ -23,6 +23,10 @@
         <recipients>
             <type>owner</type>
         </recipients>
+        <recipients>
+            <recipient>roy.dennis@cloudorca.com.cooperparry</recipient>
+            <type>user</type>
+        </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/PEP_Notification_for_Case</template>
     </alerts>
