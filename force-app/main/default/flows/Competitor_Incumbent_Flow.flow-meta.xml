@@ -1,213 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>61.0</apiVersion>
-    <assignments>
-        <name>assign_Competitor_Names_and_Type_to_Collection</name>
-        <label>assign Competitor Names and Type to Collection</label>
-        <locationX>270</locationX>
-        <locationY>782</locationY>
-        <assignmentItems>
-            <assignToReference>Single_Competitor_Incumbent.Name</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Names_and_Type.Competitor_Incumbent_Name</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Competitor_Incumbent.Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Names_and_Type.Type</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Competitor_Incumbent.Service_Line__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Names_and_Type.Service_Line</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Collection_Competitor_Incumbent</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Single_Competitor_Incumbent</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Through_Names_and_Type</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>assign_junction_object_values</name>
-        <label>assign junction object values</label>
-        <locationX>534</locationX>
-        <locationY>1382</locationY>
-        <assignmentItems>
-            <assignToReference>Single_Junc.Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Formula_Account_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Junc.Opportunity__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Formula_Opportunity_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Junc.Lead__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Formula_Lead_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Junc.Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_thru_repeater_items.Type</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Junc.Competitor_Incumbent__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_thru_repeater_items.Competitor_Incumbent_Lookup.recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Junc.Service_Line__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_thru_repeater_items.Service_Line</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Collection_Junc</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Single_Junc</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>loop_thru_repeater_items</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>assign_single_Competitor_Names_and_Type</name>
-        <label>assign single Competitor Names and Type</label>
-        <locationX>534</locationX>
-        <locationY>782</locationY>
-        <assignmentItems>
-            <assignToReference>Single_Competitor_Incumbent.Name</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Names_and_Type.Competitor_Incumbent_Lookup.recordName</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Competitor_Incumbent.Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Names_and_Type.Type</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Competitor_Incumbent.Service_Line__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Through_Names_and_Type.Service_Line</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Collection_Competitor_Incumbent</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Single_Competitor_Incumbent</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Through_Names_and_Type</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <name>Create_New_Competitor</name>
-        <label>Create New Competitor</label>
-        <locationX>402</locationX>
-        <locationY>1274</locationY>
-        <defaultConnector>
-            <targetReference>assign_junction_object_values</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_Create</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>loop_thru_repeater_items.Create_a_New_Competitor_Incumbent</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>create_Single_Comp_Inc</targetReference>
-            </connector>
-            <label>Yes- Create</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Create_New_Competitor_or_Not</name>
-        <label>Create New Competitor or Not</label>
-        <locationX>402</locationX>
-        <locationY>674</locationY>
-        <defaultConnector>
-            <targetReference>assign_single_Competitor_Names_and_Type</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Create</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Loop_Through_Names_and_Type.Create_a_New_Competitor_Incumbent</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>assign_Competitor_Names_and_Type_to_Collection</targetReference>
-            </connector>
-            <label>Create</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Junction_Collection_is_Existing</name>
-        <label>Junction Collection is Existing</label>
-        <locationX>182</locationX>
-        <locationY>1766</locationY>
-        <defaultConnector>
-            <targetReference>Success_Screen</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_Junction_Collection_is_Existing</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Collection_Junc</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Create_Junction_Object</targetReference>
-            </connector>
-            <label>Yes - Junction Collection is Existing</label>
-        </rules>
-    </decisions>
     <dynamicChoiceSets>
         <name>PCS_Comp_Inc_Type</name>
         <dataType>Picklist</dataType>
@@ -254,34 +47,6 @@ null)))</expression>
     </formulas>
     <interviewLabel>Competitor / Incumbent Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Competitor / Incumbent Flow</label>
-    <loops>
-        <name>Loop_Through_Names_and_Type</name>
-        <label>Loop Through Names and Type</label>
-        <locationX>182</locationX>
-        <locationY>566</locationY>
-        <collectionReference>Competitor_Incumbent_Repeater.AllItems</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Create_New_Competitor_or_Not</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Show_Competitor_Incumbent</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
-        <name>loop_thru_repeater_items</name>
-        <label>loop thru repeater items</label>
-        <locationX>182</locationX>
-        <locationY>1166</locationY>
-        <collectionReference>Competitor_Incumbent_Repeater.AllItems</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Create_New_Competitor</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Junction_Collection_is_Existing</targetReference>
-        </noMoreValuesConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -301,100 +66,14 @@ null)))</expression>
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
-    <recordCreates>
-        <name>Create_Junction_Object</name>
-        <label>Create Junction Object</label>
-        <locationX>50</locationX>
-        <locationY>1874</locationY>
-        <connector>
-            <targetReference>Success_Screen</targetReference>
-        </connector>
-        <inputReference>Collection_Junc</inputReference>
-    </recordCreates>
-    <recordCreates>
-        <name>create_Single_Comp_Inc</name>
-        <label>create Single Comp/Inc</label>
-        <locationX>270</locationX>
-        <locationY>1382</locationY>
-        <connector>
-            <targetReference>create_Single_Junc</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Name</field>
-            <value>
-                <elementReference>loop_thru_repeater_items.Competitor_Incumbent_Name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Service_Line__c</field>
-            <value>
-                <elementReference>loop_thru_repeater_items.Service_Line</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Type__c</field>
-            <value>
-                <elementReference>loop_thru_repeater_items.Type</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Associations__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>create_Single_Junc</name>
-        <label>create Single Junc</label>
-        <locationX>270</locationX>
-        <locationY>1490</locationY>
-        <connector>
-            <targetReference>loop_thru_repeater_items</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Account__c</field>
-            <value>
-                <elementReference>Formula_Account_Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Competitor_Incumbent__c</field>
-            <value>
-                <elementReference>create_Single_Comp_Inc</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead__c</field>
-            <value>
-                <elementReference>Formula_Lead_Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Opportunity__c</field>
-            <value>
-                <elementReference>Formula_Opportunity_Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Service_Line__c</field>
-            <value>
-                <elementReference>loop_thru_repeater_items.Service_Line</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Type__c</field>
-            <value>
-                <elementReference>loop_thru_repeater_items.Type</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Competitor_Incumbent__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
     <recordLookups>
         <name>get_Account</name>
         <label>get Account</label>
-        <locationX>182</locationX>
+        <locationX>176</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>get_Opportunity</targetReference>
+            <targetReference>Screen1</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -417,7 +96,7 @@ null)))</expression>
     <recordLookups>
         <name>get_Lead</name>
         <label>get Lead</label>
-        <locationX>182</locationX>
+        <locationX>176</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -449,221 +128,27 @@ null)))</expression>
             <field>LastName</field>
         </outputAssignments>
     </recordLookups>
-    <recordLookups>
-        <name>get_Opportunity</name>
-        <label>get Opportunity</label>
-        <locationX>182</locationX>
-        <locationY>350</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Screen1</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <object>Opportunity</object>
-        <outputAssignments>
-            <assignToReference>Opportunity_Account</assignToReference>
-            <field>AccountId</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>ObjectId</assignToReference>
-            <field>Id</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>Opportunity_Name</assignToReference>
-            <field>Name</field>
-        </outputAssignments>
-    </recordLookups>
     <screens>
         <name>Screen1</name>
         <label>Screen1</label>
-        <locationX>182</locationX>
-        <locationY>458</locationY>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Loop_Through_Names_and_Type</targetReference>
-        </connector>
         <fields>
-            <name>Competitor_Incumbent_Repeater</name>
-            <fieldType>Repeater</fieldType>
-            <fields>
-                <name>Competitor_Incumbent_Lookup</name>
-                <extensionName>flowruntime:lookup</extensionName>
-                <fieldType>ComponentInstance</fieldType>
-                <inputParameters>
-                    <name>fieldApiName</name>
-                    <value>
-                        <stringValue>Competitor_Incumbent__c</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>label</name>
-                    <value>
-                        <stringValue>Competitor/Incumbent</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>objectApiName</name>
-                    <value>
-                        <stringValue>Competitor_Incumbent__c</stringValue>
-                    </value>
-                </inputParameters>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-                <storeOutputAutomatically>true</storeOutputAutomatically>
-                <visibilityRule>
-                    <conditionLogic>and</conditionLogic>
-                    <conditions>
-                        <leftValueReference>Competitor_Incumbent_Repeater.AllItems[$EachItem].Create_a_New_Competitor_Incumbent</leftValueReference>
-                        <operator>EqualTo</operator>
-                        <rightValue>
-                            <booleanValue>false</booleanValue>
-                        </rightValue>
-                    </conditions>
-                </visibilityRule>
-            </fields>
-            <fields>
-                <name>Type</name>
-                <choiceReferences>PCS_Comp_Inc_Type</choiceReferences>
-                <dataType>String</dataType>
-                <fieldText>Type</fieldText>
-                <fieldType>DropdownBox</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Service_Line</name>
-                <choiceReferences>PCS_ServiceLine</choiceReferences>
-                <dataType>String</dataType>
-                <fieldText>Service Line</fieldText>
-                <fieldType>DropdownBox</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Create_a_New_Competitor_Incumbent</name>
-                <dataType>Boolean</dataType>
-                <fieldText>Can&apos;t Find the Competitor/Incumbent? You may create a new one here.</fieldText>
-                <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-            </fields>
-            <fields>
-                <name>Competitor_Incumbent_Name</name>
-                <dataType>String</dataType>
-                <fieldText>Competitor/Incumbent Name</fieldText>
-                <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-                <visibilityRule>
-                    <conditionLogic>and</conditionLogic>
-                    <conditions>
-                        <leftValueReference>Competitor_Incumbent_Repeater.AllItems[$EachItem].Create_a_New_Competitor_Incumbent</leftValueReference>
-                        <operator>EqualTo</operator>
-                        <rightValue>
-                            <booleanValue>true</booleanValue>
-                        </rightValue>
-                    </conditions>
-                </visibilityRule>
-            </fields>
+            <name>asd</name>
+            <dataType>String</dataType>
+            <fieldText>asd</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
-    <screens>
-        <name>Show_Competitor_Incumbent</name>
-        <label>Show Competitor/Incumbent</label>
-        <locationX>182</locationX>
-        <locationY>1058</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>loop_thru_repeater_items</targetReference>
-        </connector>
-        <fields>
-            <name>Message</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;You&apos;re about to link the following to this record. &lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>DataTable</name>
-            <dataTypeMappings>
-                <typeName>T</typeName>
-                <typeValue>Associations__c</typeValue>
-            </dataTypeMappings>
-            <extensionName>flowruntime:datatable</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Competitor / Incumbents </stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>selectionMode</name>
-                <value>
-                    <stringValue>MULTI_SELECT</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>minRowSelection</name>
-                <value>
-                    <numberValue>0.0</numberValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>tableData</name>
-                <value>
-                    <elementReference>Collection_Competitor_Incumbent</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>columns</name>
-                <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-48d0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Competitor / Incumbent Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-4ca2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>shouldDisplayLabel</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
-        <name>Success_Screen</name>
-        <label>Success_Screen</label>
-        <locationX>182</locationX>
-        <locationY>2066</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <fields>
-            <name>Success_Message</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Competitor / Incumbent Record has been created. &lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>get_Lead</targetReference>
