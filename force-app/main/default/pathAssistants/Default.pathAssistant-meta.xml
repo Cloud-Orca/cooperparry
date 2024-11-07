@@ -22,6 +22,9 @@
         <picklistValueName>New</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
+        <picklistValueName>Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
         <info>&lt;p&gt;&lt;strong style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Determine which leads are qualified or unqualified.&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt;&quot;&gt;Assign the lead to a representative&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
         <picklistValueName>Triage</picklistValueName>
     </pathAssistantSteps>

@@ -30,18 +30,12 @@
         <locationX>176</locationX>
         <locationY>323</locationY>
         <inputAssignments>
-            <field>CampaignId</field>
+            <field>Name</field>
             <value>
-                <elementReference>$Record.Id</elementReference>
+                <elementReference>$Record.Name</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>Label</field>
-            <value>
-                <stringValue>Survey Sent</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMemberStatus</object>
+        <object>Campaign</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <start>

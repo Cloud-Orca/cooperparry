@@ -23,6 +23,7 @@
             <label>Yes Date became client is blank</label>
         </rules>
     </decisions>
+    <description>Account Onboarding is complete</description>
     <environments>Default</environments>
     <interviewLabel>Account Onboarding is complete {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account Onboarding is complete</label>
@@ -71,5 +72,5 @@ ISCHANGED({!$Record.Is_Onboarded__c})</filterFormula>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>
