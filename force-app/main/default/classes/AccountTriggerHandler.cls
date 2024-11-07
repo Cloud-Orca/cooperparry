@@ -10,7 +10,7 @@ public class AccountTriggerHandler {
             accountIds.add(newAccount.Id);
         }
 
-        if(!accountIds.isEmpty() && !System.isFuture()){
+        if(!accountIds.isEmpty() && !System.isFuture() && !System.isBatch()){
             Database.executeBatch(new BatchCreateSharepointFolderAccount(accountIds), 1);
         }
     }
