@@ -2,16 +2,11 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>Opportunity_Closed_Won_Audit_Notification</fullName>
-        <ccEmails>Roy.dennis@cloudorca.com</ccEmails>
         <description>Opportunity Closed Won Audit Notification</description>
         <protected>false</protected>
         <recipients>
             <recipient>Audit_Notification</recipient>
             <type>group</type>
-        </recipients>
-        <recipients>
-            <recipient>roy.dennis@cloudorca.com.cooperparry</recipient>
-            <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
@@ -25,10 +20,6 @@
             <recipient>BSO_Notification</recipient>
             <type>group</type>
         </recipients>
-        <recipients>
-            <recipient>roy.dennis@cloudorca.com.cooperparry</recipient>
-            <type>user</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
     </alerts>
@@ -39,10 +30,6 @@
         <recipients>
             <recipient>Deals_Notification</recipient>
             <type>group</type>
-        </recipients>
-        <recipients>
-            <recipient>roy.dennis@cloudorca.com.cooperparry</recipient>
-            <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
@@ -67,10 +54,6 @@
         <recipients>
             <recipient>Tax_Notification</recipient>
             <type>group</type>
-        </recipients>
-        <recipients>
-            <recipient>roy.dennis@cloudorca.com.cooperparry</recipient>
-            <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Opportunity_Closed_Won_Notification</template>
