@@ -13,6 +13,9 @@
                             <value>Account.Log_Competitor_Incumbent</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Account.Sync_from_BH_API</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Account.Handover_Notes</value>
                         </valueListItems>
                         <valueListItems>
@@ -186,6 +189,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Companies_House_Id__c</fieldItem>
                 <identifier>RecordCompanies_House_Id_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.BH_Collection_Name__c</fieldItem>
+                <identifier>RecordBH_Collection_Name__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
