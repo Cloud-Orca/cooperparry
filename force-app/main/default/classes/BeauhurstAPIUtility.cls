@@ -2,13 +2,51 @@ public class BeauhurstAPIUtility {
     public static HttpRequest constructReq(String append){
         HttpRequest req = new HttpRequest();
         req.setEndpoint('callout:BeauhurstAPI' + append);
+        //req.setEndpoint('https://platform.beauhurst.com/_api/v1' + append);
+        req.setHeader('Authorization', 'apikey OxbSnsga7gM-qhvNDgBbQ3AtNg1ptj8c');
         req.setMethod('GET');
         req.setTimeOut(120000);
         return req;
     }
 
+    @AuraEnabled
+    public static UIWrapper updateFromBH(Id accId){
+        UIWrapper wrap = new UIWrapper();
+        wrap.success = false;
+        wrap.errorMsg = '';
+        try{
+            List<Account> accounts = [SELECT Id, Beauhurst_ID__c FROM Account WHERE Id =: accId LIMIT 1];
+            if(!accounts.isEmpty()){
+                String append = '/companies?company_ids=' + accounts[0].Beauhurst_ID__c + '&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
+    
+                Http http = new Http();
+                HttpResponse res = http.send(constructReq(append));
+                if(res.getStatusCode() == 200){
+                    wrap.success = true;
+                    Response getData = (Response) JSON.deserialize(res.getBody(), Response.class);
+                    if(!getData.results.isEmpty()){
+                        Account acc = collectAccount(accounts[0].Id, getData.results[0]);
+                        update acc;
+                    }
+                }else{
+                    wrap.errorMsg = 'API Error';
+                }
+            }
+        }catch(Exception e) {
+            wrap.success = false;
+            wrap.errorMsg = e.getMessage() + ' line ' + e.getLineNumber();
+        }
+        return wrap;
+    }
+
     public static Account collectAccount(Id accId, Result res){
-        Account acc = new Account(Id=accId);
+        Account acc = new Account();
+        if(accId != null){
+            acc.Id = accId;
+        }else{
+            acc.Beauhurst_ID__c = res.id;
+        }
+        acc.Beauhurst_Updated_Date__c = System.now();
         if(res.basic != null){
             Basic basic = res.basic;
             if(basic.registered_name != null){
@@ -75,8 +113,9 @@ public class BeauhurstAPIUtility {
         return acc;
     }
 
-    public static Lead collectLead(Id ldId, Result res){
+    /*public static Lead collectLead(Id ldId, Result res){
         Lead ld = new Lead();
+        ld.Beauhurst_Updated_Date__c = System.now();
         if(ldId != null){
             ld.Id = ldId;
         }else{
@@ -164,13 +203,16 @@ public class BeauhurstAPIUtility {
             ld.Directors__c = activeDirectors.removeEnd(',');
         }
         return ld;
-    }
+    }*/
 
     public static String listToString(List<String> strList){
         String strVal = String.join(strList, ',');
         return (strVal.length() > 255) ? strVal.left(255) : strVal;
     }
 
+    public static Id getRecordTypeIdbyName(String objectName, String strRecordTypeName){
+        return  Schema.getGlobalDescribe().get(objectName).getDescribe().getRecordTypeInfosByName().get(strRecordTypeName).getRecordTypeId();
+    }
 
     public class Response{
         public List<Result> results;
@@ -205,6 +247,7 @@ public class BeauhurstAPIUtility {
         public String latest_stage_of_evolution;
         public String legal_form;
     }
+    
 
     public class ContactInfo{
         public List<String> emails;
@@ -227,5 +270,12 @@ public class BeauhurstAPIUtility {
         public String from_date;
         public String until_date;
         public Boolean currently_active;
+    }
+
+    public class UIWrapper{
+        @AuraEnabled
+        public Boolean success;
+        @AuraEnabled
+        public String errorMsg;
     }
 }
