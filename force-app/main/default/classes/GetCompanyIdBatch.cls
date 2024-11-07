@@ -14,11 +14,11 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
 
     global GetCompanyIdBatch(Set<Id> collectionIds){
         this.collectionIds = collectionIds;
-        this.validCompanyIds = validCompanyIds;
+        this.validCompanyIds = new Set<String>();
     }
     
     global Database.QueryLocator start(Database.BatchableContext BC) {
-        String query = 'SELECT Id, Name, beauhurst_id__c';
+        String query = 'SELECT Id, Name, beauhurst_id__c, collection_name__c';
         query += ' FROM Company_Collection__c';
         query += ' WHERE beauhurst_id__c != null';
         query += ' AND sync__c = true';
@@ -29,6 +29,8 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
     }
 
     global void execute(Database.BatchableContext BC, List<Company_Collection__c> scope){
+        System.debug('@@@collectionIds: ' + collectionIds);
+
         Set<String> retrievedCompanyIds = new Set<String>();
         Integer offsetVal = 0;
         Integer limitVal = 100;
@@ -54,26 +56,25 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
             }
         }
 
+        System.debug('@@@retrievedCompanyIds: ' + retrievedCompanyIds);
+
         if(!retrievedCompanyIds.isEmpty()){
             List<Company_ID__c> companyIdsToUpsert = new List<Company_ID__c>();
-            Map<String, Lead> bhIdToLeadMap = new Map<String, Lead>();
             Map<String, Account> bhIdToAccountMap = new Map<String, Account>();
-
-            for(Lead ld : [SELECT Id, Beauhurst_ID__c FROM Lead WHERE Beauhurst_ID__c IN: retrievedCompanyIds]){
-                bhIdToLeadMap.put(ld.Beauhurst_ID__c, ld);
-            }
 
             for(Account acc : [SELECT Id, Beauhurst_ID__c FROM Account WHERE Beauhurst_ID__c IN: retrievedCompanyIds]){
                 bhIdToAccountMap.put(acc.Beauhurst_ID__c, acc);
             }
 
             for(String compId : retrievedCompanyIds){
-                if(!bhIdToLeadMap.containsKey(compId) && !bhIdToAccountMap.containsKey(compId)){
+                if(!bhIdToAccountMap.containsKey(compId)){
                     Company_ID__c comId = new Company_ID__c();
                     comId.beauhurst_id__c = compId;
                     companyIdsToUpsert.add(comId);
                 }
             }
+
+            System.debug('@@@companyIdsToUpsert: ' + companyIdsToUpsert.size());
 
             if(!companyIdsToUpsert.isEmpty()){
                 Schema.SObjectField extId = Company_ID__c.Fields.beauhurst_id__c;
@@ -82,19 +83,20 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
                 List<Collection_Item__c> collectionItemsToUpsert = new List<Collection_Item__c>();
                 for(Integer index = 0, size = results.size(); index < size; index++) {
                     if(results[index].isSuccess()){
+                        System.debug('@@@index: ' + index);
+
                         validCompanyIds.add(companyIdsToUpsert.get(index).beauhurst_id__c);
-                        if(results[index].isCreated()){
-                            Collection_Item__c itm = new Collection_Item__c();
-                            itm.Company_Collection__c = scope[0].Id;
-                            itm.Company_ID__c = results[index].getId();
-                            itm.Item_Key__c = scope[0].beauhurst_id__c + '-' + companyIdsToUpsert.get(index).beauhurst_id__c;
-                            collectionItemsToUpsert.add(itm);
-                        }
+                        Collection_Item__c itm = new Collection_Item__c();
+                        itm.Company_Collection__c = scope[0].Id;
+                        itm.Company_ID__c = results[index].getId();
+                        itm.Item_Key__c = scope[0].beauhurst_id__c + '-' + companyIdsToUpsert.get(index).beauhurst_id__c;
+                        collectionItemsToUpsert.add(itm);
                     }
                 }
     
                 if(!collectionItemsToUpsert.isEmpty()){
-                    upsert collectionItemsToUpsert Item_Key__c;
+                    Schema.SObjectField itmExtId = Collection_Item__c.Fields.Item_Key__c;
+                    Database.UpsertResult[] itmResults = Database.upsert(collectionItemsToUpsert, itmExtId, false);
                 }
             }
         }
@@ -102,7 +104,7 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
 
     global void finish(Database.BatchableContext BC){
         System.debug('@@@validCompanyIds: ' + validCompanyIds);
-        Database.executeBatch(new CreateLeadsFromBHBatch(validCompanyIds), 10);
+        Database.executeBatch(new CreateAccountsFromBHBatch(validCompanyIds), 10);
     }
 
     public class Response{
