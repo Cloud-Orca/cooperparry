@@ -1,115 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>61.0</apiVersion>
-    <assignments>
-        <name>assign_values</name>
-        <label>assign values</label>
-        <locationX>1018</locationX>
-        <locationY>974</locationY>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_thru_each_repeater.Account.recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.CF_Notes__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_thru_each_repeater.CF_Notes</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Corporate_Opportunity__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>CF_Opp_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Name</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Outbound_Referral_Name</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Lead__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Lead_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Opportunity__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Opportunity_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Referred_Contact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Referred_Contact_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Referral_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Today_Formula</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Referral_Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Outbound</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Referred_Private_Equity__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>PE_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Lead_Area__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Lead_Area</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Referral_Col</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Single_Referral</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>loop_thru_each_repeater</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Set_to_Outbound</name>
-        <label>Set to Outbound</label>
-        <locationX>688</locationX>
-        <locationY>350</locationY>
-        <assignmentItems>
-            <assignToReference>Single_Referral.Referral_Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Outbound</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Screen1</targetReference>
-        </connector>
-    </assignments>
     <choices>
         <name>Atlast</name>
         <choiceText>Atlast</choiceText>
@@ -162,7 +53,7 @@
         <name>Lead_Area1</name>
         <label>Lead Area</label>
         <locationX>182</locationX>
-        <locationY>974</locationY>
+        <locationY>866</locationY>
         <defaultConnector>
             <targetReference>Create_Corporate_Opp</targetReference>
         </defaultConnector>
@@ -186,7 +77,7 @@
     <decisions>
         <name>Object</name>
         <label>Object</label>
-        <locationX>688</locationX>
+        <locationX>644</locationX>
         <locationY>134</locationY>
         <defaultConnector>
             <targetReference>Screen1</targetReference>
@@ -226,8 +117,8 @@
     <decisions>
         <name>Referral_Type_Selected</name>
         <label>Referral Type</label>
-        <locationX>688</locationX>
-        <locationY>650</locationY>
+        <locationX>644</locationX>
+        <locationY>542</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Internal</name>
@@ -333,11 +224,6 @@ IF(BEGINS({!recordId}, &quot;006&quot;), TEXT({!get_Opportunity.Opportunity_Area
         <expression>IF(BEGINS({!recordId},&quot;006&quot;), {!recordId}, null)</expression>
     </formulas>
     <formulas>
-        <name>Outbound_Referral_Name</name>
-        <dataType>String</dataType>
-        <expression>{!loop_thru_each_repeater.Account.recordName} + &quot; - Outbound&quot;</expression>
-    </formulas>
-    <formulas>
         <name>PE_Id</name>
         <dataType>String</dataType>
         <expression>IF(BEGINS({!recordId},&quot;a5IK&quot;),{!recordId}, null)</expression>
@@ -376,20 +262,6 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
     </formulas>
     <interviewLabel>Referral Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Referral Screen Flow</label>
-    <loops>
-        <name>loop_thru_each_repeater</name>
-        <label>loop thru each repeater</label>
-        <locationX>930</locationX>
-        <locationY>866</locationY>
-        <collectionReference>Repeater_Account.AllItems</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>assign_values</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Create_Referral_Records</targetReference>
-        </noMoreValuesConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -413,7 +285,7 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
         <name>Create_Corporate_Opp</name>
         <label>Create Corporate Opp</label>
         <locationX>314</locationX>
-        <locationY>1082</locationY>
+        <locationY>974</locationY>
         <connector>
             <targetReference>Update_Referral</targetReference>
         </connector>
@@ -442,7 +314,7 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
         <name>Create_Opportunity_for_Internal_and_External</name>
         <label>Create Opportunity for Internal and External</label>
         <locationX>50</locationX>
-        <locationY>1082</locationY>
+        <locationY>974</locationY>
         <connector>
             <targetReference>Screen2</targetReference>
         </connector>
@@ -483,7 +355,7 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
         <name>Create_Referral_Record</name>
         <label>Create Referral Record</label>
         <locationX>182</locationX>
-        <locationY>866</locationY>
+        <locationY>758</locationY>
         <connector>
             <targetReference>Lead_Area1</targetReference>
         </connector>
@@ -572,7 +444,7 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
         <name>Create_Referral_Record_External</name>
         <label>Create Referral Record</label>
         <locationX>578</locationX>
-        <locationY>866</locationY>
+        <locationY>758</locationY>
         <connector>
             <isGoTo>true</isGoTo>
             <targetReference>Lead_Area1</targetReference>
@@ -655,8 +527,8 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
     <recordCreates>
         <name>Create_Referral_Records</name>
         <label>Create Referral Records</label>
-        <locationX>930</locationX>
-        <locationY>1166</locationY>
+        <locationX>842</locationX>
+        <locationY>758</locationY>
         <connector>
             <targetReference>Screen2</targetReference>
         </connector>
@@ -665,11 +537,11 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
     <recordLookups>
         <name>get_Account</name>
         <label>get Account</label>
-        <locationX>930</locationX>
-        <locationY>758</locationY>
+        <locationX>842</locationX>
+        <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>loop_thru_each_repeater</targetReference>
+            <targetReference>Create_Referral_Records</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -683,7 +555,7 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
     <recordLookups>
         <name>get_Lead</name>
         <label>get Lead</label>
-        <locationX>424</locationX>
+        <locationX>380</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -704,11 +576,11 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
     <recordLookups>
         <name>get_Opportunity</name>
         <label>get Opportunity</label>
-        <locationX>688</locationX>
+        <locationX>644</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Set_to_Outbound</targetReference>
+            <targetReference>Screen1</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -726,7 +598,7 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
         <name>Get_Referral_Contact</name>
         <label>Get Referral Contact</label>
         <locationX>578</locationX>
-        <locationY>758</locationY>
+        <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Referral_Record_External</targetReference>
@@ -747,7 +619,7 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
         <name>Get_User</name>
         <label>Get User</label>
         <locationX>182</locationX>
-        <locationY>758</locationY>
+        <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Referral_Record</targetReference>
@@ -768,7 +640,7 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
         <name>Update_Referral</name>
         <label>Update Referral</label>
         <locationX>314</locationX>
-        <locationY>1190</locationY>
+        <locationY>1082</locationY>
         <connector>
             <targetReference>Screen2</targetReference>
         </connector>
@@ -791,8 +663,8 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
     <screens>
         <name>Screen1</name>
         <label>Screen1</label>
-        <locationX>688</locationX>
-        <locationY>542</locationY>
+        <locationX>644</locationX>
+        <locationY>434</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -821,16 +693,6 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
             <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>recordId</leftValueReference>
-                    <operator>StartsWith</operator>
-                    <rightValue>
-                        <stringValue>00Q</stringValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
         </fields>
         <fields>
             <name>Referral_Type</name>
@@ -862,13 +724,6 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
                         <stringValue>Internal</stringValue>
                     </rightValue>
                 </conditions>
-                <conditions>
-                    <leftValueReference>recordId</leftValueReference>
-                    <operator>StartsWith</operator>
-                    <rightValue>
-                        <stringValue>00Q</stringValue>
-                    </rightValue>
-                </conditions>
             </visibilityRule>
         </fields>
         <fields>
@@ -888,13 +743,6 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
                     <operator>EqualTo</operator>
                     <rightValue>
                         <stringValue>External</stringValue>
-                    </rightValue>
-                </conditions>
-                <conditions>
-                    <leftValueReference>recordId</leftValueReference>
-                    <operator>StartsWith</operator>
-                    <rightValue>
-                        <stringValue>00Q</stringValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -933,13 +781,6 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
                         <stringValue>Internal</stringValue>
                     </rightValue>
                 </conditions>
-                <conditions>
-                    <leftValueReference>recordId</leftValueReference>
-                    <operator>StartsWith</operator>
-                    <rightValue>
-                        <stringValue>00Q</stringValue>
-                    </rightValue>
-                </conditions>
             </visibilityRule>
         </fields>
         <fields>
@@ -976,13 +817,6 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
                         <stringValue>External</stringValue>
                     </rightValue>
                 </conditions>
-                <conditions>
-                    <leftValueReference>recordId</leftValueReference>
-                    <operator>StartsWith</operator>
-                    <rightValue>
-                        <stringValue>00Q</stringValue>
-                    </rightValue>
-                </conditions>
             </visibilityRule>
         </fields>
         <fields>
@@ -1010,16 +844,6 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>recordId</leftValueReference>
-                    <operator>StartsWith</operator>
-                    <rightValue>
-                        <stringValue>00Q</stringValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
         </fields>
         <fields>
             <name>Notes</name>
@@ -1027,84 +851,6 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>recordId</leftValueReference>
-                    <operator>StartsWith</operator>
-                    <rightValue>
-                        <stringValue>00Q</stringValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>Repeater_Account</name>
-            <fieldType>Repeater</fieldType>
-            <fields>
-                <name>Account</name>
-                <extensionName>flowruntime:lookup</extensionName>
-                <fieldType>ComponentInstance</fieldType>
-                <inputParameters>
-                    <name>fieldApiName</name>
-                    <value>
-                        <stringValue>Account__c</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>objectApiName</name>
-                    <value>
-                        <stringValue>Referral__c</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>label</name>
-                    <value>
-                        <stringValue>Account</stringValue>
-                    </value>
-                </inputParameters>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-                <storeOutputAutomatically>true</storeOutputAutomatically>
-                <visibilityRule>
-                    <conditionLogic>and</conditionLogic>
-                    <conditions>
-                        <leftValueReference>Referral_Type</leftValueReference>
-                        <operator>EqualTo</operator>
-                        <rightValue>
-                            <stringValue>Outbound</stringValue>
-                        </rightValue>
-                    </conditions>
-                </visibilityRule>
-            </fields>
-            <fields>
-                <name>CF_Notes</name>
-                <fieldText>CF Notes</fieldText>
-                <fieldType>LargeTextArea</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-                <visibilityRule>
-                    <conditionLogic>and</conditionLogic>
-                    <conditions>
-                        <leftValueReference>Referral_Type</leftValueReference>
-                        <operator>EqualTo</operator>
-                        <rightValue>
-                            <stringValue>Outbound</stringValue>
-                        </rightValue>
-                    </conditions>
-                </visibilityRule>
-            </fields>
-            <isRequired>false</isRequired>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Referral_Type</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <stringValue>Outbound</stringValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -1112,8 +858,8 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
     <screens>
         <name>Screen2</name>
         <label>Screen2</label>
-        <locationX>688</locationX>
-        <locationY>1466</locationY>
+        <locationX>644</locationX>
+        <locationY>1358</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1126,13 +872,13 @@ IF({!Referral_Type} = &quot;Outbound&quot;, {!get_Account.Name} + &quot; - &quot
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>562</locationX>
+        <locationX>518</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Object</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
