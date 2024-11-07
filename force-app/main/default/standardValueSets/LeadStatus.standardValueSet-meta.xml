@@ -2,9 +2,9 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Disqualified</fullName>
+        <fullName>Unqualified</fullName>
         <default>false</default>
-        <label>Disqualified</label>
+        <label>Unqualified</label>
         <converted>false</converted>
     </standardValue>
     <standardValue>
