@@ -14,27 +14,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varPE.Notes__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_through_all_inputs.Notes</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varPE.Id</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_through_all_inputs.Private_Equity.recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varPE.Name</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_through_all_inputs.Private_Equity.recordName</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>colPE</assignToReference>
             <operator>Add</operator>
             <value>
@@ -53,7 +32,7 @@
         <label>Loop through all inputs</label>
         <locationX>176</locationX>
         <locationY>242</locationY>
-        <collectionReference>Add_Private_Equity_Repeater.AllItems</collectionReference>
+        <collectionReference>colPE</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Assign_Private_Equity_values</targetReference>
@@ -171,48 +150,36 @@
             <targetReference>Loop_through_all_inputs</targetReference>
         </connector>
         <fields>
-            <name>Add_Private_Equity_Repeater</name>
-            <fieldType>Repeater</fieldType>
-            <fields>
-                <name>Private_Equity</name>
-                <extensionName>flowruntime:lookup</extensionName>
-                <fieldType>ComponentInstance</fieldType>
-                <inputParameters>
-                    <name>fieldApiName</name>
-                    <value>
-                        <stringValue>Private_Equity__c</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>label</name>
-                    <value>
-                        <stringValue>Private Equity</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>objectApiName</name>
-                    <value>
-                        <stringValue>Corporate_Finance_Opportunity__c</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>required</name>
-                    <value>
-                        <booleanValue>true</booleanValue>
-                    </value>
-                </inputParameters>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-                <storeOutputAutomatically>true</storeOutputAutomatically>
-            </fields>
-            <fields>
-                <name>Notes</name>
-                <fieldText>Notes</fieldText>
-                <fieldType>LargeTextArea</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
+            <name>Private_Equity</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>Private_Equity__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Private Equity</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Corporate_Finance_Opportunity__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>required</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

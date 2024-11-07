@@ -1,85 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>61.0</apiVersion>
-    <assignments>
-        <name>assign_to_variable</name>
-        <label>assign to variable</label>
-        <locationX>264</locationX>
-        <locationY>566</locationY>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>AccountiD</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Contact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>ContactId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Cost__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_through_gifts.Cost</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Feedback__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_through_gifts.Feedback</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Date_Gift_Sent__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_through_gifts.Date_Gift_Sent</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Lead_Area__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_through_gifts.Lead_Area</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Occasion__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_through_gifts.Occasion</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Name</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>loop_through_gifts.Gift_Name</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Single_Gift.Lead__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>LeadId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>GIft_Collection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Single_Gift</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>loop_through_gifts</targetReference>
-        </connector>
-    </assignments>
     <dynamicChoiceSets>
         <name>PCS_LeadArea</name>
         <dataType>Picklist</dataType>
@@ -129,20 +50,6 @@
     </formulas>
     <interviewLabel>CS Gifts Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CX Gifts Screen Flow</label>
-    <loops>
-        <name>loop_through_gifts</name>
-        <label>loop through gifts</label>
-        <locationX>176</locationX>
-        <locationY>458</locationY>
-        <collectionReference>Gift_Repeater.AllItems</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>assign_to_variable</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Review_Gifts</targetReference>
-        </noMoreValuesConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -166,7 +73,7 @@
         <name>Create_Gifts</name>
         <label>Create Gifts</label>
         <locationX>176</locationX>
-        <locationY>866</locationY>
+        <locationY>458</locationY>
         <connector>
             <targetReference>Success</targetReference>
         </connector>
@@ -200,7 +107,7 @@
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Screen1</targetReference>
+            <targetReference>Review_Gifts</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -218,7 +125,7 @@
         <name>Review_Gifts</name>
         <label>Review Gifts</label>
         <locationX>176</locationX>
-        <locationY>758</locationY>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -283,120 +190,10 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Screen1</name>
-        <label>Screen1</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>loop_through_gifts</targetReference>
-        </connector>
-        <fields>
-            <name>Screen1_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Screen1_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>RelatedToText</name>
-                    <fieldText>&lt;p&gt;&lt;strong&gt;Related to: {!F_Related_To_Name}&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Screen1_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Account_Text</name>
-                    <fieldText>&lt;p&gt;&lt;strong&gt;Account: {!F_AccountName}&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Gift_Repeater</name>
-            <fieldType>Repeater</fieldType>
-            <fields>
-                <name>Gift_Name</name>
-                <dataType>String</dataType>
-                <fieldText>Gift Name</fieldText>
-                <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-            </fields>
-            <fields>
-                <name>Lead_Area</name>
-                <choiceReferences>PCS_LeadArea</choiceReferences>
-                <dataType>String</dataType>
-                <fieldText>Lead Area</fieldText>
-                <fieldType>DropdownBox</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Occasion</name>
-                <choiceReferences>PCS_Occasion</choiceReferences>
-                <dataType>String</dataType>
-                <fieldText>Occasion</fieldText>
-                <fieldType>DropdownBox</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Date_Gift_Sent</name>
-                <dataType>Date</dataType>
-                <defaultValue>
-                    <elementReference>Today_Formula</elementReference>
-                </defaultValue>
-                <fieldText>Date Gift Sent</fieldText>
-                <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Cost</name>
-                <dataType>Currency</dataType>
-                <fieldText>Cost</fieldText>
-                <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-                <scale>2</scale>
-            </fields>
-            <fields>
-                <name>Feedback</name>
-                <fieldText>Feedback</fieldText>
-                <fieldType>LargeTextArea</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
         <name>Success</name>
         <label>Success</label>
         <locationX>176</locationX>
-        <locationY>974</locationY>
+        <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
