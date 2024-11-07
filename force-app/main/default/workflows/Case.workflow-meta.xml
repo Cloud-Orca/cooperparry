@@ -9,6 +9,10 @@
             <recipient>Escalation_Team_Group</recipient>
             <type>group</type>
         </recipients>
+        <recipients>
+            <recipient>roy.dennis@cloudorca.com.cooperparry</recipient>
+            <type>user</type>
+        </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Escalated_Case_Template</template>
     </alerts>
