@@ -11,7 +11,8 @@
     </actionOverrides>
     <brand>
         <headerColor>#00A7CE</headerColor>
-        <logoVersion>2</logoVersion>
+        <logo>CP8</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>Suited to system administrators who require an extensive range of options available, to manage and maintain the org with different configurations and permissions, historical information and operations.</description>
