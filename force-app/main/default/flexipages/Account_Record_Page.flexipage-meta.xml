@@ -13,9 +13,6 @@
                             <value>Account.Log_Competitor_Incumbent</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Account.Sync_from_BH_API</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Account.Handover_Notes</value>
                         </valueListItems>
                         <valueListItems>
@@ -137,6 +134,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Date_Became_Client__c</fieldItem>
+                <identifier>RecordDate_Became_Client_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Nurture__c</fieldItem>
                 <identifier>RecordNurture_cField</identifier>
             </fieldInstance>
@@ -179,16 +186,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Companies_House_Id__c</fieldItem>
                 <identifier>RecordCompanies_House_Id_cField2</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.BH_Collection_Name__c</fieldItem>
-                <identifier>RecordBH_Collection_Name__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
@@ -293,26 +290,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.CP_Client_ID__c</fieldItem>
                 <identifier>RecordCP_Client_ID_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Legacy_Account_ID__c</fieldItem>
-                <identifier>RecordLegacy_Account_ID_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Do_Not_Create_Case__c</fieldItem>
-                <identifier>RecordDo_Not_Create_Case_cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
