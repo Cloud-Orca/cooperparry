@@ -47,7 +47,7 @@
         <field>pse__Time_Variance_Detail__c$pse__Variance__c</field>
     </columns>
     <currency>GBP</currency>
-    <description>Showing the variance of work calendar hours vs the weekly submitted hours per resource</description>
+    <description>Showing the variance of work calendar hours vs the weekly submitted hours per resource.</description>
     <filter>
         <criteriaItems>
             <column>pse__Time_Variance_Detail__c$Line_Manager__c</column>
