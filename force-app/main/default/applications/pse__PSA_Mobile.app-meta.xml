@@ -11,7 +11,8 @@
     </actionOverrides>
     <brand>
         <headerColor>#00A7CE</headerColor>
-        <logoVersion>2</logoVersion>
+        <logo>CP7</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
     <description>Enables users to access PSA applications such as Expenses, Expense Reports to Approve, Skills and Certifications, Timecards, and Work Opportunity Hub on the mobile phone.</description>

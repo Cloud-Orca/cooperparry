@@ -11,7 +11,8 @@
     </actionOverrides>
     <brand>
         <headerColor>#00A7CE</headerColor>
-        <logoVersion>2</logoVersion>
+        <logo>CP11</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>Certinia Accounting</description>
