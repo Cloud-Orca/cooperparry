@@ -9,30 +9,24 @@
         <type>Flexipage</type>
         <pageOrSobjectType>Contact</pageOrSobjectType>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Contact_Record_Page_Three_Column</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-    </actionOverrides>
     <brand>
-        <headerColor>#0070D2</headerColor>
-        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+        <headerColor>#00A7CE</headerColor>
+        <logoVersion>2</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
+    <description>Enables users to access PSA applications such as Expenses, Expense Reports to Approve, Skills and Certifications, Timecards, and Work Opportunity Hub on the mobile phone.</description>
     <formFactors>Small</formFactors>
-    <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>CP - Services Forecasting</label>
+    <label>PSA Mobile</label>
     <navType>Standard</navType>
-    <tabs>Services_Revenue_Forecasting_Workspace1</tabs>
-    <tabs>pse__Review_Forecast_Version</tabs>
-    <tabs>pse__Revenue_Forecast_Setup__c</tabs>
-    <tabs>pse__Revenue_Forecast_Batch_Log__c</tabs>
+    <tabs>pse__Enter_Expense</tabs>
+    <tabs>pse__Enter_Time</tabs>
+    <tabs>pse__Expense_Reports_To_Approve</tabs>
+    <tabs>pse__Manage_Skills_And_Certifications</tabs>
+    <tabs>pse__Timecards_To_Approve</tabs>
+    <tabs>pse__Weekly_Summary</tabs>
+    <tabs>pse__Work_Opportunity_Hub</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>CP_Services_Forecasting_UtilityBar</utilityBar>
 </CustomApplication>

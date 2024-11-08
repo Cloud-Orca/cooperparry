@@ -138,4 +138,79 @@
             <default>false</default>
         </values>
     </picklistValues>
+    <picklistValues>
+        <picklist>pse__Resource_Role__c</picklist>
+        <values>
+            <fullName>AM1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assistant Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Associate partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student - Interns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student - Placement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y1 Trainee - Grad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y1 Trainee - SL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y2 Trainee - Grad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y2 Trainne - SL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y3 Trainee - Grad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y3 Trainee - SL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y4 Trainee - SL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>
