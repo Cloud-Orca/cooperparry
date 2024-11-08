@@ -4,46 +4,38 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Contact_Record_Page_Three_Column</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Contact_Record_Page_Three_Column</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>Contact</pageOrSobjectType>
     </actionOverrides>
     <brand>
-        <headerColor>#DA285D</headerColor>
+        <headerColor>#00A7CE</headerColor>
+        <logo>CP11</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
-    <description>FinancialForce Accounts Receivable processes</description>
-    <formFactors>Small</formFactors>
+    <description>Certinia Accounting</description>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>Accounts Receivable</label>
+    <label>Accounting</label>
     <navType>Standard</navType>
-    <tabs>standard-home</tabs>
-    <tabs>ffaws__collections_workspace</tabs>
-    <tabs>standard-Account</tabs>
-    <tabs>c2g__codaInvoice__c</tabs>
-    <tabs>c2g__codaCreditNote__c</tabs>
+    <tabs>c2g__SelectCompany</tabs>
+    <tabs>c2g__codaPurchaseInvoice__c</tabs>
+    <tabs>c2g__codaPurchaseCreditNote__c</tabs>
+    <tabs>c2g__codaPayment__c</tabs>
+    <tabs>c2g__PaymentSelection</tabs>
     <tabs>c2g__codaCashEntry__c</tabs>
     <tabs>c2g__CashMatching</tabs>
-    <tabs>c2g__AutomatedCollections</tabs>
     <tabs>c2g__codaJournal__c</tabs>
-    <tabs>standard-Product2</tabs>
-    <tabs>ffaws__cash_management_workspace</tabs>
-    <tabs>c2g__CashMatchingAccountGroup__c</tabs>
+    <tabs>c2g__codaTransaction__c</tabs>
+    <tabs>c2g__AgedAnalysisReports</tabs>
     <tabs>standard-report</tabs>
-    <tabs>standard-Dashboard</tabs>
+    <tabs>c2g__AccountingBook__c</tabs>
+    <tabs>c2g__JournalLoader</tabs>
+    <tabs>c2g__BankConnections</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>FFX_Accounts_Receivable_UtilityBar</utilityBar>
+    <utilityBar>c2g__AccountingUtilityBar</utilityBar>
 </CustomApplication>

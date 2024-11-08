@@ -4,35 +4,29 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Contact_Record_Page_Three_Column</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Contact_Record_Page_Three_Column</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>Contact</pageOrSobjectType>
     </actionOverrides>
     <brand>
-        <headerColor>#0070D2</headerColor>
+        <headerColor>#E9004C</headerColor>
+        <logo>CP15</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
-    <formFactors>Small</formFactors>
+    <description>Financial statements used in month-end or year-end accounting.</description>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>CP - Services Forecasting</label>
-    <navType>Standard</navType>
-    <tabs>Services_Revenue_Forecasting_Workspace1</tabs>
-    <tabs>pse__Review_Forecast_Version</tabs>
-    <tabs>pse__Revenue_Forecast_Setup__c</tabs>
-    <tabs>pse__Revenue_Forecast_Batch_Log__c</tabs>
+    <label>Financial Statements</label>
+    <navType>Console</navType>
+    <tabs>ffban__Financial_Statement__c</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>CP_Services_Forecasting_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>ffban__Financial_Statement__c</tab>
+        </mappings>
+    </workspaceConfig>
 </CustomApplication>
