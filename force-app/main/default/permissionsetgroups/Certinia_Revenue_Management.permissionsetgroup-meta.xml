@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Certinia Revenue Management</label>
+    <permissionSets>ffrr__RMAdmin</permissionSets>
+    <permissionSets>ffrr__RMGuest</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionAdminAccess</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionAnalyticsReadAccess</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionConsultantAccess</permissionSets>
+    <permissionSets>ffrr__RevenueRecognitionGuestAccess</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
