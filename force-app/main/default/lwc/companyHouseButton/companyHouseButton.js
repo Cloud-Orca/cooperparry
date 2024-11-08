@@ -17,7 +17,7 @@ import getCustomSettings from '@salesforce/apex/CompaniesHouseController.getCust
 
 import createNewOfficer from '@salesforce/apex/CompaniesHouse_OfficerFieldMapping.createNewOfficers';
 import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
-import COMPANY_NUMBER_FIELD from '@salesforce/schema/Account.Companies_House_Id__c';
+import COMPANY_NUMBER_FIELD from '@salesforce/schema/Account.Beauhurst_ID__c';
 import IsActive from '@salesforce/schema/Pricebook2.IsActive';
 
 const ACCOUNT_FIELDS = [ACCOUNT_NAME_FIELD, COMPANY_NUMBER_FIELD];
