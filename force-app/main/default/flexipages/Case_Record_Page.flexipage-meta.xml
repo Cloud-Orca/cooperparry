@@ -409,8 +409,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Area__c</fieldItem>
-                <identifier>RecordArea_cField</identifier>
+                <fieldItem>Record.Case_Assignment_Type__c</fieldItem>
+                <identifier>RecordCase_Assignment_Type_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -419,8 +419,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Type_Area__c</fieldItem>
-                <identifier>RecordType_Area_cField</identifier>
+                <fieldItem>Record.Case_Area__c</fieldItem>
+                <identifier>RecordCase_Area_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -429,8 +429,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Assignment_Type__c</fieldItem>
-                <identifier>RecordAssignment_Type_cField</identifier>
+                <fieldItem>Record.Case_Type_Area__c</fieldItem>
+                <identifier>RecordCase_Type_Area_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3ec2ed2f-5471-42ba-9f94-5a3ab688dfcb</name>
