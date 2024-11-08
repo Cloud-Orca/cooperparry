@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Cannot_change_Opportunity_once_set</fullName>
+    <active>true</active>
+    <description>Message displayed when changing the opportunity on an estimate.</description>
+    <errorConditionFormula>(ffscpq__Is_Template__c = false &amp;&amp; ISCHANGED(ffscpq__Opportunity__c) &amp;&amp; ffscpq__Opportunity__c != null)</errorConditionFormula>
+    <errorDisplayField>ffscpq__Opportunity__c</errorDisplayField>
+    <errorMessage>You cannot change the opportunity on an estimate.</errorMessage>
+</ValidationRule>

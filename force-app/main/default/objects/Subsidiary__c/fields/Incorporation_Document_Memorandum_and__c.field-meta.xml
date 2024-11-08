@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incorporation_Document_Memorandum_and__c</fullName>
+    <description>Incorporation Document / Memorandum and/or Articles of Association / Name Changes</description>
+    <externalId>false</externalId>
+    <label>Incorporation Document / Memorandum and/</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

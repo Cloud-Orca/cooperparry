@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Closed Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Onboarded</fullName>
+                <default>false</default>
+                <label>Onboarded</label>
+            </value>
+            <value>
+                <fullName>Declined - Missing AML documents</fullName>
+                <default>false</default>
+                <label>Declined - Missing AML documents</label>
+            </value>
+            <value>
+                <fullName>Declined - CAF incomplete</fullName>
+                <default>false</default>
+                <label>Declined - CAF incomplete</label>
+            </value>
+            <value>
+                <fullName>Declined - Professional Clearance response incomplete</fullName>
+                <default>false</default>
+                <label>Declined - Professional Clearance response incomplete</label>
+            </value>
+            <value>
+                <fullName>Declined - Missing subsidiary info</fullName>
+                <default>false</default>
+                <label>Declined - Missing subsidiary info</label>
+            </value>
+            <value>
+                <fullName>Yearly Check Complete</fullName>
+                <default>false</default>
+                <label>Yearly Check Complete</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Onboarded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Declined - Missing AML documents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Declined - CAF incomplete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Declined - Professional Clearance response incomplete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Declined - Missing subsidiary info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Yearly Check Complete</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

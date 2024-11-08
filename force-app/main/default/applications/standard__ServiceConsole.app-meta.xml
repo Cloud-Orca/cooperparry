@@ -181,9 +181,17 @@
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
     <tabs>Officer__c</tabs>
+    <tabs>Person_with_Significant_Control__c</tabs>
+    <tabs>Company_Collection__c</tabs>
     <workspaceConfig>
         <mappings>
+            <tab>Company_Collection__c</tab>
+        </mappings>
+        <mappings>
             <tab>Officer__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Person_with_Significant_Control__c</tab>
         </mappings>
         <mappings>
             <tab>standard-Account</tab>
