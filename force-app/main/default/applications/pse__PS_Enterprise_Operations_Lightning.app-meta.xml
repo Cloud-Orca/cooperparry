@@ -11,7 +11,8 @@
     </actionOverrides>
     <brand>
         <headerColor>#00A7CE</headerColor>
-        <logoVersion>2</logoVersion>
+        <logo>CP14</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>Operations-level capabilities to maintain RPGs, project delivery, resources, and billing events.</description>

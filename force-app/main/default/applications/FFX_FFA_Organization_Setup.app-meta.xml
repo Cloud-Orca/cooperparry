@@ -20,6 +20,7 @@
     </actionOverrides>
     <brand>
         <headerColor>#DA285D</headerColor>
+        <logo>CP10</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
