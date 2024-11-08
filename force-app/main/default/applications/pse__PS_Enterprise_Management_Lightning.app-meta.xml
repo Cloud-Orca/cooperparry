@@ -4,35 +4,34 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Contact_Record_Page_Three_Column</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Contact_Record_Page_Three_Column</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>Contact</pageOrSobjectType>
     </actionOverrides>
     <brand>
-        <headerColor>#0070D2</headerColor>
+        <headerColor>#00A7CE</headerColor>
+        <logoVersion>2</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
-    <formFactors>Small</formFactors>
+    <description>Targeted at management-level users with oversight responsibility for project delivery, billing and forecasting.</description>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>CP - Services Forecasting</label>
+    <label>PSA - Management</label>
     <navType>Standard</navType>
-    <tabs>Services_Revenue_Forecasting_Workspace1</tabs>
-    <tabs>pse__Review_Forecast_Version</tabs>
-    <tabs>pse__Revenue_Forecast_Setup__c</tabs>
-    <tabs>pse__Revenue_Forecast_Batch_Log__c</tabs>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>pse__Region__c</tabs>
+    <tabs>pse__Practice__c</tabs>
+    <tabs>pse__Grp__c</tabs>
+    <tabs>pse__Proj__c</tabs>
+    <tabs>pse__Skills_Capacity</tabs>
+    <tabs>pse__Timecard_Header__c</tabs>
+    <tabs>pse__Expense_Report__c</tabs>
+    <tabs>pse__Permission_Control__c</tabs>
+    <tabs>pse__Vendor_Invoice_Item__c</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>CP_Services_Forecasting_UtilityBar</utilityBar>
 </CustomApplication>

@@ -20,30 +20,30 @@
     </actionOverrides>
     <brand>
         <headerColor>#DA285D</headerColor>
-        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
-    <description>FinancialForce Accounts Receivable processes</description>
+    <description>FinancialForce Accounts Payable processes</description>
     <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>Accounts Receivable</label>
+    <label>Accounts Payable</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
-    <tabs>ffaws__collections_workspace</tabs>
+    <tabs>ffaws__accounts_payable_workspace</tabs>
     <tabs>standard-Account</tabs>
-    <tabs>c2g__codaInvoice__c</tabs>
-    <tabs>c2g__codaCreditNote__c</tabs>
+    <tabs>c2g__codaPurchaseInvoice__c</tabs>
+    <tabs>c2g__codaPurchaseCreditNote__c</tabs>
+    <tabs>c2g__PaymentsPlus</tabs>
+    <tabs>c2g__codaPayment__c</tabs>
     <tabs>c2g__codaCashEntry__c</tabs>
-    <tabs>c2g__CashMatching</tabs>
-    <tabs>c2g__AutomatedCollections</tabs>
+    <tabs>c2g__CashMatchingLightning</tabs>
     <tabs>c2g__codaJournal__c</tabs>
-    <tabs>standard-Product2</tabs>
-    <tabs>ffaws__cash_management_workspace</tabs>
-    <tabs>c2g__CashMatchingAccountGroup__c</tabs>
+    <tabs>c2g__AsOfAging__c</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>FFX_Accounts_Receivable_UtilityBar</utilityBar>
+    <utilityBar>FFX_Accounts_Payable_UtilityBar</utilityBar>
 </CustomApplication>
