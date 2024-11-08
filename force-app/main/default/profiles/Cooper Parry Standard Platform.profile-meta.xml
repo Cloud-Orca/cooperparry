@@ -26,6 +26,11 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>Sales_Operations</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>ffscpq__Services_CPQ_Lightning</application>
         <default>false</default>
         <visible>false</visible>
@@ -7249,6 +7254,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Time_Variance_Detail__c.Line_Manager__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Timecard_Header__c.CT_Hours_x_Bill_Rate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -8291,7 +8301,7 @@
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-FFX Customer Account Layout</layout>
+        <layout>Account-Account Layout</layout>
         <recordType>Account.cer_Customer</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -8339,6 +8349,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>c2g__codaCashEntry__c-c2g__Cash Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>c2g__codaCreditNote__c-FFX Sales Credit Note Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>c2g__codaInvoiceLineItem__c-FFX Sales Invoice Line Item Layout</layout>
@@ -8406,6 +8419,9 @@
     <layoutAssignments>
         <layout>pse__Skill__c-FFX PSA Skill Layout</layout>
         <recordType>pse__Skill__c.pse__Skill</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>pse__Time_Variance_Detail__c-pse__Time Variance Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>pse__Timecard_Header__c-FFX PSA Timecard Layout</layout>
