@@ -20,7 +20,6 @@
     </actionOverrides>
     <brand>
         <headerColor>#00A7CE</headerColor>
-        <logoVersion>2</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>Estimate the time and cost of services.</description>
