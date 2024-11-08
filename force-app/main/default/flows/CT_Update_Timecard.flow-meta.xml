@@ -1,6 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Copy_1_of_Store_Rate_for_Parent_Practice</name>
+        <label>Copy 1 of Store Rate for Parent Practice</label>
+        <locationX>182</locationX>
+        <locationY>971</locationY>
+        <assignmentItems>
+            <assignToReference>Rate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>currentItem_Filter_on_Parent_Practice.pse__Suggested_Bill_Rate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Parent_Rate_Found</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Store_Rate_for_Parent_of_Parent_Practice</name>
+        <label>Store Rate for Parent of Parent Practice</label>
+        <locationX>50</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>Rate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>currentItem_Filter_on_Parent_Practice.pse__Suggested_Bill_Rate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Suggested_Rate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Store_Rate_for_Parent_Practice</name>
+        <label>Store Rate for Parent Practice</label>
+        <locationX>182</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>Rate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>currentItem_Filter_on_Parent_Practice.pse__Suggested_Bill_Rate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Store_Rate_for_Parent_Practice</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Store_Rate_for_Practice</name>
+        <label>Store Rate for Practice</label>
+        <locationX>336</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>Rate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>currentItem_Filter_on_Parent_Practice.pse__Suggested_Bill_Rate__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rate_Found</targetReference>
+        </connector>
+    </assignments>
+    <collectionProcessors>
+        <name>Filter_on_Parent_of_Parent_Practice</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Filter on Parent of Parent Practice</label>
+        <locationX>50</locationX>
+        <locationY>1187</locationY>
+        <assignNextValueToReference>currentItem_Filter_on_Parent_Practice</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Get_Rates</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Filter_on_Parent_Practice.pse__Practice__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>currentItem_Filter_on_Parent_Practice.pse__Practice__r.pse__Parent_Practice__r.pse__Parent_Practice__c</elementReference>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Store_Rate_for_Parent_of_Parent_Practice</targetReference>
+        </connector>
+    </collectionProcessors>
+    <collectionProcessors>
+        <name>Filter_on_Parent_Practice</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Filter on Parent Practice</label>
+        <locationX>182</locationX>
+        <locationY>755</locationY>
+        <assignNextValueToReference>currentItem_Filter_on_Parent_Practice</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Get_Rates</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Filter_on_Parent_Practice.pse__Practice__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>currentItem_Filter_on_Parent_Practice.pse__Practice__r.pse__Parent_Practice__c</elementReference>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Store_Rate_for_Parent_Practice</targetReference>
+        </connector>
+    </collectionProcessors>
+    <collectionProcessors>
+        <name>Filter_on_Practice</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Filter on Practice</label>
+        <locationX>336</locationX>
+        <locationY>431</locationY>
+        <assignNextValueToReference>currentItem_Filter_on_Parent_Practice</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Get_Rates</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Filter_on_Parent_Practice.pse__Practice__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>currentItem_Filter_on_Parent_Practice.pse__Practice__c</elementReference>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Store_Rate_for_Practice</targetReference>
+        </connector>
+    </collectionProcessors>
+    <decisions>
+        <name>Parent_Rate_Found</name>
+        <label>Parent_Rate Found?</label>
+        <locationX>182</locationX>
+        <locationY>1079</locationY>
+        <defaultConnector>
+            <targetReference>Update_Suggested_Rate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No_Parent_Rate_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>currentItem_Filter_on_Parent_Practice</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Filter_on_Parent_of_Parent_Practice</targetReference>
+            </connector>
+            <label>No Parent Rate Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rate_Found</name>
+        <label>Rate Found?</label>
+        <locationX>336</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Update_Suggested_Rate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No_Rate_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>currentItem_Filter_on_Parent_Practice</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Filter_on_Parent_Practice</targetReference>
+            </connector>
+            <label>No Rate Found</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>CT Update Timecard {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CT Update Timecard</label>
@@ -26,25 +203,18 @@
     <recordLookups>
         <name>Get_Rates</name>
         <label>Get Rates</label>
-        <locationX>176</locationX>
+        <locationX>336</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_Suggested_Rate</targetReference>
+            <targetReference>Filter_on_Practice</targetReference>
         </connector>
-        <filterLogic>1 AND 2 AND (3 or 4 OR 5)</filterLogic>
+        <filterLogic>1 AND (2 or 3 OR 4)</filterLogic>
         <filters>
             <field>pse__Role__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.pse__Resource__r.pse__Resource_Role__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>pse__Practice__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.pse__Resource__r.pse__Practice__r.CT_Rate_Practice__r.CT_Rate_Practice__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -62,7 +232,7 @@
             <field>pse__End_Date__c</field>
             <operator>EqualTo</operator>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>pse__Rate_Card__c</object>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
@@ -71,18 +241,18 @@
     <recordUpdates>
         <name>Update_Suggested_Rate</name>
         <label>Update Suggested Rate</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationX>336</locationX>
+        <locationY>1571</locationY>
         <inputAssignments>
             <field>CT_Suggested_Bill_Rate__c</field>
             <value>
-                <elementReference>Get_Rates.pse__Suggested_Bill_Rate__c</elementReference>
+                <elementReference>Rate</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>210</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Rates</targetReference>
@@ -91,5 +261,21 @@
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
+    <variables>
+        <name>currentItem_Filter_on_Parent_Practice</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>pse__Rate_Card__c</objectType>
+    </variables>
+    <variables>
+        <name>Rate</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
 </Flow>
