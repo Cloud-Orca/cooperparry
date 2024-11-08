@@ -26,6 +26,11 @@
                 <default>false</default>
                 <label>Outbound</label>
             </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
