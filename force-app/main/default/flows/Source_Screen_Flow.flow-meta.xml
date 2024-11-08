@@ -124,7 +124,7 @@
         <choiceText>Inbound</choiceText>
         <dataType>String</dataType>
         <value>
-            <stringValue>Internal</stringValue>
+            <stringValue>Inbound</stringValue>
         </value>
     </choices>
     <choices>
@@ -787,7 +787,7 @@ IF (BEGINS({!recordId}, &quot;006&quot;),{!get_opportunity.AccountId} ,
         <name>Referral_Type_Formula</name>
         <dataType>String</dataType>
         <expression>IF(
-{!Referral_Type_Lead} = &quot;Client&quot; || {!Referral_Type_Lead} = &quot;Intermediary&quot; || {!Referral_Type_Lead} = &quot;Partnership&quot;|| {!Referral_Type_Lead} = &quot;International&quot;, &quot;External&quot;,
+{!Referral_Type_Lead} = &quot;Client&quot; || {!Referral_Type_Lead} = &quot;Intermediary&quot; || {!Referral_Type_Lead} = &quot;Partnership&quot;|| {!Referral_Type_Lead} = &quot;International&quot; || {!Referral_Type_Lead} = &quot;Networking&quot;, &quot;Referral&quot;,
 IF( {!Referral_Type_Lead} = &quot;CPer&quot;  || {!Referral_Type_Lead} = &quot;Service Line&quot;, &quot;Internal&quot;, &quot; &quot; ))</expression>
     </formulas>
     <formulas>

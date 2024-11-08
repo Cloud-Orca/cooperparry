@@ -43,35 +43,61 @@
                 <label>Service Line</label>
             </value>
             <value>
+                <fullName>Deals</fullName>
+                <default>false</default>
+                <label>Deals</label>
+            </value>
+            <value>
                 <fullName>Networking</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>Networking</label>
             </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Internal</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
             <valueName>CPer</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Internal</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
             <valueName>Service Line</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>External</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
             <valueName>Client</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>External</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
             <valueName>Intermediary</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>External</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
             <valueName>International</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>External</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
             <valueName>Partnership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>External</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Deals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Networking</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
