@@ -10,25 +10,21 @@
         <pageOrSobjectType>Contact</pageOrSobjectType>
     </actionOverrides>
     <brand>
-        <headerColor>#00A7CE</headerColor>
-        <logo>CP9</logo>
+        <headerColor>#E9004C</headerColor>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
-    <description>Targeted to project managers and consultants who require access to basic project delivery functions such as user management and resource planning, and billing events.</description>
+    <description>Build financial reports and statements.</description>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>PSA - Field</label>
+    <label>Financial Report Builder</label>
     <navType>Standard</navType>
-    <tabs>standard-home</tabs>
-    <tabs>pse__Resource_Request__c</tabs>
-    <tabs>pse__Proj__c</tabs>
-    <tabs>pse__Assignment__c</tabs>
-    <tabs>pse__Timecard_Header__c</tabs>
-    <tabs>pse__Expense_Report__c</tabs>
-    <tabs>pse__Skills_and_Certifications_Matrix</tabs>
-    <tabs>pse__Vendor_Invoice_Item__c</tabs>
+    <tabs>fferpcore__frb_Financial_Report__c</tabs>
+    <tabs>fferpcore__frb_Reporting_Component_Configuration__c</tabs>
+    <tabs>fferpcore__frb_Export_Import_Reports</tabs>
+    <tabs>standard-WaveHomeLightning</tabs>
     <uiType>Lightning</uiType>
+    <utilityBar>fferpcore__ContextSensitiveHelpBar</utilityBar>
 </CustomApplication>
