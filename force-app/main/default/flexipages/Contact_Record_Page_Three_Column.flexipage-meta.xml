@@ -697,9 +697,9 @@
                 <identifier>flexipage_fieldSection2</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.pse__Is_Resource__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>PSA Resource</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

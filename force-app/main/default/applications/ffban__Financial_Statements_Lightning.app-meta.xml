@@ -11,7 +11,8 @@
     </actionOverrides>
     <brand>
         <headerColor>#E9004C</headerColor>
-        <logoVersion>2</logoVersion>
+        <logo>CP15</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>Financial statements used in month-end or year-end accounting.</description>
