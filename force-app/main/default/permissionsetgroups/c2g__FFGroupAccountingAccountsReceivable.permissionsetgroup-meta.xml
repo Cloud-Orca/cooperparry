@@ -3,6 +3,8 @@
     <description>Includes permission sets for job functions related to the sales invoice clerk role. For a full list of the included permission sets, go to Permission Sets on this permission set group’s detail page and click Permission Sets in Group.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Certinia - Accounting - Accounts Receivable</label>
+    <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>FFAIntegrationsERPExchangeRates</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisDefinitionReadAccess</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisReports</permissionSets>
     <permissionSets>c2g__AccountingBankAccountReadAccess</permissionSets>
@@ -17,9 +19,11 @@
     <permissionSets>c2g__AccountingPayableInvoiceReadAccess</permissionSets>
     <permissionSets>c2g__AccountingSelectionDefinitionReadAccess</permissionSets>
     <permissionSets>c2g__AccountingandBillingAccount</permissionSets>
+    <permissionSets>c2g__AccountingandBillingAccountingCurrenciesApplyExchangeRates</permissionSets>
     <permissionSets>c2g__AccountingandBillingAccountingCurrenciesReadAccess</permissionSets>
     <permissionSets>c2g__AccountingandBillingCollections</permissionSets>
     <permissionSets>c2g__AccountingandBillingCollectionsSendReminders</permissionSets>
+    <permissionSets>c2g__AccountingandBillingCompany</permissionSets>
     <permissionSets>c2g__AccountingandBillingCompanyReadAccess</permissionSets>
     <permissionSets>c2g__AccountingandBillingDimension1</permissionSets>
     <permissionSets>c2g__AccountingandBillingDimension2</permissionSets>
@@ -44,6 +48,11 @@
     <permissionSets>c2g__BillingLightningApp</permissionSets>
     <permissionSets>c2g__FFAIntegrationsERPBillingDocumentRetryPost</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsBillingDocumentsEdit</permissionSets>
+    <permissionSets>fferpcore__ERPCommonConceptsExchangeRateCurrencies</permissionSets>
+    <permissionSets>fferpcore__ERPCommonConceptsExchangeRateEntry</permissionSets>
+    <permissionSets>fferpcore__ERPCommonConceptsExchangeRateGroup</permissionSets>
+    <permissionSets>fferpcore__ERPCommonConceptsExchangeRateHistory</permissionSets>
+    <permissionSets>fferpcore__ERPCommonConceptsExchangeRateUpdates</permissionSets>
     <permissionSets>ffpsai__SyncGroupsToDimensions</permissionSets>
     <permissionSets>ffpsai__SyncPracticesToDimensions</permissionSets>
     <permissionSets>ffpsai__SyncProjectsToDimensions</permissionSets>
