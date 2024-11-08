@@ -240,10 +240,10 @@
         <numberOfColumns>12</numberOfColumns>
         <rowHeight>36</rowHeight>
     </dashboardGridLayout>
-    <dashboardType>LoggedInUser</dashboardType>
+    <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
     <owner>roy.dennis@cloudorca.com.cooperparry</owner>
-    <runningUser>ankit.mathur1@certinia.com</runningUser>
+    <runningUser>roy.dennis@cloudorca.com.cooperparry</runningUser>
     <textColor>#000000</textColor>
     <title>PSA Resource Management Dashboard</title>
     <titleColor>#000000</titleColor>
