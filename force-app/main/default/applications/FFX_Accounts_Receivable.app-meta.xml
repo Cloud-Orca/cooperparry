@@ -2,7 +2,6 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <brand>
         <headerColor>#DA285D</headerColor>
-        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>FinancialForce Accounts Receivable processes</description>
@@ -16,14 +15,13 @@
     <tabs>standard-home</tabs>
     <tabs>ffaws__collections_workspace</tabs>
     <tabs>standard-Account</tabs>
-    <tabs>standard-Product2</tabs>
     <tabs>c2g__codaInvoice__c</tabs>
     <tabs>c2g__codaCreditNote__c</tabs>
     <tabs>c2g__codaCashEntry__c</tabs>
     <tabs>c2g__CashMatching</tabs>
-    <tabs>c2g__Statement__c</tabs>
     <tabs>c2g__AutomatedCollections</tabs>
     <tabs>c2g__codaJournal__c</tabs>
+    <tabs>standard-Product2</tabs>
     <tabs>ffaws__cash_management_workspace</tabs>
     <tabs>c2g__CashMatchingAccountGroup__c</tabs>
     <tabs>standard-report</tabs>
