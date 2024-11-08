@@ -20,7 +20,8 @@
     </actionOverrides>
     <brand>
         <headerColor>#00A7CE</headerColor>
-        <logoVersion>2</logoVersion>
+        <logo>CP2</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>Estimate the time and cost of services.</description>
