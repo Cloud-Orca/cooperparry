@@ -821,8 +821,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Estimated_Fees__c</fieldItem>
-                <identifier>RecordEstimated_Fees_cField</identifier>
+                <fieldItem>Record.Fee__c</fieldItem>
+                <identifier>RecordFee_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
