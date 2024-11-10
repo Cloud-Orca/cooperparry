@@ -66,8 +66,8 @@
         </connector>
         <filterFormula>NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c})</filterFormula>
         <object>Lead</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>
