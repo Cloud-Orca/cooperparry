@@ -193,6 +193,12 @@
                 <identifier>RecordCT_Has_Own_Transport__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Job_Title__c</fieldItem>
+                <identifier>RecordJob_Title__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-47396b09-68af-4166-943f-4fca64ddb4d8</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -697,9 +703,9 @@
                 <identifier>flexipage_fieldSection2</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.RecordType.Name}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>PSA Resource</rightValue>
+                        <leftValue>{!Record.pse__Is_Resource__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

@@ -84,16 +84,26 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Title</fieldItem>
-                <identifier>RecordTitleField</identifier>
+                <fieldItem>Record.Job_Title__c</fieldItem>
+                <identifier>RecordJob_Title_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-45318f46-ec1b-4137-a71c-ffafedb486c8</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.RecordTypeId</fieldItem>
+                <identifier>RecordRecordTypeIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
