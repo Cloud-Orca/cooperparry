@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Invalid_Independent_FP_Margin_Value</fullName>
+    <active>true</active>
+    <description>Error message when attempting to update this field with an invalid value.</description>
+    <errorConditionFormula>ffscpq__Independent_Line_Set_FP_Margin_Percent__c &lt; -0.9999 || ffscpq__Independent_Line_Set_FP_Margin_Percent__c &gt; 0.9999</errorConditionFormula>
+    <errorDisplayField>ffscpq__Independent_Line_Set_FP_Margin_Percent__c</errorDisplayField>
+    <errorMessage>The value in the Independent Line Set Fixed Price Mgn (%) field must be between -100 and 100.</errorMessage>
+</ValidationRule>

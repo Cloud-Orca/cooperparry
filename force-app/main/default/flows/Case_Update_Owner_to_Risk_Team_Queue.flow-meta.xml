@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Alert_to_Risk_Team_Queue</name>
+        <label>Send Alert to Risk Team Queue</label>
+        <locationX>182</locationX>
+        <locationY>1163</locationY>
+        <actionName>Case.PEP_Notification_for_Case_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>get_email_template</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.PEP_Notification_for_Case_Alert</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_to_Lifecycle_Coordinator</name>
+        <label>Send Email to Lifecycle Coordinator</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Case_Owner</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>PEP Identified - {!$Record.CaseNumber}  - {!$Record.Account.Name}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>assign_recipient</name>
+        <label>assign recipient</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>recipients</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>get_Lifecycle_Coordinator.User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_Lifecycle_Coordinator</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>No_Lifecycle_Coordinator</name>
+        <label>No Lifecycle Coordinator</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Update_Case_Owner</targetReference>
+        </connector>
+        <customErrorMessages>
+            <errorMessage>Please ensure that there is a lifecycle coordinator before checking the Case Referred checkbox</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>noriskteam</name>
+        <label>noriskteam</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>No Risk Team Queue is Found</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>lifecycle_coordinator_found</name>
+        <label>lifecycle coordinator found</label>
+        <locationX>182</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>No_Lifecycle_Coordinator</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_lifecycle_coordinator_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_Lifecycle_Coordinator</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assign_recipient</targetReference>
+            </connector>
+            <label>yes - lifecycle coordinator found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Queue_Found</name>
+        <label>Queue Found</label>
+        <locationX>380</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>noriskteam</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Queue_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_Risk_Team_Queue</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_Lifecycle_Coordinator</targetReference>
+            </connector>
+            <label>Yes - Queue Found</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Case - Update Owner to Risk Team Queue {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Update Owner to Risk Team Queue</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_email_template</name>
+        <label>get email template</label>
+        <locationX>182</locationX>
+        <locationY>1271</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>PEP_Notification_for_Case</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>EmailTemplate</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>get_Lifecycle_Coordinator</name>
+        <label>get Lifecycle Coordinator</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>lifecycle_coordinator_found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>TeamMemberRole</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lifecycle Coordinator</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AccountTeamMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>get_Risk_Team_Queue</name>
+        <label>get Risk Team Queue</label>
+        <locationX>380</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Queue_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Risk_Team_Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Case_Owner</name>
+        <label>Update Case Owner</label>
+        <locationX>182</locationX>
+        <locationY>1055</locationY>
+        <connector>
+            <targetReference>Send_Alert_to_Risk_Team_Queue</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>get_Risk_Team_Queue.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Compliance Check</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_Risk_Team_Queue</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+
+OR(
+AND(
+ISNEW(),
+{!$Record.Case_Referred__c} = TRUE
+),
+AND(
+ISCHANGED({!$Record.Case_Referred__c}),
+{!$Record.Case_Referred__c} = TRUE
+)
+))</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <textTemplates>
+        <name>body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi Team,
+
+This is to notify you that a PEP / RCA  has been identified during the Onboarding process for {!$Record.Account.Name}.
+
+The Onboarding Case will be send to Risk / Compliance for further checks.
+
+To view the Case - please click here: https://innovation-energy-5387--orcaqa.sandbox.lightning.force.com/lightning/r/Case/{!$Record.Id}/view
+
+Kind regards,
+Salesforce</text>
+    </textTemplates>
+    <variables>
+        <name>recipient</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recipients</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

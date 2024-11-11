@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Trigger_Foundations_Message</name>
+        <label>Trigger Foundations Message</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <actionName>fferpcore__MessagingActionDeliverNow</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>publicationIdentifier</name>
+            <value>
+                <stringValue>FFA/TaxCode - Tax Code</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.c2g__TaxCode__r.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>fferpcore__MessagingActionDeliverNow</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>51.0</apiVersion>
+    <description>ERP Integration (Process previously configured in Tax Rate Synchronisation Process Builder).</description>
+    <interviewLabel>Tax Rate Synchronisation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Tax Rate Synchronisation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Trigger_Foundations_Message</targetReference>
+        </connector>
+        <object>c2g__codaTaxRate__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

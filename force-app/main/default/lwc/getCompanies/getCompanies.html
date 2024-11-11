@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-is-relative collection_wrapper slds-p-around_x-large" style="box-sizing: border-box;">
+        <div class="body">
+            <template if:false={showResults}>
+                <lightning-input type="text" value={collectionId} label="Enter Collection Id"></lightning-input>
+            </template>
+            <template if:true={showResults}>
+                <template if:true={showSpinner}>
+                    <div class="spinner__wrapper">   
+                        <lightning-spinner size="medium" alternative-text="Loading"></lightning-spinner>
+                    </div>
+                </template>
+                <template if:false={showSpinner}>
+                    <div class="result__wrapper" style="font-size: 18px;">
+                        Total of result/s pulled : <span style="font-weight: bold;">{total}</span> 
+                    </div>
+                </template>
+            </template>
+        </div>
+        <template if:false={showSpinner}>
+            <div class="footer slds-m-top_small" style="text-align: right;margin-top: 1.5rem">
+                <lightning-button label="Cancel" onclick={onCancel} class="slds-m-left_x-small"></lightning-button>
+                <template if:false={showResults}>
+                    <lightning-button variant="brand" label="Proceed" onclick={onProceed} class="slds-m-left_x-small"></lightning-button>   
+                </template> 
+                <template if:true={showResults}>
+                    <lightning-button label="Previous" onclick={onPrevious} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Sync Record" onclick={onConfirmSync} class="slds-m-left_x-small"></lightning-button>    
+                </template>
+            </div>
+        </template>
+    </div>  
+</template>

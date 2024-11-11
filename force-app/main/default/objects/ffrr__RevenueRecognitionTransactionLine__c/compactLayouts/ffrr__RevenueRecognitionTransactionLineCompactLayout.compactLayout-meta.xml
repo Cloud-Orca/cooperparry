@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffrr__RevenueRecognitionTransactionLineCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>ffrr__RevenueRecognitionMaster__c</fields>
+    <fields>ffrr__RecognizedDate__c</fields>
+    <fields>ffrr__AccountType__c</fields>
+    <fields>ffrr__AmountRecognized__c</fields>
+    <fields>ffrr__AmountAmortized__c</fields>
+    <label>Revenue Recognition Transaction Line Compact Layout</label>
+</CompactLayout>

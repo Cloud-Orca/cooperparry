@@ -1,0 +1,78 @@
+<template>
+
+    <div class="slds-page-header slds-m-bottom_x-small">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning-icon size="large" icon-name="standard:datashares"> </lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                            <h1>
+                                <span class="slds-page-header__title slds-truncate" title="Rohde Corp - 80,000 Widgets">Lead Uploader</span>
+                            </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta">Upload Lead Records</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="slds-page-header__col-actions">
+                <lightning-input type="file" label="Upload CSV" accept=".csv" onchange={handleFileChange}></lightning-input>
+            </div> -->
+        </div>
+    </div>
+
+    <lightning-card>
+        <div class="outer-cover">
+       
+            <div class="slds-align_absolute-center" style="flex-direction: column">
+                <div class="custom-header-elmt">
+                    <h1 class="card-title slds-text-heading_large">Upload CSV to Create Leads</h1>
+                </div>
+                <div class="">
+                    <lightning-input type="file" label="Upload CSV" accept=".csv" onchange={handleFileChange}></lightning-input>
+                </div>
+                <div>
+                    <template if:true={isFileAdded}>
+                        <template if:false={isSubmitted}>
+                            <div class="btn-contaner">
+                                <p class="slds-m-top_medium">Number of rows: <span style="font-weight: bold;">{numberOfRows}</span></p>
+                                <div class="slds-m-top_medium">
+                                    <lightning-button label="Save" onclick={handleSubmit}></lightning-button>
+                                    <!-- <button class="slds-button">Cancel</button> -->
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                    <template if:true={errorMessage}>
+                        <div class="slds-text-color_error">{errorMessage}</div>
+                    </template>
+
+                    <template if:true={isSubmitted}>
+                        <div class="slds-m-top_medium">
+
+                            <template if:true={successFile}>
+                                <button class="slds-m-top_medium slds-m-right_x-small slds-button slds-button_brand" onclick={downloadSuccessFile}>Download Success File ({numberOfSuccess})</button>
+                            </template>
+                
+                            <template if:true={errorFile}>
+                                <button class="slds-m-top_medium slds-m-right_x-small slds-button" onclick={downloadErrorFile}>Download Error File ({numberOfErrors})</button>
+                            </template>
+                        </div>
+
+                 
+                    </template>
+
+
+                </div>
+            </div>
+        </div>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

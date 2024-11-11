@@ -1,0 +1,202 @@
+<template>
+    <template if:true={isSpinner}>
+        <lightning-spinner size="medium" alternative-text="Loading"></lightning-spinner>
+    </template>
+
+    <div class="slds-page-header slds-page-header_record-home">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:nft_settings" size="large"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="Setting">Companies House</span>
+                                    <span>Setting</span>
+                                   
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-page-header__row slds-page-header__row_gutters">
+            <div class="slds-page-header__col-details">
+                <div class="slds-grid slds-wrap slds-page-header__detail-row">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2 slds-p-horizontal_small">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-1">
+                                <article class="slds-card">
+                                    <div class="slds-card__header slds-grid">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-card__header-title">
+                                                    API Setting
+                                                </h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-card__body_inner">
+                                        <template if:true={companyHouseAPI}>
+                                            <lightning-input label="Authorization Key" type="text" placeholder="Enter Authorization Key" name="authorizationKey" value={companyHouseAPI.Authorization__c} onchange={onFormChange}></lightning-input>
+                                        </template>
+        
+                                        <div class="slds-p-top_small" style="text-align: right;">
+                                            <lightning-button label="Save" variant="brand" onclick={saveCompanyHouseAPI}></lightning-button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-p-vertical_small">
+                                <article class="slds-card">
+                                    <div class="slds-card__header slds-grid">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-card__header-title">
+                                                    Address Mapping Setting
+                                                </h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-card__body_inner">
+                                        <template if:true={companyHouseSetting}>
+                                            <div class="slds-col slds-size_1-of-1">
+                                                <lightning-radio-group type="button" label="Account Address" name="accountAddress" options={accountAddressOptions} value={companyHouseSetting.Account_Address__c} onchange={onUpdateRadioGroup}></lightning-radio-group>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1 slds-p-top_small">
+                                                <lightning-radio-group type="button" label="Contact Address" name="contactAddress" options={contactAddressOptions} value={companyHouseSetting.Contact_Address__c} onchange={onUpdateRadioGroup}></lightning-radio-group>
+                                            </div>
+                                        </template>
+        
+                                        <div class="slds-p-top_small" style="text-align: right;">
+                                            <lightning-button label="Save" variant="brand" onclick={saveCompanyHouseSetting2}></lightning-button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2 slds-p-horizontal_small">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-1">
+                                <article class="slds-card">
+                                    <div class="slds-card__header slds-grid">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-card__header-title">
+                                                    Batch Setting
+                                                </h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-card__body_inner">
+                                        <div class="slds-grid slds-wrap">
+                                            <template if:true={companyHouseSetting}>
+                                                <div class="slds-col slds-size_1-of-1">
+                                                    <lightning-input type="toggle" label="Auto Update Account" name="autoUpdateAccount" checked={companyHouseSetting.Auto_Update_Accounts__c}  onchange={onUpdateCheckbox} message-toggle-active="Yes" message-toggle-inactive="No"></lightning-input>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-1 slds-p-top_small">
+                                                    <lightning-input type="toggle" label="Auto Update Officer" name="autoUpdateContact" checked={companyHouseSetting.Auto_Update_Contacts__c} onchange={onUpdateCheckbox} message-toggle-active="Yes" message-toggle-inactive="No"></lightning-input>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-1 slds-p-top_small">
+                                                    <lightning-radio-group type="button" label="Batch Occurence" name="batchOccurrence" options={occurenceOptions} value={companyHouseSetting.Batch_Occurrence__c} onchange={onUpdateRadioGroup}></lightning-radio-group>
+                                                </div>
+                                            </template>
+        
+                                            <div class="slds-col slds-size_1-of-1 slds-p-top_small" style="text-align: right;">
+                                                <lightning-button label="Save" variant="brand" onclick={saveCompanyHouseSetting}></lightning-button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-1 slds-p-vertical_small">
+                                <article class="slds-card">
+                                    <div class="slds-card__header slds-grid">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-card__header-title">
+                                                    Import Resigned Officers Setting
+                                                </h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-card__body_inner slds-p-top_x-small">
+                                        <div class="slds-grid slds-wrap">
+                                            <template if:true={companyHouseSetting}>
+                                                <div class="slds-col slds-size_1-of-1">
+                                                    <lightning-input type="toggle" label="Import Resigned Officer/s as Officer" name="importOfficer" checked={companyHouseSetting.Import_Resigned__c}  onchange={onUpdateCheckbox} message-toggle-active="Yes" message-toggle-inactive="No"></lightning-input>
+                                                </div>
+                                            </template>
+        
+                                            <div class="slds-col slds-size_1-of-1 slds-p-top_small" style="text-align: right;">
+                                                <lightning-button label="Save" variant="brand" onclick={saveCompanyHouseSetting}></lightning-button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <!-- <div class="slds-col slds-size_1-of-1 slds-p-vertical_small">
+                                <article class="slds-card">
+                                    <div class="slds-card__header slds-grid">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-card__header-title">
+                                                    Permission Setting
+                                                </h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-card__body_inner">
+                                        <div class="slds-grid slds-wrap">
+                                            <template if:true={profileList}>
+                                                <template for:each={profileList} for:item="profile">
+
+                                                    <div key={profile.profileId} class="slds-col slds-size_1-of-1 slds-p-bottom_small">
+                                                        <div class="slds-grid slds-wrap">
+                                                            <div class="slds-col slds-size_2-of-3 slds-p-right_x-small">
+                                                                <template if:false={profile.isNew}>
+                                                                    <span>{profile.ctr}.&nbsp;{profile.profileName}</span>
+                                                                </template>
+                                                                <template if:true={profile.isNew}>
+                                                                   <lightning-combobox variant="label-hidden" label="" placeholder="Select profile" options={profileOptions} name="profile" value={profile.profileId} data-id={profile.profileId} onchange={onProfileChange}></lightning-combobox>
+                                                                </template>
+                                                            </div>
+                                                            <div class="slds-col slds-size_1-of-3">
+                                                                <lightning-icon disabled={profile.isDisabled} class="cursorPointer" icon-name="utility:delete" variant="error" size="x-small" data-id={profile.profileId} onclick={deleteProfile}></lightning-icon>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                    
+                                            </template>
+        
+                                            <div class="slds-col slds-size_1-of-1 slds-p-top_small" style="text-align: right;">
+                                                <div class="slds-grid">
+                                                    <div>
+                                                        <lightning-button label="Add" variant="neutral" onclick={addNewProfile}></lightning-button>
+                                                    </div>
+                                                    <div class="slds-col_bump-left">
+                                                        <lightning-button label="Save" variant="brand" onclick={saveProfileSetting}></lightning-button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div> -->
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</template>

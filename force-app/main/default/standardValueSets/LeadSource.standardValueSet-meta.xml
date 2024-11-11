@@ -2,58 +2,63 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Advertisement</fullName>
+        <fullName>BD Prospect</fullName>
         <default>false</default>
-        <label>Advertisement</label>
+        <label>BD Prospect</label>
     </standardValue>
     <standardValue>
-        <fullName>Customer Event</fullName>
+        <fullName>Content Piece</fullName>
         <default>false</default>
-        <label>Customer Event</label>
+        <label>Content Piece</label>
     </standardValue>
     <standardValue>
-        <fullName>Employee Referral</fullName>
+        <fullName>Self Generated</fullName>
         <default>false</default>
-        <label>Employee Referral</label>
-    </standardValue>
-    <standardValue>
-        <fullName>External Referral</fullName>
-        <default>false</default>
-        <label>External Referral</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Google AdWords</fullName>
-        <default>false</default>
-        <label>Google AdWords</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Other</fullName>
-        <default>false</default>
-        <label>Other</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Partner</fullName>
-        <default>false</default>
-        <label>Partner</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Purchased List</fullName>
-        <default>false</default>
-        <label>Purchased List</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Trade Show</fullName>
-        <default>false</default>
-        <label>Trade Show</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Webinar</fullName>
-        <default>false</default>
-        <label>Webinar</label>
+        <label>Self Generated</label>
     </standardValue>
     <standardValue>
         <fullName>Website</fullName>
         <default>false</default>
         <label>Website</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Social Media</fullName>
+        <default>false</default>
+        <label>Social Media</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Incoming Call</fullName>
+        <default>false</default>
+        <label>Incoming Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>International</fullName>
+        <default>false</default>
+        <label>International</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Referral</fullName>
+        <default>false</default>
+        <label>Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Event</fullName>
+        <default>false</default>
+        <label>Event</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HUBCP CEvent</fullName>
+        <default>false</default>
+        <label>HUBCP CEvent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Source Campaign</fullName>
+        <default>false</default>
+        <label>Source Campaign</label>
+    </standardValue>
+    <standardValue>
+        <fullName>WebLead</fullName>
+        <default>false</default>
+        <label>WebLead</label>
     </standardValue>
 </StandardValueSet>
