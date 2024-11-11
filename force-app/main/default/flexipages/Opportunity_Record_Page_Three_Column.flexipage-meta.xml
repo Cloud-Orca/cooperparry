@@ -183,44 +183,12 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.StageName</fieldItem>
-                <identifier>RecordStageNameField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Referral__c</fieldItem>
-                <identifier>RecordReferral__cField</identifier>
+                <fieldItem>Record.Amount</fieldItem>
+                <identifier>RecordAmountField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Opportunity_Area__c</fieldItem>
-                <identifier>RecordOpportunity_Area__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Proposal_Sent__c</fieldItem>
-                <identifier>RecordProposal_Sent__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Days_since_the_proposal_was_sent__c</fieldItem>
-                <identifier>RecordDays_since_the_proposal_was_sent__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -235,12 +203,46 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Amount</fieldItem>
-                <identifier>RecordAmountField</identifier>
+                <fieldItem>Record.StageName</fieldItem>
+                <identifier>RecordStageNameField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CT_Expected_Start_Date__c</fieldItem>
+                <identifier>RecordCT_Expected_Start_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CT_Expected_End_Date__c</fieldItem>
+                <identifier>RecordCT_Expected_End_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Fee_Amount__c</fieldItem>
+                <identifier>RecordFee_Amount__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -255,10 +257,40 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.ForecastCategoryName</fieldItem>
+                <identifier>RecordForecastCategoryNameField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Service_Line__c</fieldItem>
-                <identifier>RecordService_Line__cField</identifier>
+                <fieldItem>Record.NextStep</fieldItem>
+                <identifier>RecordNextStepField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Region__c</fieldItem>
+                <identifier>Recordpse_Region_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.pse__Practice__c</fieldItem>
+                <identifier>Recordpse_Practice_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f31cfb4a-cff9-4183-ab78-8e77ec6894f0</name>
@@ -299,16 +331,6 @@
                 <identifier>RecordTypeField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CampaignId</fieldItem>
-                <identifier>RecordCampaignIdField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-dac64c49-7ca4-4dd8-9dde-aca45489bcc5</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -321,6 +343,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.LeadSource</fieldItem>
                 <identifier>RecordLeadSourceField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CampaignId</fieldItem>
+                <identifier>RecordCampaignIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-47986c8a-b34b-4c9b-be5e-d1fd2883fa4b</name>
@@ -376,6 +408,58 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-ca6da9f0-0019-4688-aadb-8124c3116e24</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.ContractId</fieldItem>
+                <identifier>RecordContractIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-23e443a5-82a0-4dcb-b487-eb03307da148</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SyncedQuoteId</fieldItem>
+                <identifier>RecordSyncedQuoteIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b92bbf12-b4b7-4399-96b6-1fc48619422d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-23e443a5-82a0-4dcb-b487-eb03307da148</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b92bbf12-b4b7-4399-96b6-1fc48619422d</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-a1e0eeff-4d6c-4d86-99cd-83695670817d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -483,6 +567,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-a1e0eeff-4d6c-4d86-99cd-83695670817d</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Other Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -603,6 +705,52 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>showCreateProject</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>ffscpq:opportunityActionsLauncherPanel</componentName>
+                <identifier>ffscpq_opportunityActionsLauncherPanel</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e7f72ca4-ac5c-4c3d-8080-399b0b7323cb</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-e7f72ca4-ac5c-4c3d-8080-399b0b7323cb</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Estimate</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>name</name>
+                    <value>accordionSection1</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordionSection</componentName>
+                <identifier>flexipage_accordionSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-8ef53f13-7620-496e-b496-8c6185ad5769</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>accordionSections</name>
+                    <value>Facet-8ef53f13-7620-496e-b496-8c6185ad5769</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordion</componentName>
+                <identifier>flexipage_accordion</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
