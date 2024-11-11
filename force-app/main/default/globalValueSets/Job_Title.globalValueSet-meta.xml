@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Actuary</fullName>
+        <default>false</default>
+        <label>Actuary</label>
+    </customValue>
+    <customValue>
+        <fullName>Annuity Provider</fullName>
+        <default>false</default>
+        <label>Annuity Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Banker</fullName>
+        <default>false</default>
+        <label>Banker</label>
+    </customValue>
+    <customValue>
+        <fullName>CEO</fullName>
+        <default>false</default>
+        <label>CEO</label>
+    </customValue>
+    <customValue>
+        <fullName>CFO</fullName>
+        <default>false</default>
+        <label>CFO</label>
+    </customValue>
+    <customValue>
+        <fullName>COO</fullName>
+        <default>false</default>
+        <label>COO</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Secretary</fullName>
+        <default>false</default>
+        <label>Company Secretary</label>
+    </customValue>
+    <customValue>
+        <fullName>Director,Finance Director</fullName>
+        <default>false</default>
+        <label>Director,Finance Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Finance Controller</fullName>
+        <default>false</default>
+        <label>Finance Controller</label>
+    </customValue>
+    <customValue>
+        <fullName>Founder</fullName>
+        <default>false</default>
+        <label>Founder</label>
+    </customValue>
+    <customValue>
+        <fullName>Head Of Finance</fullName>
+        <default>false</default>
+        <label>Head Of Finance</label>
+    </customValue>
+    <customValue>
+        <fullName>Head Of Sustainability</fullName>
+        <default>false</default>
+        <label>Head Of Sustainability</label>
+    </customValue>
+    <customValue>
+        <fullName>HR</fullName>
+        <default>false</default>
+        <label>HR</label>
+    </customValue>
+    <customValue>
+        <fullName>Investment Manager</fullName>
+        <default>false</default>
+        <label>Investment Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Manager</fullName>
+        <default>false</default>
+        <label>Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Managing Director</fullName>
+        <default>false</default>
+        <label>Managing Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Operations Director</fullName>
+        <default>false</default>
+        <label>Operations Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Owner</fullName>
+        <default>false</default>
+        <label>Owner</label>
+    </customValue>
+    <customValue>
+        <fullName>PA</fullName>
+        <default>false</default>
+        <label>PA</label>
+    </customValue>
+    <customValue>
+        <fullName>Partner</fullName>
+        <default>false</default>
+        <label>Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Shareholder</fullName>
+        <default>false</default>
+        <label>Shareholder</label>
+    </customValue>
+    <customValue>
+        <fullName>Solicitor</fullName>
+        <default>false</default>
+        <label>Solicitor</label>
+    </customValue>
+    <customValue>
+        <fullName>Technical Director</fullName>
+        <default>false</default>
+        <label>Technical Director</label>
+    </customValue>
+    <customValue>
+        <fullName>Trustee</fullName>
+        <default>false</default>
+        <label>Trustee</label>
+    </customValue>
+    <customValue>
+        <fullName>VP of Finance</fullName>
+        <default>false</default>
+        <label>VP of Finance</label>
+    </customValue>
+    <masterLabel>Job Title</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
