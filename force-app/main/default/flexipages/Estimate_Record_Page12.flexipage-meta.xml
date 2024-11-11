@@ -11,9 +11,6 @@
                             <value>Submit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Share</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>ffscpq__Estimate__c.ffscpq__Make_Estimate_Non_Primary</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND 2</booleanFilter>
@@ -62,39 +59,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ffscpq__Estimate__c.ffscpq__Create_Project</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND 2</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.ffscpq__Is_Primary__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>true</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ffscpq__Is_Template__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>false</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>ffscpq__Estimate__c.ffscpq__Add_To_Project</value>
-                            <visibilityRule>
-                                <booleanFilter>1 AND 2</booleanFilter>
-                                <criteria>
-                                    <leftValue>{!Record.ffscpq__Is_Primary__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>true</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.ffscpq__Is_Template__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>false</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>ffscpq__Estimate__c.ffscpq__Clone_Estimate</value>
+                            <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
                             <value>RecordShareHierarchy</value>
@@ -103,10 +68,13 @@
                             <value>ChangeOwnerOne</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>ffscpq__Estimate__c.ffscpq__Clone_Estimate</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>ffscpq__Estimate__c.ffscpq__Create_Template_From_Estimate</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Delete</value>
+                            <value>Share</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -210,7 +178,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>estimateLineSetFieldSetApiName</name>
-                    <value>NONE</value>
+                    <value>line_set_editable_fields</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>estimateProductFieldSetApiName</name>
@@ -238,7 +206,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showAddFromTemplateButton</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showAddLineSetButton</name>
@@ -270,7 +238,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showMarginPercentColumn</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showMassAdjustRatesButton</name>
@@ -282,7 +250,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showPracticeColumn</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showRefreshRatesButton</name>
@@ -530,7 +498,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>configApiName</name>
-                    <value>ffscpq__expHlPane_Estimate_Highlights</value>
+                    <value>expHlPane_Estimate_Highlights</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_highlightsPanel</componentName>
                 <identifier>fferpcore_exp_highlightsPanel</identifier>
