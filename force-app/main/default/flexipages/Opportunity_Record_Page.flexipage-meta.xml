@@ -352,6 +352,23 @@
                 <identifier>RecordProposal_Send_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Meeting_Subtype__c</fieldItem>
+                <identifier>RecordMeeting_Subtype_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Corporate_Opportunity</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-dac64c49-7ca4-4dd8-9dde-aca45489bcc5</name>
         <type>Facet</type>
     </flexiPageRegions>
