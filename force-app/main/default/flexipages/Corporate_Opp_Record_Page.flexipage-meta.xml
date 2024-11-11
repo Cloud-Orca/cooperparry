@@ -17,6 +17,13 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Opportunity.Connector</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Corporate_Opportunity</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Submit</value>
