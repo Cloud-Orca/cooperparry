@@ -86,8 +86,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Job_Title__c</fieldItem>
-                <identifier>RecordJob_Title_cField</identifier>
+                <fieldItem>Record.Department</fieldItem>
+                <identifier>RecordDepartmentField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-45318f46-ec1b-4137-a71c-ffafedb486c8</name>
@@ -120,8 +120,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Department</fieldItem>
-                <identifier>RecordDepartmentField</identifier>
+                <fieldItem>Record.Job_Title__c</fieldItem>
+                <identifier>RecordJob_Title_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-7d75c669-5359-4391-8c49-078d9b7fdc74</name>
