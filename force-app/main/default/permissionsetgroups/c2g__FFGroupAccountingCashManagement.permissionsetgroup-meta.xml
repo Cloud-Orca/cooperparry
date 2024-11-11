@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Includes permission sets for cash management job functions related to the AP and AR roles. For a full list of the included permission sets, go to Permission Sets on this permission set group’s detail page and click Permission Sets in Group.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Certinia - Accounting - Cash Management</label>
+    <permissionSets>c2g__AccountingAgedAnalysisDefinitionReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingAgedAnalysisReports</permissionSets>
+    <permissionSets>c2g__AccountingBackgroundMatching</permissionSets>
+    <permissionSets>c2g__AccountingBankAccountBankStatementDefinition</permissionSets>
+    <permissionSets>c2g__AccountingBankAccountReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingBankConnections</permissionSets>
+    <permissionSets>c2g__AccountingBankReconciliation</permissionSets>
+    <permissionSets>c2g__AccountingBankStatement</permissionSets>
+    <permissionSets>c2g__AccountingBudgetandBalance</permissionSets>
+    <permissionSets>c2g__AccountingCashEntry</permissionSets>
+    <permissionSets>c2g__AccountingCashMatching</permissionSets>
+    <permissionSets>c2g__AccountingIntersectDefinitionReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingLightningApp</permissionSets>
+    <permissionSets>c2g__AccountingMultiBookReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingPayableCreditNoteReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingPayableInvoiceReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingSelectionDefinitionReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingAccount</permissionSets>
+    <permissionSets>c2g__AccountingandBillingAccountingCurrenciesReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingCollections</permissionSets>
+    <permissionSets>c2g__AccountingandBillingCompanyReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingDimension1</permissionSets>
+    <permissionSets>c2g__AccountingandBillingDimension2</permissionSets>
+    <permissionSets>c2g__AccountingandBillingDimension3</permissionSets>
+    <permissionSets>c2g__AccountingandBillingDimension4</permissionSets>
+    <permissionSets>c2g__AccountingandBillingGeneralLedgerAccountsReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingHelp</permissionSets>
+    <permissionSets>c2g__AccountingandBillingIntegrationRuleReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingJournal</permissionSets>
+    <permissionSets>c2g__AccountingandBillingRunIntegrationRuleCashEntry</permissionSets>
+    <permissionSets>c2g__AccountingandBillingSalesCreditNoteReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingSalesInvoiceReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingSelectCompany</permissionSets>
+    <permissionSets>c2g__AccountingandBillingTransactions</permissionSets>
+    <permissionSets>c2g__AccountingandBillingYearReadAccess</permissionSets>
+    <permissionSets>c2g__ActionViewsReportingIntegrationRun</permissionSets>
+    <permissionSets>c2g__BillingLightningApp</permissionSets>
+    <permissionSets>c2g__FFAIntegrationsERPCompanyReadAccess</permissionSets>
+    <permissionSets>c2g__FFAIntegrationsERPTaxCodeReadAccess</permissionSets>
+    <permissionSets>ffaws__CashManagement_Workspace</permissionSets>
+    <permissionSets>fferpcore__AsyncApiProcess</permissionSets>
+    <permissionSets>fferpcore__ERPCommonConceptsCompanyRead</permissionSets>
+    <permissionSets>fferpcore__ERPCommonConceptsTaxRead</permissionSets>
+    <permissionSets>ffr__ActionViewsReportingRun</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
