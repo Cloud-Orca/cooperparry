@@ -1,3 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Case_CP_Law</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Case CP Law</description>
+        <label>Case CP Law</label>
+        <sharedTo>
+            <group>CP_Law</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Case_Area__c</field>
+            <operation>equals</operation>
+            <value>Law</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Case_Compliance_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Case Compliance Sharing</description>
+        <label>Case Compliance Sharing</label>
+        <sharedTo>
+            <group>Risk_and_Compliance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Case_Corporate_Finance</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Case Corporate Finance</description>
+        <label>Case Corporate Finance</label>
+        <sharedTo>
+            <group>Corporate_Finance_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Case_Area__c</field>
+            <operation>equals</operation>
+            <value>Deals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case_Type_Area__c</field>
+            <operation>equals</operation>
+            <value>CF</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Case_Ring_Fenced</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Case Ring Fenced</description>
+        <label>Case Ring Fenced</label>
+        <sharedTo>
+            <group>Ring_Fenced</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>Ring Fenced</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Case_Sport_and_Media</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Case Sport and Media</description>
+        <label>Case Sport and Media</label>
+        <sharedTo>
+            <group>Sports_and_Media</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>Sports and Media</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Case_UHNWI</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Case UHNWI</description>
+        <label>Case UHNWI</label>
+        <sharedTo>
+            <group>UHNWI</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>UHNWI</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

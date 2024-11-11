@@ -1,3 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CP_Law_Opportunities</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>CP Law Opportunities</description>
+        <label>CP Law Opportunities</label>
+        <sharedTo>
+            <group>CP_Law</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>CP Law</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CP_Opportunity_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>CP Opportunity Rule</description>
+        <label>CP Opportunity Rule</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CP Opportunity</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Confidential_Opportunity_Empty</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Confidential Opportunity Empty</description>
+        <label>Confidential Opportunity Empty</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CP Opportunity</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Opportunity_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Corporate Opportunity Rule 1</description>
+        <label>Corporate Opportunity Rule</label>
+        <sharedTo>
+            <group>Deals_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Corporate Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Private_Corporate_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Pensions_Opportunity</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Pensions Opportunity</description>
+        <label>Pensions Opportunity</label>
+        <sharedTo>
+            <group>Pensions</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>Pensions</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Ring_Fenced_Opportunities</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Ring Fenced Opportunities</description>
+        <label>Ring Fenced Opportunities</label>
+        <sharedTo>
+            <group>Ring_Fenced</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>Ring Fenced</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sports_and_Media_Opportunities</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sports and Media Opportunities</description>
+        <label>Sports and Media Opportunities</label>
+        <sharedTo>
+            <group>Sports_and_Media</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>Sports and Media</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TS_Opportunity</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>TS Opportunity</description>
+        <label>TS Opportunity</label>
+        <sharedTo>
+            <group>Transaction_Services</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>TS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TT_Opportunity</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>TT Opportunity</description>
+        <label>TT Opportunity</label>
+        <sharedTo>
+            <group>Transaction_Tax</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>TT</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>UHNWI_Opportunities</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>UHNWI Opportunities</description>
+        <label>UHNWI Opportunities</label>
+        <sharedTo>
+            <group>UHNWI</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>UHNWI</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

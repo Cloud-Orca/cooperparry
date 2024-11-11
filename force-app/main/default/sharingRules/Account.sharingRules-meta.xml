@@ -1,3 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CP_Law_Accounts</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>CP Law Accounts</description>
+        <label>CP Law Accounts</label>
+        <sharedTo>
+            <group>CP_Law</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Account_Area__c</field>
+            <operation>equals</operation>
+            <value>CP Law</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Not_Confidential_Account</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Not Confidential Account</description>
+        <label>Not Confidential Account</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Account_Area__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Ring_Fenced_Accounts</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Ring Fenced Accounts</description>
+        <label>Ring Fenced Accounts</label>
+        <sharedTo>
+            <group>Ring_Fenced</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Account_Area__c</field>
+            <operation>equals</operation>
+            <value>Ring Fenced</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sports_and_Media_Accounts</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Sports and Media Accounts</description>
+        <label>Sports and Media Accounts</label>
+        <sharedTo>
+            <group>Sports_and_Media</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Account_Area__c</field>
+            <operation>equals</operation>
+            <value>Sports and Media</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>UHNWI_Accounts</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>UHNWI Accounts</description>
+        <label>UHNWI Accounts</label>
+        <sharedTo>
+            <group>UHNWI</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Account_Area__c</field>
+            <operation>equals</operation>
+            <value>UHNWI</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>
