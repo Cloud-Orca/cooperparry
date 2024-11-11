@@ -37,6 +37,53 @@
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.THG_Audit_Partner_Approval</value>
+                            <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Audit</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>THG Audit</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.Law_Estimate_Approval</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Law</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.BTC_THG_PCC_Estimate_Approval</value>
+                            <visibilityRule>
+                                <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>BT Compliance</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>PC Compliance</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>THG Tax</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
