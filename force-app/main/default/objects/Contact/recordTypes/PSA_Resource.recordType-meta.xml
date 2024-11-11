@@ -23,6 +23,109 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Job_Title__c</picklist>
+        <values>
+            <fullName>Actuary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annuity Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CFO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Company Secretary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director%2CFinance Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Controller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Founder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Head Of Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Head Of Sustainability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managing Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shareholder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solicitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trustee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VP of Finance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>LeadSource</picklist>
         <values>
             <fullName>Website</fullName>
@@ -33,6 +136,10 @@
         <picklist>Name</picklist>
         <values>
             <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miss%2E</fullName>
             <default>false</default>
         </values>
         <values>
