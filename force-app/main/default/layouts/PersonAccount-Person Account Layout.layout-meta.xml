@@ -557,7 +557,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>BH_Collection_Name__c</field>
+                <field>Job_Title__pc</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
