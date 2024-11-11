@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>c2g__JournalCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>c2g__OwnerCompany__c</fields>
+    <fields>c2g__JournalDate__c</fields>
+    <fields>c2g__Period__c</fields>
+    <fields>c2g__JournalCurrency__c</fields>
+    <fields>c2g__Reference__c</fields>
+    <fields>c2g__Type__c</fields>
+    <label>Journal Compact Layout</label>
+</CompactLayout>

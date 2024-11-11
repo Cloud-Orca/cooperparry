@@ -25,6 +25,14 @@
         <type>StandardAppMenuItem</type>
     </appMenuItems>
     <appMenuItems>
+        <name>CP_Services_Delivery_Workspace</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>CP_Resource_Management_Workspace</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>Reports</name>
         <type>StandardAppMenuItem</type>
     </appMenuItems>
@@ -39,5 +47,13 @@
     <appMenuItems>
         <name>Groups</name>
         <type>StandardAppMenuItem</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>pse__Approve_Multiple_Expense_Reports</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>pse__Approve_Multiple_Timecards</name>
+        <type>CustomTab</type>
     </appMenuItems>
 </AppMenu>

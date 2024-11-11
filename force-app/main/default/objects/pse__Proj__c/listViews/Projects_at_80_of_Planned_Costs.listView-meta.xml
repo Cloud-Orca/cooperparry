@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Projects_at_80_of_Planned_Costs</fullName>
+    <columns>pse__Project_Manager__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Project_Status__c</columns>
+    <columns>pse__Total_Submitted_Hours__c</columns>
+    <columns>pse__Planned_Hours__c</columns>
+    <columns>pse__Bookings__c</columns>
+    <columns>CT_Total_Submitted_Hours_Bill_Rate__c</columns>
+    <columns>CT_Fee_Amount__c</columns>
+    <columns>pse__Billed__c</columns>
+    <columns>CT_Recovery_Rate__c</columns>
+    <columns>CP_Complete__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CT_Close_to_Cost_Budget__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Projects at  &gt;= 80% of Planned Costs</label>
+</ListView>

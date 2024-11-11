@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page_Three_Column</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page_Three_Column</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#DA285D</headerColor>
+        <logo>CP10</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>FinancialForce Accounting Organizational Setup</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>FFA Organization Setup</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>c2g__codaGeneralLedgerAccount__c</tabs>
+    <tabs>c2g__codaCompany__c</tabs>
+    <tabs>c2g__codaDimension1__c</tabs>
+    <tabs>c2g__codaDimension2__c</tabs>
+    <tabs>c2g__codaDimension3__c</tabs>
+    <tabs>c2g__codaDimension4__c</tabs>
+    <tabs>c2g__codaTaxCode__c</tabs>
+    <tabs>c2g__codaAccountingCurrency__c</tabs>
+    <tabs>fferpcore__ExchangeRateGroup__c</tabs>
+    <tabs>fferpcore__ExchangeRatesScheduledJob</tabs>
+    <tabs>c2g__codaYear__c</tabs>
+    <tabs>c2g__codaBankAccount__c</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Product2</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>FFX_FFA_Organization_Setup_UtilityBar</utilityBar>
+</CustomApplication>

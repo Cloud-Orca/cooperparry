@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <decisions>
+        <name>Found_Team_Member</name>
+        <label>Found Team Member?</label>
+        <locationX>330</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Add_Case_Team_Member</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Found_Team_Member</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case_Team_Member</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Case_Team_Member</targetReference>
+            </connector>
+            <label>Yes Found Team Member</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Owner_has_a_Department</name>
+        <label>Owner has a Department?</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Get_Case_Team_Member_Role</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Is_Null</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>department_formula</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>department_formula</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Yes - Is Null</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>department_formula</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!$Record.Owner:User.Department}, &quot;Lifecycle&quot;), &quot;Lifecycle&quot;,
+IF(CONTAINS({!$Record.Owner:User.Department}, &quot;Risk &amp; Compliance&quot;), &quot;Risk &amp; Compliance&quot;,
+IF(CONTAINS({!$Record.Owner:User.Department}, &quot;Partner&quot;), &quot;Partner&quot;, null)))</expression>
+    </formulas>
+    <interviewLabel>Case - Add Team Member when Owner is changed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Add Team Member when Owner is changed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Add_Case_Team_Member</name>
+        <label>Add Case Team Member</label>
+        <locationX>330</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>MemberId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TeamRoleId</field>
+            <value>
+                <elementReference>Get_Case_Team_Member_Role.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CaseTeamMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordDeletes>
+        <name>Delete_Case_Team_Member</name>
+        <label>Delete Case Team Member</label>
+        <locationX>198</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Add_Case_Team_Member</targetReference>
+        </connector>
+        <inputReference>Get_Case_Team_Member</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_Case_Team_Member</name>
+        <label>Get Case Team Member</label>
+        <locationX>330</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Team_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>MemberId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CaseTeamMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Case_Team_Member_Role</name>
+        <label>Get Case Team Member Role</label>
+        <locationX>330</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Case_Team_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>department_formula</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CaseTeamRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Owner_has_a_Department</targetReference>
+        </connector>
+        <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false &amp;&amp;
+ISCHANGED({!$Record.OwnerId}) &amp;&amp;
+LEFT({!$Record.OwnerId},3) = &apos;005&apos;</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

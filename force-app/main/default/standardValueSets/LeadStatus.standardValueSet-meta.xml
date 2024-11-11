@@ -2,9 +2,9 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Unqualified</fullName>
+        <fullName>Disqualified</fullName>
         <default>false</default>
-        <label>Unqualified</label>
+        <label>Disqualified</label>
         <converted>false</converted>
     </standardValue>
     <standardValue>
@@ -14,15 +14,15 @@
         <converted>false</converted>
     </standardValue>
     <standardValue>
-        <fullName>Working</fullName>
+        <fullName>Triage</fullName>
         <default>false</default>
-        <label>Working</label>
+        <label>Triage</label>
         <converted>false</converted>
     </standardValue>
     <standardValue>
-        <fullName>Nurturing</fullName>
+        <fullName>Engagement</fullName>
         <default>false</default>
-        <label>Nurturing</label>
+        <label>Engagement</label>
         <converted>false</converted>
     </standardValue>
     <standardValue>

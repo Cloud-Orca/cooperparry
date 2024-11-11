@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FFX_Discarded</fullName>
+    <columns>NAME</columns>
+    <columns>c2g__InvoiceDate__c</columns>
+    <columns>c2g__Account__c</columns>
+    <columns>c2g__InvoiceCurrency__c</columns>
+    <columns>c2g__InvoiceTotal__c</columns>
+    <columns>c2g__DueDate__c</columns>
+    <columns>c2g__Period__c</columns>
+    <columns>c2g__InvoiceStatus__c</columns>
+    <columns>c2g__CustomerReference__c</columns>
+    <columns>c2g__OwnerCompany__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>c2g__InvoiceStatus__c</field>
+        <operation>equals</operation>
+        <value>Discarded</value>
+    </filters>
+    <label>Discarded</label>
+    <language>en_US</language>
+</ListView>

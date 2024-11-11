@@ -3,7 +3,9 @@
     <fullName>Date_of_Birth_Year__c</fullName>
     <externalId>false</externalId>
     <label>Date of Birth Year</label>
+    <length>255</length>
     <required>false</required>
     <trackTrending>false</trackTrending>
-    <type>Date</type>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

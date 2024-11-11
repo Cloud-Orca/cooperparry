@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Estimates_Awaiting_Approval</fullName>
+    <columns>NAME</columns>
+    <columns>ffscpq__Opportunity__c</columns>
+    <columns>ffscpq__Scoping_Session__c</columns>
+    <columns>ffscpq__Is_Primary__c</columns>
+    <columns>ffscpq__Billing_Type__c</columns>
+    <columns>ffscpq__Net_Amount__c</columns>
+    <columns>ffscpq__Cost__c</columns>
+    <columns>ffscpq__Margin__c</columns>
+    <columns>ffscpq__Percent_Margin__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffscpq__Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Submitted</value>
+    </filters>
+    <label>Estimates Awaiting Approval</label>
+</ListView>

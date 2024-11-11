@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <available>true</available>
+    <description>Sample statement template based on data retrieved from Transactions grouped by account. Includes company address information and details from the transactions such as the account, document type, due date, and outstanding value.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Statement</name>
+    <packageVersions>
+        <majorNumber>2024</majorNumber>
+        <minorNumber>200</minorNumber>
+        <namespace>c2g</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>2023</majorNumber>
+        <minorNumber>200</minorNumber>
+        <namespace>ffxp</namespace>
+    </packageVersions>
+    <style>none</style>
+    <subject>Statement</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

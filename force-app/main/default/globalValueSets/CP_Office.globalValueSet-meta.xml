@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Sky View</fullName>
+        <default>false</default>
+        <label>Sky View</label>
+    </customValue>
+    <customValue>
+        <fullName>Brentwood</fullName>
+        <default>false</default>
+        <label>Brentwood</label>
+    </customValue>
+    <customValue>
+        <fullName>Birmingham</fullName>
+        <default>false</default>
+        <label>Birmingham</label>
+    </customValue>
+    <customValue>
+        <fullName>Bromley</fullName>
+        <default>false</default>
+        <label>Bromley</label>
+    </customValue>
+    <customValue>
+        <fullName>Esher</fullName>
+        <default>false</default>
+        <label>Esher</label>
+    </customValue>
+    <customValue>
+        <fullName>Farnborough</fullName>
+        <default>false</default>
+        <label>Farnborough</label>
+    </customValue>
+    <customValue>
+        <fullName>Slough</fullName>
+        <default>false</default>
+        <label>Slough</label>
+    </customValue>
+    <customValue>
+        <fullName>London</fullName>
+        <default>false</default>
+        <label>London</label>
+    </customValue>
+    <customValue>
+        <fullName>Manchester</fullName>
+        <default>false</default>
+        <label>Manchester</label>
+    </customValue>
+    <customValue>
+        <fullName>Reading</fullName>
+        <default>false</default>
+        <label>Reading</label>
+    </customValue>
+    <customValue>
+        <fullName>Remote Working</fullName>
+        <default>false</default>
+        <label>Remote Working</label>
+    </customValue>
+    <customValue>
+        <fullName>Storey - London</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Storey - London</label>
+    </customValue>
+    <customValue>
+        <fullName>New Derwent House - London</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>New Derwent House - London</label>
+    </customValue>
+    <customValue>
+        <fullName>TBC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TBC</label>
+    </customValue>
+    <customValue>
+        <fullName>Oxford</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Oxford</label>
+    </customValue>
+    <customValue>
+        <fullName>Worcester</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Worcester</label>
+    </customValue>
+    <masterLabel>CP Office</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

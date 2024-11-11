@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accountancy</fullName>
+        <default>false</default>
+        <label>Accountancy</label>
+    </customValue>
+    <customValue>
+        <fullName>Aerospace</fullName>
+        <default>false</default>
+        <label>Aerospace</label>
+    </customValue>
+    <customValue>
+        <fullName>Agriculture &amp; Horticulture</fullName>
+        <default>false</default>
+        <label>Agriculture &amp; Horticulture</label>
+    </customValue>
+    <customValue>
+        <fullName>Architecture</fullName>
+        <default>false</default>
+        <label>Architecture</label>
+    </customValue>
+    <customValue>
+        <fullName>Arts &amp; Media</fullName>
+        <default>false</default>
+        <label>Arts &amp; Media</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive</fullName>
+        <default>false</default>
+        <label>Automotive</label>
+    </customValue>
+    <customValue>
+        <fullName>Charities</fullName>
+        <default>false</default>
+        <label>Charities</label>
+    </customValue>
+    <customValue>
+        <fullName>Chemicals/Materials Manufacturing</fullName>
+        <default>false</default>
+        <label>Chemicals/Materials Manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>Consumer Goods Manufacturing</fullName>
+        <default>false</default>
+        <label>Consumer Goods Manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>Defence</fullName>
+        <default>false</default>
+        <label>Defence</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Assets</fullName>
+        <default>false</default>
+        <label>Digital Assets</label>
+    </customValue>
+    <customValue>
+        <fullName>Digital Security / Cyber Security</fullName>
+        <default>false</default>
+        <label>Digital Security / Cyber Security</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Commerce</fullName>
+        <default>false</default>
+        <label>E-Commerce</label>
+    </customValue>
+    <customValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <label>Education</label>
+    </customValue>
+    <customValue>
+        <fullName>eHealth / MedTech</fullName>
+        <default>false</default>
+        <label>eHealth / MedTech</label>
+    </customValue>
+    <customValue>
+        <fullName>Energy &amp; Utilities</fullName>
+        <default>false</default>
+        <label>Energy &amp; Utilities</label>
+    </customValue>
+    <customValue>
+        <fullName>Engineering</fullName>
+        <default>false</default>
+        <label>Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Facilities Mgt</fullName>
+        <default>false</default>
+        <label>Facilities Mgt</label>
+    </customValue>
+    <customValue>
+        <fullName>FinTech</fullName>
+        <default>false</default>
+        <label>FinTech</label>
+    </customValue>
+    <customValue>
+        <fullName>Food &amp; Drink</fullName>
+        <default>false</default>
+        <label>Food &amp; Drink</label>
+    </customValue>
+    <customValue>
+        <fullName>Hospitality &amp; Leisure</fullName>
+        <default>false</default>
+        <label>Hospitality &amp; Leisure</label>
+    </customValue>
+    <customValue>
+        <fullName>HR</fullName>
+        <default>false</default>
+        <label>HR</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance</fullName>
+        <default>false</default>
+        <label>Insurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Investment &amp; Fund Management</fullName>
+        <default>false</default>
+        <label>Investment &amp; Fund Management</label>
+    </customValue>
+    <customValue>
+        <fullName>IT / Software / SaaS</fullName>
+        <default>false</default>
+        <label>IT / Software / SaaS</label>
+    </customValue>
+    <customValue>
+        <fullName>Law</fullName>
+        <default>false</default>
+        <label>Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Maketing / Advertising</fullName>
+        <default>false</default>
+        <label>Maketing / Advertising</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharmaceuticals &amp; Life Sciences</fullName>
+        <default>false</default>
+        <label>Pharmaceuticals &amp; Life Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Recruitment</fullName>
+        <default>false</default>
+        <label>Recruitment</label>
+    </customValue>
+    <customValue>
+        <fullName>Regtech</fullName>
+        <default>false</default>
+        <label>Regtech</label>
+    </customValue>
+    <customValue>
+        <fullName>Renewables</fullName>
+        <default>false</default>
+        <label>Renewables</label>
+    </customValue>
+    <customValue>
+        <fullName>Environmental &amp; Sustainable Industries</fullName>
+        <default>false</default>
+        <label>Environmental &amp; Sustainable Industries</label>
+    </customValue>
+    <customValue>
+        <fullName>Sport / Sports Teams</fullName>
+        <default>false</default>
+        <label>Sport / Sports Teams</label>
+    </customValue>
+    <customValue>
+        <fullName>Telecommunications</fullName>
+        <default>false</default>
+        <label>Telecommunications</label>
+    </customValue>
+    <customValue>
+        <fullName>Transport &amp; Logistics</fullName>
+        <default>false</default>
+        <label>Transport &amp; Logistics</label>
+    </customValue>
+    <customValue>
+        <fullName>Wholesale</fullName>
+        <default>false</default>
+        <label>Wholesale</label>
+    </customValue>
+    <masterLabel>Secondary Sector</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Law_Initial_Review_User_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ $Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c = false,
+ ISCHANGED(Status),
+ TEXT(Status) = &apos;Initial Review&apos;,
+ LEFT(OwnerId,3) = &apos;00G&apos;,
+ Area__c = &apos;Law&apos;
+)</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>A case must be owned by a user before moving the Status.</errorMessage>
+</ValidationRule>
