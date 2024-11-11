@@ -7,28 +7,27 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Mr</fullName>
+                <fullName>Mr.</fullName>
                 <default>false</default>
-                <label>Mr</label>
+                <label>Mr.</label>
             </value>
             <value>
-                <fullName>Mrs</fullName>
+                <fullName>Mrs.</fullName>
                 <default>false</default>
-                <label>Mrs</label>
+                <label>Mrs.</label>
             </value>
             <value>
-                <fullName>Ms</fullName>
+                <fullName>Ms.</fullName>
                 <default>false</default>
-                <label>Ms</label>
+                <label>Ms.</label>
             </value>
             <value>
-                <fullName>Miss</fullName>
+                <fullName>Miss.</fullName>
                 <default>false</default>
-                <label>Miss</label>
+                <label>Miss.</label>
             </value>
             <value>
                 <fullName>Sir</fullName>
@@ -41,9 +40,9 @@
                 <label>Revd</label>
             </value>
             <value>
-                <fullName>Dr</fullName>
+                <fullName>Dr.</fullName>
                 <default>false</default>
-                <label>Dr</label>
+                <label>Dr.</label>
             </value>
             <value>
                 <fullName>Ven</fullName>
@@ -56,9 +55,9 @@
                 <label>Father</label>
             </value>
             <value>
-                <fullName>Prof</fullName>
+                <fullName>Prof.</fullName>
                 <default>false</default>
-                <label>Prof</label>
+                <label>Prof.</label>
             </value>
             <value>
                 <fullName>Dame</fullName>
@@ -76,9 +75,9 @@
                 <label>Lady</label>
             </value>
             <value>
-                <fullName>Mx</fullName>
+                <fullName>Mx.</fullName>
                 <default>false</default>
-                <label>Mx</label>
+                <label>Mx.</label>
             </value>
         </valueSetDefinition>
     </valueSet>
