@@ -4,6 +4,7 @@
     <customButtons>c2g__ClassicEdit</customButtons>
     <customButtons>c2g__ClassicView</customButtons>
     <customButtons>c2g__Post</customButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -12,7 +13,7 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>c2g__OwnerCompany__c</field>
             </layoutItems>
         </layoutColumns>
