@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>c2g__ManageLines</customButtons>
-    <customButtons>c2g__ClassicEdit</customButtons>
-    <customButtons>c2g__ClassicView</customButtons>
     <customButtons>c2g__Post</customButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -63,7 +60,7 @@
                 <field>c2g__CreditNoteDate__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>c2g__DueDate__c</field>
             </layoutItems>
             <layoutItems>
@@ -196,17 +193,17 @@
         <label>Additional Analysis</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>c2g__Dimension1__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>c2g__Dimension3__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>c2g__Dimension2__c</field>
             </layoutItems>
             <layoutItems>
