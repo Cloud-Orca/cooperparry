@@ -4,7 +4,7 @@
     <customErrors>
         <name>Display_Error</name>
         <label>Display Error</label>
-        <locationX>264</locationX>
+        <locationX>308</locationX>
         <locationY>539</locationY>
         <customErrorMessages>
             <errorMessage>An Opportunity needs to be linked to an estimate before moving to Closed Won.</errorMessage>
@@ -83,7 +83,9 @@
             <targetReference>Get_Estimate</targetReference>
         </connector>
         <filterFormula>AND({!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
-TEXT({!$Record.StageName}) = &quot;Closed Won&quot;,
+CASE({!$Record.StageName},
+&quot;Closed Won&quot;,1,
+&quot;Married (Closed Won)&quot;,1,0) = 1,
 ISCHANGED({!$Record.StageName}),
 OR(
 	AND(TEXT({!$Record.Opportunity_Area__c}) = &quot;Deals&quot;, TEXT({!$Record.Opportunity_Type_Area__c}) = &quot;TS&quot;),
