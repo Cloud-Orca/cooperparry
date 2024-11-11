@@ -64,9 +64,6 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>c2g__codaCreditNote__c.c2g__Duplicate</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>c2g__codaCreditNote__c.c2g__PostAndMatch</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND 2 AND 3</booleanFilter>
@@ -86,6 +83,9 @@
                                     <rightValue>Complete</rightValue>
                                 </criteria>
                             </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>c2g__codaCreditNote__c.c2g__Duplicate</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.c2g__codaCreditNote__c.Conga_Composer_Print_Sales_Credit_Note_PDF</value>
