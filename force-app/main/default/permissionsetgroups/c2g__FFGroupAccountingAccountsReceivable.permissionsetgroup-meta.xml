@@ -47,6 +47,7 @@
     <permissionSets>c2g__ActionViewsReportingIntegrationRun</permissionSets>
     <permissionSets>c2g__BillingLightningApp</permissionSets>
     <permissionSets>c2g__FFAIntegrationsERPBillingDocumentRetryPost</permissionSets>
+    <permissionSets>ffaws__Collections_Workspace</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsBillingDocumentsEdit</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsExchangeRateCurrencies</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsExchangeRateEntry</permissionSets>
