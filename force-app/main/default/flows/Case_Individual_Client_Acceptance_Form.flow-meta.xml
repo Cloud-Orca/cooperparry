@@ -729,7 +729,7 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Business_Risk_Assessment_Form_checkbox__c</field>
+            <field>Individual_Risk_Form_checkbox__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>

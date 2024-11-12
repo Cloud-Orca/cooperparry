@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>62.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Assign_Case_and_Account_Id</name>
         <label>Assign Case and Account Id</label>
@@ -42,7 +42,7 @@
         <name>Beneficiaries_Assignment</name>
         <label>Beneficiaries Assignment</label>
         <locationX>264</locationX>
-        <locationY>2510</locationY>
+        <locationY>3266</locationY>
         <assignmentItems>
             <assignToReference>beneficiary.Name</assignToReference>
             <operator>Assign</operator>
@@ -58,10 +58,16 @@
         <assignmentItems>
             <assignToReference>beneficiary.Client_Acceptance_Form__c</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>clientAcceptanceForm.Id</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>beneficiaries</assignToReference>
             <operator>Add</operator>
+            <value>
+                <elementReference>beneficiary</elementReference>
+            </value>
         </assignmentItems>
         <connector>
             <targetReference>Beneficiaries_Loop</targetReference>
@@ -168,14 +174,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_2</targetReference>
+            <targetReference>Create_Business_Risk_Assessment_Form</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_2_5_Assignments</name>
         <label>Page 2.5 Assignments</label>
         <locationX>176</locationX>
-        <locationY>998</locationY>
+        <locationY>1214</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.regpick2__c</assignToReference>
             <operator>Assign</operator>
@@ -261,14 +267,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_3</targetReference>
+            <targetReference>Update_Client_Acceptance_Form_Page_2_5</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_2_Assignments</name>
         <label>Page 2 Assignments</label>
         <locationX>176</locationX>
-        <locationY>782</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Owner__c</assignToReference>
             <operator>Assign</operator>
@@ -347,14 +353,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_2_5</targetReference>
+            <targetReference>Update_Client_Acceptance_Form_Page_2</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_3_Assignments</name>
         <label>Page 3 Assignments</label>
         <locationX>176</locationX>
-        <locationY>1214</locationY>
+        <locationY>1538</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.pickint1__c</assignToReference>
             <operator>Assign</operator>
@@ -433,14 +439,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</targetReference>
+            <targetReference>Update_Client_Acceptance_Form_Page_3</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_4_5_Assignments</name>
         <label>Page 4-5 Assignments</label>
         <locationX>176</locationX>
-        <locationY>1430</locationY>
+        <locationY>1862</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.mlrapick1__c</assignToReference>
             <operator>Assign</operator>
@@ -547,14 +553,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_6_BENEFICIARIES</targetReference>
+            <targetReference>Update_Client_Acceptance_Form_Page_4_5</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_6_Assignments</name>
         <label>Page 6 Assignments</label>
         <locationX>176</locationX>
-        <locationY>1646</locationY>
+        <locationY>2186</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.ben1__c</assignToReference>
             <operator>Assign</operator>
@@ -612,14 +618,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</targetReference>
+            <targetReference>Update_Client_Acceptance_Form_Page_6</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_7_Assignments</name>
         <label>Page 7 Assignments</label>
         <locationX>176</locationX>
-        <locationY>1862</locationY>
+        <locationY>2510</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.objpick1__c</assignToReference>
             <operator>Assign</operator>
@@ -691,14 +697,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_8_CONCLUSION</targetReference>
+            <targetReference>Update_Client_Acceptance_Form_Page_7</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_8_9_Assignment</name>
         <label>Page 8-9 Assignment</label>
         <locationX>176</locationX>
-        <locationY>2186</locationY>
+        <locationY>2942</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.con1__c</assignToReference>
             <operator>Assign</operator>
@@ -735,14 +741,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_Client_Acceptance_Form</targetReference>
+            <targetReference>Create_CAF</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Subsidiaries_Assignment</name>
         <label>Subsidiaries Assignment</label>
         <locationX>264</locationX>
-        <locationY>2918</locationY>
+        <locationY>3674</locationY>
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Name</assignToReference>
             <operator>Assign</operator>
@@ -762,10 +768,16 @@
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Client_Acceptance_Form__c</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>clientAcceptanceForm.Id</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>subsidiaries</assignToReference>
             <operator>Add</operator>
+            <value>
+                <elementReference>subsidiaryRecord</elementReference>
+            </value>
         </assignmentItems>
         <connector>
             <targetReference>Subsidiaries_Loop</targetReference>
@@ -823,7 +835,7 @@
         <name>Beneficiaries_Loop</name>
         <label>Beneficiaries Loop</label>
         <locationX>176</locationX>
-        <locationY>2402</locationY>
+        <locationY>3158</locationY>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Beneficiaries_Assignment</targetReference>
@@ -836,7 +848,7 @@
         <name>Subsidiaries_Loop</name>
         <label>Subsidiaries Loop</label>
         <locationX>176</locationX>
-        <locationY>2810</locationY>
+        <locationY>3566</locationY>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Subsidiaries_Assignment</targetReference>
@@ -868,17 +880,27 @@
         <name>Create_Beneficiaries</name>
         <label>Create Beneficiaries</label>
         <locationX>176</locationX>
-        <locationY>2702</locationY>
+        <locationY>3458</locationY>
         <connector>
             <targetReference>Subsidiaries_Loop</targetReference>
         </connector>
         <inputReference>beneficiaries</inputReference>
     </recordCreates>
     <recordCreates>
-        <name>Create_Client_Acceptance_Form</name>
-        <label>Create Client Acceptance Form</label>
+        <name>Create_Business_Risk_Assessment_Form</name>
+        <label>Create Business Risk Assessment Form</label>
         <locationX>176</locationX>
-        <locationY>2294</locationY>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Page_2</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_CAF</name>
+        <label>Create CAF</label>
+        <locationX>176</locationX>
+        <locationY>3050</locationY>
         <connector>
             <targetReference>Beneficiaries_Loop</targetReference>
         </connector>
@@ -888,7 +910,7 @@
         <name>Create_Subsidiaries</name>
         <label>Create Subsidiaries</label>
         <locationX>176</locationX>
-        <locationY>3110</locationY>
+        <locationY>3866</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -947,7 +969,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>176</locationX>
-        <locationY>3218</locationY>
+        <locationY>3974</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -957,12 +979,72 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>CAF_Form_Completed__c</field>
+            <field>Business_Risk_Assessment_Form_checkbox__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Client_Acceptance_Form_Page_2</name>
+        <label>Update Client Acceptance Form Page 2</label>
+        <locationX>176</locationX>
+        <locationY>998</locationY>
+        <connector>
+            <targetReference>Page_2_5</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Client_Acceptance_Form_Page_2_5</name>
+        <label>Update Client Acceptance Form Page 2.5</label>
+        <locationX>176</locationX>
+        <locationY>1322</locationY>
+        <connector>
+            <targetReference>Page_3</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Client_Acceptance_Form_Page_3</name>
+        <label>Update Client Acceptance Form Page 3</label>
+        <locationX>176</locationX>
+        <locationY>1646</locationY>
+        <connector>
+            <targetReference>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Client_Acceptance_Form_Page_4_5</name>
+        <label>Update Client Acceptance Form Page 4-5</label>
+        <locationX>176</locationX>
+        <locationY>1970</locationY>
+        <connector>
+            <targetReference>Page_6_BENEFICIARIES</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Client_Acceptance_Form_Page_6</name>
+        <label>Update Client Acceptance Form Page 6</label>
+        <locationX>176</locationX>
+        <locationY>2294</locationY>
+        <connector>
+            <targetReference>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Client_Acceptance_Form_Page_7</name>
+        <label>Update Client Acceptance Form Page 7</label>
+        <locationX>176</locationX>
+        <locationY>2618</locationY>
+        <connector>
+            <targetReference>Page_8_CONCLUSION</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
     </recordUpdates>
     <screens>
         <name>Page_1</name>
@@ -1324,7 +1406,7 @@
         <name>Page_2</name>
         <label>Page 2 - CP CONTACTS, NATURE OF ASSIGNMENT, CHANGE OF ADVISOR</label>
         <locationX>176</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1763,7 +1845,7 @@
         <name>Page_2_5</name>
         <label>Page 2.5 - REGULATIONS</label>
         <locationX>176</locationX>
-        <locationY>890</locationY>
+        <locationY>1106</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2604,7 +2686,7 @@
         <name>Page_3</name>
         <label>Page 3 - INTEGRITY, FINANCIAL RISK</label>
         <locationX>176</locationX>
-        <locationY>1106</locationY>
+        <locationY>1430</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3476,7 +3558,7 @@
         <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</name>
         <label>Page 4-5 - MONEY LAUNDERING RISK ASSESSMENT</label>
         <locationX>176</locationX>
-        <locationY>1322</locationY>
+        <locationY>1754</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4581,7 +4663,7 @@
         <name>Page_6_BENEFICIARIES</name>
         <label>Page 6 - BENEFICIARIES</label>
         <locationX>176</locationX>
-        <locationY>1538</locationY>
+        <locationY>2078</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -5211,7 +5293,7 @@
         <name>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</name>
         <label>Page 7 - OBJECTIVITY / CONFLICTS OF INTEREST</label>
         <locationX>176</locationX>
-        <locationY>1754</locationY>
+        <locationY>2402</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -5995,7 +6077,7 @@
         <name>Page_8_CONCLUSION</name>
         <label>Page 8 - CONCLUSION</label>
         <locationX>176</locationX>
-        <locationY>1970</locationY>
+        <locationY>2726</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -6365,7 +6447,7 @@
         <name>Page_9_APPENDIX</name>
         <label>Page 9 - APPENDIX</label>
         <locationX>176</locationX>
-        <locationY>2078</locationY>
+        <locationY>2834</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
