@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry_PSA_Accounting</label>
     <permissionSets>Cooper_Parry_Accounting_Permission_Set</permissionSets>
@@ -12,5 +13,6 @@
     <permissionSets>psaws__PSA_Workspaces_Services_Billing</permissionSets>
     <permissionSets>psaws__PSA_Workspaces_Services_Revenue_Forecasting</permissionSets>
     <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
+    <permissionSets>pse__PSALightningComponentApexClassAccess</permissionSets>
     <status>Failed</status>
 </PermissionSetGroup>
