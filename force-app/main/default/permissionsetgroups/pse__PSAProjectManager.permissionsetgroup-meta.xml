@@ -8,6 +8,22 @@
     <permissionSets>Cooper_Parry_PSA_Permission_Set</permissionSets>
     <permissionSets>Cooper_Parry_PSA_Permission_Set_for_Project_Managers</permissionSets>
     <permissionSets>Cooper_Parry_User_Fields</permissionSets>
+    <permissionSets>ffscpq__AddFromTemplate</permissionSets>
+    <permissionSets>ffscpq__ApproveEstimates</permissionSets>
+    <permissionSets>ffscpq__CreateEstimates</permissionSets>
+    <permissionSets>ffscpq__CreateMilestonesFromLineSets</permissionSets>
+    <permissionSets>ffscpq__CreateProjectsFromEstimates</permissionSets>
+    <permissionSets>ffscpq__DeleteEstimateProducts</permissionSets>
+    <permissionSets>ffscpq__EditEstimateProducts</permissionSets>
+    <permissionSets>ffscpq__EditEstimates</permissionSets>
+    <permissionSets>ffscpq__EditPriceAndCost</permissionSets>
+    <permissionSets>ffscpq__ManageEstimateResources</permissionSets>
+    <permissionSets>ffscpq__ManageEstimateRoleSkills</permissionSets>
+    <permissionSets>ffscpq__ManageEstimateVendorLineItems</permissionSets>
+    <permissionSets>ffscpq__ManageEstimatedExpenses</permissionSets>
+    <permissionSets>ffscpq__PushToOpportunity</permissionSets>
+    <permissionSets>ffscpq__SCPQEinsteinDiscovery</permissionSets>
+    <permissionSets>ffscpq__SubmitEstimates</permissionSets>
     <permissionSets>pse__PSAApproveExpenseReports</permissionSets>
     <permissionSets>pse__PSAApproveTimecards</permissionSets>
     <permissionSets>pse__PSACalculateMissingTimecards</permissionSets>
