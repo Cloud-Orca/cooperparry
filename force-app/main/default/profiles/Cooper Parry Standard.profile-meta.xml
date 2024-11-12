@@ -11751,8 +11751,9 @@
     </pageAccesses>
     <recordTypeVisibilities>
         <default>false</default>
+        <personAccountDefault>true</personAccountDefault>
         <recordType>Account.Business_Account</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
@@ -11807,8 +11808,9 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <personAccountDefault>true</personAccountDefault>
         <recordType>PersonAccount.PersonAccount</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
