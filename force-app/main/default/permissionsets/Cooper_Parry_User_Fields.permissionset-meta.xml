@@ -136,6 +136,26 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Expense__c.CT_Lost_Receipt_Comment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Expense__c.CT_Number_of_Nights__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense__c.VAT_Percentage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Expense__c.pse__Lost_Receipt__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Milestone__c.CP_Complete__c</field>
         <readable>true</readable>
@@ -233,11 +253,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Practice__c.CT_Rate_Practice__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>pse__Practice__c.Group__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
