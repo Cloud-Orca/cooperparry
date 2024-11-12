@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Individual_Risk_Form_formula__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(CAF_Form_Completed__c, &apos;✅&apos;,&apos;&apos;)</formula>
+    <formula>IF( Individual_Risk_Form_checkbox__c = TRUE, &apos;✅&apos;,&apos;&apos;)</formula>
     <label>Individual Risk Form</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
