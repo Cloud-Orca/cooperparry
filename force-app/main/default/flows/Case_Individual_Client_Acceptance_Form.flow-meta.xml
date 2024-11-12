@@ -571,6 +571,20 @@
                 <elementReference>con2</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Completed_By__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!$User.FirstName} {!$User.LastName}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Completed_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_Client_Acceptance_Form</targetReference>
         </connector>
@@ -715,7 +729,7 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>CAF_Form_Completed__c</field>
+            <field>Business_Risk_Assessment_Form_checkbox__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
