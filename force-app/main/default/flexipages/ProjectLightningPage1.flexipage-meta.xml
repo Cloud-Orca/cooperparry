@@ -661,11 +661,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>projectResourceRequestActions_showNewResourceRequest</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>projectResourceRequestActions_showOptimizeResourcesForRequests</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>projectResourceRequestActions_showProjectRequestResources</name>
@@ -793,7 +793,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>projectBillingActions_showProjectBillings</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentName>pse:projectBillingActions</componentName>
                 <identifier>projectBillingActions</identifier>
