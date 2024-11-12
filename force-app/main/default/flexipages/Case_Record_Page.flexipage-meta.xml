@@ -71,6 +71,9 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>Case.Send_to_Compliance</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Case.Declined_Case</value>
                         </valueListItems>
                         <valueListItems>
@@ -167,18 +170,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Sharepoint_Folder_ID__c</fieldItem>
-                <identifier>RecordSharepoint_Folder_ID__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Sharepoint_Public_Folder_ID__c</fieldItem>
-                <identifier>RecordSharepoint_Public_Folder_ID__cField</identifier>
+                <fieldItem>Record.Confidential_Opportunity__c</fieldItem>
+                <identifier>RecordConfidential_Opportunity_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-9c53363a-0b94-4d4d-b723-fdd92d472b60</name>
@@ -283,6 +276,20 @@
                 <identifier>RecordOriginField</identifier>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-29743e45-1a5e-4bd0-838a-acdd4b3bb8db</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Days_Open__c</fieldItem>
+                <identifier>RecordDays_Open_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -301,30 +308,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Declined_Additional_Reason__c</fieldItem>
                 <identifier>RecordDeclined_Additional_Reason_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-29743e45-1a5e-4bd0-838a-acdd4b3bb8db</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CAF_Form_Completed__c</fieldItem>
-                <identifier>RecordCAF_Form_Completed_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Days_Open__c</fieldItem>
-                <identifier>RecordDays_Open_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ff34cb90-3a14-4a1a-8c93-16e1d4e4caf6</name>
@@ -437,10 +420,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>Facet-a6ace270-5808-433e-8bee-30efe90a3b9c</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -449,16 +428,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column7</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-a6ace270-5808-433e-8bee-30efe90a3b9c</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column8</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-af7c270b-2c03-42f6-bdfd-55f4162bc013</name>
@@ -609,6 +578,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Individual_Ongoing_Monitoring_formula__c</fieldItem>
                 <identifier>RecordIndividual_Ongoing_Monitoring_formula_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CAF_Form_Completed__c</fieldItem>
+                <identifier>RecordCAF_Form_Completed_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-0855f850-fd71-4801-bd61-bf944d8f9588</name>
