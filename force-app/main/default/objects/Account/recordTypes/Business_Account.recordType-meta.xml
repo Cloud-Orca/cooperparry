@@ -497,25 +497,29 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Corporate_Status__c</picklist>
+        <picklist>Connector_Type__c</picklist>
         <values>
-            <fullName>Independent Company</fullName>
+            <fullName>Bank</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Intermediate Parent</fullName>
+            <fullName>Investor</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Private Client</fullName>
+            <fullName>Lawyer</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Subsidiary</fullName>
+            <fullName>Member Organisation</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Ultimate Parent</fullName>
+            <fullName>Other Accountancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE House</fullName>
             <default>false</default>
         </values>
     </picklistValues>
