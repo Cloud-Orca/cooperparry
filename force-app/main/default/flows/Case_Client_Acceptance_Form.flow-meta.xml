@@ -755,7 +755,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_CAF</targetReference>
+            <targetReference>Update_CAF</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -911,16 +911,6 @@
         <inputReference>clientAcceptanceForm</inputReference>
     </recordCreates>
     <recordCreates>
-        <name>Create_CAF</name>
-        <label>Create CAF</label>
-        <locationX>176</locationX>
-        <locationY>3050</locationY>
-        <connector>
-            <targetReference>Beneficiaries_Loop</targetReference>
-        </connector>
-        <inputReference>clientAcceptanceForm</inputReference>
-    </recordCreates>
-    <recordCreates>
         <name>Create_Subsidiaries</name>
         <label>Create Subsidiaries</label>
         <locationX>176</locationX>
@@ -979,6 +969,16 @@
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_CAF</name>
+        <label>Update CAF</label>
+        <locationX>176</locationX>
+        <locationY>3050</locationY>
+        <connector>
+            <targetReference>Beneficiaries_Loop</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
