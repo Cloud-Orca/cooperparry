@@ -740,6 +740,20 @@
                 <elementReference>advisorypartnerdate</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Completed_By__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!$User.FirstName} {!$User.LastName}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Completed_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_CAF</targetReference>
         </connector>
