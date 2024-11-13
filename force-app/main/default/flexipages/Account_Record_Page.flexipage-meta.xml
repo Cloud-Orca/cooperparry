@@ -19,6 +19,9 @@
                             <value>Account.BD_Meeting</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Account.Onboarding</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Account.Companies_House</value>
                         </valueListItems>
                         <valueListItems>
@@ -1865,6 +1868,96 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Discovery_Meeting_Required__c</fieldItem>
+                <identifier>RecordDiscovery_Meeting_Required_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Discovery_Meeting_Booked__c</fieldItem>
+                <identifier>RecordDiscovery_Meeting_Booked_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-c444faa7-7a37-4bd0-99dd-5fd64a1f2365</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Date_Discovery_Session_Took_Place__c</fieldItem>
+                <identifier>RecordDate_Discovery_Session_Took_Place_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Discovery_Output_Date_Sent_to_Client__c</fieldItem>
+                <identifier>RecordDiscovery_Output_Date_Sent_to_Client_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-0de7326f-59be-465c-9635-725345db7bf5</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-c444faa7-7a37-4bd0-99dd-5fd64a1f2365</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column27</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-0de7326f-59be-465c-9635-725345db7bf5</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column28</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-8e17783e-a4b0-4490-ac47-56004715ccb8</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-8e17783e-a4b0-4490-ac47-56004715ccb8</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Section</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection16</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
