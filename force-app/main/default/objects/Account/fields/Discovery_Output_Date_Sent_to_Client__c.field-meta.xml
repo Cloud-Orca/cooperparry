@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Close_Lost_Reason__c</fullName>
+    <fullName>Discovery_Output_Date_Sent_to_Client__c</fullName>
     <externalId>false</externalId>
-    <label>Closed Lost Reason</label>
-    <length>131072</length>
+    <label>Discovery Output Date Sent to Client</label>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
-    <type>LongTextArea</type>
-    <visibleLines>3</visibleLines>
+    <type>Date</type>
 </CustomField>

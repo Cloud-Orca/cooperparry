@@ -501,6 +501,33 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Connector_Type__c</picklist>
+        <values>
+            <fullName>Bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Organisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Accountancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE House</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Data_Origination__c</picklist>
         <values>
             <fullName>TBC</fullName>
