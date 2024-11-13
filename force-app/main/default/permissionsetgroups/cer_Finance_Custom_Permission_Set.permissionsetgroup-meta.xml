@@ -8,5 +8,6 @@
     <permissionSets>cer_Cooper_Parry_Certinia_Custom_Permission_CRM_Contact_for_Finance</permissionSets>
     <permissionSets>cer_Cooper_Parry_Certinia_Custom_Permission_Read_Only</permissionSets>
     <permissionSets>fferpcore__FFDS</permissionSets>
+    <permissionSets>ffpsai__BillingEventsToSalesInvoicesOrCreditNotes</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>
