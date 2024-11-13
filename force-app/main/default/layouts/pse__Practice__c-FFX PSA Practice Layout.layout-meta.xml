@@ -7,7 +7,6 @@
     <customButtons>pse__Calculate_Time_Variance</customButtons>
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -43,10 +42,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>CT_Mandatory_Timesheet_Notes__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Group__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -230,6 +225,10 @@
         <fields>pse__Is_Active__c</fields>
         <fields>pse__Is_Billable__c</fields>
         <relatedList>pse__Proj__c.pse__Practice__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>pse__Skill_Certification_Zone__c.pse__Practice__c</relatedList>
     </relatedLists>
     <relatedLists>
         <customButtons>pse__Resource_Planner_Practice</customButtons>
