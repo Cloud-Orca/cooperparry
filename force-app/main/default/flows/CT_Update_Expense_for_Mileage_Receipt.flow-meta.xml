@@ -14,7 +14,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Mileage_Expanse_Line</targetReference>
+            <targetReference>Project_has_GLA</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -34,42 +34,10 @@
         </connector>
     </assignments>
     <decisions>
-        <name>Mileage_Expanse_Line</name>
-        <label>Mileage Expanse Line</label>
-        <locationX>182</locationX>
-        <locationY>755</locationY>
-        <defaultConnector>
-            <targetReference>Project_has_GLA</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Not Mileage</defaultConnectorLabel>
-        <rules>
-            <name>Mileage</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.pse__Distance__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.pse__Distance__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <numberValue>1.0</numberValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_lost_receipt_for_Mileage</targetReference>
-            </connector>
-            <label>Mileage</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Project_has_GLA</name>
         <label>Project has GLA</label>
         <locationX>182</locationX>
-        <locationY>1055</locationY>
+        <locationY>755</locationY>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>CT_Project_GLA</name>
@@ -153,7 +121,7 @@
         <name>Update_Expense_GLA</name>
         <label>Update Expense GLA</label>
         <locationX>50</locationX>
-        <locationY>1163</locationY>
+        <locationY>863</locationY>
         <inputAssignments>
             <field>ffpsai__ExpenseGLACode__c</field>
             <value>
@@ -182,28 +150,6 @@
             <field>pse__Incurred_Tax__c</field>
             <value>
                 <elementReference>VAT</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_lost_receipt_for_Mileage</name>
-        <label>Update lost receipt for Mileage</label>
-        <locationX>50</locationX>
-        <locationY>863</locationY>
-        <connector>
-            <targetReference>Project_has_GLA</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CT_Lost_Receipt_Comment__c</field>
-            <value>
-                <stringValue>Mileage - No Receipt Required</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>pse__Lost_Receipt__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
