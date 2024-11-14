@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V3_RegisteredNumberRequired</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ISBLANK(Beauhurst_ID__c),
+TEXT(Type_of_Business__c) &lt;&gt; &apos;Not For Profit&apos;,
+TEXT(Type_of_Business__c) &lt;&gt; &apos;Pension Scheme&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Beauhurst_ID__c</errorDisplayField>
+    <errorMessage>Please enter a Registered Number</errorMessage>
+</ValidationRule>
