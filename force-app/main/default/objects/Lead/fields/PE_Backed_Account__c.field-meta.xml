@@ -3,9 +3,9 @@
     <fullName>PE_Backed_Account__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>PE Backed Account</label>
+    <label>UK PE Backed</label>
     <referenceTo>Account</referenceTo>
-    <relationshipLabel>Leads (PE Backed Account)</relationshipLabel>
+    <relationshipLabel>Leads (UK PE Backed)</relationshipLabel>
     <relationshipName>Leads1</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

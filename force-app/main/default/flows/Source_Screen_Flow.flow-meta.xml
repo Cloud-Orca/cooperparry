@@ -2112,12 +2112,6 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                     <stringValue>Opportunity</stringValue>
                 </value>
             </inputParameters>
-            <inputParameters>
-                <name>required</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
