@@ -5,7 +5,7 @@
     <formulas>
         <name>F_OppName</name>
         <dataType>String</dataType>
-        <expression>TEXT({!$Record.Opportunity_Area__c}) + &quot; - &quot; + {!$Record.Account.Name} + &quot; - Opportunity&quot;</expression>
+        <expression>{!$Record.Account.Name} + &quot; - &quot; + TEXT({!$Record.Opportunity_Area__c})</expression>
     </formulas>
     <interviewLabel>Opportunity - Update Naming Convention {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity - Update Naming Convention</label>
