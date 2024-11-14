@@ -9,6 +9,7 @@
     <customButtons>pse__Create_Change_Request</customButtons>
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -83,7 +84,7 @@
                 <field>pse__End_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>pse__Project_Manager__c</field>
             </layoutItems>
             <layoutItems>
@@ -482,11 +483,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>pse__Proj__c.Roll_Forward</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
@@ -515,6 +511,11 @@
             <actionName>pse__Run_Revenue_Forecast</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>6</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
