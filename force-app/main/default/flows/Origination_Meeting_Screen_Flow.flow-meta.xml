@@ -172,6 +172,14 @@
         <picklistField>Service_Line__c</picklistField>
         <picklistObject>Lead</picklistObject>
     </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Region</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Region__c</picklistField>
+        <picklistObject>Account</picklistObject>
+    </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
         <name>cpOffice_formula</name>
@@ -320,6 +328,12 @@
             <field>Name</field>
             <value>
                 <elementReference>MeetingName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Service_Line__c</field>
+            <value>
+                <elementReference>Service_Line_Picklist</elementReference>
             </value>
         </inputAssignments>
         <object>BD_Meeting__c</object>
@@ -502,6 +516,9 @@
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
         </filters>
         <inputAssignments>
             <field>CP_Office__c</field>
@@ -525,6 +542,12 @@
             <field>Notes__c</field>
             <value>
                 <elementReference>Notes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Region__c</field>
+            <value>
+                <elementReference>Region_screen</elementReference>
             </value>
         </inputAssignments>
         <object>Account</object>
@@ -573,6 +596,12 @@
             <field>Notes__c</field>
             <value>
                 <elementReference>Notes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Region__c</field>
+            <value>
+                <elementReference>Region_screen</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -908,6 +937,15 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Region_screen</name>
+                    <choiceReferences>Region</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Region</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <fields>
                     <name>CP_Office</name>
