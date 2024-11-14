@@ -13,5 +13,5 @@
  )
 )</errorConditionFormula>
     <errorDisplayField>Beauhurst_ID__c</errorDisplayField>
-    <errorMessage>Please enter a value on Registered Number unless Type of Business is Not For Profit or Pension Scheme</errorMessage>
+    <errorMessage>Please enter a value on Registered Number unless Account is a Person Account OR Type of Business is Not For Profit or Pension Scheme</errorMessage>
 </ValidationRule>
