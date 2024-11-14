@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Incumbent_Account</name>
+        <label>Assign Incumbent - Account</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>value_Incumbent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>get_Account.Incumbent__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>get_Incumbent</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Incumbent_Lead</name>
+        <label>Assign Incumbent - Lead</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>value_Incumbent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>get_Lead.Incumbent__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>get_Incumbent</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>First_BD_Meeting_on_Lead</name>
         <label>First BD Meeting on Lead?</label>
         <locationX>182</locationX>
-        <locationY>866</locationY>
+        <locationY>974</locationY>
         <defaultConnector>
             <targetReference>Screen3</targetReference>
         </defaultConnector>
@@ -55,7 +87,7 @@
         <name>Update_sObject</name>
         <label>Update sObject</label>
         <locationX>182</locationX>
-        <locationY>1274</locationY>
+        <locationY>1382</locationY>
         <defaultConnector>
             <targetReference>Update_Account_Fields</targetReference>
         </defaultConnector>
@@ -197,7 +229,7 @@
         <name>Create_Notes</name>
         <label>Create Notes</label>
         <locationX>182</locationX>
-        <locationY>1574</locationY>
+        <locationY>1682</locationY>
         <connector>
             <targetReference>Link_To_Lead</targetReference>
         </connector>
@@ -220,7 +252,7 @@
         <name>Create_Origination_Meeting</name>
         <label>Create Origination Meeting</label>
         <locationX>182</locationX>
-        <locationY>650</locationY>
+        <locationY>758</locationY>
         <connector>
             <targetReference>get_origination_meetings</targetReference>
         </connector>
@@ -297,7 +329,7 @@
         <name>Link_To_Lead</name>
         <label>Link To Lead</label>
         <locationX>182</locationX>
-        <locationY>1682</locationY>
+        <locationY>1790</locationY>
         <connector>
             <targetReference>Screen2</targetReference>
         </connector>
@@ -323,7 +355,7 @@
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>get_Incumbent</targetReference>
+            <targetReference>Assign_Incumbent_Account</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -341,7 +373,7 @@
         <name>get_Incumbent</name>
         <label>get Incumbent</label>
         <locationX>182</locationX>
-        <locationY>434</locationY>
+        <locationY>542</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Screen1</targetReference>
@@ -395,7 +427,7 @@
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>get_Incumbent</targetReference>
+            <targetReference>Assign_Incumbent_Lead</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -413,7 +445,7 @@
         <name>get_origination_meetings</name>
         <label>get origination meetings</label>
         <locationX>182</locationX>
-        <locationY>758</locationY>
+        <locationY>866</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>First_BD_Meeting_on_Lead</targetReference>
@@ -462,7 +494,7 @@
         <name>Update_Account_Fields</name>
         <label>Update Account Fields</label>
         <locationX>314</locationX>
-        <locationY>1382</locationY>
+        <locationY>1490</locationY>
         <connector>
             <targetReference>Create_Notes</targetReference>
         </connector>
@@ -501,7 +533,7 @@
         <name>Update_Lead_Fields</name>
         <label>Update Lead Fields</label>
         <locationX>50</locationX>
-        <locationY>1382</locationY>
+        <locationY>1490</locationY>
         <connector>
             <targetReference>Create_Notes</targetReference>
         </connector>
@@ -549,7 +581,7 @@
         <name>Update_Origination_Meeting_checkbox</name>
         <label>Update Origination Meeting checkbox</label>
         <locationX>50</locationX>
-        <locationY>974</locationY>
+        <locationY>1082</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
         </connector>
@@ -573,7 +605,7 @@
         <name>Screen1</name>
         <label>Screen1</label>
         <locationX>182</locationX>
-        <locationY>542</locationY>
+        <locationY>650</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -813,7 +845,7 @@
         <name>Screen2</name>
         <label>Screen2</label>
         <locationX>182</locationX>
-        <locationY>1790</locationY>
+        <locationY>1898</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -829,7 +861,7 @@
         <name>Screen3</name>
         <label>Screen3</label>
         <locationX>182</locationX>
-        <locationY>1166</locationY>
+        <locationY>1274</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -870,7 +902,7 @@
                     <name>Incumbent</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>get_Incumbent.Competitor_Incumbent__r.Name</elementReference>
+                        <elementReference>value_Incumbent</elementReference>
                     </defaultValue>
                     <fieldText>Incumbent</fieldText>
                     <fieldType>InputField</fieldType>
@@ -931,6 +963,13 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>value_Incumbent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
 </Flow>
