@@ -112,6 +112,7 @@
         </connector>
         <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false &amp;&amp;
 TEXT({!$Record.Type}) = &apos;Client&apos; &amp;&amp;
+ISCHANGED({!$Record.Type}) &amp;&amp;
 {!$Record.Bypass_Validation__c} = false &amp;&amp;
 ISCHANGED({!$Record.Bypass_Validation__c} ) = false</filterFormula>
         <object>Account</object>
