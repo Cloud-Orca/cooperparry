@@ -4,8 +4,8 @@
         <description>If recovery % is less than 70%, then trigger a flow to automatically notify the project manager</description>
         <name>Notify_PM_if_recovery_is_less_than_70</name>
         <label>Notify PM - if recovery % is less than 70%</label>
-        <locationX>138</locationX>
-        <locationY>755</locationY>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -56,16 +56,16 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>PM_on_Project</targetReference>
+            <targetReference>Notify_PM_if_recovery_is_less_than_70</targetReference>
         </connector>
     </assignments>
     <decisions>
-        <description>Triggers if Actual recovery rate is less than 70%</description>
+        <description>Triggers if Actual recovery rate is less than 70% and if the Project manager has a Salesforce User</description>
         <name>Actual_recovery_rate_is_less_than_70</name>
         <label>Actual recovery rate is less than 70%</label>
-        <locationX>226</locationX>
+        <locationX>182</locationX>
         <locationY>323</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <defaultConnectorLabel>False and/or no PM or PM has no Salesforce User</defaultConnectorLabel>
         <rules>
             <name>Actual_recovery_rate_is_less_than_70_True</name>
             <conditionLogic>and</conditionLogic>
@@ -83,32 +83,17 @@
                     <stringValue>Internal</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Project_Manager__r.pse__Salesforce_User__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Get_Custom_Notification_type_record</targetReference>
             </connector>
             <label>Actual recovery rate is less than 70% - True</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>PM_on_Project</name>
-        <label>PM on Project</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
-        <defaultConnector>
-            <targetReference>Notify_PM_if_recovery_is_less_than_70</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Project has PM</defaultConnectorLabel>
-        <rules>
-            <name>No_PM</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>RecipientId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <label>No PM</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -166,7 +151,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>100</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Actual_recovery_rate_is_less_than_70</targetReference>
