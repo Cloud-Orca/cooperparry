@@ -1,0 +1,14 @@
+<apex:page >
+<style>
+h1 {
+  font-size: 1.5rem;
+  padding-bottom: 25px;
+}
+</style>
+<div >&nbsp;</div>
+  <h1>This option is no longer available.</h1>
+  <div >&nbsp;</div>
+<div >
+Please use the button "New Estimate" on the top of the Opportunity page
+</div>
+</apex:page>
