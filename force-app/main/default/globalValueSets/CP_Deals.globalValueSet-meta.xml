@@ -21,14 +21,20 @@
         <label>Technology</label>
     </customValue>
     <customValue>
-        <fullName>Waste</fullName>
-        <default>false</default>
-        <label>Waste</label>
-    </customValue>
-    <customValue>
         <fullName>Consumer</fullName>
         <default>false</default>
         <label>Consumer</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive</fullName>
+        <default>false</default>
+        <label>Automotive</label>
+    </customValue>
+    <customValue>
+        <fullName>Waste</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Waste</label>
     </customValue>
     <masterLabel>CP Deals</masterLabel>
     <sorted>false</sorted>
