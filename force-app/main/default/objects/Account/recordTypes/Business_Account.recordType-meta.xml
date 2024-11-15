@@ -184,6 +184,10 @@
     <picklistValues>
         <picklist>CP_Deals_Sector__c</picklist>
         <values>
+            <fullName>Automotive</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Business Services</fullName>
             <default>false</default>
         </values>
@@ -201,10 +205,6 @@
         </values>
         <values>
             <fullName>Technology</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Waste</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -331,6 +331,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Retail and Supply Chain Components</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>SaaS</fullName>
             <default>false</default>
         </values>
@@ -340,10 +344,6 @@
         </values>
         <values>
             <fullName>Technology</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Waste</fullName>
             <default>false</default>
         </values>
         <values>
@@ -407,6 +407,10 @@
     </picklistValues>
     <picklistValues>
         <picklist>CT_Account_access__c</picklist>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
         <values>
             <fullName>Public access</fullName>
             <default>true</default>
