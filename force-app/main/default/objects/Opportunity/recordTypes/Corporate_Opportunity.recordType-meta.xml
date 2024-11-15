@@ -531,7 +531,30 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>TS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>UHNWI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deal_Team__c</picklist>
+        <values>
+            <fullName>CF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -926,6 +949,18 @@
     <picklistValues>
         <picklist>Source__c</picklist>
         <values>
+            <fullName>Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outreach</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Referral</fullName>
             <default>false</default>
         </values>
@@ -1025,6 +1060,69 @@
         </values>
         <values>
             <fullName>90%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Year_End__c</picklist>
+        <values>
+            <fullName>2019</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2021</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2022</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2023</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2024</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2026</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2027</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2028</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2029</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2030</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2031</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2032</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2033</fullName>
             <default>false</default>
         </values>
     </picklistValues>
