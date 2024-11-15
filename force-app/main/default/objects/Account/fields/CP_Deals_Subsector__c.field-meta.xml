@@ -42,24 +42,11 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Business Services</controllingFieldValue>
-            <valueName>Architecture</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Business Services</controllingFieldValue>
             <valueName>Professional Services</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Business Services</controllingFieldValue>
             <valueName>Legal</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Business Services</controllingFieldValue>
-            <valueName>Technology</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Business Services</controllingFieldValue>
-            <controllingFieldValue>Industrials</controllingFieldValue>
-            <valueName>Automotive</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Healthcare</controllingFieldValue>
@@ -80,6 +67,10 @@
         <valueSettings>
             <controllingFieldValue>Healthcare</controllingFieldValue>
             <valueName>Healthcare Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Automotive</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industrials</controllingFieldValue>
@@ -150,8 +141,12 @@
             <valueName>SaaS</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>Waste</controllingFieldValue>
-            <valueName>Waste</valueName>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <valueName>Technology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <valueName>Retail and Supply Chain Components</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
