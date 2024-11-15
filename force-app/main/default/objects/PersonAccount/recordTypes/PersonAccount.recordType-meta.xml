@@ -528,6 +528,29 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Corporate_Status__c</picklist>
+        <values>
+            <fullName>Independent Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intermediate Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultimate Parent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Data_Origination__c</picklist>
         <values>
             <fullName>TBC</fullName>
