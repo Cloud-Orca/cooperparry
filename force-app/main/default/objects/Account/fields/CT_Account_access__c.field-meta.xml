@@ -26,6 +26,11 @@
                 <default>false</default>
                 <label>VIP Account</label>
             </value>
+            <value>
+                <fullName>Private</fullName>
+                <default>false</default>
+                <label>Private</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
