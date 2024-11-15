@@ -4490,6 +4490,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Deal_Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Deal_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Est_Close_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4666,6 +4676,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Winning_Competitor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Year_End__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
