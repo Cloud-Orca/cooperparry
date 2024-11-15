@@ -3,11 +3,11 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Contact_Record_Page_Three_Column</content>
+        <content>Account_Record_Page_Three_Column</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <pageOrSobjectType>Account</pageOrSobjectType>
     </actionOverrides>
     <brand>
         <headerColor>#8A00ED</headerColor>
@@ -35,6 +35,7 @@
     <tabs>pse__Approve_Multiple_Expense_Reports</tabs>
     <tabs>ffpsai__ExpenseTypeGLAMapping__c</tabs>
     <tabs>pse__Expense_Report__c</tabs>
+    <tabs>CT_Expense_VAT_Types__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>CP_PSA_Admin_UtilityBar</utilityBar>
 </CustomApplication>
