@@ -138,7 +138,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Date_became_Client__c</fieldItem>
+                <fieldItem>Record.Date_became_client__c</fieldItem>
                 <identifier>RecordDate_Became_Client_cField</identifier>
             </fieldInstance>
         </itemInstances>
