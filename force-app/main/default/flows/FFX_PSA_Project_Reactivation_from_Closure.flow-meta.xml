@@ -5,7 +5,7 @@
         <name>Should_Project_Be_Active_Again</name>
         <label>Should Project Be Active Again</label>
         <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_Project_Active_Again</name>
@@ -31,6 +31,7 @@
         </rules>
     </decisions>
     <description>If a Project Stage is changed from Completed or Canceled to an active state, re-open related records so that Timecards, Expenses, and Billing can occur.</description>
+    <environments>Default</environments>
     <interviewLabel>FFX PSA Project Reactivation from Closure {!$Flow.CurrentDateTime}</interviewLabel>
     <label>FFX PSA Project Reactivation from Closure</label>
     <processMetadataValues>
@@ -57,7 +58,7 @@
         <name>Update_Project_Records</name>
         <label>Update Project Records</label>
         <locationX>50</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Update_Related_Assignments</targetReference>
         </connector>
@@ -86,7 +87,7 @@
         <name>Update_Related_Assignments</name>
         <label>Update Related Assignments</label>
         <locationX>50</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <connector>
             <targetReference>Update_Related_Milestones</targetReference>
         </connector>
@@ -117,7 +118,7 @@
         <name>Update_Related_Milestones</name>
         <label>Update Related Milestones</label>
         <locationX>50</locationX>
-        <locationY>695</locationY>
+        <locationY>647</locationY>
         <inputAssignments>
             <field>pse__Closed_for_Expense_Entry__c</field>
             <value>
@@ -138,7 +139,7 @@
         <connector>
             <targetReference>Should_Project_Be_Active_Again</targetReference>
         </connector>
-        <filterLogic>or</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>pse__Stage__c</field>
             <operator>NotEqualTo</operator>
