@@ -14,7 +14,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_trough_Milestones</targetReference>
+            <targetReference>Save_Default_Account_on_billing_event</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -86,7 +86,7 @@
         <name>Release_Billing_Event</name>
         <label>Release Billing Event</label>
         <locationX>732</locationX>
-        <locationY>3404</locationY>
+        <locationY>3446</locationY>
         <assignmentItems>
             <assignToReference>Get.pse__Is_Released__c</assignToReference>
             <operator>Assign</operator>
@@ -102,7 +102,7 @@
         <name>Save_Account_on_billing_event</name>
         <label>Save Account on billing event</label>
         <locationX>468</locationX>
-        <locationY>3212</locationY>
+        <locationY>3254</locationY>
         <assignmentItems>
             <assignToReference>Get.ffpsai__Account__c</assignToReference>
             <operator>Assign</operator>
@@ -112,6 +112,22 @@
         </assignmentItems>
         <connector>
             <targetReference>Release_Billing_Event</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Save_Default_Account_on_billing_event</name>
+        <label>Save Default Account on billing event</label>
+        <locationX>996</locationX>
+        <locationY>2654</locationY>
+        <assignmentItems>
+            <assignToReference>Get.ffpsai__Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_trough_Milestones.CT_Billing_Account__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_trough_Milestones</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -143,7 +159,7 @@
         <name>Are_multiple_accounts_selected</name>
         <label>Are multiple accounts selected?</label>
         <locationX>732</locationX>
-        <locationY>2888</locationY>
+        <locationY>2930</locationY>
         <defaultConnector>
             <targetReference>Select_Billing_Account</targetReference>
         </defaultConnector>
@@ -274,7 +290,7 @@ This is needed because the flow does not throw an error if the user does not hav
         <name>Record_saved_correctly</name>
         <label>Record saved correctly?</label>
         <locationX>732</locationX>
-        <locationY>3728</locationY>
+        <locationY>3770</locationY>
         <defaultConnector>
             <targetReference>Error_Screen_Access_problem</targetReference>
         </defaultConnector>
@@ -396,7 +412,7 @@ This is needed because the flow does not throw an error if the user does not hav
         <name>Get_Accounts</name>
         <label>Get Accounts</label>
         <locationX>468</locationX>
-        <locationY>2996</locationY>
+        <locationY>3038</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Copy_1_of_Select_Billing_Account</targetReference>
@@ -446,7 +462,7 @@ This is needed because the flow does not throw an error if the user does not hav
         <name>Get_Billing_Event_saved_Details</name>
         <label>Get Billing Event saved Details</label>
         <locationX>732</locationX>
-        <locationY>3620</locationY>
+        <locationY>3662</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Record_saved_correctly</targetReference>
@@ -563,7 +579,7 @@ This is needed because the flow does not throw an error if the user does not hav
         <name>Update_Billing_Event</name>
         <label>Update Billing Event</label>
         <locationX>732</locationX>
-        <locationY>3512</locationY>
+        <locationY>3554</locationY>
         <connector>
             <targetReference>Get_Billing_Event_saved_Details</targetReference>
         </connector>
@@ -623,7 +639,7 @@ This is needed because the flow does not throw an error if the user does not hav
         <name>Copy_1_of_Select_Billing_Account</name>
         <label>Select Billing Account</label>
         <locationX>468</locationX>
-        <locationY>3104</locationY>
+        <locationY>3146</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -691,7 +707,7 @@ This is needed because the flow does not throw an error if the user does not hav
         <name>Error_Screen</name>
         <label>Error Screen</label>
         <locationX>1546</locationX>
-        <locationY>3620</locationY>
+        <locationY>3662</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -706,8 +722,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Error_Screen_Access_problem</name>
         <label>Error Screen Access Problem</label>
-        <locationX>820</locationX>
-        <locationY>3836</locationY>
+        <locationX>864</locationX>
+        <locationY>3878</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -723,7 +739,7 @@ This is needed because the flow does not throw an error if the user does not hav
         <name>Select_Billing_Account</name>
         <label>Confirm Release</label>
         <locationX>996</locationX>
-        <locationY>2996</locationY>
+        <locationY>3038</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
