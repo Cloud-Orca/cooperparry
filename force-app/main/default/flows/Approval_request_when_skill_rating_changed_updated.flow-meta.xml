@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Skills_Rating_Submitted_for_Approval</name>
         <label>Skills Rating Submitted for Approval</label>
-        <locationX>578</locationX>
-        <locationY>539</locationY>
+        <locationX>1018</locationX>
+        <locationY>755</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -31,10 +31,49 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Reverse_rating_to_old_rating</name>
+        <label>Reverse rating to old rating</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Rating__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Rating_before_approval_reques__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Save_record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Satus_to_Saved</name>
+        <label>Set Satus to &quot;Saved&quot;</label>
+        <locationX>1018</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Approval_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Saved</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Rating_before_approval_reques__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.pse__Rating__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Save_record</targetReference>
+        </connector>
+    </assignments>
     <customErrors>
         <name>Manager_is_not_assigned_to_the_resource</name>
         <label>Manager is not assigned to the resource</label>
-        <locationX>314</locationX>
+        <locationX>754</locationX>
         <locationY>539</locationY>
         <customErrorMessages>
             <errorMessage>There is no manager assigned to this resource.</errorMessage>
@@ -44,7 +83,7 @@
     <customErrors>
         <name>Throw_Error</name>
         <label>Throw Error</label>
-        <locationX>50</locationX>
+        <locationX>490</locationX>
         <locationY>539</locationY>
         <customErrorMessages>
             <errorMessage>Rating cannot be blank, please select rating for the skill.</errorMessage>
@@ -52,37 +91,81 @@
         </customErrorMessages>
     </customErrors>
     <decisions>
+        <name>Approval_Result</name>
+        <label>Approval Result</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Save_record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Reverse_rating_to_old_rating</targetReference>
+            </connector>
+            <label>Rejected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If the approver changed the approval status, take actions.</description>
+        <name>Approval_status_was_changed</name>
+        <label>Approval status was changed</label>
+        <locationX>600</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_Record_is_submitted_for_Approval</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Status was not changed</defaultConnectorLabel>
+        <rules>
+            <name>Approval_Status_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.pse__Approval_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.pse__Approval_Status__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.pse__Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Submitted</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Approval_Result</targetReference>
+            </connector>
+            <label>Approval Status changed</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>Check if Record is submitted for Approval</description>
         <name>Check_if_Record_is_submitted_for_Approval</name>
         <label>Check if Record is submitted for Approval</label>
-        <locationX>446</locationX>
+        <locationX>1018</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Check_Rating</name>
-            <conditionLogic>( 1 AND 2 ) OR ( 1 AND NOT(2) AND 3 )</conditionLogic>
+            <name>If_Rating_is_blank</name>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.pse__Rating__c</leftValueReference>
                 <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>IsNEW</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.pse__Rating__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Throw_Error</targetReference>
             </connector>
-            <label>Check Rating</label>
+            <label>If Rating is blank</label>
         </rules>
         <rules>
             <name>If_manager_is_not_populated_on_the_SF_user_record</name>
@@ -107,7 +190,7 @@
             <label>If manager is not populated on the SF user record</label>
         </rules>
         <rules>
-            <name>If_Submitted</name>
+            <name>Not_yet_submitted_and_has_a_rating</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.pse__Resource__r.pse__Salesforce_User__c</leftValueReference>
@@ -117,10 +200,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_process_instance_record</leftValueReference>
-                <operator>IsNull</operator>
+                <leftValueReference>$Record.pse__Approval_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Submitted</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -131,9 +214,28 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Skills_Rating_Submitted_for_Approval</targetReference>
+                <targetReference>Set_Satus_to_Saved</targetReference>
             </connector>
-            <label>If Submitted</label>
+            <label>Not yet submitted and has a rating</label>
+        </rules>
+        <rules>
+            <name>Already_submitted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Submitted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$User.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.pse__Resource__r.pse__Salesforce_User__r.ManagerId</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Already submitted</label>
         </rules>
     </decisions>
     <description>If a consultant changes his skill rating an approval request must be submitted to the manager of the consultant (if submitted by manager, no approval required)</description>
@@ -164,41 +266,56 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordLookups>
-        <name>Get_process_instance_record</name>
-        <label>Get process instance record</label>
-        <locationX>446</locationX>
-        <locationY>323</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Check_if_Record_is_submitted_for_Approval</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>TargetObjectId</field>
-            <operator>EqualTo</operator>
+    <recordUpdates>
+        <name>Copy_1_of_Save_record</name>
+        <label>Copy 1 of Save record</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <inputAssignments>
+            <field>Rating_before_approval_reques__c</field>
             <value>
-                <elementReference>$Record.Id</elementReference>
+                <stringValue></stringValue>
             </value>
-        </filters>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Save_record</name>
+        <label>Save record</label>
+        <locationX>1018</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Skills_Rating_Submitted_for_Approval</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>pse__Approval_Status__c</field>
+            <value>
+                <stringValue>Saved</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>474</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Approval_status_was_changed</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
         <filters>
-            <field>CompletedDate</field>
-            <operator>IsNull</operator>
+            <field>pse__Rating__c</field>
+            <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>ProcessInstance</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <start>
-        <locationX>320</locationX>
-        <locationY>0</locationY>
-        <connector>
-            <targetReference>Get_process_instance_record</targetReference>
-        </connector>
-        <filterFormula>ISNEW()||ISCHANGED({!$Record.pse__Rating__c})</filterFormula>
+        <filters>
+            <field>pse__Approval_Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>pse__Skill_Certification_Rating__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
