@@ -171,10 +171,17 @@
         <label>SaaS</label>
     </customValue>
     <customValue>
+        <fullName>Retail and Supply Chain Components</fullName>
+        <default>false</default>
+        <label>Retail and Supply Chain Components</label>
+    </customValue>
+    <customValue>
         <fullName>Waste</fullName>
         <default>false</default>
+        <isActive>false</isActive>
         <label>Waste</label>
     </customValue>
+    <description>CP Deals Subsector.</description>
     <masterLabel>CP Deals Subsector</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
