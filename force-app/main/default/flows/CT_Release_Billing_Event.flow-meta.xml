@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_AccountIds</name>
         <label>Add to AccountIds</label>
-        <locationX>589</locationX>
-        <locationY>2498</locationY>
+        <locationX>996</locationX>
+        <locationY>2546</locationY>
         <assignmentItems>
             <assignToReference>AccountIds</assignToReference>
             <operator>Add</operator>
@@ -20,7 +20,7 @@
     <assignments>
         <name>Add_to_Milestone_Ids</name>
         <label>Add to Milestone Ids</label>
-        <locationX>413</locationX>
+        <locationX>820</locationX>
         <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>MileStoneIds</assignToReference>
@@ -36,7 +36,7 @@
     <assignments>
         <name>Assign_Project_Partner_from_Project</name>
         <label>Assign Project Partner from Project</label>
-        <locationX>336</locationX>
+        <locationX>578</locationX>
         <locationY>1382</locationY>
         <assignmentItems>
             <assignToReference>ProjectPartnerUserId</assignToReference>
@@ -52,7 +52,7 @@
     <assignments>
         <name>Assign_Project_Partner_from_Screen</name>
         <label>Assign Project Partner from Screen</label>
-        <locationX>72</locationX>
+        <locationX>50</locationX>
         <locationY>1490</locationY>
         <assignmentItems>
             <assignToReference>ProjectPartnerUserId</assignToReference>
@@ -68,8 +68,8 @@
     <assignments>
         <name>Multiple_Accounts_Detected</name>
         <label>Multiple Accounts Detected</label>
-        <locationX>853</locationX>
-        <locationY>2498</locationY>
+        <locationX>1260</locationX>
+        <locationY>2546</locationY>
         <assignmentItems>
             <assignToReference>MultipleAccountsDetected</assignToReference>
             <operator>Assign</operator>
@@ -85,8 +85,8 @@
     <assignments>
         <name>Release_Billing_Event</name>
         <label>Release Billing Event</label>
-        <locationX>325</locationX>
-        <locationY>3356</locationY>
+        <locationX>732</locationX>
+        <locationY>3404</locationY>
         <assignmentItems>
             <assignToReference>Get.pse__Is_Released__c</assignToReference>
             <operator>Assign</operator>
@@ -101,8 +101,8 @@
     <assignments>
         <name>Save_Account_on_billing_event</name>
         <label>Save Account on billing event</label>
-        <locationX>193</locationX>
-        <locationY>3164</locationY>
+        <locationX>468</locationX>
+        <locationY>3212</locationY>
         <assignmentItems>
             <assignToReference>Get.ffpsai__Account__c</assignToReference>
             <operator>Assign</operator>
@@ -117,7 +117,7 @@
     <decisions>
         <name>Are_all_billable_milestones_billed</name>
         <label>Are all billable milestones billed?</label>
-        <locationX>50</locationX>
+        <locationX>94</locationX>
         <locationY>1058</locationY>
         <defaultConnector>
             <targetReference>Approval_required_Message_Screen</targetReference>
@@ -142,8 +142,8 @@
     <decisions>
         <name>Are_multiple_accounts_selected</name>
         <label>Are multiple accounts selected?</label>
-        <locationX>325</locationX>
-        <locationY>2840</locationY>
+        <locationX>732</locationX>
+        <locationY>2888</locationY>
         <defaultConnector>
             <targetReference>Select_Billing_Account</targetReference>
         </defaultConnector>
@@ -167,7 +167,7 @@
     <decisions>
         <name>Check_Project_Partner</name>
         <label>Check Project Partner</label>
-        <locationX>204</locationX>
+        <locationX>314</locationX>
         <locationY>1274</locationY>
         <defaultConnector>
             <targetReference>Assign_Project_Partner_from_Project</targetReference>
@@ -192,8 +192,8 @@
     <decisions>
         <name>Different_Account</name>
         <label>Different Account?</label>
-        <locationX>633</locationX>
-        <locationY>2390</locationY>
+        <locationX>1040</locationX>
+        <locationY>2438</locationY>
         <defaultConnector>
             <targetReference>Multiple_Accounts_Detected</targetReference>
         </defaultConnector>
@@ -239,7 +239,7 @@
     <decisions>
         <name>Is_Project_recovery_rate_below_70_and_not_approved_yest</name>
         <label>Is Project recovery rate below 70% and not approved yes</label>
-        <locationX>325</locationX>
+        <locationX>732</locationX>
         <locationY>842</locationY>
         <defaultConnector>
             <targetReference>Get_Milestone_Details</targetReference>
@@ -269,9 +269,33 @@
         </rules>
     </decisions>
     <decisions>
+        <description>Check if the Billing Event is correctly saved. 
+This is needed because the flow does not throw an error if the user does not have sufficient access to the required fields on the Billing Event.</description>
+        <name>Record_saved_correctly</name>
+        <label>Record saved correctly?</label>
+        <locationX>732</locationX>
+        <locationY>3728</locationY>
+        <defaultConnector>
+            <targetReference>Error_Screen_Access_problem</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_saved_correctly</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Billing_Event_saved_Details.pse__Is_Released__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>yes,saved correctly</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Related_To_Milestone</name>
         <label>Related To Milestone?</label>
-        <locationX>545</locationX>
+        <locationX>952</locationX>
         <locationY>458</locationY>
         <defaultConnector>
             <targetReference>For_All_Items</targetReference>
@@ -299,7 +323,7 @@
     <loops>
         <name>For_All_Items</name>
         <label>For All Items</label>
-        <locationX>325</locationX>
+        <locationX>732</locationX>
         <locationY>350</locationY>
         <collectionReference>Get_Billing_Event_Items</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -313,8 +337,8 @@
     <loops>
         <name>Loop_trough_Milestones</name>
         <label>Loop trough Milestones</label>
-        <locationX>325</locationX>
-        <locationY>2282</locationY>
+        <locationX>732</locationX>
+        <locationY>2330</locationY>
         <collectionReference>Get_Milestone_Details</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -346,12 +370,16 @@
     <recordLookups>
         <name>Get</name>
         <label>Get Billing Event Details</label>
-        <locationX>325</locationX>
+        <locationX>732</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Billing_Event_Items</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -367,12 +395,16 @@
     <recordLookups>
         <name>Get_Accounts</name>
         <label>Get Accounts</label>
-        <locationX>193</locationX>
-        <locationY>2948</locationY>
+        <locationX>468</locationX>
+        <locationY>2996</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Copy_1_of_Select_Billing_Account</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -388,12 +420,16 @@
     <recordLookups>
         <name>Get_Billing_Event_Items</name>
         <label>Get Billing Event Items</label>
-        <locationX>325</locationX>
+        <locationX>732</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>For_All_Items</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>pse__Billing_Event__c</field>
@@ -407,14 +443,39 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Billing_Event_saved_Details</name>
+        <label>Get Billing Event saved Details</label>
+        <locationX>732</locationX>
+        <locationY>3620</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Record_saved_correctly</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Billing_Event__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Milestone_Details</name>
         <label>Get Milestone Details</label>
-        <locationX>325</locationX>
-        <locationY>2174</locationY>
+        <locationX>732</locationX>
+        <locationY>2222</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_trough_Milestones</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -431,12 +492,16 @@
         <description>Retrieves the remaining unbilled billable milestones</description>
         <name>Get_unbilled_Milestones</name>
         <label>Get unbilled Milestones</label>
-        <locationX>50</locationX>
+        <locationX>94</locationX>
         <locationY>950</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Are_all_billable_milestones_billed</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -466,8 +531,12 @@
     <recordUpdates>
         <name>Project_Partner_approval_required_set_to_TRUE</name>
         <label>Project Partner approval required set to TRUE</label>
-        <locationX>204</locationX>
-        <locationY>1790</locationY>
+        <locationX>314</locationX>
+        <locationY>1838</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -493,8 +562,11 @@
     <recordUpdates>
         <name>Update_Billing_Event</name>
         <label>Update Billing Event</label>
-        <locationX>325</locationX>
-        <locationY>3464</locationY>
+        <locationX>732</locationX>
+        <locationY>3512</locationY>
+        <connector>
+            <targetReference>Get_Billing_Event_saved_Details</targetReference>
+        </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
@@ -503,11 +575,15 @@
     <recordUpdates>
         <name>Update_Project_Partner_on_Project</name>
         <label>Update Project Partner on Project</label>
-        <locationX>72</locationX>
+        <locationX>50</locationX>
         <locationY>1598</locationY>
         <connector>
             <targetReference>Project_Partner_approval_required_set_to_TRUE</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -527,7 +603,7 @@
     <screens>
         <name>Approval_required_Message_Screen</name>
         <label>Approval required Message Screen</label>
-        <locationX>204</locationX>
+        <locationX>314</locationX>
         <locationY>1166</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -546,8 +622,8 @@
     <screens>
         <name>Copy_1_of_Select_Billing_Account</name>
         <label>Select Billing Account</label>
-        <locationX>193</locationX>
-        <locationY>3056</locationY>
+        <locationX>468</locationX>
+        <locationY>3104</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -614,8 +690,8 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>776</locationX>
-        <locationY>3572</locationY>
+        <locationX>1546</locationX>
+        <locationY>3620</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -628,10 +704,26 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Error_Screen_Access_problem</name>
+        <label>Error Screen Access Problem</label>
+        <locationX>820</locationX>
+        <locationY>3836</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Copy_1_of_Copy_1_of_Error_Message</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;ERROR&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Something went wrong. This could be related to insufficient access rights.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please contact your system administrator.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Error details:&lt;/p&gt;&lt;p&gt;Flow &quot;CT Release Billing Event&quot; failed.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Select_Billing_Account</name>
         <label>Confirm Release</label>
-        <locationX>457</locationX>
-        <locationY>2948</locationY>
+        <locationX>996</locationX>
+        <locationY>2996</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -650,7 +742,7 @@
     <screens>
         <name>Select_Project_Partner</name>
         <label>Select Project Partner</label>
-        <locationX>72</locationX>
+        <locationX>50</locationX>
         <locationY>1382</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -706,7 +798,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>199</locationX>
+        <locationX>606</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get</targetReference>
