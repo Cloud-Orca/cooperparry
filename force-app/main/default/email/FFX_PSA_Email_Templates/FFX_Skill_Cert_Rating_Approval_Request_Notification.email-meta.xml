@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Skill or Certification Approval Request Notification</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>FFX_Letterhead</letterhead>
+    <name>Skill Cert Rating Approval Request Notification</name>
+    <style>freeForm</style>
+    <subject>Skill or Certification Approval Request Notification Subject: New Skill/Certification Rating Approval Request from {!pse__Skill_Certification_Rating__c.pse__Resource__c}</subject>
+    <textOnly>Hello, 
+
+A new Skill/Certification Rating is awaiting your Approval.  Please review Skill/Certification to Approve/Reject request.
+
+Skill/Certification Detail: 
+Resource: {!pse__Skill_Certification_Rating__c.pse__Resource__c}
+Skill/Certification: {!pse__Skill_Certification_Rating__c.pse__Skill_Certification__c}
+Skill Name: {!pse__Skill_Certification_Rating__c.Skill_Name__c}
+Old Rating: {!pse__Skill_Certification_Rating__c.Rating_before_approval_reques__c}
+New Rating: {!pse__Skill_Certification_Rating__c.pse__Rating__c}
+
+Comments: {!ApprovalRequest.Comments}
+
+Click Link to view Skill/Certification Rating in PSA: {!pse__Skill_Certification_Rating__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
