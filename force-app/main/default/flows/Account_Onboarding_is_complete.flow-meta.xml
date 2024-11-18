@@ -11,7 +11,7 @@
             <name>Yes_Date_became_client_is_blank</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Date_became_Client__c</leftValueReference>
+                <leftValueReference>$Record.Date_became_client__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -51,7 +51,7 @@
         <locationX>50</locationX>
         <locationY>431</locationY>
         <inputAssignments>
-            <field>Date_became_Client__c</field>
+            <field>Date_became_client__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
