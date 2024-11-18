@@ -73,7 +73,7 @@
                 <leftValueReference>$Record.CT_Planned_Recovery_Rate__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
-                    <numberValue>70.0</numberValue>
+                    <numberValue>0.7</numberValue>
                 </rightValue>
             </conditions>
             <conditions>
