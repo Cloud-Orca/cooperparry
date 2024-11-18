@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p>Hello,&nbsp;</p><p><br></p><p>A new Skill/Certification Rating is awaiting your Approval.&nbsp; Please review Skill/Certification to Approve/Reject request.&nbsp;&nbsp;<br><br></p><p>Skill/Certification Detail:&nbsp;</p><p>Resource:&nbsp;{!pse__Skill_Certification_Rating__c.pse__Resource__c}</p><p>Skill/Certification:&nbsp;{!pse__Skill_Certification_Rating__c.pse__Skill_Certification__c}</p><p>Skill Name:&nbsp;{!pse__Skill_Certification_Rating__c.Skill_Name__c}<br>Old Rating:&nbsp;{!pse__Skill_Certification_Rating__c.Rating_before_approval_reques__c}</p><p>New Rating:&nbsp;{!pse__Skill_Certification_Rating__c.pse__Rating__c}</p><p><br></p><p>Comments:&nbsp;{!ApprovalRequest.Comments}</p><p><br></p><p>Click&nbsp;Link to view Skill/Certification Rating in PSA:&nbsp;{!pse__Skill_Certification_Rating__c.Link}</p>]]></td>
+</tr>
+</table>

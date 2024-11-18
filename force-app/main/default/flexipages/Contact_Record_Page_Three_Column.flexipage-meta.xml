@@ -193,12 +193,6 @@
                 <identifier>RecordCT_Has_Own_Transport__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Job_Title__c</fieldItem>
-                <identifier>RecordJob_Title__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-47396b09-68af-4166-943f-4fca64ddb4d8</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -231,6 +225,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Phone</fieldItem>
                 <identifier>RecordPhoneField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.cer_Finance_Contact__c</fieldItem>
+                <identifier>Recordcer_Finance_Contact_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.c2g__CollectionsCommunicationContact__c</fieldItem>
+                <identifier>Recordc2g_CollectionsCommunicationContact_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-d05c5b6b-155d-4485-8c37-ebbc8adf547f</name>
@@ -703,9 +717,9 @@
                 <identifier>flexipage_fieldSection2</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.pse__Is_Resource__c}</leftValue>
+                        <leftValue>{!Record.RecordType.Name}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <rightValue>PSA Resource</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

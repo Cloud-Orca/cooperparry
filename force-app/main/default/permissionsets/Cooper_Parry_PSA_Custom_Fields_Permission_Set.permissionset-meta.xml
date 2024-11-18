@@ -75,6 +75,11 @@
         <field>pse__Resource_Request__c.CT_Estimated_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Time_Period__c.Include_for_Revenue_Recognition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry PSA Custom Fields Permission Set</label>
 </PermissionSet>
