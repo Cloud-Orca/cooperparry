@@ -51,7 +51,7 @@
         <locationX>50</locationX>
         <locationY>431</locationY>
         <inputAssignments>
-            <field>Date_Became_Client__c</field>
+            <field>Date_became_Client__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
