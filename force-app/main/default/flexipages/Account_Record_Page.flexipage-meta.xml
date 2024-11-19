@@ -137,16 +137,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Date_Became_Client__c</fieldItem>
-                <identifier>RecordDate_Became_Client_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Nurture__c</fieldItem>
                 <identifier>RecordNurture_cField</identifier>
             </fieldInstance>
