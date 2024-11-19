@@ -180,6 +180,16 @@
                 <identifier>RecordOngoing_Monitoring_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Acquisition_Marker__c</fieldItem>
+                <identifier>RecordAcquisition_Marker_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
         <type>Facet</type>
     </flexiPageRegions>
