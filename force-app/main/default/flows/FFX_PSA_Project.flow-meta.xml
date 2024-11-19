@@ -185,8 +185,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Services_Product</name>
-        <label>Services Product from Estimate</label>
+        <name>Get_Services_Product</name>
+        <label>Get Services Product</label>
         <locationX>182</locationX>
         <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -195,23 +195,21 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>ffscpq__Opportunity__c</field>
+            <field>Name</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.pse__Opportunity__c</elementReference>
+                <stringValue>Services</stringValue>
             </value>
         </filters>
         <filters>
-            <field>ffscpq__Is_Primary__c</field>
+            <field>IsActive</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>ffscpq__Estimate__c</object>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>ffscpq__Product__c</queriedFields>
+        <object>Product2</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -220,7 +218,7 @@
         <locationX>182</locationX>
         <locationY>539</locationY>
         <connector>
-            <targetReference>Services_Product</targetReference>
+            <targetReference>Get_Services_Product</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -298,7 +296,7 @@
         <inputAssignments>
             <field>ffpsai__ServicesProduct__c</field>
             <value>
-                <elementReference>Services_Product.ffscpq__Product__c</elementReference>
+                <elementReference>Get_Services_Product.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
