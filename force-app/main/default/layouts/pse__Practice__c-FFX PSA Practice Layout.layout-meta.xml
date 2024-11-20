@@ -47,6 +47,10 @@
                 <behavior>Edit</behavior>
                 <field>CT_Rate_Practice__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Expected_Recovery_Rate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
