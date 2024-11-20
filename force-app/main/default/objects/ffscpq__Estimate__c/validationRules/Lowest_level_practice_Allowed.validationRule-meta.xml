@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lowest_level_practice_Allowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(ffscpq__Practice__c) &amp;&amp; NOT(ISNULL(ffscpq__Practice__c)) &amp;&amp; ffscpq__Practice__r.pse__Hierarchy_Depth__c &lt; 3</errorConditionFormula>
+    <errorDisplayField>ffscpq__Practice__c</errorDisplayField>
+    <errorMessage>Only the lowest level practices are allowed</errorMessage>
+</ValidationRule>
