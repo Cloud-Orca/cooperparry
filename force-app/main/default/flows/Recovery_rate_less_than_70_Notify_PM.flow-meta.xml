@@ -90,6 +90,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Budget_Recovery_Rate__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>0.7</numberValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Get_Custom_Notification_type_record</targetReference>
             </connector>
