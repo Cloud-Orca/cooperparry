@@ -1179,6 +1179,21 @@
             <field>Original_Estimate__c</field>
             <table>pse__Proj__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CT_R_D_Stage__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CT_Manual_Recovery_Rate__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CT_R_D_Complete__c</field>
+            <table>pse__Proj__c</table>
+        </columns>
         <masterLabel>Projects</masterLabel>
     </sections>
     <sections>
