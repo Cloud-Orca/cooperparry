@@ -535,6 +535,10 @@
                 <behavior>Edit</behavior>
                 <field>Directors__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Disqualification_Explanation__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
