@@ -296,6 +296,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_Manual_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Percent_Complete_Budget__c</field>
         <readable>true</readable>
@@ -313,6 +318,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.CT_Project_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_R_D_Complete__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_R_D_Stage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -402,7 +417,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Timecard__c.CT_Include_in_Totals__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Timecard__c.CT_Suggested_Bill_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard__c.CT_Total_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

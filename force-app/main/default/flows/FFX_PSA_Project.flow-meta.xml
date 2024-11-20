@@ -229,6 +229,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>CT_Manual_Recovery_Rate__c</field>
+            <value>
+                <elementReference>$Record.pse__Practice__r.CT_Expected_Recovery_Rate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>pse__Is_Billable__c</field>
             <value>
                 <booleanValue>true</booleanValue>

@@ -46,6 +46,31 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>pse__PS_Enterprise_Admin_Lightning</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>pse__PS_Enterprise_Field_Lightning</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>pse__PS_Enterprise_Lightning</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>pse__PS_Enterprise_Management_Lightning</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>pse__PS_Enterprise_Operations_Lightning</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>standard__LightningSales</application>
         <default>true</default>
         <visible>true</visible>
@@ -853,6 +878,21 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.AccountId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Amount</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Budget_Confirmed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.CT_Expected_End_Date__c</field>
         <readable>false</readable>
@@ -863,8 +903,178 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.CampaignId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.ContractId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Description</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Discovery_Completed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.ExpectedRevenue</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Fee_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.IsPrivate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.LeadSource</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Loss_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.NextStep</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Probability</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.ROI_Analysis_Completed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.TotalOpportunityQuantity</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Type</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.c2g__CODAUnitOfWork__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.ffr__BatchProcess__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Forecast_Curve__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__IsParentOpportunityServices__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Is_Change_Request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Is_Services_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Parent_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Practice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__PreBilledAmount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Pre_Billed_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Primary_Project__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Rate_Card_Discount_Limit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Rate_Card_Percentage_Discount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Rate_Card_Set__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Services_Attached_From_Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.pse__Services_Attached_Percent_From_Products__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Transaction__e.Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Transaction__e.Transaction_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Transaction__e.Transaction_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2765,6 +2975,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaJournal__c.link_FFRR_state__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaTransaction__c.Owner_Company__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5934,6 +6149,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Practice__c.CT_Expected_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Practice__c.CT_Mandatory_Timesheet_Notes__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5945,11 +6165,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Practice__c.CT_Rate_Practice__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Practice__c.Group__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6123,7 +6338,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Historical_Utilization_Target_Attainment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6133,7 +6348,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Historical_Utilization_Target__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6168,7 +6383,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Margin__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6228,7 +6443,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Planned_Margin__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6323,7 +6538,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Scheduled_Utilization_Target_Attainment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6333,7 +6548,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Scheduled_Utilization_Target__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6343,7 +6558,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Total_Costs__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6403,7 +6618,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Utilization_Target_Attainment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6413,7 +6628,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>pse__Practice__c.pse__Utilization_Target__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6463,6 +6678,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_Manual_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Percent_Complete_Budget__c</field>
         <readable>true</readable>
@@ -6478,9 +6698,19 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>pse__Proj__c.CT_Project_Partner__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_R_D_Complete__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_R_D_Stage__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -7893,8 +8123,23 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill_Certification_Rating__c.Rating_Change__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Skill_Certification_Rating__c.Rating_before_approval_reques__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Skill_Certification_Rating__c.pse__Approval_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Skill_Certification_Rating__c.pse__Rating__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7970,6 +8215,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Skill__c.pse__Unique_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Time_Period__c.Include_for_Revenue_Recognition__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8529,7 +8779,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Timecard__c.CT_Include_in_Totals__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Timecard__c.CT_Suggested_Bill_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard__c.CT_Total_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -9132,6 +9392,9 @@
         <layout>pse__Milestone__c-FFX PSA Milestone Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>pse__Miscellaneous_Adjustment__c-FFX Miscellaneous Adjustment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>pse__Missing_Timecard__c-pse__Missing Timecard Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -9149,6 +9412,9 @@
     <layoutAssignments>
         <layout>pse__Skill__c-FFX PSA Skill Layout</layout>
         <recordType>pse__Skill__c.pse__Skill</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>pse__Time_Period__c-pse__Time Period Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>pse__Time_Variance_Detail__c-pse__Time Variance Layout</layout>
@@ -9205,6 +9471,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Hide_Account_For_User__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Opportunity</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -9396,6 +9671,10 @@
         <object>pse__Timecard__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>newEstimateErrorPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Business_Account</recordType>
@@ -9566,6 +9845,14 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>pse__Revenue_Forecast_Version_Detail__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>pse__Revenue_Forecast_Version__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>pse__Skill__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -9579,6 +9866,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Account</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Opportunity</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
