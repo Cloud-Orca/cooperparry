@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Documents__c</fullName>
+    <externalId>false</externalId>
+    <label>Documents</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trustees’ Report and Financial Statements</fullName>
+                <default>false</default>
+                <label>Trustees’ Report and Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Unaudited Report and Financial Statements</fullName>
+                <default>false</default>
+                <label>Unaudited Report and Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Trustees’ Annual Report and Financial Statements</fullName>
+                <default>false</default>
+                <label>Trustees’ Annual Report and Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Annual Report</fullName>
+                <default>false</default>
+                <label>Annual Report</label>
+            </value>
+            <value>
+                <fullName>Annual Report and Financial Statements</fullName>
+                <default>false</default>
+                <label>Annual Report and Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Financial Statements</fullName>
+                <default>false</default>
+                <label>Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Annual Report and Accounts</fullName>
+                <default>false</default>
+                <label>Annual Report and Accounts</label>
+            </value>
+            <value>
+                <fullName>Annual Report of the Trustees</fullName>
+                <default>false</default>
+                <label>Annual Report of the Trustees</label>
+            </value>
+            <value>
+                <fullName>Consolidated Annual Report and Financial Statements</fullName>
+                <default>false</default>
+                <label>Consolidated Annual Report and Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Consolidated Financial Statements</fullName>
+                <default>false</default>
+                <label>Consolidated Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Directors’ Report and Financial Statements</fullName>
+                <default>false</default>
+                <label>Directors’ Report and Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Director’s Report and Accounts</fullName>
+                <default>false</default>
+                <label>Director’s Report and Accounts</label>
+            </value>
+            <value>
+                <fullName>Dormant Accounts</fullName>
+                <default>false</default>
+                <label>Dormant Accounts</label>
+            </value>
+            <value>
+                <fullName>Dormant Financial Statements</fullName>
+                <default>false</default>
+                <label>Dormant Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Final Trustee Report and Financial Statements</fullName>
+                <default>false</default>
+                <label>Final Trustee Report and Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Governors’ Report and Financial Statements</fullName>
+                <default>false</default>
+                <label>Governors’ Report and Financial Statements</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
