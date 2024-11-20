@@ -134,6 +134,16 @@
                 <identifier>RecordBeauhurst_ID_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Disqualification_Explanation__c</fieldItem>
+                <identifier>RecordDisqualification_Explanation__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-2c10ab0d-e38d-408d-9dbc-9d87c8ce8b2d</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -742,23 +752,6 @@
                 <identifier>RecordSecondary_Sector__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Disqualification_Reason__c</fieldItem>
-                <identifier>RecordDisqualification_Reason__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Status}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Disqualified</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-aa64c163-8382-4369-a137-e77bbf9386bd</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -784,6 +777,65 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-b0b8866e-3f59-4afb-b0b6-36cf19b4ecac</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Disqualification_Explanation__c</fieldItem>
+                <identifier>RecordDisqualification_Explanation_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-166b68a8-9ec6-4540-ab1f-cd7d6534d679</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Disqualification_Reason__c</fieldItem>
+                <identifier>RecordDisqualification_Reason__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Status}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Disqualified</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-f0f9a5cf-de79-46f9-ab27-a4a4f756ee94</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-166b68a8-9ec6-4540-ab1f-cd7d6534d679</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f0f9a5cf-de79-46f9-ab27-a4a4f756ee94</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column25</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-f266c8a8-e0c4-45de-ba9c-00e0d56470c6</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -1087,6 +1139,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-f266c8a8-e0c4-45de-ba9c-00e0d56470c6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Disqualified Lead</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection16</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

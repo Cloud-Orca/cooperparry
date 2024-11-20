@@ -6,6 +6,7 @@
     <masterLabel>Default</masterLabel>
     <pathAssistantSteps>
         <fieldNames>Disqualification_Reason__c</fieldNames>
+        <fieldNames>Disqualification_Explanation__c</fieldNames>
         <info>&lt;p&gt;Please ensure you enter a reason as to why this Leads has been Disqualified&lt;/p&gt;</info>
         <picklistValueName>Disqualified</picklistValueName>
     </pathAssistantSteps>
