@@ -287,7 +287,7 @@
         <locationX>490</locationX>
         <locationY>2588</locationY>
         <defaultConnector>
-            <targetReference>Confirmation</targetReference>
+            <targetReference>Update_Milestones</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -502,6 +502,30 @@
         <inputReference>get_source_project_details</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Milestones</name>
+        <label>Update Milestones</label>
+        <locationX>490</locationX>
+        <locationY>2888</locationY>
+        <connector>
+            <targetReference>Confirmation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_New_Project.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>pse__Status__c</field>
+            <value>
+                <stringValue>Planned</stringValue>
+            </value>
+        </inputAssignments>
+        <object>pse__Milestone__c</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_new_project</name>
         <label>Update new project</label>
         <locationX>490</locationX>
@@ -517,7 +541,7 @@
         <locationX>358</locationX>
         <locationY>2696</locationY>
         <connector>
-            <targetReference>Confirmation</targetReference>
+            <targetReference>Update_Milestones</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -545,7 +569,7 @@
         <name>Confirmation</name>
         <label>Confirmation</label>
         <locationX>490</locationX>
-        <locationY>2888</locationY>
+        <locationY>2996</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
