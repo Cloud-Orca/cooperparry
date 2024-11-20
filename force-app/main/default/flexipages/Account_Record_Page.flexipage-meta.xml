@@ -139,7 +139,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Date_became_client__c</fieldItem>
-                <identifier>RecordDate_Became_Client_cField</identifier>
+                <identifier>RecordDate_became_client_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
