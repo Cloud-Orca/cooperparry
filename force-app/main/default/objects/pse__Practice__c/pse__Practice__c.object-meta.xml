@@ -205,15 +205,13 @@
         <searchFilterFields>pse__Billable_Internal_Hours__c</searchFilterFields>
         <searchFilterFields>pse__Total_Costs__c</searchFilterFields>
         <searchFilterFields>pse__Margin__c</searchFilterFields>
-        <searchResultsAdditionalFields>pse__Practice_Head__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CT_Practice_Full_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>pse__Parent_Practice__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>pse__Global_Practice__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>pse__Include_In_Forecasting__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>pse__Bookings__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>pse__Billings__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>pse__Billable_Internal_Hours__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>pse__Total_Costs__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>pse__Margin__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
