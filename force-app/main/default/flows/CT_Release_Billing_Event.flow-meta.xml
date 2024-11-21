@@ -265,10 +265,10 @@
             <name>Yes_less_than_70</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get.pse__Project__r.CT_Recovery_Rate__c</leftValueReference>
-                <operator>LessThanOrEqualTo</operator>
+                <leftValueReference>Get.pse__Project__r.CT_Actual_Recovery_Rate__c</leftValueReference>
+                <operator>LessThan</operator>
                 <rightValue>
-                    <numberValue>70.0</numberValue>
+                    <numberValue>0.7</numberValue>
                 </rightValue>
             </conditions>
             <conditions>
