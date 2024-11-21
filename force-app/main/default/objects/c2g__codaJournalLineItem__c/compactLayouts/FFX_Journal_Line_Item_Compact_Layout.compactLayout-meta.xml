@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FFX_Journal_Line_Item_Compact_Layout</fullName>
+    <fields>c2g__Journal__c</fields>
+    <fields>c2g__LineNumber__c</fields>
+    <fields>c2g__LineType__c</fields>
+    <fields>c2g__GeneralLedgerAccount__c</fields>
+    <fields>c2g__Value__c</fields>
+    <label>FFX Journal Line Item Compact Layout</label>
+</CompactLayout>

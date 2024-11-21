@@ -286,6 +286,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_Manual_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Planned_Recovery_Rate__c</field>
         <readable>true</readable>
@@ -293,6 +298,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.CT_Project_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_R_D_Complete__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_R_D_Stage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

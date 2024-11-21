@@ -2,6 +2,10 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>fferpcore__ValidateBillingAddress</customButtons>
     <customButtons>fferpcore__ValidateShippingAddress</customButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -294,6 +298,24 @@
         <fields>NAME</fields>
         <fields>User__c</fields>
         <relatedList>Hide_Account_For_User__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Audit_Register__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Audit_Register__c.Client_Code__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Audit_Register__c.Parent_Company__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>OWNER.ALIAS</fields>
+        <fields>Date__c</fields>
+        <fields>Subject__c</fields>
+        <relatedList>Confidential_Note__c.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
