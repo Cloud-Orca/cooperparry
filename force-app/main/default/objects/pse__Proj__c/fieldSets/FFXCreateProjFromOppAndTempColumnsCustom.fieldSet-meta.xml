@@ -40,7 +40,7 @@
     <displayedFields>
         <field>pse__Project_Manager__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>pse__Planned_Hours__c</field>
