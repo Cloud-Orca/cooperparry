@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffpsai__All</fullName>
+    <columns>NAME</columns>
+    <columns>c2g__Journal__c</columns>
+    <columns>ffpsai__JournalDate__c</columns>
+    <columns>c2g__GeneralLedgerAccount__c</columns>
+    <columns>ffpsai__Project__c</columns>
+    <columns>ffpsai__TransactionCategory__c</columns>
+    <columns>c2g__Value__c</columns>
+    <columns>ffpsai__SendToPSA__c</columns>
+    <columns>ffpsai__PassedToPSA__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>
