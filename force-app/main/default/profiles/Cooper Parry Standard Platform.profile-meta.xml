@@ -743,9 +743,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Corporate_Status__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -3348,6 +3348,26 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Confidential_Note__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Confidential_Note__c.Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Confidential_Note__c.Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Confidential_Note__c.Subject__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.CT_Generic_Resource__c</field>
         <readable>true</readable>
@@ -5354,7 +5374,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Service_Line__c.Lifecycle_Coordinator__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Service_Line__c.Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Line__c.Service_Line_Manager__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Line__c.Service_Line_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Line__c.Status_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6655,6 +6695,346 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaInvoice__c.ffrrtemplate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.FFX_Revenue_Recognition_Transaction_Line__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__AccountAnalysis__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__AccountReference__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__AccountValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Account__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__ArchivingGLAKey__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__BankAccountValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__BankAccount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__CorrelationId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Credits__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__DebitCredit__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Debits__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__DeriveLineNumber__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__DestinationCompany__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__DestinationLineType__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Dimension1Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Dimension1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Dimension2Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Dimension2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Dimension3Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Dimension3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Dimension4Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Dimension4__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__DualRate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__DualValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__ExcludefromCashFlow__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__ExternalId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__GeneralLedgerAccountValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__GeneralLedgerAccount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__HomeValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__IntercompanyTransfer__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__JournalRate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__LineDescription__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__LineNumber__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__LineType__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__LocalGLAValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__LocalGLA__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__OwnerCompany__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__ProductAnalysis__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__Product__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__ReportingRate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__ReportingValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__TaxAnalysis1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__TaxAnalysis2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__TaxAnalysis3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__TaxCode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__TaxValue1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__TaxValue2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__TaxValue3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__TaxableValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__UnitOfWork__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__VendorValue__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.c2g__YearEndCriterionIdentifier__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__Analysis1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__Analysis2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__Analysis3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__Analysis4__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__AutomaticallyPassToPSA__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__JournalCurrency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__JournalDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__MiscellaneousAdjustmentName__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__PassedToPSA__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__Project__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__SendToPSA__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.ffpsai__TransactionCategory__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.link_FFRR_errors__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.link_FFRR_id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaJournalLineItem__c.link_FFRR_state__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -9898,6 +10278,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Practice__c.CT_Expected_Recovery_Rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Practice__c.CT_Mandatory_Timesheet_Notes__c</field>
         <readable>true</readable>
@@ -10424,6 +10809,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CT_Manual_Recovery_Rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.CT_Percent_Complete_Budget__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -10440,6 +10830,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Project_Partner__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_R_D_Complete__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_R_D_Stage__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -11974,7 +12374,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Timecard__c.CT_Include_in_Totals__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Timecard__c.CT_Suggested_Bill_Rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard__c.CT_Total_Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12557,6 +12967,9 @@
         <layout>Competitor_Incumbent__c-Competitor %2F Incumbent Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Confidential_Note__c-Confidential Note Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Contact-FFX PSA Resource Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -12769,6 +13182,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Associations__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Audit_Register__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -13201,6 +13623,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>c2g__codaInvoice__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>c2g__codaJournalLineItem__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
