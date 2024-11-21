@@ -754,9 +754,9 @@
                 <identifier>flexipage_accordion</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.StageName}</leftValue>
+                        <leftValue>{!Record.IsWon}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Closed Won</rightValue>
+                        <rightValue>true</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
