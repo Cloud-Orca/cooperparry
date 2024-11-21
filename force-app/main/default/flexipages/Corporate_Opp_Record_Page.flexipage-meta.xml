@@ -192,16 +192,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Meeting_Subtype__c</fieldItem>
-                <identifier>RecordMeeting_Subtype_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Win_Probability__c</fieldItem>
                 <identifier>RecordWin_Probability_cField</identifier>
             </fieldInstance>
