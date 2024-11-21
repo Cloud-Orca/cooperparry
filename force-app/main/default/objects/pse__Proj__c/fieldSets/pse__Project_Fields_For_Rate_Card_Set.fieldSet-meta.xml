@@ -1342,12 +1342,12 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Backlog_Last_Updated_By__r.DelegatedApproverId</field>
+        <field>pse__Actuals_Last_Updated_By__r.DelegatedApproverId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Actuals_Last_Updated_By__r.DelegatedApproverId</field>
+        <field>pse__Backlog_Last_Updated_By__r.DelegatedApproverId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -1832,12 +1832,12 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Backlog_Last_Updated_By__r.FirstName</field>
+        <field>pse__Actuals_Last_Updated_By__r.FirstName</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Actuals_Last_Updated_By__r.FirstName</field>
+        <field>pse__Backlog_Last_Updated_By__r.FirstName</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -3107,12 +3107,12 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Backlog_Last_Updated_By__r.MobilePhone</field>
+        <field>pse__Actuals_Last_Updated_By__r.MobilePhone</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Actuals_Last_Updated_By__r.MobilePhone</field>
+        <field>pse__Backlog_Last_Updated_By__r.MobilePhone</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -3142,12 +3142,12 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Backlog_Last_Updated_By__r.Name</field>
+        <field>pse__Actuals_Last_Updated_By__r.Name</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Actuals_Last_Updated_By__r.Name</field>
+        <field>pse__Backlog_Last_Updated_By__r.Name</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -3727,12 +3727,12 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Backlog_Last_Updated_By__r.PostalCode</field>
+        <field>pse__Actuals_Last_Updated_By__r.PostalCode</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Actuals_Last_Updated_By__r.PostalCode</field>
+        <field>pse__Backlog_Last_Updated_By__r.PostalCode</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
