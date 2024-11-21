@@ -50,7 +50,7 @@
     <displayedFields>
         <field>CT_Project_Partner__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>pse__Is_Active__c</field>
