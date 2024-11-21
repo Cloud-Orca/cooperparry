@@ -94,10 +94,6 @@
                 <behavior>Edit</behavior>
                 <field>CT_Year_End_Date__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>pse__Bookings__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -270,6 +266,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Budget_Recovery_Rate__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CT_Actual_Recovery_Rate__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -548,20 +548,6 @@
             <sortOrder>6</sortOrder>
         </platformActionListItems>
     </platformActionList>
-    <relatedLists>
-        <excludeButtons>MassChangeOwner</excludeButtons>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>pse__Effective_Date__c</fields>
-        <fields>pse__Type__c</fields>
-        <fields>pse__Amount__c</fields>
-        <fields>pse__Status__c</fields>
-        <fields>pse__Include_In_Financials__c</fields>
-        <fields>pse__Eligible_for_Billing__c</fields>
-        <relatedList>pse__Budget__c.pse__Project__c</relatedList>
-        <sortField>pse__Effective_Date__c</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
     <relatedLists>
         <excludeButtons>MassChangeOwner</excludeButtons>
         <excludeButtons>New</excludeButtons>

@@ -7,6 +7,7 @@
     <customButtons>pse__Project_Billing</customButtons>
     <customButtons>pse__View_Unfilled_Resource_Requests</customButtons>
     <customButtons>pse__Run_Revenue_Forecast</customButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -43,7 +44,7 @@
                 <field>pse__Billing_Type__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>pse__Project_Manager__c</field>
             </layoutItems>
             <layoutItems>
@@ -165,6 +166,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>CT_R_D_Complete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CT_Actual_Recovery_Rate__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -810,6 +815,16 @@
             <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>pse__Project_Planner</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>4</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>pse__Share_Project</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
@@ -823,16 +838,6 @@
             <actionName>pse__Create_Change_Request</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>3</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>pse__Project_Planner</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>4</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>pse__Share_Project</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>pse__Gantt</actionName>
@@ -1233,7 +1238,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hd000000UCKLz</masterLabel>
+        <masterLabel>00h2o00000n5wMj</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
