@@ -196,6 +196,16 @@
                 <identifier>RecordMeeting_Subtype_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Win_Probability__c</fieldItem>
+                <identifier>RecordWin_Probability_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -238,16 +248,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.StageName</fieldItem>
                 <identifier>RecordStageNameField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Probability</fieldItem>
-                <identifier>RecordProbabilityField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -580,16 +580,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Current_Stage_Start_Date__c</fieldItem>
                 <identifier>RecordCurrent_Stage_Start_Date__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.ForecastCategoryName</fieldItem>
-                <identifier>RecordForecastCategoryNameField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3166f656-c33e-4d6a-92c0-a2be76b1f002</name>
