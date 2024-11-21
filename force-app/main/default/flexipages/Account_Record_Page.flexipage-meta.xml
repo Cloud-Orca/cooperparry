@@ -138,6 +138,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Date_became_client__c</fieldItem>
+                <identifier>RecordDate_Became_Client_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Nurture__c</fieldItem>
                 <identifier>RecordNurture_cField</identifier>
             </fieldInstance>
@@ -148,8 +158,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Data_Origination__c</fieldItem>
-                <identifier>RecordData_Origination_cField</identifier>
+                <fieldItem>Record.Ongoing_Monitoring_Date__c</fieldItem>
+                <identifier>RecordOngoing_Monitoring_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -158,8 +168,18 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Ongoing_Monitoring_Date__c</fieldItem>
-                <identifier>RecordOngoing_Monitoring_Date_cField</identifier>
+                <fieldItem>Record.Previously_Onboarded__c</fieldItem>
+                <identifier>RecordPreviously_Onboarded_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Is_Onboarded__c</fieldItem>
+                <identifier>RecordIs_Onboarded_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
@@ -192,6 +212,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Data_Origination__c</fieldItem>
+                <identifier>RecordData_Origination_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Originator__c</fieldItem>
                 <identifier>RecordOriginator_cField</identifier>
             </fieldInstance>
@@ -210,20 +240,10 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Type_of_Business__c</fieldItem>
                 <identifier>RecordType_of_Business_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Ownership</fieldItem>
-                <identifier>RecordOwnershipField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -242,8 +262,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Previously_Onboarded__c</fieldItem>
-                <identifier>RecordPreviously_Onboarded_cField</identifier>
+                <fieldItem>Record.CP_Client_ID__c</fieldItem>
+                <identifier>RecordCP_Client_ID_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -252,8 +272,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.CP_Client_ID__c</fieldItem>
-                <identifier>RecordCP_Client_ID_cField</identifier>
+                <fieldItem>Record.Ownership</fieldItem>
+                <identifier>RecordOwnershipField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
@@ -1432,6 +1452,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Top_Level_Sector_Groups__c</fieldItem>
                 <identifier>RecordTop_Level_Sector_Groups_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Funding_Stage__c</fieldItem>
+                <identifier>RecordFunding_Stage_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-d665a36f-ffd4-4876-9a50-59c89a984a2c</name>
@@ -2770,6 +2800,36 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Confidential_Notes__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-c045924d-26fd-47df-8906-7b8848fda00e</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
                 </componentInstanceProperties>
@@ -2965,6 +3025,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-c045924d-26fd-47df-8906-7b8848fda00e</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Confidential Notes</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab16</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-xmdtyzft1op</name>

@@ -10,6 +10,26 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Initial Email (Deals)</fullName>
+                <default>false</default>
+                <label>Initial Email (Deals)</label>
+            </value>
+            <value>
+                <fullName>Follow Up Email (Deals)</fullName>
+                <default>false</default>
+                <label>Follow Up Email (Deals)</label>
+            </value>
+            <value>
+                <fullName>Initial LinkedIn (Deals)</fullName>
+                <default>false</default>
+                <label>Initial LinkedIn (Deals)</label>
+            </value>
+            <value>
+                <fullName>Follow Up LinkedIn (Deals)</fullName>
+                <default>false</default>
+                <label>Follow Up LinkedIn (Deals)</label>
+            </value>
+            <value>
                 <fullName>Initial Meeting</fullName>
                 <default>false</default>
                 <label>Initial Meeting</label>
