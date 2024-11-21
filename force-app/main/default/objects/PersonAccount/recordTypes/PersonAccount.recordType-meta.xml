@@ -223,6 +223,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Components</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Construction</fullName>
             <default>false</default>
         </values>
@@ -327,7 +331,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Retail and Supply Chain Components</fullName>
+            <fullName>Retail</fullName>
             <default>false</default>
         </values>
         <values>
@@ -336,6 +340,10 @@
         </values>
         <values>
             <fullName>Specialist Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain</fullName>
             <default>false</default>
         </values>
         <values>

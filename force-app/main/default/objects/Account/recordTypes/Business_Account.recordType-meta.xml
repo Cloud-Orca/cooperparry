@@ -227,6 +227,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Components</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Construction</fullName>
             <default>false</default>
         </values>
@@ -331,7 +335,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Retail and Supply Chain Components</fullName>
+            <fullName>Retail</fullName>
             <default>false</default>
         </values>
         <values>
@@ -340,6 +344,10 @@
         </values>
         <values>
             <fullName>Specialist Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain</fullName>
             <default>false</default>
         </values>
         <values>
@@ -499,6 +507,14 @@
             <fullName>Ring Fenced</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Sports and Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UHNWI</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Connector_Type__c</picklist>
@@ -524,6 +540,29 @@
         </values>
         <values>
             <fullName>PE House</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Corporate_Status__c</picklist>
+        <values>
+            <fullName>Independent Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intermediate Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultimate Parent</fullName>
             <default>false</default>
         </values>
     </picklistValues>
