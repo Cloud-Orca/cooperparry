@@ -695,7 +695,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Primary_Sector__c</fieldItem>
                 <identifier>RecordPrimary_Sector__cField</identifier>
@@ -881,7 +881,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.CP_Office__c</fieldItem>
                 <identifier>RecordCP_Office_cField</identifier>

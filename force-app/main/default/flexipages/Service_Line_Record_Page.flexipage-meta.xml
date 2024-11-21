@@ -62,6 +62,30 @@
                 <identifier>RecordApproval_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Status_Reason__c</fieldItem>
+                <identifier>RecordStatus_Reason__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Service_Line_Partner__c</fieldItem>
+                <identifier>RecordService_Line_Partner__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Service_Line_Manager__c</fieldItem>
+                <identifier>RecordService_Line_Manager__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Lifecycle_Coordinator__c</fieldItem>
+                <identifier>RecordLifecycle_Coordinator__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-fb4f1687-baf0-408b-8254-48b0715cbe2d</name>
         <type>Facet</type>
     </flexiPageRegions>
