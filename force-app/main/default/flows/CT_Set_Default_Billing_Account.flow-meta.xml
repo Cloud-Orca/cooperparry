@@ -13,6 +13,17 @@
                 <elementReference>$Record.pse__Project__r.pse__Account__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Include_In_Financials__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Actual_Date__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
     </assignments>
     <environments>Default</environments>
     <interviewLabel>CT Set Default Billing Account {!$Flow.CurrentDateTime}</interviewLabel>
