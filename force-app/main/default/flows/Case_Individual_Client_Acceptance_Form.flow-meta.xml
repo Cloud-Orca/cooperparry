@@ -400,13 +400,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>clientAcceptanceForm.mlrapick13__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>mlrapick13</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>clientAcceptanceForm.mlra14__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -3617,41 +3610,26 @@
                 <name>Page_3_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra13</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Is the client a Politically Exposed Person (PEP)?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>mlrawarning</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_3_Section22_Column3</name>
-                <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrapick13</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
+                    <name>mlra14</name>
+                    <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_3_Section22_Column4</name>
+                <name>Page_3_Section22_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3682,56 +3660,6 @@
                 <name>Page_3_Section23_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrawarning</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>mlra14</name>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>10</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_3_Section23_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Page_3_Section24</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Page_3_Section24_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_3_Section24_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>mlra15</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Considering the above factors, the risk of money laundering is:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
@@ -3745,7 +3673,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_3_Section24_Column3</name>
+                <name>Page_3_Section23_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlrapick15</name>
@@ -3764,7 +3692,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_3_Section24_Column4</name>
+                <name>Page_3_Section23_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
