@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>IF( AND(TEXT(CT_R_D_Stage__c) &lt;&gt; &apos;&apos;, CT_R_D_Complete__c &lt;&gt; 0), CT_R_D_Complete__c,
 
-if ( (CT_Current_Esimate__c  == 0 ||  CT_Manual_Recovery_Rate__c = 0 || ISNULL(CT_Manual_Recovery_Rate__c)),0, CT_Total_Submitted_Hours_Bill_Rate__c/ CT_Current_Esimate__c/CT_Manual_Recovery_Rate__c))</formula>
+if ( ( CT_Fee_Amount__c == 0 || CT_Manual_Recovery_Rate__c = 0 || ISNULL(CT_Manual_Recovery_Rate__c)),0, CT_Total_Submitted_Hours_Bill_Rate__c/ (CT_Fee_Amount__c /CT_Manual_Recovery_Rate__c)))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>CP % Complete</label>
     <precision>18</precision>
