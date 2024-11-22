@@ -35,11 +35,11 @@
     </assignments>
     <assignments>
         <name>Milestone_Resource_Requests_Values</name>
-        <label>Milestone Resource Requests Values</label>
+        <label>Milestone Resource Request Value</label>
         <locationX>264</locationX>
         <locationY>755</locationY>
         <assignmentItems>
-            <assignToReference>Milestone_estimated_revenue</assignToReference>
+            <assignToReference>Milestone_estimated_recenue</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>Loop_Resource_Requests.CT_Estimated_Revenue__c</elementReference>
@@ -81,7 +81,7 @@
                 <leftValueReference>Loop_Assignments.pse__Milestone__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>$Record.pse__Milestone__c</elementReference>
+                    <elementReference>$Record.Id</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -106,7 +106,7 @@
                 <leftValueReference>Loop_Resource_Requests.pse__Milestone__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>$Record.pse__Milestone__c</elementReference>
+                    <elementReference>$Record.Id</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -119,7 +119,7 @@
     <formulas>
         <name>MilestoneValue</name>
         <dataType>Number</dataType>
-        <expression>{!Milestone_estimated_revenue}+{!MilestoneAssignmentRevenue}</expression>
+        <expression>{!Milestone_estimated_recenue}+{!MilestoneAssignmentRevenue}</expression>
         <scale>2</scale>
     </formulas>
     <formulas>
@@ -128,8 +128,8 @@
         <expression>{!Project_RR_Amount}+{!ProjectAssignmentValue}</expression>
         <scale>2</scale>
     </formulas>
-    <interviewLabel>CT_Update_Current_Estimate {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>CT_Update_Current_Estimate</label>
+    <interviewLabel>CT_Update_Project_Values {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CT_Update_Milestone_Values</label>
     <loops>
         <name>Loop_Assignments</name>
         <label>Loop Assignments</label>
@@ -209,7 +209,7 @@
         <connector>
             <targetReference>Loop_Resource_Requests</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>1 AND ( 2 OR 3)</filterLogic>
         <filters>
             <field>pse__Project__c</field>
             <operator>EqualTo</operator>
@@ -233,22 +233,30 @@
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>pse__Resource_Request__c</object>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>CT_Estimated_Revenue__c</queriedFields>
-        <queriedFields>pse__Milestone__c</queriedFields>
-        <queriedFields>pse__Project__c</queriedFields>
-        <queriedFields>pse__Status__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Milestone</name>
+        <label>Update Milestone</label>
+        <locationX>176</locationX>
+        <locationY>1847</locationY>
+        <inputAssignments>
+            <field>Milestone_Fee_Amount__c</field>
+            <value>
+                <elementReference>MilestoneValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_Project</name>
         <label>Update Project</label>
         <locationX>176</locationX>
         <locationY>1739</locationY>
         <connector>
-            <targetReference>Update_Records_2</targetReference>
+            <targetReference>Update_Milestone</targetReference>
         </connector>
         <inputAssignments>
             <field>CT_Current_Esimate__c</field>
@@ -258,32 +266,19 @@
         </inputAssignments>
         <inputReference>$Record.pse__Project__r</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>Update_Records_2</name>
-        <label>Update Records 2</label>
-        <locationX>176</locationX>
-        <locationY>1847</locationY>
-        <inputAssignments>
-            <field>Milestone_Fee_Amount__c</field>
-            <value>
-                <elementReference>MilestoneValue</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record.pse__Milestone__r</inputReference>
-    </recordUpdates>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Resource_Requests</targetReference>
         </connector>
-        <object>pse__Resource_Request__c</object>
+        <object>pse__Milestone__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
     <variables>
-        <name>Milestone_estimated_revenue</name>
+        <name>Milestone_estimated_recenue</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
@@ -311,6 +306,9 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
     </variables>
     <variables>
         <name>ProjectAssignmentValue</name>

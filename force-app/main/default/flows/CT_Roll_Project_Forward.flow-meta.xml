@@ -49,6 +49,20 @@
                 <booleanValue>false</booleanValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>get_source_project_details.pse__Closed_for_Time_Entry__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>get_source_project_details.pse__Closed_for_Expense_Entry__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Copy_1_of_Copy_1_of_Copy_1_of_Save_Project</targetReference>
         </connector>
