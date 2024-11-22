@@ -112,6 +112,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.c2g__CODASalesTaxStatus__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.c2g__CODATaxCalculationMethod__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.c2g__CODATaxpayerIdentificationNumber__c</field>
         <readable>true</readable>
@@ -754,6 +764,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.c2g__CODATaxCode__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaInvoiceLineItem__c.cer_Milestone__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

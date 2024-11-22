@@ -2,6 +2,16 @@
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>c2g__ManageLinesVAT</fullName>
     <availableFields>
+        <field>c2g__CalculateIncomeSchedule__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__CalculateTaxValue1FromRate__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>c2g__CalculateTaxValue2FromRate__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -12,27 +22,17 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>c2g__CalculateTaxValueFromRate__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>CreatedDate</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>c2g__CreditNoteCurrencyDecimalPlaces__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>c2g__CreditNote__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>c2g__DeriveLineNumber__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__DeriveTaxRate1FromCode__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -43,11 +43,6 @@
     </availableFields>
     <availableFields>
         <field>c2g__DeriveTaxRate3FromCode__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>c2g__DeriveTaxRateFromCode__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -67,7 +62,27 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>c2g__IncomeScheduleGroup__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>c2g__IntercompanyTransfer__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__InternalCalculateIS__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__InvoiceCurrencyDecimalPlaces__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__Invoice__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -87,12 +102,17 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>c2g__OriginalInvoice__c</field>
+        <field>c2g__NumberofJournals__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
         <field>c2g__OwnerCompany__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__PeriodInterval__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -107,6 +127,21 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>c2g__ScheduleNetTotal__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__Scheduled__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__SetTaxCode1ToDefault__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>c2g__SetTaxCode2ToDefault__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -117,7 +152,7 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>c2g__SetTaxCodeToDefault__c</field>
+        <field>c2g__StartDate__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -138,6 +173,16 @@
     </availableFields>
     <availableFields>
         <field>c2g__UnitOfWork__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__UsePartPeriods__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>c2g__UseProductInformation__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -165,22 +210,22 @@
     <displayedFields>
         <field>c2g__Dimension1__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>c2g__Dimension2__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>c2g__Dimension3__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>c2g__Dimension4__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>c2g__TaxCode1__c</field>
@@ -238,6 +283,11 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
+        <field>c2g__IncomeSchedule__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
         <field>c2g__GeneralLedgerAccount__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -264,6 +314,11 @@
     </displayedFields>
     <displayedFields>
         <field>c2g__DestinationNetValue__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>c2g__OriginalInvoice__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
