@@ -17,12 +17,16 @@
     <permissionSets>c2g__AccountingandBillingAccountingCurrencies</permissionSets>
     <permissionSets>c2g__AccountingandBillingCompany</permissionSets>
     <permissionSets>c2g__AccountingandBillingGeneralLedgerAccounts</permissionSets>
+    <permissionSets>c2g__AccountingandBillingTaxCode</permissionSets>
+    <permissionSets>c2g__AccountingandBillingTaxCodeTaxRate</permissionSets>
+    <permissionSets>c2g__AccountingandBillingUserCompanies</permissionSets>
     <permissionSets>c2g__AccountingandBillingYear</permissionSets>
     <permissionSets>c2g__AccountingandBillingYearCalculatePeriod</permissionSets>
     <permissionSets>c2g__AccountingandBillingYearEnd</permissionSets>
     <permissionSets>c2g__FFAIntegrationsERPCompany</permissionSets>
     <permissionSets>c2g__FFAIntegrationsERPTaxCode</permissionSets>
     <permissionSets>cer_Certinia_Cooper_Parry_Accounting_info_Edit</permissionSets>
+    <permissionSets>cer_Certinia_Cooper_Parry_Product</permissionSets>
     <permissionSets>cer_Cooper_Parry_Certinia_Custom_Permission_Edit</permissionSets>
     <permissionSets>ffaws__CashManagement_Workspace</permissionSets>
     <permissionSets>ffaws__Collections_Workspace</permissionSets>
