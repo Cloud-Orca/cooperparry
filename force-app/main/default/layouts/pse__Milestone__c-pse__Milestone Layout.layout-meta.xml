@@ -91,6 +91,10 @@
                 <behavior>Edit</behavior>
                 <field>CT_Manual_Recovery_Rate__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Recurring__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
