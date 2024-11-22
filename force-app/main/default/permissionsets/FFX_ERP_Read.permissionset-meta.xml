@@ -1,58 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Accelerate permissions for ERP Read Only</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.AccountNumber</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.CT_Account_access__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.CT_Finance_Hold__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Type</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>CT_Expense_VAT_Types__c.Vat_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaCreditNote__c.c2g__OwnerCompany__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaCreditNote__c.cer_Email_Sent_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaCreditNote__c.cer_Email_Sent__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaInvoiceLineItem__c.cer_Milestone__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaInvoice__c.attachSalesInvoicePdf__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaInvoice__c.c2g__OwnerCompany__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaInvoice__c.cer_Auto_Post__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaInvoice__c.cer_Email_Sales_Invoice_Batch__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaInvoice__c.cer_Email_Sent_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaInvoice__c.cer_Email_Sent__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -63,16 +34,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Assignment__c.Estimated_Revenue__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>pse__Billing_Event__c.cer_Sales_Invoice__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>pse__Expense_Limit_Rate__c.CT_VAT_Percentage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -106,6 +67,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.FFX_FFA_Company_from_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.Original_Fee_Amount__c</field>
         <readable>true</readable>
@@ -116,18 +82,14 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Cooper Parry:Certinia - Conga Custom Fields (SIN &amp; SCR)</label>
+    <label>FFX ERP Read-Only</label>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
+        <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>c2g__codaInvoice__c</object>
+        <object>Account</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <tabSettings>
-        <tab>c2g__codaInvoice__c</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
 </PermissionSet>
