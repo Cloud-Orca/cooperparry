@@ -10076,6 +10076,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Billing_Event__c.CT_Notes_for_Finance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Billing_Event__c.pse__Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
