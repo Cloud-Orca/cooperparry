@@ -6,6 +6,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNoteLineItem__c.cer_Milestone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaCreditNote__c.c2g__OwnerCompany__c</field>
         <readable>true</readable>
@@ -18,6 +23,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaCreditNote__c.cer_Email_Sent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaInvoiceLineItem__c.cer_Milestone__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
