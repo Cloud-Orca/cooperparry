@@ -518,6 +518,66 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>CT_Assigned_Hours__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CT_Manual_Recovery_Rate__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CT_Total_Submitted_Hours_Bill_Rate__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Actual_Date__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Admin_Global_Edit__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Approved__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Approved_for_Billing__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Billing_Hold__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Closed_for_Expense_Entry__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Closed_for_Time_Entry__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Include_In_Financials__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>pse__Status__c</field>
             <value>
                 <stringValue>Planned</stringValue>
