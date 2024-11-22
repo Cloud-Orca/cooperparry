@@ -222,6 +222,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Milestone__c.Recurring__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Milestone__c.pse__Vendor_Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -236,6 +241,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Practice__c.CT_Default_Recognition_Template__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Practice__c.CT_Mandatory_Timesheet_Notes__c</field>
         <readable>true</readable>
@@ -243,6 +253,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Practice__c.CT_Practice_Full_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Practice__c.CT_Project_or_Milestone_Recognition__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

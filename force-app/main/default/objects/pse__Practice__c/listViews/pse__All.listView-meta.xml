@@ -11,6 +11,7 @@
     <columns>pse__Planned_Bookings__c</columns>
     <columns>pse__Planned_Billings__c</columns>
     <columns>pse__Hierarchy_Depth__c</columns>
+    <columns>CT_Expected_Recovery_Rate__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

@@ -161,7 +161,8 @@
     <formulas>
         <name>ProjectName</name>
         <dataType>String</dataType>
-        <expression>{!$Record.pse__Account__r.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c}))</expression>
+        <expression>IF({!$Record.pse__Account__r.IsPersonAccount==TRUE}, {!$Record.pse__Account__r.PersonContact.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})), 
+{!$Record.pse__Account__r.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})))</expression>
     </formulas>
     <interviewLabel>FFX PSA Project {!$Flow.CurrentDateTime}</interviewLabel>
     <label>FFX PSA Project</label>
