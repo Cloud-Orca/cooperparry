@@ -4,7 +4,8 @@
     <externalId>false</externalId>
     <formula>IF ( (  pse__Milestone_Amount__c   ==0 ||  
 CT_Manual_Recovery_Rate__c == 0 || 
-ISNULL(CT_Manual_Recovery_Rate__c)),0,(CT_Total_Submitted_Hours_Bill_Rate__c/(pse__Milestone_Amount__c  / CT_Manual_Recovery_Rate__c )))</formula>
+ISNULL(CT_Manual_Recovery_Rate__c)),0,((CT_Total_Submitted_Hours_Bill_Rate__c +  pse__Billable_Expenses_In_Financials__c 
+ +  pse__Non_Billable_Expenses_In_Financials__c )/(pse__Milestone_Amount__c  / CT_Manual_Recovery_Rate__c )))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>CP % Complete</label>
     <precision>18</precision>
