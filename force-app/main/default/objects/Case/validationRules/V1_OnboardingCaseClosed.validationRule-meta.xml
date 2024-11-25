@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V1_OnboardingCaseClosed</fullName>
+    <active>true</active>
+    <description>Account fields required when closing an Onboarding Case</description>
+    <errorConditionFormula>AND(
+ $Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c = false,
+ ISCHANGED(Status),
+ Text(Status) = &apos;Closed&apos;,
+ TEXT(Closed_Reason__c) = &apos;Onboarded&apos;,
+  OR(
+   ISBLANK( Account.c2g__CODAAccountTradingCurrency__c ),
+   ISBLANK( Account.c2g__CODAInvoiceEmail__c ),
+   ISBLANK( TEXT(Account.c2g__CODAVATStatus__c ))
+ )
+)</errorConditionFormula>
+    <errorMessage>Please ensure you&apos;ve updated the Account Information before finalising this Onboarding: Invoice Email, Tax Status and Account Trading Currency</errorMessage>
+</ValidationRule>
