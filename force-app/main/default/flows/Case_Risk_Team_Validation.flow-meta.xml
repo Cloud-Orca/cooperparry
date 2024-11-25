@@ -4,7 +4,7 @@
     <customErrors>
         <name>Display_Error</name>
         <label>Display Error</label>
-        <locationX>264</locationX>
+        <locationX>308</locationX>
         <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>Only a member of the Risk team can Close an Onboarding Case as Onboarded.</errorMessage>
@@ -98,6 +98,13 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Risk and Compliance</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>

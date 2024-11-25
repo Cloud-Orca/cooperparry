@@ -34,6 +34,9 @@
                         <valueListItems>
                             <value>Delete</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Account.Sync_from_BH_API</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -3039,6 +3042,13 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab16</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Department}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Deal</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>Facet-xmdtyzft1op</name>
