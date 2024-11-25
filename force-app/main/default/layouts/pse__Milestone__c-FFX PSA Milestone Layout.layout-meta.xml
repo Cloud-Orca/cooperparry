@@ -47,6 +47,10 @@
                 <behavior>Edit</behavior>
                 <field>Milestone_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Recurring__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

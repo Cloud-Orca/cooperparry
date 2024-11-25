@@ -50,6 +50,14 @@
                 <behavior>Edit</behavior>
                 <field>CT_Expected_Recovery_Rate__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Project_or_Milestone_Recognition__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Default_Recognition_Template__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

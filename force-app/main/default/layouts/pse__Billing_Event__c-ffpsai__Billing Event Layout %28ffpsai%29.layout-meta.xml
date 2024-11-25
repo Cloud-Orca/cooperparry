@@ -4,6 +4,7 @@
     <customButtons>pse__Release_Detail</customButtons>
     <customButtons>pse__Invoice_Detail</customButtons>
     <customButtons>pse__Clear_Billing_Data</customButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -127,6 +128,10 @@
                 <behavior>Edit</behavior>
                 <field>ffpsai__Override__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Notes_for_Finance__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -224,7 +229,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hA000000RZg8k</masterLabel>
+        <masterLabel>00h2o00000n5wNE</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
