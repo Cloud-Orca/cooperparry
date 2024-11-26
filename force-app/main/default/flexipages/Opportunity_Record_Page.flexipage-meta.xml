@@ -445,7 +445,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Assignment_Type__c</fieldItem>
                 <identifier>RecordAssignment_Type_cField2</identifier>
@@ -853,6 +853,19 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection11</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity_Area__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Audit</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>THG Audit</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -872,10 +885,16 @@
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection7</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>CP Opportunity</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity_Area__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Law</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -897,10 +916,21 @@
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection10</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>CP Opportunity</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>BT Compliance</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>PC Compliance</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

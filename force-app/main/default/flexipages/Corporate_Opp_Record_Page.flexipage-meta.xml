@@ -377,7 +377,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Opportunity_Area__c</fieldItem>
                 <identifier>RecordOpportunity_Area_cField</identifier>
@@ -397,7 +397,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Assignment_Type__c</fieldItem>
                 <identifier>RecordAssignment_Type_cField2</identifier>
