@@ -2,7 +2,7 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Cooper Parry T&amp;E Resources PSG for UAT Testing</description>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Cooper Parry T&amp;E Resources PSG</label>
+    <label>[OLD]  Cooper Parry T&amp;E Resources PSG</label>
     <permissionSets>Cooper_Parry_PSA_Custom_Fields_Permission_Set</permissionSets>
     <permissionSets>Cooper_Parry_PSA_Permission_Set</permissionSets>
     <permissionSets>Cooper_Parry_User_Fields</permissionSets>
