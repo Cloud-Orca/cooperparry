@@ -936,7 +936,7 @@
                     <criteria>
                         <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>PC Compliance</rightValue>
+                        <rightValue>THG Tax</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
