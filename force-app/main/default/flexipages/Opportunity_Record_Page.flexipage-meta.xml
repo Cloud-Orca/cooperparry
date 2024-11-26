@@ -30,10 +30,16 @@
                         <valueListItems>
                             <value>Opportunity.Submit_for_Approval</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.Audit_Partner_Approval_Status__c}</leftValue>
                                     <operator>NE</operator>
                                     <rightValue>Submitted</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity_Area__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Audit</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
