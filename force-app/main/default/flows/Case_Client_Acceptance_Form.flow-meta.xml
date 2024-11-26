@@ -1,37 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>59.0</apiVersion>
-    <assignments>
-        <name>Assign_Case_and_Account_Id</name>
-        <label>Assign Case and Account Id</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.Case__c</assignToReference>
-            <operator>Assign</operator>
+    <actionCalls>
+        <name>Upload_File_to_Sharepoint</name>
+        <label>Upload File to Sharepoint</label>
+        <locationX>50</locationX>
+        <locationY>2570</locationY>
+        <actionName>SharepointUploadFileInvocable</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Client_Acceptance_Form_Page_2_5</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>caseId</name>
             <value>
                 <elementReference>recordId</elementReference>
             </value>
-        </assignmentItems>
+        </inputParameters>
+        <inputParameters>
+            <name>fileId</name>
+            <value>
+                <elementReference>fileId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SharepointUploadFileInvocable</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Assign_Business_Risk_Assesment_Form</name>
+        <label>Assign Business Risk Assesment Form</label>
+        <locationX>314</locationX>
+        <locationY>1106</locationY>
         <assignmentItems>
-            <assignToReference>clientAcceptanceForm.Account__c</assignToReference>
+            <assignToReference>clientAcceptanceForm.Id</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Case.AccountId</elementReference>
+                <elementReference>Get_Created_Business_Risk_Assessment.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>clientAcceptanceForm.RecordTypeId</assignToReference>
+            <assignToReference>clientAcceptanceForm</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Business_CAF_Record_Type.Id</elementReference>
+                <elementReference>Get_Created_Business_Risk_Assessment</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Page_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assign_File_Id</name>
+        <label>assign File Id</label>
+        <locationX>182</locationX>
+        <locationY>2054</locationY>
         <assignmentItems>
-            <assignToReference>clientAcceptanceForm.Type__c</assignToReference>
+            <assignToReference>fileIds</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Business Risk Assessment</stringValue>
+                <elementReference>fileUpload.contentVersionIds</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_there_a_File_Upload</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assign_File_Upload_Id</name>
+        <label>assign File Upload Id</label>
+        <locationX>138</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>fileId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Content_Version_Ids</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Content_Version_Ids</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Form_to_ClientAcceptanceForm</name>
+        <label>Assign Form to ClientAcceptanceForm</label>
+        <locationX>50</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getBusinessRiskAssessmentForm</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -41,19 +102,28 @@
     <assignments>
         <name>Beneficiaries_Assignment</name>
         <label>Beneficiaries Assignment</label>
-        <locationX>264</locationX>
-        <locationY>3266</locationY>
+        <locationX>270</locationX>
+        <locationY>4706</locationY>
         <assignmentItems>
             <assignToReference>beneficiary.Name</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Beneficiaries_Loop.Person_full_name</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>beneficiary.Basis_of_beneficial_ownership__c</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Beneficiaries_Loop.Basis_of_beneficial_ownership</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>beneficiary.ID_verified_by__c</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Beneficiaries_Loop.ID_verified_by</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>beneficiary.Client_Acceptance_Form__c</assignToReference>
@@ -76,8 +146,8 @@
     <assignments>
         <name>Page_1_Assignments</name>
         <label>Page 1 Assignments</label>
-        <locationX>176</locationX>
-        <locationY>566</locationY>
+        <locationX>182</locationX>
+        <locationY>1406</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Client_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -174,14 +244,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_Business_Risk_Assessment_Form</targetReference>
+            <targetReference>Page_2</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_2_5_Assignments</name>
         <label>Page 2.5 Assignments</label>
-        <locationX>176</locationX>
-        <locationY>1214</locationY>
+        <locationX>182</locationX>
+        <locationY>1946</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.regpick2__c</assignToReference>
             <operator>Assign</operator>
@@ -267,14 +337,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Client_Acceptance_Form_Page_2_5</targetReference>
+            <targetReference>assign_File_Id</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_2_Assignments</name>
         <label>Page 2 Assignments</label>
-        <locationX>176</locationX>
-        <locationY>890</locationY>
+        <locationX>182</locationX>
+        <locationY>1622</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Owner__c</assignToReference>
             <operator>Assign</operator>
@@ -359,8 +429,8 @@
     <assignments>
         <name>Page_3_Assignments</name>
         <label>Page 3 Assignments</label>
-        <locationX>176</locationX>
-        <locationY>1538</locationY>
+        <locationX>182</locationX>
+        <locationY>2978</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.pickint1__c</assignToReference>
             <operator>Assign</operator>
@@ -445,8 +515,8 @@
     <assignments>
         <name>Page_4_5_Assignments</name>
         <label>Page 4-5 Assignments</label>
-        <locationX>176</locationX>
-        <locationY>1862</locationY>
+        <locationX>182</locationX>
+        <locationY>3302</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.mlrapick1__c</assignToReference>
             <operator>Assign</operator>
@@ -559,8 +629,8 @@
     <assignments>
         <name>Page_6_Assignments</name>
         <label>Page 6 Assignments</label>
-        <locationX>176</locationX>
-        <locationY>2186</locationY>
+        <locationX>182</locationX>
+        <locationY>3626</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.ben1__c</assignToReference>
             <operator>Assign</operator>
@@ -624,8 +694,8 @@
     <assignments>
         <name>Page_7_Assignments</name>
         <label>Page 7 Assignments</label>
-        <locationX>176</locationX>
-        <locationY>2510</locationY>
+        <locationX>182</locationX>
+        <locationY>3950</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.objpick1__c</assignToReference>
             <operator>Assign</operator>
@@ -703,8 +773,8 @@
     <assignments>
         <name>Page_8_9_Assignment</name>
         <label>Page 8-9 Assignment</label>
-        <locationX>176</locationX>
-        <locationY>2942</locationY>
+        <locationX>182</locationX>
+        <locationY>4382</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.con1__c</assignToReference>
             <operator>Assign</operator>
@@ -761,23 +831,35 @@
     <assignments>
         <name>Subsidiaries_Assignment</name>
         <label>Subsidiaries Assignment</label>
-        <locationX>264</locationX>
-        <locationY>3674</locationY>
+        <locationX>270</locationX>
+        <locationY>5114</locationY>
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Name</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Subsidiaries_Loop.Subsidiary</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Accounts__c</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Subsidiaries_Loop.Accounts</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Confirmation_Statements_Annual_Return__c</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Subsidiaries_Loop.Confirmation_Statements_Annual_Return</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Incorporation_Document_Memorandum_and__c</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Subsidiaries_Loop.Incorporation_Document_Memorandum_and_or_Articles_of_Association_Name_Changes</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Client_Acceptance_Form__c</assignToReference>
@@ -798,6 +880,14 @@
         </connector>
     </assignments>
     <choices>
+        <name>High</name>
+        <choiceText>High</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>High</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>NA</name>
         <choiceText>N/A</choiceText>
         <dataType>String</dataType>
@@ -814,6 +904,14 @@
         </value>
     </choices>
     <choices>
+        <name>Normal</name>
+        <choiceText>Normal</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Normal</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>TBD</name>
         <choiceText>TBD</choiceText>
         <dataType>String</dataType>
@@ -826,6 +924,81 @@
             <stringValue>Yes</stringValue>
         </value>
     </choices>
+    <decisions>
+        <name>Check_any_Pending_Approval_Status</name>
+        <label>Check any Pending Approval Status</label>
+        <locationX>380</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Close_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
+        <rules>
+            <name>No_Pending_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Business_CAF_Record_Type</targetReference>
+            </connector>
+            <label>No Pending Approvals</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_Form_is_Existing</name>
+        <label>Check if Form is Existing</label>
+        <locationX>182</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <targetReference>Create_Business_Risk_Assessment_Form</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>None</defaultConnectorLabel>
+        <rules>
+            <name>Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getBusinessRiskAssessmentForm</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Form_to_ClientAcceptanceForm</targetReference>
+            </connector>
+            <label>Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_File_Upload</name>
+        <label>Is there a File Upload</label>
+        <locationX>182</locationX>
+        <locationY>2162</locationY>
+        <defaultConnector>
+            <targetReference>Update_Client_Acceptance_Form_Page_2_5</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>None</defaultConnectorLabel>
+        <rules>
+            <name>File_Upload</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fileIds</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Content_Version_Ids</targetReference>
+            </connector>
+            <label>File Upload</label>
+        </rules>
+    </decisions>
     <dynamicChoiceSets>
         <name>oppArea_values</name>
         <dataType>Picklist</dataType>
@@ -848,8 +1021,9 @@
     <loops>
         <name>Beneficiaries_Loop</name>
         <label>Beneficiaries Loop</label>
-        <locationX>176</locationX>
-        <locationY>3158</locationY>
+        <locationX>182</locationX>
+        <locationY>4598</locationY>
+        <collectionReference>beneficiaryRepeater.AllItems</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Beneficiaries_Assignment</targetReference>
@@ -859,10 +1033,25 @@
         </noMoreValuesConnector>
     </loops>
     <loops>
+        <name>Content_Version_Ids</name>
+        <label>Content Version Ids</label>
+        <locationX>50</locationX>
+        <locationY>2270</locationY>
+        <collectionReference>fileIds</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>assign_File_Upload_Id</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Upload_File_to_Sharepoint</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
         <name>Subsidiaries_Loop</name>
         <label>Subsidiaries Loop</label>
-        <locationX>176</locationX>
-        <locationY>3566</locationY>
+        <locationX>182</locationX>
+        <locationY>5006</locationY>
+        <collectionReference>subsidiaryRepeater.AllItems</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Subsidiaries_Assignment</targetReference>
@@ -893,8 +1082,8 @@
     <recordCreates>
         <name>Create_Beneficiaries</name>
         <label>Create Beneficiaries</label>
-        <locationX>176</locationX>
-        <locationY>3458</locationY>
+        <locationX>182</locationX>
+        <locationY>4898</locationY>
         <connector>
             <targetReference>Subsidiaries_Loop</targetReference>
         </connector>
@@ -903,31 +1092,84 @@
     <recordCreates>
         <name>Create_Business_Risk_Assessment_Form</name>
         <label>Create Business Risk Assessment Form</label>
-        <locationX>176</locationX>
-        <locationY>674</locationY>
+        <locationX>314</locationX>
+        <locationY>890</locationY>
         <connector>
-            <targetReference>Page_2</targetReference>
+            <targetReference>Get_Created_Business_Risk_Assessment</targetReference>
         </connector>
-        <inputReference>clientAcceptanceForm</inputReference>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Get_Case.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Case__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Business_CAF_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Business Risk Assessment</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Client_Acceptance_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <name>Create_Subsidiaries</name>
         <label>Create Subsidiaries</label>
-        <locationX>176</locationX>
-        <locationY>3866</locationY>
+        <locationX>182</locationX>
+        <locationY>5306</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
         <inputReference>subsidiaries</inputReference>
     </recordCreates>
     <recordLookups>
-        <name>Get_Business_CAF_Record_Type</name>
-        <label>Get Business CAF Record Type</label>
-        <locationX>176</locationX>
+        <name>Get_Approval_Process</name>
+        <label>Get Approval Process</label>
+        <locationX>380</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Case_and_Account_Id</targetReference>
+            <targetReference>Check_any_Pending_Approval_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Business_CAF_Record_Type</name>
+        <label>Get Business CAF Record Type</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>getAccountTeamMembers</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -951,11 +1193,11 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>176</locationX>
+        <locationX>380</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Business_CAF_Record_Type</targetReference>
+            <targetReference>Get_Approval_Process</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -969,11 +1211,88 @@
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Created_Business_Risk_Assessment</name>
+        <label>Get Created Business Risk Assessment</label>
+        <locationX>314</locationX>
+        <locationY>998</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Business_Risk_Assesment_Form</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Create_Business_Risk_Assessment_Form</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Client_Acceptance_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getAccountTeamMembers</name>
+        <label>getAccountTeamMembers</label>
+        <locationX>182</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>getBusinessRiskAssessmentForm</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Case.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>TeamMemberRole</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lifecycle Coordinator</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AccountTeamMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getBusinessRiskAssessmentForm</name>
+        <label>getBusinessRiskAssessmentForm</label>
+        <locationX>182</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_Form_is_Existing</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Business_CAF_Record_Type.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Client_Acceptance_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_CAF</name>
         <label>Update CAF</label>
-        <locationX>176</locationX>
-        <locationY>3050</locationY>
+        <locationX>182</locationX>
+        <locationY>4490</locationY>
         <connector>
             <targetReference>Beneficiaries_Loop</targetReference>
         </connector>
@@ -982,8 +1301,8 @@
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>176</locationX>
-        <locationY>3974</locationY>
+        <locationX>182</locationX>
+        <locationY>5414</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -1003,8 +1322,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_2</name>
         <label>Update Client Acceptance Form Page 2</label>
-        <locationX>176</locationX>
-        <locationY>998</locationY>
+        <locationX>182</locationX>
+        <locationY>1730</locationY>
         <connector>
             <targetReference>Page_2_5</targetReference>
         </connector>
@@ -1013,8 +1332,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_2_5</name>
         <label>Update Client Acceptance Form Page 2.5</label>
-        <locationX>176</locationX>
-        <locationY>1322</locationY>
+        <locationX>182</locationX>
+        <locationY>2762</locationY>
         <connector>
             <targetReference>Page_3</targetReference>
         </connector>
@@ -1023,8 +1342,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_3</name>
         <label>Update Client Acceptance Form Page 3</label>
-        <locationX>176</locationX>
-        <locationY>1646</locationY>
+        <locationX>182</locationX>
+        <locationY>3086</locationY>
         <connector>
             <targetReference>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</targetReference>
         </connector>
@@ -1033,8 +1352,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_4_5</name>
         <label>Update Client Acceptance Form Page 4-5</label>
-        <locationX>176</locationX>
-        <locationY>1970</locationY>
+        <locationX>182</locationX>
+        <locationY>3410</locationY>
         <connector>
             <targetReference>Page_6_BENEFICIARIES</targetReference>
         </connector>
@@ -1043,8 +1362,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_6</name>
         <label>Update Client Acceptance Form Page 6</label>
-        <locationX>176</locationX>
-        <locationY>2294</locationY>
+        <locationX>182</locationX>
+        <locationY>3734</locationY>
         <connector>
             <targetReference>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</targetReference>
         </connector>
@@ -1053,18 +1372,35 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_7</name>
         <label>Update Client Acceptance Form Page 7</label>
-        <locationX>176</locationX>
-        <locationY>2618</locationY>
+        <locationX>182</locationX>
+        <locationY>4058</locationY>
         <connector>
             <targetReference>Page_8_CONCLUSION</targetReference>
         </connector>
         <inputReference>clientAcceptanceForm</inputReference>
     </recordUpdates>
     <screens>
+        <name>Close_Screen</name>
+        <label>Close Screen</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Page_1</name>
         <label>Page 1 - GENERAL</label>
-        <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationX>182</locationX>
+        <locationY>1298</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1249,6 +1585,9 @@
                 <fields>
                     <name>Primary_Contact</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Primary_Contact__c</elementReference>
+                    </defaultValue>
                     <fieldText>Primary Contact</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1268,6 +1607,9 @@
                 <fields>
                     <name>Email</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Email__c</elementReference>
+                    </defaultValue>
                     <fieldText>Email</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1315,6 +1657,9 @@
                 <fields>
                     <name>Contact_Address</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>getAccountTeamMembers.User.Contact.MailingAddress</elementReference>
+                    </defaultValue>
                     <fieldText>Contact Address</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1323,6 +1668,9 @@
                 <fields>
                     <name>Post_Code</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Post_Code__c</elementReference>
+                    </defaultValue>
                     <fieldText>Post Code</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1331,6 +1679,9 @@
                 <fields>
                     <name>Telephone</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Telephone__c</elementReference>
+                    </defaultValue>
                     <fieldText>Telephone</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1339,6 +1690,9 @@
                 <fields>
                     <name>Registered_Office_if_different_to_above</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Registered_Office__c</elementReference>
+                    </defaultValue>
                     <fieldText>Registered Office (if different to above)</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1347,6 +1701,9 @@
                 <fields>
                     <name>Post_Code_Office</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Post_Code__c</elementReference>
+                    </defaultValue>
                     <fieldText>Post Code</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1355,6 +1712,9 @@
                 <fields>
                     <name>Client_Group</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Client_Group__c</elementReference>
+                    </defaultValue>
                     <fieldText>Client Group</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1362,6 +1722,9 @@
                 </fields>
                 <fields>
                     <name>List_related_businesses_and_individuals_and_the_relationship_own_code</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.List_related_businesses_and_individuals__c}</stringValue>
+                    </defaultValue>
                     <fieldText>List related businesses and individuals and the relationship (own code)</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <helpText>&lt;p&gt;NOTE: If onboarding multiple entries, please list all company names and registered numbers (and Dynamics account number if applicable).&lt;/p&gt;</helpText>
@@ -1371,6 +1734,9 @@
                 <fields>
                     <name>Subsidiaries_included_on_this_form_main_code</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Subsidiaries_included_on_this_form__c</elementReference>
+                    </defaultValue>
                     <fieldText>Subsidiaries included on this form (main code)</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1379,6 +1745,9 @@
                 <fields>
                     <name>Who_at_the_client_has_authority_to_instruct_us</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Who_at_the_client_has_authority_to_ins__c</elementReference>
+                    </defaultValue>
                     <fieldText>Who at the client has authority to instruct us?</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1386,6 +1755,9 @@
                 </fields>
                 <fields>
                     <name>List_client_contacts_name_and_position</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.List_client_contacts_name_and_position__c}</stringValue>
+                    </defaultValue>
                     <fieldText>List client contacts (name and position)</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1419,8 +1791,8 @@
     <screens>
         <name>Page_2</name>
         <label>Page 2 - CP CONTACTS, NATURE OF ASSIGNMENT, CHANGE OF ADVISOR</label>
-        <locationX>176</locationX>
-        <locationY>782</locationY>
+        <locationX>182</locationX>
+        <locationY>1514</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1503,6 +1875,9 @@
                 <fields>
                     <name>Audit_RI</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Audit_RI__c</elementReference>
+                    </defaultValue>
                     <fieldText>Audit RI</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1511,6 +1886,9 @@
                 <fields>
                     <name>Lead_Manager</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Lead_Manager__c</elementReference>
+                    </defaultValue>
                     <fieldText>Relationship Manager</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1519,6 +1897,9 @@
                 <fields>
                     <name>Lifecycle_Coordinator</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>getAccountTeamMembers.User.Name</elementReference>
+                    </defaultValue>
                     <fieldText>Lifecycle Coordinator</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1527,6 +1908,9 @@
                 <fields>
                     <name>Other_Please_specify</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Other_please_specify__c</elementReference>
+                    </defaultValue>
                     <fieldText>Other (Please specify)</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1578,6 +1962,9 @@
                 </fields>
                 <fields>
                     <name>Nature_activity_of_client</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.Nature_activity_of_client__c}</stringValue>
+                    </defaultValue>
                     <fieldText>Nature activity of client</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1585,6 +1972,9 @@
                 </fields>
                 <fields>
                     <name>Summarise_the_key_aspects_of_what_we_are_being_asked_to_do</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.Summarise_the_key_aspects_of_what_we_are__c}</stringValue>
+                    </defaultValue>
                     <fieldText>Summarise the key aspects of what we are being asked to do</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <helpText>&lt;p&gt;Please delete/update if where applicable.&lt;/p&gt;</helpText>
@@ -1638,6 +2028,9 @@
                 <fields>
                     <name>Name_of_current_advisor</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Name_of_current_advisor__c</elementReference>
+                    </defaultValue>
                     <fieldText>Name of current advisor</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1684,7 +2077,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>coa1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Has the current adviser been advised in writing by the client that they may disclose information to us?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Has the current adviser been advised in writing by the client that they may disclose information to us?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1704,6 +2097,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Has_the_current_adviser_been_advised_in__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1750,6 +2146,9 @@
                 <fields>
                     <name>If_No_please_confirm_action_to_be_taken</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.If_No_please_confirm_action_to_be_taken__c</elementReference>
+                    </defaultValue>
                     <fieldText>If No, please confirm action to be taken</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1806,7 +2205,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>coa2</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Has the source of introduction been established?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Has the source of introduction been established?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1826,6 +2225,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Has_the_source_of_introduction_been_esta__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1858,8 +2260,8 @@
     <screens>
         <name>Page_2_5</name>
         <label>Page 2.5 - REGULATIONS</label>
-        <locationX>176</locationX>
-        <locationY>1106</locationY>
+        <locationX>182</locationX>
+        <locationY>1838</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1987,7 +2389,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>reg12</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;If the client is in a regulated industry have we enquired about its relationship with the regulatory authorities&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;If the client is in a regulated industry have we enquired about its relationship with the regulatory authorities&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2007,6 +2409,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick12__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2072,6 +2477,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick13__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2137,6 +2545,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick2__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2144,6 +2555,9 @@
                 <fields>
                     <name>regpickyes2</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpickyes2__c</elementReference>
+                    </defaultValue>
                     <fieldText>Requirements</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2220,6 +2634,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick3__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2285,6 +2702,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick4__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2350,6 +2770,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick5__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2415,6 +2838,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick14__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2480,6 +2906,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick8__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2545,6 +2974,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick15__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2610,6 +3042,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpick11__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2656,6 +3091,9 @@
                 <fields>
                     <name>regpickyes11</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.regpickyes11__c</elementReference>
+                    </defaultValue>
                     <fieldText>If &quot;YES&quot; please give details below:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2693,14 +3131,46 @@
                 </conditions>
             </visibilityRule>
         </fields>
+        <fields>
+            <name>fileUpload</name>
+            <extensionName>forceContent:fileUpload</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Upload File</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>contentVersionIds</name>
+                <value>
+                    <elementReference>fileIds</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>multiple</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Page_3</name>
         <label>Page 3 - INTEGRITY, FINANCIAL RISK</label>
-        <locationX>176</locationX>
-        <locationY>1430</locationY>
+        <locationX>182</locationX>
+        <locationY>2870</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2848,6 +3318,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickint1__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2894,6 +3367,9 @@
                 <fields>
                     <name>pickintyes1</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickintyes1__c</elementReference>
+                    </defaultValue>
                     <fieldText>If yes, has a report been made to the MLRO? If not, please make additional notes below:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2970,6 +3446,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickint2__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3016,6 +3495,9 @@
                 <fields>
                     <name>pickintyes2</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickintyes2__c</elementReference>
+                    </defaultValue>
                     <fieldText>If yes, please explain below:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3152,6 +3634,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickfin1__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3159,6 +3644,9 @@
                 <fields>
                     <name>pickfinyes1</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickfinyes1__c</elementReference>
+                    </defaultValue>
                     <fieldText>If Yes, please specify Service Line here</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3295,6 +3783,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickfin3__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3360,6 +3851,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickfin4__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3406,6 +3900,9 @@
                 <fields>
                     <name>pickfinyes4</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickfinyes4__c</elementReference>
+                    </defaultValue>
                     <fieldText>If yes, summarise the contingent arrangement below:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3482,6 +3979,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickfin5__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3528,6 +4028,9 @@
                 <fields>
                     <name>pickfinyes5</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.pickfinyes5__c</elementReference>
+                    </defaultValue>
                     <fieldText>If yes, please give details:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3571,8 +4074,8 @@
     <screens>
         <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</name>
         <label>Page 4-5 - MONEY LAUNDERING RISK ASSESSMENT</label>
-        <locationX>176</locationX>
-        <locationY>1754</locationY>
+        <locationX>182</locationX>
+        <locationY>3194</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3720,6 +4223,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick1__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3785,6 +4291,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick2__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3850,6 +4359,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick3__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3915,6 +4427,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick4__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3980,6 +4495,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick5__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4045,6 +4563,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick6__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4110,6 +4631,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick7__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4219,6 +4743,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick8__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4264,6 +4791,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlra9</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.mlra9__c}</stringValue>
+                    </defaultValue>
                     <fieldText>If the client has been met please state which team member met them:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4310,6 +4840,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlra10</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.mlra10__c}</stringValue>
+                    </defaultValue>
                     <fieldText>Please name the individuals whom we met:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4356,6 +4889,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlra11</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.mlra11__c}</stringValue>
+                    </defaultValue>
                     <fieldText>Other comments:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4422,6 +4958,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick12__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4487,6 +5026,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick13__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4537,6 +5079,9 @@
                 </fields>
                 <fields>
                     <name>mlra14</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.mlra14__c}</stringValue>
+                    </defaultValue>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4598,8 +5143,12 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlrapick15</name>
-                    <choiceReferences>TBD</choiceReferences>
+                    <choiceReferences>Normal</choiceReferences>
+                    <choiceReferences>High</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick15__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4676,8 +5225,8 @@
     <screens>
         <name>Page_6_BENEFICIARIES</name>
         <label>Page 6 - BENEFICIARIES</label>
-        <locationX>176</locationX>
-        <locationY>2078</locationY>
+        <locationX>182</locationX>
+        <locationY>3518</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4732,6 +5281,35 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
+            <name>beneficiaryRepeater</name>
+            <fieldType>Repeater</fieldType>
+            <fields>
+                <name>Person_full_name</name>
+                <dataType>String</dataType>
+                <fieldText>Person full name:</fieldText>
+                <fieldType>InputField</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>ID_verified_by</name>
+                <dataType>String</dataType>
+                <fieldText>ID verified by:</fieldText>
+                <fieldType>InputField</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Basis_of_beneficial_ownership</name>
+                <dataType>String</dataType>
+                <fieldText>Basis of beneficial ownership</fieldText>
+                <fieldType>InputField</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
             <name>Page_6_BENEFICIARIES_Section2</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
@@ -4750,6 +5328,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>ben1</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.ben1__c}</stringValue>
+                    </defaultValue>
                     <fieldText>Identification comments (including summary of why individuals have been chosen for identity verification):</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4840,6 +5421,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>pc1</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.pc1__c}</stringValue>
+                    </defaultValue>
                     <fieldText>Please embed any supporting documents here:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4966,6 +5550,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick1__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5011,6 +5598,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>orpick1yes</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.orpick1yes__c}</stringValue>
+                    </defaultValue>
                     <fieldText>If yes, please detail below why you are happy to proceed:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5087,6 +5677,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick2__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5133,6 +5726,9 @@
                 <fields>
                     <name>orpick2yes</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick2yes__c</elementReference>
+                    </defaultValue>
                     <fieldText>If yes, why?</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5209,6 +5805,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick3__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5274,6 +5873,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick4__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5306,8 +5908,8 @@
     <screens>
         <name>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</name>
         <label>Page 7 - OBJECTIVITY / CONFLICTS OF INTEREST</label>
-        <locationX>176</locationX>
-        <locationY>2402</locationY>
+        <locationX>182</locationX>
+        <locationY>3842</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -5455,6 +6057,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick1__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5501,6 +6106,9 @@
                 <fields>
                     <name>objpickyes1</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpickyes1__c</elementReference>
+                    </defaultValue>
                     <fieldText>If yes, please give details below:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5577,6 +6185,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick3__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5642,6 +6253,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick4__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5707,6 +6321,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick5__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5772,6 +6389,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick6__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5837,6 +6457,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick7__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5882,6 +6505,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>objpickyes7</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.objpickyes7__c}</stringValue>
+                    </defaultValue>
                     <fieldText>If yes, please summarise below.</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5958,6 +6584,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick8__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -6003,6 +6632,9 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>objpickyes8</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.objpickyes8__c}</stringValue>
+                    </defaultValue>
                     <fieldText>If yes, please describe below:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -6090,8 +6722,8 @@
     <screens>
         <name>Page_8_CONCLUSION</name>
         <label>Page 8 - CONCLUSION</label>
-        <locationX>176</locationX>
-        <locationY>2726</locationY>
+        <locationX>182</locationX>
+        <locationY>4166</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -6164,6 +6796,9 @@
                 </fields>
                 <fields>
                     <name>con1</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.con1__c}</stringValue>
+                    </defaultValue>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -6298,6 +6933,9 @@
                 <fields>
                     <name>auditpartnername</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.auditpartnername__c</elementReference>
+                    </defaultValue>
                     <fieldText>Name</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -6317,6 +6955,9 @@
                 <fields>
                     <name>auditpartnerdate</name>
                     <dataType>Date</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.auditpartnerdate__c</elementReference>
+                    </defaultValue>
                     <fieldText>Date Approved</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -6408,6 +7049,9 @@
                 <fields>
                     <name>advisorypartnername</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.advisorypartnername__c</elementReference>
+                    </defaultValue>
                     <fieldText>Name</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -6427,6 +7071,9 @@
                 <fields>
                     <name>advisorypartnerdate</name>
                     <dataType>Date</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.advisorypartnerdate__c</elementReference>
+                    </defaultValue>
                     <fieldText>Date Approved</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -6460,8 +7107,8 @@
     <screens>
         <name>Page_9_APPENDIX</name>
         <label>Page 9 - APPENDIX</label>
-        <locationX>176</locationX>
-        <locationY>2834</locationY>
+        <locationX>182</locationX>
+        <locationY>4274</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -6532,18 +7179,55 @@
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
+        <fields>
+            <name>subsidiaryRepeater</name>
+            <fieldType>Repeater</fieldType>
+            <fields>
+                <name>Subsidiary</name>
+                <dataType>String</dataType>
+                <defaultValue>
+                    <stringValue>[INSERT SUBSIDIARY NAME]</stringValue>
+                </defaultValue>
+                <fieldText>Subsidiary</fieldText>
+                <fieldType>InputField</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Accounts</name>
+                <fieldText>Accounts</fieldText>
+                <fieldType>LargeTextArea</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Confirmation_Statements_Annual_Return</name>
+                <fieldText>Confirmation Statements / Annual Return</fieldText>
+                <fieldType>LargeTextArea</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Incorporation_Document_Memorandum_and_or_Articles_of_Association_Name_Changes</name>
+                <fieldText>Incorporation Document / Memorandum and/or Articles of Association / Name Changes</fieldText>
+                <fieldType>LargeTextArea</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
         <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
         </connector>
     </start>
-    <status>InvalidDraft</status>
+    <status>Draft</status>
     <variables>
         <name>beneficiaries</name>
         <dataType>SObject</dataType>
@@ -6567,6 +7251,20 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Client_Acceptance_Form__c</objectType>
+    </variables>
+    <variables>
+        <name>fileId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>fileIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>recordId</name>
