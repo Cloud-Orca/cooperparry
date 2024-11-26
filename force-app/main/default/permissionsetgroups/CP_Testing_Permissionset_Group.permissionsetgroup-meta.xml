@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
-    <label>CP Testing Permissionset Group</label>
+    <label>[OLD]  CP Testing Permissionset Group</label>
     <permissionSets>ffscpq__AddFromTemplate</permissionSets>
     <permissionSets>ffscpq__ApproveEstimates</permissionSets>
     <permissionSets>ffscpq__CreateEstimates</permissionSets>
