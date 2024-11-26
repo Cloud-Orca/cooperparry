@@ -6,7 +6,6 @@
     <excludeButtons>ChangeRecordType</excludeButtons>
     <excludeButtons>Clone</excludeButtons>
     <excludeButtons>Delete</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <layoutSections>
@@ -33,6 +32,10 @@
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ffpsai__Account__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>pse__Project__c</field>
@@ -160,6 +163,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>pse__Billing_Event__c.Release_Billing_Event</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Submit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
@@ -178,11 +186,6 @@
             <actionName>pse__Billing_Event__c.pse__RecalculateBilling</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>pse__Billing_Event__c.Release_Billing_Event</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>PrintableView</actionName>
