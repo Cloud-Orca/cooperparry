@@ -26,8 +26,12 @@
             <name>Set_Status_to_Approved</name>
             <type>FieldUpdate</type>
         </action>
+        <action>
+            <name>Update_Status_Compliance_Check</name>
+            <type>FieldUpdate</type>
+        </action>
     </finalApprovalActions>
-    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <label>CAF Form Approval</label>
     <processOrder>1</processOrder>
