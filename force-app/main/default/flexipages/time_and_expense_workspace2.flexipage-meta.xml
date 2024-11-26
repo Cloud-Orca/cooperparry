@@ -325,7 +325,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>isMilestoneAllowed</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>readOnlyFieldSetApiName</name>

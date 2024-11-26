@@ -289,6 +289,9 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
     </variables>
     <variables>
         <name>MilestoneAssignmentRevenue</name>
@@ -297,6 +300,9 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
     </variables>
     <variables>
         <name>Project_RR_Amount</name>
@@ -313,5 +319,8 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
     </variables>
 </Flow>

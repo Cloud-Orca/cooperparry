@@ -7,6 +7,11 @@
         <label>New</label>
     </standardValue>
     <standardValue>
+        <fullName>Connector</fullName>
+        <default>false</default>
+        <label>Connector</label>
+    </standardValue>
+    <standardValue>
         <fullName>Target</fullName>
         <default>false</default>
         <label>Target</label>

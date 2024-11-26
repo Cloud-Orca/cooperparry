@@ -268,7 +268,7 @@
                 <leftValueReference>Get.pse__Project__r.CT_Actual_Recovery_Rate__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
-                    <numberValue>0.7</numberValue>
+                    <numberValue>70.0</numberValue>
                 </rightValue>
             </conditions>
             <conditions>

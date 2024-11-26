@@ -2,6 +2,12 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+        <label>Escalated</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
         <fullName>New</fullName>
         <default>true</default>
         <label>New</label>
@@ -23,12 +29,6 @@
         <fullName>Compliance Check</fullName>
         <default>false</default>
         <label>Compliance Check</label>
-        <closed>false</closed>
-    </standardValue>
-    <standardValue>
-        <fullName>Escalated</fullName>
-        <default>false</default>
-        <label>Escalated</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>

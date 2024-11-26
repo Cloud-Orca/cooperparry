@@ -292,6 +292,11 @@
             <field>CT_Project_Partner_approval_required__c</field>
             <table>pse__Billing_Event_Batch__c.pse__Billing_Events__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CT_Notes_for_Finance__c</field>
+            <table>pse__Billing_Event_Batch__c.pse__Billing_Events__r</table>
+        </columns>
         <masterLabel>Billing Events</masterLabel>
     </sections>
     <sections>

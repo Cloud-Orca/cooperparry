@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Certinia - Read Only Accounting</label>
+    <label>[OLD]  Certinia - Read Only Accounting</label>
     <permissionSets>c2g__AccountingBankAccountReadAccess</permissionSets>
     <permissionSets>c2g__AccountingCashEntryReadAccess</permissionSets>
     <permissionSets>c2g__AccountingReportingBalanceReadAccess</permissionSets>
