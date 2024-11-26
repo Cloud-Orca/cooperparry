@@ -13,7 +13,7 @@
                             <value>Case.Smart_Search</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Case.Ongoing_Monitoring</value>
+                            <value>Case.Business_Ongoing_Monitoring</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Individual_Ongoing_Monitoring</value>
@@ -22,7 +22,7 @@
                             <value>Case.Business_Risk_Assessment</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Case.Individual_Risk</value>
+                            <value>Case.Individual_Risk_Assessment</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Send_to_Risk</value>
@@ -32,6 +32,16 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Case.CF_CAF</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Case.Engagement_Pack_Approval</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Client Review and Doc Gen</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.Case.Form_Approval</value>
@@ -395,16 +405,6 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Case_Assignment_Type__c</fieldItem>
-                <identifier>RecordCase_Assignment_Type_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Case_Area__c</fieldItem>
                 <identifier>RecordCase_Area_cField</identifier>
             </fieldInstance>
@@ -417,6 +417,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Case_Type_Area__c</fieldItem>
                 <identifier>RecordCase_Type_Area_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Case_Assignment_Type__c</fieldItem>
+                <identifier>RecordCase_Assignment_Type_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3ec2ed2f-5471-42ba-9f94-5a3ab688dfcb</name>
