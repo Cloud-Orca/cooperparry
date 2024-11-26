@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_Rev_Rec_Values</name>
         <label>Assign Rev Rec Values</label>
-        <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationX>270</locationX>
+        <locationY>431</locationY>
         <assignmentItems>
             <assignToReference>RevRecTemplate</assignToReference>
             <operator>Assign</operator>
@@ -21,14 +21,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Get_Rev_Rec_Template</targetReference>
+            <targetReference>Project_Rev_Rec</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Clear_Template</name>
         <label>Clear Template</label>
         <locationX>138</locationX>
-        <locationY>1187</locationY>
+        <locationY>1487</locationY>
         <assignmentItems>
             <assignToReference>Loop_Milestones.ffrrtemplate__c</assignToReference>
             <operator>Assign</operator>
@@ -51,7 +51,7 @@
         <name>Rev_Rcc_Types</name>
         <label>Rev Rcc Types</label>
         <locationX>50</locationX>
-        <locationY>755</locationY>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>RRType</assignToReference>
             <operator>Assign</operator>
@@ -67,7 +67,7 @@
         <name>Updated_Milestones</name>
         <label>Updated Milestones</label>
         <locationX>138</locationX>
-        <locationY>1295</locationY>
+        <locationY>1595</locationY>
         <assignmentItems>
             <assignToReference>UpdatedMilestones</assignToReference>
             <operator>Add</operator>
@@ -82,10 +82,10 @@
     <decisions>
         <name>Project_Rev_Rec</name>
         <label>Project Rev Rec</label>
-        <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationX>270</locationX>
+        <locationY>539</locationY>
         <defaultConnector>
-            <targetReference>Update_Project_Record</targetReference>
+            <targetReference>RR_Changes_on_MS_RR</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Not Project Rev Rec</defaultConnectorLabel>
         <rules>
@@ -99,9 +99,70 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assign_Rev_Rec_Values</targetReference>
+                <targetReference>PRR_Changes</targetReference>
             </connector>
             <label>Project Revenue Recognition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>PRR_Changes</name>
+        <label>PRR Changes</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Update_Project_RR</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PRR_Manual_Changes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CT_Manual_Recovery_Rate__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.CT_Manual_Recovery_Rate__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CT_Manual_Recovery_Rate__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Rev_Rec_Template</targetReference>
+            </connector>
+            <label>PRR Manual Changes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>RR_Changes_on_MS_RR</name>
+        <label>RR Changes on MS RR</label>
+        <locationX>490</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Update_Project_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_PRR_Manual_Changes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CT_Manual_Recovery_Rate__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.CT_Manual_Recovery_Rate__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CT_Manual_Recovery_Rate__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <label>Copy 1 of PRR Manual Changes</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -111,7 +172,7 @@
         <name>Loop_Milestones</name>
         <label>Loop Milestones</label>
         <locationX>50</locationX>
-        <locationY>1079</locationY>
+        <locationY>1379</locationY>
         <collectionReference>Get_Milestones</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -144,7 +205,7 @@
         <name>Get_Milestones</name>
         <label>Get Milestones</label>
         <locationX>50</locationX>
-        <locationY>971</locationY>
+        <locationY>1271</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Milestones</targetReference>
@@ -166,11 +227,11 @@
     <recordLookups>
         <name>Get_Practice</name>
         <label>Get Practice</label>
-        <locationX>182</locationX>
+        <locationX>270</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Project_Rev_Rec</targetReference>
+            <targetReference>Assign_Rev_Rec_Values</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -188,7 +249,7 @@
         <name>Get_Rev_Rec_Template</name>
         <label>Get Rev Rec Template</label>
         <locationX>50</locationX>
-        <locationY>647</locationY>
+        <locationY>947</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Rev_Rcc_Types</targetReference>
@@ -209,23 +270,17 @@
         <name>Clear_MS_Rev_Rec_Template</name>
         <label>Clear MS Rev Rec Template</label>
         <locationX>50</locationX>
-        <locationY>1487</locationY>
+        <locationY>1787</locationY>
         <inputReference>UpdatedMilestones</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Project</name>
         <label>Update Project</label>
         <locationX>50</locationX>
-        <locationY>863</locationY>
+        <locationY>1163</locationY>
         <connector>
             <targetReference>Get_Milestones</targetReference>
         </connector>
-        <inputAssignments>
-            <field>CT_Manual_Recovery_Rate__c</field>
-            <value>
-                <elementReference>RecoveryRate</elementReference>
-            </value>
-        </inputAssignments>
         <inputAssignments>
             <field>ffrrtemplate__c</field>
             <value>
@@ -243,8 +298,8 @@
     <recordUpdates>
         <name>Update_Project_Record</name>
         <label>Update Project Record</label>
-        <locationX>314</locationX>
-        <locationY>539</locationY>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
         <inputAssignments>
             <field>CT_Manual_Recovery_Rate__c</field>
             <value>
@@ -256,12 +311,43 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Project_RR</name>
+        <label>Update Project RR</label>
+        <locationX>138</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Get_Rev_Rec_Template</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CT_Manual_Recovery_Rate__c</field>
+            <value>
+                <elementReference>RecoveryRate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>144</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Practice</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Stage__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Is_Billable__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>pse__Proj__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
