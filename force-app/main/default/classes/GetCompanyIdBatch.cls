@@ -103,8 +103,9 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
     }
 
     global void finish(Database.BatchableContext BC){
-        System.debug('@@@validCompanyIds: ' + validCompanyIds);
-        Database.executeBatch(new CreateAccountsFromBHBatch(validCompanyIds), 10);
+        if(!Test.isRunningTest()){
+            Database.executeBatch(new CreateAccountsFromBHBatch(validCompanyIds), 10);
+        }
     }
 
     public class Response{

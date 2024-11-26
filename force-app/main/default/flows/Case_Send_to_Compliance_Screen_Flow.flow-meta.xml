@@ -28,7 +28,7 @@
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
-            <targetReference>Screen2</targetReference>
+            <targetReference>Update_owner</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -93,7 +93,7 @@
         <locationX>182</locationX>
         <locationY>1106</locationY>
         <defaultConnector>
-            <targetReference>Screen2</targetReference>
+            <targetReference>Update_owner</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -132,7 +132,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_owner_and_status</targetReference>
+                <targetReference>Update_status</targetReference>
             </connector>
             <label>Yes - Queue Found</label>
         </rules>
@@ -143,7 +143,7 @@
         <locationX>336</locationX>
         <locationY>782</locationY>
         <defaultConnector>
-            <targetReference>Screen2</targetReference>
+            <targetReference>Update_owner</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -283,8 +283,32 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_owner_and_status</name>
-        <label>Update owner and status</label>
+        <name>Update_owner</name>
+        <label>Update owner</label>
+        <locationX>336</locationX>
+        <locationY>1598</locationY>
+        <connector>
+            <targetReference>Screen2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>get_Risk_Team_Queue.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_status</name>
+        <label>Update status</label>
         <locationX>336</locationX>
         <locationY>458</locationY>
         <connector>
@@ -302,12 +326,6 @@
             <field>Comments</field>
             <value>
                 <elementReference>Notes</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>get_Risk_Team_Queue.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -364,7 +382,7 @@
         <name>Screen2</name>
         <label>Screen2</label>
         <locationX>336</locationX>
-        <locationY>1598</locationY>
+        <locationY>1706</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
