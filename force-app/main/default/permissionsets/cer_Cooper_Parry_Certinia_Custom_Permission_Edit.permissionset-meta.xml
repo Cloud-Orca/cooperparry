@@ -7,6 +7,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.cer_Chasing_Notes_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.cer_Chasing_Notes_Modified_By2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.cer_Chasing_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.cer_Invoice_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -46,8 +61,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaCreditNoteLineItem__c.cer_Milestone__c</field>
+        <editable>true</editable>
+        <field>c2g__codaCreditNoteLineItem__c.cer_Milestone_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -66,8 +81,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaInvoiceLineItem__c.cer_Milestone__c</field>
+        <editable>true</editable>
+        <field>c2g__codaInvoiceLineItem__c.cer_Milestone_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -93,6 +108,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaTransactionLineItem__c.cer_Milestone_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
