@@ -855,12 +855,12 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>THG Audit Approval</value>
+                    <value>Audit and THG Audit Approval</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection11</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
+                    <booleanFilter>(1 AND 2) OR 3</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Opportunity_Area__c}</leftValue>
                         <operator>EQUAL</operator>
@@ -870,6 +870,11 @@
                         <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>THG Audit</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity_Area__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Audit</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -922,7 +927,7 @@
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection10</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+                    <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>
                         <operator>EQUAL</operator>
@@ -937,6 +942,11 @@
                         <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>THG Tax</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>PC Compliance</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>IF(TEXT(THG_Audit_Resourcing_Approval_Status__c)= &quot;Approved&quot;, &quot;✅&quot;,&quot;&quot;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>THG Resourcing Approved</label>
+    <label>Audit and THG Resourcing Approved</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <type>Text</type>
