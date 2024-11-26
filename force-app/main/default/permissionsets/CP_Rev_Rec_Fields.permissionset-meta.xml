@@ -556,6 +556,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.CP_Total_Costs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.CT_Actual_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Milestone__c.CT_Assigned_Hours__c</field>
         <readable>true</readable>
@@ -648,6 +658,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Milestone__c.Recovery_rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Milestone__c.Recurring__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

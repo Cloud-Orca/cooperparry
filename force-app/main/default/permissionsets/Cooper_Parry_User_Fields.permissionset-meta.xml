@@ -167,6 +167,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Milestone__c.CP_Total_Costs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Milestone__c.CT_Actual_Recovery_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -297,6 +302,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CP_Total_Costs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.CT_Actual_Recovery_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -328,6 +338,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.CT_Manual_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Patent_Box_Complete__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_Patent_Box_Stage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
