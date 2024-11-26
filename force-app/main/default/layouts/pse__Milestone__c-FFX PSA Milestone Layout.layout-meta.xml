@@ -132,6 +132,10 @@
                 <behavior>Edit</behavior>
                 <field>CT_Manual_Recovery_Rate__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CT_Actual_Recovery_Rate__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
