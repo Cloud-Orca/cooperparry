@@ -45,7 +45,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>cer_Chasing_Notes_Modified_By__c</field>
+            <field>cer_Chasing_Notes_Modified_By2__c</field>
             <value>
                 <elementReference>$User.Id</elementReference>
             </value>

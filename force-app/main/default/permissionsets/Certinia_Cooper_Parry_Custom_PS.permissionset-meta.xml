@@ -11,7 +11,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.cer_Chasing_Notes_Modified_By__c</field>
+        <field>Account.cer_Chasing_Notes_Modified_By2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
