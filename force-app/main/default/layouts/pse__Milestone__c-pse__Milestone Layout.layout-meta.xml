@@ -95,6 +95,10 @@
                 <behavior>Edit</behavior>
                 <field>Recurring__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CT_Actual_Recovery_Rate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
