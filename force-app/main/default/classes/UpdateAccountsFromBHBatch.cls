@@ -75,8 +75,6 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
     }
 
     global void finish(Database.BatchableContext BC){
-        if(!isInitialRun){
-            Database.executeBatch(new UpdateLeadsFromBHBatch(), 10);
-        }
+        
     }
 }
