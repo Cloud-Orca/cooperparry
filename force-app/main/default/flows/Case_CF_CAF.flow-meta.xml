@@ -5,7 +5,7 @@
         <name>Assign_1</name>
         <label>Assign - 1</label>
         <locationX>182</locationX>
-        <locationY>974</locationY>
+        <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>varForm.Code_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -154,7 +154,7 @@
         <name>Assign_2</name>
         <label>Assign - 2</label>
         <locationX>182</locationX>
-        <locationY>1406</locationY>
+        <locationY>1622</locationY>
         <assignmentItems>
             <assignToReference>varForm.Have_we_checked_the_above_to__c</assignToReference>
             <operator>Assign</operator>
@@ -219,7 +219,7 @@
         <name>Assign_3</name>
         <label>Assign - 3</label>
         <locationX>182</locationX>
-        <locationY>1730</locationY>
+        <locationY>1946</locationY>
         <assignmentItems>
             <assignToReference>varForm.TurnoverLY__c</assignToReference>
             <operator>Assign</operator>
@@ -403,7 +403,7 @@
         <name>Assign_4</name>
         <label>Assign - 4</label>
         <locationX>182</locationX>
-        <locationY>2054</locationY>
+        <locationY>2270</locationY>
         <assignmentItems>
             <assignToReference>varForm.BACKGROUNDTOASSIGNMENT__c</assignToReference>
             <operator>Assign</operator>
@@ -426,7 +426,7 @@
         <name>Assign_5</name>
         <label>Assign - 5</label>
         <locationX>182</locationX>
-        <locationY>2378</locationY>
+        <locationY>2594</locationY>
         <assignmentItems>
             <assignToReference>varForm.For_disposals_what_is_our_assessment__c</assignToReference>
             <operator>Assign</operator>
@@ -540,7 +540,7 @@
         <name>Assign_6</name>
         <label>Assign - 6</label>
         <locationX>182</locationX>
-        <locationY>2702</locationY>
+        <locationY>2918</locationY>
         <assignmentItems>
             <assignToReference>varForm.Does_the_transaction_relate_to__c</assignToReference>
             <operator>Assign</operator>
@@ -612,7 +612,7 @@
         <name>Assign_7</name>
         <label>Assign - 7</label>
         <locationX>182</locationX>
-        <locationY>3026</locationY>
+        <locationY>3242</locationY>
         <assignmentItems>
             <assignToReference>varForm.Key_Client_Address__c</assignToReference>
             <operator>Assign</operator>
@@ -796,7 +796,7 @@
         <name>Assign_8</name>
         <label>Assign - 8</label>
         <locationX>182</locationX>
-        <locationY>3350</locationY>
+        <locationY>3566</locationY>
         <assignmentItems>
             <assignToReference>varForm.pickint1__c</assignToReference>
             <operator>Assign</operator>
@@ -826,7 +826,7 @@
         <name>Assign_CF_CAF_to_varForm</name>
         <label>Assign CF CAF to varForm</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
             <operator>Assign</operator>
@@ -842,7 +842,7 @@
         <name>Assign_Form_ID</name>
         <label>Assign Form ID</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
             <operator>Assign</operator>
@@ -886,10 +886,35 @@
         </value>
     </choices>
     <decisions>
+        <name>Check_any_Pending_Approval_Status</name>
+        <label>Check any Pending Approval Status</label>
+        <locationX>380</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Close_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
+        <rules>
+            <name>No_Pending_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_CF_CAF</targetReference>
+            </connector>
+            <label>No Pending Approvals</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_CF_CAF_Form</name>
         <label>Check CF CAF Form</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Create_CF_CAF</targetReference>
         </defaultConnector>
@@ -914,7 +939,7 @@
         <name>Check_Completion_Form</name>
         <label>Check Completion Form</label>
         <locationX>182</locationX>
-        <locationY>3674</locationY>
+        <locationY>3890</locationY>
         <defaultConnector>
             <targetReference>Update_Completion_Fields</targetReference>
         </defaultConnector>
@@ -967,7 +992,7 @@
         <name>Create_Beneficial_Owners</name>
         <label>Create Beneficial Owners</label>
         <locationX>182</locationX>
-        <locationY>3566</locationY>
+        <locationY>3782</locationY>
         <connector>
             <targetReference>Check_Completion_Form</targetReference>
         </connector>
@@ -977,7 +1002,7 @@
         <name>Create_CF_CAF</name>
         <label>Create CF CAF</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Get_CF_CAF_Created</targetReference>
         </connector>
@@ -1003,10 +1028,38 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>Get_Approval_Process</name>
+        <label>Get Approval Process</label>
+        <locationX>380</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_any_Pending_Approval_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Beneficial_Owners</name>
         <label>Get Beneficial Owners</label>
         <locationX>182</locationX>
-        <locationY>1190</locationY>
+        <locationY>1406</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Screen_Existing_Shareholders_and_Management</targetReference>
@@ -1026,11 +1079,11 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_CF_CAF</targetReference>
+            <targetReference>Get_Approval_Process</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1048,7 +1101,7 @@
         <name>Get_CF_CAF</name>
         <label>Get CF - CAF</label>
         <locationX>182</locationX>
-        <locationY>242</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_CF_CAF_Form</targetReference>
@@ -1076,7 +1129,7 @@
         <name>Get_CF_CAF_Created</name>
         <label>Get CF CAF - Created</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Form_ID</targetReference>
@@ -1097,7 +1150,7 @@
         <name>Update_1</name>
         <label>Update - 1</label>
         <locationX>182</locationX>
-        <locationY>1082</locationY>
+        <locationY>1298</locationY>
         <connector>
             <targetReference>Get_Beneficial_Owners</targetReference>
         </connector>
@@ -1107,7 +1160,7 @@
         <name>Update_2</name>
         <label>Update - 2</label>
         <locationX>182</locationX>
-        <locationY>1514</locationY>
+        <locationY>1730</locationY>
         <connector>
             <targetReference>Screen_Summary_Financials</targetReference>
         </connector>
@@ -1117,7 +1170,7 @@
         <name>Update_3</name>
         <label>Update - 3</label>
         <locationX>182</locationX>
-        <locationY>1838</locationY>
+        <locationY>2054</locationY>
         <connector>
             <targetReference>Screen_Background_to_Assignment</targetReference>
         </connector>
@@ -1127,7 +1180,7 @@
         <name>Update_4</name>
         <label>Update - 4</label>
         <locationX>182</locationX>
-        <locationY>2162</locationY>
+        <locationY>2378</locationY>
         <connector>
             <targetReference>Screen_E_to_G</targetReference>
         </connector>
@@ -1137,7 +1190,7 @@
         <name>Update_5</name>
         <label>Update - 5</label>
         <locationX>182</locationX>
-        <locationY>2486</locationY>
+        <locationY>2702</locationY>
         <connector>
             <targetReference>Screen_Ability_to_Accept_Appointment</targetReference>
         </connector>
@@ -1147,7 +1200,7 @@
         <name>Update_6</name>
         <label>Update - 6</label>
         <locationX>182</locationX>
-        <locationY>2810</locationY>
+        <locationY>3026</locationY>
         <connector>
             <targetReference>Screen_Money_Laundering</targetReference>
         </connector>
@@ -1157,7 +1210,7 @@
         <name>Update_7</name>
         <label>Update - 7</label>
         <locationX>182</locationX>
-        <locationY>3134</locationY>
+        <locationY>3350</locationY>
         <connector>
             <targetReference>Screen_Conclusions</targetReference>
         </connector>
@@ -1167,7 +1220,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>3974</locationY>
+        <locationY>4190</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -1188,7 +1241,7 @@
         <name>Update_CF_CAF</name>
         <label>Update CF CAF</label>
         <locationX>182</locationX>
-        <locationY>3458</locationY>
+        <locationY>3674</locationY>
         <connector>
             <targetReference>Create_Beneficial_Owners</targetReference>
         </connector>
@@ -1198,7 +1251,7 @@
         <name>Update_Completion_Fields</name>
         <label>Update Completion Fields</label>
         <locationX>270</locationX>
-        <locationY>3782</locationY>
+        <locationY>3998</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -1225,10 +1278,27 @@
         <object>Client_Acceptance_Form__c</object>
     </recordUpdates>
     <screens>
+        <name>Close_Screen</name>
+        <label>Close Screen</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Screen_Ability_to_Accept_Appointment</name>
         <label>Screen - Ability to Accept Appointment</label>
         <locationX>182</locationX>
-        <locationY>2594</locationY>
+        <locationY>2810</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2054,7 +2124,7 @@
         <name>Screen_Background_to_Assignment</name>
         <label>Screen - Background to Assignment</label>
         <locationX>182</locationX>
-        <locationY>1946</locationY>
+        <locationY>2162</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2236,7 +2306,7 @@
         <name>Screen_Basic_Details</name>
         <label>Screen - Basic Details</label>
         <locationX>182</locationX>
-        <locationY>866</locationY>
+        <locationY>1082</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3115,7 +3185,7 @@
         <name>Screen_Conclusions</name>
         <label>Screen - Conclusions</label>
         <locationX>182</locationX>
-        <locationY>3242</locationY>
+        <locationY>3458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3314,7 +3384,7 @@
         <name>Screen_E_to_G</name>
         <label>Screen - E to G</label>
         <locationX>182</locationX>
-        <locationY>2270</locationY>
+        <locationY>2486</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4014,7 +4084,7 @@
         <name>Screen_Existing_Shareholders_and_Management</name>
         <label>Screen - Existing Shareholders and Management</label>
         <locationX>182</locationX>
-        <locationY>1298</locationY>
+        <locationY>1514</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4455,7 +4525,7 @@
         <name>Screen_Money_Laundering</name>
         <label>Screen - Money Laundering</label>
         <locationX>182</locationX>
-        <locationY>2918</locationY>
+        <locationY>3134</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -5805,7 +5875,7 @@
         <name>Screen_Summary_Financials</name>
         <label>Screen - Summary Financials</label>
         <locationX>182</locationX>
-        <locationY>1622</locationY>
+        <locationY>1838</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -6782,7 +6852,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
