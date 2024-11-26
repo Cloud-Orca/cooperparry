@@ -278,7 +278,7 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>cer_Milestone__c</field>
+        <field>cer_Milestone_Name__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
