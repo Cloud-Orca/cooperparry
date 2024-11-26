@@ -5,7 +5,7 @@
         <name>assign_Form</name>
         <label>assign Form</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>variableForm.Id</assignToReference>
             <operator>Assign</operator>
@@ -21,7 +21,7 @@
         <name>assignIndividualOngoing</name>
         <label>assignIndividualOngoing</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>variableForm</assignToReference>
             <operator>Assign</operator>
@@ -37,7 +37,7 @@
         <name>assignVariables</name>
         <label>assignVariables</label>
         <locationX>182</locationX>
-        <locationY>1082</locationY>
+        <locationY>1298</locationY>
         <assignmentItems>
             <assignToReference>variableForm.Date_of_original_engagement__c</assignToReference>
             <operator>Assign</operator>
@@ -265,10 +265,35 @@
         </value>
     </choices>
     <decisions>
+        <name>Check_any_Pending_Approval_Status</name>
+        <label>Check any Pending Approval Status</label>
+        <locationX>380</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Close_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
+        <rules>
+            <name>No_Pending_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_Individual_Monitoring</targetReference>
+            </connector>
+            <label>No Pending Approvals</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Existing_Form</name>
         <label>Existing Form</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>create_Individual_Ongoing_Monitoring</targetReference>
         </defaultConnector>
@@ -320,7 +345,7 @@
         <name>create_Individual_Ongoing_Monitoring</name>
         <label>Create Individual Ongoing Monitoring</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>assign_Form</targetReference>
         </connector>
@@ -346,13 +371,41 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>Get_Approval_Process</name>
+        <label>Get Approval Process</label>
+        <locationX>380</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_any_Pending_Approval_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>get_Individual_Monitoring</targetReference>
+            <targetReference>Get_Approval_Process</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -370,7 +423,7 @@
         <name>get_Individual_Monitoring</name>
         <label>get Individual Monitoring</label>
         <locationX>182</locationX>
-        <locationY>242</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Existing_Form</targetReference>
@@ -398,7 +451,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>1298</locationY>
+        <locationY>1514</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -419,17 +472,34 @@
         <name>Update_Individual_Ongoing_Monitoring</name>
         <label>Update Individual Ongoing Monitoring</label>
         <locationX>182</locationX>
-        <locationY>1190</locationY>
+        <locationY>1406</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
         <inputReference>variableForm</inputReference>
     </recordUpdates>
     <screens>
+        <name>Close_Screen</name>
+        <label>Close Screen</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>CONTINUATION</name>
         <label>CONTINUATION</label>
         <locationX>182</locationX>
-        <locationY>866</locationY>
+        <locationY>1082</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -867,7 +937,7 @@
         <name>LAST_PART</name>
         <label>LAST PART</label>
         <locationX>182</locationX>
-        <locationY>974</locationY>
+        <locationY>1190</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1275,7 +1345,7 @@
         <name>PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL</name>
         <label>PERSONAL TAX, SOLE TRADER OR INDIVIDUAL</label>
         <locationX>182</locationX>
-        <locationY>758</locationY>
+        <locationY>974</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2021,7 +2091,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
