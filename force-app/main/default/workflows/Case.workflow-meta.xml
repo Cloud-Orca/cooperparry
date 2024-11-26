@@ -76,6 +76,16 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Update_Engagement_Approval</fullName>
+        <field>Engagement_Pack_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Engagement Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Update_PEP_SIP_RCA_Approval</fullName>
         <field>PEP_SIP_RCA_Approved_checkbox__c</field>
         <literalValue>1</literalValue>
