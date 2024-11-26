@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>CT_R_D_Stage__c</fullName>
+    <fullName>CT_Patent_Box_Stage__c</fullName>
     <externalId>false</externalId>
-    <label>R&amp;D Stage</label>
+    <label>Patent Box Stage</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
@@ -17,24 +17,24 @@
                 <label>Started/None</label>
             </value>
             <value>
-                <fullName>Planning</fullName>
+                <fullName>Qualification</fullName>
                 <default>false</default>
-                <label>Planning</label>
+                <label>Qualification</label>
             </value>
             <value>
-                <fullName>Workshop</fullName>
+                <fullName>Calculations</fullName>
                 <default>false</default>
-                <label>Workshop</label>
-            </value>
-            <value>
-                <fullName>Technical Summary</fullName>
-                <default>false</default>
-                <label>Technical Summary</label>
+                <label>Calculations</label>
             </value>
             <value>
                 <fullName>Report</fullName>
                 <default>false</default>
                 <label>Report</label>
+            </value>
+            <value>
+                <fullName>Submissions</fullName>
+                <default>false</default>
+                <label>Submissions</label>
             </value>
             <value>
                 <fullName>Completed</fullName>
