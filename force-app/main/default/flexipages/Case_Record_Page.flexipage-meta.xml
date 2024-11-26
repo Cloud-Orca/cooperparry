@@ -25,6 +25,9 @@
                             <value>Case.Individual_Risk</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Case.Send_to_Risk</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Case.Escalation</value>
                         </valueListItems>
                         <valueListItems>
@@ -1581,6 +1584,12 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_sidebar_tabset</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>dfsle:Status</componentName>
+                <identifier>dfsle_Status</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

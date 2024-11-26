@@ -21,6 +21,10 @@
         <description>PEP Notification for Case Alert</description>
         <protected>false</protected>
         <recipients>
+            <recipient>Risk_and_Compliance</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
             <type>owner</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -86,6 +90,16 @@
         <field>Risk_Compliance_Approved_checkbox__c</field>
         <literalValue>1</literalValue>
         <name>Update  Risk / Compliance Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Compliance_Check</fullName>
+        <field>Status</field>
+        <literalValue>Compliance Check</literalValue>
+        <name>Update Status - Compliance Check</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
