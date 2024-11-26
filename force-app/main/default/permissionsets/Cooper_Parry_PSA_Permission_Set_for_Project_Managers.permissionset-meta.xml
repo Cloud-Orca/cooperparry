@@ -11495,6 +11495,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.CT_Actual_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Milestone__c.CT_Assigned_Hours__c</field>
         <readable>true</readable>
