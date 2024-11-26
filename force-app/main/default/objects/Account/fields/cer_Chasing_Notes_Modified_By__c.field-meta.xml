@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <label>Chasing Notes Modified By</label>
     <referenceTo>User</referenceTo>
-    <relationshipName>Accounts</relationshipName>
+    <relationshipName>cer_Accounts</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Lookup</type>
