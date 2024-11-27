@@ -111,7 +111,7 @@
             <assignToReference>ownerid</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>get_Lifecycle_Onboarding_Queue.Id</elementReference>
+                <elementReference>get_Lifecycle_managers_queue.Id</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -124,7 +124,7 @@
         <locationX>710</locationX>
         <locationY>539</locationY>
         <defaultConnector>
-            <targetReference>get_Lifecycle_Onboarding_Queue</targetReference>
+            <targetReference>get_Lifecycle_managers_queue</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -292,6 +292,24 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Case_Area__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Area__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Case_Assignment_Type__c</field>
+            <value>
+                <elementReference>$Record.Assignment_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Case_Type_Area__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Type_Area__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Confidential_Opportunity__c</field>
             <value>
                 <elementReference>$Record.Confidential_Opportunity__c</elementReference>
@@ -381,8 +399,8 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>get_Lifecycle_Onboarding_Queue</name>
-        <label>get Lifecycle_Onboarding_Queue</label>
+        <name>get_Lifecycle_managers_queue</name>
+        <label>get Lifecycle managers queue</label>
         <locationX>842</locationX>
         <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -401,7 +419,7 @@
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Lifecycle_Onboarding_Queue</stringValue>
+                <stringValue>Lifecycle_Managers</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -497,12 +515,21 @@
         <filterFormula>AND(NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
 ISCHANGED({!$Record.StageName}),
 {!$Record.Account.Do_Not_Create_Case__c} = false,
-TEXT({!$Record.StageName}) = &quot;Married (Closed Won)&quot;)</filterFormula>
+OR(
+TEXT({!$Record.StageName}) = &quot;Married (Closed Won)&quot;,
+  AND(
+   {!$Record.RecordType.DeveloperName} = &quot;Corporate_Opportunity&quot;,
+   TEXT({!$Record.StageName}) = &quot;Live Mandate&quot;,
+   TEXT({!$Record.Opportunity_Area__c}) = &quot;Deals&quot;,
+   TEXT({!$Record.Opportunity_Type_Area__c}) = &quot;CF&quot;
+  )
+)
+)</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>ownerid</name>
         <dataType>String</dataType>
