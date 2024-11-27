@@ -766,11 +766,6 @@
         <field>Product2.c2g__CODATaxCode__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaInvoiceLineItem__c.cer_Milestone__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Certinia:Cooper Parry- Accounting info (Edit)</label>
     <objectPermissions>
