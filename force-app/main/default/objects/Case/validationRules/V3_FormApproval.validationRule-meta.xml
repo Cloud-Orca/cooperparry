@@ -6,7 +6,7 @@
  $Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c = false,
  Approved__c = False,
  ISCHANGED(Status),
- Text(Status) = &quot;CAF Form Completion&quot;,
+ Text(Status) = &quot;Compliance Check&quot;,
   AND(
    Text(Status) &lt;&gt; &quot;Closed&quot;,
    Text(Closed_Reason__c) &lt;&gt; &quot;Onboarded&quot;
