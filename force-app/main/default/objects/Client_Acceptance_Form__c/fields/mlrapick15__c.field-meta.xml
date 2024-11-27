@@ -21,6 +21,11 @@
                 <default>false</default>
                 <label>High</label>
             </value>
+            <value>
+                <fullName>TBD</fullName>
+                <default>false</default>
+                <label>TBD</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
