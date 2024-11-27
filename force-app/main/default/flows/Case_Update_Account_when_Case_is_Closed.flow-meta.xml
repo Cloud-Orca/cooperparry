@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Check_Opp_Area</name>
+        <label>Check Opp Area</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Update_Account_Record_Prev_Onboarded</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Others</defaultConnectorLabel>
+        <rules>
+            <name>Audit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Opportunity_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Audit</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Record_Audit_Client</targetReference>
+            </connector>
+            <label>Audit</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Case: Update Account when Case is Closed {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case: Update Account when Case is Closed</label>
@@ -24,10 +49,13 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Update_Account_Record</name>
-        <label>Update Account Record</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
+        <name>Update_Account_Record_Audit_Client</name>
+        <label>Update Account Record - Audit Client</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Update_Account_Record_Prev_Onboarded</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -44,16 +72,36 @@
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account_Record_Prev_Onboarded</name>
+        <label>Update Account Record - Prev Onboarded</label>
+        <locationX>182</locationX>
+        <locationY>623</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Previously_Onboarded__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Account_Record</targetReference>
+            <targetReference>Check_Opp_Area</targetReference>
         </connector>
         <filterFormula>AND(
 NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
-ISPICKVAL({!$Record.Closed_Reason__c}, &apos;Onboarded&apos;),
-ISPICKVAL({!$Record.Opportunity__r.Opportunity_Area__c}, &apos;Audit&apos;)
+ISPICKVAL({!$Record.Closed_Reason__c}, &apos;Onboarded&apos;)
 )</filterFormula>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
