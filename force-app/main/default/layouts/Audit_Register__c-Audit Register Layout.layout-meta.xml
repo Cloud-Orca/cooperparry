@@ -47,6 +47,10 @@
                 <behavior>Readonly</behavior>
                 <field>Turnover__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Documents_Other_More_info__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
