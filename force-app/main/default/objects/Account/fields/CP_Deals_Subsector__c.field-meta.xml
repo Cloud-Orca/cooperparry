@@ -42,6 +42,10 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Architecture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
             <valueName>Professional Services</valueName>
         </valueSettings>
         <valueSettings>
@@ -146,7 +150,15 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Automotive</controllingFieldValue>
-            <valueName>Retail and Supply Chain Components</valueName>
+            <valueName>Retail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <valueName>Supply Chain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <valueName>Components</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
