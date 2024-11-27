@@ -3,6 +3,7 @@
     <fullName>orpick1yes__c</fullName>
     <description>If yes, please detail below why you are happy to proceed :</description>
     <externalId>false</externalId>
+    <inlineHelpText>If yes, please detail below why you are happy to proceed :</inlineHelpText>
     <label>If yes, please detail below why you are</label>
     <length>10000</length>
     <trackTrending>false</trackTrending>

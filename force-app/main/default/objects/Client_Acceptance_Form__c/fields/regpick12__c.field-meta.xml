@@ -3,12 +3,12 @@
     <fullName>regpick12__c</fullName>
     <description>If the client is in a regulated industry have we enquired about its relationship with the regulatory authorities.</description>
     <externalId>false</externalId>
+    <inlineHelpText>If the client is in a regulated industry have we enquired about its relationship with the regulatory authorities.</inlineHelpText>
     <label>If the client is in a regulated industry</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

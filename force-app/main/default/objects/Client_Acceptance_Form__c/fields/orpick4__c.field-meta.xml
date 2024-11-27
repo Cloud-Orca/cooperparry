@@ -3,12 +3,12 @@
     <fullName>orpick4__c</fullName>
     <description>Has the client stated any specific requirements e.g., certain CP people, timing ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Has the client stated any specific requirements e.g., certain CP people, timing ?</inlineHelpText>
     <label>Has the client stated any specific requi</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

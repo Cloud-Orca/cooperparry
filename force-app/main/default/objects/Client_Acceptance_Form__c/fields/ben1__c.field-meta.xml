@@ -3,6 +3,7 @@
     <fullName>ben1__c</fullName>
     <description>Identification  comments (including summary of why individuals have been chosen for identity verification):</description>
     <externalId>false</externalId>
+    <inlineHelpText>Identification comments (including summary of why individuals have been chosen for identity verification):</inlineHelpText>
     <label>Identification comments (including summa</label>
     <length>10000</length>
     <trackTrending>false</trackTrending>

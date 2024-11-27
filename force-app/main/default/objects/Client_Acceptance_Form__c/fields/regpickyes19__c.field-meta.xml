@@ -3,6 +3,7 @@
     <fullName>regpickyes19__c</fullName>
     <description>If not, please make additional notes below :</description>
     <externalId>false</externalId>
+    <inlineHelpText>If not, please make additional notes below :</inlineHelpText>
     <label>If not, please make additional notes bel</label>
     <length>255</length>
     <required>false</required>

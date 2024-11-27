@@ -3,12 +3,12 @@
     <fullName>regpick14__c</fullName>
     <description>Have we obtained sufficient CS01 statements to confirm the identity of ALL owners ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Have we obtained sufficient CS01 statements to confirm the identity of ALL owners ?</inlineHelpText>
     <label>Have we obtained sufficient CS01 stateme</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

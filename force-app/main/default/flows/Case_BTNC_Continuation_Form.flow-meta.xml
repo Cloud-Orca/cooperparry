@@ -5,7 +5,7 @@
         <name>Assign_Business_CAF_to_varForm</name>
         <label>Assign Business CAF to varForm</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
             <operator>Assign</operator>
@@ -21,7 +21,7 @@
         <name>Assign_Form_ID</name>
         <label>Assign Form ID</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
             <operator>Assign</operator>
@@ -44,7 +44,7 @@
         <name>Assign_Variables_to_varForm</name>
         <label>Assign Variables to varForm</label>
         <locationX>182</locationX>
-        <locationY>974</locationY>
+        <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>varForm.Date_of_original_engagement__c</assignToReference>
             <operator>Assign</operator>
@@ -311,13 +311,6 @@
                 <elementReference>Name1</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varForm.Form_Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Ongoing Monitoring</stringValue>
-            </value>
-        </assignmentItems>
         <connector>
             <targetReference>Update_Business_CAF</targetReference>
         </connector>
@@ -339,10 +332,35 @@
         </value>
     </choices>
     <decisions>
+        <name>Check_any_Pending_Approval_Status</name>
+        <label>Check any Pending Approval Status</label>
+        <locationX>380</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Close_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
+        <rules>
+            <name>No_Pending_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Business_CAF</targetReference>
+            </connector>
+            <label>No Pending Approvals</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Completion_Form</name>
         <label>Check Completion Form</label>
         <locationX>182</locationX>
-        <locationY>1190</locationY>
+        <locationY>1406</locationY>
         <defaultConnector>
             <targetReference>Update_Completion_Fields_in_Form</targetReference>
         </defaultConnector>
@@ -367,7 +385,7 @@
         <name>Check_Form</name>
         <label>Check Form</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Create_Business_CAF</targetReference>
         </defaultConnector>
@@ -420,7 +438,7 @@
         <name>Create_Business_CAF</name>
         <label>Create Business CAF</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Get_Business_CAF_Created</targetReference>
         </connector>
@@ -446,10 +464,38 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>Get_Approval_Process</name>
+        <label>Get Approval Process</label>
+        <locationX>380</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_any_Pending_Approval_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Business_CAF</name>
         <label>Get Business CAF</label>
         <locationX>182</locationX>
-        <locationY>242</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Form</targetReference>
@@ -477,7 +523,7 @@
         <name>Get_Business_CAF_Created</name>
         <label>Get Business CAF - Created</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Form_ID</targetReference>
@@ -497,11 +543,11 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Business_CAF</targetReference>
+            <targetReference>Get_Approval_Process</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -519,7 +565,7 @@
         <name>Update_Business_CAF</name>
         <label>Update Business CAF</label>
         <locationX>182</locationX>
-        <locationY>1082</locationY>
+        <locationY>1298</locationY>
         <connector>
             <targetReference>Check_Completion_Form</targetReference>
         </connector>
@@ -529,7 +575,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>1490</locationY>
+        <locationY>1706</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -550,7 +596,7 @@
         <name>Update_Completion_Fields_in_Form</name>
         <label>Update Completion Fields in Form</label>
         <locationX>270</locationX>
-        <locationY>1298</locationY>
+        <locationY>1514</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -580,7 +626,7 @@
         <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS</name>
         <label>BUSINESS, TRUSTS AND NON-PERSONAL CLIENTS</label>
         <locationX>182</locationX>
-        <locationY>866</locationY>
+        <locationY>1082</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2459,14 +2505,31 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <name>Close_Screen</name>
+        <label>Close Screen</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Error_Message</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

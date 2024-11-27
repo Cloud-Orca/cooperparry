@@ -3,12 +3,12 @@
     <fullName>objpick5__c</fullName>
     <description>Have potential conflicts been identified for any other reason ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Have potential conflicts been identified for any other reason ?</inlineHelpText>
     <label>Have potential conflicts been identified</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
