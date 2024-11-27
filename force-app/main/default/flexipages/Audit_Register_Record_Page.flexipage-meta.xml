@@ -137,10 +137,10 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Turnover__c</fieldItem>
-                <identifier>RecordTurnover_cField</identifier>
+                <fieldItem>Record.Turnover_Audit_Register__c</fieldItem>
+                <identifier>RecordTurnover_Audit_Register__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-9ec011af-17ef-497b-ac30-cdf1c5f47969</name>
@@ -486,6 +486,16 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Documents_Other_More_info__c</fieldItem>
+                <identifier>RecordDocuments_Other_More_info__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-805c35b6-6080-4f7a-adb3-1a5a547ae763</name>
         <type>Facet</type>
     </flexiPageRegions>
