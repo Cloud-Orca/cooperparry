@@ -2,6 +2,7 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry Finance</label>
+    <mutingPermissionSets>Cooper_Parry_Finance_Muted</mutingPermissionSets>
     <permissionSets>APXTConga4__Composer_User</permissionSets>
     <permissionSets>Cooper_Parry_Accounting_Permission_Set</permissionSets>
     <permissionSets>FFAIntegrationsERPExchangeRates</permissionSets>

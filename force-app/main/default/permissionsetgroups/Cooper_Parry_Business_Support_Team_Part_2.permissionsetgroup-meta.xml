@@ -8,7 +8,6 @@
     <permissionSets>Cooper_Parry_User_Fields</permissionSets>
     <permissionSets>psaws__PSA_Workspaces_Project_Manager</permissionSets>
     <permissionSets>psaws__PSA_Workspaces_Resource_Manager</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Services_Billing</permissionSets>
     <permissionSets>psaws__PSA_Workspaces_Services_Revenue_Forecasting</permissionSets>
     <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
     <permissionSets>pse__PSAApproveExpenseReports</permissionSets>
