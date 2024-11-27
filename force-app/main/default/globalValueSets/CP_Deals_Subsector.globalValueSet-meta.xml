@@ -188,7 +188,6 @@
     <customValue>
         <fullName>Retail and Supply Chain Components</fullName>
         <default>false</default>
-        <isActive>false</isActive>
         <label>Retail and Supply Chain Components</label>
     </customValue>
     <customValue>
