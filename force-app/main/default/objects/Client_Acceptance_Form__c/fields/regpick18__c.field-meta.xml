@@ -3,12 +3,12 @@
     <fullName>regpick18__c</fullName>
     <description>Confirm that all information gathered about the trust has been assessed in the context of the FATCA requirements and any necessary action has been taken (or will be taken) .</description>
     <externalId>false</externalId>
+    <inlineHelpText>Confirm that all information gathered about the trust has been assessed in the context of the FATCA requirements and any necessary action has been taken (or will be taken) .</inlineHelpText>
     <label>Confirm that all information gathered ab</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

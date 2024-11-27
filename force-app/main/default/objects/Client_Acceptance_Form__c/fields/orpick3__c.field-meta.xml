@@ -3,12 +3,12 @@
     <fullName>orpick3__c</fullName>
     <description>Can we demonstrate our competence to perform the proposed work ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Can we demonstrate our competence to perform the proposed work ?</inlineHelpText>
     <label>Can we demonstrate our competence to per</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

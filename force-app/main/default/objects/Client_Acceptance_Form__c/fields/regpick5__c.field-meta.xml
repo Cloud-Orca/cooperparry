@@ -3,12 +3,12 @@
     <fullName>regpick5__c</fullName>
     <description>Have we obtained a copy of the accounts for subsidiaries included in this onboarding ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Have we obtained a copy of the accounts for subsidiaries included in this onboarding ?</inlineHelpText>
     <label>Have we obtained a copy of the accounts</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

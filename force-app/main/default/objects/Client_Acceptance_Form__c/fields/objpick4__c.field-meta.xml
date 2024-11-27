@@ -3,12 +3,12 @@
     <fullName>objpick4__c</fullName>
     <description>Are we involved in any dispute with any party ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Are we involved in any dispute with any party ?</inlineHelpText>
     <label>Are we involved in any dispute with any</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

@@ -3,12 +3,12 @@
     <fullName>regpick3__c</fullName>
     <description>Has a copy of the latest regulatory report been obtained and found satisfactory ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Has a copy of the latest regulatory report been obtained and found satisfactory ?</inlineHelpText>
     <label>Has a copy of the latest regulatory</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

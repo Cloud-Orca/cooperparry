@@ -3,6 +3,7 @@
     <fullName>pickfinyes4__c</fullName>
     <description>If yes, summarise the contingent arrangement below :</description>
     <externalId>false</externalId>
+    <inlineHelpText>If yes, summarise the contingent arrangement below :</inlineHelpText>
     <label>If yes, summarise the contingent arrange</label>
     <length>255</length>
     <required>false</required>

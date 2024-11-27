@@ -3,12 +3,12 @@
     <fullName>regpick17__c</fullName>
     <description>Do the trust or trustees have any US connection or involvement ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Do the trust or trustees have any US connection or involvement ?</inlineHelpText>
     <label>Do the trust or trustees have any US con</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

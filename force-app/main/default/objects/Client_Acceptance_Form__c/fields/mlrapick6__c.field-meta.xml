@@ -3,12 +3,12 @@
     <fullName>mlrapick6__c</fullName>
     <description>Does the client hold monies for its clients/customers ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Does the client hold monies for its clients/customers ?</inlineHelpText>
     <label>Does the client hold monies for its cli</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
