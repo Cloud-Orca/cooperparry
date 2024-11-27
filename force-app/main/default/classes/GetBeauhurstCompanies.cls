@@ -60,8 +60,8 @@ public with sharing class GetBeauhurstCompanies {
                 }
                 
                 if(Test.isRunningTest()){
-                	isLoop = false;
-            	}
+                    isLoop = false;
+                }
             }
 
             System.debug('resDetails' + resDetails);
@@ -117,4 +117,5 @@ public with sharing class GetBeauhurstCompanies {
             this.message = message;
         }
     }
+
 }
