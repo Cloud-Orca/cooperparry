@@ -132,8 +132,8 @@ public class SharepointCompCont {
         List<FileWrapper> fileWrappList = (List<FileWrapper>) JSON.deserialize(fileDataList, List<FileWrapper>.class);
 
         System.debug('@@@ fileWrappList: ' + fileWrappList);
-        if(!fileWrappList.isEmpty()){
-            FileWrapper fileWrapp = fileWrappList.get(0);
+        List<ContentVersion> cvList = new List<ContentVersion>();
+        for(FileWrapper fileWrapp: fileWrappList){
             ContentVersion cv = new ContentVersion();
             cv.VersionData = EncodingUtil.base64Decode(fileWrapp.base64);
             cv.Title = fileWrapp.filename;
@@ -141,53 +141,52 @@ public class SharepointCompCont {
             cv.ContentLocation = 'S';
             cv.SharingOption = 'A';
             cv.Origin = 'C';
+            cvList.add(cv);
+        }
 
-            if(driveItemId != null){
-                return uploadFileFromDriveId(driveItemId, cv, recordId);
-            }
+        if(!cvList.isEmpty() && driveItemId != null){
+            return uploadFileFromDriveId(driveItemId, cvList, recordId);
         }
         return false;
+        // if(!fileWrappList.isEmpty()){
+        //     FileWrapper fileWrapp = fileWrappList.get(0);
+        //     ContentVersion cv = new ContentVersion();
+        //     cv.VersionData = EncodingUtil.base64Decode(fileWrapp.base64);
+        //     cv.Title = fileWrapp.filename;
+        //     cv.PathOnClient = fileWrapp.filename;
+        //     cv.ContentLocation = 'S';
+        //     cv.SharingOption = 'A';
+        //     cv.Origin = 'C';
+
+        //     if(driveItemId != null){
+        //         return uploadFileFromDriveId(driveItemId, cv, recordId);
+        //     }
+        // }
+        // return false;
     }
 
     @AuraEnabled
-    public static Boolean uploadFileFromDriveId(String driveItemId, ContentVersion cv, Id recordId){
+    public static Boolean uploadFileFromDriveId(String driveItemId, List<ContentVersion> cvList, Id recordId){
         try {
             List<Sharepoint_API__c> sharepointAPIlist = [SELECT Id, access_token__c FROM Sharepoint_API__c LIMIT 1];
             String accessToken = sharepointAPIlist.get(0).access_token__c;
 
             if(!sharepointAPIlist.isEmpty()){
                 Boolean isUpdateAccessToken = false;
-                HttpResponse httpRes = SharepointAPIUtility.uploadFileToDriveItem(accessToken, driveItemId, cv.Title, cv.VersionData);
-                if(httpRes.getStatusCode() == 401){
-                    accessToken = getNewAccessToken();
-                    httpRes = SharepointAPIUtility.uploadFileToDriveItem(accessToken, driveItemId, cv.Title, cv.VersionData);
-                    isUpdateAccessToken = true;
+
+                for(ContentVersion cv: cvList){
+                    HttpResponse httpRes = SharepointAPIUtility.uploadFileToDriveItem(accessToken, driveItemId, cv.Title, cv.VersionData);
+                    if(httpRes.getStatusCode() == 401){
+                        accessToken = getNewAccessToken();
+                        httpRes = SharepointAPIUtility.uploadFileToDriveItem(accessToken, driveItemId, cv.Title, cv.VersionData);
+                        isUpdateAccessToken = true;
+                    }
                 }
 
                 if(isUpdateAccessToken){
                     updateSharepointAccessToken(sharepointAPIlist.get(0).Id, accessToken);
                 }
-    
-                if(httpRes.getStatusCode() == 200 || httpRes.getStatusCode() == 201){
-                    return true;
-                    // Map<String, Object> responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes.getBody());
-                    // String webUrl = (String) responseMap.get('webUrl');
-                    // webUrl = EncodingUtil.urlDecode(webUrl, 'UTF-8');
-                    // cv.Sharepoint_File_Address__c = webUrl;
-                    // cv.Sharepoint_File_ID__c =  (String) responseMap.get('id');
-                    // insert cv;
-
-                    // Id contentDocId = [SELECT Id, ContentDocumentId FROM ContentVersion WHERE Id =: cv.Id].ContentDocumentId;
-
-                    // ContentDocumentLink cdl = new ContentDocumentLink();
-                    // cdl.ContentDocumentId = contentDocId;
-                    // cdl.LinkedEntityId = recordId;
-                    // cdl.Visibility = 'AllUsers';
-                    // cdl.ShareType= 'V';
-                    // insert cdl;
-
-                    // return true;
-                }
+                return true;
             }
             return false;
         } catch (Exception e) {
