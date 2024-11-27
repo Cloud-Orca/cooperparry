@@ -3,12 +3,12 @@
     <fullName>regpick2__c</fullName>
     <description>Are there any additional reporting requirements? (State requirements if so.) -  Charity or Pensions</description>
     <externalId>false</externalId>
+    <inlineHelpText>Are there any additional reporting requirements? (State requirements if so.) - Charity or Pensions</inlineHelpText>
     <label>Are there any additional reporting</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

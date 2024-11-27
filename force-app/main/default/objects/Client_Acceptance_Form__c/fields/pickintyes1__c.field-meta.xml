@@ -3,6 +3,7 @@
     <fullName>pickintyes1__c</fullName>
     <description>If yes, has a report been made to the MLRO? If not, please make additional notes below :</description>
     <externalId>false</externalId>
+    <inlineHelpText>If yes, has a report been made to the MLRO? If not, please make additional notes below :</inlineHelpText>
     <label>If yes, has a report been made to the ML</label>
     <length>255</length>
     <required>false</required>

@@ -3,12 +3,12 @@
     <fullName>mlrapick13__c</fullName>
     <description>Are any family members or close associates of the client PEPs ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Are any family members or close associates of the client PEPs ?</inlineHelpText>
     <label>Are any family members or close associat</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

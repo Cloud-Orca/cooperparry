@@ -3,12 +3,12 @@
     <fullName>objpick8__c</fullName>
     <description>Can safeguards be implemented which will reduce the threat(s) to an acceptable level ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Can safeguards be implemented which will reduce the threat(s) to an acceptable level ?</inlineHelpText>
     <label>Can safeguards be implemented which will</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

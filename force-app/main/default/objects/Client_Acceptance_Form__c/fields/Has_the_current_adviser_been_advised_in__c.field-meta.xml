@@ -3,12 +3,12 @@
     <fullName>Has_the_current_adviser_been_advised_in__c</fullName>
     <description>Has  the current adviser been advised in writing by the client that they may disclose information to us? (Yes / No)</description>
     <externalId>false</externalId>
+    <inlineHelpText>Has the current adviser been advised in writing by the client that they may disclose information to us? (Yes / No)</inlineHelpText>
     <label>Has the current adviser been advised in</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

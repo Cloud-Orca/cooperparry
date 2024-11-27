@@ -3,12 +3,12 @@
     <fullName>objpick1__c</fullName>
     <description>Do we already act for any parties involved or have we acted in the past ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Do we already act for any parties involved or have we acted in the past ?</inlineHelpText>
     <label>Do we already act for any parties involv</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

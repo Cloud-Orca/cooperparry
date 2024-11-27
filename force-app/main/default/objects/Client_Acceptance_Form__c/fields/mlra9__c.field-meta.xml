@@ -3,6 +3,7 @@
     <fullName>mlra9__c</fullName>
     <description>If the client has been met please state which team member met them :</description>
     <externalId>false</externalId>
+    <inlineHelpText>If the client has been met please state which team member met them :</inlineHelpText>
     <label>If the client has been met please state</label>
     <length>10000</length>
     <trackTrending>false</trackTrending>

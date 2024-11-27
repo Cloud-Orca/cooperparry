@@ -3,12 +3,12 @@
     <fullName>mlrapick7__c</fullName>
     <description>Do we anticipate holding monies for the client ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Do we anticipate holding monies for the client ?</inlineHelpText>
     <label>Do we anticipate holding monies for the</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

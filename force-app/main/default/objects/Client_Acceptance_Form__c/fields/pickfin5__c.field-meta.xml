@@ -3,12 +3,12 @@
     <fullName>pickfin5__c</fullName>
     <description>Will we receive or are we likely to receive commission from a Third Party during this engagement ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Will we receive or are we likely to receive commission from a Third Party during this engagement ?</inlineHelpText>
     <label>Will we receive or are we likely to rece</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

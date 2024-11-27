@@ -3,12 +3,12 @@
     <fullName>regpick16__c</fullName>
     <description>Confirm that we have ascertained the tax residency of all trustees .</description>
     <externalId>false</externalId>
+    <inlineHelpText>Confirm that we have ascertained the tax residency of all trustees .</inlineHelpText>
     <label>Confirm that we have ascertained the tax</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

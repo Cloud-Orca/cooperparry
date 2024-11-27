@@ -3,12 +3,12 @@
     <fullName>objpick6__c</fullName>
     <description>(If applicable) Is the level of fees likely to affect audit independence ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>(If applicable) Is the level of fees likely to affect audit independence ?</inlineHelpText>
     <label>(If applicable) Is the level of fees lik</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

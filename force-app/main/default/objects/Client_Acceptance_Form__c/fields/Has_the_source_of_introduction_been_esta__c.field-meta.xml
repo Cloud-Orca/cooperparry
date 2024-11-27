@@ -3,12 +3,12 @@
     <fullName>Has_the_source_of_introduction_been_esta__c</fullName>
     <description>Has the source of introduction been established.</description>
     <externalId>false</externalId>
+    <inlineHelpText>Has the source of introduction been established.</inlineHelpText>
     <label>Has the source of introduction been esta</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
