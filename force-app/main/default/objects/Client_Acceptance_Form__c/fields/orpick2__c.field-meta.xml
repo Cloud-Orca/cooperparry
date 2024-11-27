@@ -3,12 +3,12 @@
     <fullName>orpick2__c</fullName>
     <description>Are we being invited to act for only part of a relationship/group ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Are we being invited to act for only part of a relationship/group ?</inlineHelpText>
     <label>Are we being invited to act for only par</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

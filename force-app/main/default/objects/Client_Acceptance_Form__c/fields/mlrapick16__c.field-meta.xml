@@ -3,12 +3,12 @@
     <fullName>mlrapick16__c</fullName>
     <description>Does the client hold assets or undertake activities overseas ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Does the client hold assets or undertake activities overseas ?</inlineHelpText>
     <label>Does the client hold assets or undertake</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

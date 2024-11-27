@@ -3,12 +3,12 @@
     <fullName>pickint1__c</fullName>
     <description>Is there anything unusual or suspicious about the client or transaction ?</description>
     <externalId>false</externalId>
+    <inlineHelpText>Is there anything unusual or suspicious about the client or transaction ?</inlineHelpText>
     <label>Is there anything unusual or suspicious</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

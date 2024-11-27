@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Who_at_the_client_has_authority_to_ins__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Who at the client has authority to instruct us?</inlineHelpText>
     <label>Who at the client has authority to ins</label>
     <length>255</length>
     <required>false</required>
