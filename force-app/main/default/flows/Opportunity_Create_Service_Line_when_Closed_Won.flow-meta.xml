@@ -73,13 +73,19 @@
             <targetReference>Create_Service_Line_record</targetReference>
         </connector>
         <filterFormula>AND(
-NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
-ISCHANGED({!$Record.StageName}),
-OR(
-TEXT({!$Record.StageName}) = &quot;Married (Closed Won)&quot;,
-TEXT({!$Record.StageName}) = &quot;Live Enquiry&quot;,
-TEXT({!$Record.StageName}) = &quot;Closed Won&quot;
-)
+ NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+ ISCHANGED({!$Record.StageName}),
+ OR(
+  TEXT({!$Record.StageName}) = &quot;Married (Closed Won)&quot;,
+  TEXT({!$Record.StageName}) = &quot;Live Enquiry&quot;,
+  TEXT({!$Record.StageName}) = &quot;Closed Won&quot;,
+  AND(
+   {!$Record.RecordType.DeveloperName} = &quot;Corporate_Opportunity&quot;,
+   TEXT({!$Record.StageName}) = &quot;Live Mandate&quot;,
+   TEXT({!$Record.Opportunity_Area__c}) = &quot;Deals&quot;,
+   TEXT({!$Record.Opportunity_Type_Area__c}) = &quot;CF&quot;
+  )
+ )
 )</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
