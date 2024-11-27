@@ -403,7 +403,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Case_Area__c</fieldItem>
                 <identifier>RecordCase_Area_cField</identifier>
@@ -413,7 +413,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Case_Type_Area__c</fieldItem>
                 <identifier>RecordCase_Type_Area_cField</identifier>
@@ -423,7 +423,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Case_Assignment_Type__c</fieldItem>
                 <identifier>RecordCase_Assignment_Type_cField</identifier>
