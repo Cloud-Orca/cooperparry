@@ -1993,7 +1993,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <fieldText>Source Type</fieldText>
             <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
+            <isRequired>true</isRequired>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -2090,7 +2090,13 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         </fields>
         <fields>
             <name>Referral_Type_Opportunity</name>
+            <choiceReferences>Client</choiceReferences>
+            <choiceReferences>CPer</choiceReferences>
+            <choiceReferences>Intermediary</choiceReferences>
+            <choiceReferences>International</choiceReferences>
+            <choiceReferences>Partnership</choiceReferences>
             <choiceReferences>Service_Line</choiceReferences>
+            <choiceReferences>Networking</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Referral Type</fieldText>
             <fieldType>DropdownBox</fieldType>
