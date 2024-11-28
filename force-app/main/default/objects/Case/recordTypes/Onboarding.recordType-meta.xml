@@ -563,6 +563,22 @@
     <picklistValues>
         <picklist>Closed_Reason__c</picklist>
         <values>
+            <fullName>Declined - CAF incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined - Missing AML documents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined - Missing subsidiary info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined - Professional Clearance response incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Onboarded</fullName>
             <default>false</default>
         </values>
