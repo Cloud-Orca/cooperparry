@@ -1215,6 +1215,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Risk_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.SIC_Codes__c</field>
         <readable>true</readable>
     </fieldPermissions>
