@@ -2,6 +2,7 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry Finance part2</label>
+    <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisDefinitionReadAccess</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisReports</permissionSets>
     <permissionSets>c2g__AccountingBackgroundMatching</permissionSets>
@@ -19,6 +20,7 @@
     <permissionSets>c2g__AccountingSelectionDefinitionReadAccess</permissionSets>
     <permissionSets>c2g__AccountingandBillingAccount</permissionSets>
     <permissionSets>c2g__AccountingandBillingAccountingCurrenciesReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingAsofAging</permissionSets>
     <permissionSets>c2g__AccountingandBillingCollections</permissionSets>
     <permissionSets>c2g__AccountingandBillingCompanyReadAccess</permissionSets>
     <permissionSets>c2g__AccountingandBillingDimension1</permissionSets>
@@ -59,5 +61,8 @@
     <permissionSets>ffrr__RevenueRecognitionAnalyticsReadAccess</permissionSets>
     <permissionSets>ffrr__RevenueRecognitionConsultantAccess</permissionSets>
     <permissionSets>ffrr__RevenueRecognitionGuestAccess</permissionSets>
+    <permissionSets>pse__PSAGenerateBillingEvents</permissionSets>
+    <permissionSets>pse__PSAInvoiceBillingEvents</permissionSets>
+    <permissionSets>pse__PSAReleaseBillingEvents</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>
