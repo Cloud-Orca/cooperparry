@@ -104,7 +104,7 @@
         <inputAssignments>
             <field>Service_Line_Onboarded__c</field>
             <value>
-                <booleanValue>true</booleanValue>
+                <stringValue>Yes</stringValue>
             </value>
         </inputAssignments>
         <object>Service_Line__c</object>
