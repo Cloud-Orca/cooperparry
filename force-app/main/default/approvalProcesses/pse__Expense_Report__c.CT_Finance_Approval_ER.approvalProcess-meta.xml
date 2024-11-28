@@ -3,6 +3,9 @@
     <active>true</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
@@ -35,8 +38,7 @@
     <entryCriteria>
         <formula>(ISPICKVAL( pse__Status__c , &apos;Draft&apos;) || 
 ISPICKVAL( pse__Status__c , &apos;Submitted&apos;) || 
-ISPICKVAL( pse__Status__c , &apos;Rejected&apos;)) &amp;&amp; 
-(( LEN ( pse__Approver__c) = 0 ) || ( pse__Approver__r.Id = pse__Resource__r.pse__Salesforce_User__r.Id ))</formula>
+ISPICKVAL( pse__Status__c , &apos;Rejected&apos;))</formula>
     </entryCriteria>
     <finalApprovalActions>
         <action>

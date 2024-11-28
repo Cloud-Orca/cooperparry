@@ -3,6 +3,7 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry Finance part2</label>
     <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
+    <permissionSets>Finance_Revenue_Recognition_Custom_Fields</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisDefinitionReadAccess</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisReports</permissionSets>
     <permissionSets>c2g__AccountingBackgroundMatching</permissionSets>
