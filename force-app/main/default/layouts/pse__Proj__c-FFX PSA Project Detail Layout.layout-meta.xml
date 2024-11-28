@@ -9,6 +9,7 @@
     <customButtons>pse__Create_Change_Request</customButtons>
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -36,6 +37,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Manager_approval_required_for_billing__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Unapproved_only_for_data_migration__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -230,6 +235,10 @@
                 <field>CT_Total_Submitted_Hours_Bill_Rate__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CP_Total_Costs__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>pse__Expense_Costs__c</field>
             </layoutItems>
@@ -296,11 +305,19 @@
                 <behavior>Edit</behavior>
                 <field>CT_R_D_Stage__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Patent_Box_Stage__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>CT_R_D_Complete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CT_Patent_Box_Complete__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -664,11 +681,11 @@
         <fields>pse__End_Date__c</fields>
         <fields>pse__Status__c</fields>
         <fields>pse__Total_Hours__c</fields>
-        <fields>pse__Total_Billable_Amount__c</fields>
+        <fields>pse__Milestone__c</fields>
+        <fields>CT_Suggested_Bill_Rate__c</fields>
         <fields>pse__Billable__c</fields>
         <fields>pse__Assignment__c</fields>
-        <fields>pse__Milestone__c</fields>
-        <fields>pse__Project_Task_Hours__c</fields>
+        <fields>CT_Hours_x_Bill_Rate__c</fields>
         <relatedList>pse__Timecard_Header__c.pse__Project__c</relatedList>
         <sortField>pse__End_Date__c</sortField>
         <sortOrder>Desc</sortOrder>

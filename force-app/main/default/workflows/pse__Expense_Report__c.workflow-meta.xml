@@ -19,6 +19,9 @@
             <field>pse__Resource__c</field>
             <type>contactLookup</type>
         </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
         <senderType>CurrentUser</senderType>
         <template>FFX_PSA_Email_Templates/FFX_PSA_Expense_Report_Rejected</template>
     </alerts>
