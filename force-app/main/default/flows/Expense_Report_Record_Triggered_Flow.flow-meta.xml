@@ -67,7 +67,7 @@
         <inputAssignments>
             <field>Resource_Name__c</field>
             <value>
-                <elementReference>$Record.pse__Resource__r.Name</elementReference>
+                <elementReference>$Record.pse__Resource__r.FFX_Resource_Name__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
