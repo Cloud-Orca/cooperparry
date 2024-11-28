@@ -137,6 +137,19 @@
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.c2g__codaInvoice__c.c2g__ConvertToCreditNote</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.c2g__InvoiceStatus__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Complete</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>c2g__codaInvoice__c.c2g__Unconsolidate</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
