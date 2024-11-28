@@ -171,6 +171,21 @@
         <label>SaaS</label>
     </customValue>
     <customValue>
+        <fullName>Retail</fullName>
+        <default>false</default>
+        <label>Retail</label>
+    </customValue>
+    <customValue>
+        <fullName>Supply Chain</fullName>
+        <default>false</default>
+        <label>Supply Chain</label>
+    </customValue>
+    <customValue>
+        <fullName>Components</fullName>
+        <default>false</default>
+        <label>Components</label>
+    </customValue>
+    <customValue>
         <fullName>Retail and Supply Chain Components</fullName>
         <default>false</default>
         <label>Retail and Supply Chain Components</label>
@@ -181,7 +196,7 @@
         <isActive>false</isActive>
         <label>Waste</label>
     </customValue>
-    <description>CP Deals Subsector.</description>
+    <description>Subsector</description>
     <masterLabel>CP Deals Subsector</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
