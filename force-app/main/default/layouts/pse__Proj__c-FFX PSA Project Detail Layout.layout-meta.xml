@@ -38,6 +38,10 @@
                 <behavior>Edit</behavior>
                 <field>Manager_approval_required_for_billing__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Unapproved_only_for_data_migration__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

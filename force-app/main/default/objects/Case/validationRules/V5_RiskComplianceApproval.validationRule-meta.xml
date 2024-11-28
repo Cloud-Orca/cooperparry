@@ -6,6 +6,10 @@
  $Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c = false,
  Risk_Compliance_Approved_checkbox__c = False,
  ISCHANGED(Status),
+ OR(
+  TEXT(Client_Amendment__c) = &quot;Yes&quot;,
+  ISBLANK(TEXT(Client_Amendment__c))
+  ),
   OR(
    Text(Status) = &quot;Client Review and Doc Gen&quot;,
    Text(Status) = &quot;Closed&quot;

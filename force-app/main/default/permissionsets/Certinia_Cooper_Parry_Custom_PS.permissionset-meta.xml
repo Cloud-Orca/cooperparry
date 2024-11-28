@@ -6,7 +6,32 @@
 - Products</description>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.cer_Chasing_Notes_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.cer_Chasing_Notes_Modified_By2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.cer_Chasing_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CT_Expense_VAT_Types__c.Vat_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNoteLineItem__c.cer_Milestone_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaTransactionLineItem__c.cer_Milestone_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

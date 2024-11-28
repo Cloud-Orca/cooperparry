@@ -205,6 +205,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BeauhurstHttpCalloutMock</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CSVRecordUploaderController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -293,7 +297,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>CreateLeadsFromBHBatch</apexClass>
+        <apexClass>CreateAccountsFromBHBatchTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -309,11 +313,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>GetCompanyCollectionBatch</apexClass>
+        <apexClass>GetBeauhurstCompaniesTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>GetCompanyIdBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GetCompanyIdBatchTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -369,6 +377,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>QueueHttpMock</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RunBatchCompHouse</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -378,6 +390,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SharepointCompCont</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SharepointUploadFileInvocable</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -409,7 +425,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>UpdateLeadsFromBHBatch</apexClass>
+        <apexClass>UpdateAccountsFromBHBatchTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1063,6 +1079,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Ongoing_Monitoring_is_Today_plus_7_days__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Opted_In__c</field>
         <readable>true</readable>
@@ -1190,6 +1211,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Research_And_Development__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Risk_Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1479,6 +1505,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Audit_Register__c.Documents_Other_More_info__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Audit_Register__c.Documents__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1570,6 +1601,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Audit_Register__c.Technical_Reviewer_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Audit_Register__c.Turnover_Audit_Register__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1939,6 +1975,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Client_Amendment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Closed_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1980,6 +2021,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Declined_Additional_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Document_Signed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Engagement_Pack_Approved_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Engagement_Pack_Approved__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3893,6 +3949,46 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Expense_Report__e.Currency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Expense_Report__e.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Expense_Report__e.Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Expense_Report__e.Last_Expense_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Expense_Report__e.Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Expense_Report__e.Owner_Company_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Expense_Report__e.Resource_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Expense_Report__e.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Hide_Account_For_User__c.Account__c</field>
         <readable>true</readable>
@@ -5214,6 +5310,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Project__e.Closed_for_Expense_Entry__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Project__e.Closed_for_Time_Entry__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Project__e.End_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -5385,6 +5491,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Service_Line__c.Service_Line_Manager__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Line__c.Service_Line_Onboarded__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -10784,6 +10895,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CT_Actual_Recovery_Rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.CT_Close_to_Cost_Budget__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -12938,6 +13054,9 @@
         <layout>CaseClose-Close Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>CaseInteraction-Case Feed Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Client_Acceptance_Form__c-Client Acceptance Form Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -13371,6 +13490,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Corporate_PE_Association__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Expense_Report__e</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

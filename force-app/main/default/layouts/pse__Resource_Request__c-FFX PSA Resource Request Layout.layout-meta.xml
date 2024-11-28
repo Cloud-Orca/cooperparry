@@ -68,6 +68,10 @@
                 <behavior>Readonly</behavior>
                 <field>CT_Estimated_Revenue__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Unapproved_only_for_data_migration__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
