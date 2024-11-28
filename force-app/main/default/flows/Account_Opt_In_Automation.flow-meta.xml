@@ -5,7 +5,7 @@
         <name>Found_Contacts</name>
         <label>Found Contacts?</label>
         <locationX>182</locationX>
-        <locationY>539</locationY>
+        <locationY>731</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_Found_Contacts</name>
@@ -21,6 +21,31 @@
                 <targetReference>Set_All_Contacts_to_Opted_In</targetReference>
             </connector>
             <label>Yes - Found Contacts</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Person_Account</name>
+        <label>Is Person Account?</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Get_All_Contacts</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Person_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opt_In</targetReference>
+            </connector>
+            <label>Yes - Person Account</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -49,7 +74,7 @@
         <name>Get_All_Contacts</name>
         <label>Get All Contacts</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>623</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Found_Contacts</targetReference>
@@ -70,7 +95,7 @@
         <name>Set_All_Contacts_to_Opted_In</name>
         <label>Set All Contacts to Opted In</label>
         <locationX>50</locationX>
-        <locationY>647</locationY>
+        <locationY>839</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>AccountId</field>
@@ -90,8 +115,8 @@
     <recordUpdates>
         <name>Update_Opt_In</name>
         <label>Update Opt In</label>
-        <locationX>182</locationX>
-        <locationY>323</locationY>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
         <connector>
             <targetReference>Get_All_Contacts</targetReference>
         </connector>
@@ -113,7 +138,7 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Opt_In</targetReference>
+            <targetReference>Is_Person_Account</targetReference>
         </connector>
         <filterFormula>AND({!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
 ISCHANGED({!$Record.Type}),
