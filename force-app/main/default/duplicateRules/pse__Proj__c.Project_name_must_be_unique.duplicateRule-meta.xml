@@ -10,7 +10,7 @@
         <matchingRule>Project_name_must_be_unique_matching_rule</matchingRule>
         <objectMapping xsi:nil="true"/>
     </duplicateRuleMatchRules>
-    <isActive>false</isActive>
+    <isActive>true</isActive>
     <masterLabel>Project name must be unique</masterLabel>
     <securityOption>EnforceSharingRules</securityOption>
     <sortOrder>1</sortOrder>
