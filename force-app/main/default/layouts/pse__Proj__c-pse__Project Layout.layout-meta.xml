@@ -183,6 +183,10 @@
                 <behavior>Readonly</behavior>
                 <field>CP_Total_Costs__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Unapproved_only_for_data_migration__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

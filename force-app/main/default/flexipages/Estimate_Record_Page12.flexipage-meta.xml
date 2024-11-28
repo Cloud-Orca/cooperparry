@@ -8,9 +8,6 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Submit</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>ffscpq__Estimate__c.ffscpq__Make_Estimate_Non_Primary</value>
                             <visibilityRule>
                                 <booleanFilter>1 AND 2</booleanFilter>
@@ -494,20 +491,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(255, 0, 0); font-size: 13px;&quot;&gt;Please Click &quot;&lt;/span&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); font-size: 13px;&quot;&gt;Add to Opportunity&lt;/strong&gt;&lt;span style=&quot;color: rgb(255, 0, 0); font-size: 13px;&quot;&gt;&quot; on your Estimate&lt;/span&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText</identifier>
-            </componentInstance>
-        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
