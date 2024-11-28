@@ -62,6 +62,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>c2g__codaInvoice__c.cer_Consolidate_Invoice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sales_Invoice_Batch__c</field>
         <readable>true</readable>
     </fieldPermissions>
