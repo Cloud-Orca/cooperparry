@@ -254,8 +254,7 @@
         <filterFormula>AND(
 NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
 ISCHANGED({!$Record.Status}),
-TEXT({!$Record.Status}) = &quot;Closed&quot;,
-TEXT({!$Record.Closed_Reason__c}) = &quot;Onboarded&quot;
+TEXT({!$Record.Status}) = &quot;CAF Form Completion&quot;
 )</filterFormula>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
