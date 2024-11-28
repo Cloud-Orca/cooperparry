@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -63,14 +62,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>pse__Self_Nomination_Deadline__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>CT_Estimated_Revenue__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Unapproved_only_for_data_migration__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -136,26 +127,14 @@
         <label>Billing Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>pse__Requested_Bill_Rate__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>pse__Request_Billable_Amount__c</field>
+                <field>CT_Estimated_Revenue__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>pse__Rate_Card__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>pse__Suggested_Bill_Rate__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>pse__Average_Cost_Rate__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -169,6 +148,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>CreatedById</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Unapproved_only_for_data_migration__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
