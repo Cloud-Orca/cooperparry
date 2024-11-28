@@ -1037,6 +1037,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>c2g__codaInvoice__c.cer_Consolidate_Invoice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sales_Invoice_Batch__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1437,6 +1442,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>c2g__codaTransaction__c.cer_Customer_Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ffscpq__Estimate__c.Total_Cost_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1458,6 +1468,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Billing_Event__c.CT_Project_Partner_approval_required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Billing_Event__c.cer_Consolidate_Invoice__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

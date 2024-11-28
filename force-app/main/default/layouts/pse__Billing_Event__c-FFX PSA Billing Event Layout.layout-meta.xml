@@ -30,6 +30,10 @@
                 <behavior>Readonly</behavior>
                 <field>pse__Is_Released__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>cer_Consolidate_Invoice__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -163,11 +167,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>pse__Billing_Event__c.Release_Billing_Event</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Submit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
@@ -176,6 +175,11 @@
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>2</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>pse__Billing_Event__c.Release_Billing_Event</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>pse__Billing_Event__c.pse__RevertBilling</actionName>
@@ -193,6 +197,32 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
     </platformActionList>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>c2g__Account__c</fields>
+        <fields>c2g__InvoiceDate__c</fields>
+        <fields>c2g__Period__c</fields>
+        <fields>c2g__DueDate__c</fields>
+        <fields>c2g__InvoiceCurrency__c</fields>
+        <fields>c2g__InvoiceTotal__c</fields>
+        <fields>c2g__PrintStatus__c</fields>
+        <fields>c2g__InvoiceStatus__c</fields>
+        <fields>c2g__OwnerCompany__c</fields>
+        <relatedList>c2g__codaInvoice__c.ffpsai__BillingEvent__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>c2g__Account__c</fields>
+        <fields>c2g__CreditNoteDate__c</fields>
+        <fields>c2g__Period__c</fields>
+        <fields>c2g__DueDate__c</fields>
+        <fields>c2g__CreditNoteCurrency__c</fields>
+        <fields>c2g__CreditNoteTotal__c</fields>
+        <fields>c2g__CreditNoteStatus__c</fields>
+        <fields>c2g__PrintStatus__c</fields>
+        <fields>c2g__OwnerCompany__c</fields>
+        <relatedList>c2g__codaCreditNote__c.ffpsai__BillingEvent__c</relatedList>
+    </relatedLists>
     <relatedLists>
         <customButtons>pse__ClearBillingData</customButtons>
         <excludeButtons>New</excludeButtons>

@@ -96,6 +96,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaInvoice__c.cer_Consolidate_Invoice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sales_Invoice_Batch__c</field>
         <readable>true</readable>
@@ -113,6 +118,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaTransactionLineItem__c.cer_Milestone_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaTransaction__c.cer_Customer_Reference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -143,6 +153,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Billing_Event__c.CT_Project_Partner_approval_required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Billing_Event__c.cer_Consolidate_Invoice__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
