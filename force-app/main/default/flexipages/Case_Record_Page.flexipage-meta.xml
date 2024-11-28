@@ -251,6 +251,16 @@
                 <identifier>RecordOpportunity_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Client_Amendment__c</fieldItem>
+                <identifier>RecordClient_Amendment__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-d943f5ef-2328-42ac-a428-afa2d42661c1</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -297,16 +307,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Closed_Reason__c</fieldItem>
                 <identifier>RecordClosed_Reason_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Origin</fieldItem>
-                <identifier>RecordOriginField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-29743e45-1a5e-4bd0-838a-acdd4b3bb8db</name>
