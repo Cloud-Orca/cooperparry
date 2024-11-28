@@ -21,6 +21,7 @@
     <permissionSets>c2g__AccountingandBillingAccount</permissionSets>
     <permissionSets>c2g__AccountingandBillingAccountingCurrenciesApplyExchangeRates</permissionSets>
     <permissionSets>c2g__AccountingandBillingAccountingCurrenciesReadAccess</permissionSets>
+    <permissionSets>c2g__AccountingandBillingAsofAging</permissionSets>
     <permissionSets>c2g__AccountingandBillingCollections</permissionSets>
     <permissionSets>c2g__AccountingandBillingCollectionsSendReminders</permissionSets>
     <permissionSets>c2g__AccountingandBillingCompany</permissionSets>
