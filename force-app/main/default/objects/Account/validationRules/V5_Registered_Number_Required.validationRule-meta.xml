@@ -6,7 +6,7 @@
  NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
  IsPersonAccount = false,
  ISBLANK(Beauhurst_ID__c ),
-  AND( 
+  OR( 
    TEXT(Type_of_Business__c) &lt;&gt; &quot;Not For Profit&quot;,
    TEXT(Type_of_Business__c) &lt;&gt; &quot;Pension Scheme&quot;,
    ISBLANK(TEXT(Type_of_Business__c))
