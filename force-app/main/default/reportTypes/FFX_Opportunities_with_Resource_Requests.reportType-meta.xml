@@ -578,6 +578,11 @@
             <field>CT_Estimated_Revenue__c</field>
             <table>Opportunity.pse__Resource_Requests__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Unapproved_only_for_data_migration__c</field>
+            <table>Opportunity.pse__Resource_Requests__r</table>
+        </columns>
         <masterLabel>Resource Requests</masterLabel>
     </sections>
 </ReportType>
