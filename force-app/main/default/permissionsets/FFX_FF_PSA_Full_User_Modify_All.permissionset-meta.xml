@@ -14307,6 +14307,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Billing_Event__c.cer_Consolidate_Invoice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Billing_Event__c.pse__Approver__c</field>
         <readable>true</readable>
     </fieldPermissions>
