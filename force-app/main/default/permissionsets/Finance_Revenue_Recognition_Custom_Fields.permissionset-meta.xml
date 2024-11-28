@@ -227,6 +227,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Proj__c.Unapproved_only_for_data_migration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Proj__c.ffpsai__ExpenseGLACode__c</field>
         <readable>true</readable>
     </fieldPermissions>

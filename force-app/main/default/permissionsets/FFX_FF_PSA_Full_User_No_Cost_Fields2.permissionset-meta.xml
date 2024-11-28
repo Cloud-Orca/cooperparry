@@ -13755,6 +13755,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.Unapproved_only_for_data_migration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.psaws__Actual_Hours__c</field>
         <readable>true</readable>
@@ -16237,6 +16242,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Resource_Request__c.FFX_Resource_Request_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Resource_Request__c.Unapproved_only_for_data_migration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
