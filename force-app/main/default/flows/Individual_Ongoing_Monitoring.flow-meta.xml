@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Upload_File_to_Sharepoint</name>
+        <label>Upload File to Sharepoint</label>
+        <locationX>50</locationX>
+        <locationY>1622</locationY>
+        <actionName>SharepointUploadFileInvocable</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Individual_Ongoing_Monitoring</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>caseId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>fileIds</name>
+            <value>
+                <elementReference>fileIds</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SharepointUploadFileInvocable</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>62.0</apiVersion>
     <assignments>
         <name>assign_Form</name>
@@ -15,6 +42,36 @@
         </assignmentItems>
         <connector>
             <targetReference>PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assignFileIds</name>
+        <label>assignFileIds</label>
+        <locationX>182</locationX>
+        <locationY>1406</locationY>
+        <assignmentItems>
+            <assignToReference>fileIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>EngagementLetter_upload.contentVersionIds</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>fileIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>NewClientForm_upload.contentVersionIds</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>fileIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SmartSearch_upload.contentVersionIds</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_there_a_File_Upload</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -50,20 +107,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Client_Code</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.Which_DC__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Which_DC</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.Prepared_by__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Prepared_by</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -221,7 +264,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Individual_Ongoing_Monitoring</targetReference>
+            <targetReference>assignFileIds</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -312,6 +355,31 @@
                 <targetReference>assignIndividualOngoing</targetReference>
             </connector>
             <label>Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_File_Upload</name>
+        <label>Is there a File Upload</label>
+        <locationX>182</locationX>
+        <locationY>1514</locationY>
+        <defaultConnector>
+            <targetReference>Update_Individual_Ongoing_Monitoring</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>None</defaultConnectorLabel>
+        <rules>
+            <name>File_Uploaded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fileIds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Upload_File_to_Sharepoint</targetReference>
+            </connector>
+            <label>File Uploaded</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -451,7 +519,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>1514</locationY>
+        <locationY>1922</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -472,7 +540,7 @@
         <name>Update_Individual_Ongoing_Monitoring</name>
         <label>Update Individual Ongoing Monitoring</label>
         <locationX>182</locationX>
-        <locationY>1406</locationY>
+        <locationY>1814</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -1077,6 +1145,12 @@
                             <elementReference>variableForm.Id</elementReference>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>multiple</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -1119,6 +1193,12 @@
                             <elementReference>variableForm.Id</elementReference>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>multiple</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -1159,6 +1239,12 @@
                         <name>recordId</name>
                         <value>
                             <elementReference>variableForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>multiple</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1464,9 +1550,9 @@
                     <isRequired>false</isRequired>
                 </fields>
                 <fields>
-                    <name>Prepared_by</name>
-                    <dataType>String</dataType>
-                    <fieldText>Prepared by:</fieldText>
+                    <name>Date</name>
+                    <dataType>Date</dataType>
+                    <fieldText>Date:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1474,7 +1560,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>4</stringValue>
+                        <stringValue>6</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -1501,34 +1587,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section4_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Which_DC</name>
-                    <dataType>String</dataType>
-                    <fieldText>Which DC</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <fields>
-                    <name>Date</name>
-                    <dataType>Date</dataType>
-                    <fieldText>Date:</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
+                        <stringValue>6</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2098,6 +2157,13 @@
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>fileIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
