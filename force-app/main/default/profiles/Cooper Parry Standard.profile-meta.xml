@@ -1100,6 +1100,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Overseas_Registered_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.PSC_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1381,6 +1386,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Types_Of_Funding__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.UK_Registered_Entity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5541,6 +5551,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Service_Line__c.Assignment_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Line__c.Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13113,6 +13128,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Case-Case Layout</layout>
+        <recordType>Case.Service_Line</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-Case Layout</layout>
         <recordType>Case.Yearly_Check</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -13640,6 +13659,11 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Case.Onboarding</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Case.Service_Line</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

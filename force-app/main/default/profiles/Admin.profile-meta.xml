@@ -1100,6 +1100,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Overseas_Registered_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.PSC_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1245,7 +1250,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Sharepoint_Public_Folder_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Sharepoint_Secure_Folder_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Sharepoint_Secure_Folder_URL__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1371,6 +1386,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Types_Of_Funding__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.UK_Registered_Entity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2039,8 +2059,28 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Engagement_Pack_Rejected__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Escalation_Approved__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Escalation_Rejected__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.Form_Approved__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Form_Rejected__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2061,6 +2101,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.Individual_Risk_Form_formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Manual_Engagement_Pack_received__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2100,6 +2145,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.PEP_Rejected__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.PEP_SIP_RCA_Approved_checkbox__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2119,6 +2169,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Partner_Rejected__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.Previously_Onboarded__c</field>
         <readable>true</readable>
@@ -2135,6 +2190,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Risk_Rejected__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Sharepoint_Folder_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2145,7 +2205,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Sharepoint_Public_Folder_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Sharepoint_Secure_Folder_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Sharepoint_Secure_Folder_URL__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3706,6 +3776,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Continuation_Form__c.Money_Laundering_Risk__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Continuation_Form__c.Monitoring_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5476,6 +5551,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Service_Line__c.Assignment_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Line__c.Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13048,6 +13128,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Case-Case Layout</layout>
+        <recordType>Case.Service_Line</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-Case Layout</layout>
         <recordType>Case.Yearly_Check</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -13935,6 +14019,11 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Case.Onboarding</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Case.Service_Line</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
