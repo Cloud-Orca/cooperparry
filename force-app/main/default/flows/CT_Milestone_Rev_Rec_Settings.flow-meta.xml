@@ -4,7 +4,7 @@
     <assignments>
         <name>Assign_Rev_Rec_Values</name>
         <label>Assign Rev Rec Values</label>
-        <locationX>270</locationX>
+        <locationX>292</locationX>
         <locationY>395</locationY>
         <assignmentItems>
             <assignToReference>RevRecTemplate</assignToReference>
@@ -43,7 +43,7 @@
     <decisions>
         <name>Milestone_Rev_Rec</name>
         <label>Milestone Rev Rec</label>
-        <locationX>270</locationX>
+        <locationX>292</locationX>
         <locationY>503</locationY>
         <defaultConnector>
             <targetReference>MRR_Changes_On_Project_RR</targetReference>
@@ -78,17 +78,10 @@
             <name>MRR_Manual_Changes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.CT_Manual_Recovery_Rate__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>NewMilestone</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>$Record__Prior.CT_Manual_Recovery_Rate__c</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.CT_Manual_Recovery_Rate__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <numberValue>0.0</numberValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -100,7 +93,7 @@
     <decisions>
         <name>MRR_Changes_On_Project_RR</name>
         <label>MRR Changes On Project RR</label>
-        <locationX>490</locationX>
+        <locationX>534</locationX>
         <locationY>611</locationY>
         <defaultConnector>
             <targetReference>Update_MS</targetReference>
@@ -110,23 +103,21 @@
             <name>MRR_Manual_Changes_PRR</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.CT_Manual_Recovery_Rate__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>NewMilestone</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>$Record__Prior.CT_Manual_Recovery_Rate__c</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.CT_Manual_Recovery_Rate__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <numberValue>0.0</numberValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <label>MRR Manual Changes PRR</label>
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>NewMilestone</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
     <interviewLabel>CT_Milestone_Rev_Rec_Settings {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CT_Milestone_Rev_Rec_Settings</label>
     <processMetadataValues>
@@ -151,7 +142,7 @@
     <recordLookups>
         <name>Get_MS_Practice</name>
         <label>Get MS Practice</label>
-        <locationX>270</locationX>
+        <locationX>292</locationX>
         <locationY>287</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -234,8 +225,20 @@
     <recordUpdates>
         <name>Update_MS</name>
         <label>Update MS</label>
-        <locationX>578</locationX>
+        <locationX>666</locationX>
         <locationY>719</locationY>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>pse__Actual_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Actual_Date__c</field>
+            <operator>EqualTo</operator>
+        </filters>
         <inputAssignments>
             <field>CT_Manual_Recovery_Rate__c</field>
             <value>
@@ -248,7 +251,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>144</locationX>
+        <locationX>166</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_MS_Practice</targetReference>

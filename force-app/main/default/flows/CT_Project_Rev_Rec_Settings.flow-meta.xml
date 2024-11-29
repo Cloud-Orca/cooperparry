@@ -311,6 +311,12 @@
         <inputAssignments>
             <field>ffrrtemplate__c</field>
         </inputAssignments>
+        <inputAssignments>
+            <field>pse__Region__c</field>
+            <value>
+                <elementReference>$Record.CT_Project_Partner__r.Contact.pse__Region__c</elementReference>
+            </value>
+        </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
@@ -325,6 +331,12 @@
             <field>CT_Manual_Recovery_Rate__c</field>
             <value>
                 <elementReference>RecoveryRate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Region__c</field>
+            <value>
+                <elementReference>$Record.CT_Project_Partner__r.Contact.pse__Region__c</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
