@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>sendCustomNotification</name>
+        <label>sendCustomNotification</label>
+        <locationX>176</locationX>
+        <locationY>674</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>getNotification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>variableApproverIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>textTemplateTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>textTemplateBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>getCaseRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>submitForApproval</name>
         <label>submitForApproval</label>
         <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
+        <connector>
+            <targetReference>sendCustomNotification</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>objectId</name>
@@ -35,7 +79,7 @@
         <name>assignApproverId</name>
         <label>assignApproverId</label>
         <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>variableComments</assignToReference>
             <operator>Assign</operator>
@@ -76,7 +120,7 @@
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>ApproverSelection</targetReference>
+            <targetReference>getNotification</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -87,11 +131,32 @@
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>getNotification</name>
+        <label>getNotification</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ApproverSelection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CustomNotifTypeName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CAF Form Approved</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <screens>
         <name>ApproverSelection</name>
         <label>ApproverSelection</label>
         <locationX>176</locationX>
-        <locationY>242</locationY>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -149,6 +214,16 @@
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>textTemplateBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A Risk/Compliance approval request has been assigned to you for {!getCaseRecord.Account.Name}- {!getCaseRecord.CaseNumber}. Please review and take action.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>textTemplateTitle</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Approval Request for Risk/Compliance on {!getCaseRecord.Account.Name} - {!getCaseRecord.CaseNumber}</text>
+    </textTemplates>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

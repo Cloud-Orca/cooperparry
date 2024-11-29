@@ -7,6 +7,9 @@
         <locationY>1679</locationY>
         <actionName>Opportunity.Opportunity_Closed_Won_Audit_Notification</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>getCaseRecord</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -24,6 +27,9 @@
         <locationY>1679</locationY>
         <actionName>Opportunity.Opportunity_Closed_Won_BSO_Notification</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>getCaseRecord</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -41,6 +47,9 @@
         <locationY>1679</locationY>
         <actionName>Opportunity.Opportunity_Closed_Won_Deals_Notification</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>getCaseRecord</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -58,6 +67,9 @@
         <locationY>1679</locationY>
         <actionName>Opportunity.Opportunity_Closed_Won_Law_Notification</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>getCaseRecord</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -75,6 +87,9 @@
         <locationY>1679</locationY>
         <actionName>Opportunity.Opportunity_Closed_Won_Tax_Notification</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>getCaseRecord</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -83,6 +98,67 @@
             </value>
         </inputParameters>
         <nameSegment>Opportunity.Opportunity_Closed_Won_Tax_Notification</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>sendCustomNotification</name>
+        <label>sendCustomNotification</label>
+        <locationX>710</locationX>
+        <locationY>2195</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>sendEmailToLifecycleGroup</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>getCustomNotification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>variableRecipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>textTemplateTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>textTemplateBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>getCaseRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>sendEmailToLifecycleGroup</name>
+        <label>sendEmailToLifecycleGroup</label>
+        <locationX>710</locationX>
+        <locationY>2303</locationY>
+        <actionName>Case.Onboarding_Case_Created</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>getCaseRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.Onboarding_Case_Created</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
@@ -116,6 +192,22 @@
         </assignmentItems>
         <connector>
             <targetReference>Create_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assignRecipients</name>
+        <label>assignRecipients</label>
+        <locationX>710</locationX>
+        <locationY>2087</locationY>
+        <assignmentItems>
+            <assignToReference>variableRecipients</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>get_Lifecycle_managers_queue.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>sendCustomNotification</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -173,6 +265,9 @@
         <label>Opportunity Area</label>
         <locationX>710</locationX>
         <locationY>1571</locationY>
+        <defaultConnector>
+            <targetReference>getCaseRecord</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Tax</name>
@@ -482,6 +577,48 @@
         <object>RecordType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>getCaseRecord</name>
+        <label>getCaseRecord</label>
+        <locationX>710</locationX>
+        <locationY>1871</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>getCustomNotification</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Create_Case</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getCustomNotification</name>
+        <label>getCustomNotification</label>
+        <locationX>710</locationX>
+        <locationY>1979</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>assignRecipients</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CustomNotifTypeName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CAF Form Approved</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
@@ -530,10 +667,27 @@ TEXT({!$Record.StageName}) = &quot;Married (Closed Won)&quot;,
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>textTemplateBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>An Onboarding Case has been assigned to the Lifecycle Coordinator Queue for {!getCaseRecord.Account.Name} - {!getCaseRecord.CaseNumber}. Please review.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>textTemplateTitle</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Onboarding Case Assigned to Lifecycle Coordinator Queue for {!getCaseRecord.Account.Name} - {!getCaseRecord.CaseNumber}</text>
+    </textTemplates>
     <variables>
         <name>ownerid</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>variableRecipients</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>

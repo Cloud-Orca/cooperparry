@@ -1,0 +1,11 @@
+An Onboarding Case has been assigned to the Lifecycle Coordinator Queue {!Account.Name} - {!Case.CaseNumber}.
+
+Opportunity Area: {!Opportunity.Opportunity_Area__c}
+Opportunity Type: {!Opportunity.Type}
+Assignment Type: {!Opportunity.Assignment_Type__c}
+You can view the Case here: {!Case.Link}
+
+Please ensure it is reviewed and actioned as required.
+
+Thank you,
+Salesforce

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>true</active>
-    <allowRecall>false</allowRecall>
+    <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
@@ -20,8 +20,13 @@
         <label>Form Approval</label>
         <name>Form_Approval</name>
     </approvalStep>
+    <emailTemplate>unfiled$public/Form_Approval_Request</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator</name>
+            <type>Alert</type>
+        </action>
         <action>
             <name>Set_Status_to_Approved</name>
             <type>FieldUpdate</type>
@@ -32,7 +37,23 @@
         </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Form_Rejected_Set_to_True</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Form_Rejected_Set_to_False</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
     <label>CAF Form Approval</label>
     <processOrder>1</processOrder>
     <recordEditability>AdminOnly</recordEditability>

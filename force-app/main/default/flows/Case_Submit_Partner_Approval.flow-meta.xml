@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>sendCustomNotification</name>
+        <label>sendCustomNotification</label>
+        <locationX>176</locationX>
+        <locationY>674</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>getNotification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>variableApproverIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>textTemplateTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>textTemplateBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>getCaseRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>submitForApproval</name>
         <label>submitForApproval</label>
         <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
+        <connector>
+            <targetReference>sendCustomNotification</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>objectId</name>
@@ -57,7 +101,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>submitForApproval</targetReference>
+            <targetReference>getNotification</targetReference>
         </connector>
     </assignments>
     <environments>Default</environments>
@@ -98,6 +142,27 @@
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getNotification</name>
+        <label>getNotification</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>submitForApproval</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CustomNotifTypeName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CAF Form Approved</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <screens>
@@ -188,6 +253,16 @@
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>textTemplateBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A Partner approval request has been assigned to you for {!getCaseRecord.Account.Name}- {!getCaseRecord.CaseNumber}. Please review and take action.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>textTemplateTitle</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Approval Request for Partner on {!getCaseRecord.Account.Name} - {!getCaseRecord.CaseNumber}</text>
+    </textTemplates>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

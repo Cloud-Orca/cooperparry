@@ -2,9 +2,9 @@
 <EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
     <available>true</available>
     <encodingKey>UTF-8</encodingKey>
-    <name>Escalated Case Template</name>
+    <name>Case Escalation (Approved/Rejected)</name>
     <style>none</style>
-    <subject>Escalation Request for {!Account.Name} - {!Case.CaseNumber}</subject>
+    <subject>Case Escalation Decision for {!Account.Name} - {!Case.CaseNumber}</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
