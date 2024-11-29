@@ -4,7 +4,7 @@
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
         <locationX>50</locationX>
-        <locationY>2978</locationY>
+        <locationY>2678</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -18,9 +18,9 @@
             </value>
         </inputParameters>
         <inputParameters>
-            <name>fileId</name>
+            <name>fileIds</name>
             <value>
-                <elementReference>fileId</elementReference>
+                <elementReference>fileIds</elementReference>
             </value>
         </inputParameters>
         <nameSegment>SharepointUploadFileInvocable</nameSegment>
@@ -58,29 +58,13 @@
         <locationY>2462</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
-            <operator>Assign</operator>
+            <operator>Add</operator>
             <value>
                 <elementReference>fileUpload.contentVersionIds</elementReference>
             </value>
         </assignmentItems>
         <connector>
             <targetReference>Is_there_a_File_Upload</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>assign_File_Upload_Id</name>
-        <label>assign File Upload Id</label>
-        <locationX>138</locationX>
-        <locationY>2786</locationY>
-        <assignmentItems>
-            <assignToReference>fileId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Content_Version_Ids</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Content_Version_Ids</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -126,7 +110,7 @@
         <name>Beneficiaries_Assignment</name>
         <label>Beneficiaries Assignment</label>
         <locationX>270</locationX>
-        <locationY>5114</locationY>
+        <locationY>4814</locationY>
         <assignmentItems>
             <assignToReference>beneficiary.Name</assignToReference>
             <operator>Assign</operator>
@@ -437,7 +421,7 @@
         <name>Page_3_Assignments</name>
         <label>Page 3 Assignments</label>
         <locationX>182</locationX>
-        <locationY>3386</locationY>
+        <locationY>3086</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.pickint1__c</assignToReference>
             <operator>Assign</operator>
@@ -523,7 +507,7 @@
         <name>Page_4_5_Assignments</name>
         <label>Page 4-5 Assignments</label>
         <locationX>182</locationX>
-        <locationY>3710</locationY>
+        <locationY>3410</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.mlrapick1__c</assignToReference>
             <operator>Assign</operator>
@@ -637,7 +621,7 @@
         <name>Page_6_Assignments</name>
         <label>Page 6 Assignments</label>
         <locationX>182</locationX>
-        <locationY>4034</locationY>
+        <locationY>3734</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.ben1__c</assignToReference>
             <operator>Assign</operator>
@@ -702,7 +686,7 @@
         <name>Page_7_Assignments</name>
         <label>Page 7 Assignments</label>
         <locationX>182</locationX>
-        <locationY>4358</locationY>
+        <locationY>4058</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.objpick1__c</assignToReference>
             <operator>Assign</operator>
@@ -781,7 +765,7 @@
         <name>Page_8_9_Assignment</name>
         <label>Page 8-9 Assignment</label>
         <locationX>182</locationX>
-        <locationY>4790</locationY>
+        <locationY>4490</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.con1__c</assignToReference>
             <operator>Assign</operator>
@@ -839,7 +823,7 @@
         <name>Subsidiaries_Assignment</name>
         <label>Subsidiaries Assignment</label>
         <locationX>270</locationX>
-        <locationY>5522</locationY>
+        <locationY>5222</locationY>
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Name</assignToReference>
             <operator>Assign</operator>
@@ -861,6 +845,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>clientAcceptanceForm.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>subsidiaries</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>subsidiaryRecord</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -1001,13 +992,13 @@
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>fileIds</leftValueReference>
-                <operator>IsEmpty</operator>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Content_Version_Ids</targetReference>
+                <targetReference>Upload_File_to_Sharepoint</targetReference>
             </connector>
             <label>File Upload</label>
         </rules>
@@ -1035,7 +1026,7 @@
         <name>Beneficiaries_Loop</name>
         <label>Beneficiaries Loop</label>
         <locationX>182</locationX>
-        <locationY>5006</locationY>
+        <locationY>4706</locationY>
         <collectionReference>beneficiaries</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1046,24 +1037,10 @@
         </noMoreValuesConnector>
     </loops>
     <loops>
-        <name>Content_Version_Ids</name>
-        <label>Content Version Ids</label>
-        <locationX>50</locationX>
-        <locationY>2678</locationY>
-        <collectionReference>fileIds</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>assign_File_Upload_Id</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Upload_File_to_Sharepoint</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
         <name>Subsidiaries_Loop</name>
         <label>Subsidiaries Loop</label>
         <locationX>182</locationX>
-        <locationY>5414</locationY>
+        <locationY>5114</locationY>
         <collectionReference>subsidiaries</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1096,7 +1073,7 @@
         <name>Create_Beneficiaries</name>
         <label>Create Beneficiaries</label>
         <locationX>182</locationX>
-        <locationY>5306</locationY>
+        <locationY>5006</locationY>
         <connector>
             <targetReference>Subsidiaries_Loop</targetReference>
         </connector>
@@ -1141,7 +1118,7 @@
         <name>Create_Subsidiaries</name>
         <label>Create Subsidiaries</label>
         <locationX>182</locationX>
-        <locationY>5714</locationY>
+        <locationY>5414</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -1326,7 +1303,7 @@
         <name>Update_CAF</name>
         <label>Update CAF</label>
         <locationX>182</locationX>
-        <locationY>4898</locationY>
+        <locationY>4598</locationY>
         <connector>
             <targetReference>Beneficiaries_Loop</targetReference>
         </connector>
@@ -1336,7 +1313,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>5822</locationY>
+        <locationY>5522</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -1367,7 +1344,7 @@
         <name>Update_Client_Acceptance_Form_Page_2_5</name>
         <label>Update Client Acceptance Form Page 2.5</label>
         <locationX>182</locationX>
-        <locationY>3170</locationY>
+        <locationY>2870</locationY>
         <connector>
             <targetReference>Page_3</targetReference>
         </connector>
@@ -1377,7 +1354,7 @@
         <name>Update_Client_Acceptance_Form_Page_3</name>
         <label>Update Client Acceptance Form Page 3</label>
         <locationX>182</locationX>
-        <locationY>3494</locationY>
+        <locationY>3194</locationY>
         <connector>
             <targetReference>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</targetReference>
         </connector>
@@ -1387,7 +1364,7 @@
         <name>Update_Client_Acceptance_Form_Page_4_5</name>
         <label>Update Client Acceptance Form Page 4-5</label>
         <locationX>182</locationX>
-        <locationY>3818</locationY>
+        <locationY>3518</locationY>
         <connector>
             <targetReference>Page_6_BENEFICIARIES</targetReference>
         </connector>
@@ -1397,7 +1374,7 @@
         <name>Update_Client_Acceptance_Form_Page_6</name>
         <label>Update Client Acceptance Form Page 6</label>
         <locationX>182</locationX>
-        <locationY>4142</locationY>
+        <locationY>3842</locationY>
         <connector>
             <targetReference>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</targetReference>
         </connector>
@@ -1407,7 +1384,7 @@
         <name>Update_Client_Acceptance_Form_Page_7</name>
         <label>Update Client Acceptance Form Page 7</label>
         <locationX>182</locationX>
-        <locationY>4466</locationY>
+        <locationY>4166</locationY>
         <connector>
             <targetReference>Page_8_CONCLUSION</targetReference>
         </connector>
@@ -3178,19 +3155,13 @@
             <inputParameters>
                 <name>recordId</name>
                 <value>
-                    <elementReference>recordId</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>contentVersionIds</name>
-                <value>
-                    <elementReference>fileIds</elementReference>
+                    <elementReference>clientAcceptanceForm.Id</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>multiple</name>
                 <value>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3204,7 +3175,7 @@
         <name>Page_3</name>
         <label>Page 3 - INTEGRITY, FINANCIAL RISK</label>
         <locationX>182</locationX>
-        <locationY>3278</locationY>
+        <locationY>2978</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4109,7 +4080,7 @@
         <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</name>
         <label>Page 4-5 - MONEY LAUNDERING RISK ASSESSMENT</label>
         <locationX>182</locationX>
-        <locationY>3602</locationY>
+        <locationY>3302</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -5260,7 +5231,7 @@
         <name>Page_6_BENEFICIARIES</name>
         <label>Page 6 - BENEFICIARIES</label>
         <locationX>182</locationX>
-        <locationY>3926</locationY>
+        <locationY>3626</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -5914,7 +5885,7 @@
         <name>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</name>
         <label>Page 7 - OBJECTIVITY / CONFLICTS OF INTEREST</label>
         <locationX>182</locationX>
-        <locationY>4250</locationY>
+        <locationY>3950</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -6728,7 +6699,7 @@
         <name>Page_8_CONCLUSION</name>
         <label>Page 8 - CONCLUSION</label>
         <locationX>182</locationX>
-        <locationY>4574</locationY>
+        <locationY>4274</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -7113,7 +7084,7 @@
         <name>Page_9_APPENDIX</name>
         <label>Page 9 - APPENDIX</label>
         <locationX>182</locationX>
-        <locationY>4682</locationY>
+        <locationY>4382</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>

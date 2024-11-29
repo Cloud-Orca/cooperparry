@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Upload_File_to_Sharepoint</name>
+        <label>Upload File to Sharepoint</label>
+        <locationX>50</locationX>
+        <locationY>1514</locationY>
+        <actionName>SharepointUploadFileInvocable</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Business_CAF</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>caseId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>fileIds</name>
+            <value>
+                <elementReference>fileIds</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SharepointUploadFileInvocable</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>62.0</apiVersion>
     <assignments>
         <name>Assign_Business_CAF_to_varForm</name>
@@ -15,6 +42,43 @@
         </assignmentItems>
         <connector>
             <targetReference>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_File_Ids</name>
+        <label>Assign File Ids</label>
+        <locationX>182</locationX>
+        <locationY>1298</locationY>
+        <assignmentItems>
+            <assignToReference>fileIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>EngagemenLetter_upload.contentVersionIds</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>fileIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>KYCSmartSearch_upload.contentVersionIds</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>fileIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>NewClientForm_upload.contentVersionIds</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>fileIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>OtherOnboardingDocuments_upload.contentVersionIds</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_there_a_File_Upload</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -57,20 +121,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Client_Code</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varForm.Which_DC__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Which_DC</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varForm.Prepared_by__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Prepared_by</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -298,13 +348,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varForm.Supporting_Documents__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>SupportingDocumentsLTA</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varForm.Client_Name__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -312,7 +355,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Business_CAF</targetReference>
+            <targetReference>Assign_File_Ids</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -360,7 +403,7 @@
         <name>Check_Completion_Form</name>
         <label>Check Completion Form</label>
         <locationX>182</locationX>
-        <locationY>1406</locationY>
+        <locationY>1814</locationY>
         <defaultConnector>
             <targetReference>Update_Completion_Fields_in_Form</targetReference>
         </defaultConnector>
@@ -404,6 +447,31 @@
                 <targetReference>Assign_Business_CAF_to_varForm</targetReference>
             </connector>
             <label>Business CAF Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_a_File_Upload</name>
+        <label>Is there a File Upload</label>
+        <locationX>182</locationX>
+        <locationY>1406</locationY>
+        <defaultConnector>
+            <targetReference>Update_Business_CAF</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>None</defaultConnectorLabel>
+        <rules>
+            <name>File_Uploaded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fileIds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Upload_File_to_Sharepoint</targetReference>
+            </connector>
+            <label>File Uploaded</label>
         </rules>
     </decisions>
     <description>BUSINESS, TRUSTS AND NON-PERSONAL CLIENTS</description>
@@ -565,7 +633,7 @@
         <name>Update_Business_CAF</name>
         <label>Update Business CAF</label>
         <locationX>182</locationX>
-        <locationY>1298</locationY>
+        <locationY>1706</locationY>
         <connector>
             <targetReference>Check_Completion_Form</targetReference>
         </connector>
@@ -575,7 +643,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>1706</locationY>
+        <locationY>2114</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -596,7 +664,7 @@
         <name>Update_Completion_Fields_in_Form</name>
         <label>Update Completion Fields in Form</label>
         <locationX>270</locationX>
-        <locationY>1514</locationY>
+        <locationY>1922</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -733,7 +801,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>4</stringValue>
+                        <stringValue>6</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -755,29 +823,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section3_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Which_DC</name>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>varForm.Which_DC__c</elementReference>
-                    </defaultValue>
-                    <fieldText>Which DC:</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
+                        <stringValue>6</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -790,44 +836,6 @@
             <fieldType>RegionContainer</fieldType>
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Prepared_by</name>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>varForm.Prepared_by__c</elementReference>
-                    </defaultValue>
-                    <fieldText>Prepared by:</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>signature_txt1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 11pt;&quot;&gt;Signature:&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Date</name>
@@ -843,7 +851,23 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>4</stringValue>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>signature_txt1</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 11pt;&quot;&gt;Signature:&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2041,7 +2065,13 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>recordId</elementReference>
+                            <elementReference>varForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>contentVersionIds</name>
+                        <value>
+                            <elementReference>fileIds</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2188,13 +2218,19 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Upload File</stringValue>
+                            <stringValue>Supporting documents linking sub to parent including SmartSearch &amp; CAP Table</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>recordId</elementReference>
+                            <elementReference>varForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>contentVersionIds</name>
+                        <value>
+                            <elementReference>fileIds</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2224,13 +2260,19 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Upload File</stringValue>
+                            <stringValue>Supporting documents linking sub to parent including SmartSearch &amp; CAP Table</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>recordId</elementReference>
+                            <elementReference>varForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>contentVersionIds</name>
+                        <value>
+                            <elementReference>fileIds</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2260,13 +2302,19 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Upload File</stringValue>
+                            <stringValue>Supporting documents linking sub to parent including SmartSearch &amp; CAP Table</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>recordId</elementReference>
+                            <elementReference>varForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>contentVersionIds</name>
+                        <value>
+                            <elementReference>fileIds</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2426,7 +2474,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>2</stringValue>
+                        <stringValue>6</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2451,32 +2499,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>2</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>j_txt4</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;Supporting documents linking sub to parent including SmartSearch &amp;amp; CAP Table&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>SupportingDocumentsLTA</name>
-                    <defaultValue>
-                        <stringValue>{!varForm.Supporting_Documents__c}</stringValue>
-                    </defaultValue>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>8</stringValue>
+                        <stringValue>6</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2530,6 +2553,13 @@
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>fileIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
