@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Add_to_projectIds</name>
+        <label>Add to Related projectIds</label>
+        <locationX>264</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>RelatedProjectIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>For_all_projects.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>For_all_projects</targetReference>
+        </connector>
+    </assignments>
     <environments>Default</environments>
     <interviewLabel>CT Copy Account Access To Related Projects {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CT Copy Account Access To Related Projects</label>
+    <loops>
+        <name>For_all_projects</name>
+        <label>For all projects</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <collectionReference>ProjectRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_to_projectIds</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Copy_Account_access_to_Milestones</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -23,18 +53,91 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Related_Projects</name>
+        <label>Get Related Projects</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>For_all_projects</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>pse__Proj__c</object>
+        <outputReference>ProjectRecords</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
     <recordUpdates>
         <name>Copy_Account_Access_Field_to_projects</name>
         <label>Copy Account Access Field to projects</label>
         <locationX>176</locationX>
         <locationY>323</locationY>
+        <connector>
+            <targetReference>Get_Related_Projects</targetReference>
+        </connector>
         <inputAssignments>
             <field>Project_Access__c</field>
             <value>
                 <elementReference>$Record.CT_Account_access__c</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Recalculate_Access__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
         <inputReference>$Record.pse__Projects__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_Account_access_to_Milestones</name>
+        <label>Copy Account access to Milestones</label>
+        <locationX>176</locationX>
+        <locationY>839</locationY>
+        <connector>
+            <targetReference>reset_Recalculate_Access_field</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Project__c</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>RelatedProjectIds</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Project_Access__c</field>
+            <value>
+                <elementReference>$Record.CT_Account_access__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Recalculate_Access__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>pse__Milestone__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>reset_Recalculate_Access_field</name>
+        <label>reset Recalculate_Access field</label>
+        <locationX>176</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>CT_Recalculate_Access__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
@@ -42,10 +145,17 @@
         <connector>
             <targetReference>Copy_Account_Access_Field_to_projects</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>CT_Account_access__c</field>
             <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CT_Recalculate_Access__c</field>
+            <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
@@ -55,4 +165,26 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>ProjectIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ProjectRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>pse__Proj__c</objectType>
+    </variables>
+    <variables>
+        <name>RelatedProjectIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
