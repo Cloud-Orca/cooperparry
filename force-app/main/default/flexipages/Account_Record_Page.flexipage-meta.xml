@@ -11,6 +11,9 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Account.LC_Update</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Account.Log_Competitor_Incumbent</value>
                         </valueListItems>
                         <valueListItems>
@@ -32,10 +35,10 @@
                             <value>Share</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Delete</value>
+                            <value>Account.Sync_from_BH_API</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Account.Sync_from_BH_API</value>
+                            <value>Delete</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -173,6 +176,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Previously_Onboarded__c</fieldItem>
                 <identifier>RecordPreviously_Onboarded_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Risk_Level_to_Account__c</fieldItem>
+                <identifier>RecordRisk_Level_to_Account__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
