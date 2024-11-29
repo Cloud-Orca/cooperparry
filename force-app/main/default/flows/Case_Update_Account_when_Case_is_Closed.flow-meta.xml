@@ -5,7 +5,7 @@
         <name>Check_Opp_Area</name>
         <label>Check Opp Area</label>
         <locationX>182</locationX>
-        <locationY>323</locationY>
+        <locationY>731</locationY>
         <defaultConnector>
             <targetReference>Update_Account_Record_Prev_Onboarded</targetReference>
         </defaultConnector>
@@ -14,7 +14,7 @@
             <name>Audit</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Opportunity__r.Opportunity_Area__c</leftValueReference>
+                <leftValueReference>$Record.Case_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Audit</stringValue>
@@ -26,9 +26,34 @@
             <label>Audit</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Check_Service_Line</name>
+        <label>Check Service Line</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Check_Opp_Area</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Service Line</defaultConnectorLabel>
+        <rules>
+            <name>Service_Line_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Service_Line</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Service_Line_Onboarded</targetReference>
+            </connector>
+            <label>Service Line Found</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Case: Update Account when Case is Closed {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Case: Update Account when Case is Closed</label>
+    <label>Case: Update Account &amp; Service Line when Case is Closed</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -48,11 +73,39 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Service_Line</name>
+        <label>Get Service Line</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Service_Line</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Service_Line__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Account_Record_Audit_Client</name>
         <label>Update Account Record - Audit Client</label>
         <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationY>839</locationY>
         <connector>
             <targetReference>Update_Account_Record_Prev_Onboarded</targetReference>
         </connector>
@@ -76,7 +129,7 @@
         <name>Update_Account_Record_Prev_Onboarded</name>
         <label>Update Account Record - Prev Onboarded</label>
         <locationX>182</locationX>
-        <locationY>623</locationY>
+        <locationY>1031</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -93,14 +146,39 @@
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Service_Line_Onboarded</name>
+        <label>Update Service Line Onboarded</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Check_Opp_Area</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Service_Line.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Service_Line_Onboarded__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Service_Line__c</object>
+    </recordUpdates>
     <start>
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Check_Opp_Area</targetReference>
+            <targetReference>Get_Service_Line</targetReference>
         </connector>
         <filterFormula>AND(
 NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+Text({!$Record.Status}) = &apos;Closed&apos;,
 ISPICKVAL({!$Record.Closed_Reason__c}, &apos;Onboarded&apos;)
 )</filterFormula>
         <object>Case</object>
