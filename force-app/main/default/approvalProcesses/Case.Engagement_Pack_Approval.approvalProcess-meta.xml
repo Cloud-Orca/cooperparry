@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>true</active>
-    <allowRecall>false</allowRecall>
+    <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
@@ -20,15 +20,36 @@
         <label>Engagement Pack Approval</label>
         <name>Engagement_Pack_Approval</name>
     </approvalStep>
+    <emailTemplate>unfiled$public/Engagement_Pack_Request</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator_Engagement_Pack</name>
+            <type>Alert</type>
+        </action>
         <action>
             <name>Update_Engagement_Approval</name>
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Engagement_Pack_set_to_True</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator_Engagement_Pack</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Engagement_Pack_set_to_False</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
     <label>Engagement Pack Approval</label>
     <processOrder>6</processOrder>
     <recordEditability>AdminOnly</recordEditability>
