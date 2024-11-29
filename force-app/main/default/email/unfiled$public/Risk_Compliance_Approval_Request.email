@@ -1,4 +1,4 @@
-You have been assigned a Case escalation request for {!Account.Name} - {!Case.CaseNumber}.
+You have been assigned a Risk/Compliance approval request for {!Account.Name} - {!Case.CaseNumber}.
 
 You can view the Case here: {!Case.Link}
 

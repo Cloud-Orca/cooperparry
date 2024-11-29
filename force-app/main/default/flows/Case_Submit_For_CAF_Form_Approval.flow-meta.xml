@@ -1,10 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>sendCustomNotification</name>
+        <label>sendCustomNotificationForm</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>submitForApproval</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>getNotification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>variableApproverIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>textTemplateFormSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>textTemplateFormBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>getCaseRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>sendCustomNotificationPEP</name>
+        <label>sendCustomNotificationPEP</label>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>submitForApproval</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>getNotification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>variableApproverIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>textTemplateFormSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>textTemplateFormBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>getCaseRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>submitForApproval</name>
         <label>submitForApproval</label>
         <locationX>314</locationX>
-        <locationY>758</locationY>
+        <locationY>974</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -41,7 +129,7 @@
         <name>assignApproverId</name>
         <label>assignApproverId</label>
         <locationX>314</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>variableApproverIds</assignToReference>
             <operator>Add</operator>
@@ -64,7 +152,7 @@
         <name>assignFormApproval</name>
         <label>assignFormApproval</label>
         <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>variableApprovalProcess</assignToReference>
             <operator>Assign</operator>
@@ -73,14 +161,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>submitForApproval</targetReference>
+            <targetReference>sendCustomNotification</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>assignPEP_SIP_RCAApproval</name>
         <label>assignPEP/SIP/RCAApproval</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>variableApprovalProcess</assignToReference>
             <operator>Assign</operator>
@@ -89,14 +177,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>submitForApproval</targetReference>
+            <targetReference>sendCustomNotificationPEP</targetReference>
         </connector>
     </assignments>
     <decisions>
         <name>Case_Status</name>
         <label>Case Status</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>submitForApproval</targetReference>
         </defaultConnector>
@@ -161,7 +249,7 @@
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>ApproverSelection</targetReference>
+            <targetReference>getNotification</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -175,11 +263,32 @@
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>getNotification</name>
+        <label>getNotification</label>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ApproverSelection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CustomNotifTypeName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CAF Form Approved</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <screens>
         <name>ApproverSelection</name>
         <label>ApproverSelection</label>
         <locationX>314</locationX>
-        <locationY>242</locationY>
+        <locationY>350</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -263,6 +372,26 @@
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>textTemplateBodyPEP</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A Form PEP/SIP/RCA request has been assigned to you for {!getCaseRecord.Account.Name}- {!getCaseRecord.CaseNumber}. Please review and take action.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>textTemplateFormBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A Form approval request has been assigned to you for {!getCaseRecord.Account.Name}- {!getCaseRecord.CaseNumber}. Please review and take action.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>textTemplateFormSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Approval Request for Form on {!getCaseRecord.Account.Name} - {!getCaseRecord.CaseNumber}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>textTemplateTitlePEP</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Approval Request for  PEP/SIP/RCA on {!getCaseRecord.Account.Name} - {!getCaseRecord.CaseNumber}</text>
+    </textTemplates>
     <variables>
         <name>approverId</name>
         <dataType>String</dataType>
