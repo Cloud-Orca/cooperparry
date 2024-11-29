@@ -2,6 +2,7 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>pse__Clear_Billing_Data</customButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -49,6 +50,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Recurring__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Project_Access__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
