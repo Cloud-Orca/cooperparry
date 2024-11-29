@@ -870,6 +870,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Risk_Level__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Secondary_Sector__c</picklist>
         <values>
             <fullName>Accountancy</fullName>
@@ -1281,6 +1292,17 @@
         </values>
         <values>
             <fullName>VC Backed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UK_Registered_Entity__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>

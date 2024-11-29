@@ -144,6 +144,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Overseas_Registered_Number__c</fieldItem>
+                <identifier>RecordOverseas_Registered_Number__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Date_became_client__c</fieldItem>
                 <identifier>RecordDate_Became_Client_cField</identifier>
             </fieldInstance>
@@ -176,16 +186,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Previously_Onboarded__c</fieldItem>
                 <identifier>RecordPreviously_Onboarded_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Risk_Level_to_Account__c</fieldItem>
-                <identifier>RecordRisk_Level_to_Account__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
@@ -240,6 +240,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.ParentId</fieldItem>
                 <identifier>RecordParentIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.UK_Registered_Entity__c</fieldItem>
+                <identifier>RecordUK_Registered_Entity_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
