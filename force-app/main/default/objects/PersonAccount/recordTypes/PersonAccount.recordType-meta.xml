@@ -492,6 +492,10 @@
     <picklistValues>
         <picklist>Confidential_Account_Area__c</picklist>
         <values>
+            <fullName>CP Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Confidential</fullName>
             <default>false</default>
         </values>
@@ -876,6 +880,17 @@
         </values>
         <values>
             <fullName>West</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_Level__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1291,6 +1306,17 @@
         </values>
         <values>
             <fullName>VC Backed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UK_Registered_Entity__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>
