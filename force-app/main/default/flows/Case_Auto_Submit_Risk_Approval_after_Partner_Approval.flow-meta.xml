@@ -15,6 +15,12 @@
             </value>
         </inputParameters>
         <inputParameters>
+            <name>submitterId</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>processDefinitionNameOrId</name>
             <value>
                 <stringValue>Risk_Compliance_Approval</stringValue>
