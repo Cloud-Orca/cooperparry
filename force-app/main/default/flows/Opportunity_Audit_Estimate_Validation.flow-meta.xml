@@ -132,8 +132,10 @@ CASE({!$Record.StageName},
 &quot;Live Enquiry&quot;,1,
 &quot;Closed Won&quot;,1,0) = 1,
 ISCHANGED({!$Record.StageName}),
+OR(
 TEXT({!$Record.Opportunity_Area__c}) = &quot;Audit&quot;, 
 TEXT({!$Record.Opportunity_Type_Area__c}) = &quot;THG Audit&quot;
+)
 )</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>

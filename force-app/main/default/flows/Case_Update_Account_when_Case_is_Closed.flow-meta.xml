@@ -14,7 +14,7 @@
             <name>Audit</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Opportunity__r.Opportunity_Area__c</leftValueReference>
+                <leftValueReference>$Record.Case_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Audit</stringValue>

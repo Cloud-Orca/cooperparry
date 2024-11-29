@@ -2,7 +2,5 @@ You have been assigned a Risk/Compliance approval request for {!Account.Name} - 
 
 You can view the Case here: {!Case.Link}
 
-To approve or reject, reply to this email with "Approve" or "Reject."
-
 Thank you,
 Salesforce
