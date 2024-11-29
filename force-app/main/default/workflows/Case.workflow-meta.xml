@@ -42,13 +42,18 @@
         <template>unfiled$public/PEP_Notification_for_Case</template>
     </alerts>
     <alerts>
+        <fullName>Send_Email_Notification_to_Onboarding_for_Engagement_Pack_Approval</fullName>
+        <ccEmails>onboarding@cooperparry.com</ccEmails>
+        <description>Send Email Notification to Onboarding for Engagement Pack Approval</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Engagement_Pack_Request</template>
+    </alerts>
+    <alerts>
         <fullName>Send_Email_Notification_to_Onboarding_for_PEP</fullName>
         <ccEmails>onboarding@cooperparry.com</ccEmails>
         <description>Send Email Notification to Onboarding for Risk</description>
         <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Risk_Compliance_Approval_Request</template>
     </alerts>
@@ -138,9 +143,6 @@
         <ccEmails>onboarding@cooperparry.com</ccEmails>
         <description>Sent Email Notification to Onboarding</description>
         <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/PEP_SIP_RCA_Approval_Request</template>
     </alerts>
