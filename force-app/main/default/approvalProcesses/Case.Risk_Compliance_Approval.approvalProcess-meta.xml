@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>true</active>
-    <allowRecall>false</allowRecall>
+    <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
@@ -22,15 +22,40 @@
         <label>Risk / Compliance Approval</label>
         <name>Risk_Compliance_Approval</name>
     </approvalStep>
+    <emailTemplate>unfiled$public/Risk_Compliance_Approval_Request</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator_for_Risk</name>
+            <type>Alert</type>
+        </action>
         <action>
             <name>Update_Risk_Compliance_Approved</name>
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>
-    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator_for_Risk</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Set_Risk_Rejected_to_True</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Risk_Rejected_Set_to_False</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Send_Email_Notification_to_Onboarding_for_PEP</name>
+            <type>Alert</type>
+        </action>
+    </initialSubmissionActions>
     <label>Risk / Compliance Approval</label>
     <processOrder>4</processOrder>
     <recordEditability>AdminOnly</recordEditability>
