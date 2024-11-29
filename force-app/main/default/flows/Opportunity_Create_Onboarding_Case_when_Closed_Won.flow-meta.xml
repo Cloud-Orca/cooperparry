@@ -166,7 +166,7 @@
         <name>assign_lifestyle_coordinator_as_owner</name>
         <label>assign lifestyle coordinator as owner</label>
         <locationX>578</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <assignmentItems>
             <assignToReference>ownerid</assignToReference>
             <operator>Assign</operator>
@@ -214,9 +214,9 @@
         <name>Lifestyle_Coordinator_found</name>
         <label>Lifestyle Coordinator found</label>
         <locationX>710</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <defaultConnector>
-            <targetReference>get_Lifecycle_managers_queue</targetReference>
+            <targetReference>assign_queue_as_owner</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -496,11 +496,11 @@
     <recordLookups>
         <name>get_Lifecycle_managers_queue</name>
         <label>get Lifecycle managers queue</label>
-        <locationX>842</locationX>
-        <locationY>647</locationY>
+        <locationX>710</locationX>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>assign_queue_as_owner</targetReference>
+            <targetReference>Lifestyle_Coordinator_found</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -528,7 +528,7 @@
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Lifestyle_Coordinator_found</targetReference>
+            <targetReference>get_Lifecycle_managers_queue</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>

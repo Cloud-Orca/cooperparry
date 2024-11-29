@@ -15,6 +15,12 @@
             </value>
         </inputParameters>
         <inputParameters>
+            <name>submitterId</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>nextApproverIds</name>
             <value>
                 <elementReference>approvers</elementReference>
@@ -103,7 +109,7 @@ TEXT({!$Record.THG_Audit_Partner_Approval_Status__c}) = &quot;Approved&quot;</fi
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>approvers</name>
         <dataType>String</dataType>

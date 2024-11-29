@@ -11,6 +11,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaInvoiceLineItem__c.cer_Milestone_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ffrr__RevenueRecognitionTransactionLine__c.ffrrExpense__c</field>
         <readable>true</readable>
