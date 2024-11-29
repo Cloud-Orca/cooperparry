@@ -10,7 +10,7 @@
     <height>600</height>
     <isResizable>true</isResizable>
     <linkType>url</linkType>
-    <masterLabel>Form Approval</masterLabel>
+    <masterLabel>Form Approval - Manager</masterLabel>
     <openType>newWindow</openType>
     <position>none</position>
     <protected>false</protected>
