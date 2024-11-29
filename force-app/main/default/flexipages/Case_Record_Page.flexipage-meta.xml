@@ -197,6 +197,12 @@
                 <identifier>RecordConfidential_Opportunity_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Manual_Engagement_Pack_received__c</fieldItem>
+                <identifier>RecordManual_Engagement_Pack_received__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-9c53363a-0b94-4d4d-b723-fdd92d472b60</name>
         <type>Facet</type>
     </flexiPageRegions>

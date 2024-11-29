@@ -56,7 +56,8 @@
         <filterFormula>AND(
 NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
 ISCHANGED({!$Record.Partner_Approved_checkbox__c}),
-{!$Record.Partner_Approved_checkbox__c} = TRUE
+{!$Record.Partner_Approved_checkbox__c} = TRUE,
+TEXT({!$Record.Client_Amendment__c}) &lt;&gt; &quot;No&quot;
 )</filterFormula>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
