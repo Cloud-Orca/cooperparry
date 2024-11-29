@@ -52,6 +52,10 @@
                 <behavior>Edit</behavior>
                 <field>Service_Line_Onboarded__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Case__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

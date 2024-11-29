@@ -20,32 +20,7 @@
                     <stringValue>Deals</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Onboarded</targetReference>
-            </connector>
             <label>Deals</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Onboarded</name>
-        <label>Onboarded?</label>
-        <locationX>226</locationX>
-        <locationY>923</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_Onboarded</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Closed_Reason__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Onboarded</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Account</targetReference>
-            </connector>
-            <label>Yes Onboarded</label>
         </rules>
     </decisions>
     <decisions>
@@ -75,7 +50,7 @@
     </decisions>
     <environments>Default</environments>
     <interviewLabel>Case - Update Service Line to Client when Closed {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Case - Update Service Line to Client when Closed</label>
+    <label>Case - Update Service Line to Client when CAF Form Completion</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -100,9 +75,6 @@
         <label>Create Service Line</label>
         <locationX>490</locationX>
         <locationY>647</locationY>
-        <connector>
-            <targetReference>Onboarded</targetReference>
-        </connector>
         <inputAssignments>
             <field>Account__c</field>
             <value>
@@ -112,25 +84,31 @@
         <inputAssignments>
             <field>Assignment_Type__c</field>
             <value>
-                <elementReference>$Record.Assignment_Type__c</elementReference>
+                <elementReference>$Record.Case_Assignment_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Case__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Name</field>
             <value>
-                <elementReference>$Record.Opportunity_Area__c</elementReference>
+                <elementReference>$Record.Case_Area__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Type_Area__c</field>
             <value>
-                <elementReference>$Record.Opportunity_Type_Area__c</elementReference>
+                <elementReference>$Record.Case_Type_Area__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Type__c</field>
             <value>
-                <elementReference>$Record.Opportunity_Area__c</elementReference>
+                <elementReference>$Record.Case_Area__c</elementReference>
             </value>
         </inputAssignments>
         <object>Service_Line__c</object>
@@ -160,69 +138,22 @@
                 <elementReference>$Record.Area__c</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Service_Line__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Disable_Bypass</name>
-        <label>Disable Bypass</label>
-        <locationX>94</locationX>
-        <locationY>1139</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Bypass_Validation__c</field>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </inputAssignments>
-        <object>Account</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Account</name>
-        <label>Update Account</label>
-        <locationX>94</locationX>
-        <locationY>1031</locationY>
-        <connector>
-            <targetReference>Disable_Bypass</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Bypass_Validation__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Type</field>
-            <value>
-                <stringValue>Client</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Account</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Service_Line</name>
         <label>Update Service Line</label>
         <locationX>50</locationX>
         <locationY>539</locationY>
-        <connector>
-            <targetReference>Onboarded</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
