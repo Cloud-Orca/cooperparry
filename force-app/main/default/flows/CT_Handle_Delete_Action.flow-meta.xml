@@ -29,7 +29,7 @@
     <decisions>
         <name>VIP_Account</name>
         <label>VIP Account?</label>
-        <locationX>380</locationX>
+        <locationX>512</locationX>
         <locationY>395</locationY>
         <defaultConnectorLabel>yes</defaultConnectorLabel>
         <rules>
@@ -75,6 +75,9 @@
         <label>Insert New Sharing records for the deleted record</label>
         <locationX>50</locationX>
         <locationY>719</locationY>
+        <connector>
+            <targetReference>Recalculate_Access</targetReference>
+        </connector>
         <inputAssignments>
             <field>AccountAccessLevel</field>
             <value>
@@ -96,7 +99,7 @@
         <inputAssignments>
             <field>RowCause</field>
             <value>
-                <stringValue>SharingRecordCollection</stringValue>
+                <stringValue>Manual</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -116,6 +119,10 @@
         <connector>
             <targetReference>Set_Account_to_Public_access</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Account_to_Public_access</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>AccountId</field>
@@ -136,7 +143,7 @@
     <recordLookups>
         <name>Get_Account</name>
         <label>Get Account</label>
-        <locationX>380</locationX>
+        <locationX>512</locationX>
         <locationY>287</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -183,6 +190,27 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Recalculate_Access</name>
+        <label>Recalculate Access</label>
+        <locationX>50</locationX>
+        <locationY>827</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CT_Recalculate_Access__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Set_Account_to_Public_access</name>
         <label>Set Account to &quot;Public access&quot;</label>
         <locationX>314</locationX>
@@ -208,10 +236,16 @@
                 <stringValue>Public access</stringValue>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>CT_Recalculate_Access__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>254</locationX>
+        <locationX>386</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Account</targetReference>

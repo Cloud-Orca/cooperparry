@@ -11,6 +11,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.CT_Recalculate_Access__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Is_Onboarded__c</field>
         <readable>true</readable>
@@ -226,6 +231,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Milestone__c.Recalculate_Access__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Milestone__c.Recovery_rate__c</field>
         <readable>true</readable>
@@ -356,6 +366,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_Recalculate_Access__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Recognisable_Value__c</field>
         <readable>true</readable>
@@ -393,6 +408,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.Original_Fee_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.Recalculate_Access__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
