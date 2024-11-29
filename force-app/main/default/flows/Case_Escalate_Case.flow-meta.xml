@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>sendCustomNotification</name>
+        <label>sendCustomNotification</label>
+        <locationX>50</locationX>
+        <locationY>1490</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>getNotification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>variableApproverIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>textTemplateTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>textTemplateBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>getCaseRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>submitForApproval</name>
         <label>submitForApproval</label>
         <locationX>50</locationX>
-        <locationY>1166</locationY>
+        <locationY>1274</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
+        <connector>
+            <targetReference>getNotification</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>objectId</name>
@@ -35,7 +79,7 @@
         <name>assignComments</name>
         <label>assignComments</label>
         <locationX>50</locationX>
-        <locationY>1058</locationY>
+        <locationY>1166</locationY>
         <assignmentItems>
             <assignToReference>variableComments</assignToReference>
             <operator>Assign</operator>
@@ -51,7 +95,7 @@
         <name>assignMember</name>
         <label>assignMember</label>
         <locationX>270</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>variableMember</assignToReference>
             <operator>Assign</operator>
@@ -67,7 +111,7 @@
         <name>checkRunningUser</name>
         <label>checkRunningUser</label>
         <locationX>402</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>loopOnEachUser</targetReference>
         </defaultConnector>
@@ -92,7 +136,7 @@
         <name>isRunningUserMember</name>
         <label>isRunningUserMember</label>
         <locationX>182</locationX>
-        <locationY>842</locationY>
+        <locationY>950</locationY>
         <defaultConnector>
             <targetReference>Not_Member</targetReference>
         </defaultConnector>
@@ -120,7 +164,7 @@
         <name>loopOnEachUser</name>
         <label>loopOnEachUser</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <collectionReference>getGroupMember</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -150,10 +194,31 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordLookups>
+        <name>getCaseRecord</name>
+        <label>getCaseRecord</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>getGroup</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>getGroup</name>
         <label>getGroup</label>
         <locationX>182</locationX>
-        <locationY>134</locationY>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>getGroupMember</targetReference>
@@ -174,7 +239,7 @@
         <name>getGroupMember</name>
         <label>getGroupMember</label>
         <locationX>182</locationX>
-        <locationY>242</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>loopOnEachUser</targetReference>
@@ -191,11 +256,32 @@
         <object>GroupMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>getNotification</name>
+        <label>getNotification</label>
+        <locationX>50</locationX>
+        <locationY>1382</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>sendCustomNotification</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CustomNotifTypeName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CAF Form Approved</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <screens>
         <name>ApproverSelection</name>
         <label>ApproverSelection</label>
         <locationX>50</locationX>
-        <locationY>950</locationY>
+        <locationY>1058</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -249,7 +335,7 @@
         <name>Not_Member</name>
         <label>Not Member</label>
         <locationX>314</locationX>
-        <locationY>950</locationY>
+        <locationY>1058</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -265,10 +351,20 @@
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>getGroup</targetReference>
+            <targetReference>getCaseRecord</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>textTemplateBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A Case escalation request has been assigned to you for {!getCaseRecord.Account.Name}- {!getCaseRecord.CaseNumber}. Please review and take action.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>textTemplateTitle</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Escalation Request for Partner on {!getCaseRecord.Account.Name} - {!getCaseRecord.CaseNumber}&lt;/p&gt;</text>
+    </textTemplates>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

@@ -1,0 +1,8 @@
+The escalation request for {!Account.Name} - {!Case.CaseNumber} has been {!ApprovalRequest.Status}.
+
+You can view the Case here: {!Case.Link}
+
+To approve or reject future approvals, reply to this email with "Approve" or "Reject."
+
+Thank you,
+Salesforce
