@@ -2,16 +2,16 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>V5_Registered_Number_Required</fullName>
     <active>true</active>
+    <description>Requiring a registered number when a UK Entity and Type of Business is not a Pension Scheme OR Private Client</description>
     <errorConditionFormula>AND(
-    NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
-    IsPersonAccount = false,
-    ISBLANK(Beauhurst_ID__c),
-    NOT(ISPICKVAL( UK_Registered_Entity__c , &quot;No&quot;)),
-    OR(
-        TEXT(Type_of_Business__c) &lt;&gt; &quot;Not For Profit&quot;,
-        TEXT(Type_of_Business__c) &lt;&gt; &quot;Pension Scheme&quot;,
-        ISBLANK(TEXT(Type_of_Business__c))
-    )
+NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+IsPersonAccount = false,
+ISPICKVAL(UK_Registered_Entity__c, &quot;Yes&quot;),
+ISBLANK(Beauhurst_ID__c),
+AND(
+TEXT(Type_of_Business__c) &lt;&gt; &quot;Not For Profit&quot;,
+TEXT(Type_of_Business__c) &lt;&gt; &quot;Pension Scheme&quot;
+)
 )</errorConditionFormula>
     <errorDisplayField>Beauhurst_ID__c</errorDisplayField>
     <errorMessage>Please enter a value on Registered Number unless Account is a Person Account OR Type of Business is Not For Profit or Pension Scheme Or not a UK Registered Entity</errorMessage>
