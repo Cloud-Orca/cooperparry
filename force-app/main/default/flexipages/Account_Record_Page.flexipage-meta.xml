@@ -2237,11 +2237,6 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>adminFilters</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>CASES.RECORDTYPE|EQUALS|[&quot;Onboarding&quot;]</value>
-                        </valueListItems>
-                    </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>maxRecordsToDisplay</name>
@@ -2267,6 +2262,9 @@
                         </valueListItems>
                         <valueListItems>
                             <value>CASES.SUBJECT</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CASES.RECORDTYPE</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CASES.STATUS</value>
