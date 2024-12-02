@@ -247,7 +247,7 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Ongoing_Monitoring_is_Today_plus_7_days__c</field>
+            <field>Ongoing_Monitoring_Today__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -257,7 +257,7 @@
         <schedule>
             <frequency>Daily</frequency>
             <startDate>2024-10-30</startDate>
-            <startTime>08:00:00.000Z</startTime>
+            <startTime>09:45:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
