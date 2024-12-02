@@ -3,8 +3,8 @@
     <actionCalls>
         <name>sendCustomNotification</name>
         <label>sendCustomNotification</label>
-        <locationX>176</locationX>
-        <locationY>674</locationY>
+        <locationX>50</locationX>
+        <locationY>890</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -44,8 +44,8 @@
     <actionCalls>
         <name>submitForApproval</name>
         <label>submitForApproval</label>
-        <locationX>176</locationX>
-        <locationY>566</locationY>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <connector>
@@ -78,8 +78,8 @@
     <assignments>
         <name>assignApproverId</name>
         <label>assignApproverId</label>
-        <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>variableComments</assignToReference>
             <operator>Assign</operator>
@@ -91,6 +91,31 @@
             <targetReference>submitForApproval</targetReference>
         </connector>
     </assignments>
+    <decisions>
+        <name>Check_In_Progress_Approvals</name>
+        <label>Check In Progress Approvals</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>In Progress Approval</defaultConnectorLabel>
+        <rules>
+            <name>No_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_In_Progress_Approval</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getNotification</targetReference>
+            </connector>
+            <label>No Approvals</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Case: Submit Risk/Compliance Approval {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case: Submit Risk/Compliance Approval</label>
@@ -114,18 +139,49 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordLookups>
+        <name>Get_In_Progress_Approval</name>
+        <label>Get In Progress Approval</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_In_Progress_Approvals</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>getCaseRecord</name>
         <label>getCaseRecord</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>getNotification</targetReference>
+            <targetReference>Get_In_Progress_Approval</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Case</object>
@@ -134,8 +190,8 @@
     <recordLookups>
         <name>getNotification</name>
         <label>getNotification</label>
-        <locationX>176</locationX>
-        <locationY>242</locationY>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ApproverSelection</targetReference>
@@ -155,8 +211,8 @@
     <screens>
         <name>ApproverSelection</name>
         <label>ApproverSelection</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -206,8 +262,25 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>message_Error</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;There is already an Approval In Progress that needs to be reviewed.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>getCaseRecord</targetReference>
