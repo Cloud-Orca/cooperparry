@@ -4,7 +4,7 @@
         <name>sendCustomNotification</name>
         <label>sendCustomNotificationForm</label>
         <locationX>50</locationX>
-        <locationY>782</locationY>
+        <locationY>998</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -48,7 +48,7 @@
         <name>sendCustomNotificationPEP</name>
         <label>sendCustomNotificationPEP</label>
         <locationX>314</locationX>
-        <locationY>782</locationY>
+        <locationY>998</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -92,7 +92,7 @@
         <name>submitForApproval</name>
         <label>submitForApproval</label>
         <locationX>314</locationX>
-        <locationY>974</locationY>
+        <locationY>1190</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -129,7 +129,7 @@
         <name>assignApproverId</name>
         <label>assignApproverId</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>variableApproverIds</assignToReference>
             <operator>Add</operator>
@@ -152,7 +152,7 @@
         <name>assignFormApproval</name>
         <label>assignFormApproval</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>variableApprovalProcess</assignToReference>
             <operator>Assign</operator>
@@ -168,7 +168,7 @@
         <name>assignPEP_SIP_RCAApproval</name>
         <label>assignPEP/SIP/RCAApproval</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>variableApprovalProcess</assignToReference>
             <operator>Assign</operator>
@@ -184,7 +184,7 @@
         <name>Case_Status</name>
         <label>Case Status</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <defaultConnector>
             <targetReference>submitForApproval</targetReference>
         </defaultConnector>
@@ -220,6 +220,31 @@
             <label>Compliance Check</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Check_In_Progress_Approvals</name>
+        <label>Check In Progress Approvals</label>
+        <locationX>534</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>In Progress Approval</defaultConnectorLabel>
+        <rules>
+            <name>No_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_In_Progress_Approval</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getNotification</targetReference>
+            </connector>
+            <label>No Approvals</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Case: Submit For CAF Form Approval {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case: Submit For CAF Form Approval</label>
@@ -243,13 +268,41 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordLookups>
+        <name>Get_In_Progress_Approval</name>
+        <label>Get In Progress Approval</label>
+        <locationX>534</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_In_Progress_Approvals</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>getCaseRecord</name>
         <label>getCaseRecord</label>
-        <locationX>314</locationX>
+        <locationX>534</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>getNotification</targetReference>
+            <targetReference>Get_In_Progress_Approval</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -267,7 +320,7 @@
         <name>getNotification</name>
         <label>getNotification</label>
         <locationX>314</locationX>
-        <locationY>242</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ApproverSelection</targetReference>
@@ -288,7 +341,7 @@
         <name>ApproverSelection</name>
         <label>ApproverSelection</label>
         <locationX>314</locationX>
-        <locationY>350</locationY>
+        <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -364,8 +417,25 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>754</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>message_Error</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;There is already an Approval In Progress that needs to be reviewed.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <start>
-        <locationX>188</locationX>
+        <locationX>408</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>getCaseRecord</targetReference>
