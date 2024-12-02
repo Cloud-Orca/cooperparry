@@ -1,0 +1,10 @@
+Dear Lifecycle Coordinator,
+
+This is a reminder that an Ongoing Monitoring Case is scheduled to be created in 7 days. Please review the related details and ensure any necessary actions are completed in preparation.
+
+Case Details:
+Account Name: {!Account.Name}
+Due Date: {!Account.Ongoing_Monitoring_Date__c}
+
+Kind Regards,
+Salesforce
