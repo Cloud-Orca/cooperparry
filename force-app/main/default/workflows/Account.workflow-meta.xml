@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Reminder_Upcoming_Ongoing_Monitoring_Case_Review_Required</fullName>
+        <description>Reminder: Upcoming Ongoing Monitoring Case Review Required</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Lifecycle Coordinator</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notification_7_days_before_for_Ongoing_Monitoring_Case</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_a_notification_to_the_LC_on_the_Account</fullName>
+        <description>Send_a_notification_to_the_LC_on_the_Account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Lifecycle Coordinator</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Send_a_notification_to_the_LC_on_the_Account</template>
+    </alerts>
+</Workflow>
