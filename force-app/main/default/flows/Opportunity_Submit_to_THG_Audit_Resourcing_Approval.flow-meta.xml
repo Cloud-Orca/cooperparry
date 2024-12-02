@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Submit_to_Resourcing_Team</name>
         <label>Submit to Resourcing Team</label>
-        <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -40,8 +40,8 @@
     <assignments>
         <name>Assign_Approvers</name>
         <label>Assign Approvers</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>approvers</assignToReference>
             <operator>Add</operator>
@@ -53,6 +53,41 @@
             <targetReference>Submit_to_Resourcing_Team</targetReference>
         </connector>
     </assignments>
+    <customErrors>
+        <name>Approval_Error</name>
+        <label>Approval Error</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <customErrorMessages>
+            <errorMessage>There is already an Approval In Progress that needs to be reviewed.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_In_Progress_Approvals</name>
+        <label>Check In Progress Approvals</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Approval_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>In Progress Approval</defaultConnectorLabel>
+        <rules>
+            <name>No_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_In_Progress_Approval</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Approvers</targetReference>
+            </connector>
+            <label>No Approvals</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Opportunity: Submit to THG Audit Resourcing Approval {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity: Submit to THG Audit Resourcing Approval</label>
@@ -76,13 +111,41 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>Get_In_Progress_Approval</name>
+        <label>Get In Progress Approval</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_In_Progress_Approvals</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Resourcing_Team</name>
         <label>Get Resourcing Team</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Approvers</targetReference>
+            <targetReference>Get_In_Progress_Approval</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -97,7 +160,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Resourcing_Team</targetReference>
@@ -109,7 +172,7 @@ TEXT({!$Record.THG_Audit_Partner_Approval_Status__c}) = &quot;Approved&quot;</fi
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>approvers</name>
         <dataType>String</dataType>

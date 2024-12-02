@@ -4,7 +4,7 @@
         <name>Submit_For_Approval</name>
         <label>Submit For Approval</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <connector>
@@ -38,7 +38,7 @@
         <name>assign_approver</name>
         <label>assign approver</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>approvers</assignToReference>
             <operator>Add</operator>
@@ -54,7 +54,7 @@
         <name>audit_partner_found</name>
         <label>audit partner found</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>error</targetReference>
         </defaultConnector>
@@ -73,6 +73,31 @@
                 <targetReference>assign_approver</targetReference>
             </connector>
             <label>yes - audit partner found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_In_Progress_Approvals</name>
+        <label>Check In Progress Approvals</label>
+        <locationX>380</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>In Progress Approval</defaultConnectorLabel>
+        <rules>
+            <name>No_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_In_Progress_Approval</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_audit_partner</targetReference>
+            </connector>
+            <label>No Approvals</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -101,7 +126,7 @@
         <name>get_audit_partner</name>
         <label>get audit partner</label>
         <locationX>182</locationX>
-        <locationY>242</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>audit_partner_found</targetReference>
@@ -126,13 +151,41 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_In_Progress_Approval</name>
+        <label>Get In Progress Approval</label>
+        <locationX>380</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_In_Progress_Approvals</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>get_opp</name>
         <label>get opp</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>get_audit_partner</targetReference>
+            <targetReference>Get_In_Progress_Approval</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -150,7 +203,7 @@
         <name>Update_Audit_Partner_Name</name>
         <label>Update Audit Partner Name</label>
         <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Submit_For_Approval</targetReference>
         </connector>
@@ -174,7 +227,7 @@
         <name>error</name>
         <label>error</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -187,10 +240,27 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>message_Error</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;There is already an Approval In Progress that needs to be reviewed.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>success</name>
         <label>success</label>
         <locationX>50</locationX>
-        <locationY>782</locationY>
+        <locationY>998</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -203,7 +273,7 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>get_opp</targetReference>
