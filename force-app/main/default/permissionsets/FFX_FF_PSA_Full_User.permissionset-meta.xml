@@ -8926,6 +8926,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>c2g__codaCreditNoteLineItem__c.cer_Milestone_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaInvoiceLineItem__c.cer_Milestone_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ffscpq__Estimate__c.Total_Cost_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
