@@ -53,7 +53,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Origination_Meeting_checkbox</targetReference>
+                <targetReference>Update_First_BD_Meeting</targetReference>
             </connector>
             <label>Yes - First BD Meeting on Lead</label>
         </rules>
@@ -547,6 +547,30 @@
         <object>Account</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_First_BD_Meeting</name>
+        <label>Update First BD Meeting</label>
+        <locationX>50</locationX>
+        <locationY>1082</locationY>
+        <connector>
+            <targetReference>Screen3</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Create_Origination_Meeting</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>First_BD_Meeting__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <object>BD_Meeting__c</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Lead_Fields</name>
         <label>Update Lead Fields</label>
         <locationX>50</locationX>
@@ -593,30 +617,6 @@
             </value>
         </inputAssignments>
         <object>Lead</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Origination_Meeting_checkbox</name>
-        <label>Update Origination Meeting checkbox</label>
-        <locationX>50</locationX>
-        <locationY>1082</locationY>
-        <connector>
-            <targetReference>Screen3</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Create_Origination_Meeting</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>First_BD_Meeting__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <object>BD_Meeting__c</object>
     </recordUpdates>
     <screens>
         <name>Screen1</name>
