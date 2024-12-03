@@ -1048,7 +1048,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>StageName</field>
             <value>
-                <stringValue>Flirting</stringValue>
+                <stringValue>Flirt</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1418,7 +1418,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>StageName</field>
             <value>
-                <stringValue>Flirting</stringValue>
+                <stringValue>Flirt</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1472,12 +1472,6 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <field>PE_Backed__c</field>
             <value>
                 <elementReference>PE_Backed</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>StageName</field>
-            <value>
-                <elementReference>Stage</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1904,18 +1898,6 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>Stage</name>
-            <choiceReferences>oppStage_Values</choiceReferences>
-            <dataType>String</dataType>
-            <defaultValue>
-                <stringValue>Flirt</stringValue>
-            </defaultValue>
-            <fieldText>Stage</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
         </fields>
         <fields>
             <name>CloseDate</name>
