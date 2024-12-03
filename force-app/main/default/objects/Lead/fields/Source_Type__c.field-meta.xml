@@ -26,11 +26,6 @@
                 <default>false</default>
                 <label>Website</label>
             </value>
-            <value>
-                <fullName>Event</fullName>
-                <default>false</default>
-                <label>Event</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
