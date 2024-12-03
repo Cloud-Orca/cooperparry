@@ -1660,12 +1660,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>BD_Meeting__c.CP_Office__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BD_Meeting__c.Estimated_Fees__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>BD_Meeting__c.Estimated_Potential_Opportunity_Fee__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>BD_Meeting__c.First_BD_Meeting__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BD_Meeting__c.Incumbent__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1706,6 +1721,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>BD_Meeting__c.Meeting_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BD_Meeting__c.Notes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

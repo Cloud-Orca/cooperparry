@@ -83,31 +83,6 @@
             <label>Account</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>Update_sObject</name>
-        <label>Update sObject</label>
-        <locationX>182</locationX>
-        <locationY>1382</locationY>
-        <defaultConnector>
-            <targetReference>Update_Account_Fields</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Update_Lead</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>recordId</leftValueReference>
-                <operator>StartsWith</operator>
-                <rightValue>
-                    <stringValue>00Q</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Lead_Fields</targetReference>
-            </connector>
-            <label>Update Lead</label>
-        </rules>
-    </decisions>
     <dynamicChoiceSets>
         <name>PCS_CP_Office</name>
         <dataType>Picklist</dataType>
@@ -237,7 +212,7 @@
         <name>Create_Notes</name>
         <label>Create Notes</label>
         <locationX>182</locationX>
-        <locationY>1682</locationY>
+        <locationY>1490</locationY>
         <connector>
             <targetReference>Link_To_Lead</targetReference>
         </connector>
@@ -343,7 +318,7 @@
         <name>Link_To_Lead</name>
         <label>Link To Lead</label>
         <locationX>182</locationX>
-        <locationY>1790</locationY>
+        <locationY>1598</locationY>
         <connector>
             <targetReference>Screen2</targetReference>
         </connector>
@@ -505,10 +480,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_Account_Fields</name>
-        <label>Update Account Fields</label>
-        <locationX>314</locationX>
-        <locationY>1490</locationY>
+        <name>Update_BD_Fields</name>
+        <label>Update BD Fields</label>
+        <locationX>182</locationX>
+        <locationY>1382</locationY>
         <connector>
             <targetReference>Create_Notes</targetReference>
         </connector>
@@ -517,7 +492,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>Create_Origination_Meeting</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -539,51 +514,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Notes__c</field>
+            <field>Meeting_Date__c</field>
             <value>
-                <elementReference>Notes</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Account</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Lead_Fields</name>
-        <label>Update Lead Fields</label>
-        <locationX>50</locationX>
-        <locationY>1490</locationY>
-        <connector>
-            <targetReference>Create_Notes</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>CP_Office__c</field>
-            <value>
-                <elementReference>CP_Office</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Estimated_Fees__c</field>
-            <value>
-                <elementReference>Estimated_Fee</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Incumbent__c</field>
-            <value>
-                <elementReference>Incumbent</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead_Area__c</field>
-            <value>
-                <elementReference>Service_Line_Picklist</elementReference>
+                <elementReference>Meeting_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -592,7 +525,7 @@
                 <elementReference>Notes</elementReference>
             </value>
         </inputAssignments>
-        <object>Lead</object>
+        <object>BD_Meeting__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Origination_Meeting_checkbox</name>
@@ -862,7 +795,7 @@
         <name>Screen2</name>
         <label>Screen2</label>
         <locationX>182</locationX>
-        <locationY>1898</locationY>
+        <locationY>1706</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -883,7 +816,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Update_sObject</targetReference>
+            <targetReference>Update_BD_Fields</targetReference>
         </connector>
         <fields>
             <name>Handover_Notes</name>
