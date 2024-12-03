@@ -11,9 +11,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Internal</fullName>
+                <fullName>Inbound</fullName>
                 <default>false</default>
-                <label>Internal</label>
+                <label>Inbound</label>
             </value>
             <value>
                 <fullName>Event</fullName>

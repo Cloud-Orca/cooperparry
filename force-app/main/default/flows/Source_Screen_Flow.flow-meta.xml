@@ -2021,6 +2021,13 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                         <elementReference>Outbound</elementReference>
                     </rightValue>
                 </conditions>
+                <conditions>
+                    <leftValueReference>recordId</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
             </visibilityRule>
         </fields>
         <fields>

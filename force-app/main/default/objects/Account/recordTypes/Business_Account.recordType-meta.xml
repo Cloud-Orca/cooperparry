@@ -1034,10 +1034,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Event</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Social Media</fullName>
             <default>false</default>
         </values>
@@ -1050,10 +1046,6 @@
         <picklist>Source__c</picklist>
         <values>
             <fullName>External</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Internal</fullName>
             <default>false</default>
         </values>
         <values>

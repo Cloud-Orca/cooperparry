@@ -934,10 +934,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Event</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Social Media</fullName>
             <default>false</default>
         </values>
@@ -953,7 +949,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Internal</fullName>
+            <fullName>Inbound</fullName>
             <default>false</default>
         </values>
         <values>

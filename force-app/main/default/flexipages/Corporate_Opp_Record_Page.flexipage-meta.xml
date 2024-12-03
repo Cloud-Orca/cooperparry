@@ -500,6 +500,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Source_Type__c</fieldItem>
                 <identifier>RecordSource_Type_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Source__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Inbound</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f36b6c13-7e39-456a-9dfc-a530c576dd87</name>
