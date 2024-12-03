@@ -949,6 +949,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Inbound</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Outreach</fullName>
             <default>false</default>
         </values>

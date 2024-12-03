@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <customErrors>
+        <name>error</name>
+        <label>error</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <customErrorMessages>
+            <errorMessage>Please ensure that Source and Source Type are populated using the Source button</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity - Error when Source and Source Type are blank {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Error when Source and Source Type are blank</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>error</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+OR(
+
+AND(TEXT({!$Record.Source__c}) = &quot;Inbound&quot;, ISBLANK(TEXT({!$Record.Source_Type__c} ))),
+
+AND(ISBLANK(TEXT( {!$Record.Source__c})), ISBLANK(TEXT({!$Record.Source_Type__c})))
+),
+ISCHANGED({!$Record.IsWon}),
+{!$Record.IsWon} = true
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
