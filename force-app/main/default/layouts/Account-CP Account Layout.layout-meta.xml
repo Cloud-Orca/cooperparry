@@ -309,7 +309,6 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
-        <fields>NAME</fields>
         <fields>Tag_Lookup__c</fields>
         <fields>CREATEDBY_USER</fields>
         <fields>CREATED_DATE</fields>
@@ -323,7 +322,8 @@
     <relatedLists>
         <excludeButtons>MassChangeOwner</excludeButtons>
         <fields>NAME</fields>
-        <fields>First_BD_Meeting__c</fields>
+        <fields>Estimated_Fees__c</fields>
+        <fields>Incumbent__c</fields>
         <relatedList>BD_Meeting__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
