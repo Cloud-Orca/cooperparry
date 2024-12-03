@@ -1067,10 +1067,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Internal</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Outbound</fullName>
             <default>false</default>
         </values>

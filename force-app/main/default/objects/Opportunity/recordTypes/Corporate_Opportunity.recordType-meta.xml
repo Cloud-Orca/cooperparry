@@ -953,10 +953,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Internal</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Outreach</fullName>
             <default>false</default>
         </values>

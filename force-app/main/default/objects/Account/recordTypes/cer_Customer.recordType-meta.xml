@@ -1041,10 +1041,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Internal</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Outbound</fullName>
             <default>false</default>
         </values>
@@ -1276,6 +1272,17 @@
         </values>
         <values>
             <fullName>VC Backed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UK_Registered_Entity__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>
