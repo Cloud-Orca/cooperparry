@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Exclude Account from overnight Auto Post for SIN/SCR/PIN and PCR documents --></help>
+    <label><!-- Exclude From Auto FFA Document Post --></label>
+    <name>ffps_psffae__ExcludeFromAutoFFADocumentPost__c</name>
+</CustomFieldTranslation>

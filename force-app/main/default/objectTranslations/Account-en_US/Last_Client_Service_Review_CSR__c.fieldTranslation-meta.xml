@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Last Client Service Review (CSR) --></label>
+    <name>Last_Client_Service_Review_CSR__c</name>
+</CustomFieldTranslation>

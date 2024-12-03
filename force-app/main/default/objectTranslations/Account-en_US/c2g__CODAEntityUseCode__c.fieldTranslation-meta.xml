@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Entity / Use Code --></label>
+    <name>c2g__CODAEntityUseCode__c</name>
+    <picklistValues>
+        <masterLabel>A - Federal government - United States</masterLabel>
+        <translation><!-- A - Federal government - United States --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>B - State government - United States</masterLabel>
+        <translation><!-- B - State government - United States --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C - Tribe / Status Indian / Indian Band - both</masterLabel>
+        <translation><!-- C - Tribe / Status Indian / Indian Band - both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>D - Foreign diplomat - both</masterLabel>
+        <translation><!-- D - Foreign diplomat - both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E - Charitable or benevolent org - both</masterLabel>
+        <translation><!-- E - Charitable or benevolent org - both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>F - Religious or educational org - both</masterLabel>
+        <translation><!-- F - Religious or educational org - both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>G - Resale - both</masterLabel>
+        <translation><!-- G - Resale - both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>H - Commercial agricultural production - both</masterLabel>
+        <translation><!-- H - Commercial agricultural production - both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I - Industrial production / manufacturer - both</masterLabel>
+        <translation><!-- I - Industrial production / manufacturer - both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J - Direct pay permit - United States</masterLabel>
+        <translation><!-- J - Direct pay permit - United States --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>K - Direct mail - United States</masterLabel>
+        <translation><!-- K - Direct mail - United States --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>L - Other - both</masterLabel>
+        <translation><!-- L - Other - both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>N - Local government - United States</masterLabel>
+        <translation><!-- N - Local government - United States --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>P - Commercial aquaculture - Canada</masterLabel>
+        <translation><!-- P - Commercial aquaculture - Canada --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Q - Commercial Fishery - Canada</masterLabel>
+        <translation><!-- Q - Commercial Fishery - Canada --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>R - Non-resident - Canada</masterLabel>
+        <translation><!-- R - Non-resident - Canada --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

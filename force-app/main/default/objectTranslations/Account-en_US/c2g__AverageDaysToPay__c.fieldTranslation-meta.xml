@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of days the customer takes to pay on average, based on their payments in the last 365 days. The value in this field is automatically calculated. --></help>
+    <label><!-- Average Days to Pay --></label>
+    <name>c2g__AverageDaysToPay__c</name>
+</CustomFieldTranslation>

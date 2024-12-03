@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Income Tax Type --></label>
+    <name>c2g__CODAIncomeTaxType__c</name>
+    <picklistValues>
+        <masterLabel>1 - Rents</masterLabel>
+        <translation><!-- 1 - Rents --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>10 - Gross Proceeds Paid to an Attorney</masterLabel>
+        <translation><!-- 10 - Gross Proceeds Paid to an Attorney --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>11 - Fish Purchased for Resale</masterLabel>
+        <translation><!-- 11 - Fish Purchased for Resale --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>12 - Section 409A Deferrals</masterLabel>
+        <translation><!-- 12 - Section 409A Deferrals --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>13 - FATCA Filing Requirement (Checkbox)</masterLabel>
+        <translation><!-- 13 - FATCA Filing Requirement (Checkbox) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>14 - Excess Golden Parachute Payments</masterLabel>
+        <translation><!-- 14 - Excess Golden Parachute Payments --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>15 - Nonqualified Deferred Compensation</masterLabel>
+        <translation><!-- 15 - Nonqualified Deferred Compensation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>16 - State Tax Withheld</masterLabel>
+        <translation><!-- 16 - State Tax Withheld --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>17 - State/Payer&apos;s State No.</masterLabel>
+        <translation><!-- 17 - State/Payer&apos;s State No. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>18 - State Income</masterLabel>
+        <translation><!-- 18 - State Income --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2 - Royalties</masterLabel>
+        <translation><!-- 2 - Royalties --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3 - Other Income</masterLabel>
+        <translation><!-- 3 - Other Income --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4 - Federal Income Tax Withheld</masterLabel>
+        <translation><!-- 4 - Federal Income Tax Withheld --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>5 - Fishing Boat Proceeds</masterLabel>
+        <translation><!-- 5 - Fishing Boat Proceeds --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>6 - Medical and Healthcare Payments</masterLabel>
+        <translation><!-- 6 - Medical and Healthcare Payments --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>7 - Payer Made Direct Sales of 5000 or More (Checkbox)</masterLabel>
+        <translation><!-- 7 - Payer Made Direct Sales of 5000 or More (Checkbox) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>8 - Substitute Payments in Lieu of Dividends or Interest</masterLabel>
+        <translation><!-- 8 - Substitute Payments in Lieu of Dividends or Interest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>9 - Crop Insurance Proceeds</masterLabel>
+        <translation><!-- 9 - Crop Insurance Proceeds --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Reportable</masterLabel>
+        <translation><!-- Not Reportable --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

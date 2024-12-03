@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Connector Type --></label>
+    <name>Connector_Type__c</name>
+    <picklistValues>
+        <masterLabel>Bank</masterLabel>
+        <translation><!-- Bank --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Investor</masterLabel>
+        <translation><!-- Investor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lawyer</masterLabel>
+        <translation><!-- Lawyer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Member Organisation</masterLabel>
+        <translation><!-- Member Organisation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other Accountancy</masterLabel>
+        <translation><!-- Other Accountancy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PE House</masterLabel>
+        <translation><!-- PE House --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

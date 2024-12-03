@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Corporate Status --></label>
+    <name>Corporate_Status__c</name>
+    <picklistValues>
+        <masterLabel>Independent Company</masterLabel>
+        <translation><!-- Independent Company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Intermediate Parent</masterLabel>
+        <translation><!-- Intermediate Parent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private Client</masterLabel>
+        <translation><!-- Private Client --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Subsidiary</masterLabel>
+        <translation><!-- Subsidiary --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ultimate Parent</masterLabel>
+        <translation><!-- Ultimate Parent --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Ongoing Monitoring is Today plus 7 days? --></label>
+    <name>Ongoing_Monitoring_is_Today_plus_7_days__c</name>
+</CustomFieldTranslation>

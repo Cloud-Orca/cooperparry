@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The Source Field can be updated only using the Source button at the top of the page --></help>
+    <label><!-- Source --></label>
+    <name>Source__c</name>
+    <picklistValues>
+        <masterLabel>External</masterLabel>
+        <translation><!-- External --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inbound</masterLabel>
+        <translation><!-- Inbound --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outbound</masterLabel>
+        <translation><!-- Outbound --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Referral</masterLabel>
+        <translation><!-- Referral --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
