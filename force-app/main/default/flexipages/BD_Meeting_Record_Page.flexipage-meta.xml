@@ -90,6 +90,30 @@
                 <identifier>RecordFirst_BD_Meeting__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Estimated_Fees__c</fieldItem>
+                <identifier>RecordEstimated_Fees__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Incumbent__c</fieldItem>
+                <identifier>RecordIncumbent__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.CP_Office__c</fieldItem>
+                <identifier>RecordCP_Office__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Notes__c</fieldItem>
+                <identifier>RecordNotes__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e3812b5a-b809-4d1d-827d-dac92a98fd9b</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -29,6 +29,7 @@
             <value>
                 <fullName>Event</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Event</label>
             </value>
         </valueSetDefinition>
