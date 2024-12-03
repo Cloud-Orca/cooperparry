@@ -1416,6 +1416,26 @@
                 <identifier>RecordInvestor_Names_cField2</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Amount_in_Latest_Fundraise__c</fieldItem>
+                <identifier>RecordAmount_in_Latest_Fundraise_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Total_Amount_Raised__c</fieldItem>
+                <identifier>RecordTotal_Amount_Raised_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-badbcd8c-7ae4-4192-9329-2de4d3382905</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -1478,6 +1498,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Funding_Stage__c</fieldItem>
                 <identifier>RecordFunding_Stage_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Date_Of_Last_Funding_Round__c</fieldItem>
+                <identifier>RecordDate_Of_Last_Funding_Round_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-d665a36f-ffd4-4876-9a50-59c89a984a2c</name>
