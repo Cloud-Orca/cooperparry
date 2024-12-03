@@ -850,6 +850,11 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
 {!Referral_Type_Opportunity}))</expression>
     </formulas>
     <formulas>
+        <name>referralOpp</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Copy_1_of_Create_Opportunity}),{!recordId},{!Copy_1_of_Create_Opportunity})</expression>
+    </formulas>
+    <formulas>
         <name>Source_Type_Formula</name>
         <dataType>String</dataType>
         <expression>IF({!Source} = &quot;Inbound&quot;, {!Source_Type_Inbound}, {!Source_Type_Outbound})</expression>
@@ -884,6 +889,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <targetReference>Object</targetReference>
         </connector>
         <inputAssignments>
+            <field>International_Firm_Name__c</field>
+            <value>
+                <elementReference>International_Firm_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Lead_Area__c</field>
             <value>
                 <elementReference>Lead_Area</elementReference>
@@ -896,6 +907,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Network__c</field>
+            <value>
+                <elementReference>Network</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Notes__c</field>
             <value>
                 <elementReference>Copy_1_of_Notes</elementReference>
@@ -904,7 +921,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>Opportunity__c</field>
             <value>
-                <elementReference>Copy_1_of_Create_Opportunity</elementReference>
+                <elementReference>referralOpp</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -916,7 +933,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>Referral_Type__c</field>
             <value>
-                <stringValue>Internal</stringValue>
+                <elementReference>Source</elementReference>
             </value>
         </inputAssignments>
         <object>Referral__c</object>
@@ -1071,7 +1088,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>Account__c</field>
             <value>
-                <elementReference>Account.recordId</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1137,7 +1154,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>Referred_Account__c</field>
             <value>
-                <elementReference>Account_Client.recordId</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </inputAssignments>
         <object>Referral__c</object>
@@ -2362,6 +2379,13 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                         <elementReference>International</elementReference>
                     </rightValue>
                 </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Opportunity</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>International</elementReference>
+                    </rightValue>
+                </conditions>
             </visibilityRule>
         </fields>
         <fields>
@@ -2382,6 +2406,13 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                 </conditions>
                 <conditions>
                     <leftValueReference>Referral_Type_Account</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>International</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Opportunity</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>International</elementReference>
