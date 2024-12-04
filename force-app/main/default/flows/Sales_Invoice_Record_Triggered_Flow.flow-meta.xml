@@ -37,7 +37,7 @@
         <inputAssignments>
             <field>Name__c</field>
             <value>
-                <stringValue>$Record.c2g__Transaction__r.Name</stringValue>
+                <elementReference>$Record.c2g__Transaction__r.Name</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -55,7 +55,7 @@
         <inputAssignments>
             <field>TransactionType__c</field>
             <value>
-                <stringValue>$Record.c2g__Transaction__r.c2g__TransactionType__c</stringValue>
+                <elementReference>$Record.c2g__Transaction__r.c2g__TransactionType__c</elementReference>
             </value>
         </inputAssignments>
         <object>Transaction__e</object>
