@@ -1665,6 +1665,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>BD_Meeting__c.BD__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>BD_Meeting__c.CP_Office__c</field>
         <readable>true</readable>
     </fieldPermissions>
