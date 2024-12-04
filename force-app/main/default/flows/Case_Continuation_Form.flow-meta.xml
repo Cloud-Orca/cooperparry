@@ -5,7 +5,7 @@
         <name>Assign_Anti_money_laundering</name>
         <label>Assign Anti money laundering</label>
         <locationX>50</locationX>
-        <locationY>1406</locationY>
+        <locationY>1598</locationY>
         <assignmentItems>
             <assignToReference>varForm.Hold_Assests_or_undertake_overseas__c</assignToReference>
             <operator>Assign</operator>
@@ -126,14 +126,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Copy_2_of_Update_Form</targetReference>
+            <targetReference>Copy_1_of_Check_Approved</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_anti_money_laundering2</name>
         <label>Assign anti money laundering</label>
         <locationX>314</locationX>
-        <locationY>1406</locationY>
+        <locationY>1598</locationY>
         <assignmentItems>
             <assignToReference>varForm.Business_structure_complex_unusual__c</assignToReference>
             <operator>Assign</operator>
@@ -289,14 +289,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Copy_2_of_Update_Form</targetReference>
+            <targetReference>Copy_1_of_Check_Approved</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_general_continuation_variables</name>
         <label>Assign general continuation variables</label>
-        <locationX>314</locationX>
-        <locationY>974</locationY>
+        <locationX>182</locationX>
+        <locationY>1082</locationY>
         <assignmentItems>
             <assignToReference>varForm.Consider_changes_that_alter_assessment__c</assignToReference>
             <operator>Assign</operator>
@@ -394,8 +394,8 @@
     <decisions>
         <name>Already_Completed</name>
         <label>Already Completed?</label>
-        <locationX>314</locationX>
-        <locationY>1814</locationY>
+        <locationX>138</locationX>
+        <locationY>2306</locationY>
         <defaultConnector>
             <targetReference>Update_Completed_Form_Date</targetReference>
         </defaultConnector>
@@ -442,12 +442,84 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Approved</name>
+        <label>Check Approved</label>
+        <locationX>314</locationX>
+        <locationY>974</locationY>
+        <defaultConnector>
+            <targetReference>Tax</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Not_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_general_continuation_variables</targetReference>
+            </connector>
+            <label>Not Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Check_Approved</name>
+        <label>Copy 1 of Check Approved</label>
+        <locationX>314</locationX>
+        <locationY>1790</locationY>
+        <defaultConnector>
+            <targetReference>Guidance_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Not_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Update_Form</targetReference>
+            </connector>
+            <label>Copy 1 of Not Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_2_of_Check_Approved</name>
+        <label>Copy 2 of Check Approved</label>
+        <locationX>314</locationX>
+        <locationY>2198</locationY>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Not_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Already_Completed</targetReference>
+            </connector>
+            <label>Copy 2 of Not Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Tax</name>
         <label>Tax?</label>
         <locationX>314</locationX>
-        <locationY>1190</locationY>
+        <locationY>1382</locationY>
         <defaultConnector>
-            <targetReference>Copy_2_of_Update_Form</targetReference>
+            <targetReference>Copy_1_of_Check_Approved</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -641,8 +713,8 @@
     <recordUpdates>
         <name>Copy_2_of_Update_Form</name>
         <label>Copy 2 of Update Form</label>
-        <locationX>314</locationX>
-        <locationY>1598</locationY>
+        <locationX>182</locationX>
+        <locationY>1898</locationY>
         <connector>
             <targetReference>Guidance_Screen</targetReference>
         </connector>
@@ -651,8 +723,8 @@
     <recordUpdates>
         <name>Set_Form_to_Complete</name>
         <label>Set Form to Complete</label>
-        <locationX>314</locationX>
-        <locationY>2114</locationY>
+        <locationX>138</locationX>
+        <locationY>2606</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -672,8 +744,8 @@
     <recordUpdates>
         <name>Update_Completed_Form_Date</name>
         <label>Update Completed Form Date</label>
-        <locationX>402</locationX>
-        <locationY>1922</locationY>
+        <locationX>226</locationX>
+        <locationY>2414</locationY>
         <connector>
             <targetReference>Set_Form_to_Complete</targetReference>
         </connector>
@@ -702,8 +774,8 @@
     <recordUpdates>
         <name>Update_Form1</name>
         <label>Update Form</label>
-        <locationX>314</locationX>
-        <locationY>1082</locationY>
+        <locationX>182</locationX>
+        <locationY>1190</locationY>
         <connector>
             <targetReference>Tax</targetReference>
         </connector>
@@ -713,7 +785,7 @@
         <name>ANTI_MONEY_LAUNDERING_REVIEW_Form</name>
         <label>ANTI-MONEY LAUNDERING REVIEW Form</label>
         <locationX>314</locationX>
-        <locationY>1298</locationY>
+        <locationY>1490</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1636,7 +1708,7 @@
         <name>ANTI_MONEY_LAUNDERING_REVIEW_Page</name>
         <label>ANTI-MONEY LAUNDERING REVIEW Page</label>
         <locationX>50</locationX>
-        <locationY>1298</locationY>
+        <locationY>1490</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -2364,7 +2436,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Assign_general_continuation_variables</targetReference>
+            <targetReference>Check_Approved</targetReference>
         </connector>
         <fields>
             <name>GENERAL_CONTINUATION_PROCEDURES_Section1</name>
@@ -2692,12 +2764,12 @@
         <name>Guidance_Screen</name>
         <label>Guidance Screen</label>
         <locationX>314</locationX>
-        <locationY>1706</locationY>
+        <locationY>2090</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Already_Completed</targetReference>
+            <targetReference>Copy_2_of_Check_Approved</targetReference>
         </connector>
         <fields>
             <name>Guidance_Screen_Section1</name>

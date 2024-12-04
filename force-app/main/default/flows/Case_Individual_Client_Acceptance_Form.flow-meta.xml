@@ -4,7 +4,7 @@
     <assignments>
         <name>Assign_Case_and_Account_Id</name>
         <label>Assign Case and Account Id</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Case__c</assignToReference>
@@ -41,7 +41,7 @@
     <assignments>
         <name>Page_1_Assignment</name>
         <label>Page 1 Assignment</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Client_Name__c</assignToReference>
@@ -155,7 +155,7 @@
     <assignments>
         <name>Page_2_5_Assignment</name>
         <label>Page 2.5 Assignment</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>1214</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.regpick11__c</assignToReference>
@@ -227,7 +227,7 @@
     <assignments>
         <name>Page_2_Assignment</name>
         <label>Page 2 Assignment</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Summarise_the_key_aspects_of_what_we_are__c</assignToReference>
@@ -292,7 +292,7 @@
     <assignments>
         <name>Page_3_Assignment</name>
         <label>Page 3 Assignment</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>1430</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.pickfin1__c</assignToReference>
@@ -420,7 +420,7 @@
     <assignments>
         <name>Page_4_Assignment</name>
         <label>Page 4 Assignment</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>1646</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Full_Name__c</assignToReference>
@@ -548,7 +548,7 @@
     <assignments>
         <name>Page_5_Assignment</name>
         <label>Page 5 Assignment</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>1862</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.con1__c</assignToReference>
@@ -579,7 +579,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Create_Client_Acceptance_Form</targetReference>
+            <targetReference>Check_Approved</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -614,7 +614,7 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Close_Screen</targetReference>
@@ -634,6 +634,28 @@
                 <targetReference>Get_Individual_CAF_Record_Type</targetReference>
             </connector>
             <label>No Pending Approvals</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Approved</name>
+        <label>Check Approved</label>
+        <locationX>182</locationX>
+        <locationY>1970</locationY>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Not_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Client_Acceptance_Form</targetReference>
+            </connector>
+            <label>Not Approved</label>
         </rules>
     </decisions>
     <dynamicChoiceSets>
@@ -678,7 +700,7 @@
         <name>Create_Client_Acceptance_Form</name>
         <label>Create Client Acceptance Form</label>
         <locationX>50</locationX>
-        <locationY>1970</locationY>
+        <locationY>2078</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -687,7 +709,7 @@
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -715,7 +737,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -736,7 +758,7 @@
     <recordLookups>
         <name>Get_Individual_CAF_Record_Type</name>
         <label>Get Individual CAF Record Type</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -765,7 +787,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>50</locationX>
-        <locationY>2078</locationY>
+        <locationY>2186</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -785,7 +807,7 @@
     <screens>
         <name>Close_Screen</name>
         <label>Close Screen</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -802,7 +824,7 @@
     <screens>
         <name>Page_1</name>
         <label>Page 1 - GENERAL, CP CONTACT</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1240,7 +1262,7 @@
     <screens>
         <name>Page_2_NATURE_OF_ASSIGNMENT_CHANGE_OF_ADVISOR</name>
         <label>Page 2 - NATURE OF ASSIGNMENT, CHANGE OF ADVISOR</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>890</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1596,7 +1618,7 @@
     <screens>
         <name>Page_2_REGULATIONS_INTEGRITY</name>
         <label>Page 2.5 - REGULATIONS, INTEGRITY</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>1106</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2434,7 +2456,7 @@
     <screens>
         <name>Page_3</name>
         <label>Page 3 - FINANCIAL RISK, MONEY LAUNDERING RISK ASSESSMENT</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>1322</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -3781,7 +3803,7 @@
     <screens>
         <name>Page_4_IDENTITY_VERIFICATION</name>
         <label>Page 4 - IDENTITY VERIFICATION, OTHER RISKS, OBJECTIVITY</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>1538</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -5066,7 +5088,7 @@
     <screens>
         <name>Page_5_CONCLUSION</name>
         <label>Page 5 - CONCLUSION</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>1754</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -5221,7 +5243,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
