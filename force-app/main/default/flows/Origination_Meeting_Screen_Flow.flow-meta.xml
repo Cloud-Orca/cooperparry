@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>Send_Email_to_BD</name>
+        <label>Send Email to BD</label>
+        <locationX>50</locationX>
+        <locationY>2030</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Screen2</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>bdEmail_recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>bdEmail_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>bdEmail_body</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_BD_Email_recipient</name>
+        <label>Assign BD Email recipient</label>
+        <locationX>50</locationX>
+        <locationY>1922</locationY>
+        <assignmentItems>
+            <assignToReference>bdEmail_recipients</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_BD_User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_to_BD</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Assign_Incumbent_Account</name>
         <label>Assign Incumbent - Account</label>
@@ -56,6 +104,31 @@
                 <targetReference>Update_Origination_Meeting_checkbox</targetReference>
             </connector>
             <label>Yes - First BD Meeting on Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>has_BD</name>
+        <label>has BD?</label>
+        <locationX>182</locationX>
+        <locationY>1706</locationY>
+        <defaultConnector>
+            <targetReference>Screen2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_has_BD</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BD.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_BD_User</targetReference>
+            </connector>
+            <label>Yes has BD</label>
         </rules>
     </decisions>
     <decisions>
@@ -320,7 +393,7 @@
         <locationX>182</locationX>
         <locationY>1598</locationY>
         <connector>
-            <targetReference>Screen2</targetReference>
+            <targetReference>has_BD</targetReference>
         </connector>
         <inputAssignments>
             <field>ContentDocumentId</field>
@@ -356,6 +429,27 @@
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_BD_User</name>
+        <label>Get BD User</label>
+        <locationX>50</locationX>
+        <locationY>1814</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_BD_Email_recipient</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>BD.recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -499,12 +593,6 @@
             <field>CP_Office__c</field>
             <value>
                 <elementReference>CP_Office</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Estimated_Fees__c</field>
-            <value>
-                <elementReference>Estimated_Fee</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -770,6 +858,32 @@
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
+                <fields>
+                    <name>BD</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>BD_Meeting__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>BD__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>BD</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -795,7 +909,7 @@
         <name>Screen2</name>
         <label>Screen2</label>
         <locationX>182</locationX>
-        <locationY>1706</locationY>
+        <locationY>2222</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -835,18 +949,6 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
-                </fields>
-                <fields>
-                    <name>Estimated_Fee</name>
-                    <dataType>Currency</dataType>
-                    <defaultValue>
-                        <elementReference>estimatedFees_formula</elementReference>
-                    </defaultValue>
-                    <fieldText>Estimated Fee</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <scale>2</scale>
                 </fields>
                 <fields>
                     <name>Incumbent</name>
@@ -904,10 +1006,39 @@
     </start>
     <status>Active</status>
     <textTemplates>
+        <name>bdEmail_body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!Get_BD_User.FirstName},
+You’ve been added to a Business Development (BD) Meeting. Below are the details for your review:
+Service Line: ={!Service_Line_Picklist}
+Date: {!Meeting_Date}
+Type: {!Meeting_Type}
+Estimated Potential Opportunity Fee: {!Est_Potential_Opportunity_Fee}
+Status: {!Meeting_Status}
+Attendees: {!MeetingAttendee.recordName}
+Summary:
+{!Meeting_Summary}
+
+Kind regards,
+Salesforce</text>
+    </textTemplates>
+    <textTemplates>
+        <name>bdEmail_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New BD Meeting Created {!get_Account.Name}</text>
+    </textTemplates>
+    <textTemplates>
         <name>Body</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;strong&gt;Target Name: &lt;/strong&gt;{!Target_Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Estimated Fee:&lt;/strong&gt; {!Estimated_Fee}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Incumbent:&lt;/strong&gt; {!Incumbent}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CP Office:&lt;/strong&gt; {!CP_Office}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Notes: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Notes}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;strong&gt;Target Name: &lt;/strong&gt;{!Target_Name}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Incumbent:&lt;/strong&gt; {!Incumbent}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CP Office:&lt;/strong&gt; {!CP_Office}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Notes: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Notes}&lt;/p&gt;</text>
     </textTemplates>
+    <variables>
+        <name>bdEmail_recipients</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
