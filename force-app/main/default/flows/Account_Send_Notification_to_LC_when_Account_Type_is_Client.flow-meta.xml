@@ -3,8 +3,8 @@
     <actionCalls>
         <name>send_Email_Notification</name>
         <label>send Email Notification</label>
-        <locationX>50</locationX>
-        <locationY>863</locationY>
+        <locationX>314</locationX>
+        <locationY>971</locationY>
         <actionName>Account.Send_a_notification_to_the_LC_on_the_Account</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -18,14 +18,31 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
+        <name>Send_Notification_Person_Account</name>
+        <label>Send Notification (Person Account)</label>
+        <locationX>50</locationX>
+        <locationY>971</locationY>
+        <actionName>Contact.Send_a_notification_to_the_LC_on_the_Contact</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.PersonContactId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Contact.Send_a_notification_to_the_LC_on_the_Contact</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>sendNotificationtoLC</name>
         <label>sendNotificationtoLC</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>755</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
-            <targetReference>send_Email_Notification</targetReference>
+            <targetReference>Is_Person</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -65,7 +82,7 @@
     <assignments>
         <name>assignRecipientId</name>
         <label>assignRecipientId</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>539</locationY>
         <assignmentItems>
             <assignToReference>variableRecipientId</assignToReference>
@@ -81,7 +98,7 @@
     <decisions>
         <name>Found_Lifecycle_Coordinator</name>
         <label>Found Lifecycle Coordinator?</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>None</defaultConnectorLabel>
         <rules>
@@ -98,6 +115,31 @@
                 <targetReference>assignRecipientId</targetReference>
             </connector>
             <label>Found LC</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Person</name>
+        <label>Is Person?</label>
+        <locationX>182</locationX>
+        <locationY>863</locationY>
+        <defaultConnector>
+            <targetReference>send_Email_Notification</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Person</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Notification_Person_Account</targetReference>
+            </connector>
+            <label>Yes Person</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -125,7 +167,7 @@
     <recordLookups>
         <name>getAccountTeamMember</name>
         <label>getAccountTeamMember</label>
-        <locationX>182</locationX>
+        <locationX>380</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -153,7 +195,7 @@
     <recordLookups>
         <name>getCustomNotification</name>
         <label>getCustomNotification</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -172,7 +214,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>56</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>getAccountTeamMember</targetReference>

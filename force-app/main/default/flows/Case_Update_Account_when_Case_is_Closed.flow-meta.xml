@@ -163,6 +163,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Approval_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Service_Line_Onboarded__c</field>
             <value>
                 <stringValue>Yes</stringValue>
