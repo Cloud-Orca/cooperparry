@@ -88,7 +88,8 @@ CASE({!$Record.StageName},
 &quot;Live Enquiry&quot;,1,
 &quot;Closed Won&quot;,1,0) = 1,
 ISCHANGED({!$Record.StageName}),
-TEXT({!$Record.Opportunity_Area__c}) = &quot;BSO&quot;
+TEXT({!$Record.Opportunity_Area__c}) = &quot;BSO&quot;,
+{!$Record.Account.Do_Not_Create_Case__c} = false
 )</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>

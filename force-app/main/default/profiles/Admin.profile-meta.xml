@@ -524,6 +524,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.BD__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.BH_Collection_Name__c</field>
         <readable>false</readable>
@@ -1656,6 +1661,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>BD_Meeting__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BD_Meeting__c.BD__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -14717,6 +14727,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageExchangeConfig</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageFilesAndAttachments</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

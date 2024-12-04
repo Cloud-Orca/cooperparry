@@ -87,6 +87,7 @@ CASE({!$Record.StageName},
 &quot;Closed Won&quot;,1,
 &quot;Married (Closed Won)&quot;,1,0) = 1,
 ISCHANGED({!$Record.StageName}),
+{!$Record.Account.Do_Not_Create_Case__c} = false,
 OR(
 	AND(TEXT({!$Record.Opportunity_Area__c}) = &quot;Deals&quot;, TEXT({!$Record.Opportunity_Type_Area__c}) = &quot;TS&quot;),
 	AND(TEXT({!$Record.Opportunity_Area__c}) = &quot;Tax&quot;, TEXT({!$Record.Opportunity_Type_Area__c}) = &quot;TT&quot;)
