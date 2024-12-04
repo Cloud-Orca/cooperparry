@@ -132,6 +132,7 @@ CASE({!$Record.StageName},
 &quot;Live Enquiry&quot;,1,
 &quot;Closed Won&quot;,1,0) = 1,
 ISCHANGED({!$Record.StageName}),
+{!$Record.Account.Do_Not_Create_Case__c} = false,
 OR(
 TEXT({!$Record.Opportunity_Area__c}) = &quot;Audit&quot;, 
 TEXT({!$Record.Opportunity_Type_Area__c}) = &quot;THG Audit&quot;
