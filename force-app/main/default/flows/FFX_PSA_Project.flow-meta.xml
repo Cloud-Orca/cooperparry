@@ -236,12 +236,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>pse__Company__c</field>
-            <value>
-                <elementReference>$Record.pse__Practice__r.ffpsai__OwnerCompany__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>pse__Is_Billable__c</field>
             <value>
                 <booleanValue>true</booleanValue>
