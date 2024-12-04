@@ -889,6 +889,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <targetReference>Object</targetReference>
         </connector>
         <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Account.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>International_Firm_Name__c</field>
             <value>
                 <elementReference>International_Firm_Name</elementReference>
@@ -925,6 +931,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Referral_Contact__c</field>
+            <value>
+                <elementReference>Contact.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Referral_Sub_Type__c</field>
             <value>
                 <elementReference>Referral_Type_Opportunity</elementReference>
@@ -934,6 +946,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <field>Referral_Type__c</field>
             <value>
                 <elementReference>Source</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_User__c</field>
+            <value>
+                <elementReference>User.recordId</elementReference>
             </value>
         </inputAssignments>
         <object>Referral__c</object>
@@ -2273,6 +2291,27 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                         <elementReference>Service_Line</elementReference>
                     </rightValue>
                 </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Opportunity</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Client</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Opportunity</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Intermediary</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Opportunity</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Partnership</elementReference>
+                    </rightValue>
+                </conditions>
             </visibilityRule>
         </fields>
         <fields>
@@ -2316,6 +2355,13 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                         <elementReference>Client</elementReference>
                     </rightValue>
                 </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Opportunity</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Client</elementReference>
+                    </rightValue>
+                </conditions>
             </visibilityRule>
         </fields>
         <fields>
@@ -2354,6 +2400,13 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                 </conditions>
                 <conditions>
                     <leftValueReference>Referral_Type_Account</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>CPer</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Opportunity</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>CPer</elementReference>
