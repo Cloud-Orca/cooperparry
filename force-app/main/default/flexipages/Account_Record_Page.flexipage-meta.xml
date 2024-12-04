@@ -198,6 +198,12 @@
                 <identifier>RecordDo_Not_Create_Case_cField2</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.BD__c</fieldItem>
+                <identifier>RecordBD__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
