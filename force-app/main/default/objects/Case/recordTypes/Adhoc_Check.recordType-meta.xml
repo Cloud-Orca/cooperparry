@@ -563,6 +563,10 @@
     <picklistValues>
         <picklist>Closed_Reason__c</picklist>
         <values>
+            <fullName>Adhoc Check Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Declined - CAF incomplete</fullName>
             <default>false</default>
         </values>
@@ -611,6 +615,17 @@
         </values>
         <values>
             <fullName>UHNWI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Manual_Engagement_Pack_received__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>

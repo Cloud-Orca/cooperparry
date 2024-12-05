@@ -4,6 +4,57 @@
     <active>true</active>
     <label>CRM Contact</label>
     <picklistValues>
+        <picklist>Field_Advocacy_Survey_Send_Month__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>GenderIdentity</picklist>
         <values>
             <fullName>Female</fullName>
@@ -53,11 +104,15 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Director%2CFinance Director</fullName>
+            <fullName>Director</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Finance Controller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Director</fullName>
             <default>false</default>
         </values>
         <values>
