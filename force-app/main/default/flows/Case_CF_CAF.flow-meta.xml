@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_1</name>
         <label>Assign - 1</label>
-        <locationX>182</locationX>
-        <locationY>1190</locationY>
+        <locationX>226</locationX>
+        <locationY>1382</locationY>
         <assignmentItems>
             <assignToReference>varForm.Code_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -147,14 +147,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_1</targetReference>
+            <targetReference>Check_Approval_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_2</name>
         <label>Assign - 2</label>
-        <locationX>182</locationX>
-        <locationY>1622</locationY>
+        <locationX>226</locationX>
+        <locationY>2006</locationY>
         <assignmentItems>
             <assignToReference>varForm.Have_we_checked_the_above_to__c</assignToReference>
             <operator>Assign</operator>
@@ -212,14 +212,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_2</targetReference>
+            <targetReference>Copy_1_of_Check_Approval_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_3</name>
         <label>Assign - 3</label>
-        <locationX>182</locationX>
-        <locationY>1946</locationY>
+        <locationX>226</locationX>
+        <locationY>2522</locationY>
         <assignmentItems>
             <assignToReference>varForm.TurnoverLY__c</assignToReference>
             <operator>Assign</operator>
@@ -396,14 +396,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_3</targetReference>
+            <targetReference>Copy_2_of_Check_Approval_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_4</name>
         <label>Assign - 4</label>
-        <locationX>182</locationX>
-        <locationY>2270</locationY>
+        <locationX>226</locationX>
+        <locationY>3038</locationY>
         <assignmentItems>
             <assignToReference>varForm.BACKGROUNDTOASSIGNMENT__c</assignToReference>
             <operator>Assign</operator>
@@ -419,14 +419,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_4</targetReference>
+            <targetReference>Copy_3_of_Check_Approval_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_5</name>
         <label>Assign - 5</label>
-        <locationX>182</locationX>
-        <locationY>2594</locationY>
+        <locationX>226</locationX>
+        <locationY>3554</locationY>
         <assignmentItems>
             <assignToReference>varForm.For_disposals_what_is_our_assessment__c</assignToReference>
             <operator>Assign</operator>
@@ -533,14 +533,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_5</targetReference>
+            <targetReference>Copy_4_of_Check_Approval_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_6</name>
         <label>Assign - 6</label>
-        <locationX>182</locationX>
-        <locationY>2918</locationY>
+        <locationX>226</locationX>
+        <locationY>4070</locationY>
         <assignmentItems>
             <assignToReference>varForm.Does_the_transaction_relate_to__c</assignToReference>
             <operator>Assign</operator>
@@ -605,14 +605,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_6</targetReference>
+            <targetReference>Copy_5_of_Check_Approval_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_7</name>
         <label>Assign - 7</label>
-        <locationX>182</locationX>
-        <locationY>3242</locationY>
+        <locationX>226</locationX>
+        <locationY>4586</locationY>
         <assignmentItems>
             <assignToReference>varForm.Key_Client_Address__c</assignToReference>
             <operator>Assign</operator>
@@ -789,14 +789,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_7</targetReference>
+            <targetReference>Copy_6_of_Check_Approval_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_8</name>
         <label>Assign - 8</label>
-        <locationX>182</locationX>
-        <locationY>3566</locationY>
+        <locationX>226</locationX>
+        <locationY>5102</locationY>
         <assignmentItems>
             <assignToReference>varForm.pickint1__c</assignToReference>
             <operator>Assign</operator>
@@ -819,14 +819,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_CF_CAF</targetReference>
+            <targetReference>Copy_7_of_Check_Approval_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_CF_CAF_to_varForm</name>
         <label>Assign CF CAF to varForm</label>
-        <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationX>94</locationX>
+        <locationY>866</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
             <operator>Assign</operator>
@@ -841,8 +841,8 @@
     <assignments>
         <name>Assign_Form_ID</name>
         <label>Assign Form ID</label>
-        <locationX>314</locationX>
-        <locationY>890</locationY>
+        <locationX>358</locationX>
+        <locationY>1082</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
             <operator>Assign</operator>
@@ -859,6 +859,22 @@
         </assignmentItems>
         <connector>
             <targetReference>Screen_Basic_Details</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Enable_Warning_Banner</name>
+        <label>Enable Warning Banner</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>warningBanner</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_CF_CAF</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -888,10 +904,10 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>380</locationX>
+        <locationX>226</locationX>
         <locationY>350</locationY>
         <defaultConnector>
-            <targetReference>Close_Screen</targetReference>
+            <targetReference>Enable_Warning_Banner</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
         <rules>
@@ -911,10 +927,42 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Approval_1</name>
+        <label>Check Approval - 1</label>
+        <locationX>226</locationX>
+        <locationY>1490</locationY>
+        <defaultConnector>
+            <targetReference>Get_Beneficial_Owners</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Not_Approved_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_1</targetReference>
+            </connector>
+            <label>Not Approved - 1</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_CF_CAF_Form</name>
         <label>Check CF CAF Form</label>
-        <locationX>182</locationX>
-        <locationY>566</locationY>
+        <locationX>226</locationX>
+        <locationY>758</locationY>
         <defaultConnector>
             <targetReference>Create_CF_CAF</targetReference>
         </defaultConnector>
@@ -938,8 +986,8 @@
     <decisions>
         <name>Check_Completion_Form</name>
         <label>Check Completion Form</label>
-        <locationX>182</locationX>
-        <locationY>3890</locationY>
+        <locationX>50</locationX>
+        <locationY>5534</locationY>
         <defaultConnector>
             <targetReference>Update_Completion_Fields</targetReference>
         </defaultConnector>
@@ -958,6 +1006,227 @@
                 <targetReference>Update_Case</targetReference>
             </connector>
             <label>Already Completed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Check_Approval_1</name>
+        <label>Copy 1 of Check Approval - 1</label>
+        <locationX>226</locationX>
+        <locationY>2114</locationY>
+        <defaultConnector>
+            <targetReference>Screen_Summary_Financials</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Not_Approved_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_2</targetReference>
+            </connector>
+            <label>Copy 1 of Not Approved - 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_2_of_Check_Approval_1</name>
+        <label>Copy 2 of Check Approval - 1</label>
+        <locationX>226</locationX>
+        <locationY>2630</locationY>
+        <defaultConnector>
+            <targetReference>Screen_Background_to_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Not_Approved_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_3</targetReference>
+            </connector>
+            <label>Copy 2 of Not Approved - 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_3_of_Check_Approval_1</name>
+        <label>Copy 3 of Check Approval - 1</label>
+        <locationX>226</locationX>
+        <locationY>3146</locationY>
+        <defaultConnector>
+            <targetReference>Screen_E_to_G</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_3_of_Not_Approved_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_4</targetReference>
+            </connector>
+            <label>Copy 3 of Not Approved - 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_4_of_Check_Approval_1</name>
+        <label>Copy 4 of Check Approval - 1</label>
+        <locationX>226</locationX>
+        <locationY>3662</locationY>
+        <defaultConnector>
+            <targetReference>Screen_Ability_to_Accept_Appointment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_4_of_Not_Approved_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_5</targetReference>
+            </connector>
+            <label>Copy 4 of Not Approved - 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_5_of_Check_Approval_1</name>
+        <label>Copy 5 of Check Approval - 1</label>
+        <locationX>226</locationX>
+        <locationY>4178</locationY>
+        <defaultConnector>
+            <targetReference>Screen_Money_Laundering</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_5_of_Not_Approved_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_6</targetReference>
+            </connector>
+            <label>Copy 5 of Not Approved - 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_6_of_Check_Approval_1</name>
+        <label>Copy 6 of Check Approval - 1</label>
+        <locationX>226</locationX>
+        <locationY>4694</locationY>
+        <defaultConnector>
+            <targetReference>Screen_Conclusions</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_6_of_Not_Approved_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_7</targetReference>
+            </connector>
+            <label>Copy 6 of Not Approved - 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_7_of_Check_Approval_1</name>
+        <label>Copy 7 of Check Approval - 1</label>
+        <locationX>226</locationX>
+        <locationY>5210</locationY>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Copy_7_of_Not_Approved_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_CF_CAF</targetReference>
+            </connector>
+            <label>Copy 7 of Not Approved - 1</label>
         </rules>
     </decisions>
     <description>Client Acceptance Form</description>
@@ -991,8 +1260,8 @@
     <recordCreates>
         <name>Create_Beneficial_Owners</name>
         <label>Create Beneficial Owners</label>
-        <locationX>182</locationX>
-        <locationY>3782</locationY>
+        <locationX>50</locationX>
+        <locationY>5426</locationY>
         <connector>
             <targetReference>Check_Completion_Form</targetReference>
         </connector>
@@ -1001,8 +1270,8 @@
     <recordCreates>
         <name>Create_CF_CAF</name>
         <label>Create CF CAF</label>
-        <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationX>358</locationX>
+        <locationY>866</locationY>
         <connector>
             <targetReference>Get_CF_CAF_Created</targetReference>
         </connector>
@@ -1030,7 +1299,7 @@
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>380</locationX>
+        <locationX>226</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1058,8 +1327,8 @@
     <recordLookups>
         <name>Get_Beneficial_Owners</name>
         <label>Get Beneficial Owners</label>
-        <locationX>182</locationX>
-        <locationY>1406</locationY>
+        <locationX>226</locationX>
+        <locationY>1790</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Screen_Existing_Shareholders_and_Management</targetReference>
@@ -1079,7 +1348,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>380</locationX>
+        <locationX>226</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1100,8 +1369,8 @@
     <recordLookups>
         <name>Get_CF_CAF</name>
         <label>Get CF - CAF</label>
-        <locationX>182</locationX>
-        <locationY>458</locationY>
+        <locationX>226</locationX>
+        <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_CF_CAF_Form</targetReference>
@@ -1128,8 +1397,8 @@
     <recordLookups>
         <name>Get_CF_CAF_Created</name>
         <label>Get CF CAF - Created</label>
-        <locationX>314</locationX>
-        <locationY>782</locationY>
+        <locationX>358</locationX>
+        <locationY>974</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Form_ID</targetReference>
@@ -1149,8 +1418,8 @@
     <recordUpdates>
         <name>Update_1</name>
         <label>Update - 1</label>
-        <locationX>182</locationX>
-        <locationY>1298</locationY>
+        <locationX>94</locationX>
+        <locationY>1598</locationY>
         <connector>
             <targetReference>Get_Beneficial_Owners</targetReference>
         </connector>
@@ -1159,8 +1428,8 @@
     <recordUpdates>
         <name>Update_2</name>
         <label>Update - 2</label>
-        <locationX>182</locationX>
-        <locationY>1730</locationY>
+        <locationX>94</locationX>
+        <locationY>2222</locationY>
         <connector>
             <targetReference>Screen_Summary_Financials</targetReference>
         </connector>
@@ -1169,8 +1438,8 @@
     <recordUpdates>
         <name>Update_3</name>
         <label>Update - 3</label>
-        <locationX>182</locationX>
-        <locationY>2054</locationY>
+        <locationX>94</locationX>
+        <locationY>2738</locationY>
         <connector>
             <targetReference>Screen_Background_to_Assignment</targetReference>
         </connector>
@@ -1179,8 +1448,8 @@
     <recordUpdates>
         <name>Update_4</name>
         <label>Update - 4</label>
-        <locationX>182</locationX>
-        <locationY>2378</locationY>
+        <locationX>94</locationX>
+        <locationY>3254</locationY>
         <connector>
             <targetReference>Screen_E_to_G</targetReference>
         </connector>
@@ -1189,8 +1458,8 @@
     <recordUpdates>
         <name>Update_5</name>
         <label>Update - 5</label>
-        <locationX>182</locationX>
-        <locationY>2702</locationY>
+        <locationX>94</locationX>
+        <locationY>3770</locationY>
         <connector>
             <targetReference>Screen_Ability_to_Accept_Appointment</targetReference>
         </connector>
@@ -1199,8 +1468,8 @@
     <recordUpdates>
         <name>Update_6</name>
         <label>Update - 6</label>
-        <locationX>182</locationX>
-        <locationY>3026</locationY>
+        <locationX>94</locationX>
+        <locationY>4286</locationY>
         <connector>
             <targetReference>Screen_Money_Laundering</targetReference>
         </connector>
@@ -1209,8 +1478,8 @@
     <recordUpdates>
         <name>Update_7</name>
         <label>Update - 7</label>
-        <locationX>182</locationX>
-        <locationY>3350</locationY>
+        <locationX>94</locationX>
+        <locationY>4802</locationY>
         <connector>
             <targetReference>Screen_Conclusions</targetReference>
         </connector>
@@ -1219,8 +1488,8 @@
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>182</locationX>
-        <locationY>4190</locationY>
+        <locationX>50</locationX>
+        <locationY>5834</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -1240,8 +1509,8 @@
     <recordUpdates>
         <name>Update_CF_CAF</name>
         <label>Update CF CAF</label>
-        <locationX>182</locationX>
-        <locationY>3674</locationY>
+        <locationX>50</locationX>
+        <locationY>5318</locationY>
         <connector>
             <targetReference>Create_Beneficial_Owners</targetReference>
         </connector>
@@ -1250,8 +1519,8 @@
     <recordUpdates>
         <name>Update_Completion_Fields</name>
         <label>Update Completion Fields</label>
-        <locationX>270</locationX>
-        <locationY>3998</locationY>
+        <locationX>138</locationX>
+        <locationY>5642</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -1278,33 +1547,31 @@
         <object>Client_Acceptance_Form__c</object>
     </recordUpdates>
     <screens>
-        <name>Close_Screen</name>
-        <label>Close Screen</label>
-        <locationX>578</locationX>
-        <locationY>458</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Error_Message</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
         <name>Screen_Ability_to_Accept_Appointment</name>
         <label>Screen - Ability to Accept Appointment</label>
-        <locationX>182</locationX>
-        <locationY>2810</locationY>
+        <locationX>226</locationX>
+        <locationY>3962</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_6</targetReference>
         </connector>
+        <fields>
+            <name>wTxt6</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>warningBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Image6</name>
             <extensionName>flowruntime:image</extensionName>
@@ -2123,14 +2390,29 @@
     <screens>
         <name>Screen_Background_to_Assignment</name>
         <label>Screen - Background to Assignment</label>
-        <locationX>182</locationX>
-        <locationY>2162</locationY>
+        <locationX>226</locationX>
+        <locationY>2930</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_4</targetReference>
         </connector>
+        <fields>
+            <name>wTxt4</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>warningBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Image4</name>
             <extensionName>flowruntime:image</extensionName>
@@ -2305,14 +2587,29 @@
     <screens>
         <name>Screen_Basic_Details</name>
         <label>Screen - Basic Details</label>
-        <locationX>182</locationX>
-        <locationY>1082</locationY>
+        <locationX>226</locationX>
+        <locationY>1274</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_1</targetReference>
         </connector>
+        <fields>
+            <name>wTxt1</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>warningBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Image1</name>
             <extensionName>flowruntime:image</extensionName>
@@ -3184,14 +3481,29 @@
     <screens>
         <name>Screen_Conclusions</name>
         <label>Screen - Conclusions</label>
-        <locationX>182</locationX>
-        <locationY>3458</locationY>
+        <locationX>226</locationX>
+        <locationY>4994</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_8</targetReference>
         </connector>
+        <fields>
+            <name>wTxt8</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>warningBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Image8</name>
             <extensionName>flowruntime:image</extensionName>
@@ -3383,14 +3695,29 @@
     <screens>
         <name>Screen_E_to_G</name>
         <label>Screen - E to G</label>
-        <locationX>182</locationX>
-        <locationY>2486</locationY>
+        <locationX>226</locationX>
+        <locationY>3446</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_5</targetReference>
         </connector>
+        <fields>
+            <name>wTxt5</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>warningBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Image5</name>
             <extensionName>flowruntime:image</extensionName>
@@ -4083,14 +4410,29 @@
     <screens>
         <name>Screen_Existing_Shareholders_and_Management</name>
         <label>Screen - Existing Shareholders and Management</label>
-        <locationX>182</locationX>
-        <locationY>1514</locationY>
+        <locationX>226</locationX>
+        <locationY>1898</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_2</targetReference>
         </connector>
+        <fields>
+            <name>wTxt2</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>warningBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Image2</name>
             <extensionName>flowruntime:image</extensionName>
@@ -4524,14 +4866,29 @@
     <screens>
         <name>Screen_Money_Laundering</name>
         <label>Screen - Money Laundering</label>
-        <locationX>182</locationX>
-        <locationY>3134</locationY>
+        <locationX>226</locationX>
+        <locationY>4478</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_7</targetReference>
         </connector>
+        <fields>
+            <name>wTxt7</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>warningBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Image7</name>
             <extensionName>flowruntime:image</extensionName>
@@ -5874,14 +6231,29 @@
     <screens>
         <name>Screen_Summary_Financials</name>
         <label>Screen - Summary Financials</label>
-        <locationX>182</locationX>
-        <locationY>1838</locationY>
+        <locationX>226</locationX>
+        <locationY>2414</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_3</targetReference>
         </connector>
+        <fields>
+            <name>wTxt3</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>warningBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Image3</name>
             <extensionName>flowruntime:image</extensionName>
@@ -6852,7 +7224,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>254</locationX>
+        <locationX>100</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
@@ -6889,5 +7261,15 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Client_Acceptance_Form__c</objectType>
+    </variables>
+    <variables>
+        <name>warningBanner</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
 </Flow>

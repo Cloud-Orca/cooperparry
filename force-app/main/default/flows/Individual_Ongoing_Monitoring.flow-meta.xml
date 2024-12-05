@@ -4,7 +4,7 @@
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
         <locationX>50</locationX>
-        <locationY>1622</locationY>
+        <locationY>1730</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -31,7 +31,7 @@
     <assignments>
         <name>assign_Form</name>
         <label>assign Form</label>
-        <locationX>314</locationX>
+        <locationX>468</locationX>
         <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>variableForm.Id</assignToReference>
@@ -48,7 +48,7 @@
         <name>assignFileIds</name>
         <label>assignFileIds</label>
         <locationX>182</locationX>
-        <locationY>1406</locationY>
+        <locationY>1514</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
             <operator>Add</operator>
@@ -77,7 +77,7 @@
     <assignments>
         <name>assignIndividualOngoing</name>
         <label>assignIndividualOngoing</label>
-        <locationX>50</locationX>
+        <locationX>204</locationX>
         <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>variableForm</assignToReference>
@@ -94,7 +94,7 @@
         <name>assignVariables</name>
         <label>assignVariables</label>
         <locationX>182</locationX>
-        <locationY>1298</locationY>
+        <locationY>1406</locationY>
         <assignmentItems>
             <assignToReference>variableForm.Date_of_original_engagement__c</assignToReference>
             <operator>Assign</operator>
@@ -310,7 +310,7 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>380</locationX>
+        <locationX>545</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Close_Screen</targetReference>
@@ -333,9 +333,38 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Approval</name>
+        <label>Check Approval</label>
+        <locationX>336</locationX>
+        <locationY>1298</locationY>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Not_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assignVariables</targetReference>
+            </connector>
+            <label>Not Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Existing_Form</name>
         <label>Existing Form</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>create_Individual_Ongoing_Monitoring</targetReference>
@@ -361,7 +390,7 @@
         <name>Is_there_a_File_Upload</name>
         <label>Is there a File Upload</label>
         <locationX>182</locationX>
-        <locationY>1514</locationY>
+        <locationY>1622</locationY>
         <defaultConnector>
             <targetReference>Update_Individual_Ongoing_Monitoring</targetReference>
         </defaultConnector>
@@ -374,6 +403,13 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>fileIds</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>068</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -412,7 +448,7 @@
     <recordCreates>
         <name>create_Individual_Ongoing_Monitoring</name>
         <label>Create Individual Ongoing Monitoring</label>
-        <locationX>314</locationX>
+        <locationX>468</locationX>
         <locationY>674</locationY>
         <connector>
             <targetReference>assign_Form</targetReference>
@@ -441,7 +477,7 @@
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>380</locationX>
+        <locationX>545</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -469,7 +505,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>380</locationX>
+        <locationX>545</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -490,7 +526,7 @@
     <recordLookups>
         <name>get_Individual_Monitoring</name>
         <label>get Individual Monitoring</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -519,7 +555,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>1922</locationY>
+        <locationY>2030</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -540,7 +576,7 @@
         <name>Update_Individual_Ongoing_Monitoring</name>
         <label>Update Individual Ongoing Monitoring</label>
         <locationX>182</locationX>
-        <locationY>1814</locationY>
+        <locationY>1922</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -549,7 +585,7 @@
     <screens>
         <name>Close_Screen</name>
         <label>Close Screen</label>
-        <locationX>578</locationX>
+        <locationX>754</locationX>
         <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -566,7 +602,7 @@
     <screens>
         <name>CONTINUATION</name>
         <label>CONTINUATION</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>1082</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1004,13 +1040,13 @@
     <screens>
         <name>LAST_PART</name>
         <label>LAST PART</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>1190</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>assignVariables</targetReference>
+            <targetReference>Check_Approval</targetReference>
         </connector>
         <fields>
             <name>LAST_PART_Section1</name>
@@ -1430,7 +1466,7 @@
     <screens>
         <name>PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL</name>
         <label>PERSONAL TAX, SOLE TRADER OR INDIVIDUAL</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>974</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2150,7 +2186,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>254</locationX>
+        <locationX>419</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
