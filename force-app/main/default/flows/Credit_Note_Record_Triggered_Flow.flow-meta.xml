@@ -46,13 +46,13 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>TransactionDate__c</field>
+            <field>Transaction_Date__c</field>
             <value>
                 <elementReference>$Record.c2g__Transaction__r.c2g__TransactionDate__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>TransactionType__c</field>
+            <field>Transaction_Type__c</field>
             <value>
                 <elementReference>$Record.c2g__Transaction__r.c2g__TransactionType__c</elementReference>
             </value>
