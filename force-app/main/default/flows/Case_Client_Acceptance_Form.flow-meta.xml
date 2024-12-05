@@ -4,7 +4,7 @@
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
         <locationX>50</locationX>
-        <locationY>2978</locationY>
+        <locationY>3170</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -32,7 +32,7 @@
         <name>Assign_Business_Risk_Assesment_Form</name>
         <label>Assign Business Risk Assesment Form</label>
         <locationX>468</locationX>
-        <locationY>1514</locationY>
+        <locationY>1706</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Id</assignToReference>
             <operator>Assign</operator>
@@ -55,7 +55,7 @@
         <name>assign_File_Id</name>
         <label>assign File Id</label>
         <locationX>182</locationX>
-        <locationY>2762</locationY>
+        <locationY>2954</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
             <operator>Add</operator>
@@ -71,7 +71,7 @@
         <name>Assign_Form_to_ClientAcceptanceForm</name>
         <label>Assign Form to ClientAcceptanceForm</label>
         <locationX>204</locationX>
-        <locationY>1298</locationY>
+        <locationY>1490</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm</assignToReference>
             <operator>Assign</operator>
@@ -87,7 +87,7 @@
         <name>assignLifeCycleCoordinator</name>
         <label>assignLifeCycleCoordinator</label>
         <locationX>204</locationX>
-        <locationY>890</locationY>
+        <locationY>1082</locationY>
         <assignmentItems>
             <assignToReference>variableLifecycle</assignToReference>
             <operator>Assign</operator>
@@ -110,7 +110,7 @@
         <name>Beneficiaries_Assignment</name>
         <label>Beneficiaries Assignment</label>
         <locationX>292</locationX>
-        <locationY>6074</locationY>
+        <locationY>6266</locationY>
         <assignmentItems>
             <assignToReference>beneficiary.Name</assignToReference>
             <operator>Assign</operator>
@@ -151,10 +151,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Display_Submitted_banner</name>
+        <label>Display Submitted banner</label>
+        <locationX>424</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>displaySubmittedBanner</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Business_CAF_Record_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Page_1_Assignments</name>
         <label>Page 1 Assignments</label>
         <locationX>336</locationX>
-        <locationY>1814</locationY>
+        <locationY>2006</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Client_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -258,7 +274,7 @@
         <name>Page_2_5_Assignments</name>
         <label>Page 2.5 Assignments</label>
         <locationX>336</locationX>
-        <locationY>2546</locationY>
+        <locationY>2738</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.regpick2__c</assignToReference>
             <operator>Assign</operator>
@@ -351,7 +367,7 @@
         <name>Page_2_Assignments</name>
         <label>Page 2 Assignments</label>
         <locationX>336</locationX>
-        <locationY>2030</locationY>
+        <locationY>2222</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Owner__c</assignToReference>
             <operator>Assign</operator>
@@ -437,7 +453,7 @@
         <name>Page_3_Assignments</name>
         <label>Page 3 Assignments</label>
         <locationX>336</locationX>
-        <locationY>3470</locationY>
+        <locationY>3662</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.pickint1__c</assignToReference>
             <operator>Assign</operator>
@@ -523,7 +539,7 @@
         <name>Page_4_5_Assignments</name>
         <label>Page 4-5 Assignments</label>
         <locationX>204</locationX>
-        <locationY>4094</locationY>
+        <locationY>4286</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.mlrapick1__c</assignToReference>
             <operator>Assign</operator>
@@ -637,7 +653,7 @@
         <name>Page_6_Assignments</name>
         <label>Page 6 Assignments</label>
         <locationX>204</locationX>
-        <locationY>4610</locationY>
+        <locationY>4802</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.ben1__c</assignToReference>
             <operator>Assign</operator>
@@ -702,7 +718,7 @@
         <name>Page_7_Assignments</name>
         <label>Page 7 Assignments</label>
         <locationX>336</locationX>
-        <locationY>5018</locationY>
+        <locationY>5210</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.objpick1__c</assignToReference>
             <operator>Assign</operator>
@@ -781,7 +797,7 @@
         <name>Page_8_9_Assignment</name>
         <label>Page 8-9 Assignment</label>
         <locationX>204</locationX>
-        <locationY>5750</locationY>
+        <locationY>5942</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.con1__c</assignToReference>
             <operator>Assign</operator>
@@ -839,7 +855,7 @@
         <name>Subsidiaries_Assignment</name>
         <label>Subsidiaries Assignment</label>
         <locationX>292</locationX>
-        <locationY>6482</locationY>
+        <locationY>6674</locationY>
         <assignmentItems>
             <assignToReference>subsidiaryRecord.Name</assignToReference>
             <operator>Assign</operator>
@@ -934,10 +950,10 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>534</locationX>
+        <locationX>336</locationX>
         <locationY>350</locationY>
         <defaultConnector>
-            <targetReference>Close_Screen</targetReference>
+            <targetReference>Display_Submitted_banner</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
         <rules>
@@ -960,7 +976,7 @@
         <name>Check_Approved</name>
         <label>Check Approved</label>
         <locationX>336</locationX>
-        <locationY>2138</locationY>
+        <locationY>2330</locationY>
         <defaultConnector>
             <targetReference>Page_2_5</targetReference>
         </defaultConnector>
@@ -975,6 +991,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Client_Acceptance_Form_Page_2</targetReference>
             </connector>
@@ -985,7 +1008,7 @@
         <name>Check_if_Form_is_Existing</name>
         <label>Check if Form is Existing</label>
         <locationX>336</locationX>
-        <locationY>1190</locationY>
+        <locationY>1382</locationY>
         <defaultConnector>
             <targetReference>Create_Business_Risk_Assessment_Form</targetReference>
         </defaultConnector>
@@ -1010,7 +1033,7 @@
         <name>Copy_1_of_Check_Approved</name>
         <label>Copy 1 of Check Approved</label>
         <locationX>336</locationX>
-        <locationY>2654</locationY>
+        <locationY>2846</locationY>
         <defaultConnector>
             <targetReference>Page_3</targetReference>
         </defaultConnector>
@@ -1025,6 +1048,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>assign_File_Id</targetReference>
             </connector>
@@ -1035,7 +1065,7 @@
         <name>Copy_2_of_Check_Approved</name>
         <label>Copy 2 of Check Approved</label>
         <locationX>336</locationX>
-        <locationY>3578</locationY>
+        <locationY>3770</locationY>
         <defaultConnector>
             <targetReference>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</targetReference>
         </defaultConnector>
@@ -1050,6 +1080,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Client_Acceptance_Form_Page_3</targetReference>
             </connector>
@@ -1060,7 +1097,7 @@
         <name>Copy_3_of_Check_Approved</name>
         <label>Copy 3 of Check Approved</label>
         <locationX>336</locationX>
-        <locationY>3986</locationY>
+        <locationY>4178</locationY>
         <defaultConnector>
             <targetReference>Page_6_BENEFICIARIES</targetReference>
         </defaultConnector>
@@ -1075,6 +1112,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Page_4_5_Assignments</targetReference>
             </connector>
@@ -1085,7 +1129,7 @@
         <name>Copy_4_of_Check_Approved</name>
         <label>Copy 4 of Check Approved</label>
         <locationX>336</locationX>
-        <locationY>4502</locationY>
+        <locationY>4694</locationY>
         <defaultConnector>
             <targetReference>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</targetReference>
         </defaultConnector>
@@ -1100,6 +1144,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Page_6_Assignments</targetReference>
             </connector>
@@ -1110,7 +1161,7 @@
         <name>Copy_5_of_Check_Approved</name>
         <label>Copy 5 of Check Approved</label>
         <locationX>336</locationX>
-        <locationY>5126</locationY>
+        <locationY>5318</locationY>
         <defaultConnector>
             <targetReference>Page_8_CONCLUSION</targetReference>
         </defaultConnector>
@@ -1125,6 +1176,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Client_Acceptance_Form_Page_7</targetReference>
             </connector>
@@ -1135,7 +1193,7 @@
         <name>Copy_6_of_Check_Approved</name>
         <label>Copy 6 of Check Approved</label>
         <locationX>336</locationX>
-        <locationY>5642</locationY>
+        <locationY>5834</locationY>
         <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
             <name>Copy_6_of_Not_Approved</name>
@@ -1145,6 +1203,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1157,7 +1222,7 @@
         <name>Is_Lifecycle_coordinator</name>
         <label>Is Lifecycle coordinator</label>
         <locationX>336</locationX>
-        <locationY>674</locationY>
+        <locationY>866</locationY>
         <defaultConnector>
             <targetReference>getBusinessRiskAssessmentForm</targetReference>
         </defaultConnector>
@@ -1182,7 +1247,7 @@
         <name>Is_there_a_File_Upload</name>
         <label>Is there a File Upload</label>
         <locationX>182</locationX>
-        <locationY>2870</locationY>
+        <locationY>3062</locationY>
         <defaultConnector>
             <targetReference>Update_Client_Acceptance_Form_Page_2_5</targetReference>
         </defaultConnector>
@@ -1233,7 +1298,7 @@
         <name>Beneficiaries_Loop</name>
         <label>Beneficiaries Loop</label>
         <locationX>204</locationX>
-        <locationY>5966</locationY>
+        <locationY>6158</locationY>
         <collectionReference>beneficiaryRepeater.AllItems</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1247,7 +1312,7 @@
         <name>Subsidiaries_Loop</name>
         <label>Subsidiaries Loop</label>
         <locationX>204</locationX>
-        <locationY>6374</locationY>
+        <locationY>6566</locationY>
         <collectionReference>subsidiaryRepeater.AllItems</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1280,7 +1345,7 @@
         <name>Create_Beneficiaries</name>
         <label>Create Beneficiaries</label>
         <locationX>204</locationX>
-        <locationY>6266</locationY>
+        <locationY>6458</locationY>
         <connector>
             <targetReference>Subsidiaries_Loop</targetReference>
         </connector>
@@ -1290,7 +1355,7 @@
         <name>Create_Business_Risk_Assessment_Form</name>
         <label>Create Business Risk Assessment Form</label>
         <locationX>468</locationX>
-        <locationY>1298</locationY>
+        <locationY>1490</locationY>
         <connector>
             <targetReference>Get_Created_Business_Risk_Assessment</targetReference>
         </connector>
@@ -1325,7 +1390,7 @@
         <name>Create_Subsidiaries</name>
         <label>Create Subsidiaries</label>
         <locationX>204</locationX>
-        <locationY>6674</locationY>
+        <locationY>6866</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -1334,7 +1399,7 @@
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>534</locationX>
+        <locationX>336</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1363,7 +1428,7 @@
         <name>Get_Business_CAF_Record_Type</name>
         <label>Get Business CAF Record Type</label>
         <locationX>336</locationX>
-        <locationY>458</locationY>
+        <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>getAccountTeamMembers</targetReference>
@@ -1390,7 +1455,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>534</locationX>
+        <locationX>336</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1412,7 +1477,7 @@
         <name>Get_Created_Business_Risk_Assessment</name>
         <label>Get Created Business Risk Assessment</label>
         <locationX>468</locationX>
-        <locationY>1406</locationY>
+        <locationY>1598</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Business_Risk_Assesment_Form</targetReference>
@@ -1433,7 +1498,7 @@
         <name>get_User</name>
         <label>get User</label>
         <locationX>204</locationX>
-        <locationY>782</locationY>
+        <locationY>974</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>assignLifeCycleCoordinator</targetReference>
@@ -1454,7 +1519,7 @@
         <name>getAccountTeamMembers</name>
         <label>getAccountTeamMembers</label>
         <locationX>336</locationX>
-        <locationY>566</locationY>
+        <locationY>758</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_Lifecycle_coordinator</targetReference>
@@ -1482,7 +1547,7 @@
         <name>getBusinessRiskAssessmentForm</name>
         <label>getBusinessRiskAssessmentForm</label>
         <locationX>336</locationX>
-        <locationY>1082</locationY>
+        <locationY>1274</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_if_Form_is_Existing</targetReference>
@@ -1510,7 +1575,7 @@
         <name>Update_CAF</name>
         <label>Update CAF</label>
         <locationX>204</locationX>
-        <locationY>5858</locationY>
+        <locationY>6050</locationY>
         <connector>
             <targetReference>Beneficiaries_Loop</targetReference>
         </connector>
@@ -1520,7 +1585,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>204</locationX>
-        <locationY>6782</locationY>
+        <locationY>6974</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -1541,7 +1606,7 @@
         <name>Update_Client_Acceptance_Form_Page_2</name>
         <label>Update Client Acceptance Form Page 2</label>
         <locationX>204</locationX>
-        <locationY>2246</locationY>
+        <locationY>2438</locationY>
         <connector>
             <targetReference>Page_2_5</targetReference>
         </connector>
@@ -1551,7 +1616,7 @@
         <name>Update_Client_Acceptance_Form_Page_2_5</name>
         <label>Update Client Acceptance Form Page 2.5</label>
         <locationX>182</locationX>
-        <locationY>3170</locationY>
+        <locationY>3362</locationY>
         <connector>
             <targetReference>Page_3</targetReference>
         </connector>
@@ -1561,7 +1626,7 @@
         <name>Update_Client_Acceptance_Form_Page_3</name>
         <label>Update Client Acceptance Form Page 3</label>
         <locationX>204</locationX>
-        <locationY>3686</locationY>
+        <locationY>3878</locationY>
         <connector>
             <targetReference>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</targetReference>
         </connector>
@@ -1571,7 +1636,7 @@
         <name>Update_Client_Acceptance_Form_Page_4_5</name>
         <label>Update Client Acceptance Form Page 4-5</label>
         <locationX>204</locationX>
-        <locationY>4202</locationY>
+        <locationY>4394</locationY>
         <connector>
             <targetReference>Page_6_BENEFICIARIES</targetReference>
         </connector>
@@ -1581,7 +1646,7 @@
         <name>Update_Client_Acceptance_Form_Page_6</name>
         <label>Update Client Acceptance Form Page 6</label>
         <locationX>204</locationX>
-        <locationY>4718</locationY>
+        <locationY>4910</locationY>
         <connector>
             <targetReference>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</targetReference>
         </connector>
@@ -1591,40 +1656,38 @@
         <name>Update_Client_Acceptance_Form_Page_7</name>
         <label>Update Client Acceptance Form Page 7</label>
         <locationX>204</locationX>
-        <locationY>5234</locationY>
+        <locationY>5426</locationY>
         <connector>
             <targetReference>Page_8_CONCLUSION</targetReference>
         </connector>
         <inputReference>clientAcceptanceForm</inputReference>
     </recordUpdates>
     <screens>
-        <name>Close_Screen</name>
-        <label>Close Screen</label>
-        <locationX>732</locationX>
-        <locationY>458</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Error_Message</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
         <name>Page_1</name>
         <label>Page 1 - GENERAL</label>
         <locationX>336</locationX>
-        <locationY>1706</locationY>
+        <locationY>1898</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_1_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>wTxt1</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_1_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -2010,13 +2073,28 @@
         <name>Page_2</name>
         <label>Page 2 - CP CONTACTS, NATURE OF ASSIGNMENT, CHANGE OF ADVISOR</label>
         <locationX>336</locationX>
-        <locationY>1922</locationY>
+        <locationY>2114</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_2_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>wTxt2</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_2_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -2479,13 +2557,28 @@
         <name>Page_2_5</name>
         <label>Page 2.5 - REGULATIONS</label>
         <locationX>336</locationX>
-        <locationY>2438</locationY>
+        <locationY>2630</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_2_5_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>wTxt3</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_2_5_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -3382,13 +3475,28 @@
         <name>Page_3</name>
         <label>Page 3 - INTEGRITY, FINANCIAL RISK</label>
         <locationX>336</locationX>
-        <locationY>3362</locationY>
+        <locationY>3554</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_3_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>wTxt4</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_3_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -4287,13 +4395,28 @@
         <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</name>
         <label>Page 4-5 - MONEY LAUNDERING RISK ASSESSMENT</label>
         <locationX>336</locationX>
-        <locationY>3878</locationY>
+        <locationY>4070</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Copy_3_of_Check_Approved</targetReference>
         </connector>
+        <fields>
+            <name>wTxt5</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -5438,13 +5561,28 @@
         <name>Page_6_BENEFICIARIES</name>
         <label>Page 6 - BENEFICIARIES</label>
         <locationX>336</locationX>
-        <locationY>4394</locationY>
+        <locationY>4586</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Copy_4_of_Check_Approved</targetReference>
         </connector>
+        <fields>
+            <name>wTxt6</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_6_BENEFICIARIES_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -6121,13 +6259,28 @@
         <name>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</name>
         <label>Page 7 - OBJECTIVITY / CONFLICTS OF INTEREST</label>
         <locationX>336</locationX>
-        <locationY>4910</locationY>
+        <locationY>5102</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_7_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>wTxt7</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -6935,13 +7088,28 @@
         <name>Page_8_CONCLUSION</name>
         <label>Page 8 - CONCLUSION</label>
         <locationX>336</locationX>
-        <locationY>5426</locationY>
+        <locationY>5618</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_9_APPENDIX</targetReference>
         </connector>
+        <fields>
+            <name>wTxt8</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_8_CONCLUSION_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -7320,13 +7488,28 @@
         <name>Page_9_APPENDIX</name>
         <label>Page 9 - APPENDIX</label>
         <locationX>336</locationX>
-        <locationY>5534</locationY>
+        <locationY>5726</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Copy_6_of_Check_Approved</targetReference>
         </connector>
+        <fields>
+            <name>wTxt9</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>displaySubmittedBanner</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <fields>
             <name>Page_9_APPENDIX_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -7433,7 +7616,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>408</locationX>
+        <locationX>210</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
@@ -7463,6 +7646,13 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Client_Acceptance_Form__c</objectType>
+    </variables>
+    <variables>
+        <name>displaySubmittedBanner</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>fileId</name>
