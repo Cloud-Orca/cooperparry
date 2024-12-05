@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>attachSalesInvoicePdf__c</fullName>
+    <description>Attach Sales Invoice PDF</description>
     <externalId>false</externalId>
     <formula>&quot;&amp;solmgr=1&quot; + &quot;&amp;id=&quot; + Id + &quot;&amp;QueryId=[SIPT1]0Q_0932AK074838,[SIIG]0Q_0942AK074838,[SILIG]0Q_0952AK074838,[SID]0Q_0962AK074838,[SIVTC]0Q_0972AK074838,[SIDST]0Q_0982AK074838,[SIPT4]0Q_0992AK074838,[SIILI]0Q_1002AK074838,[SIDST3]0Q_1012AK074838,[SICF]0Q_1022AK074838,[SIPT5]0Q_1032AK074838,[SIPT3]0Q_1042AK074838,[SIA]0Q_1052AK074838,[SIDST4]0Q_1062AK074839,[SILI]0Q_1072AK074839,[SIPT2]0Q_1082AK074839,[SIDST2]0Q_1092AK074839,[SIDSV]0Q_1102AK074839,[SIDTL]0Q_1112AK074839,[SILIC]0Q_1122AK074839,[SICTC1]0Q_1132AK074839,[SICTC2]0Q_1142AK074839,[SIWTDTL]0Q_1152AK074839,[SIQR]0Q_1162AK074839&quot; + &quot;&amp;DefaultPDF=1&quot; + &quot;&amp;DS7=1&quot; + &quot;&amp;TemplateId=&quot; + ffaci__CongaTemplate__c + &quot;&amp;DV0=&quot; + IF ( ISPICKVAL(c2g__InvoiceStatus__c, &quot;Complete&quot;), &quot;&quot;, &quot;Draft&quot;) + &quot;&amp;CurrencyCulture=&quot; + ffaci__CurrencyCulture__c + &quot;&amp;DV1=&quot; + ffaci__CurrencyCulture__c + &quot;&amp;qmode=Attachments&quot; + &quot;&amp;OFN=CSR_&quot; + Name</formula>
     <label>Attach Sales Invoice PDF</label>
