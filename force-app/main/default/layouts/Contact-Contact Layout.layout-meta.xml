@@ -53,6 +53,10 @@
                 <behavior>Edit</behavior>
                 <field>Job_Title__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Field_Advocacy_Survey_Send_Month__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
