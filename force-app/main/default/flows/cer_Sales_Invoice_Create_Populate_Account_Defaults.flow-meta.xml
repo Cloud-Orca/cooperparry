@@ -4,8 +4,8 @@
     <decisions>
         <name>Account_Default_Populated</name>
         <label>Account Default Populated?</label>
-        <locationX>314</locationX>
-        <locationY>431</locationY>
+        <locationX>572</locationX>
+        <locationY>384</locationY>
         <defaultConnector>
             <targetReference>Get_Metadata</targetReference>
         </defaultConnector>
@@ -55,8 +55,8 @@
     <decisions>
         <name>Missing_Data</name>
         <label>Missing Data</label>
-        <locationX>314</locationX>
-        <locationY>539</locationY>
+        <locationX>572</locationX>
+        <locationY>492</locationY>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Is_Trading_Currency_Missing</name>
@@ -115,8 +115,8 @@
     <recordLookups>
         <name>Get_Account_Info</name>
         <label>Get Account Info</label>
-        <locationX>314</locationX>
-        <locationY>323</locationY>
+        <locationX>572</locationX>
+        <locationY>276</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Account_Default_Populated</targetReference>
@@ -136,8 +136,8 @@
     <recordLookups>
         <name>Get_Metadata</name>
         <label>Get Metadata</label>
-        <locationX>842</locationX>
-        <locationY>539</locationY>
+        <locationX>1100</locationX>
+        <locationY>492</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_all_Defaults</targetReference>
@@ -157,8 +157,8 @@
     <recordLookups>
         <name>Get_Metadata2</name>
         <label>Get Metadata2</label>
-        <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationX>572</locationX>
+        <locationY>600</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Account_AR</targetReference>
@@ -178,8 +178,8 @@
     <recordUpdates>
         <name>Update_Account_AR</name>
         <label>Update Account AR</label>
-        <locationX>314</locationX>
-        <locationY>755</locationY>
+        <locationX>572</locationX>
+        <locationY>708</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -199,8 +199,8 @@
     <recordUpdates>
         <name>Update_all_Defaults</name>
         <label>Update all Defaults</label>
-        <locationX>842</locationX>
-        <locationY>647</locationY>
+        <locationX>1100</locationX>
+        <locationY>600</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -232,8 +232,8 @@
     <recordUpdates>
         <name>Update_Trading_Currency</name>
         <label>Update Trading Currency</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
+        <locationX>308</locationX>
+        <locationY>600</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -251,14 +251,21 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>188</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>Get_Account_Info</targetReference>
-        </connector>
         <object>c2g__codaInvoice__c</object>
         <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <name>Add_1_Min_Delay</name>
+            <connector>
+                <targetReference>Get_Account_Info</targetReference>
+            </connector>
+            <label>Add 1 Min Delay</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>
