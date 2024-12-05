@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>cer_Email_Sales_Invoice_Batch__c</fullName>
+    <description>Email Sales Invoice Batch</description>
     <externalId>false</externalId>
     <formula>&quot;&amp;solmgr=1&quot; + 
 &quot;&amp;id=&quot; + Id +
@@ -26,7 +27,6 @@
 &quot;&amp;qvar1id=aF2KO000000GmcV&quot; +
 &quot;&amp;SC0=1&quot; +
 &quot;&amp;SC1=SalesforceFile&quot;</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Email Sales Invoice Batch</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
