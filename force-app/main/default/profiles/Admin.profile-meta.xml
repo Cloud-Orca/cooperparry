@@ -3560,6 +3560,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Field_Advocacy_Survey_Send_Month__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Inactive__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4061,6 +4066,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Corporate_PE_Association__c.Corporate_Finance_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Data_Origination__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5734,6 +5744,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Data_Origination__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Task.Meeting_Subtype__c</field>
         <readable>false</readable>
@@ -5811,6 +5826,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Transaction__e.TransactionType__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Transaction__e.Transaction_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Transaction__e.Transaction_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13251,6 +13276,9 @@
         <layout>Corporate_PE_Association__c-Corporate PE Association Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Data_Origination__c-Data Origination Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Event-Event Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -13629,6 +13657,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Corporate_PE_Association__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Data_Origination__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
