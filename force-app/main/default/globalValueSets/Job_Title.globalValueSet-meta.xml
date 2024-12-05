@@ -36,9 +36,9 @@
         <label>Company Secretary</label>
     </customValue>
     <customValue>
-        <fullName>Director,Finance Director</fullName>
+        <fullName>Director</fullName>
         <default>false</default>
-        <label>Director,Finance Director</label>
+        <label>Director</label>
     </customValue>
     <customValue>
         <fullName>Finance Controller</fullName>
@@ -124,6 +124,11 @@
         <fullName>VP of Finance</fullName>
         <default>false</default>
         <label>VP of Finance</label>
+    </customValue>
+    <customValue>
+        <fullName>Finance Director</fullName>
+        <default>false</default>
+        <label>Finance Director</label>
     </customValue>
     <masterLabel>Job Title</masterLabel>
     <sorted>false</sorted>
