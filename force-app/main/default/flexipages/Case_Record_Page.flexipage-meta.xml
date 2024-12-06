@@ -142,6 +142,9 @@
                             <value>Case.Declined_Case</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>CustomButton.Case.SendWithDocuSign</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Delete</value>
                         </valueListItems>
                     </valueList>
