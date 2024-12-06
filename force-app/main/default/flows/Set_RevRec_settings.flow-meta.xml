@@ -244,6 +244,7 @@
             <label>Is changed and T&amp;M</label>
         </rules>
     </decisions>
+    <description>.</description>
     <environments>Default</environments>
     <interviewLabel>Set RevRec settings {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Set RevRec settings</label>
