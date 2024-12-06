@@ -615,6 +615,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Manual_Engagement_Pack_received__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Origin</picklist>
         <values>
             <fullName>Email</fullName>
