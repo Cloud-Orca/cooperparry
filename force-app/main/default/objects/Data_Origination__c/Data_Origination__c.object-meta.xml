@@ -143,7 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>false</enableActivities>
+    <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -155,9 +155,8 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Data Origination</label>
     <nameField>
-        <displayFormat>DO-{0000}</displayFormat>
         <label>Data Origination Name</label>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Data Originations</pluralLabel>
     <searchLayouts></searchLayouts>

@@ -4075,6 +4075,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Data_Origination__c.External_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.Data_Origination__c</field>
         <readable>true</readable>
     </fieldPermissions>
