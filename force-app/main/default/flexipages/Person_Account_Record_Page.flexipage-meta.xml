@@ -155,6 +155,12 @@
                 <identifier>RecordTax_Grading_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Data_Origination_Lookup__c</fieldItem>
+                <identifier>RecordData_Origination_Lookup__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
