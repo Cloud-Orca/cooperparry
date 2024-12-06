@@ -2,6 +2,42 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <decisions>
+        <name>Case_Closed_Reason_Complete</name>
+        <label>Case Closed Reason Complete</label>
+        <locationX>578</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Case_Close_Reason_Complete</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Closed_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Adhoc Check Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Closed_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Service Line Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Closed_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yearly Check Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Ongoing_Monitoring_Date</targetReference>
+            </connector>
+            <label>Case Close Reason = Complete</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Onboarded</name>
         <label>Onboarded?</label>
         <locationX>50</locationX>
@@ -19,7 +55,7 @@
             </conditions>
             <connector>
                 <isGoTo>true</isGoTo>
-                <targetReference>Update_Ongoing_Monitoring_Date</targetReference>
+                <targetReference>Copy_1_of_Update_Ongoing_Monitoring_Date</targetReference>
             </connector>
             <label>Yes Onboarded</label>
         </rules>
@@ -27,10 +63,10 @@
     <decisions>
         <name>Onboarding_Case</name>
         <label>Onboarding Case?</label>
-        <locationX>204</locationX>
+        <locationX>314</locationX>
         <locationY>323</locationY>
         <defaultConnector>
-            <targetReference>Update_Ongoing_Monitoring_Date</targetReference>
+            <targetReference>Case_Closed_Reason_Complete</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -56,7 +92,7 @@
         <expression>ADDMONTHS(TODAY(),12)</expression>
     </formulas>
     <interviewLabel>Case: Set {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Case: Set Ongoing Monitoring Date</label>
+    <label>Case: Set Ongoing Monitoring Date V2</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -77,10 +113,10 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Update_Ongoing_Monitoring_Date</name>
-        <label>Update Ongoing Monitoring Date</label>
-        <locationX>358</locationX>
-        <locationY>431</locationY>
+        <name>Copy_1_of_Update_Ongoing_Monitoring_Date</name>
+        <label>Copy 1 of Update Ongoing Monitoring Date</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -98,7 +134,7 @@
         <object>Account</object>
     </recordUpdates>
     <start>
-        <locationX>78</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Onboarding_Case</targetReference>
