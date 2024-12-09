@@ -56,4 +56,14 @@
         <default>false</default>
         <label>Tax Partner</label>
     </standardValue>
+    <standardValue>
+        <fullName>Project manager</fullName>
+        <default>false</default>
+        <label>Project manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales Performance Administrator</fullName>
+        <default>false</default>
+        <label>Sales Performance Administrator</label>
+    </standardValue>
 </StandardValueSet>
