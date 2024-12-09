@@ -53,28 +53,7 @@
             <assignToReference>fileIds</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>EngagemenLetter_upload.contentVersionIds</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>fileIds</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>KYCSmartSearch_upload.contentVersionIds</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>fileIds</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>NewClientForm_upload.contentVersionIds</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>fileIds</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>OtherOnboardingDocuments_upload.contentVersionIds</elementReference>
+                <elementReference>files_upload.contentVersionIds</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -519,13 +498,6 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>fileIds</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>068</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2103,40 +2075,8 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>g_txt1</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Does the Engagement Letter cover all services we currently provide?&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Attach a copy of the Engagement Letter below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Does the Engagement Letter cover all services we currently provide?&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Attach a copy of the Engagement Letter below:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>EngagemenLetter_upload</name>
-                    <extensionName>forceContent:fileUpload</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Upload File</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>multiple</name>
-                        <value>
-                            <booleanValue>false</booleanValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>recordId</name>
-                        <value>
-                            <elementReference>varForm.Id</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>contentVersionIds</name>
-                        <value>
-                            <elementReference>fileIds</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -2189,10 +2129,15 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column2</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>uploadTxt</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Documents&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Please Upload the following files:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Copy of Engagement Letter&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;New Client Form&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Company/KYC Smart Search&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Other Onboarding Docs&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>9</stringValue>
+                        <stringValue>8</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2200,10 +2145,42 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column3</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>files_upload</name>
+                    <extensionName>forceContent:fileUpload</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Upload Files</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>multiple</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>contentVersionIds</name>
+                        <value>
+                            <elementReference>fileIds</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>varForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>2</stringValue>
+                        <stringValue>3</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2266,37 +2243,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>h_txt3</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima;&quot;&gt;New Client Form&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>NewClientForm_upload</name>
-                    <extensionName>forceContent:fileUpload</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Supporting documents linking sub to parent including SmartSearch &amp; CAP Table</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>recordId</name>
-                        <value>
-                            <elementReference>varForm.Id</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>contentVersionIds</name>
-                        <value>
-                            <elementReference>fileIds</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2308,37 +2254,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column2</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>h_txt4</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;Company/KYC SmartSearch&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>KYCSmartSearch_upload</name>
-                    <extensionName>forceContent:fileUpload</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Supporting documents linking sub to parent including SmartSearch &amp; CAP Table</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>recordId</name>
-                        <value>
-                            <elementReference>varForm.Id</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>contentVersionIds</name>
-                        <value>
-                            <elementReference>fileIds</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2350,37 +2265,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>h_txt5</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;Other Onboarding Documents&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>OtherOnboardingDocuments_upload</name>
-                    <extensionName>forceContent:fileUpload</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Supporting documents linking sub to parent including SmartSearch &amp; CAP Table</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>recordId</name>
-                        <value>
-                            <elementReference>varForm.Id</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>contentVersionIds</name>
-                        <value>
-                            <elementReference>fileIds</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
