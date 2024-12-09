@@ -1,5 +1,5 @@
 <template>
-    <div class="slds-is-relative collection_wrapper slds-p-around_x-large" style="box-sizing: border-box;">
+    <div class="slds-card slds-is-relative collection_wrapper slds-p-around_x-large" style="box-sizing: border-box;">
         <div class="body">
             <template if:false={showResults}>
                 <lightning-input type="text" value={collectionId} label="Enter Collection Id"></lightning-input>
@@ -11,15 +11,26 @@
                     </div>
                 </template>
                 <template if:false={showSpinner}>
-                    <div class="result__wrapper" style="font-size: 18px;">
-                        Total of result/s pulled : <span style="font-weight: bold;">{total}</span> 
+                    <div class="result__wrapper" style="font-size: 14px;">
+                        <div class="collection-id__wrapper">
+                            <span>Collection Id: </span>
+                            <span class="label">{detail.id}</span>
+                        </div>
+                        <div class="collection-name__wrapper">
+                            <span>Collection Name: </span>
+                            <span class="label">{detail.name}</span>
+                        </div>
+                        <div class="collection-count__wrapper">
+                            <span >Related Companies: </span>
+                            <span class="label">{detail.count}</span>
+                        </div>
                     </div>
                 </template>
             </template>
         </div>
         <template if:false={showSpinner}>
             <div class="footer slds-m-top_small" style="text-align: right;margin-top: 1.5rem">
-                <lightning-button label="Cancel" onclick={onCancel} class="slds-m-left_x-small"></lightning-button>
+                <!-- <lightning-button label="Cancel" onclick={onCancel} class="slds-m-left_x-small"></lightning-button> -->
                 <template if:false={showResults}>
                     <lightning-button variant="brand" label="Proceed" onclick={onProceed} class="slds-m-left_x-small"></lightning-button>   
                 </template> 
