@@ -1,27 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <alerts>
-        <fullName>Send_Email_Notification_to_Onboarding_for_Engagement_Pack_Approval</fullName>
-        <ccEmails>onboarding@cooperparry.com</ccEmails>
-        <description>Send Email Notification to Onboarding for Engagement Pack Approval</description>
+    <fieldUpdates>
+        <fullName>Engagement_Pack_set_to_False</fullName>
+        <field>Engagement_Pack_Rejected__c</field>
+        <literalValue>0</literalValue>
+        <name>Engagement Pack set to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
         <protected>false</protected>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Engagement_Pack_Request</template>
-    </alerts>
-    <alerts>
-        <fullName>Send_Email_Notification_to_Onboarding_for_PEP</fullName>
-        <ccEmails>onboarding@cooperparry.com</ccEmails>
-        <description>Send Email Notification to Onboarding for Risk</description>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Engagement_Pack_set_to_True</fullName>
+        <field>Engagement_Pack_Rejected__c</field>
+        <literalValue>1</literalValue>
+        <name>Engagement Pack set to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
         <protected>false</protected>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Risk_Compliance_Approval_Request</template>
-    </alerts>
-    <alerts>
-        <fullName>Sent_Email_Notification_to_Onboarding</fullName>
-        <ccEmails>onboarding@cooperparry.com</ccEmails>
-        <description>Sent Email Notification to Onboarding</description>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Escalation_Rejected_set_to_False</fullName>
+        <field>Escalation_Rejected__c</field>
+        <literalValue>0</literalValue>
+        <name>Escalation Rejected set to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
         <protected>false</protected>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/PEP_SIP_RCA_Approval_Request</template>
-    </alerts>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Escalation_Rejected_set_to_True</fullName>
+        <field>Escalation_Rejected__c</field>
+        <literalValue>1</literalValue>
+        <name>Escalation Rejected set to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Form_Rejected_Set_to_False</fullName>
+        <field>Form_Rejected__c</field>
+        <literalValue>0</literalValue>
+        <name>Form Rejected Set to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Form_Rejected_Set_to_True</fullName>
+        <field>Form_Rejected__c</field>
+        <literalValue>1</literalValue>
+        <name>Form Rejected Set to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PEP_Rejected_Set_to_False</fullName>
+        <field>PEP_Rejected__c</field>
+        <literalValue>0</literalValue>
+        <name>PEP Rejected Set to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PEP_Rejected_Set_to_True</fullName>
+        <field>PEP_Rejected__c</field>
+        <literalValue>1</literalValue>
+        <name>PEP Rejected Set to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Partner_Rejected_Set_to_False</fullName>
+        <field>Partner_Rejected__c</field>
+        <literalValue>0</literalValue>
+        <name>Partner Rejected Set to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Partner_Rejected_Set_to_True</fullName>
+        <field>Partner_Rejected__c</field>
+        <literalValue>1</literalValue>
+        <name>Partner Rejected Set to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Risk_Rejected_Set_to_False</fullName>
+        <field>Risk_Rejected__c</field>
+        <literalValue>0</literalValue>
+        <name>Risk Rejected Set to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
 </Workflow>
