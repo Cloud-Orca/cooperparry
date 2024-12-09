@@ -114,6 +114,18 @@
                 <identifier>RecordNotes__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.BD__c</fieldItem>
+                <identifier>RecordBD__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.First_Meeting_Date__c</fieldItem>
+                <identifier>RecordFirst_Meeting_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e3812b5a-b809-4d1d-827d-dac92a98fd9b</name>
         <type>Facet</type>
     </flexiPageRegions>
