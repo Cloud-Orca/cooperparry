@@ -157,6 +157,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Data_Origination_Lookup__c</fieldItem>
                 <identifier>RecordData_Origination_Lookup__cField</identifier>
             </fieldInstance>
@@ -243,6 +247,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Primary_Sector__c</fieldItem>
                 <identifier>RecordPrimary_Sector_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Linkedin__pc</fieldItem>
+                <identifier>RecordLinkedin_pcField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
