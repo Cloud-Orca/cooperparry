@@ -165,6 +165,26 @@
                 <identifier>RecordData_Origination_Lookup__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_pcField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_pcField2</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
