@@ -1124,7 +1124,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>Name</field>
             <value>
-                <elementReference>Referral_name</elementReference>
+                <elementReference>External_Referral_Name</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1265,7 +1265,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <inputAssignments>
             <field>Name</field>
             <value>
-                <elementReference>Referral_name</elementReference>
+                <elementReference>External_Referral_Name</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2089,6 +2089,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <choiceReferences>Partnership</choiceReferences>
             <choiceReferences>Service_Line</choiceReferences>
             <choiceReferences>Deals</choiceReferences>
+            <choiceReferences>Networking</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Referral Type</fieldText>
             <fieldType>DropdownBox</fieldType>
@@ -2512,6 +2513,14 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                     </rightValue>
                 </conditions>
             </visibilityRule>
+        </fields>
+        <fields>
+            <name>External_Referral_Name</name>
+            <dataType>String</dataType>
+            <fieldText>External Referral Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
         </fields>
         <fields>
             <name>Do_you_want_to_create_an_opportunity</name>
