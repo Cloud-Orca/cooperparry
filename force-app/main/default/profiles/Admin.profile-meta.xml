@@ -1695,6 +1695,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>BD_Meeting__c.First_Meeting_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>BD_Meeting__c.Incumbent__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3579,6 +3584,21 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Last_Advocacy_Survey_Send_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Last_R_D_Survey_Send_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Linkedin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Marketing_Description__c</field>
         <readable>false</readable>
@@ -4071,6 +4091,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Corporate_PE_Association__c.Corporate_Finance_Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Data_Origination__c.Data_Origination_Report__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

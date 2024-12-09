@@ -7,6 +7,11 @@
         <label>Account Manager</label>
     </standardValue>
     <standardValue>
+        <fullName>Audit Manager</fullName>
+        <default>false</default>
+        <label>Audit Manager</label>
+    </standardValue>
+    <standardValue>
         <fullName>Audit Partner</fullName>
         <default>false</default>
         <label>Audit Partner</label>
@@ -42,8 +47,23 @@
         <label>Risk Management</label>
     </standardValue>
     <standardValue>
+        <fullName>Tax Manager</fullName>
+        <default>false</default>
+        <label>Tax Manager</label>
+    </standardValue>
+    <standardValue>
         <fullName>Tax Partner</fullName>
         <default>false</default>
         <label>Tax Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Project manager</fullName>
+        <default>false</default>
+        <label>Project manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales Performance Administrator</fullName>
+        <default>false</default>
+        <label>Sales Performance Administrator</label>
     </standardValue>
 </StandardValueSet>

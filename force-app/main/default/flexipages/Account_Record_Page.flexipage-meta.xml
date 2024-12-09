@@ -750,6 +750,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Fee_Insurance_Taken__c</fieldItem>
+                <identifier>RecordFee_Insurance_Taken_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Acquisition_Marker__c</fieldItem>
                 <identifier>RecordAcquisition_Marker_cField</identifier>
             </fieldInstance>

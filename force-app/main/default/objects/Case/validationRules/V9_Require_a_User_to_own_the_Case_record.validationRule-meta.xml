@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V9_Require_a_User_to_own_the_Case_record</fullName>
+    <active>true</active>
+    <description>A user needs to own the Case record before moving through the Case stages</description>
+    <errorConditionFormula>AND(
+    NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+    ISCHANGED(Status),
+    LEFT(OwnerId, 3) = &apos;00G&apos;,
+    OR(
+        NOT(
+            OR(
+                TEXT(Status) = &apos;Initial Review&apos;,
+                TEXT(Status) = &apos;CAF Form Completion&apos;,
+                TEXT(Status) = &apos;Compliance Check&apos;,
+                TEXT(Status) = &apos;Client Review and Doc Gen&apos;
+            )
+        ),
+        AND(
+            TEXT(Status) = &apos;Closed&apos;,
+            NOT(
+                OR(
+                    TEXT( Closed_Reason__c ) = &apos;Onboarded&apos;,
+                    TEXT(Closed_Reason__c ) = &apos;Yearly Check Complete&apos;,
+                    TEXT(Closed_Reason__c ) = &apos;Adhoc Check Complete&apos;,
+                    TEXT(Closed_Reason__c ) = &apos;Service Line Complete&apos;
+                )
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>Please make sure the Case is owed by a user before moving stages</errorMessage>
+</ValidationRule>

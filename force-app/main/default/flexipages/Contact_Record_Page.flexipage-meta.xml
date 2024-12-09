@@ -92,6 +92,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Field_Advocacy_Survey_Send_Month__c</fieldItem>
                 <identifier>RecordField_Advocacy_Survey_Send_Month__cField</identifier>
             </fieldInstance>
@@ -128,6 +132,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Job_Title__c</fieldItem>
                 <identifier>RecordJob_Title_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Linkedin__c</fieldItem>
+                <identifier>RecordLinkedin_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-7d75c669-5359-4391-8c49-078d9b7fdc74</name>

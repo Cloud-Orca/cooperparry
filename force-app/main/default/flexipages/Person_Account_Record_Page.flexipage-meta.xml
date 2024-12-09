@@ -157,8 +157,32 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Data_Origination_Lookup__c</fieldItem>
                 <identifier>RecordData_Origination_Lookup__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_pcField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_pcField2</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
@@ -243,6 +267,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Primary_Sector__c</fieldItem>
                 <identifier>RecordPrimary_Sector_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Linkedin__pc</fieldItem>
+                <identifier>RecordLinkedin_pcField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
