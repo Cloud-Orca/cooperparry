@@ -30,6 +30,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaInvoice__c.cer_Consolidate_Invoice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaTransactionLineItem__c.cer_Milestone_Name__c</field>
         <readable>true</readable>
