@@ -126,6 +126,12 @@
                 <identifier>RecordFirst_Meeting_Date__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Meeting_Notes__c</fieldItem>
+                <identifier>RecordMeeting_Notes__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e3812b5a-b809-4d1d-827d-dac92a98fd9b</name>
         <type>Facet</type>
     </flexiPageRegions>
