@@ -608,7 +608,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Notes__c</field>
+            <field>Meeting_Notes__c</field>
             <value>
                 <elementReference>Notes</elementReference>
             </value>
