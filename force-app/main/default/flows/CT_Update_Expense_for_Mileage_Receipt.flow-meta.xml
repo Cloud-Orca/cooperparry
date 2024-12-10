@@ -72,7 +72,9 @@
     <formulas>
         <name>VAT</name>
         <dataType>Number</dataType>
-        <expression>{!$Record.pse__Amount__c}*({!VatRate}/100)</expression>
+        <expression>ROUND({!$Record.pse__Amount__c}-
+({!$Record.pse__Amount__c}
+/(({!VatRate}/100)+1)),2)</expression>
         <scale>2</scale>
     </formulas>
     <interviewLabel>CT Update Expense for Mileage Receipt {!$Flow.CurrentDateTime}</interviewLabel>
