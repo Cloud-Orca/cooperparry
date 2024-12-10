@@ -95,4 +95,11 @@ OR(ISCHANGED({!$Record.pse__Closed_for_Expense_Entry__c}), ISCHANGED({!$Record.p
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>fix</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
