@@ -8,11 +8,6 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>pse__Incurred_Tax__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>pse__Lost_Receipt__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
