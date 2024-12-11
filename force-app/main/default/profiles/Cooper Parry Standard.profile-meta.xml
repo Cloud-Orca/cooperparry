@@ -301,6 +301,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CreateLeadsFromBHBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreateLeadsFromBHBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ForgotPasswordController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -314,6 +322,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>GetBeauhurstCompaniesTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GetCompanyCollectionBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GetCompanyCollectionBatchTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -429,11 +445,11 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>UploadLeadController</apexClass>
+        <apexClass>UpdateLeadsFromBHBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>UploadLeadControllerTest</apexClass>
+        <apexClass>UpdateLeadsFromBHBatchTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1234,6 +1250,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Risk_Level_to_Account__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.SIC_Codes__c</field>
         <readable>true</readable>
@@ -1430,23 +1451,23 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.c2g__CODAAccountTradingCurrency__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.c2g__CODAInvoiceEmail__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.c2g__CODAVATStatus__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Account.cer_Account_Trading_Currency__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.cer_Chasing_Notes_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.cer_Chasing_Notes_Modified_By2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.cer_Chasing_Notes__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1466,6 +1487,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>AccountTag__c.Tag_Lookup__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AccountTeamMember.External_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Accounting_Default__mdt.cer_Account_Receivable_ID__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3574,6 +3605,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.External_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Field_Advocacy_Survey_Send_Month__c</field>
         <readable>true</readable>
@@ -4415,11 +4451,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.Disqualification_Explanation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Lead.Disqualification_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5184,6 +5215,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.External_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Fee_Amount__c</field>
         <readable>true</readable>
@@ -5929,6 +5965,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>appirio_core__Config_Option__c.External_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaBankAccount__c.cer_Primary_Bank_Account__c</field>
         <readable>false</readable>
@@ -6325,6 +6366,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>c2g__codaCreditNoteLineItem__c.cer_Milestone_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaCreditNoteLineItem__c.cer_Milestone_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>c2g__codaCreditNote__c.cer_Auto_Post__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -6336,6 +6387,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaCreditNote__c.cer_Email_Sent__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaInvoiceLineItem__c.cer_Milestone_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaInvoiceLineItem__c.cer_Milestone_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6900,6 +6961,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>c2g__codaInvoice__c.cer_Consolidate_Invoice__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sales_Invoice_Batch__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -7006,346 +7072,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaInvoice__c.ffrrtemplate__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.FFX_Revenue_Recognition_Transaction_Line__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__AccountAnalysis__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__AccountReference__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__AccountValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Account__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__ArchivingGLAKey__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__BankAccountValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__BankAccount__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__CorrelationId__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Credits__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__DebitCredit__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Debits__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__DeriveLineNumber__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__DestinationCompany__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__DestinationLineType__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Dimension1Value__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Dimension1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Dimension2Value__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Dimension2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Dimension3Value__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Dimension3__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Dimension4Value__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Dimension4__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__DualRate__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__DualValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__ExcludefromCashFlow__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__ExternalId__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__GeneralLedgerAccountValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__GeneralLedgerAccount__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__HomeValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__IntercompanyTransfer__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__JournalRate__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__LineDescription__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__LineNumber__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__LineType__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__LocalGLAValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__LocalGLA__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__OwnerCompany__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__ProductAnalysis__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__Product__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__ReportingRate__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__ReportingValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__TaxAnalysis1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__TaxAnalysis2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__TaxAnalysis3__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__TaxCode__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__TaxValue1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__TaxValue2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__TaxValue3__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__TaxableValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__UnitOfWork__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__VendorValue__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.c2g__YearEndCriterionIdentifier__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__Analysis1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__Analysis2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__Analysis3__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__Analysis4__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__AutomaticallyPassToPSA__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__JournalCurrency__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__JournalDate__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__MiscellaneousAdjustmentName__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__PassedToPSA__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__Project__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__SendToPSA__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.ffpsai__TransactionCategory__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.link_FFRR_errors__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.link_FFRR_id__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaJournalLineItem__c.link_FFRR_state__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7631,6 +7357,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaJournal__c.link_FFRR_state__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>c2g__codaTransactionLineItem__c.cer_Milestone_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8329,7 +8060,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>ffscpq__Estimate__c.ffscpq__Is_Template__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -9055,6 +8786,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Billing_Event_Item__c.Accounting_Line_Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Billing_Event__c.Approval_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -9070,7 +8806,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Billing_Event__c.CT_Notes_for_Finance__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Billing_Event__c.CT_Project_Partner_approval_required__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Billing_Event__c.cer_Consolidate_Invoice__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -9220,6 +8966,221 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__AutomaticallyPassToAccounting__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__EligibleforPayableCreditNote__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__EligibleforPayableInvoice__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__ExpenseGLACode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__ExpenseReimbursementAccount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__ExpenseReportCurrency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__OwnerCompany__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__PassedToAccounting__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.ffpsai__ServicesProduct__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.psaws__Is_Resource_Current_User__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Action_Check_Include_In_Financials__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Admin_Global_Edit__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Approved__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Approver__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Assignment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Audit_Notes_History__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Audit_Notes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Billable__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Billed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Disable_Approval_Auto_Submit__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Exclude_from_Billing__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Expense_Report_Reference__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__First_Expense_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Include_In_Financials__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Invoiced__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Last_Expense_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Milestone__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Override_Group__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Override_Practice__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Override_Region__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Project_Expense_Notes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Project_Methodology__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Project_Phase__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Project__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Reimbursement_Currency__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Resource__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Submitted__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Third_Party_Expenses_App_Report_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Total_Billable_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Total_Non_Billable_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense_Report__c.pse__Total_Reimbursement_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Expense__c.CT_Expense_VAT_Rate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -9232,6 +9193,11 @@
         <editable>true</editable>
         <field>pse__Expense__c.CT_Number_of_Nights__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Expense__c.External_ID__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -9715,6 +9681,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Milestone__c.CP_Total_Costs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.CT_Actual_Recovery_Rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Milestone__c.CT_Assigned_Hours__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -9751,6 +9727,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Milestone__c.CT_Total_Submitted_Hours_Bill_Rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.External_ID__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -9815,7 +9796,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Milestone__c.Project_Access__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.Recalculate_Access__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Milestone__c.Recovery_rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.Recurring__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -10590,6 +10586,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Practice__c.CT_Default_Recognition_Template__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Practice__c.CT_Expected_Recovery_Rate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -10601,6 +10602,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Practice__c.CT_Practice_Full_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Practice__c.CT_Project_or_Milestone_Recognition__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -11095,6 +11101,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CP_Total_Costs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.CT_Actual_Recovery_Rate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -11130,6 +11141,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CT_Patent_Box_Complete__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.CT_Patent_Box_Stage__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.CT_Percent_Complete_Budget__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -11160,6 +11181,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.CT_Recalculate_Access__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.CT_Recognisable_Value__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -11181,6 +11207,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Year_End_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.External_ID__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -11336,6 +11367,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.Original_Fee_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Recalculate_Access__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.Unapproved_only_for_data_migration__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12255,6 +12296,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Resource_Request__c.Unapproved_only_for_data_migration__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Resource_Request__c.ffscpq__Estimate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -12676,6 +12722,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.CT_Suggested_Bill_Rate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard_Header__c.External_ID__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13203,6 +13254,9 @@
         <layout>AccountTag__c-AccountTag Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Accounting_Default__mdt-Accounting Default Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Associations__c-Association Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -13274,9 +13328,6 @@
         <recordType>Case.Yearly_Check</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>CaseInteraction-Case Feed Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Client_Acceptance_Form__c-Client Acceptance Form Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -13336,6 +13387,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Event-Event Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Hide_Account_For_User__c-Hide Account For User Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lead-Lead Layout</layout>
@@ -13413,6 +13467,9 @@
         <layout>VC_Backed__c-VC Backed Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>appirio_core__Config_Option__c-appirio_core__Configuration Option Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>asp04__Authorisation__c-Certinia Customer Authorisation Layout</layout>
         <recordType>asp04__Authorisation__c.asp04__Inbound</recordType>
     </layoutAssignments>
@@ -13425,6 +13482,9 @@
     <layoutAssignments>
         <layout>asp04__Payment__c-asp04__Payment Layout</layout>
         <recordType>asp04__Payment__c.asp04__Inbound</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>c2g__codaAccountingCurrency__c-c2g__Currency Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>c2g__codaBankAccount__c-c2g__Bank Layout</layout>
@@ -13442,7 +13502,13 @@
         <layout>c2g__codaTaxCode__c-c2g__Tax Code Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>c2g__codaTransactionLineItem__c-c2g__Transaction Line Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>c2g__codaTransaction__c-c2g__Transaction Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>fferpcore__AccountExtension__c-fferpcore__Account Extension Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>fferpcore__BillingDocument__c-fferpcore__Billing Document Layout</layout>
@@ -13464,6 +13530,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>pse__Assignment__c-FFX PSA Assignment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>pse__Billing_Event_Item__c-pse__Billing Event Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>pse__Billing_Event__c-FFX PSA Billing Event Layout</layout>
@@ -13797,7 +13866,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Case.Onboarding</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -13813,7 +13881,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Client_Acceptance_Form__c.Business</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -13824,7 +13891,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Contact.CRM_Contact</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -13891,10 +13957,6 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Account_Uploader</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>Beauhurst_App</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -13998,10 +14060,6 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>c2g__codaJournalLineItem__c</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>c2g__codaJournal__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -14023,6 +14081,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>pse__Billing_Event__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>pse__Expense_Report__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
