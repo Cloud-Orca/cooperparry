@@ -106,34 +106,9 @@
         <label>Law</label>
     </customValue>
     <customValue>
-        <fullName>Core Audit South</fullName>
+        <fullName>Legacy - DNU</fullName>
         <default>false</default>
-        <isActive>false</isActive>
-        <label>Core Audit South</label>
-    </customValue>
-    <customValue>
-        <fullName>Core Audit West</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Core Audit West</label>
-    </customValue>
-    <customValue>
-        <fullName>CP Law</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>CP Law</label>
-    </customValue>
-    <customValue>
-        <fullName>TBC</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>TBC</label>
-    </customValue>
-    <customValue>
-        <fullName>Patent Box</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Patent Box</label>
+        <label>Legacy - DNU</label>
     </customValue>
     <customValue>
         <fullName>Big Business Projects</fullName>
@@ -142,16 +117,46 @@
         <label>Big Business Projects</label>
     </customValue>
     <customValue>
-        <fullName>Core Audit East</fullName>
+        <fullName>Patent Box</fullName>
         <default>false</default>
         <isActive>false</isActive>
-        <label>Core Audit East</label>
+        <label>Patent Box</label>
+    </customValue>
+    <customValue>
+        <fullName>TBC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TBC</label>
+    </customValue>
+    <customValue>
+        <fullName>CP Law</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CP Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Audit West</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Core Audit West</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Audit South</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Core Audit South</label>
     </customValue>
     <customValue>
         <fullName>Shareholder Tax</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>Shareholder Tax</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Audit East</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Core Audit East</label>
     </customValue>
     <masterLabel>Type Area</masterLabel>
     <sorted>false</sorted>
