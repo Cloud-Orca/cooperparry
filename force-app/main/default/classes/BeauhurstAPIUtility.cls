@@ -16,12 +16,24 @@ public class BeauhurstAPIUtility {
             List<Account> accounts = [SELECT Id, Beauhurst_ID__c FROM Account WHERE Id =: accId LIMIT 1];
             if(!accounts.isEmpty()){
                 String append = '/companies?company_ids=' + accounts[0].Beauhurst_ID__c + '&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
-    
+                
                 Http http = new Http();
                 HttpResponse res = http.send(constructReq(append));
+
+                System.debug('@@@res status code: ' + res.getStatusCode());
+                System.debug('@@@res body: ' + res.getBody());
+
                 if(res.getStatusCode() == 200){
                     wrap.success = true;
-                    Response getData = (Response) JSON.deserialize(res.getBody(), Response.class);
+                    String resBody = res.getBody();
+                    
+                    String apiBody = resBody.replace(resBody.substringBetween('"turnover":', ','), '"' + resBody.substringBetween('"turnover":', ',') + '"')
+                    	  .replace(resBody.substringBetween('"ebitda":', ','), '"' + resBody.substringBetween('"ebitda":', ',') + '"')
+                    	  .replace(resBody.substringBetween('"total_assets":', ','), '"' + resBody.substringBetween('"total_assets":', ',') + '"');
+                    	//.replace(resBody.substringBetween('"audit_fees":', '}'), '"' + resBody.substringBetween('"audit_fees":', '}') + '"');
+                    System.debug('@@@apiBody: ' + apiBody);
+
+                    Response getData = (Response) JSON.deserialize(apiBody, Response.class);
                     if(!getData.results.isEmpty()){
                         Account acc = collectAccount(accounts[0].Id, getData.results[0]);
                         update acc;
@@ -74,9 +86,11 @@ public class BeauhurstAPIUtility {
             if(!classInfo.top_level_industry_groups.isEmpty()){
                 acc.Top_Level_Industry_Groups__c = listToString(classInfo.top_level_industry_groups);
             }
-            if(!classInfo.top_level_sector_groups.isEmpty()){
-                acc.Top_Level_Sector_Groups__c = listToString(classInfo.top_level_sector_groups);
-            }
+            if(classInfo.top_level_sector_groups != null){
+                if(!classInfo.top_level_sector_groups.isEmpty()){
+                    acc.Top_Level_Sector_Groups__c = listToString(classInfo.top_level_sector_groups);
+                }
+             }
             if(!classInfo.buzzwords.isEmpty()){
                 acc.Buzzwords__c = listToString(classInfo.buzzwords);
             }
@@ -133,7 +147,6 @@ public class BeauhurstAPIUtility {
         public Classification classification;
         public ContactInfo contact_information;
         public Accounts latest_accounts;
-        public List<Accounts> historic_accounts;
         public List<Director> directors;
     }
 
@@ -164,9 +177,9 @@ public class BeauhurstAPIUtility {
 
     public class Accounts{
         public String year_end_date;
-        public Integer turnover;
-        public Integer ebitda;
-        public Integer total_assets;
+        public String turnover;
+        public String ebitda;
+        public String total_assets;
         public Integer number_of_employees;
         public String auditor;
         public Integer audit_fees;
