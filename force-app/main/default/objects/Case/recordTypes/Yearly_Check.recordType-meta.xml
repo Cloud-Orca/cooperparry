@@ -23,6 +23,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Legacy - DNU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Tax</fullName>
             <default>false</default>
         </values>
@@ -187,6 +191,10 @@
         </values>
         <values>
             <fullName>Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy - DNU</fullName>
             <default>false</default>
         </values>
         <values>
@@ -498,6 +506,10 @@
         </values>
         <values>
             <fullName>Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy - DNU</fullName>
             <default>false</default>
         </values>
         <values>
