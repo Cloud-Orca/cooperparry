@@ -47,7 +47,15 @@ global class CreateAccountsFromBHBatch implements Database.Batchable<sObject>, D
         System.debug('@@@res body: ' + res.getBody());
 
         if(res.getStatusCode() == 200){
-            BeauhurstAPIUtility.Response getData = (BeauhurstAPIUtility.Response) JSON.deserialize(res.getBody(), BeauhurstAPIUtility.Response.class);
+            String resBody = res.getBody();
+                    
+            String apiBody = resBody.replace(resBody.substringBetween('"turnover":', ','), '"' + resBody.substringBetween('"turnover":', ',') + '"')
+                    .replace(resBody.substringBetween('"ebitda":', ','), '"' + resBody.substringBetween('"ebitda":', ',') + '"')
+                    .replace(resBody.substringBetween('"total_assets":', ','), '"' + resBody.substringBetween('"total_assets":', ',') + '"');
+                //.replace(resBody.substringBetween('"audit_fees":', '}'), '"' + resBody.substringBetween('"audit_fees":', '}') + '"');
+            System.debug('@@@apiBody: ' + apiBody);
+
+            BeauhurstAPIUtility.Response getData = (BeauhurstAPIUtility.Response) JSON.deserialize(apiBody, BeauhurstAPIUtility.Response.class);
             System.debug('@@@getData: ' + getData);
             if(!getData.results.isEmpty()){
                 List<User> users = [SELECT Id FROM User WHERE Name = 'Sal Mingoia' AND isActive = true LIMIT 1];
@@ -86,7 +94,6 @@ global class CreateAccountsFromBHBatch implements Database.Batchable<sObject>, D
         public String id;
         public Basic basic;
         public Accounts latest_accounts;
-        public List<Accounts> historic_accounts;
     }
 
     public class Basic{
@@ -96,8 +103,8 @@ global class CreateAccountsFromBHBatch implements Database.Batchable<sObject>, D
     }
 
     public class Accounts{
-        public Integer turnover;
-        public Integer ebitda;
-        public Integer total_assets;
+        public String turnover;
+        public String ebitda;
+        public String total_assets;
     }
 }

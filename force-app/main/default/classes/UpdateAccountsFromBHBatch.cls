@@ -47,7 +47,15 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
         System.debug('@@@UpdateAccountsFromBHBatch body: ' + res.getBody());
 
         if(res.getStatusCode() == 200){
-            BeauhurstAPIUtility.Response getData = (BeauhurstAPIUtility.Response) JSON.deserialize(res.getBody(), BeauhurstAPIUtility.Response.class);
+            String resBody = res.getBody();
+
+            String apiBody = resBody.replace(resBody.substringBetween('"turnover":', ','), '"' + resBody.substringBetween('"turnover":', ',') + '"')
+                    	  .replace(resBody.substringBetween('"ebitda":', ','), '"' + resBody.substringBetween('"ebitda":', ',') + '"')
+                    	  .replace(resBody.substringBetween('"total_assets":', ','), '"' + resBody.substringBetween('"total_assets":', ',') + '"');
+                    	//.replace(resBody.substringBetween('"audit_fees":', '}'), '"' + resBody.substringBetween('"audit_fees":', '}') + '"');
+            System.debug('@@@apiBody: ' + apiBody);
+
+            BeauhurstAPIUtility.Response getData = (BeauhurstAPIUtility.Response) JSON.deserialize(apiBody, BeauhurstAPIUtility.Response.class);
             if(!getData.results.isEmpty()){
                 Set<String> retrievedCompanyIds = new Set<String>();
                 Map<String, Id> bhIdToAccountIdMap = new Map<String, Id>();
