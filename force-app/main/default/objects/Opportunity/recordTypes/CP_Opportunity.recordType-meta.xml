@@ -167,6 +167,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Legacy - DNU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>MBO</fullName>
             <default>false</default>
         </values>
@@ -259,7 +263,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Private Business - Offshore</fullName>
+            <fullName>Private Business East - Offshore</fullName>
             <default>false</default>
         </values>
         <values>
@@ -756,6 +760,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Legacy - DNU</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Tax</fullName>
             <default>false</default>
         </values>
@@ -796,6 +804,10 @@
         </values>
         <values>
             <fullName>Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy - DNU</fullName>
             <default>false</default>
         </values>
         <values>
@@ -863,6 +875,10 @@
         </values>
         <values>
             <fullName>Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy - DNU</fullName>
             <default>false</default>
         </values>
         <values>

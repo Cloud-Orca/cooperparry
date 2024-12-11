@@ -26,6 +26,11 @@
         <label>Law</label>
     </customValue>
     <customValue>
+        <fullName>Legacy - DNU</fullName>
+        <default>false</default>
+        <label>Legacy - DNU</label>
+    </customValue>
+    <customValue>
         <fullName>Total Law</fullName>
         <default>false</default>
         <isActive>false</isActive>
@@ -36,6 +41,12 @@
         <default>false</default>
         <isActive>false</isActive>
         <label>TBC</label>
+    </customValue>
+    <customValue>
+        <fullName>Total Deals</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Total Deals</label>
     </customValue>
     <masterLabel>Lead Area</masterLabel>
     <sorted>false</sorted>
