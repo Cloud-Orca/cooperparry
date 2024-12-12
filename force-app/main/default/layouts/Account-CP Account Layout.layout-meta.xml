@@ -59,6 +59,10 @@
                 <behavior>Edit</behavior>
                 <field>Data_Origination_Lookup__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Account_Status__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
