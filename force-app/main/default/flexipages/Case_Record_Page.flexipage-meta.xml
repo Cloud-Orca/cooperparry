@@ -77,9 +77,6 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Case.Send_to_Risk</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Case.Escalation</value>
                         </valueListItems>
                         <valueListItems>
@@ -134,9 +131,6 @@
                                     <rightValue>Compliance Check</rightValue>
                                 </criteria>
                             </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Case.Send_to_Compliance</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Declined_Case</value>
