@@ -5,7 +5,7 @@ global with sharing class BatchCompHouseUpdateAccAndOfficer implements Database.
     }
 
     global Database.QueryLocator start(Database.BatchableContext BC){
-        String query = 'SELECT Id, Company_registration_number__c, Companies_House_Id__c, (SELECT Id, Officer_Key__c FROM Officers__r WHERE Officer_Key__c != null) FROM Account WHERE Companies_House_Id__c != null';
+        String query = 'SELECT Id, Company_registration_number__c, Companies_House_Id__c, Beauhurst_ID__c, (SELECT Id, Officer_Key__c FROM Officers__r WHERE Officer_Key__c != null) FROM Account WHERE Beauhurst_ID__c != null';
 
         if( ids.size() > 0 ){
             query += ' AND Id IN : ids';
@@ -21,17 +21,17 @@ global with sharing class BatchCompHouseUpdateAccAndOfficer implements Database.
         
         Account account = accountList.get(0);
         if(companyHouseSetting.Auto_Update_Accounts__c){
-            String responseDetails = CompaniesHouseController.getCompanyByNumber(account.Companies_House_Id__c);
+            String responseDetails = CompaniesHouseController.getCompanyByNumber(account.Beauhurst_ID__c);
             CompaniesHouseController.ResponseWrapper responseWrapp = (CompaniesHouseController.ResponseWrapper) JSON.deserialize(responseDetails, CompaniesHouseController.ResponseWrapper.class);
             if(responseWrapp.statusCode == 200){
 
-                String responseDetails2 = CompaniesHouseController.getCompanyOfficers(account.Companies_House_Id__c);
+                String responseDetails2 = CompaniesHouseController.getCompanyOfficers(account.Beauhurst_ID__c);
                 CompaniesHouseController.ResponseWrapper responseWrapp2 = (CompaniesHouseController.ResponseWrapper) JSON.deserialize(responseDetails2, CompaniesHouseController.ResponseWrapper.class);
                 if(responseWrapp2.statusCode == 200){
                     CompaniesHouse_AccountFieldMapping.Officers_Request_Data offReqData =  (CompaniesHouse_AccountFieldMapping.Officers_Request_Data) JSON.deserialize(responseWrapp2.body, CompaniesHouse_AccountFieldMapping.Officers_Request_Data.class);
                     String jsonOfficers = JSON.serialize(offReqData);
 
-                    Account updatedAccount = CompaniesHouse_AccountFieldMapping.updateAccountFields(account.Id, account.Companies_House_Id__c, responseWrapp.body, false, jsonOfficers);
+                    Account updatedAccount = CompaniesHouse_AccountFieldMapping.updateAccountFields(account.Id, account.Beauhurst_ID__c, responseWrapp.body, false, jsonOfficers);
                     accountListToUpdate.add(updatedAccount);
                 }
             }
@@ -39,7 +39,7 @@ global with sharing class BatchCompHouseUpdateAccAndOfficer implements Database.
 
         if(companyHouseSetting.Auto_Update_Contacts__c){
             if(!accountList.get(0).Contacts.isEmpty()){
-                String responseDetails = CompaniesHouseController.getCompanyOfficers(account.Companies_House_Id__c);
+                String responseDetails = CompaniesHouseController.getCompanyOfficers(account.Beauhurst_ID__c);
                 CompaniesHouseController.ResponseWrapper responseWrapp = (CompaniesHouseController.ResponseWrapper) JSON.deserialize(responseDetails, CompaniesHouseController.ResponseWrapper.class);
                 if(responseWrapp.statusCode == 200){
                     List<Officer__c> officerList = CompaniesHouse_OfficerFieldMapping.updateOfficerFields(account.Id, responseWrapp.body, false);
