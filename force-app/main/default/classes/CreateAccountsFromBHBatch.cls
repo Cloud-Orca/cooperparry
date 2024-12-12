@@ -47,35 +47,33 @@ global class CreateAccountsFromBHBatch implements Database.Batchable<sObject>, D
         System.debug('@@@res body: ' + res.getBody());
 
         if(res.getStatusCode() == 200){
-            String resBody = res.getBody();
-                    
-            String apiBody = resBody.replace(resBody.substringBetween('"turnover":', ','), '"' + resBody.substringBetween('"turnover":', ',') + '"')
-                    .replace(resBody.substringBetween('"ebitda":', ','), '"' + resBody.substringBetween('"ebitda":', ',') + '"')
-                    .replace(resBody.substringBetween('"total_assets":', ','), '"' + resBody.substringBetween('"total_assets":', ',') + '"');
-                //.replace(resBody.substringBetween('"audit_fees":', '}'), '"' + resBody.substringBetween('"audit_fees":', '}') + '"');
-            System.debug('@@@apiBody: ' + apiBody);
+            Map<String, Object> resp = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
+            List<Object> results = (List<Object>)resp.get('results');
 
-            BeauhurstAPIUtility.Response getData = (BeauhurstAPIUtility.Response) JSON.deserialize(apiBody, BeauhurstAPIUtility.Response.class);
-            System.debug('@@@getData: ' + getData);
-            if(!getData.results.isEmpty()){
+            if(results != null && results.size() > 0){
                 List<User> users = [SELECT Id FROM User WHERE Name = 'Sal Mingoia' AND isActive = true LIMIT 1];
                 System.debug('@@@users: ' + users);
                 if(!users.isEmpty()){
                     List<Account> accountsToInsert = new List<Account>();
-                    for(BeauhurstAPIUtility.Result result : getData.results){
-                        Account acc = BeauhurstAPIUtility.collectAccount(null, result);
-                        acc.Type = 'Target';
-                        if(beauhurstIdToCollectionNameMap.containsKey(result.id)){
-                            acc.BH_Collection_Name__c = beauhurstIdToCollectionNameMap.get(result.id);
+
+                    for(Object result : results){
+                        Map<String, Object> resultItem = (Map<String, Object>)result;
+                        if(resultItem.get('id') != null){
+                            String resultId = String.valueOf(resultItem.get('id'));
+                            Account acc = BeauhurstAPIUtility.collectAccount(null, resultItem);
+                            acc.Type = 'Target';
+                            if(beauhurstIdToCollectionNameMap.containsKey(resultId)){
+                                acc.BH_Collection_Name__c = beauhurstIdToCollectionNameMap.get(resultId);
+                            }
+                            acc.RecordTypeId = BeauhurstAPIUtility.getRecordTypeIdbyName('Account', 'Business Account');
+                            acc.OwnerId = users[0].Id;
+                            accountsToInsert.add(acc);
                         }
-                        acc.RecordTypeId = BeauhurstAPIUtility.getRecordTypeIdbyName('Account', 'Business Account');
-                        acc.OwnerId = users[0].Id;
-                        accountsToInsert.add(acc);
                     }
-                    
+
                     System.debug('@@@accountsToInsert: ' + accountsToInsert);
                     if(!accountsToInsert.isEmpty()){
-                        Database.SaveResult[] results = Database.insert(accountsToInsert, false);
+                        Database.SaveResult[] saveResults = Database.insert(accountsToInsert, false);
                     }
                 }
             }
