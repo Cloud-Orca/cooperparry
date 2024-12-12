@@ -34,6 +34,12 @@
         <locationX>176</locationX>
         <locationY>323</locationY>
         <inputAssignments>
+            <field>DocumentReference__c</field>
+            <value>
+                <elementReference>$Record.c2g__Reference__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Name__c</field>
             <value>
                 <elementReference>$Record.c2g__Transaction__r.Name</elementReference>
