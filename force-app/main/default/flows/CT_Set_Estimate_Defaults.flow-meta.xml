@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>CT Set Estimate Defaults {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CT Set Estimate Defaults</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Estimate_Defaults</name>
+        <label>Set Estimate Defaults</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>ffscpq__Account__c</field>
+            <value>
+                <elementReference>$Record.ffscpq__Opportunity__r.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ffscpq__Billing_Type__c</field>
+            <value>
+                <stringValue>Fixed Price</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ffscpq__Independent_Line_Set_Billing_Type__c</field>
+            <value>
+                <stringValue>Fixed Price</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ffscpq__Practice__c</field>
+            <value>
+                <elementReference>$Record.ffscpq__Opportunity__r.pse__Practice__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ffscpq__Region__c</field>
+            <value>
+                <elementReference>$Record.ffscpq__Opportunity__r.pse__Region__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Estimate_Defaults</targetReference>
+        </connector>
+        <object>ffscpq__Estimate__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -5,8 +5,9 @@
     <formulas>
         <name>ProjectName</name>
         <dataType>String</dataType>
-        <expression>IF({!$Record.pse__Account__r.IsPersonAccount==TRUE}, {!$Record.pse__Account__r.LastName}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})), 
-{!$Record.pse__Account__r.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})))</expression>
+        <expression>if(TEXT({!$Record.pse__Project_Type__c})==&apos;Internal&apos;,{!$Record.Name},
+IF({!$Record.pse__Account__r.IsPersonAccount==TRUE}, {!$Record.pse__Account__r.LastName}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})), 
+{!$Record.pse__Account__r.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c}))))</expression>
     </formulas>
     <interviewLabel>CT Set Default ProjectName {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CT Set Default ProjectName</label>
@@ -35,12 +36,6 @@
         <locationX>176</locationX>
         <locationY>287</locationY>
         <inputAssignments>
-            <field>CT_Generate_Default_Project_Name__c</field>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Name</field>
             <value>
                 <elementReference>ProjectName</elementReference>
@@ -63,7 +58,7 @@
             </value>
         </filters>
         <object>pse__Proj__c</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
