@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CP_Deals_Subsector__c</fullName>
+    <description>CP Deals Subsector</description>
+    <externalId>false</externalId>
+    <label>CP Deals Subsector</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>CP_Deals_Sector__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>CP_Deals_Subsector</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Engineering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Waste Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Digital Marketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Energy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Pensions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Manufacturing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Architecture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Professional Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Legal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Children&apos;s Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Healthcare &amp; Technology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Home Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Specialist Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Healthcare Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Automotive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Construction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Real Estate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrials</controllingFieldValue>
+            <valueName>Publishing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Digital Transformation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Cyber Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Data Analytics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Data Centres</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Ed Tech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Fin Tech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>HCM/HR Software</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Insurance Tech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>IT Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Property Tech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Health &amp; Safety Tech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Health Technology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>RegTech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>SaaS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <valueName>Technology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <valueName>Retail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <valueName>Supply Chain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <valueName>Components</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

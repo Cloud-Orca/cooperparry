@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assignment_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Assignment Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Opportunity_Type_Area__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Assignment_Type</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CP Innovation</controllingFieldValue>
+            <valueName>Research and development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CP Innovation</controllingFieldValue>
+            <valueName>THG - R&amp;D</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Charge</controllingFieldValue>
+            <valueName>Service Charge - Commercial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Charge</controllingFieldValue>
+            <valueName>Service Charge - Residential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Audit</controllingFieldValue>
+            <valueName>THG Accounting Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Audit</controllingFieldValue>
+            <valueName>THG Accounts Preparation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Audit</controllingFieldValue>
+            <valueName>THG Statutory Audit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Audit</controllingFieldValue>
+            <valueName>THG Statutory Audit - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Audit</controllingFieldValue>
+            <valueName>THG Sustainability Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Accounting MRR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Accounting One-Off</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Compliance MRR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Compliance One-Off</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Co-Sec One-Off</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Fundraising</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Onboarding MRR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Onboarding One-Off</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Payroll One-Off</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Self Assessment MRR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Self Assessment One-Off</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Strategic Finance MRR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Strategic One-Off</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>Tax MRR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <valueName>THG - Early Stage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Tax</controllingFieldValue>
+            <valueName>THG Business Tax Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Tax</controllingFieldValue>
+            <valueName>THG Business Tax Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Tax</controllingFieldValue>
+            <valueName>THG Employee Rewards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Tax</controllingFieldValue>
+            <valueName>THG Employment Taxes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Tax</controllingFieldValue>
+            <valueName>THG International</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THG Tax</controllingFieldValue>
+            <valueName>THG Tax Due Diligence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TS</controllingFieldValue>
+            <valueName>Buy Side FDD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TS</controllingFieldValue>
+            <valueName>Forecast FDD Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TS</controllingFieldValue>
+            <valueName>Sell Side FDD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT</controllingFieldValue>
+            <valueName>Due Diligence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT</controllingFieldValue>
+            <valueName>Reorganisations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT</controllingFieldValue>
+            <valueName>Transactions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>IDT Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>IDT Advisory/THG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>IDT Transactions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Contentious</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT MOT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Big Business Audit</controllingFieldValue>
+            <valueName>Big Business Audit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Big Business Audit</controllingFieldValue>
+            <valueName>Big Business - Audit Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>BT HMRC Enquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>BTA - Ad Hoc Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>Company structuring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>EPC - BTA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>EPC - PC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>General Tax Advice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>International</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>P11Ds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>Tax Due diligence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>Tax Products Aftercare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>Tax Secondments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <valueName>Transactions (excl DD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Compliance</controllingFieldValue>
+            <valueName>Business tax compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BT Compliance</controllingFieldValue>
+            <valueName>iXBRL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Capital Allowances</controllingFieldValue>
+            <valueName>Capital Allowance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CF</controllingFieldValue>
+            <valueName>Fundraise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CF</controllingFieldValue>
+            <valueName>MBO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CF</controllingFieldValue>
+            <valueName>PE Buy And Build</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CF</controllingFieldValue>
+            <valueName>PE Buy Side</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CF</controllingFieldValue>
+            <valueName>PE Disposal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CF</controllingFieldValue>
+            <valueName>Pre Sale Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CF</controllingFieldValue>
+            <valueName>Private Company Disposal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employer Rewards</controllingFieldValue>
+            <valueName>E / Tax Transactions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employer Rewards</controllingFieldValue>
+            <valueName>Employee Rewards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employer Rewards</controllingFieldValue>
+            <valueName>Employment Tax Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employer Rewards</controllingFieldValue>
+            <valueName>Employment Tax Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employer Rewards</controllingFieldValue>
+            <valueName>Employment Taxes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>Not For Profit - Audit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>Not For Profit - Internal Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>Not For Profit - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>Not For Profit - Projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <valueName>ES - Finance Team Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <valueName>ES - Project Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <valueName>ES - Year End Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <valueName>Fee Protection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <valueName>MM - AFR External</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <valueName>MM - AFR for CP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <valueName>MM - Finance Team Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <valueName>MM - Project Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <valueName>EPC - PCA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <valueName>PC HMRC Enquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <valueName>Private Client Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <valueName>Trust Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Accounts Prep - East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Accounts Prep - South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business South - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Accounts Prep - West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business West - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <valueName>PC Compliance Add-ons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <valueName>Private Client Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <valueName>Trust Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <valueName>Trustee</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Account Manager</fullName>
+        <default>false</default>
+        <label>Account Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Audit Manager</fullName>
+        <default>false</default>
+        <label>Audit Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Audit Partner</fullName>
+        <default>false</default>
+        <label>Audit Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BD Manager</fullName>
+        <default>false</default>
+        <label>BD Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Corporate Finance Partner</fullName>
+        <default>false</default>
+        <label>Corporate Finance Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lead Partner</fullName>
+        <default>false</default>
+        <label>Lead Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lifecycle Coordinator</fullName>
+        <default>false</default>
+        <label>Lifecycle Coordinator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Origination</fullName>
+        <default>false</default>
+        <label>Origination</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Risk Management</fullName>
+        <default>false</default>
+        <label>Risk Management</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tax Manager</fullName>
+        <default>false</default>
+        <label>Tax Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tax Partner</fullName>
+        <default>false</default>
+        <label>Tax Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Project manager</fullName>
+        <default>false</default>
+        <label>Project manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales Performance Administrator</fullName>
+        <default>false</default>
+        <label>Sales Performance Administrator</label>
+    </standardValue>
+</StandardValueSet>

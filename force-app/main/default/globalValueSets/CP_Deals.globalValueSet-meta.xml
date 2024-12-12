@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Business Services</fullName>
+        <default>false</default>
+        <label>Business Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare</fullName>
+        <default>false</default>
+        <label>Healthcare</label>
+    </customValue>
+    <customValue>
+        <fullName>Industrials</fullName>
+        <default>false</default>
+        <label>Industrials</label>
+    </customValue>
+    <customValue>
+        <fullName>Technology</fullName>
+        <default>false</default>
+        <label>Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Consumer</fullName>
+        <default>false</default>
+        <label>Consumer</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive</fullName>
+        <default>false</default>
+        <label>Automotive</label>
+    </customValue>
+    <customValue>
+        <fullName>Waste</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Waste</label>
+    </customValue>
+    <masterLabel>CP Deals</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

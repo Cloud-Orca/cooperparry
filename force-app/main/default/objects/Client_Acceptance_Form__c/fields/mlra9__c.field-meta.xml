@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>mlra9__c</fullName>
+    <description>If the client has been met please state which team member met them :</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the client has been met please state which team member met them :</inlineHelpText>
+    <label>If the client has been met please state</label>
+    <length>10000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

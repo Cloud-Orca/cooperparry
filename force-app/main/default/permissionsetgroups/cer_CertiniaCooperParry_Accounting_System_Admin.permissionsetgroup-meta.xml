@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Certinia:CooperParry - Accounting System Admin</label>
+    <permissionSets>asp04__AsperatoFullAdmin</permissionSets>
+    <permissionSets>c2g__AccountingBackgroundMatching</permissionSets>
+    <permissionSets>c2g__AccountingBalanceConfiguration</permissionSets>
+    <permissionSets>c2g__AccountingBankAccount</permissionSets>
+    <permissionSets>c2g__AccountingBankConnections</permissionSets>
+    <permissionSets>c2g__AccountingBankConnectionsCreateConnections</permissionSets>
+    <permissionSets>c2g__AccountingBankConnectionsUpdateConnections</permissionSets>
+    <permissionSets>c2g__AccountingBankReconciliation</permissionSets>
+    <permissionSets>c2g__AccountingBankStatement</permissionSets>
+    <permissionSets>c2g__AccountingCashMatchingAccountGroup</permissionSets>
+    <permissionSets>c2g__AccountingIntercompanyDefinition</permissionSets>
+    <permissionSets>c2g__AccountingandBillingAccount</permissionSets>
+    <permissionSets>c2g__AccountingandBillingAccountingCurrencies</permissionSets>
+    <permissionSets>c2g__AccountingandBillingCompany</permissionSets>
+    <permissionSets>c2g__AccountingandBillingGeneralLedgerAccounts</permissionSets>
+    <permissionSets>c2g__AccountingandBillingTaxCode</permissionSets>
+    <permissionSets>c2g__AccountingandBillingTaxCodeTaxRate</permissionSets>
+    <permissionSets>c2g__AccountingandBillingUserCompanies</permissionSets>
+    <permissionSets>c2g__AccountingandBillingYear</permissionSets>
+    <permissionSets>c2g__AccountingandBillingYearCalculatePeriod</permissionSets>
+    <permissionSets>c2g__AccountingandBillingYearEnd</permissionSets>
+    <permissionSets>c2g__FFAIntegrationsERPCompany</permissionSets>
+    <permissionSets>c2g__FFAIntegrationsERPTaxCode</permissionSets>
+    <permissionSets>cer_Certinia_Cooper_Parry_Accounting_info_Edit</permissionSets>
+    <permissionSets>cer_Certinia_Cooper_Parry_Product</permissionSets>
+    <permissionSets>cer_Cooper_Parry_Certinia_Custom_Permission_Edit</permissionSets>
+    <permissionSets>ffaws__CashManagement_Workspace</permissionSets>
+    <permissionSets>ffaws__Collections_Workspace</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

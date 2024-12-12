@@ -1,0 +1,7 @@
+.spinner__wrapper {
+    min-height: 142px;
+}
+
+.result__wrapper .label {
+    font-weight: 600;
+}

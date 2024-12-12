@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V6_YearlyCheckValidation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c = false,
+ISCHANGED(Status),
+CASE(Status,
+&apos;Initial Review&apos;,1,
+&apos;CAF Form Completion&apos;,1,
+&apos;Compliance Check&apos;,1,
+&apos;Client Review and Doc Gen&apos;,1,
+&apos;Closed&apos;,1,0
+) = 1,
+LEFT(OwnerId,3) = &apos;00G&apos;,
+$RecordType.Name = &apos;Yearly Check&apos;
+)</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>A case must be owner by a User before moving the Status.</errorMessage>
+</ValidationRule>

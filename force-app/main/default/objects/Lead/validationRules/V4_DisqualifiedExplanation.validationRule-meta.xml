@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V4_DisqualifiedExplanation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ ISCHANGED(Status),
+ TEXT(Status) = &quot;Disqualified&quot;,
+ ISBLANK(Disqualification_Explanation__c)
+)</errorConditionFormula>
+    <errorDisplayField>Disqualification_Explanation__c</errorDisplayField>
+    <errorMessage>Please enter a Disqualified Explanation</errorMessage>
+</ValidationRule>

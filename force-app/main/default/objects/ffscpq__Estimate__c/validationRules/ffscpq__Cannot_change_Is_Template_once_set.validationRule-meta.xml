@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Cannot_change_Is_Template_once_set</fullName>
+    <active>true</active>
+    <description>Error message displayed when editing the Template field on an estimate.</description>
+    <errorConditionFormula>ISCHANGED(ffscpq__Is_Template__c)</errorConditionFormula>
+    <errorDisplayField>ffscpq__Is_Template__c</errorDisplayField>
+    <errorMessage>You cannot edit the Template field on an estimate.</errorMessage>
+</ValidationRule>

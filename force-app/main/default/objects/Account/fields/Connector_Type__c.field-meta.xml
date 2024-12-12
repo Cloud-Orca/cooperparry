@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connector_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Connector Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bank</fullName>
+                <default>false</default>
+                <label>Bank</label>
+            </value>
+            <value>
+                <fullName>Investor</fullName>
+                <default>false</default>
+                <label>Investor</label>
+            </value>
+            <value>
+                <fullName>Lawyer</fullName>
+                <default>false</default>
+                <label>Lawyer</label>
+            </value>
+            <value>
+                <fullName>Member Organisation</fullName>
+                <default>false</default>
+                <label>Member Organisation</label>
+            </value>
+            <value>
+                <fullName>Other Accountancy</fullName>
+                <default>false</default>
+                <label>Other Accountancy</label>
+            </value>
+            <value>
+                <fullName>PE House</fullName>
+                <default>false</default>
+                <label>PE House</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

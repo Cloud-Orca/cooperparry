@@ -1,0 +1,6 @@
+You have been assigned a Partner approval request for {!Account.Name} - {!Case.CaseNumber}.
+
+You can view the Case here: {!Case.Link}
+
+Thank you,
+Salesforce

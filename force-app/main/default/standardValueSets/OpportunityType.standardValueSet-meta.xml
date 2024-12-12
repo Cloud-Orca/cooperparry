@@ -2,13 +2,13 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Existing Business</fullName>
+        <fullName>New</fullName>
         <default>false</default>
-        <label>Existing Business</label>
+        <label>New</label>
     </standardValue>
     <standardValue>
-        <fullName>New Business</fullName>
+        <fullName>Existing</fullName>
         <default>false</default>
-        <label>New Business</label>
+        <label>Existing</label>
     </standardValue>
 </StandardValueSet>

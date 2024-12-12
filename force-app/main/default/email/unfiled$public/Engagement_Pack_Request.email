@@ -1,0 +1,7 @@
+You have been assigned an Engagement Pack approval request for {!Account.Name} - {!Case.CaseNumber}.
+
+You can view the Case here: {!Case.Link}
+Sharepoint Folder: {!Case.Sharepoint_Secure_Folder_ID__c}
+
+Thank you,
+Salesforce

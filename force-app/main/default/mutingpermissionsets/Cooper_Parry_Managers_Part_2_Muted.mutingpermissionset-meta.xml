@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MutingPermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Cooper Parry Managers Part 2 Muted</label>
+    <tabSettings>
+        <tab>pse__Billing_Events_Awaiting_Release</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+</MutingPermissionSet>

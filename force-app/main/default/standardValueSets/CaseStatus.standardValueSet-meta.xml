@@ -2,15 +2,39 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>On Hold</fullName>
-        <default>false</default>
-        <label>On Hold</label>
-        <closed>false</closed>
-    </standardValue>
-    <standardValue>
         <fullName>Escalated</fullName>
         <default>false</default>
         <label>Escalated</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>true</default>
+        <label>New</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Initial Review</fullName>
+        <default>false</default>
+        <label>Initial Review</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>CAF Form Completion</fullName>
+        <default>false</default>
+        <label>CAF Form Completion</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Compliance Check</fullName>
+        <default>false</default>
+        <label>Compliance Check</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Client Review and Doc Gen</fullName>
+        <default>false</default>
+        <label>Client Review and Doc Gen</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
@@ -18,11 +42,5 @@
         <default>false</default>
         <label>Closed</label>
         <closed>true</closed>
-    </standardValue>
-    <standardValue>
-        <fullName>New</fullName>
-        <default>true</default>
-        <label>New</label>
-        <closed>false</closed>
     </standardValue>
 </StandardValueSet>

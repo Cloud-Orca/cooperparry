@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V7_Client_Amendment_Requirement</fullName>
+    <active>true</active>
+    <description>Requiring the Client Amendment to be completed before moving to Compliance Check</description>
+    <errorConditionFormula>AND(
+    NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c), 
+    ISPICKVAL(Client_Amendment__c, &quot;&quot;), 
+    OR(
+        ISPICKVAL( Status , &quot;Compliance Check&quot;),
+        ISPICKVAL(Status , &quot;Compliance Review and Doc Gen&quot;),
+        AND(
+            ISPICKVAL(Status , &quot;Closed&quot;),
+            ISPICKVAL( Closed_Reason__c , &quot;Onboarded&quot;)
+        )
+    ),
+    OR(
+        $RecordType.Name = &quot;Yearly Check&quot;,
+        $RecordType.Name = &quot;Adhoc Check&quot;,
+        $RecordType.Name = &quot;Service Line&quot;
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Client_Amendment__c</errorDisplayField>
+    <errorMessage>Please select a value for the Client Amendment field before moving the Case to Compliance Check, Compliance Review and Doc Gen, or Closed with Close Reason = Onboarded. This applies to Yearly Check, Adhoc Check, and Service Line record types.</errorMessage>
+</ValidationRule>

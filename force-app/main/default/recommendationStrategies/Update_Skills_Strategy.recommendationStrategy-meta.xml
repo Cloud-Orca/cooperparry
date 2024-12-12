@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionContext>
+        <action>pse__OutdatedSkills</action>
+        <label>Outdated Skills</label>
+        <name>Outdated_Skills</name>
+        <type>apex</type>
+    </actionContext>
+    <filter>
+        <childNode>Load_Recommendation</childNode>
+        <label>Outdated Skills Filter</label>
+        <name>Outdated_Skills_Filter</name>
+        <expression>ISBLANK($Outdated_Skills.output)</expression>
+    </filter>
+    <label>Update Skills Strategy</label>
+    <recommendationLoad>
+        <label>Load Recommendation</label>
+        <name>Load_Recommendation</name>
+        <condition>
+            <field>Name</field>
+            <operator>EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>Update Skills Recommendation</value>
+            </value>
+        </condition>
+        <conditionLogic>and</conditionLogic>
+        <object>Recommendation</object>
+    </recommendationLoad>
+    <union>
+        <childNode>Outdated_Skills_Filter</childNode>
+        <label>Output</label>
+        <name>Output_580ec8473eb1471f8e0e4109d29b1b11</name>
+    </union>
+</RecommendationStrategy>

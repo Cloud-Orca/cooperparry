@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Big Business Audit</fullName>
+        <default>false</default>
+        <label>Big Business Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>BT Advisory</fullName>
+        <default>false</default>
+        <label>BT Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>BT Compliance</fullName>
+        <default>false</default>
+        <label>BT Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>Capital Allowances</fullName>
+        <default>false</default>
+        <label>Capital Allowances</label>
+    </customValue>
+    <customValue>
+        <fullName>CF</fullName>
+        <default>false</default>
+        <label>CF</label>
+    </customValue>
+    <customValue>
+        <fullName>Employer Rewards</fullName>
+        <default>false</default>
+        <label>Employer Rewards</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP</fullName>
+        <default>false</default>
+        <label>NFP</label>
+    </customValue>
+    <customValue>
+        <fullName>BSO</fullName>
+        <default>false</default>
+        <label>BSO</label>
+    </customValue>
+    <customValue>
+        <fullName>PC Advisory</fullName>
+        <default>false</default>
+        <label>PC Advisory</label>
+    </customValue>
+    <customValue>
+        <fullName>PC Compliance</fullName>
+        <default>false</default>
+        <label>PC Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensions</fullName>
+        <default>false</default>
+        <label>Pensions</label>
+    </customValue>
+    <customValue>
+        <fullName>CP Innovation</fullName>
+        <default>false</default>
+        <label>CP Innovation</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Charge</fullName>
+        <default>false</default>
+        <label>Service Charge</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Audit</fullName>
+        <default>false</default>
+        <label>THG Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Early Stage</fullName>
+        <default>false</default>
+        <label>THG Early Stage</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Tax</fullName>
+        <default>false</default>
+        <label>THG Tax</label>
+    </customValue>
+    <customValue>
+        <fullName>TS</fullName>
+        <default>false</default>
+        <label>TS</label>
+    </customValue>
+    <customValue>
+        <fullName>TT</fullName>
+        <default>false</default>
+        <label>TT</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT</fullName>
+        <default>false</default>
+        <label>VAT</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Business</fullName>
+        <default>false</default>
+        <label>Private Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Law</fullName>
+        <default>false</default>
+        <label>Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Legacy - DNU</fullName>
+        <default>false</default>
+        <label>Legacy - DNU</label>
+    </customValue>
+    <customValue>
+        <fullName>Big Business Projects</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Big Business Projects</label>
+    </customValue>
+    <customValue>
+        <fullName>Patent Box</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Patent Box</label>
+    </customValue>
+    <customValue>
+        <fullName>TBC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TBC</label>
+    </customValue>
+    <customValue>
+        <fullName>CP Law</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CP Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Audit West</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Core Audit West</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Audit South</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Core Audit South</label>
+    </customValue>
+    <customValue>
+        <fullName>Shareholder Tax</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Shareholder Tax</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Audit East</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Core Audit East</label>
+    </customValue>
+    <masterLabel>Type Area</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

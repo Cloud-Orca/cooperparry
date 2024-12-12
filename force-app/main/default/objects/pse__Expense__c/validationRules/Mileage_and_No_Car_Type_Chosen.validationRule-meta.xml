@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mileage_and_No_Car_Type_Chosen</fullName>
+    <active>true</active>
+    <description>Mileage and No Car Type Chosen</description>
+    <errorConditionFormula>AND(pse__Distance__c &lt;&gt; 0, ( OR(ISNULL(CT_Expense_VAT_Rate__c),CT_Expense_VAT_Rate__c == &apos;&apos;)) )</errorConditionFormula>
+    <errorMessage>With Mileage you must choose a Car Type for the Tax Rate</errorMessage>
+</ValidationRule>

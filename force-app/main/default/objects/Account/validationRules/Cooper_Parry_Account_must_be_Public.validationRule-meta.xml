@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cooper_Parry_Account_must_be_Public</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(CT_Account_access__c)  &lt;&gt; &apos;Public access&apos; &amp;&amp;
+ Name = &apos;Cooper Parry&apos;</errorConditionFormula>
+    <errorDisplayField>CT_Account_access__c</errorDisplayField>
+    <errorMessage>Cooper Parry account must have Public access</errorMessage>
+</ValidationRule>

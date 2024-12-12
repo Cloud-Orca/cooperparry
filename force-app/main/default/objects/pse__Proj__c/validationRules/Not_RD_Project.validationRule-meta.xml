@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_RD_Project</fullName>
+    <active>true</active>
+    <errorConditionFormula>(TEXT(CT_R_D_Stage__c)&lt;&gt; &apos;&apos;  &amp;&amp;  (pse__Practice__r.Name &lt;&gt; &apos;Research and development&apos; &amp;&amp; pse__Practice__r.Name &lt;&gt; &apos;THG - R&amp;D&apos;))  || 
+
+(TEXT(CT_Patent_Box_Stage__c) &lt;&gt; &apos;&apos; &amp;&amp; pse__Practice__r.Name &lt;&gt; &apos;Patent Box&apos;)</errorConditionFormula>
+    <errorMessage>R&amp;D or Patent Box Stage specified for non R&amp;D or Patent Box Project - please correct!</errorMessage>
+</ValidationRule>

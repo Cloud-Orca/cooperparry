@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>ProjectName</name>
+        <dataType>String</dataType>
+        <expression>if(TEXT({!$Record.pse__Project_Type__c})==&apos;Internal&apos;,{!$Record.Name},
+IF({!$Record.pse__Account__r.IsPersonAccount==TRUE}, {!$Record.pse__Account__r.LastName}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})), 
+{!$Record.pse__Account__r.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c}))))</expression>
+    </formulas>
+    <interviewLabel>CT Set Default ProjectName {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CT Set Default ProjectName</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_default_name</name>
+        <label>Set default name</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ProjectName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_default_name</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CT_Generate_Default_Project_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>pse__Proj__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

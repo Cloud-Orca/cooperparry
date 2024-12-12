@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Submit_record</name>
+        <label>Submit record</label>
+        <locationX>50</locationX>
+        <locationY>971</locationY>
+        <actionName>submit</actionName>
+        <actionType>submit</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>objectId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>nextApproverIds</name>
+            <value>
+                <elementReference>approver</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>processDefinitionNameOrId</name>
+            <value>
+                <stringValue>Opportunity_Audit_Client_Approval</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>submit</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>assign_approver</name>
+        <label>assign approver</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>approver</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>get_account_team_member.User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity_Audit_Partner_Name</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>In_Progress_Approval_Error</name>
+        <label>In Progress Approval Error</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <customErrorMessages>
+            <errorMessage>There is already an Approval In Progress that needs to be reviewed.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>No_Audit_Partner_is_Found</name>
+        <label>No Audit Partner is Found</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <customErrorMessages>
+            <errorMessage>No Audit Partner is found under the Account Team Members. This opportunity cannot be submitted for Audit Partner Approval.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_In_Progress_Approvals</name>
+        <label>Check In Progress Approvals</label>
+        <locationX>380</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>In_Progress_Approval_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>In Progress Approval</defaultConnectorLabel>
+        <rules>
+            <name>No_Approvals</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_In_Progress_Approval</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>team_member_fould</targetReference>
+            </connector>
+            <label>No Approvals</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>team_member_fould</name>
+        <label>team member fould</label>
+        <locationX>182</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>No_Audit_Partner_is_Found</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>tes_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_account_team_member</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assign_approver</targetReference>
+            </connector>
+            <label>tes - found</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity - Submit for Audit Partner Approval {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Submit for Audit Partner Approval</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_account_team_member</name>
+        <label>get account team member</label>
+        <locationX>380</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_In_Progress_Approval</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>TeamMemberRole</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Audit Partner</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AccountTeamMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_In_Progress_Approval</name>
+        <label>Get In Progress Approval</label>
+        <locationX>380</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_In_Progress_Approvals</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TargetObjectId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ProcessInstance</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opportunity_Audit_Partner_Name</name>
+        <label>Update Opportunity Audit Partner Name</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>Submit_record</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Audit_Partner__c</field>
+            <value>
+                <stringValue>{!get_account_team_member.User.FirstName} {!get_account_team_member.User.LastName}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_account_team_member</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+TEXT({!$Record.Account.Type}) = &quot;Client&quot;,
+{!$Record.Account.Audit_Client__c} = TRUE
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>approver</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

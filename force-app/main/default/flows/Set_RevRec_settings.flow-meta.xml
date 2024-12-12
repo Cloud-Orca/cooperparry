@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Remove_RR_Settings</name>
+        <label>Remove RR Settings</label>
+        <locationX>578</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ffrrIncludeInRevenueRecognition__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.FFX_Recognition_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ffrrtemplate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Recognition_Method__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_RR_Template_to_Deliverable</name>
+        <label>Set RR Template to Deliverable</label>
+        <locationX>314</locationX>
+        <locationY>803</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ffrrIncludeInRevenueRecognition__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.FFX_Recognition_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Deliverable (In Arrears or Advance)</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ffrrtemplate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_RR_Template_Deliverable.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Recognition_Method__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Deliverable</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_RR_Template_to_Percent_Complete</name>
+        <label>Set RR Template to Percent Complete</label>
+        <locationX>50</locationX>
+        <locationY>803</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ffrrIncludeInRevenueRecognition__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.FFX_Recognition_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>% Complete (Planned vs Actual Hours)</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ffrrtemplate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GeT_RR_Template_Percent_Complete.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.pse__Recognition_Method__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>% Complete</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Type_to_Fixed_Price_Time_based</name>
+        <label>Set Type to Fixed Price - Time-based</label>
+        <locationX>446</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Milestone_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Fixed Price - Time-based</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Milestone_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Type_to_Time_and_Material</name>
+        <label>Set Type to Time and Material</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Milestone_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Time &amp; Material</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Milestone_Type</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decision_1</name>
+        <label>Decision 1</label>
+        <locationX>446</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Milestone_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_Milestone_Type_project_is_T_M</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Time and Materials</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Milestone_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Type_to_Time_and_Material</targetReference>
+            </connector>
+            <label>No Milestone Type &amp; project is T&amp;M</label>
+        </rules>
+        <rules>
+            <name>No_Milestone_Type_and_Project_is_Fixed_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Project__r.pse__Billing_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Milestone_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Type_to_Fixed_Price_Time_based</targetReference>
+            </connector>
+            <label>No Milestone Type and Project is Fixed Price</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Milestone_Type</name>
+        <label>Milestone Type</label>
+        <locationX>446</locationX>
+        <locationY>587</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_changed_and_Fixed_Price_Time_Based</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Milestone_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price - Time-based</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GeT_RR_Template_Percent_Complete</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Is changed and Fixed Price - Time Based</label>
+        </rules>
+        <rules>
+            <name>Is_changed_and_Fixed_Price_Bill_Only</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Milestone_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price - Bill Only</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_RR_Template_Deliverable</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Is changed and Fixed Price - Bill Only</label>
+        </rules>
+        <rules>
+            <name>Is_changed_and_T_M</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Milestone_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Time &amp; Material</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_RR_Settings</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Is changed and T&amp;M</label>
+        </rules>
+    </decisions>
+    <description>.</description>
+    <environments>Default</environments>
+    <interviewLabel>Set RevRec settings {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Set RevRec settings</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_RR_Template_Deliverable</name>
+        <label>Get RR Template Deliverable</label>
+        <locationX>314</locationX>
+        <locationY>695</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_RR_Template_to_Deliverable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Milestone - Deliverable</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ffrr__Template__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GeT_RR_Template_Percent_Complete</name>
+        <label>Get RR Template Percent Complete</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_RR_Template_to_Percent_Complete</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Milestone - % Complete</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ffrr__Template__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decision_1</targetReference>
+        </connector>
+        <object>pse__Milestone__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V6_Audit_Category_for_Audit_Onboarding</fullName>
+    <active>true</active>
+    <description>Requiring the Audit Category field to be completed when Onboarding an Audit client</description>
+    <errorConditionFormula>AND(
+    $RecordType.Name = &quot;Onboarding&quot;,
+    ISPICKVAL( Case_Area__c , &quot;Audit&quot;),
+    ISBLANK(Account.Audit_Categories__c),
+    OR(
+        ISPICKVAL(Status, &quot;Client Review and Doc Gen&quot;),
+        AND(
+            ISPICKVAL(Status, &quot;Closed&quot;),
+            ISPICKVAL(Closed_Reason__c, &quot;Onboarded&quot;)
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Please populate the Audit Category on the Account before moving forward with this Onboarding Case</errorMessage>
+</ValidationRule>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page_Three_Column</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page_Three_Column</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#DA285D</headerColor>
+        <logo>CP5</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>FinancialForce Accounts Payable processes</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Accounts Payable</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>ffaws__accounts_payable_workspace</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>c2g__codaPurchaseInvoice__c</tabs>
+    <tabs>c2g__codaPurchaseCreditNote__c</tabs>
+    <tabs>c2g__PaymentsPlus</tabs>
+    <tabs>c2g__codaPayment__c</tabs>
+    <tabs>c2g__codaCashEntry__c</tabs>
+    <tabs>c2g__CashMatchingLightning</tabs>
+    <tabs>c2g__codaJournal__c</tabs>
+    <tabs>c2g__AsOfAging__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>FFX_Accounts_Payable_UtilityBar</utilityBar>
+</CustomApplication>

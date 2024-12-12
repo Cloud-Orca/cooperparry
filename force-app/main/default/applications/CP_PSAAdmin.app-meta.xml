@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Account_Record_Page_Three_Column</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#8A00ED</headerColor>
+        <logo>CP</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>CP - PSA Admin</label>
+    <navType>Standard</navType>
+    <tabs>CP_Services_Delivery_Workspace</tabs>
+    <tabs>CP_Project_Management_Workspace</tabs>
+    <tabs>CP_Work_Planner</tabs>
+    <tabs>Work_Planner1</tabs>
+    <tabs>CP_Resource_Management_Workspace</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>pse__Proj__c</tabs>
+    <tabs>pse__Resource_Request__c</tabs>
+    <tabs>pse__Timecard_Header__c</tabs>
+    <tabs>pse__Multiple_Expense_Entry_UI</tabs>
+    <tabs>pse__Expense__c</tabs>
+    <tabs>pse__Approve_Multiple_Expense_Reports</tabs>
+    <tabs>ffpsai__ExpenseTypeGLAMapping__c</tabs>
+    <tabs>pse__Expense_Report__c</tabs>
+    <tabs>CT_Expense_VAT_Types__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>CP_PSA_Admin_UtilityBar</utilityBar>
+</CustomApplication>

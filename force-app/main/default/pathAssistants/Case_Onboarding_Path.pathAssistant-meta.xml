@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Case Onboarding Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Form_Approved__c</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;Review Smart Search Results:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Analyse the results from the initial Smart Search to determine if any flags (e.g., PEP, RCA, SIP, or other risks) have been identified.&lt;/li&gt;&lt;li&gt;Document the findings in the Case, including any details on flagged individuals or entities.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Escalate to Risk (if flagged):&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;If a PEP, RCA, SIP, or other risk flag is identified, escalate the Onboarding Case to the &lt;strong&gt;Risk Team&lt;/strong&gt; for further review and approval.&lt;/li&gt;&lt;li&gt;Ensure all supporting documentation, including the CAF and Smart Search findings, are attached to the Case.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Trigger Form Approval (if no flags):&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;If no flags are raised during the Smart Search, the LC should proceed to trigger the &lt;strong&gt;Form Approval&lt;/strong&gt; process.&lt;/li&gt;&lt;li&gt;Ensure that all required fields in the CAF are complete and accurate before submission.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>CAF Form Completion</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong&gt;Generate the Engagement Document:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The Lifecycle Coordinator (LC) is draft the &lt;strong&gt;Engagement Document&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Engagement Document Approval:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Submit the Engagement Document for internal approval through the &lt;strong&gt;Engagement Pack Approval&lt;/strong&gt; process.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Send to the Client:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Once approved, send the Engagement Document to the client using the Send from Docusign button on the Case&lt;/li&gt;&lt;li&gt;Clearly communicate the next steps to the client, including signing and returning the document.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Client Review and Doc Gen</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Closed_Reason__c</fieldNames>
+        <fieldNames>Declined_Additional_Reason__c</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;If successful:&lt;/strong&gt; Set the closure reason to &lt;strong&gt;Onboarded&lt;/strong&gt; to indicate the client has been successfully onboarded.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;If unsuccessful:&lt;/strong&gt; Select an appropriate reason from the dropdown to document why the process did not proceed.&lt;/p&gt;</info>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Partner_Approved_formula__c</fieldNames>
+        <fieldNames>Risk_Compliance_Approved_formula__c</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;Review and Approve Flags:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The Risk Team will assess all flagged items identified during the initial Smart Search (e.g., PEP, RCA, SIP, or other concerns).&lt;/li&gt;&lt;li&gt;Review supporting documentation and ensure that all identified risks are clearly documented and addressed.&lt;/li&gt;&lt;li&gt;If additional information is required, return the Case to the Lifecycle Coordinator (LC) with specific questions or requests for clarification.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Partner Approval:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Send for Partner Approval using the Approval button on the Case&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Compliance Approval:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Once Partner Approval is secured, automatically send the Case to the Risk Team to complete &lt;strong&gt;Compliance Approval&lt;/strong&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Compliance Check</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong&gt;Verify the escalation criteria:&lt;/strong&gt; Ensure the Case meets the thresholds for escalation, such as the involvement of PEPs, RCAs, SIPs, or other flagged high-risk entities. Confirm all supporting documentation is complete and accurate.&lt;/p&gt;</info>
+        <picklistValueName>Escalated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Verify Onboarding Case details:&lt;/strong&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt; Ensure all initial information in the Case is accurate and complete&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Complete required forms:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;For previously onboarded clients: Fill out and complete the &lt;strong&gt;Ongoing Monitoring Form&lt;/strong&gt; based on their historical data and interactions.&lt;/li&gt;&lt;li&gt;For new clients: Generate and complete a &lt;strong&gt;Risk Assessment Form&lt;/strong&gt;, ensuring all required details are captured.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Send Professional Clearance Letter (Audit Clients only):&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;If the client is an Audit client, send the &lt;strong&gt;Professional Clearance Letter&lt;/strong&gt; to ensure compliance and initiate communication with the relevant parties.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Perform Smart Search checks:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Conduct initial &lt;strong&gt;Smart Search checks&lt;/strong&gt; to identify potential risks, such as adverse media, sanctions, or other red flags&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Initial Review</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OwnerId</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;Assign a Lifecycle Coordinator (LC):&lt;/strong&gt; Identify the LC currently working with the relevant partner on the Account. Assign this LC to the Case to ensure seamless coordination and relationship continuity.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Update Case Team:&lt;/strong&gt; Add the assigned LC and other key stakeholders to the Case Team for visibility and collaboration.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Update Account Team:&lt;/strong&gt; Verify that the relevant team members, including the partner&amp;#39;s key contacts and the assigned LC, are logged in the Account Team.&lt;/p&gt;&lt;p&gt;Ensure &lt;strong&gt;on the Account&lt;/strong&gt; that the &lt;strong&gt;Account Trading Currency&lt;/strong&gt;, &lt;strong&gt;Tax Status&lt;/strong&gt;, and &lt;strong&gt;Invoice Email&lt;/strong&gt; are updated. For &lt;strong&gt;Audit clients only&lt;/strong&gt;, update the &lt;strong&gt;Audit Categories&lt;/strong&gt;. Accurate completion of these fields is essential for smooth onboarding and compliance. You can use the &lt;strong&gt;LC Update Button&lt;/strong&gt;.&lt;/p&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Onboarding</recordTypeName>
+</PathAssistant>

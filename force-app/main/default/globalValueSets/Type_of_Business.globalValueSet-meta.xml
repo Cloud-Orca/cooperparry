@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Privately Owned</fullName>
+        <default>false</default>
+        <label>Privately Owned</label>
+    </customValue>
+    <customValue>
+        <fullName>PE Backed</fullName>
+        <default>false</default>
+        <label>UK PE Backed</label>
+    </customValue>
+    <customValue>
+        <fullName>Foreign Backed</fullName>
+        <default>false</default>
+        <label>Foreign Backed</label>
+    </customValue>
+    <customValue>
+        <fullName>AIM Listed</fullName>
+        <default>false</default>
+        <label>AIM Listed</label>
+    </customValue>
+    <customValue>
+        <fullName>PIE or OPIE</fullName>
+        <default>false</default>
+        <label>PIE or OPIE</label>
+    </customValue>
+    <customValue>
+        <fullName>Subsidiary of Corporate/PLC</fullName>
+        <default>false</default>
+        <label>Subsidiary of Corporate/PLC</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Client</fullName>
+        <default>false</default>
+        <label>Private Client</label>
+    </customValue>
+    <customValue>
+        <fullName>VC Backed</fullName>
+        <default>false</default>
+        <label>VC Backed</label>
+    </customValue>
+    <customValue>
+        <fullName>Franchisee</fullName>
+        <default>false</default>
+        <label>Franchisee</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnership</fullName>
+        <default>false</default>
+        <label>Partnership</label>
+    </customValue>
+    <customValue>
+        <fullName>PE House</fullName>
+        <default>false</default>
+        <label>PE House</label>
+    </customValue>
+    <customValue>
+        <fullName>Pension Scheme</fullName>
+        <default>false</default>
+        <label>Pension Scheme</label>
+    </customValue>
+    <customValue>
+        <fullName>Not For Profit</fullName>
+        <default>false</default>
+        <label>Not For Profit</label>
+    </customValue>
+    <masterLabel>Type of Business</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

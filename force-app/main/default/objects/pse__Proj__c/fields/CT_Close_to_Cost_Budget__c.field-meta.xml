@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Close_to_Cost_Budget__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( 
+
+IF(pse__Bookings__c  == 0|| CT_Total_Submitted_Hours_Bill_Rate__c  == 0 || ISNULL(pse__Bookings__c )|| ISNULL(CT_Total_Submitted_Hours_Bill_Rate__c ),0,  CT_Total_Submitted_Hours_Bill_Rate__c / pse__Bookings__c   *100) &gt;= 80, TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Close to Cost Budget</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

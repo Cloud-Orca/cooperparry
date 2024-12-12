@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ongoing_Monitoring_is_Today_plus_7_days__c</fullName>
+    <externalId>false</externalId>
+    <formula>Ongoing_Monitoring_Date__c + 7 = today()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Ongoing Monitoring is Today plus 7 days?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

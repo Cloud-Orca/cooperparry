@@ -1,0 +1,91 @@
+<template>
+    <template if:true={isSpinner}>
+        <lightning-spinner size="medium"></lightning-spinner>
+    </template>
+
+    <template if:true={showDriveItemBlank}>
+        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+            <span class="slds-assistive-text">error</span>
+            <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed">
+                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                </svg>
+            </span>
+            <h2>
+                SharePoint Folder ID field cannot be blank. Please ensure a value is provided before proceeding.
+            </h2>
+        </div>
+    </template>
+
+    <div class="slds-grid">
+        <div>
+            <div class="slds-p-around_x-small" style="font-size: 20px !important;">
+                <lightning-breadcrumbs if:true={breadcrumbs.length}>
+                    <template for:each={breadcrumbs} for:item="crumb" for:index="index">
+                        <lightning-breadcrumb 
+                            key={crumb} 
+                            label={crumb.label} 
+                            href="javascript:void(0);" 
+                            onclick={handleBreadcrumbClick} 
+                            data-index={index}></lightning-breadcrumb>
+                    </template>
+                </lightning-breadcrumbs>
+            </div>
+        </div>
+        <div class="slds-col_bump-left">
+            <lightning-input
+                type="file"
+                label="Upload File to Sharepoint"
+                onchange={handleFileChange}
+                multiple="true">
+            </lightning-input>
+        </div>
+    </div>
+
+    <lightning-card class="slds-p-horizontal_small">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th scope="col"></th>
+                    <th scope="col" style="width: 40%;">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th scope="col" style="width: 10%;">
+                        <div class="slds-truncate" title="Size">Size</div>
+                    </th>
+                    <th scope="col" style="width: 25%;">
+                        <div class="slds-truncate" title="Created By">Created By</div>
+                    </th>
+                    <th scope="col" style="width: 25%;">
+                        <div class="slds-truncate" title="Modified By">Modified By</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={currentItems} for:item="item" for:index="index">
+                    <tr key={item.id} onclick={handleItemClick} data-id={item.id} style="cursor:pointer;">
+                        <td>
+                            <lightning-icon icon-name={item.iconName} class="folderColor" size="small"></lightning-icon>
+                        </td>
+                        <td>
+                            <div class="slds-truncate slds-p-vertical_medium" title={item.name}>{item.name}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate slds-p-vertical_medium" title={item.sizeToDisplay}>{item.sizeToDisplay}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate slds-p-vertical_medium" title={item.createdByName}>{item.createdByName}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate slds-p-vertical_medium" title={item.modifiedByName}>{item.modifiedByName}</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        
+        <template if:false={currentItems}>
+            <p class="slds-p-around_large slds-align_absolute-center"><i>No data to display.</i></p>
+        </template>
+    </lightning-card>
+</template>

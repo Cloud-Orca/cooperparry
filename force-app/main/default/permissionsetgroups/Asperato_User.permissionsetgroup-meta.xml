@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>[OLD]  Asperato User</label>
+    <permissionSets>asp04__AsperatoRefunds</permissionSets>
+    <permissionSets>asp04__AsperatoStandardUser</permissionSets>
+    <permissionSets>ffasp__ASPIntegrations</permissionSets>
+    <permissionSets>ffasp__ASPIntegrationsFFASalesInvoiceCreatePayment</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

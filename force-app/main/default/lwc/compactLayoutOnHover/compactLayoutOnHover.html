@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <template if:true={recordId}>
+            <div style="position: absolute; opacity: 1" class="ModelTooltip">
+                <section class="slds-popover slds-popover_panel" role="dialog"> 
+                  <div class="slds-popover__header">
+                    <header class="slds-media slds-media_center slds-m-bottom_small">
+                        <span class="slds-icon_container slds-icon-standard-contact slds-media__figure">
+                            <lightning-icon icon-name="standard:contact" size="small"></lightning-icon>
+                          </span>
+                        <div class="slds-media__body">
+                            <h2 class="slds-text-heading_medium slds-hyphenate">{contactName}</h2>
+                        </div>
+                    </header>
+                  </div>
+                  <footer class="slds-grid slds-wrap slds-grid_pull-padded slds-p-around_small">
+                    <template for:each={processedData} for:item="contact">
+                      <div key={recordId} class="slds-p-horizontal_small slds-size_12-of-12 slds-p-bottom_x-small">
+                        <template for:each={contact} for:item="field"> 
+                          <div key={field.label} class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_5-of-12 slds-text-title_bold slds-truncate">{field.label} :</div>
+                            <div class="slds-col slds-size_7-of-12 slds-truncate">{field.value}</div>
+                          </div>
+                        </template> 
+                      </div>
+                    </template>
+                  </footer>
+                </section>
+            </div>
+        </template>
+    </div>
+</template>

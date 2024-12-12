@@ -1,0 +1,9 @@
+Dear {!User.Name},
+
+We are pleased to inform you that the following account has now been successfully converted to a Client in our system:
+
+Account Details:
+
+Account Name: {!Account.Name}
+Client ID: {!Account.CP_Client_ID__c}
+Link: {!Account.Link}
