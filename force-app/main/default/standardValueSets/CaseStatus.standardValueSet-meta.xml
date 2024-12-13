@@ -20,6 +20,12 @@
         <closed>false</closed>
     </standardValue>
     <standardValue>
+        <fullName>Ongoing Monitoring Completion</fullName>
+        <default>false</default>
+        <label>Ongoing Monitoring Completion</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
         <fullName>CAF Form Completion</fullName>
         <default>false</default>
         <label>CAF Form Completion</label>
