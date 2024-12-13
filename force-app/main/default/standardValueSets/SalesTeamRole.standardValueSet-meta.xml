@@ -66,4 +66,9 @@
         <default>false</default>
         <label>Sales Performance Administrator</label>
     </standardValue>
+    <standardValue>
+        <fullName>Partner / Manager</fullName>
+        <default>false</default>
+        <label>Partner / Manager</label>
+    </standardValue>
 </StandardValueSet>

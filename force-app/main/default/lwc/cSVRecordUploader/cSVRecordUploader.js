@@ -1,8 +1,8 @@
 import { LightningElement, wire, track } from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
-import createLeads from '@salesforce/apex/CSVRecordUploaderController.createLeads';
 import getNumberOfRows from '@salesforce/apex/CSVRecordUploaderController.getNumberOfRows';
-import createAccountAndContact from '@salesforce/apex/CSVRecordUploaderController.createAccountAndContact';
+import createRecord from '@salesforce/apex/CSVRecordUploaderController.createRecord';
+
 
 
 export default class CSVRecordUploader extends LightningElement {
@@ -32,6 +32,9 @@ export default class CSVRecordUploader extends LightningElement {
         }
         if(this.pageName == 'Account_Uploader'){
             this.label = 'Account';
+        }
+        if(this.pageName == 'Contact_Uploader'){
+            this.label = 'Contact';
         }
     }
 
@@ -83,59 +86,36 @@ export default class CSVRecordUploader extends LightningElement {
     handleSubmit() {
         if (this.fileContents) {
             this.isLoading = true;
-            if (this.pageName == 'Lead_Uploader') {
-
-                createLeads({ csvData: this.fileContents })
-                .then(result => {
-                    console.log(result);
-                    this.isLoading = false;
-
-                    if (result.successFile) {
-                        this.successFile = result.successFile;
-                        this.numberOfSuccess = this.successFile.split('\n').length - 2; // skip first 2 lines
+            if (this.pageName == 'Lead_Uploader' || this.pageName == 'Account_Uploader' || this.pageName == 'Contact_Uploader') {
+                try {
+                    var objName;
+                    if (this.pageName == 'Lead_Uploader') {
+                        objName = 'Lead';
+                    }else if (this.pageName == 'Account_Uploader') {
+                        objName = 'Account';
+                    }else if (this.pageName == 'Contact_Uploader') {
+                        objName = 'Contact';
                     }
-                    if (result.errorFile) {
-                        this.errorFile = result.errorFile;
-                        this.numberOfErrors = this.errorFile.split('\n').length - 2; // skip first 2 lines
-                    }
-                    this.isSubmitted = true;
-                })
-                .catch(error => {
-                    this.isSubmitted = false;
-                    this.isLoading = false;
-                    this.errorMessage = 'Error creating leads: ' + error.body.message;
-                });
-
-            }
-
-            if(this.pageName == 'Account_Uploader'){
-
-
-                createAccountAndContact({ csvData: this.fileContents })
-                .then(result => {
-                    
-                    this.isLoading = false;
-                    // console.log('result.accountResult', result.accountResult);
-                    // console.log('result.contactResult', result.contactResult);
-                    this.multiplesuccessFile = true;
-                    this.multipleerrorFile = true;
-                    if (result.accountResult) {
-                        this.multiplesuccessFileTxt['accountSuccess'] = result.accountResult.successFile;
-                        this.multipleerrorFileTxt['accountError'] = result.accountResult.errorFile
-                    }
-                    if (result.contactResult) {
-                        this.multiplesuccessFileTxt['contactSuccess'] = result.contactResult.successFile;
-                        this.multipleerrorFileTxt['contactError'] = result.contactResult.errorFile
-                    }
-                    this.isSubmitted = true;
-                })
-                .catch(error => {
-                    this.isSubmitted = false;
-                    this.isLoading = false;
-                    this.errorMessage = 'Error creating records: ' + error.body.message;
-                });
-
-
+                    createRecord({ csvData: this.fileContents, obj: objName }).then(result => {
+                        this.isLoading = false;
+                        if (result.successFile) {
+                            this.successFile = result.successFile;
+                            this.numberOfSuccess = this.successFile.split('\n').length - 2; // skip first 2 lines
+                        }
+                        if (result.errorFile) {
+                            this.errorFile = result.errorFile;
+                            this.numberOfErrors = this.errorFile.split('\n').length - 2; // skip first 2 lines
+                        }
+                        this.isSubmitted = true;
+                    })
+                    .catch(error => {
+                        this.isSubmitted = false;
+                        this.isLoading = false;
+                        this.errorMessage = 'Error creating records: ' + error.body.message;
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
             }
 
 
