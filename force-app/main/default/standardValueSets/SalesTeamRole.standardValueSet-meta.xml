@@ -22,11 +22,6 @@
         <label>BD Manager</label>
     </standardValue>
     <standardValue>
-        <fullName>Corporate Finance Partner</fullName>
-        <default>false</default>
-        <label>Corporate Finance Partner</label>
-    </standardValue>
-    <standardValue>
         <fullName>Lead Partner</fullName>
         <default>false</default>
         <label>Lead Partner</label>
@@ -34,7 +29,7 @@
     <standardValue>
         <fullName>Lifecycle Coordinator</fullName>
         <default>false</default>
-        <label>Lifecycle Coordinator</label>
+        <label>Lifecycle Coordinator 1</label>
     </standardValue>
     <standardValue>
         <fullName>Origination</fullName>
@@ -70,5 +65,25 @@
         <fullName>Partner / Manager</fullName>
         <default>false</default>
         <label>Partner / Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Deals</fullName>
+        <default>false</default>
+        <label>Deals</label>
+    </standardValue>
+    <standardValue>
+        <fullName>EA</fullName>
+        <default>false</default>
+        <label>EA</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Senior Audit Manager</fullName>
+        <default>false</default>
+        <label>Senior Audit Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lifecycle Coordinator 2</fullName>
+        <default>false</default>
+        <label>Lifecycle Coordinator 2</label>
     </standardValue>
 </StandardValueSet>
