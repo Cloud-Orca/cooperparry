@@ -253,6 +253,13 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Client</stringValue>
+            </value>
+        </filters>
         <object>Account</object>
         <schedule>
             <frequency>Daily</frequency>
