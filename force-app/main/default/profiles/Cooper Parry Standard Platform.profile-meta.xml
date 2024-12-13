@@ -289,6 +289,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CompaniesHouse_OfficerFieldMappingTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CompanyHouseFilingHistoryCont</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -301,7 +305,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CompanyHouseFilingHistoryOfficerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CompanyHouseSettingOfficer</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CompanyHouseSettingOfficerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -314,6 +326,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CreateAccountsFromBHBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DeletedClassesTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -401,6 +417,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>RunBatchCompHouseTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SharepointAPIUtility</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -457,6 +477,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>UpdateLeadsFromBHBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateLeadsFromBHBatchTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UploadLeadController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -484,6 +512,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Account_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Account_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5569,6 +5602,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.CF_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Campaign__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13377,6 +13415,10 @@
         <recordType>Opportunity.Corporate_Opportunity</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Opportunity-Main Opportunity Layout</layout>
+        <recordType>Opportunity.Renewal</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Opportunity-pse__Opportunity Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -13833,6 +13875,11 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Opportunity.Corporate_Opportunity</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.Renewal</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
