@@ -1,3 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Confidential</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Confidential</label>
+        <sharedTo>
+            <group>Confidential</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>Confidential</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Finance</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Corporate Finance</label>
+        <sharedTo>
+            <group>Corporate_Finance_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>Corporate Finance</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Opportunity_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Corporate Opportunity Rule</description>
+        <label>Corporate Opportunity Rule</label>
+        <sharedTo>
+            <group>Deals_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Corporate Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Opportunity__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>
