@@ -31,6 +31,21 @@
                 <default>false</default>
                 <label>Referral</label>
             </value>
+            <value>
+                <fullName>Content</fullName>
+                <default>false</default>
+                <label>Content</label>
+            </value>
+            <value>
+                <fullName>Specialist Team Messaging</fullName>
+                <default>false</default>
+                <label>Specialist Team Messaging</label>
+            </value>
+            <value>
+                <fullName>Credentials</fullName>
+                <default>false</default>
+                <label>Credentials</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
