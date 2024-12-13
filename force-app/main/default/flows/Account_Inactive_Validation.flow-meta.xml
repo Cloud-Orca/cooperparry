@@ -107,6 +107,13 @@
                 <stringValue>Lifecycle Coordinator</stringValue>
             </value>
         </filters>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Group</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -128,6 +135,13 @@
                 <stringValue>Risk and Compliance</stringValue>
             </value>
         </filters>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>gr</stringValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Group</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -138,11 +152,15 @@
         <connector>
             <targetReference>Get_Risk_and_Compliance</targetReference>
         </connector>
-        <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false &amp;&amp;
-TEXT({!$Record.Type}) = &apos;Inactive&apos; &amp;&amp;
-{!$Record.Bypass_Validation__c} = false &amp;&amp;
-ISCHANGED({!$Record.Bypass_Validation__c} ) = false &amp;&amp;
-{!$Profile.Name} &lt;&gt; &apos;System Administrator&apos;</filterFormula>
+        <filterFormula>AND(
+{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
+OR(
+   TEXT({!$Record.Type}) = &apos;Inactive&apos;,
+   TEXT({!$Record.Account_Status__c}) = &apos;Inactive&apos;
+  ),
+{!$Record.Bypass_Validation__c} = false,
+ISCHANGED({!$Record.Bypass_Validation__c} ) = false
+)</filterFormula>
         <object>Account</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
