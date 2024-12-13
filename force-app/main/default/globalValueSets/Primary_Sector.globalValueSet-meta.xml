@@ -60,6 +60,11 @@
         <default>false</default>
         <label>Other</label>
     </customValue>
+    <customValue>
+        <fullName>Incomplete</fullName>
+        <default>false</default>
+        <label>Incomplete</label>
+    </customValue>
     <masterLabel>Primary Sector</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
