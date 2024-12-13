@@ -1,3 +1,4 @@
+@isTest
 public with sharing class BeauhurstHttpCalloutMock implements HttpCalloutMock{
     HttpResponse res;
     Map<String, HttpResponse> responseByEndpointOrContent;

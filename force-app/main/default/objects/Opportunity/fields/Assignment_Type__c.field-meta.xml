@@ -12,62 +12,6 @@
         <restricted>true</restricted>
         <valueSetName>Assignment_Type</valueSetName>
         <valueSettings>
-            <controllingFieldValue>PC Advisory</controllingFieldValue>
-            <valueName>EPC - PCA</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>PC Advisory</controllingFieldValue>
-            <valueName>PC HMRC Enquiries</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>PC Advisory</controllingFieldValue>
-            <valueName>Private Client Advisory</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>PC Advisory</controllingFieldValue>
-            <valueName>Trust Advisory</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>VAT</controllingFieldValue>
-            <valueName>IDT Advisory</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>VAT</controllingFieldValue>
-            <valueName>IDT Advisory/THG</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>VAT</controllingFieldValue>
-            <valueName>IDT Transactions</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>VAT</controllingFieldValue>
-            <valueName>VAT Compliance</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>VAT</controllingFieldValue>
-            <valueName>VAT Contentious</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>VAT</controllingFieldValue>
-            <valueName>VAT MOT</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>PC Compliance</controllingFieldValue>
-            <valueName>PC Compliance Add-ons</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>PC Compliance</controllingFieldValue>
-            <valueName>Private Client Compliance</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>PC Compliance</controllingFieldValue>
-            <valueName>Trust Compliance</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>PC Compliance</controllingFieldValue>
-            <valueName>Trustee</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>Pensions</controllingFieldValue>
             <valueName>Pensions</valueName>
         </valueSettings>
@@ -76,40 +20,29 @@
             <valueName>Pensions - Offshore</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <controllingFieldValue>CP Innovation</controllingFieldValue>
+            <controllingFieldValue>Service Charge</controllingFieldValue>
+            <controllingFieldValue>THG Audit</controllingFieldValue>
+            <controllingFieldValue>THG Early Stage</controllingFieldValue>
+            <controllingFieldValue>THG Tax</controllingFieldValue>
+            <controllingFieldValue>TS</controllingFieldValue>
+            <controllingFieldValue>TT</controllingFieldValue>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <controllingFieldValue>Big Business Audit</controllingFieldValue>
+            <controllingFieldValue>BT Advisory</controllingFieldValue>
+            <controllingFieldValue>BT Compliance</controllingFieldValue>
+            <controllingFieldValue>Capital Allowances</controllingFieldValue>
+            <controllingFieldValue>CF</controllingFieldValue>
+            <controllingFieldValue>Employer Rewards</controllingFieldValue>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <controllingFieldValue>BSO</controllingFieldValue>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <controllingFieldValue>Legacy - DNU</controllingFieldValue>
             <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Accounts Prep - East</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Private Business East</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Private Business - Offshore</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Accounts Prep - South</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Private Business South</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Private Business South - Offshore</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Accounts Prep - West</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Private Business West</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Private Business</controllingFieldValue>
-            <valueName>Private Business West - Offshore</valueName>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <controllingFieldValue>Law</controllingFieldValue>
+            <valueName>Legacy - DNU</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>CP Innovation</controllingFieldValue>
@@ -208,10 +141,6 @@
             <valueName>THG - Early Stage</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>Law</controllingFieldValue>
-            <valueName>Law</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>THG Tax</controllingFieldValue>
             <valueName>THG - R&amp;D</valueName>
         </valueSettings>
@@ -238,6 +167,58 @@
         <valueSettings>
             <controllingFieldValue>THG Tax</controllingFieldValue>
             <valueName>THG Tax Due Diligence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TS</controllingFieldValue>
+            <valueName>Buy Side FDD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TS</controllingFieldValue>
+            <valueName>Forecast FDD Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TS</controllingFieldValue>
+            <valueName>Other FDD Advice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TS</controllingFieldValue>
+            <valueName>Sell Side FDD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT</controllingFieldValue>
+            <valueName>Due Diligence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT</controllingFieldValue>
+            <valueName>Reorganisations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT</controllingFieldValue>
+            <valueName>Transactions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>IDT Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>IDT Advisory/THG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>IDT Transactions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Contentious</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT MOT</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Big Business Audit</controllingFieldValue>
@@ -416,32 +397,76 @@
             <valueName>MM - Project Work</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TS</controllingFieldValue>
-            <valueName>Buy Side FDD</valueName>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <valueName>EPC - PCA</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TS</controllingFieldValue>
-            <valueName>Forecast FDD Work</valueName>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <valueName>PC HMRC Enquiries</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TS</controllingFieldValue>
-            <valueName>Other FDD Advice</valueName>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <valueName>Private Client Advisory</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TS</controllingFieldValue>
-            <valueName>Sell Side FDD</valueName>
+            <controllingFieldValue>PC Advisory</controllingFieldValue>
+            <valueName>Trust Advisory</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TT</controllingFieldValue>
-            <valueName>Due Diligence</valueName>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Accounts Prep - East</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TT</controllingFieldValue>
-            <valueName>Reorganisations</valueName>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business East</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TT</controllingFieldValue>
-            <valueName>Transactions</valueName>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Accounts Prep - South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business South - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Accounts Prep - West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private Business</controllingFieldValue>
+            <valueName>Private Business West - Offshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <valueName>PC Compliance Add-ons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <valueName>Private Client Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <valueName>Trust Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC Compliance</controllingFieldValue>
+            <valueName>Trustee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Law</controllingFieldValue>
+            <valueName>Law</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

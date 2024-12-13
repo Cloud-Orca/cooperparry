@@ -4,7 +4,7 @@
     <customErrors>
         <name>Display_Approval_Error</name>
         <label>Display Approval Error</label>
-        <locationX>138</locationX>
+        <locationX>182</locationX>
         <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>Please ensure you have gained an Estimate Approval before continuing with this Opportunity.</errorMessage>
@@ -14,7 +14,7 @@
     <customErrors>
         <name>Display_Error</name>
         <label>Display Error</label>
-        <locationX>402</locationX>
+        <locationX>446</locationX>
         <locationY>539</locationY>
         <customErrorMessages>
             <errorMessage>Please ensure you link an Estimate to the Opportunity before continuing with this Opportunity.</errorMessage>
@@ -24,7 +24,7 @@
     <decisions>
         <name>Found_Estimate</name>
         <label>Found Estimate?</label>
-        <locationX>226</locationX>
+        <locationX>248</locationX>
         <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Display_Error</targetReference>
@@ -93,7 +93,7 @@
     <recordLookups>
         <name>Get_Estimate</name>
         <label>Get Estimate</label>
-        <locationX>226</locationX>
+        <locationX>248</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -112,12 +112,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>100</locationX>
+        <locationX>122</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Estimate</targetReference>
         </connector>
         <filterFormula>AND({!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
+{!$Record.Account.Do_Not_Create_Case__c} = False,
 CASE({!$Record.StageName}, 
 &quot;Proposing&quot;,1,
 &quot;Proposed&quot;,1,

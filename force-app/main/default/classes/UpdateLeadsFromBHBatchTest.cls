@@ -1,7 +1,6 @@
 @isTest
 public class UpdateLeadsFromBHBatchTest {
-    static testMethod void test() {
-        CreateLeadsFromBHBatch.method1();
+    @isTest static void updateLeadsFromBH(){
+        UpdateLeadsFromBHBatch upl = new UpdateLeadsFromBHBatch();
     }
-
 }
