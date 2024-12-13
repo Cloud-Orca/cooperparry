@@ -106,6 +106,10 @@
                 <behavior>Readonly</behavior>
                 <field>Project_Access__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Milestone_Description__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
