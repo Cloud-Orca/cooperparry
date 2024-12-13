@@ -45,10 +45,26 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Allow_expenses_without_assignments</name>
+        <label>Set Allow expenses without assignments</label>
+        <locationX>176</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>pse__Allow_Expenses_Without_Assignment__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>set_group_default_to_the_Global_Group</name>
         <label>set group default to the Global Group</label>
         <locationX>176</locationX>
         <locationY>395</locationY>
+        <connector>
+            <targetReference>Allow_expenses_without_assignments</targetReference>
+        </connector>
         <inputAssignments>
             <field>pse__Group__c</field>
             <value>

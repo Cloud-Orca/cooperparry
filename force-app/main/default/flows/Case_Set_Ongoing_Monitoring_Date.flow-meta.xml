@@ -85,6 +85,7 @@
             <label>yes Onboarding</label>
         </rules>
     </decisions>
+    <description>Setting Ongoing Monitoring Date - update to only set where the Account is a Client</description>
     <environments>Default</environments>
     <formulas>
         <name>todayPlus1Year</name>
@@ -141,6 +142,7 @@
         </connector>
         <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false &amp;&amp;
 ISCHANGED({!$Record.Status})  &amp;&amp;
+TEXT({!$Record.Account.Type}) = &quot;Client&quot; &amp;&amp;
 TEXT({!$Record.Status}) = &quot;Closed&quot;</filterFormula>
         <object>Case</object>
         <recordTriggerType>Update</recordTriggerType>

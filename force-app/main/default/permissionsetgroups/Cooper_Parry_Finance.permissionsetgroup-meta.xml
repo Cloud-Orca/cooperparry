@@ -6,6 +6,7 @@
     <permissionSets>APXTConga4__Composer_User</permissionSets>
     <permissionSets>Cooper_Parry_Accounting_Permission_Set</permissionSets>
     <permissionSets>FFAIntegrationsERPExchangeRates</permissionSets>
+    <permissionSets>FFX_FF_PSA_Full_User_Modify_All</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisDefinitionReadAccess</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisReports</permissionSets>
     <permissionSets>c2g__AccountingBankAccountReadAccess</permissionSets>
