@@ -57,7 +57,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>c2g__codaCompany__c.cer_Registration_No__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>c2g__codaCompany__c.ffps_psffae__AutoPostFFADocument__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaCreditNoteLineItem__c.cer_Acquisition__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -83,6 +93,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaCreditNote__c.cer_Email_Sent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaInvoiceLineItem__c.cer_Acquisition__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -123,6 +138,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaInvoice__c.cer_Email_Sent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaTransactionLineItem__c.cer_Acquisition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>c2g__codaTransactionLineItem__c.cer_Milestone_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

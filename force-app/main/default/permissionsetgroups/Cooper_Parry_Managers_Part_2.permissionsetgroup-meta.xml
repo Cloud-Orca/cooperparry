@@ -9,6 +9,7 @@
     <permissionSets>Cooper_Parry_User_Fields</permissionSets>
     <permissionSets>FFX_FF_PSA_Time_and_Expense_User</permissionSets>
     <permissionSets>cer_Certinia_Cooper_Parry_Account_Extension</permissionSets>
+    <permissionSets>cer_Cooper_Parry_Conga_Conductor</permissionSets>
     <permissionSets>ffpsai__SyncGroupsToDimensions</permissionSets>
     <permissionSets>ffpsai__SyncPracticesToDimensions</permissionSets>
     <permissionSets>ffpsai__SyncProjectsToDimensions</permissionSets>
