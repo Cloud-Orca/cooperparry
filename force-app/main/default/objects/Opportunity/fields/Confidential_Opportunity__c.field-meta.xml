@@ -11,9 +11,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Pensions</fullName>
+                <fullName>CP Law</fullName>
                 <default>false</default>
-                <label>Pensions</label>
+                <label>CP Law</label>
+            </value>
+            <value>
+                <fullName>UHNWI</fullName>
+                <default>false</default>
+                <label>UHNWI</label>
             </value>
             <value>
                 <fullName>Sports and Media</fullName>
@@ -26,14 +31,14 @@
                 <label>Ring Fenced</label>
             </value>
             <value>
-                <fullName>UHNWI</fullName>
+                <fullName>Confidential</fullName>
                 <default>false</default>
-                <label>UHNWI</label>
+                <label>Confidential</label>
             </value>
             <value>
-                <fullName>CP Law</fullName>
+                <fullName>Corporate Finance</fullName>
                 <default>false</default>
-                <label>CP Law</label>
+                <label>Corporate Finance</label>
             </value>
             <value>
                 <fullName>TS</fullName>
@@ -44,6 +49,11 @@
                 <fullName>TT</fullName>
                 <default>false</default>
                 <label>TT</label>
+            </value>
+            <value>
+                <fullName>Pensions</fullName>
+                <default>false</default>
+                <label>Pensions</label>
             </value>
         </valueSetDefinition>
     </valueSet>
