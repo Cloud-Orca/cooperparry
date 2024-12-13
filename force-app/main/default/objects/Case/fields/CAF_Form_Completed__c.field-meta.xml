@@ -3,7 +3,7 @@
     <fullName>CAF_Form_Completed__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>CAF Form Completed</label>
+    <label>CAF Form Drafted</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
