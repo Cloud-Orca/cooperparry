@@ -25,19 +25,21 @@ public class BeauhurstAPIUtility {
 
                 if(res.getStatusCode() == 200){
                     wrap.success = true;
-                    String resBody = res.getBody();
+					
+                    Map<String, Object> resp = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
+                    List<Object> results = (List<Object>)resp.get('results');
+                    if(results != null && results.size() > 0){
+                        Map<String, Object> resultItem = (Map<String, Object>)results[0];
+                        
+                        Account acc = collectAccount(accounts[0].Id, resultItem);
+                        update acc;
+                    }
                     
-                    String apiBody = resBody.replace(resBody.substringBetween('"turnover":', ','), '"' + resBody.substringBetween('"turnover":', ',') + '"')
-                    	  .replace(resBody.substringBetween('"ebitda":', ','), '"' + resBody.substringBetween('"ebitda":', ',') + '"')
-                    	  .replace(resBody.substringBetween('"total_assets":', ','), '"' + resBody.substringBetween('"total_assets":', ',') + '"');
-                    	//.replace(resBody.substringBetween('"audit_fees":', '}'), '"' + resBody.substringBetween('"audit_fees":', '}') + '"');
-                    System.debug('@@@apiBody: ' + apiBody);
-
-                    Response getData = (Response) JSON.deserialize(apiBody, Response.class);
+                    /*Response getData = (Response) JSON.deserialize(res.getBody(), Response.class);
                     if(!getData.results.isEmpty()){
                         Account acc = collectAccount(accounts[0].Id, getData.results[0]);
                         update acc;
-                    }
+                    }*/
                 }else{
                     wrap.errorMsg = 'API Error';
                 }
@@ -48,8 +50,103 @@ public class BeauhurstAPIUtility {
         }
         return wrap;
     }
+    
+    public static Account collectAccount(Id accId, Map<String, Object> resultItem){
+        Account acc = new Account();
+        if(accId != null){
+            acc.Id = accId;
+        }else{
+            acc.Beauhurst_ID__c = String.valueOf(resultItem.get('id'));
+        }
+        acc.Beauhurst_Updated_Date__c = System.now();
+        if(resultItem.get('basic') != null){
+            Map<String, Object> basic = (Map<String, Object>)resultItem.get('basic');
+            if(basic.get('registered_name') != null){
+                acc.Registered_Name__c = String.valueOf(basic.get('registered_name'));
+            }
+            if(basic.get('other_trading_names') != null){
+                List<Object> other_trading_names_obj = (List<Object>)basic.get('other_trading_names'); 
+                if(!other_trading_names_obj.isEmpty()){
+                    List<String> other_trading_names = String.join(other_trading_names_obj,';').split(';');
+                    acc.Other_Trading_Names__c = listToString(other_trading_names);
+                }
+            }
+            if(basic.get('website') != null){
+                acc.Website = String.valueOf(basic.get('website'));
+            }
+            if(basic.get('ultimate_parent_company') != null){
+                Map<String, Object> parent = (Map<String, Object>)basic.get('ultimate_parent_company');
+                if(parent.get('companies_house_id') != null){
+                    acc.Parent_Company_Companies_House_Id__c = String.valueOf(parent.get('companies_house_id'));
+                }
+                if(parent.get('name') != null){
+                    acc.Ultimate_Parent_Company_Name__c = String.valueOf(parent.get('name'));
+                }
+            }
+        }
+        
+        if(resultItem.get('classification') != null){
+            Map<String, Object> classification = (Map<String, Object>)resultItem.get('classification');
+            
+            if(classification.get('top_level_industry_groups') != null){
+                List<Object> top_level_industry_groups_obj = (List<Object>)classification.get('top_level_industry_groups'); 
+                if(!top_level_industry_groups_obj.isEmpty()){
+                    List<String> top_level_industry_groups = String.join(top_level_industry_groups_obj,';').split(';');
+                    acc.Top_Level_Industry_Groups__c = listToString(top_level_industry_groups);
+                }
+            }
+            if(classification.get('top_level_sector_groups') != null){
+                List<Object> top_level_sector_groups_obj = (List<Object>)classification.get('top_level_sector_groups'); 
+                if(!top_level_sector_groups_obj.isEmpty()){
+                    List<String> top_level_sector_groups = String.join(top_level_sector_groups_obj,';').split(';');
+                    acc.Top_Level_Sector_Groups__c = listToString(top_level_sector_groups);
+                }
+            }
+            if(classification.get('buzzwords') != null){
+                List<Object> buzzwords_obj = (List<Object>)classification.get('buzzwords'); 
+                if(!buzzwords_obj.isEmpty()){
+                    List<String> buzzwords = String.join(buzzwords_obj,';').split(';');
+                    acc.Buzzwords__c = listToString(buzzwords);
+                }
+            }
+            if(classification.get('latest_stage_of_evolution') != null){
+                acc.Latest_Stage_Of_Evolution__c = String.valueOf(classification.get('latest_stage_of_evolution'));
+            }
+            if(classification.get('legal_form') != null){
+                acc.Legal_Form__c = String.valueOf(classification.get('legal_form'));
+            }
+        }
+        
+        if(resultItem.get('latest_accounts') != null){
+			Map<String, Object> latest = (Map<String, Object>)resultItem.get('latest_accounts');       
+            
+            if(latest.get('year_end_date') != null){
+                acc.Year_End_Date__c = stringToDate(String.valueOf(latest.get('year_end_date')));
+            }
+            if(latest.get('turnover') != null){
+                acc.Turnover__c = Decimal.valueOf(String.valueOf(latest.get('turnover')));
+            }
+            if(latest.get('ebitda') != null){
+                acc.EBITDA__c = Decimal.valueOf(String.valueOf(latest.get('ebitda')));
+            }
+            if(latest.get('total_assets') != null){
+                acc.Total_Assets__c = Decimal.valueOf(String.valueOf(latest.get('total_assets')));
+            }
+            if(latest.get('number_of_employees') != null){
+                acc.NumberOfEmployees = Integer.valueOf(latest.get('number_of_employees'));
+            }
+            if(latest.get('auditor') != null){
+                acc.Auditor__c = String.valueOf(latest.get('auditor'));
+            }
+            if(latest.get('audit_fees') != null){
+                acc.Audit_Fees__c = String.valueOf(latest.get('audit_fees'));
+            }
+            System.debug('@@@acc: ' + acc);
+        }
+        return acc;
+    }
 
-    public static Account collectAccount(Id accId, Result res){
+    /*public static Account collectAccount(Id accId, Result res){
         Account acc = new Account();
         if(accId != null){
             acc.Id = accId;
@@ -126,18 +223,23 @@ public class BeauhurstAPIUtility {
             }
         }
         return acc;
-    }
+    }*/
 
     public static String listToString(List<String> strList){
         String strVal = String.join(strList, ',');
         return (strVal.length() > 255) ? strVal.left(255) : strVal;
+    }
+    
+    public static Date stringToDate(String strDate){
+        List<String> strDates = strDate.split('-');
+        return Date.newInstance(Integer.valueOf(strDates[0]), Integer.valueOf(strDates[1]), Integer.valueOf(strDates[2]));
     }
 
     public static Id getRecordTypeIdbyName(String objectName, String strRecordTypeName){
         return  Schema.getGlobalDescribe().get(objectName).getDescribe().getRecordTypeInfosByName().get(strRecordTypeName).getRecordTypeId();
     }
 
-    public class Response{
+    /*public class Response{
         public List<Result> results;
     }
 
@@ -192,7 +294,7 @@ public class BeauhurstAPIUtility {
         public String from_date;
         public String until_date;
         public Boolean currently_active;
-    }
+    }*/
 
     public class UIWrapper{
         @AuraEnabled

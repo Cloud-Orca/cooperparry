@@ -104,6 +104,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Case__c</fieldItem>
                 <identifier>RecordCase__cField</identifier>
             </fieldInstance>
@@ -120,6 +124,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.OwnerId</fieldItem>
                 <identifier>RecordOwnerIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Status__c</fieldItem>
+                <identifier>RecordStatus_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-2a793ba6-20ee-472b-a31e-e4bd896f6af6</name>

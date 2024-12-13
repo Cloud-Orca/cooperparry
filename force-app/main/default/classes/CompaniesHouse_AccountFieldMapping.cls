@@ -90,7 +90,7 @@ public with sharing class CompaniesHouse_AccountFieldMapping {
         List<Account> accountList = [
             SELECT Id, Name, Company_Legal_Name__c, Company_registration_number__c, CH_Company_Type__c, Legal_Type__c, 
                     BillingAddress, BillingCity, BillingCountry, BillingPostalCode, BillingState, BillingStreet,
-                    Incorporation_Date__c, Date_of_Creation__c, Companies_House_Run__c, Companies_House_Run_Date__c
+                    Incorporation_Date__c, Source__c, Source_Type__c, Date_of_Creation__c, Companies_House_Run__c, Companies_House_Run_Date__c
             FROM Account
             WHERE Id =: recordId /* AND (Company_registration_number__c =: companyKey) */
             WITH SECURITY_ENFORCED

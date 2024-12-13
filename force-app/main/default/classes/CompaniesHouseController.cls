@@ -61,9 +61,8 @@ public with sharing class CompaniesHouseController {
         if (response.getStatusCode() == 200) {
             // Upload files to sharepoint
             List<Sharepoint_API__c> sharepointAPIlist = [SELECT Id, access_token__c FROM Sharepoint_API__c LIMIT 1];
-            String accessToken = sharepointAPIlist.get(0).access_token__c;
-
             if(!sharepointAPIlist.isEmpty()){
+                String accessToken = sharepointAPIlist.get(0).access_token__c;
                 String publicFolderId = [SELECT Id, Sharepoint_Public_Folder_ID__c FROM Account WHERE Id =: recordId].Sharepoint_Public_Folder_ID__c;
                 if(publicFolderId != null){
                     Boolean isUpdateAccessToken = false;

@@ -83,6 +83,7 @@
             <targetReference>Get_Estimate</targetReference>
         </connector>
         <filterFormula>AND({!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
+{!$Record.Account.Do_Not_Create_Case__c} = False,
 CASE({!$Record.StageName}, 
 &quot;Married (Closed Won)&quot;,1,
 &quot;Live Enquiry&quot;,1,
