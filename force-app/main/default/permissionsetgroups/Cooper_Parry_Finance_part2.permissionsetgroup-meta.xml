@@ -2,6 +2,7 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry Finance part2</label>
+    <mutingPermissionSets>Cooper_Parry_Finance_part2_Muted</mutingPermissionSets>
     <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
     <permissionSets>Finance_Revenue_Recognition_Custom_Fields</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisDefinitionReadAccess</permissionSets>
@@ -48,6 +49,7 @@
     <permissionSets>cer_Cooper_Parry_Certinia_Conga_Custom_Fields_SIN_SCR</permissionSets>
     <permissionSets>cer_Cooper_Parry_Certinia_Custom_Permission_CRM_Contact_for_Finance</permissionSets>
     <permissionSets>cer_Cooper_Parry_Certinia_Custom_Permission_Read_Only</permissionSets>
+    <permissionSets>cer_Cooper_Parry_Conga_Conductor</permissionSets>
     <permissionSets>fferpcore__AsyncApiProcess</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsCompanyRead</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsTaxRead</permissionSets>
