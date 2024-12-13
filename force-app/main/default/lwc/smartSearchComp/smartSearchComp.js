@@ -4,7 +4,7 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import smartSearchLogoURL from '@salesforce/resourceUrl/smartSearchLogo';
 import searchNameToSmartSearch from '@salesforce/apex/SmartSearchCompCont.searchNameToSmartSearch';
 import getDocument from '@salesforce/apex/SmartSearchCompCont.getDocument';
-import getWactchlistSummary from '@salesforce/apex/SmartSearchCompCont.getWactchlistSummary';
+// import getWactchlistSummary from '@salesforce/apex/SmartSearchCompCont.getWactchlistSummary';
 import getLifeCycleRole from '@salesforce/apex/SmartSearchCompCont.getLifeCycleRole';
 import getAllBeneficialOwners from '@salesforce/apex/SmartSearchCompCont.getAllBeneficialOwners';
 import getPicklistValues from '@salesforce/apex/SmartSearchCompCont.getPicklistValues';
