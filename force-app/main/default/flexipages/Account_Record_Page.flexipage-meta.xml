@@ -356,24 +356,14 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.CT_Account_access__c</fieldItem>
-                <identifier>RecordCT_Account_access_cField</identifier>
+                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
+                <identifier>RecordConfidential_Account_Area_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f007f94f-c725-438b-9ea5-e7f592fa808c</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
-                <identifier>RecordConfidential_Account_Area_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-7762ce4e-47d0-49f4-b2f7-8684795cb2a8</name>
         <type>Facet</type>
     </flexiPageRegions>
