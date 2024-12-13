@@ -185,11 +185,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountTriggerHandlerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BatchCompHouseUpdateAccAndOfficer</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>BatchCompHouseUpdateAccAndOfficerSched</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>BatchCompHouseUpdateAccAndOfficerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -267,6 +275,10 @@
     <classAccesses>
         <apexClass>CompaniesHouseController</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CompaniesHouseControllerTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>CompaniesHouse_AccountFieldMapping</apexClass>
@@ -397,7 +409,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>SharepointCompContTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SharepointUploadFileInvocable</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SharepointUploadFileInvocableTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -423,6 +443,10 @@
     <classAccesses>
         <apexClass>SmartSearchCompCont</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SmartSearchCompContTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>UpdateAccountsFromBHBatch</apexClass>
@@ -1760,6 +1784,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>BD_Meeting__c.Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BD_Meeting__c.Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
