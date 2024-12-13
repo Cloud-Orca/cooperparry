@@ -96,8 +96,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Field_Advocacy_Survey_Send_Month__c</fieldItem>
-                <identifier>RecordField_Advocacy_Survey_Send_Month__cField</identifier>
+                <fieldItem>Record.Linkedin__c</fieldItem>
+                <identifier>RecordLinkedin_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-45318f46-ec1b-4137-a71c-ffafedb486c8</name>
@@ -132,16 +132,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Job_Title__c</fieldItem>
                 <identifier>RecordJob_Title_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Linkedin__c</fieldItem>
-                <identifier>RecordLinkedin_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-7d75c669-5359-4391-8c49-078d9b7fdc74</name>
@@ -391,88 +381,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Opted_In__c</fieldItem>
-                <identifier>RecordOpted_In_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Unsubscribed__c</fieldItem>
-                <identifier>RecordUnsubscribed_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Marketing_Description__c</fieldItem>
-                <identifier>RecordMarketing_Description_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-024a36ee-9e88-467a-b433-6ada5fa849e3</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Preferences_Updated_On__c</fieldItem>
-                <identifier>RecordPreferences_Updated_On_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Preferences_Updated__c</fieldItem>
-                <identifier>RecordPreferences_Updated_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-b2b257e5-05ff-4239-bd02-204f2d3ff950</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-024a36ee-9e88-467a-b433-6ada5fa849e3</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column10</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-b2b257e5-05ff-4239-bd02-204f2d3ff950</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column11</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-b2cd5ff1-05d5-46e7-8ff9-fc7c03c90063</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Description</fieldItem>
                 <identifier>RecordDescriptionField</identifier>
             </fieldInstance>
@@ -520,6 +428,118 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-a40157b7-8804-44a5-a555-507d3bd5f642</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Opted_In__c</fieldItem>
+                <identifier>RecordOpted_In_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Preferences_Updated__c</fieldItem>
+                <identifier>RecordPreferences_Updated_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_Advocacy_Survey_Send_Date__c</fieldItem>
+                <identifier>RecordLast_Advocacy_Survey_Send_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Field_Advocacy_Survey_Send_Month__c</fieldItem>
+                <identifier>RecordField_Advocacy_Survey_Send_Month__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-024a36ee-9e88-467a-b433-6ada5fa849e3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Unsubscribed__c</fieldItem>
+                <identifier>RecordUnsubscribed_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Preferences_Updated_On__c</fieldItem>
+                <identifier>RecordPreferences_Updated_On_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__c</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Marketing_Description__c</fieldItem>
+                <identifier>RecordMarketing_Description_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b2b257e5-05ff-4239-bd02-204f2d3ff950</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-024a36ee-9e88-467a-b433-6ada5fa849e3</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column10</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b2b257e5-05ff-4239-bd02-204f2d3ff950</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-b2cd5ff1-05d5-46e7-8ff9-fc7c03c90063</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -651,24 +671,6 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>Facet-b2cd5ff1-05d5-46e7-8ff9-fc7c03c90063</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Marketing Preferences</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection6</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
                     <value>Facet-fed2f2b1-c3fc-4d98-8820-a5f99f05aeb7</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -699,6 +701,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-b2cd5ff1-05d5-46e7-8ff9-fc7c03c90063</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Marketing Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection6</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
