@@ -2,7 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Service_Line</fullName>
     <active>true</active>
-    <businessProcess>Onboarding Support Process</businessProcess>
+    <businessProcess>Case Support Process</businessProcess>
     <label>Service Line</label>
     <picklistValues>
         <picklist>Case_Area__c</picklist>
@@ -290,7 +290,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Private Business East - Offshore</fullName>
+            <fullName>Private Business - Offshore</fullName>
             <default>false</default>
         </values>
         <values>

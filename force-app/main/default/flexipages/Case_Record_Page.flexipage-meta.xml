@@ -15,16 +15,10 @@
                         <valueListItems>
                             <value>Case.Business_Ongoing_Monitoring</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.Account.IsPersonAccount}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>false</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.RecordType.Name}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Onboarding</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -47,16 +41,10 @@
                         <valueListItems>
                             <value>Case.Business_Risk_Assessment</value>
                             <visibilityRule>
-                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.Account.IsPersonAccount}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>false</rightValue>
-                                </criteria>
-                                <criteria>
-                                    <leftValue>{!Record.RecordType.Name}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Onboarding</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -75,9 +63,6 @@
                                     <rightValue>Onboarding</rightValue>
                                 </criteria>
                             </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Case.Send_to_Risk</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Escalation</value>
@@ -134,9 +119,6 @@
                                     <rightValue>Compliance Check</rightValue>
                                 </criteria>
                             </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Case.Send_to_Compliance</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Declined_Case</value>

@@ -650,6 +650,7 @@
             <targetReference>get_Onboarding_Record_Type</targetReference>
         </connector>
         <filterFormula>AND(NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
+ {!$Record.RecordType.DeveloperName} = &quot;Renewal&quot;,
 ISCHANGED({!$Record.StageName}),
 {!$Record.Account.Do_Not_Create_Case__c} = false,
 OR(

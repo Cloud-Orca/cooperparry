@@ -65,6 +65,11 @@
         <default>false</default>
         <label>Not For Profit</label>
     </customValue>
+    <customValue>
+        <fullName>Incomplete</fullName>
+        <default>false</default>
+        <label>Incomplete</label>
+    </customValue>
     <masterLabel>Type of Business</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
