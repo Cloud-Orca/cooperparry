@@ -47,36 +47,39 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
         System.debug('@@@UpdateAccountsFromBHBatch body: ' + res.getBody());
 
         if(res.getStatusCode() == 200){
-            String resBody = res.getBody();
-
-            String apiBody = resBody.replace(resBody.substringBetween('"turnover":', ','), '"' + resBody.substringBetween('"turnover":', ',') + '"')
-                    	  .replace(resBody.substringBetween('"ebitda":', ','), '"' + resBody.substringBetween('"ebitda":', ',') + '"')
-                    	  .replace(resBody.substringBetween('"total_assets":', ','), '"' + resBody.substringBetween('"total_assets":', ',') + '"');
-                    	//.replace(resBody.substringBetween('"audit_fees":', '}'), '"' + resBody.substringBetween('"audit_fees":', '}') + '"');
-            System.debug('@@@apiBody: ' + apiBody);
-
-            BeauhurstAPIUtility.Response getData = (BeauhurstAPIUtility.Response) JSON.deserialize(apiBody, BeauhurstAPIUtility.Response.class);
-            if(!getData.results.isEmpty()){
+            Map<String, Object> resp = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
+            List<Object> results = (List<Object>)resp.get('results');
+            if(results != null && results.size() > 0){
                 Set<String> retrievedCompanyIds = new Set<String>();
                 Map<String, Id> bhIdToAccountIdMap = new Map<String, Id>();
                 List<Account> accountsToUpdate = new List<Account>();
-                for(BeauhurstAPIUtility.Result result : getData.results){
-                    retrievedCompanyIds.add(result.id);
-                }
 
-                for(Account acc : [SELECT Id, Beauhurst_ID__c FROM Account WHERE Beauhurst_ID__c IN: retrievedCompanyIds]){
-                    bhIdToAccountIdMap.put(acc.Beauhurst_ID__c, acc.Id);
-                }
-
-                for(BeauhurstAPIUtility.Result result : getData.results){
-                    if(bhIdToAccountIdMap.containsKey(result.id)){
-                        Id accId = bhIdToAccountIdMap.get(result.id);
-                        accountsToUpdate.add(BeauhurstAPIUtility.collectAccount(accId, result));
+                for(Object result : results){
+                    Map<String, Object> resultItem = (Map<String, Object>)result;
+                    if(resultItem.get('id') != null){
+                        retrievedCompanyIds.add(String.valueOf(resultItem.get('id')));
                     }
                 }
 
-                if(!accountsToUpdate.isEmpty()){
-                    update accountsToUpdate;
+                if(!retrievedCompanyIds.isEmpty()){
+                    for(Account acc : [SELECT Id, Beauhurst_ID__c FROM Account WHERE Beauhurst_ID__c IN: retrievedCompanyIds]){
+                        bhIdToAccountIdMap.put(acc.Beauhurst_ID__c, acc.Id);
+                    }
+    
+                    for(Object result : results){
+                        Map<String, Object> resultItem = (Map<String, Object>)result;
+                        if(resultItem.get('id') != null){
+                            String resultId = String.valueOf(resultItem.get('id'));
+                            if(bhIdToAccountIdMap.containsKey(resultId)){
+                                Id accId = bhIdToAccountIdMap.get(resultId);
+                                accountsToUpdate.add(BeauhurstAPIUtility.collectAccount(accId, resultItem));
+                            }
+                        }
+                    }
+                    
+                    if(!accountsToUpdate.isEmpty()){
+                        update accountsToUpdate;
+                    }
                 }
             }
         }

@@ -20,29 +20,6 @@ public class SmartSearchAPIUtility {
         return res;
     }
 
-    public static HttpResponse postSearchSubject(String accessToken, String firstName, String middleName, String lastName){
-        Smart_Search_Setting__c smartSearchSetting = Smart_Search_Setting__c.getOrgDefaults();
-
-        HttpRequest req = new HttpRequest();
-        
-        req.setEndpoint(smartSearchSetting.base_url__c + '/v3/watchlist/searches');
-        req.setMethod('POST');
-        req.setHeader('Content-Type', 'application/vnd.api+json');
-        req.setHeader('Accept', 'application/vnd.api+json');
-        req.setHeader('Authorization', 'Bearer ' + accessToken);
-
-        middleName = (middleName != null) ? middleName : '';
-        String body = '{"data":{"type":"watchlist-only-individual","attributes":{"name":{"first":"' + firstName + '","middle":"' + middleName + '","last":"' + lastName + '"}}}}';
-        // {"data":{"type":"watchlist-only-individual","attributes":{"name":{"first":"test","middle":"jo","last":"last"},"date_of_birth":"1994-12-27"}}}
-        req.setBody(body);
-
-        Http http = new Http();
-        HttpResponse res = http.send(req);
-        System.debug('@@@ resp status and code: '+ res.getStatus()+' ' + res.getStatusCode());
-        System.debug('@@@ resp body: ' + res.getBody());
-        return res;
-    }
-
     public static HttpResponse postSearchUKIndividual(String accessToken, Beneficial_Owner__c benOwnerToSearch){
         Smart_Search_Setting__c smartSearchSetting = Smart_Search_Setting__c.getOrgDefaults();
 
@@ -110,23 +87,6 @@ public class SmartSearchAPIUtility {
         HttpRequest req = new HttpRequest();
         
         req.setEndpoint(smartSearchSetting.base_url__c + '/v3/ukindividual/searches/' + searchId);
-        req.setMethod('GET');
-        req.setHeader('Accept', 'application/vnd.api+json');
-        req.setHeader('Authorization', 'Bearer ' + accessToken);
-
-        Http http = new Http();
-        HttpResponse res = http.send(req);
-        System.debug('@@@ resp status and code: '+ res.getStatus()+' ' + res.getStatusCode());
-        System.debug('@@@ resp body: ' + res.getBody());
-        return res;
-    }
-
-    public static HttpResponse getWatchList(String accessToken, String searchSubjectId){
-        Smart_Search_Setting__c smartSearchSetting = Smart_Search_Setting__c.getOrgDefaults();
-
-        HttpRequest req = new HttpRequest();
-        
-        req.setEndpoint(smartSearchSetting.base_url__c + '/v3/watchlist/subjects/' + searchSubjectId);
         req.setMethod('GET');
         req.setHeader('Accept', 'application/vnd.api+json');
         req.setHeader('Authorization', 'Bearer ' + accessToken);
