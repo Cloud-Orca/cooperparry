@@ -76,6 +76,10 @@
                 <behavior>Edit</behavior>
                 <field>Residential_Address__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Status__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
