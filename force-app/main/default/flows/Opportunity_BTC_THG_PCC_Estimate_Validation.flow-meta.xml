@@ -118,6 +118,7 @@
             <targetReference>Get_Estimate</targetReference>
         </connector>
         <filterFormula>AND({!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
+{!$Record.Account.Do_Not_Create_Case__c} = False,
 CASE({!$Record.StageName}, 
 &quot;Proposing&quot;,1,
 &quot;Proposed&quot;,1,
