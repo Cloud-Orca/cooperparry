@@ -21,7 +21,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Copy_3_of_Copy_1_of_Create_Referral</targetReference>
+            <targetReference>Create_Referral_2</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -44,7 +44,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Copy_1_of_Create_Referral</targetReference>
+            <targetReference>Create_Referral_3</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -242,27 +242,12 @@
     <decisions>
         <name>Copy_1_of_Object_Chosen</name>
         <label>Object Chosen</label>
-        <locationX>3174</locationX>
+        <locationX>3086</locationX>
         <locationY>350</locationY>
         <defaultConnector>
-            <targetReference>Object</targetReference>
+            <targetReference>Create_Outreach_Campaign</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>No_Campaign_2</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Campaign.recordId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Object</targetReference>
-            </connector>
-            <label>No Campaign - 2</label>
-        </rules>
         <rules>
             <name>Copy_1_of_Lead_Chosen</name>
             <conditionLogic>and</conditionLogic>
@@ -274,7 +259,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Copy_1_of_Create_Campaign_Member</targetReference>
+                <targetReference>Get_Lead</targetReference>
             </connector>
             <label>Lead Chosen</label>
         </rules>
@@ -289,7 +274,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Copy_1_of_create_campaign_member_account</targetReference>
+                <targetReference>Get_Account</targetReference>
             </connector>
             <label>Account Chosen</label>
         </rules>
@@ -304,7 +289,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Copy_1_of_Update_Opportunity_Campaign</targetReference>
+                <targetReference>Get_Opportunity_2</targetReference>
             </connector>
             <label>Opportunity Chosen</label>
         </rules>
@@ -312,7 +297,7 @@
     <decisions>
         <name>Copy_2_of_Object_Chosen</name>
         <label>Object Chosen</label>
-        <locationX>4318</locationX>
+        <locationX>4142</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Object</targetReference>
@@ -385,7 +370,7 @@
         <locationX>1766</locationX>
         <locationY>566</locationY>
         <defaultConnector>
-            <targetReference>Copy_1_of_Create_Referral</targetReference>
+            <targetReference>Create_Referral_3</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -410,7 +395,7 @@
         <locationX>2206</locationX>
         <locationY>566</locationY>
         <defaultConnector>
-            <targetReference>Copy_1_of_Copy_1_of_Create_Referral</targetReference>
+            <targetReference>Create_Referral_4</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -427,6 +412,82 @@
                 <targetReference>Copy_1_of_Screen2</targetReference>
             </connector>
             <label>yes - create opp for service line</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Create_Outreach_Campaign</name>
+        <label>Create Outreach Campaign</label>
+        <locationX>3086</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>Object</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Lead_Chosen_Outreach_Campaign</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Campaign.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Campaign_Member_2</targetReference>
+            </connector>
+            <label>Lead Chosen - Outreach Campaign</label>
+        </rules>
+        <rules>
+            <name>Account_Chosen_Outreach_Campaign</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>001</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Campaign.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>create_campaign_member_account_2</targetReference>
+            </connector>
+            <label>Account Chosen - Outreach Campaign</label>
+        </rules>
+        <rules>
+            <name>Opportunity_Chosen_Outreach_Campaign</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>006</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Campaign.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opportunity_Campaign_2</targetReference>
+            </connector>
+            <label>Opportunity Chosen - Outreach Campaign</label>
         </rules>
     </decisions>
     <decisions>
@@ -457,7 +518,7 @@
     <decisions>
         <name>Object</name>
         <label>Object</label>
-        <locationX>2338</locationX>
+        <locationX>2250</locationX>
         <locationY>1442</locationY>
         <defaultConnector>
             <targetReference>Screen3</targetReference>
@@ -638,7 +699,7 @@
     <decisions>
         <name>Source_Chosen</name>
         <label>Source</label>
-        <locationX>2338</locationX>
+        <locationX>2250</locationX>
         <locationY>242</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -829,6 +890,11 @@ IF (BEGINS({!recordId}, &quot;006&quot;),{!get_opportunity.AccountId} ,
         <expression>&quot;Referral - &quot; + {!Referral_Type_Formula_For_Name}</expression>
     </formulas>
     <formulas>
+        <name>Referral_Outeach_Name</name>
+        <dataType>String</dataType>
+        <expression>&quot;Referral - &quot; + {!Referral_Type_Outreach}</expression>
+    </formulas>
+    <formulas>
         <name>Referral_Type_Formula</name>
         <dataType>String</dataType>
         <expression>IF(
@@ -881,147 +947,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>Copy_1_of_Copy_1_of_Create_Referral</name>
-        <label>Copy 1 of Copy 1 of Create Referral</label>
-        <locationX>2206</locationX>
-        <locationY>974</locationY>
-        <connector>
-            <targetReference>Object</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Account__c</field>
-            <value>
-                <elementReference>Account.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>International_Firm_Name__c</field>
-            <value>
-                <elementReference>International_Firm_Name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead_Area__c</field>
-            <value>
-                <elementReference>Lead_Area</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Name</field>
-            <value>
-                <elementReference>Referral_name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Network__c</field>
-            <value>
-                <elementReference>Network</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Notes__c</field>
-            <value>
-                <elementReference>Copy_1_of_Notes</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Opportunity__c</field>
-            <value>
-                <elementReference>referralOpp</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Contact__c</field>
-            <value>
-                <elementReference>Contact.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Sub_Type__c</field>
-            <value>
-                <elementReference>Referral_Type_Opportunity</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Type__c</field>
-            <value>
-                <elementReference>Source</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_User__c</field>
-            <value>
-                <elementReference>User.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Referral__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Copy_1_of_Create_Campaign_Member</name>
-        <label>Create Campaign Member</label>
-        <locationX>2866</locationX>
-        <locationY>458</locationY>
-        <connector>
-            <targetReference>Object</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Campaign.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LeadId</field>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Sent</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Copy_1_of_create_campaign_member_account</name>
-        <label>create campaign member account</label>
-        <locationX>3130</locationX>
-        <locationY>458</locationY>
-        <connector>
-            <targetReference>Object</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>AccountId</field>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Campaign.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Sent</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
         <name>Copy_1_of_Create_Opportunity</name>
         <label>Copy 1 of Create Opportunity</label>
         <locationX>2074</locationX>
         <locationY>782</locationY>
         <connector>
-            <targetReference>Copy_1_of_Copy_1_of_Create_Referral</targetReference>
+            <targetReference>Create_Referral_4</targetReference>
         </connector>
         <inputAssignments>
             <field>AccountId</field>
@@ -1096,92 +1027,9 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
-        <name>Copy_1_of_Create_Referral</name>
-        <label>Copy 1 of Create Referral</label>
-        <locationX>1766</locationX>
-        <locationY>1082</locationY>
-        <connector>
-            <targetReference>Object</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Account__c</field>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>International_Firm_Name__c</field>
-            <value>
-                <elementReference>International_Firm_Name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead_Area__c</field>
-            <value>
-                <elementReference>Lead_Area</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Name</field>
-            <value>
-                <elementReference>External_Referral_Name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Network__c</field>
-            <value>
-                <elementReference>Network</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Notes__c</field>
-            <value>
-                <elementReference>varOppNotes</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Opportunity__c</field>
-            <value>
-                <elementReference>varCreateOppId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Contact__c</field>
-            <value>
-                <elementReference>Contact.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Sub_Type__c</field>
-            <value>
-                <elementReference>Referral_Type_Account</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Type__c</field>
-            <value>
-                <elementReference>Referral_Type_Formula_Account</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_User__c</field>
-            <value>
-                <elementReference>User.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referred_Account__c</field>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Referral__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
         <name>Copy_2_of_Create_Campaign_Member</name>
         <label>Create Campaign Member</label>
-        <locationX>4010</locationX>
+        <locationX>3834</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -1210,7 +1058,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordCreates>
         <name>Copy_2_of_create_campaign_member_account</name>
         <label>Create campaign member account</label>
-        <locationX>4274</locationX>
+        <locationX>4098</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -1234,89 +1082,6 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </value>
         </inputAssignments>
         <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Copy_3_of_Copy_1_of_Create_Referral</name>
-        <label>Copy 3 of Copy 1 of Create Referral</label>
-        <locationX>1370</locationX>
-        <locationY>890</locationY>
-        <connector>
-            <targetReference>Object</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>Account__c</field>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>International_Firm_Name__c</field>
-            <value>
-                <elementReference>International_Firm_Name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead_Area__c</field>
-            <value>
-                <elementReference>Lead_Area</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Name</field>
-            <value>
-                <elementReference>External_Referral_Name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Network__c</field>
-            <value>
-                <elementReference>Network</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Notes__c</field>
-            <value>
-                <elementReference>varOppNotes</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Opportunity__c</field>
-            <value>
-                <elementReference>varCreateOppId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Contact__c</field>
-            <value>
-                <elementReference>Contact.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Sub_Type__c</field>
-            <value>
-                <elementReference>Referral_Type_Account</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_Type__c</field>
-            <value>
-                <elementReference>Referral_Type_Formula_Account</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referral_User__c</field>
-            <value>
-                <elementReference>User.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Referred_Account__c</field>
-            <value>
-                <elementReference>Account_Deals.recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Referral__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
@@ -1350,12 +1115,70 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
+        <name>Create_Campaign_Member_2</name>
+        <label>Create Campaign Member - 2</label>
+        <locationX>2690</locationX>
+        <locationY>866</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>create_campaign_member_account</name>
         <label>create campaign member account</label>
         <locationX>314</locationX>
         <locationY>458</locationY>
         <connector>
             <isGoTo>true</isGoTo>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>create_campaign_member_account_2</name>
+        <label>create campaign member account - 2</label>
+        <locationX>2954</locationX>
+        <locationY>866</locationY>
+        <connector>
             <targetReference>Object</targetReference>
         </connector>
         <inputAssignments>
@@ -1533,6 +1356,12 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>External_Referral_Name__c</field>
+            <value>
+                <elementReference>External_Referral_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>International_Firm_Name__c</field>
             <value>
                 <elementReference>International_Firm_Name</elementReference>
@@ -1589,6 +1418,402 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <object>Referral__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordCreates>
+        <name>Create_Referral_2</name>
+        <label>Create Referral - 2</label>
+        <locationX>1370</locationX>
+        <locationY>890</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>External_Referral_Name__c</field>
+            <value>
+                <elementReference>External_Referral_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>International_Firm_Name__c</field>
+            <value>
+                <elementReference>International_Firm_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Lead_Area__c</field>
+            <value>
+                <elementReference>Lead_Area</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>External_Referral_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Network__c</field>
+            <value>
+                <elementReference>Network</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>varOppNotes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>varCreateOppId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Contact__c</field>
+            <value>
+                <elementReference>Contact.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Sub_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Account</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Formula_Account</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_User__c</field>
+            <value>
+                <elementReference>User.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referred_Account__c</field>
+            <value>
+                <elementReference>Account_Deals.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Referral__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Referral_3</name>
+        <label>Create Referral - 3</label>
+        <locationX>1766</locationX>
+        <locationY>1082</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>External_Referral_Name__c</field>
+            <value>
+                <elementReference>External_Referral_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>International_Firm_Name__c</field>
+            <value>
+                <elementReference>International_Firm_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Lead_Area__c</field>
+            <value>
+                <elementReference>Lead_Area</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>External_Referral_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Network__c</field>
+            <value>
+                <elementReference>Network</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>varOppNotes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>varCreateOppId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Contact__c</field>
+            <value>
+                <elementReference>Contact.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Sub_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Account</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Formula_Account</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_User__c</field>
+            <value>
+                <elementReference>User.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referred_Account__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Referral__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Referral_4</name>
+        <label>Create Referral - 4</label>
+        <locationX>2206</locationX>
+        <locationY>974</locationY>
+        <connector>
+            <targetReference>Object</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Account.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>External_Referral_Name__c</field>
+            <value>
+                <elementReference>External_Referral_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>International_Firm_Name__c</field>
+            <value>
+                <elementReference>International_Firm_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Lead_Area__c</field>
+            <value>
+                <elementReference>Lead_Area</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Referral_name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Network__c</field>
+            <value>
+                <elementReference>Network</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>Copy_1_of_Notes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>referralOpp</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Contact__c</field>
+            <value>
+                <elementReference>Contact.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Sub_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Opportunity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Type__c</field>
+            <value>
+                <elementReference>Source</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_User__c</field>
+            <value>
+                <elementReference>User.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Referral__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Referral_5</name>
+        <label>Create Referral - 5</label>
+        <locationX>2690</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Create_Outreach_Campaign</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Lead__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Referral_Outeach_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Outreach</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Referral__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Referral_6</name>
+        <label>Create Referral - 6</label>
+        <locationX>2954</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Create_Outreach_Campaign</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Referral_Outeach_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Outreach</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Referral__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Referral_7</name>
+        <label>Create Referral - 7</label>
+        <locationX>3218</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Create_Outreach_Campaign</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Get_Opportunity_2.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Referral_Outeach_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Type__c</field>
+            <value>
+                <elementReference>Referral_Type_Outreach</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Referral__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>2954</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Referral_6</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Lead</name>
+        <label>Get Lead</label>
+        <locationX>2690</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Referral_5</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>get_opportunity</name>
         <label>get opportunity</label>
@@ -1610,13 +1835,14 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <object>Opportunity</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>Copy_1_of_Update_Opportunity_Campaign</name>
-        <label>Update Opportunity Campaign</label>
-        <locationX>3394</locationX>
+    <recordLookups>
+        <name>Get_Opportunity_2</name>
+        <label>Get Opportunity - 2</label>
+        <locationX>3218</locationX>
         <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Object</targetReference>
+            <targetReference>Create_Referral_7</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1626,18 +1852,14 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
                 <elementReference>recordId</elementReference>
             </value>
         </filters>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Campaign.recordId</elementReference>
-            </value>
-        </inputAssignments>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Opportunity</object>
-    </recordUpdates>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Copy_2_of_Update_Opportunity_Campaign</name>
         <label>Update Opportunity Campaign</label>
-        <locationX>4538</locationX>
+        <locationX>4362</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Object</targetReference>
@@ -1661,7 +1883,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
-        <locationX>2206</locationX>
+        <locationX>2118</locationX>
         <locationY>1550</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
@@ -1691,7 +1913,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Update_Lead</name>
         <label>Update Lead</label>
-        <locationX>1942</locationX>
+        <locationX>1854</locationX>
         <locationY>1550</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
@@ -1721,7 +1943,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <recordUpdates>
         <name>Update_Opportunity</name>
         <label>Update Opportunity</label>
-        <locationX>2470</locationX>
+        <locationX>2382</locationX>
         <locationY>1550</locationY>
         <connector>
             <targetReference>Screen3</targetReference>
@@ -1755,6 +1977,30 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <locationY>458</locationY>
         <connector>
             <isGoTo>true</isGoTo>
+            <targetReference>Object</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>Campaign.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opportunity_Campaign_2</name>
+        <label>Update Opportunity Campaign - 2</label>
+        <locationX>3218</locationX>
+        <locationY>866</locationY>
+        <connector>
             <targetReference>Object</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
@@ -1981,7 +2227,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <screens>
         <name>Screen1</name>
         <label>Screen1</label>
-        <locationX>2338</locationX>
+        <locationX>2250</locationX>
         <locationY>134</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2521,6 +2767,30 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>Referral_Type_Account</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Networking</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Lead</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Networking</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Referral_Type_Opportunity</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Networking</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Do_you_want_to_create_an_opportunity</name>
@@ -2709,7 +2979,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <screens>
         <name>Screen3</name>
         <label>Screen3</label>
-        <locationX>2338</locationX>
+        <locationX>2250</locationX>
         <locationY>1742</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -2723,7 +2993,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>2212</locationX>
+        <locationX>2124</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Screen1</targetReference>
