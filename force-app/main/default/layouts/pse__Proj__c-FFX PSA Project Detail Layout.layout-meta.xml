@@ -190,10 +190,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>pse__Allow_Expenses_Without_Assignment__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>pse__Time_Credited__c</field>
             </layoutItems>
             <layoutItems>
@@ -678,9 +674,9 @@
         <fields>NAME</fields>
         <fields>pse__Resource__c</fields>
         <fields>pse__End_Date__c</fields>
-        <fields>pse__Status__c</fields>
         <fields>pse__Total_Hours__c</fields>
         <fields>pse__Milestone__c</fields>
+        <fields>Out_of_Scope__c</fields>
         <fields>CT_Suggested_Bill_Rate__c</fields>
         <fields>pse__Billable__c</fields>
         <fields>pse__Assignment__c</fields>
