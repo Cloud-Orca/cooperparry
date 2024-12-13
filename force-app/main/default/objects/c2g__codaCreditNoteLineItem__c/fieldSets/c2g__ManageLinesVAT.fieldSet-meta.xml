@@ -238,6 +238,11 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
+        <field>cer_Acquisition__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
         <field>c2g__GeneralLedgerAccount__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>

@@ -28,6 +28,7 @@
     <permissionSets>cer_Certinia_Cooper_Parry_Accounting_info_Edit</permissionSets>
     <permissionSets>cer_Certinia_Cooper_Parry_Product</permissionSets>
     <permissionSets>cer_Cooper_Parry_Certinia_Custom_Permission_Edit</permissionSets>
+    <permissionSets>cer_Cooper_Parry_Conga_Conductor</permissionSets>
     <permissionSets>ffaws__CashManagement_Workspace</permissionSets>
     <permissionSets>ffaws__Collections_Workspace</permissionSets>
     <status>Updated</status>
