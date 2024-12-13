@@ -111,26 +111,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Previously_Onboarded__c</fieldItem>
-                <identifier>RecordPreviously_Onboarded_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Ongoing_Monitoring_Today__c</fieldItem>
-                <identifier>RecordOngoing_Monitoring_Today_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Job_Title__pc</fieldItem>
                 <identifier>RecordJob_Title_pcField</identifier>
             </fieldInstance>
@@ -171,8 +151,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
-                <identifier>RecordLast_R_D_Survey_Send_Date_pcField</identifier>
+                <fieldItem>Record.Previously_Onboarded__c</fieldItem>
+                <identifier>RecordPreviously_Onboarded_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -181,8 +161,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
-                <identifier>RecordLast_R_D_Survey_Send_Date_pcField2</identifier>
+                <fieldItem>Record.Ongoing_Monitoring_Today__c</fieldItem>
+                <identifier>RecordOngoing_Monitoring_Today_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
@@ -235,16 +215,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Ongoing_Monitoring_Date__c</fieldItem>
-                <identifier>RecordOngoing_Monitoring_Date_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Acquisition_Marker__c</fieldItem>
                 <identifier>RecordAcquisition_Marker_cField</identifier>
             </fieldInstance>
@@ -263,10 +233,10 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Primary_Sector__c</fieldItem>
-                <identifier>RecordPrimary_Sector_cField</identifier>
+                <fieldItem>Record.Linkedin__pc</fieldItem>
+                <identifier>RecordLinkedin_pcField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -275,8 +245,18 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Linkedin__pc</fieldItem>
-                <identifier>RecordLinkedin_pcField</identifier>
+                <fieldItem>Record.Account_Status__c</fieldItem>
+                <identifier>RecordAccount_Status__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Ongoing_Monitoring_Date__c</fieldItem>
+                <identifier>RecordOngoing_Monitoring_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
@@ -520,6 +500,16 @@
                 <identifier>RecordUnsubscribed__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_pcField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-294acc5e-e98f-4ce0-b481-f4e82fae7330</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -542,6 +532,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Preferences_Updated_On__c</fieldItem>
                 <identifier>RecordPreferences_Updated_On__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_pcField2</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a0463939-042c-4839-b1dc-652715973a75</name>
