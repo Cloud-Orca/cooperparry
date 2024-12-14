@@ -834,6 +834,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Manufacturing %26 Industrials</fullName>
             <default>false</default>
         </values>
