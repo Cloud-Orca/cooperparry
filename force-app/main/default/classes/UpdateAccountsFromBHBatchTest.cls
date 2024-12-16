@@ -18,6 +18,8 @@ private class UpdateAccountsFromBHBatchTest {
 
         Test.setMock(HttpCalloutMock.class, mock);
 
+        BeauhurstHttpCalloutMock.setTestMockResponse(200, 'Success', '{"meta": {"total": 1,"limit": 20,"offset": 0,"count": 1},"results": [{"id": "u2r9ir","name": "O/M , Growth, West Midlands","count": 199}]}');
+
         Test.startTest();
             Database.executeBatch(new UpdateAccountsFromBHBatch(), 1);
         Test.stopTest();
@@ -40,6 +42,8 @@ private class UpdateAccountsFromBHBatchTest {
         mock.addResponse(getComp);
 
         Test.setMock(HttpCalloutMock.class, mock);
+
+        BeauhurstHttpCalloutMock.setTestMockResponse(200, 'Success', '{"meta": {"total": 1,"limit": 20,"offset": 0,"count": 1},"results": [{"id": "u2r9ir","name": "O/M , Growth, West Midlands","count": 199}]}');
 
         Test.startTest();
             Set<Id> accountIds = new Set<Id>{acc.Id};
@@ -64,6 +68,8 @@ private class UpdateAccountsFromBHBatchTest {
         mock.addResponse(getComp);
 
         Test.setMock(HttpCalloutMock.class, mock);
+        
+        BeauhurstHttpCalloutMock.setTestMockResponse(200, 'Success', '{"meta": {"total": 1,"limit": 20,"offset": 0,"count": 1},"results": [{"id": "u2r9ir","name": "O/M , Growth, West Midlands","count": 199}]}');
 
         Test.startTest();
             Database.executeBatch(new UpdateAccountsFromBHBatch(true), 1);
@@ -87,6 +93,8 @@ private class UpdateAccountsFromBHBatchTest {
         mock.addResponse(getComp);
 
         Test.setMock(HttpCalloutMock.class, mock);
+
+        BeauhurstHttpCalloutMock.setTestMockResponse(200, 'Success', '{"meta": {"total": 1,"limit": 20,"offset": 0,"count": 1},"results": [{"id": "u2r9ir","name": "O/M , Growth, West Midlands","count": 199}]}');
 
         Test.startTest();
             BeauhurstAPIUtility.updateFromBH(acc.Id);
