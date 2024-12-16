@@ -129,6 +129,13 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Declined_Case</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!$User.Department}</leftValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Operations - Risk and Compliance</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.Case.SendWithDocuSign</value>
