@@ -38,10 +38,10 @@ public class CSVRecordUploaderControllerTest {
         BeauhurstHttpCalloutMock.setTestMockResponse(200, 'Success', '{"meta": {"total": 1,"limit": 20,"offset": 0,"count": 1},"results": [{"id": "u2r9ir","name": "O/M , Growth, West Midlands","count": 199}]}');
 
         Test.startTest();
-        Account newAcc = new Account();
-        newAcc.Name = 'test';
-        newAcc.Beauhurst_ID__c = '3245';
-        insert newAcc;
+        // Account newAcc = new Account();
+        // newAcc.Name = 'test';
+        // newAcc.Beauhurst_ID__c = '3245';
+        // insert newAcc;
         String csvStrContent = 'FirstName,LastName,Registered Number\nTest,Test,3245';
         Map<String, String> recordCreate = CSVRecordUploaderController.createRecord(csvStrContent, 'Contact');
         Test.stopTest();

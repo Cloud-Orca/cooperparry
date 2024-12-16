@@ -8161,6 +8161,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.CT_Recalculate_Access__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CT_Expense_VAT_Types__c.Vat_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -8207,6 +8212,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Email</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.External_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -9811,6 +9821,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Billing_Event_Item__c.Accounting_Line_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Billing_Event_Item__c.pse__Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -10672,6 +10687,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Expense__c.CT_Lost_Receipt_Comment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Expense__c.External_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -12221,12 +12241,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Milestone__c.External_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Milestone__c.Original_Budget__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Milestone__c.Original_Planned_Fee__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Milestone__c.Recalculate_Access__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13690,6 +13720,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.CT_Recalculate_Access__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Proj__c.CT_Recognisable_Value__c</field>
         <readable>true</readable>
@@ -13707,6 +13742,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.CT_Year_End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.External_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13862,6 +13902,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.Original_Fee_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.Recalculate_Access__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -17147,6 +17192,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Timecard_Header__c.CT_Suggested_Bill_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Timecard_Header__c.External_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

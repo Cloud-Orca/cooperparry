@@ -54,6 +54,22 @@
             <valueName>Legal</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Other Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Fire And Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Services</controllingFieldValue>
+            <valueName>Environmental</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>Healthcare</controllingFieldValue>
             <valueName>Children&apos;s Care</valueName>
         </valueSettings>
@@ -72,6 +88,14 @@
         <valueSettings>
             <controllingFieldValue>Healthcare</controllingFieldValue>
             <valueName>Healthcare Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Medical Products / Devices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Domiciliary Care</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industrials</controllingFieldValue>
@@ -144,6 +168,10 @@
         <valueSettings>
             <controllingFieldValue>Technology</controllingFieldValue>
             <valueName>SaaS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Logistics Tech</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Automotive</controllingFieldValue>
