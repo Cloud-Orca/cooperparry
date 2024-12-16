@@ -297,6 +297,11 @@
             <field>CT_Notes_for_Finance__c</field>
             <table>pse__Billing_Event_Batch__c.pse__Billing_Events__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>cer_Consolidate_Invoice__c</field>
+            <table>pse__Billing_Event_Batch__c.pse__Billing_Events__r</table>
+        </columns>
         <masterLabel>Billing Events</masterLabel>
     </sections>
     <sections>
@@ -433,6 +438,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>pse__Unit_Price__c</field>
+            <table>pse__Billing_Event_Batch__c.pse__Billing_Events__r.pse__Billing_Event_Items__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Accounting_Line_Description__c</field>
             <table>pse__Billing_Event_Batch__c.pse__Billing_Events__r.pse__Billing_Event_Items__r</table>
         </columns>
         <masterLabel>Billing Event Items</masterLabel>
