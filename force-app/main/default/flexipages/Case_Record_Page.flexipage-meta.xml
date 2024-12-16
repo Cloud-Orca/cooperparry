@@ -66,6 +66,13 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Case.Escalation</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!$User.Department}</leftValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Operations - Risk and Compliance</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Case.CF_CAF</value>
