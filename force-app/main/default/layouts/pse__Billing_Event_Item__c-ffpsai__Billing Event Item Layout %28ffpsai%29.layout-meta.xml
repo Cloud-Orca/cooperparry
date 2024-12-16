@@ -33,7 +33,7 @@
                 <field>pse__Billing_Event_Batch__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Accounting_Line_Description__c</field>
             </layoutItems>
         </layoutColumns>
