@@ -266,6 +266,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Domiciliary Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Ed Tech</fullName>
             <default>false</default>
         </values>
@@ -278,7 +282,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Fin Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire And Security</fullName>
             <default>false</default>
         </values>
         <values>
@@ -310,6 +322,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Insurance Tech</fullName>
             <default>false</default>
         </values>
@@ -318,7 +334,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Logistics Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Products %2F Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Services</fullName>
             <default>false</default>
         </values>
         <values>
@@ -347,6 +375,10 @@
         </values>
         <values>
             <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail and Supply Chain Components</fullName>
             <default>false</default>
         </values>
         <values>
