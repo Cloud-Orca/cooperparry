@@ -198,6 +198,16 @@
                 <identifier>RecordCompanies_House_Id_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Inactive__c</fieldItem>
+                <identifier>RecordInactive_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-8607cb96-0bbe-4079-bf30-83870f48f9d1</name>
         <type>Facet</type>
     </flexiPageRegions>
