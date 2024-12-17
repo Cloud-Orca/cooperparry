@@ -1988,6 +1988,31 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CP_Note__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CP_Note__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CP_Note__c.External_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CP_Note__c.Subject__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CP_Note__c.Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>CT_Expense_VAT_Types__c.Vat_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4157,9 +4182,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Event.Meeting_Subtype__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -4534,6 +4559,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.HasOptedOutOfEmail</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Inactive__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5847,9 +5877,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Task.Meeting_Subtype__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -8545,6 +8575,11 @@
         <editable>false</editable>
         <field>pse__Assignment__c.Estimated_Revenue__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Assignment__c.External_ID__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -12623,6 +12658,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>pse__Schedule__c.External_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>pse__Skill_Certification_Rating__c.Notification_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -13282,6 +13322,9 @@
         <layout>CP_Gift__c-CP Gift Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>CP_Note__c-CP Note Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>CT_Expense_VAT_Types__c-Expense VAT Rate Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -13545,6 +13588,9 @@
         <layout>pse__Resource_Request__c-FFX PSA Resource Request Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>pse__Schedule__c-FFX Schedule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>pse__Skill_Certification_Rating__c-pse__Skill %2F Certification Rating Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -13642,6 +13688,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>CP_Gift__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>CP_Note__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
