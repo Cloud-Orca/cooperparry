@@ -10511,12 +10511,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.OriginalProject__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ffscpq__Estimate_Line_Set__c.CT_MS_Bill_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>ffscpq__Estimate_Role_Request__c.ffscpq__Suggested_Resource__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffscpq__Estimate__c.CT_Current_Esimate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -10527,6 +10537,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ffscpq__Estimate__c.CT_Fee_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffscpq__Estimate__c.CT_Original_Fee_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffscpq__Estimate__c.CT_Planned_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ffscpq__Estimate__c.Original_Project__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

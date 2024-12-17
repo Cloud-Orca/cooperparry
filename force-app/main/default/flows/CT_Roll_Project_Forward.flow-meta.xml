@@ -740,7 +740,7 @@
             <targetReference>get_source_project_details</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>DummyName</name>
         <dataType>String</dataType>
