@@ -1068,22 +1068,22 @@ AND(ISCHANGED({!$Record.Engagement_Pack_Rejected__c}),
     <textTemplates>
         <name>textFormApproved</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>The Form approval for {!$Record.Account.Name} - {!$Record.CaseNumber} has been {!varDecision}. Please review the decision and take any necessary actions.</text>
+        <text>The Form approval for {!$Record.Account.Name} - {!$Record.Subject} has been {!varDecision}. Please review the decision and take any necessary actions.</text>
     </textTemplates>
     <textTemplates>
         <name>textFormSubject</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>Form Approval Decision for {!$Record.Account.Name} - {!$Record.CaseNumber}</text>
+        <text>Form Approval Decision for {!$Record.Account.Name} - {!$Record.Subject}</text>
     </textTemplates>
     <textTemplates>
         <name>textTemplateEngagementBody</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>The Engagement Pack approval for {!$Record.Account.Name} - {!$Record.CaseNumber} has been {!varDecision}. Please review the decision and take any necessary actions.</text>
+        <text>The Engagement Pack approval for {!$Record.Account.Name} - {!$Record.Subject} has been {!varDecision}. Please review the decision and take any necessary actions.</text>
     </textTemplates>
     <textTemplates>
         <name>textTemplateEngagementTitle</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>Engagement Pack Approval Decision for {!$Record.Account.Name} - {!$Record.CaseNumber}</text>
+        <text>Engagement Pack Approval Decision for {!$Record.Account.Name} - {!$Record.Subject}</text>
     </textTemplates>
     <textTemplates>
         <name>textTemplateEscalationBody</name>
@@ -1098,32 +1098,32 @@ AND(ISCHANGED({!$Record.Engagement_Pack_Rejected__c}),
     <textTemplates>
         <name>textTemplatePartnerBody</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>The Partner approval for {!$Record.Account.Name} - {!$Record.CaseNumber}  has been {!varDecision}. Please review the decision and take any necessary actions.</text>
+        <text>The Partner approval for {!$Record.Account.Name} - {!$Record.Subject} has been {!varDecision}. Please review the decision and take any necessary actions.</text>
     </textTemplates>
     <textTemplates>
         <name>textTemplatePartnerTitle</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>Partner Approval Decision for {!$Record.Account.Name} - {!$Record.CaseNumber}</text>
+        <text>Partner Approval Decision for {!$Record.Account.Name} - {!$Record.Subject}</text>
     </textTemplates>
     <textTemplates>
         <name>textTemplatePEPBody</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>The PEP/SIP/RCA approval for {!$Record.Account.Name} - {!$Record.CaseNumber} has been {!varDecision}. Please review the decision and take any necessary actions.</text>
+        <text>The PEP/SIP/RCA approval for {!$Record.Account.Name} - {!$Record.Subject} has been {!varDecision}. Please review the decision and take any necessary actions.</text>
     </textTemplates>
     <textTemplates>
         <name>textTemplatePEPTitle</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>PEP/SIP/RCA Approval Decision for {!$Record.Account.Name} - {!$Record.CaseNumber}</text>
+        <text>PEP/SIP/RCA Approval Decision for {!$Record.Account.Name} - {!$Record.Subject}</text>
     </textTemplates>
     <textTemplates>
         <name>textTemplateRiskBody</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>The Risk/Compliance approval for {!$Record.Account.Name} - &lt;{!$Record.CaseNumber} has been [Approved/Rejected]. Please review the decision and take any necessary actions.</text>
+        <text>The Risk/Compliance approval for {!$Record.Account.Name} - {!$Record.Subject} has been [Approved/Rejected]. Please review the decision and take any necessary actions.</text>
     </textTemplates>
     <textTemplates>
         <name>textTemplateRiskTitle</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>Risk/Compliance Approval Decision for {!$Record.Account.Name} - {!$Record.CaseNumber}</text>
+        <text>Risk/Compliance Approval Decision for {!$Record.Account.Name} - {!$Record.Subject}</text>
     </textTemplates>
     <variables>
         <name>varDecision</name>
