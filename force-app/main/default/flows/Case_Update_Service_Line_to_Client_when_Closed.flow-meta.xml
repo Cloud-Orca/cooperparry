@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <customErrors>
+        <name>Display_Error</name>
+        <label>Display Error</label>
+        <locationX>842</locationX>
+        <locationY>1079</locationY>
+        <customErrorMessages>
+            <errorMessage>Only a member of the Risk team or LC Team can create a Service Line</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
     <decisions>
         <name>Area</name>
         <label>Area</label>
-        <locationX>402</locationX>
+        <locationX>512</locationX>
         <locationY>539</locationY>
         <defaultConnector>
-            <targetReference>Create_Service_Line</targetReference>
+            <targetReference>Get_Risk_and_Compliance</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -24,9 +34,34 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Running_User</name>
+        <label>Check Running User</label>
+        <locationX>710</locationX>
+        <locationY>971</locationY>
+        <defaultConnector>
+            <targetReference>Display_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>N/A</defaultConnectorLabel>
+        <rules>
+            <name>Included_on_the_Groups</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Group_Member</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Service_Line</targetReference>
+            </connector>
+            <label>Included on the Groups</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>service_line_found</name>
         <label>service line found</label>
-        <locationX>226</locationX>
+        <locationX>281</locationX>
         <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Area</targetReference>
@@ -73,8 +108,8 @@
     <recordCreates>
         <name>Create_Service_Line</name>
         <label>Create Service Line</label>
-        <locationX>490</locationX>
-        <locationY>647</locationY>
+        <locationX>578</locationX>
+        <locationY>1079</locationY>
         <inputAssignments>
             <field>Account__c</field>
             <value>
@@ -115,9 +150,100 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>Get_Group_Member</name>
+        <label>Get Group Member</label>
+        <locationX>710</locationX>
+        <locationY>863</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Running_User</targetReference>
+        </connector>
+        <filterLogic>(1 OR 3) AND 2</filterLogic>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Risk_and_Compliance.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_LC_Group.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>GroupMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_LC_Group</name>
+        <label>Get LC Group</label>
+        <locationX>710</locationX>
+        <locationY>755</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Group_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lifecycle Coordinator</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Risk_and_Compliance</name>
+        <label>Get Risk and Compliance</label>
+        <locationX>710</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_LC_Group</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Risk and Compliance</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>get_Service_Line_Linked_to_Account</name>
         <label>get Service Line Linked to Account</label>
-        <locationX>226</locationX>
+        <locationX>281</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -177,7 +303,7 @@
         <object>Service_Line__c</object>
     </recordUpdates>
     <start>
-        <locationX>100</locationX>
+        <locationX>155</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>get_Service_Line_Linked_to_Account</targetReference>
