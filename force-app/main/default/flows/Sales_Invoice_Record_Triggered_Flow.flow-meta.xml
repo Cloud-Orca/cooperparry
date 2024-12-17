@@ -29,11 +29,17 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <description>Trigger transaction platform event</description>
+        <description>Trigger transaction platform event, mapping</description>
         <name>Publish_Event</name>
-        <label>Transaction Publish Event</label>
+        <label>Transaction Publish Event v2</label>
         <locationX>176</locationX>
         <locationY>323</locationY>
+        <inputAssignments>
+            <field>DocumentNumber__c</field>
+            <value>
+                <elementReference>$Record.c2g__Transaction__r.c2g__DocumentNumber__c</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Name__c</field>
             <value>
