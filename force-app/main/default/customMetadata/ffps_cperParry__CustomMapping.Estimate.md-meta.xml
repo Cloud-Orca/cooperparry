@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Estimate</label>
+    <protected>false</protected>
+    <values>
+        <field>ffps_cperParry__SourceField__c</field>
+        <value xsi:type="xsd:string">CT_Current_Esimate__c</value>
+    </values>
+    <values>
+        <field>ffps_cperParry__SourceObject__c</field>
+        <value xsi:type="xsd:string">pse__Proj__c</value>
+    </values>
+    <values>
+        <field>ffps_cperParry__StaticValue__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ffps_cperParry__TargetField__c</field>
+        <value xsi:type="xsd:string">CT_Current_Esimate__c</value>
+    </values>
+    <values>
+        <field>ffps_cperParry__TargetObject__c</field>
+        <value xsi:type="xsd:string">ffscpq__Estimate__c</value>
+    </values>
+</CustomMetadata>
