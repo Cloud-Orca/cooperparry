@@ -7,19 +7,7 @@
         <default>false</default>
     </values>
     <values>
-        <fullName>Date</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Flirt</fullName>
-        <default>false</default>
-    </values>
-    <values>
         <fullName>Married %28Closed Won%29</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Proposed</fullName>
         <default>false</default>
     </values>
     <values>
