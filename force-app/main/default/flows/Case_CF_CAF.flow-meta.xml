@@ -5,7 +5,7 @@
         <name>Assign_1</name>
         <label>Assign - 1</label>
         <locationX>226</locationX>
-        <locationY>1382</locationY>
+        <locationY>1682</locationY>
         <assignmentItems>
             <assignToReference>varForm.Code_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -154,7 +154,7 @@
         <name>Assign_2</name>
         <label>Assign - 2</label>
         <locationX>226</locationX>
-        <locationY>2006</locationY>
+        <locationY>2306</locationY>
         <assignmentItems>
             <assignToReference>varForm.Have_we_checked_the_above_to__c</assignToReference>
             <operator>Assign</operator>
@@ -219,7 +219,7 @@
         <name>Assign_3</name>
         <label>Assign - 3</label>
         <locationX>226</locationX>
-        <locationY>2522</locationY>
+        <locationY>2822</locationY>
         <assignmentItems>
             <assignToReference>varForm.TurnoverLY__c</assignToReference>
             <operator>Assign</operator>
@@ -403,7 +403,7 @@
         <name>Assign_4</name>
         <label>Assign - 4</label>
         <locationX>226</locationX>
-        <locationY>3038</locationY>
+        <locationY>3338</locationY>
         <assignmentItems>
             <assignToReference>varForm.BACKGROUNDTOASSIGNMENT__c</assignToReference>
             <operator>Assign</operator>
@@ -426,7 +426,7 @@
         <name>Assign_5</name>
         <label>Assign - 5</label>
         <locationX>226</locationX>
-        <locationY>3554</locationY>
+        <locationY>3854</locationY>
         <assignmentItems>
             <assignToReference>varForm.For_disposals_what_is_our_assessment__c</assignToReference>
             <operator>Assign</operator>
@@ -540,7 +540,7 @@
         <name>Assign_6</name>
         <label>Assign - 6</label>
         <locationX>226</locationX>
-        <locationY>4070</locationY>
+        <locationY>4370</locationY>
         <assignmentItems>
             <assignToReference>varForm.Does_the_transaction_relate_to__c</assignToReference>
             <operator>Assign</operator>
@@ -612,7 +612,7 @@
         <name>Assign_7</name>
         <label>Assign - 7</label>
         <locationX>226</locationX>
-        <locationY>4586</locationY>
+        <locationY>4886</locationY>
         <assignmentItems>
             <assignToReference>varForm.Key_Client_Address__c</assignToReference>
             <operator>Assign</operator>
@@ -796,7 +796,7 @@
         <name>Assign_8</name>
         <label>Assign - 8</label>
         <locationX>226</locationX>
-        <locationY>5102</locationY>
+        <locationY>5402</locationY>
         <assignmentItems>
             <assignToReference>varForm.pickint1__c</assignToReference>
             <operator>Assign</operator>
@@ -835,7 +835,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Screen_Basic_Details</targetReference>
+            <targetReference>Set_Lock_Form_to</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -858,7 +858,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Screen_Basic_Details</targetReference>
+            <targetReference>Set_Lock_Form_to</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -875,6 +875,22 @@
         </assignmentItems>
         <connector>
             <targetReference>Get_CF_CAF</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Lock_Form_variable_to_true</name>
+        <label>Set Lock Form variable to true</label>
+        <locationX>94</locationX>
+        <locationY>1382</locationY>
+        <assignmentItems>
+            <assignToReference>lockForm_var</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Screen_Basic_Details</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -930,7 +946,7 @@
         <name>Check_Approval_1</name>
         <label>Check Approval - 1</label>
         <locationX>226</locationX>
-        <locationY>1490</locationY>
+        <locationY>1790</locationY>
         <defaultConnector>
             <targetReference>Get_Beneficial_Owners</targetReference>
         </defaultConnector>
@@ -939,17 +955,10 @@
             <name>Not_Approved_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>lockForm_var</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -987,7 +996,7 @@
         <name>Check_Completion_Form</name>
         <label>Check Completion Form</label>
         <locationX>50</locationX>
-        <locationY>5534</locationY>
+        <locationY>5834</locationY>
         <defaultConnector>
             <targetReference>Update_Completion_Fields</targetReference>
         </defaultConnector>
@@ -1012,7 +1021,7 @@
         <name>Copy_1_of_Check_Approval_1</name>
         <label>Copy 1 of Check Approval - 1</label>
         <locationX>226</locationX>
-        <locationY>2114</locationY>
+        <locationY>2414</locationY>
         <defaultConnector>
             <targetReference>Screen_Summary_Financials</targetReference>
         </defaultConnector>
@@ -1021,17 +1030,10 @@
             <name>Copy_1_of_Not_Approved_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>lockForm_var</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1044,7 +1046,7 @@
         <name>Copy_2_of_Check_Approval_1</name>
         <label>Copy 2 of Check Approval - 1</label>
         <locationX>226</locationX>
-        <locationY>2630</locationY>
+        <locationY>2930</locationY>
         <defaultConnector>
             <targetReference>Screen_Background_to_Assignment</targetReference>
         </defaultConnector>
@@ -1053,17 +1055,10 @@
             <name>Copy_2_of_Not_Approved_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>lockForm_var</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1076,7 +1071,7 @@
         <name>Copy_3_of_Check_Approval_1</name>
         <label>Copy 3 of Check Approval - 1</label>
         <locationX>226</locationX>
-        <locationY>3146</locationY>
+        <locationY>3446</locationY>
         <defaultConnector>
             <targetReference>Screen_E_to_G</targetReference>
         </defaultConnector>
@@ -1085,17 +1080,10 @@
             <name>Copy_3_of_Not_Approved_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>lockForm_var</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1108,7 +1096,7 @@
         <name>Copy_4_of_Check_Approval_1</name>
         <label>Copy 4 of Check Approval - 1</label>
         <locationX>226</locationX>
-        <locationY>3662</locationY>
+        <locationY>3962</locationY>
         <defaultConnector>
             <targetReference>Screen_Ability_to_Accept_Appointment</targetReference>
         </defaultConnector>
@@ -1117,17 +1105,10 @@
             <name>Copy_4_of_Not_Approved_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>lockForm_var</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1140,7 +1121,7 @@
         <name>Copy_5_of_Check_Approval_1</name>
         <label>Copy 5 of Check Approval - 1</label>
         <locationX>226</locationX>
-        <locationY>4178</locationY>
+        <locationY>4478</locationY>
         <defaultConnector>
             <targetReference>Screen_Money_Laundering</targetReference>
         </defaultConnector>
@@ -1149,17 +1130,10 @@
             <name>Copy_5_of_Not_Approved_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>lockForm_var</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1172,7 +1146,7 @@
         <name>Copy_6_of_Check_Approval_1</name>
         <label>Copy 6 of Check Approval - 1</label>
         <locationX>226</locationX>
-        <locationY>4694</locationY>
+        <locationY>4994</locationY>
         <defaultConnector>
             <targetReference>Screen_Conclusions</targetReference>
         </defaultConnector>
@@ -1181,17 +1155,10 @@
             <name>Copy_6_of_Not_Approved_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>lockForm_var</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1204,29 +1171,68 @@
         <name>Copy_7_of_Check_Approval_1</name>
         <label>Copy 7 of Check Approval - 1</label>
         <locationX>226</locationX>
-        <locationY>5210</locationY>
+        <locationY>5510</locationY>
         <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
             <name>Copy_7_of_Not_Approved_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>lockForm_var</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Update_CF_CAF</targetReference>
             </connector>
             <label>Copy 7 of Not Approved - 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Set_Lock_Form_to</name>
+        <label>Set Lock Form to</label>
+        <locationX>226</locationX>
+        <locationY>1274</locationY>
+        <defaultConnector>
+            <targetReference>Screen_Basic_Details</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Lock_Form_to_True</name>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.RecordType.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Onboarding</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Client_Amendment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Partner_Approved_checkbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Risk_Compliance_Approved_checkbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Lock_Form_variable_to_true</targetReference>
+            </connector>
+            <label>Lock Form to True</label>
         </rules>
     </decisions>
     <description>Client Acceptance Form</description>
@@ -1261,7 +1267,7 @@
         <name>Create_Beneficial_Owners</name>
         <label>Create Beneficial Owners</label>
         <locationX>50</locationX>
-        <locationY>5426</locationY>
+        <locationY>5726</locationY>
         <connector>
             <targetReference>Check_Completion_Form</targetReference>
         </connector>
@@ -1328,7 +1334,7 @@
         <name>Get_Beneficial_Owners</name>
         <label>Get Beneficial Owners</label>
         <locationX>226</locationX>
-        <locationY>1790</locationY>
+        <locationY>2090</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Screen_Existing_Shareholders_and_Management</targetReference>
@@ -1419,7 +1425,7 @@
         <name>Update_1</name>
         <label>Update - 1</label>
         <locationX>94</locationX>
-        <locationY>1598</locationY>
+        <locationY>1898</locationY>
         <connector>
             <targetReference>Get_Beneficial_Owners</targetReference>
         </connector>
@@ -1429,7 +1435,7 @@
         <name>Update_2</name>
         <label>Update - 2</label>
         <locationX>94</locationX>
-        <locationY>2222</locationY>
+        <locationY>2522</locationY>
         <connector>
             <targetReference>Screen_Summary_Financials</targetReference>
         </connector>
@@ -1439,7 +1445,7 @@
         <name>Update_3</name>
         <label>Update - 3</label>
         <locationX>94</locationX>
-        <locationY>2738</locationY>
+        <locationY>3038</locationY>
         <connector>
             <targetReference>Screen_Background_to_Assignment</targetReference>
         </connector>
@@ -1449,7 +1455,7 @@
         <name>Update_4</name>
         <label>Update - 4</label>
         <locationX>94</locationX>
-        <locationY>3254</locationY>
+        <locationY>3554</locationY>
         <connector>
             <targetReference>Screen_E_to_G</targetReference>
         </connector>
@@ -1459,7 +1465,7 @@
         <name>Update_5</name>
         <label>Update - 5</label>
         <locationX>94</locationX>
-        <locationY>3770</locationY>
+        <locationY>4070</locationY>
         <connector>
             <targetReference>Screen_Ability_to_Accept_Appointment</targetReference>
         </connector>
@@ -1469,7 +1475,7 @@
         <name>Update_6</name>
         <label>Update - 6</label>
         <locationX>94</locationX>
-        <locationY>4286</locationY>
+        <locationY>4586</locationY>
         <connector>
             <targetReference>Screen_Money_Laundering</targetReference>
         </connector>
@@ -1479,7 +1485,7 @@
         <name>Update_7</name>
         <label>Update - 7</label>
         <locationX>94</locationX>
-        <locationY>4802</locationY>
+        <locationY>5102</locationY>
         <connector>
             <targetReference>Screen_Conclusions</targetReference>
         </connector>
@@ -1489,7 +1495,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>50</locationX>
-        <locationY>5834</locationY>
+        <locationY>6134</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -1510,7 +1516,7 @@
         <name>Update_CF_CAF</name>
         <label>Update CF CAF</label>
         <locationX>50</locationX>
-        <locationY>5318</locationY>
+        <locationY>5618</locationY>
         <connector>
             <targetReference>Create_Beneficial_Owners</targetReference>
         </connector>
@@ -1520,7 +1526,7 @@
         <name>Update_Completion_Fields</name>
         <label>Update Completion Fields</label>
         <locationX>138</locationX>
-        <locationY>5642</locationY>
+        <locationY>5942</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -1550,7 +1556,7 @@
         <name>Screen_Ability_to_Accept_Appointment</name>
         <label>Screen - Ability to Accept Appointment</label>
         <locationX>226</locationX>
-        <locationY>3962</locationY>
+        <locationY>4262</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1559,12 +1565,12 @@
         </connector>
         <fields>
             <name>wTxt6</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;Form is locked.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>warningBanner</leftValueReference>
+                    <leftValueReference>lockForm_var</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -2391,7 +2397,7 @@
         <name>Screen_Background_to_Assignment</name>
         <label>Screen - Background to Assignment</label>
         <locationX>226</locationX>
-        <locationY>2930</locationY>
+        <locationY>3230</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2400,12 +2406,12 @@
         </connector>
         <fields>
             <name>wTxt4</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;Form is locked.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>warningBanner</leftValueReference>
+                    <leftValueReference>lockForm_var</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -2588,7 +2594,7 @@
         <name>Screen_Basic_Details</name>
         <label>Screen - Basic Details</label>
         <locationX>226</locationX>
-        <locationY>1274</locationY>
+        <locationY>1574</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2597,12 +2603,12 @@
         </connector>
         <fields>
             <name>wTxt1</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;Form is locked.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>warningBanner</leftValueReference>
+                    <leftValueReference>lockForm_var</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -3482,7 +3488,7 @@
         <name>Screen_Conclusions</name>
         <label>Screen - Conclusions</label>
         <locationX>226</locationX>
-        <locationY>4994</locationY>
+        <locationY>5294</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3491,12 +3497,12 @@
         </connector>
         <fields>
             <name>wTxt8</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;Form is locked.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>warningBanner</leftValueReference>
+                    <leftValueReference>lockForm_var</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -3696,7 +3702,7 @@
         <name>Screen_E_to_G</name>
         <label>Screen - E to G</label>
         <locationX>226</locationX>
-        <locationY>3446</locationY>
+        <locationY>3746</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3705,12 +3711,12 @@
         </connector>
         <fields>
             <name>wTxt5</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;Form is locked.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>warningBanner</leftValueReference>
+                    <leftValueReference>lockForm_var</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -4411,7 +4417,7 @@
         <name>Screen_Existing_Shareholders_and_Management</name>
         <label>Screen - Existing Shareholders and Management</label>
         <locationX>226</locationX>
-        <locationY>1898</locationY>
+        <locationY>2198</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4420,12 +4426,12 @@
         </connector>
         <fields>
             <name>wTxt2</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;Form is locked.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>warningBanner</leftValueReference>
+                    <leftValueReference>lockForm_var</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -4867,7 +4873,7 @@
         <name>Screen_Money_Laundering</name>
         <label>Screen - Money Laundering</label>
         <locationX>226</locationX>
-        <locationY>4478</locationY>
+        <locationY>4778</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4876,12 +4882,12 @@
         </connector>
         <fields>
             <name>wTxt7</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;Form is locked.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>warningBanner</leftValueReference>
+                    <leftValueReference>lockForm_var</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -6232,7 +6238,7 @@
         <name>Screen_Summary_Financials</name>
         <label>Screen - Summary Financials</label>
         <locationX>226</locationX>
-        <locationY>2414</locationY>
+        <locationY>2714</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -6241,12 +6247,12 @@
         </connector>
         <fields>
             <name>wTxt3</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 8, 8); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 8, 8);&quot;&gt;&lt;em&gt;Form is locked.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>warningBanner</leftValueReference>
+                    <leftValueReference>lockForm_var</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -7238,6 +7244,16 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Beneficial_Owner__c</objectType>
+    </variables>
+    <variables>
+        <name>lockForm_var</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <name>recordId</name>
