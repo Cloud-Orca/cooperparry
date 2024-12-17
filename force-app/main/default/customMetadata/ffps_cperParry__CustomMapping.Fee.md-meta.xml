@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>ffps_cperParry__SourceField__c</field>
-        <value xsi:type="xsd:string">CT_Original_Fee_Amount__c</value>
+        <value xsi:type="xsd:string">Original_Fee_Amount__c</value>
     </values>
     <values>
         <field>ffps_cperParry__SourceObject__c</field>
