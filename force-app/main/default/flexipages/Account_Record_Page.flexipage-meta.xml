@@ -198,16 +198,6 @@
                 <identifier>RecordAccount_Status_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Data_Origination_Lookup__c</fieldItem>
-                <identifier>RecordData_Origination_Lookup_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -322,16 +312,6 @@
                 <identifier>RecordClient_Lost_Reason_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Fee_Insurance_Taken__c</fieldItem>
-                <identifier>RecordFee_Insurance_Taken_cField2</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -399,6 +379,34 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-3df8c77d-3cee-4016-b08b-c0e3e0d9246a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
+                <identifier>RecordConfidential_Account_Area_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-9c41b578-2d35-4664-bb73-6e112e782d7c</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-9c41b578-2d35-4664-bb73-6e112e782d7c</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column31</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-31305ac9-37b4-45a8-8fff-d36b170df47e</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -957,6 +965,24 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
+                    <value>Facet-31305ac9-37b4-45a8-8fff-d36b170df47e</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Confidentiality</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection18</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
                     <value>Facet-3870d2a3-baf5-4bee-b221-fd21bb0c8a47</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1211,8 +1237,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Data_Origination__c</fieldItem>
-                <identifier>RecordData_Origination_cField</identifier>
+                <fieldItem>Record.Data_Origination_Lookup__c</fieldItem>
+                <identifier>RecordData_Origination_Lookup_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
