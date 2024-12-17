@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
-        <locationX>50</locationX>
+        <locationX>490</locationX>
         <locationY>1622</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
@@ -31,7 +31,7 @@
     <assignments>
         <name>Assign_Business_CAF_to_varForm</name>
         <label>Assign Business CAF to varForm</label>
-        <locationX>160</locationX>
+        <locationX>600</locationX>
         <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
@@ -47,7 +47,7 @@
     <assignments>
         <name>Assign_File_Ids</name>
         <label>Assign File Ids</label>
-        <locationX>94</locationX>
+        <locationX>534</locationX>
         <locationY>1406</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
@@ -63,7 +63,7 @@
     <assignments>
         <name>Assign_Form_ID</name>
         <label>Assign Form ID</label>
-        <locationX>424</locationX>
+        <locationX>864</locationX>
         <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
@@ -86,7 +86,7 @@
     <assignments>
         <name>Assign_Variables_to_varForm</name>
         <label>Assign Variables to varForm</label>
-        <locationX>94</locationX>
+        <locationX>534</locationX>
         <locationY>1298</locationY>
         <assignmentItems>
             <assignToReference>varForm.Date_of_original_engagement__c</assignToReference>
@@ -340,7 +340,7 @@
     <assignments>
         <name>Copy_1_of_Assign_Business_CAF_to_varForm</name>
         <label>Assign Business CAF to varForm</label>
-        <locationX>754</locationX>
+        <locationX>50</locationX>
         <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
@@ -370,34 +370,9 @@
         </value>
     </choices>
     <decisions>
-        <name>Check_any_Pending_Approval_Status</name>
-        <label>Check any Pending Approval Status</label>
-        <locationX>523</locationX>
-        <locationY>458</locationY>
-        <defaultConnector>
-            <targetReference>Copy_1_of_Assign_Business_CAF_to_varForm</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
-        <rules>
-            <name>No_Pending_Approvals</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Check_Form</targetReference>
-            </connector>
-            <label>No Pending Approvals</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Check_Approval</name>
         <label>Check Approval</label>
-        <locationX>292</locationX>
+        <locationX>732</locationX>
         <locationY>1190</locationY>
         <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
@@ -419,7 +394,7 @@
     <decisions>
         <name>Check_Completion_Form</name>
         <label>Check Completion Form</label>
-        <locationX>94</locationX>
+        <locationX>534</locationX>
         <locationY>1922</locationY>
         <defaultConnector>
             <targetReference>Update_Completion_Fields_in_Form</targetReference>
@@ -444,7 +419,7 @@
     <decisions>
         <name>Check_Form</name>
         <label>Check Form</label>
-        <locationX>292</locationX>
+        <locationX>732</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Create_Business_CAF</targetReference>
@@ -469,7 +444,7 @@
     <decisions>
         <name>Is_there_a_File_Upload</name>
         <label>Is there a File Upload</label>
-        <locationX>94</locationX>
+        <locationX>534</locationX>
         <locationY>1514</locationY>
         <defaultConnector>
             <targetReference>Update_Business_CAF</targetReference>
@@ -506,6 +481,52 @@
             <label>File Uploaded</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Lock_Form</name>
+        <label>Lock Form?</label>
+        <locationX>391</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Check_Form</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Lock_Form</name>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.RecordType.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Onboarding</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Client_Amendment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Partner_Approved_checkbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Risk_Compliance_Approved_checkbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Assign_Business_CAF_to_varForm</targetReference>
+            </connector>
+            <label>Yes Lock Form</label>
+        </rules>
+    </decisions>
     <description>BUSINESS, TRUSTS AND NON-PERSONAL CLIENTS</description>
     <environments>Default</environments>
     <formulas>
@@ -537,7 +558,7 @@
     <recordCreates>
         <name>Create_Business_CAF</name>
         <label>Create Business CAF</label>
-        <locationX>424</locationX>
+        <locationX>864</locationX>
         <locationY>674</locationY>
         <connector>
             <targetReference>Get_Business_CAF_Created</targetReference>
@@ -566,7 +587,7 @@
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>523</locationX>
+        <locationX>391</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -594,11 +615,11 @@
     <recordLookups>
         <name>Get_Business_CAF</name>
         <label>Get Business CAF</label>
-        <locationX>523</locationX>
+        <locationX>391</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_any_Pending_Approval_Status</targetReference>
+            <targetReference>Lock_Form</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -622,7 +643,7 @@
     <recordLookups>
         <name>Get_Business_CAF_Created</name>
         <label>Get Business CAF - Created</label>
-        <locationX>424</locationX>
+        <locationX>864</locationX>
         <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -643,7 +664,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>523</locationX>
+        <locationX>391</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -664,7 +685,7 @@
     <recordUpdates>
         <name>Update_Business_CAF</name>
         <label>Update Business CAF</label>
-        <locationX>94</locationX>
+        <locationX>534</locationX>
         <locationY>1814</locationY>
         <connector>
             <targetReference>Check_Completion_Form</targetReference>
@@ -674,7 +695,7 @@
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>94</locationX>
+        <locationX>534</locationX>
         <locationY>2222</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -695,7 +716,7 @@
     <recordUpdates>
         <name>Update_Completion_Fields_in_Form</name>
         <label>Update Completion Fields in Form</label>
-        <locationX>182</locationX>
+        <locationX>622</locationX>
         <locationY>2030</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
@@ -725,7 +746,7 @@
     <screens>
         <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS</name>
         <label>BUSINESS, TRUSTS AND NON-PERSONAL CLIENTS</label>
-        <locationX>292</locationX>
+        <locationX>732</locationX>
         <locationY>1082</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -2475,14 +2496,14 @@
     <screens>
         <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS</name>
         <label>(VIEW) BUSINESS, TRUSTS AND NON-PERSONAL CLIENTS</label>
-        <locationX>754</locationX>
+        <locationX>50</locationX>
         <locationY>674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>warningTxt</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;em&gt;This form is locked so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -4313,7 +4334,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>397</locationX>
+        <locationX>265</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
