@@ -3,6 +3,7 @@
     <excludeButtons>ChangeRecordType</excludeButtons>
     <excludeButtons>Clone</excludeButtons>
     <excludeButtons>Edit</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -50,6 +51,22 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Total_Cost_Amount__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Original_Project__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Current_Esimate__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Original_Fee_Amount__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_Planned_Recovery_Rate__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -232,6 +249,14 @@
         <fields>ffscpq__Net_Amount__c</fields>
         <fields>ffscpq__Margin__c</fields>
         <relatedList>ffscpq__Estimate_Role_Request__c.ffscpq__Estimate__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>ffscpq__Estimate_Product_Instance__c.ffscpq__Estimate__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>ffscpq__Estimate_Product_Item__c.ffscpq__Estimate__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
