@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Milestone_Description__c</fullName>
+    <description>Captures Milestone description and will be used on the billing event item as well as Invoice.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This description will carry forward to the billing event item as well as Invoice</inlineHelpText>
+    <label>Milestone Description</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

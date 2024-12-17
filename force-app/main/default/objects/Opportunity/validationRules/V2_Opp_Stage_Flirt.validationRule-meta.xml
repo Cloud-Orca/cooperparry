@@ -3,10 +3,22 @@
     <fullName>V2_Opp_Stage_Flirt</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
- NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
- ISNEW(),
- TEXT(StageName) &lt;&gt; &quot;Flirt&quot;
+    NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+    ISNEW(),
+    OR(
+        AND(
+            OR(
+                RecordType.DeveloperName = &quot;CP_Opportunity&quot;,
+                RecordType.DeveloperName = &quot;Corporate_Opportunity&quot;
+            ),
+            TEXT(StageName) &lt;&gt; &quot;Flirt&quot;
+        ),
+        AND(
+            RecordType.DeveloperName = &quot;Renewal&quot;,
+            TEXT(StageName) &lt;&gt; &quot;Proposing&quot;
+        )
+    )
 )</errorConditionFormula>
     <errorDisplayField>StageName</errorDisplayField>
-    <errorMessage>Please ensure the initial Stage is Flirt.</errorMessage>
+    <errorMessage>Please ensure the initial Stage is Flirt for CP or Corporate Opportunities and Proposing for Renewal Opps.</errorMessage>
 </ValidationRule>

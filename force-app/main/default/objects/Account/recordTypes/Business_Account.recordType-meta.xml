@@ -55,6 +55,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Account_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Acquisition_Marker__c</picklist>
         <values>
             <fullName>Chamberlyns</fullName>
@@ -255,6 +266,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Domiciliary Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Ed Tech</fullName>
             <default>false</default>
         </values>
@@ -267,7 +282,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Fin Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire And Security</fullName>
             <default>false</default>
         </values>
         <values>
@@ -299,6 +322,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Insurance Tech</fullName>
             <default>false</default>
         </values>
@@ -307,7 +334,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Logistics Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Products %2F Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Services</fullName>
             <default>false</default>
         </values>
         <values>
@@ -336,6 +375,10 @@
         </values>
         <values>
             <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail and Supply Chain Components</fullName>
             <default>false</default>
         </values>
         <values>
@@ -504,11 +547,27 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Corporate Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pensions</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Ring Fenced</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Sports and Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
             <default>false</default>
         </values>
         <values>
@@ -804,6 +863,10 @@
         </values>
         <values>
             <fullName>Health %26 Social Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1244,6 +1307,10 @@
         </values>
         <values>
             <fullName>Franchisee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete</fullName>
             <default>false</default>
         </values>
         <values>

@@ -142,7 +142,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Type</fieldItem>
                 <identifier>RecordTypeField</identifier>
@@ -196,6 +196,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Account_Status__c</fieldItem>
                 <identifier>RecordAccount_Status_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Data_Origination_Lookup__c</fieldItem>
+                <identifier>RecordData_Origination_Lookup_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
@@ -312,6 +322,16 @@
                 <identifier>RecordClient_Lost_Reason_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Fee_Insurance_Taken__c</fieldItem>
+                <identifier>RecordFee_Insurance_Taken_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -337,58 +357,6 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-474a2cb5-f75d-4a22-8c8f-99a26288a258</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CT_Account_access__c</fieldItem>
-                <identifier>RecordCT_Account_access_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-f007f94f-c725-438b-9ea5-e7f592fa808c</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
-                <identifier>RecordConfidential_Account_Area_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-7762ce4e-47d0-49f4-b2f7-8684795cb2a8</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-f007f94f-c725-438b-9ea5-e7f592fa808c</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column31</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-7762ce4e-47d0-49f4-b2f7-8684795cb2a8</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column32</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-dbc3a698-e7ba-42e7-8fda-83253c0ba4a3</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -965,24 +933,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-dbc3a698-e7ba-42e7-8fda-83253c0ba4a3</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Confidentiality</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection18</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

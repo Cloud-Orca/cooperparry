@@ -1,0 +1,9 @@
+Hi,
+
+This is to inform you that a New Opportunity has been created for {!Opportunity.Account}.
+
+Please check the Opportunity to ensure you're happy with us proceeding.
+
+Here is a Link: {!Opportunity.Link}
+
+Kind regards,

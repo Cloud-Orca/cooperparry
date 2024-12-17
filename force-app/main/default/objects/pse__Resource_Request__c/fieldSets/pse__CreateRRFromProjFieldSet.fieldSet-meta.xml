@@ -57,11 +57,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>pse__Milestone__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>Name</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -118,6 +113,11 @@
     </availableFields>
     <availableFields>
         <field>pse__Request_Billable_Amount__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>pse__Requested_Bill_Rate__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -243,12 +243,12 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>pse__Region__c</field>
+        <field>pse__Milestone__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>pse__Requested_Bill_Rate__c</field>
+        <field>pse__Region__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

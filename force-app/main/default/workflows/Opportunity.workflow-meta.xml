@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>Opportunity_Audit_Partner_Opp_Email_Alert</fullName>
+        <ccEmails>jr@cloudorca.com</ccEmails>
+        <description>Opportunity - Audit Partner Opp Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Audit Partner</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Audit_Partner_Opp_Alert</template>
+    </alerts>
+    <alerts>
         <fullName>Opportunity_Closed_Won_Audit_Notification</fullName>
         <description>Opportunity Closed Won Audit Notification</description>
         <protected>false</protected>

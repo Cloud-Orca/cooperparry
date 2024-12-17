@@ -4,7 +4,21 @@ public class AccountTriggerHandler {
     }
     
     public static void onAfterInsert(List<Account> newAccountList){
+        syncFromBHAPI(newAccountList);
         onNewAccountCreateSharepointFolder(newAccountList);
+    }
+
+    public static void syncFromBHAPI(List<Account> newAccountList){
+        Set<Id> accountIds = new Set<Id>();
+        for(Account acc : newAccountList){
+            if(acc.Beauhurst_ID__c != null && acc.Beauhurst_Updated_Date__c == null){
+                accountIds.add(acc.Id);
+            }
+        }
+
+        if(!accountIds.isEmpty() && !System.isBatch() && !System.isFuture()){
+            Database.executebatch(new UpdateAccountsFromBHBatch(accountIds), 1);
+        }
     }
     
     public static void recreateTeamMembers(List<Account> accounts, Map<Id, Account> oldAccountMap){
