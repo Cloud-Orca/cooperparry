@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffscpq__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The type of expense.</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mileage</fullName>
+                <default>false</default>
+                <label>Mileage</label>
+            </value>
+            <value>
+                <fullName>Flights</fullName>
+                <default>false</default>
+                <label>Flights</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Motor Expenses</fullName>
+                <default>false</default>
+                <label>Motor Expenses</label>
+            </value>
+            <value>
+                <fullName>Other Travel</fullName>
+                <default>false</default>
+                <label>Other Travel</label>
+            </value>
+            <value>
+                <fullName>Taxi</fullName>
+                <default>false</default>
+                <label>Taxi</label>
+            </value>
+            <value>
+                <fullName>Train</fullName>
+                <default>false</default>
+                <label>Train</label>
+            </value>
+            <value>
+                <fullName>Lunch Allowance</fullName>
+                <default>false</default>
+                <label>Lunch Allowance</label>
+            </value>
+            <value>
+                <fullName>Team meals/drinks</fullName>
+                <default>false</default>
+                <label>Team meals/drinks</label>
+            </value>
+            <value>
+                <fullName>Client meals/drinks</fullName>
+                <default>false</default>
+                <label>Client meals/drinks</label>
+            </value>
+            <value>
+                <fullName>Exam fees</fullName>
+                <default>false</default>
+                <label>Exam fees</label>
+            </value>
+            <value>
+                <fullName>Subscriptions/memberships</fullName>
+                <default>false</default>
+                <label>Subscriptions/memberships</label>
+            </value>
+            <value>
+                <fullName>Computer Equipment</fullName>
+                <default>false</default>
+                <label>Computer Equipment</label>
+            </value>
+            <value>
+                <fullName>Overnight stay meal allowance</fullName>
+                <default>false</default>
+                <label>Overnight stay meal allowance</label>
+            </value>
+            <value>
+                <fullName>Other (please detail)</fullName>
+                <default>false</default>
+                <label>Other (please detail)</label>
+            </value>
+            <value>
+                <fullName>Airfare</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Airfare</label>
+            </value>
+            <value>
+                <fullName>Business Meals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business Meals</label>
+            </value>
+            <value>
+                <fullName>Car Rental</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Car Rental</label>
+            </value>
+            <value>
+                <fullName>Employee Relations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employee Relations</label>
+            </value>
+            <value>
+                <fullName>Gasoline</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gasoline</label>
+            </value>
+            <value>
+                <fullName>General and Admin Expenses</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>General and Admin Expenses</label>
+            </value>
+            <value>
+                <fullName>IT Equipment and Services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IT Equipment and Services</label>
+            </value>
+            <value>
+                <fullName>Lodging (Room and Tax)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lodging (Room and Tax)</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Miscellaneous</label>
+            </value>
+            <value>
+                <fullName>Office Supplies and Services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Office Supplies and Services</label>
+            </value>
+            <value>
+                <fullName>Personal Meals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Personal Meals</label>
+            </value>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Postage and Shipping</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Postage and Shipping</label>
+            </value>
+            <value>
+                <fullName>Recruiting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Recruiting</label>
+            </value>
+            <value>
+                <fullName>Subway</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Subway</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
