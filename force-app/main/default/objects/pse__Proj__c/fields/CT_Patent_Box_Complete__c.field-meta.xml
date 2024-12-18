@@ -3,12 +3,11 @@
     <fullName>CT_Patent_Box_Complete__c</fullName>
     <externalId>false</externalId>
     <formula>CASE( TEXT(  CT_Patent_Box_Stage__c ) ,
-&apos;Start/None&apos;, 0,
-&apos;Qualification&apos;, 0.1,
-&apos;Calculations&apos;, 0.4,
-&apos;Report&apos;, 0.8,
-&apos;Submissions&apos;, 0.95,
-&apos;Completed&apos;,1,
+&apos;Started&apos;, 0.1,
+&apos;Qualified&apos;, 0.4,
+&apos;Calculations&apos;, 0.8,
+&apos;Report&apos;, 0.95,
+&apos;Submission&apos;, 1,
 0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Patent Box % Complete</label>
