@@ -10520,6 +10520,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ffscpq__Estimate_Line_Set__c.CT_MS_Prior_Year_Fee__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ffscpq__Estimate_Role_Request__c.ffscpq__Suggested_Resource__c</field>
         <readable>true</readable>
@@ -10551,7 +10556,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ffscpq__Estimate__c.Original_Project__c</field>
+        <field>ffscpq__Estimate__c.OriginalProject__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
