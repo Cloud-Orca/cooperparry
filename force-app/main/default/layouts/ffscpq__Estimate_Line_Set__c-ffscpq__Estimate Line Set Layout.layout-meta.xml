@@ -39,6 +39,10 @@
                 <behavior>Edit</behavior>
                 <field>CT_MS_Bill_Amount__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CT_MS_Prior_Year_Fee__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
