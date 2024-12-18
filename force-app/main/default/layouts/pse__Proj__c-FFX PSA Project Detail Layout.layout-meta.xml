@@ -784,7 +784,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>ffscpq__Estimate__c.Original_Project__c</relatedList>
+        <relatedList>ffscpq__Estimate__c.OriginalProject__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
