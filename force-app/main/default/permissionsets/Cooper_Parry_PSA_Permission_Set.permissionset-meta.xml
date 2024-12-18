@@ -337,6 +337,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.Acquisition_Marker__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.Budget_Recovery_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
