@@ -17,6 +17,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ffscpq__Estimate_Line_Set__c.CT_MS_Prior_Year_Fee__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ffscpq__Estimate__c.CT_Current_Esimate__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -32,7 +37,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ffscpq__Estimate__c.Original_Project__c</field>
+        <field>ffscpq__Estimate__c.OriginalProject__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

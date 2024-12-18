@@ -12436,6 +12436,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>pse__Proj__c.Acquisition_Marker__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>pse__Proj__c.BS_O_Project__c</field>
         <readable>true</readable>
     </fieldPermissions>
