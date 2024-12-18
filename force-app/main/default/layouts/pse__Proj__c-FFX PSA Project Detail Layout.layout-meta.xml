@@ -9,7 +9,6 @@
     <customButtons>pse__Create_Change_Request</customButtons>
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -593,6 +592,7 @@
         <fields>pse__Start_Date__c</fields>
         <fields>pse__Actual_Date__c</fields>
         <fields>pse__Milestone_Amount__c</fields>
+        <fields>CT_Manual_Recovery_Rate__c</fields>
         <fields>pse__Planned_Hours__c</fields>
         <fields>pse__Include_In_Financials__c</fields>
         <fields>pse__Billed__c</fields>
