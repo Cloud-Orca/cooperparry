@@ -12,14 +12,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Started/None</fullName>
+                <fullName>Started</fullName>
                 <default>false</default>
-                <label>Started/None</label>
+                <label>Started</label>
             </value>
             <value>
-                <fullName>Qualification</fullName>
+                <fullName>Qualified</fullName>
                 <default>false</default>
-                <label>Qualification</label>
+                <label>Qualified</label>
             </value>
             <value>
                 <fullName>Calculations</fullName>
@@ -32,13 +32,14 @@
                 <label>Report</label>
             </value>
             <value>
-                <fullName>Submissions</fullName>
+                <fullName>Submission</fullName>
                 <default>false</default>
-                <label>Submissions</label>
+                <label>Submission</label>
             </value>
             <value>
                 <fullName>Completed</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Completed</label>
             </value>
         </valueSetDefinition>
