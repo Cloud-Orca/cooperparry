@@ -154,6 +154,10 @@
                 <behavior>Edit</behavior>
                 <field>Unapproved_only_for_data_migration__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Acquisition_Marker__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -777,9 +781,9 @@
         <fields>NAME</fields>
         <fields>pse__Resource__c</fields>
         <fields>pse__End_Date__c</fields>
-        <fields>pse__Status__c</fields>
         <fields>pse__Total_Hours__c</fields>
         <fields>pse__Milestone__c</fields>
+        <fields>Out_of_Scope__c</fields>
         <fields>CT_Suggested_Bill_Rate__c</fields>
         <fields>pse__Billable__c</fields>
         <fields>pse__Assignment__c</fields>
@@ -1062,6 +1066,16 @@
         <fields>LAST_UPDATE</fields>
         <fields>pse__Message__c</fields>
         <relatedList>pse__Revenue_Forecast_Batch_Log__c.pse__Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>ACCOUNT.NAME</fields>
+        <fields>OPPORTUNITY.CLOSE_DATE</fields>
+        <relatedList>Opportunity.OriginalProject__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>ffscpq__Estimate__c.OriginalProject__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
