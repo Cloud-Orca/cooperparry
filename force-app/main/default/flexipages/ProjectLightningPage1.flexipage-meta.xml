@@ -11,7 +11,7 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>pse__Proj__c.Roll_Forward</value>
+                            <value>pse__Proj__c.ffps_cperParry__Roll_Forward</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.pse__Proj__c.pse__Share_Project</value>

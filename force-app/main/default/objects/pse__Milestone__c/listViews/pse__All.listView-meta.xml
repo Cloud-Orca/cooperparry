@@ -14,6 +14,8 @@
     <columns>Milestone_Type__c</columns>
     <columns>CREATED_DATE</columns>
     <columns>ffpsai__ServicesProduct__c</columns>
+    <columns>Recurring__c</columns>
+    <columns>Milestone_Description__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>
